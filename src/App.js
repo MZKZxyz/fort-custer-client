@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
+import SubProfilePage from './pages/SubProfilePage';
+import MazePage from './pages/MazePage';
+import ResultsPage from './pages/ResultsPage';
+import CollectionsPage from './pages/CollectionPage';
+import LeaderboardPage from './pages/LeaderboardPage';
+import MazeCollectionPage from './pages/MazeCollectionPage';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Navigate to="/login" />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/profiles" element={<SubProfilePage />} />
+        <Route path="/maze" element={<MazePage />} />
+        <Route path="/results" element={<ResultsPage />} />
+        <Route path="/collection" element={<CollectionsPage />} />
+        <Route path="/leaderboard" element={<LeaderboardPage />} />
+        <Route path="/mazes" element={<MazeCollectionPage />} />
+      </Routes>
+    </Router>
   );
 }
 
 export default App;
+

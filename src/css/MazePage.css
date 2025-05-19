@@ -1,0 +1,155 @@
+body {
+  background-color: #66bb66; /* soft grass green */
+  margin: 0;
+  padding: 0;
+}
+
+.maze-container {
+  display: flex;
+  justify-content: center;
+  padding: 0 8px;
+  box-sizing: border-box;
+}
+
+.maze-grid {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 95vw;
+}
+
+.maze-row {
+  display: flex;
+  width: 100%;
+}
+
+.maze-cell {
+  position:      relative;
+  flex:          1;
+  aspect-ratio:  1 / 1;
+  display:       flex;
+  justify-content: center;
+  align-items:     center;
+  color:         white;
+  font-weight:   bold;
+  background-size:   cover !important;
+  background-repeat: repeat !important;
+  image-rendering:   pixelated;
+  background-size: 300% 300%;
+}
+
+@keyframes fog-sweep {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    /* tweak these values to control direction & distance */
+    background-position: 200px 200px;
+  }
+}
+
+@keyframes fog-pulse {
+  0%,100% { opacity: 0; }
+  50%     { opacity: 1; }
+}
+@keyframes noise-drift {
+  from { background-position:   0   0; }
+  to   { background-position: 100px 100px; }
+}
+
+.maze-fog {
+  position: absolute;
+  inset: 0;                   /* fill the entire grid */
+  background-repeat: repeat;
+  background-size: cover;     /* you can tweak this to “zoom out” the pattern */
+  opacity: .97;
+  pointer-events: none;
+  /* carve out a hole via mask-image which we’ll drive from JS */
+  mask-image: radial-gradient(
+    circle at var(--px) var(--py),
+    transparent var(--rad),
+    black calc(var(--rad) + 1px)
+  );
+  -webkit-mask-image: radial-gradient(
+    circle at var(--px) var(--py),
+    transparent var(--rad),
+    black calc(var(--rad) + 1px)
+  );
+  animation: fog-sweep 60s linear infinite;
+}
+
+.maze-fog-main {
+  position: absolute;
+  inset: 0;
+  background-repeat: repeat;
+  mask-image: radial-gradient(
+    circle at var(--px) var(--py),
+    transparent var(--rad),
+    black calc(var(--rad) + 1px)
+  );
+  -webkit-mask-image: radial-gradient(
+    circle at var(--px) var(--py),
+    transparent var(--rad),
+    black calc(var(--rad) + 1px)
+  );
+  animation: fog-sweep 60s linear infinite alternate;
+}
+
+/* noise overlay that pulses & drifts to break up tiling */
+.maze-fog-noise {
+  position: absolute;
+  inset: 0;
+  background-repeat: repeat;
+  mix-blend-mode: multiply;
+  opacity: 0.2;
+  mask-image: radial-gradient(
+    circle at var(--px) var(--py),
+    transparent var(--rad),                        /* fully clear inside radius */
+    rgba(0,0,0,0.4) calc(var(--rad) + 20px),       /* 20px fade-band to ~40% opacity */
+    black          calc(var(--rad) + 40px)         /* fully fogged beyond that */
+  );
+  -webkit-mask-image: radial-gradient(
+    circle at var(--px) var(--py),
+    transparent var(--rad),
+    rgba(0,0,0,0.4) calc(var(--rad) + 20px),
+    black          calc(var(--rad) + 40px)
+  );
+  animation:
+    noise-drift 20s linear infinite,
+    fog-pulse    8s ease-in-out infinite;
+}
+
+.dpad {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.dpad-row {
+  display: flex;
+  justify-content: center;
+}
+
+.dpad-btn {
+  width: 60px;
+  height: 60px;
+  margin: 4px;
+  font-size: 1.5rem;
+  background: #fff;
+  border: 2px solid #000;
+  border-radius: 10px;
+  box-shadow: 2px 2px 0 #000;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.dpad-btn:active {
+  transform: translate(1px, 1px);
+  box-shadow: none;
+}
+
