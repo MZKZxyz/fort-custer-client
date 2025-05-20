@@ -6,6 +6,7 @@ import '../css/MazePage.css'; // Add CSS below to this file
 const PUBLIC = process.env.PUBLIC_URL;
 
 export default function MazePage() {
+  const preventSelect = (e) => e.preventDefault();
   const navigate = useNavigate();
   const profile = useMemo(() => {
     return JSON.parse(localStorage.getItem('activeSubProfile'));
@@ -220,7 +221,11 @@ export default function MazePage() {
   if (!mazeData) return <p>Loading maze...</p>;
 
   return (
-    <div className="maze-page">
+    <div className="maze-page"
+      onMouseDown={preventSelect}
+      onSelectStart={preventSelect}
+      onDragStart={preventSelect}
+      >
       {/* BACK / QUIT button */}
       <button
         className="back-btn"
