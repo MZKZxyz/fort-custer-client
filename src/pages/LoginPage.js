@@ -1,4 +1,3 @@
-// src/pages/LoginPage.js
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import API from '../utils/api';
@@ -13,10 +12,29 @@ export default function LoginPage() {
     e.preventDefault();
     try {
       const res = await API.post('/users/login', { email, password });
+
+      // save auth info
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('userEmail', res.data.user.email);
-      localStorage.setItem('subProfiles', JSON.stringify(res.data.user.subProfiles));
-      navigate('/profiles');
+
+      // save subProfiles array
+      const subs = res.data.user.subProfiles || [];
+      localStorage.setItem('subProfiles', JSON.stringify(subs));
+
+      if (subs.length === 0) {
+        // no profiles yet: take them to the profile page to create one
+        navigate('/profiles');
+      } else if (subs.length === 1) {
+        // exactly one: auto-select it and continue
+        localStorage.setItem('activeSubProfile', JSON.stringify(subs[0]));
+        // notify any listeners
+        window.dispatchEvent(new Event('activeSubProfileChanged'));
+        // go to your main app route (change “/app” to whatever is your post-login landing)
+        navigate('/app');
+      } else {
+        // multiple: let them choose
+        navigate('/profiles');
+      }
     } catch (err) {
       setError(err.response?.data?.error || 'Login failed');
     }

@@ -8,6 +8,7 @@ import ResultsPage from './pages/ResultsPage';
 import CollectionsPage from './pages/CollectionPage';
 import LeaderboardPage from './pages/LeaderboardPage';
 import MazeCollectionPage from './pages/MazeCollectionPage';
+import LogoutPage from './pages/LogoutPage';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/collection" element={<CollectionsPage />} />
         <Route path="/leaderboard" element={<LeaderboardPage />} />
         <Route path="/mazes" element={<MazeCollectionPage />} />
+        <Route path="/logout" element={<LogoutPage />} />
       </Routes>
     </Router>
   );
