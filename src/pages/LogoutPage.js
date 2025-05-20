@@ -18,7 +18,7 @@ export default function LogoutPage() {
         // fire any global listeners
         window.dispatchEvent(new Event('activeSubProfileChanged'));
         // send them home
-        navigate('/login', { replace: true });
+        navigate('/', { replace: true });
       }
     }
     doLogout();

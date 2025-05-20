@@ -42,9 +42,12 @@ export default function LoginPage() {
 
   return (
     <div style={{
+      display: 'flex',              // <–– add this
+      justifyContent: 'center',     // <–– add this
+      alignItems: 'center',         // <–– add this
       background: '#ffe066',
       minHeight: '100vh',
-      padding: '2rem 1rem',
+      // padding: '2rem 1rem',
       boxSizing: 'border-box',
     }}>
       <div style={{
