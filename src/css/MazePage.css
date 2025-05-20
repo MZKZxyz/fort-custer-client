@@ -153,3 +153,77 @@ body {
   box-shadow: none;
 }
 
+/* Position the quit button (keep as is or style like login) */
+.back-btn {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background: red;
+  color: white;
+  border: 2px solid #000;
+  border-radius: 4px;
+  box-shadow: 4px 4px 0 #000;
+  cursor: pointer;
+  z-index: 100;
+}
+
+/* overlay dims the screen */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+/* the white “card” */
+.modal-content {
+  background: #fff;
+  padding: 1.5rem;
+  border: 4px solid #000;
+  border-radius: 8px;
+  box-shadow: 4px 4px 0 #000;
+  max-width: 320px;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* the question */
+.modal-content p {
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+/* button row */
+.modal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* base button style */
+.modal-buttons > button {
+  padding: 0.5rem 1.25rem;
+  border: 3px solid #000;
+  border-radius: 6px;
+  box-shadow: 3px 3px 0 #000;
+  font-weight: bold;
+  cursor: pointer;
+  background: #eee;
+  color: #000;
+}
+
+/* Yes: red background, white text */
+.modal-buttons > button:first-child {
+  background: red;
+  color: white;
+}
+
+/* Cancel keeps default #eee/black */
+
+

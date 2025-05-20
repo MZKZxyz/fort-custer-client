@@ -1,12 +1,11 @@
-// src/components/NavBar.js
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 const navItems = [
-  { label: 'Mazes',       icon: '🧩', path: '/mazes'      },
-  { label: 'Collection',  icon: '🏆', path: '/collection' },
-  { label: 'Leaderboard', icon: '📈', path: '/leaderboard'},
-  { label: 'Profile',     icon: '👤', path: '/profiles'   },
+  { label: 'Mazes',       icon: 'fort.png',       path: '/mazes'      },
+  { label: 'Collection',  icon: 'backpackMap.png',path: '/collection' },
+  { label: 'Leaderboard', icon: 'metalStar.png',  path: '/leaderboard'},
+  { label: '',     icon: '',             path: '/profiles'   },
 ];
 
 export default function NavBar() {
@@ -30,16 +29,39 @@ export default function NavBar() {
       bottom: 0,
       left: 0,
       right: 0,
-      height: '60px',
-      background: '#00aef0',      // theme blue
+      height: '80px',
+      background: '#00aef0',
       borderTop: '3px solid #000',
       display: 'flex',
       zIndex: 1000,
     }}>
       {navItems.map((item, i) => {
         const isActive = location.pathname === item.path;
-        const icon  = item.path === '/profiles' && profile?.avatar ? profile.avatar : item.icon;
-        const label = item.path === '/profiles' && profile?.name   ? profile.name   : item.label;
+        const isProfile = item.path === '/profiles';
+
+        // Determine raw icon: profile avatar or default icon
+        const rawIcon = isProfile && profile?.avatar
+          ? profile.avatar
+          : item.icon;
+        const isImage = typeof rawIcon === 'string' && /\.(png|jpe?g|svg|gif)$/.test(rawIcon);
+        const src = isImage
+          ? (rawIcon.startsWith('http') ? rawIcon : `/icons/${rawIcon}`)
+          : null;
+        const iconContent = isImage
+          ? <img
+              src={src}
+              alt={item.label}
+              style={{
+                width: '3rem',
+                height: '3rem',
+                borderRadius: isProfile ? '50%' : '0'
+              }}
+              onError={e => { e.currentTarget.onerror = null; }}
+            />
+          : <span style={{ fontSize: '1.6rem', lineHeight: 1 }}>{rawIcon}</span>;
+
+        // Only profile shows text label
+        const label = isProfile && (profile?.name || item.label);
 
         return (
           <div
@@ -60,16 +82,18 @@ export default function NavBar() {
               userSelect: 'none',
             }}
           >
-            <span style={{ fontSize: '1.4rem', lineHeight: 1 }}>{icon}</span>
-            <span style={{
-              fontSize: '0.65rem',
-              marginTop: '2px',
-              overflow: 'hidden',
-              whiteSpace: 'nowrap',
-              textOverflow: 'ellipsis'
-            }}>
-              {label}
-            </span>
+            {iconContent}
+            {isProfile && (
+              <span style={{
+                fontSize: '0.8rem',
+                marginTop: '2px',
+                overflow: 'hidden',
+                whiteSpace: 'nowrap',
+                textOverflow: 'ellipsis'
+              }}>
+                {label}
+              </span>
+            )}
           </div>
         );
       })}

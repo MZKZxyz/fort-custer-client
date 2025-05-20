@@ -50,7 +50,7 @@ export default function FieldKitPage() {
     <div style={{ padding: '1rem', paddingBottom: '80px', backgroundColor: '#ffe066', minHeight: '100vh' }}>
       <h2 style={{ textAlign: 'center', marginTop: 0 }}>
         <img
-          src="/images/backpackClosed.png"
+          src="/images/backpackMap.png"
           alt="Field Kit"
           style={{
             width: '32px',

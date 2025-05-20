@@ -96,14 +96,18 @@ export default function LeaderboardPage() {
       padding: '1rem',
       boxSizing: 'border-box',
     }}>
-      <h2 style={{
-        textAlign: 'center',
-        margin: '0 0 1rem',
-        fontSize: '2rem',
-        fontFamily: 'Arial Black, sans-serif',
-        color: '#fff'
-      }}>
-        🏅 Leaderboard
+      <h2 style={{textAlign: 'center', marginTop: 0 }}>
+        <img
+          src="/icons/metalStar.png"
+          alt="Sheriff Badge"
+          style={{
+            width: '32px',
+            height: '32px',
+            verticalAlign: 'middle',
+            marginRight: '0.5rem',
+          }}
+        />
+        Leaderboard
       </h2>
 
       {/* timeframe pills */}
