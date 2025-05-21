@@ -189,7 +189,7 @@ export default function MazeCollectionPage() {
               }
             >
               <span className="date-number">{date.getUTCDate()}</span>
-              {isDone && <span className="checkmark">✔</span>}
+              {isDone && inMonth && <span className="checkmark">✔</span>}
             </div>
           );
         })}

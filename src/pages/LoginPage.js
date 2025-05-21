@@ -30,7 +30,7 @@ export default function LoginPage() {
         // notify any listeners
         window.dispatchEvent(new Event('activeSubProfileChanged'));
         // go to your main app route (change “/app” to whatever is your post-login landing)
-        navigate('/app');
+        navigate('/mazes');
       } else {
         // multiple: let them choose
         navigate('/profiles');
