@@ -1,12 +1,11 @@
-import { useMemo, useEffect, useState } from 'react';
+import { useRef, useMemo, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import API from '../utils/api';
 // import NavBar from '../components/NavBar';
 import '../css/MazePage.css'; // Add CSS below to this file
 const PUBLIC = process.env.PUBLIC_URL;
 
-export default function MazePage() {
-  const preventSelect = (e) => e.preventDefault();
+const MazePage = () => {
   const navigate = useNavigate();
   const profile = useMemo(() => {
     return JSON.parse(localStorage.getItem('activeSubProfile'));
@@ -14,6 +13,21 @@ export default function MazePage() {
   const selectedDate = new Date(
     localStorage.getItem('selectedMazeDate') || new Date().toISOString()
   ).toISOString().slice(0, 10);
+
+  const containerRef = useRef(null);
+  const prevent = (e) => e.preventDefault();
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    // Use non-passive listeners to allow preventDefault
+    const opts = { passive: false };
+    const events = ['touchstart','touchmove','touchend','mousedown','contextmenu'];
+    events.forEach((evt) => el.addEventListener(evt, prevent, opts));
+    return () => {
+      events.forEach((evt) => el.removeEventListener(evt, prevent, opts));
+    };
+  }, []);
 
   // --- your existing state ---
   const [mazeData, setMazeData] = useState(null);
@@ -128,7 +142,7 @@ export default function MazePage() {
       }
       if (nextTile === 'E') {
         setPlayerPos(next);
-        setTimeout(() => handleFinish(), 150);
+        handleFinish();
         return;
       }
       setPlayerPos(next);
@@ -167,7 +181,7 @@ export default function MazePage() {
       setInventory(prev => prev.filter(i => i !== 'extinguisher'));
     } else if (nextTile === 'E') {
       setPlayerPos(next);
-      setTimeout(() => handleFinish(), 150);
+      handleFinish();
       return;
     }
     setPlayerPos(next);
@@ -221,11 +235,7 @@ export default function MazePage() {
   if (!mazeData) return <p>Loading maze...</p>;
 
   return (
-    <div className="maze-page"
-      onMouseDown={preventSelect}
-      onSelectStart={preventSelect}
-      onDragStart={preventSelect}
-      >
+    <div ref={containerRef} className="maze-page">
       {/* BACK / QUIT button */}
       <button
         className="back-btn"
@@ -326,3 +336,5 @@ export default function MazePage() {
     </div>
   );
 }
+
+export default MazePage;

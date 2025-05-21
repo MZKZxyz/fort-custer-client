@@ -5,6 +5,31 @@ html, body {
   overflow: hidden;
 }
 
+.maze-page,
+.maze-page * {
+  /* Prevent text selection */
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+
+  /* Prevent context callout (iOS) */
+  -webkit-touch-callout: none;
+
+  /* Prevent dragging */
+  -webkit-user-drag: none;
+
+  /* Disable default touch actions (scrolling, zooming) */
+  touch-action: none;
+  -ms-touch-action: none;
+}
+
+/* Transparent selection highlight */
+.maze-page::selection,
+.maze-page *::selection {
+  background: transparent;
+}
+
 .maze-container {
   display: flex;
   justify-content: center;
