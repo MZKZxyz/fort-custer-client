@@ -136,7 +136,16 @@ export default function SubProfilePage() {
   };
 
   return (
-    <div style={{ padding:'1rem', position:'relative' }}>
+    <div style={{ 
+      padding:'1rem', 
+      position:'relative' ,
+      backgroundImage: "url('/textures/blueGreenMazeBG.png')",
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+      // width:'100vw',
+      height:'100vh'
+      }}>
       {/* Logout */}
       <button
         onClick={handleLogoutClick}
