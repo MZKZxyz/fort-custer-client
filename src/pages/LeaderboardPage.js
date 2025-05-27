@@ -1,5 +1,5 @@
 // src/pages/LeaderboardPage.js
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import API from '../utils/api';
 import NavBar from '../components/NavBar';
 
@@ -59,24 +59,42 @@ export default function LeaderboardPage() {
   const [loading, setLoading]     = useState(true);
   const activeProfile             = JSON.parse(localStorage.getItem('activeSubProfile'));
 
-  const fetchScores = async () => {
+  const fetchScores = useCallback(async () => {
     setLoading(true);
     try {
       let qp = '';
-      if (timeframe === 'daily') qp  = `?date=${formatDate(refDate)}`;
-      if (timeframe === 'weekly') qp = `?start=${formatDate(refDate)}`;
+      if (timeframe === 'daily') {
+        qp = `?date=${formatDate(refDate)}`;
+      } else if (timeframe === 'weekly') {
+        qp = `?start=${formatDate(refDate)}`;
+      }
 
       const res = await API.get(`/leaderboard/${timeframe}${qp}`);
-      setScores(res.data || []);
+      let data = res.data || [];
+
+      // Sort: for weekly & alltime, by completed mazes desc, then aggregate time asc
+      if (timeframe === 'weekly' || timeframe === 'alltime') {
+        data.sort((a, b) => {
+          if (b.completedMazes !== a.completedMazes) {
+            return b.completedMazes - a.completedMazes;
+          }
+          return parseFloat(a.time) - parseFloat(b.time);
+        });
+      } else {
+        // Daily: best time ascending
+        data.sort((a, b) => parseFloat(a.time) - parseFloat(b.time));
+      }
+
+      setScores(data);
     } catch {
       setScores([]);
     }
     setLoading(false);
-  };
+  }, [timeframe, refDate]);
 
   useEffect(() => {
     fetchScores();
-  }, [timeframe, refDate]);
+  }, [fetchScores]);
 
   const shiftDate = (d) => {
     const nxt = new Date(refDate);
@@ -168,7 +186,7 @@ export default function LeaderboardPage() {
         </div>
       )}
 
-      {/* ─── static leaderboard “card” ───────────────────────────────────────────── */}
+      {/* leaderboard card */}
       <div style={{
         maxWidth: '600px',
         margin: '0 auto',
@@ -183,81 +201,44 @@ export default function LeaderboardPage() {
             <tr style={{ background: '#000', color: '#fff' }}>
               <th style={{ padding: '0.75rem', textAlign: 'left' }}>Rank</th>
               <th style={{ padding: '0.75rem', textAlign: 'left' }}>Player</th>
+              {timeframe !== 'daily' && <th style={{ padding: '0.75rem', textAlign: 'left' }}>Mazes</th>}
               <th style={{ padding: '0.75rem', textAlign: 'left' }}>{getTimeLabel(timeframe)}</th>
             </tr>
           </thead>
           <tbody>
             {loading
-              // show 5 skeleton rows while loading
               ? Array.from({ length: 5 }).map((_, i) => (
                   <tr key={i} style={{ background: i % 2 ? '#f9f9f9' : '#fff' }}>
-                    <td style={{ padding: '0.5rem 0.75rem' }}>
-                      <div style={{
-                        width: '2rem',
-                        height: '1rem',
-                        background: '#ddd',
-                        borderRadius: '4px',
-                      }}/>
-                    </td>
-                    <td style={{ padding: '0.5rem 0.75rem' }}>
-                      <div style={{
-                        width: '6rem',
-                        height: '1rem',
-                        background: '#ddd',
-                        borderRadius: '4px',
-                      }}/>
-                    </td>
-                    <td style={{ padding: '0.5rem 0.75rem' }}>
-                      <div style={{
-                        width: '3rem',
-                        height: '1rem',
-                        background: '#ddd',
-                        borderRadius: '4px',
-                      }}/>
-                    </td>
+                    <td style={{ padding: '0.5rem 0.75rem' }}><div style={{ width: '2rem', height: '1rem', background: '#ddd', borderRadius: '4px'}}/></td>
+                    <td style={{ padding: '0.5rem 0.75rem' }}><div style={{ width: '6rem', height: '1rem', background: '#ddd', borderRadius: '4px'}}/></td>
+                    {timeframe !== 'daily' && <td style={{ padding: '0.5rem 0.75rem' }}><div style={{ width: '3rem', height: '1rem', background: '#ddd', borderRadius: 4 }} /></td>}
+                    <td style={{ padding: '0.5rem 0.75rem' }}><div style={{ width: '3rem', height: '1rem', background: '#ddd', borderRadius: '4px'}}/></td>
                   </tr>
                 ))
-              // no scores
               : scores.length === 0 ? (
                   <tr>
-                    <td colSpan={3} style={{
-                      textAlign: 'center',
-                      padding: '2rem',
-                      fontStyle: 'italic',
-                    }}>
+                    <td colSpan={4} style={{ textAlign: 'center', padding: '2rem', fontStyle: 'italic' }}>
                       No scores yet for this {timeframe === 'daily' ? 'day' : 'week'}.
                     </td>
                   </tr>
-                )
-              // real data
-              : scores.map((e, i) => {
-                  const isActive = activeProfile?._id === e.subProfileId;
-                  const bg = i === 0
-                    ? '#ffebc8'   // gold
-                    : i === 1
-                      ? '#eceff1' // silver
-                      : i === 2
-                        ? '#f4ecec' // bronze
-                        : (i % 2 ? '#f9f9f9' : '#fff');
-                  return (
-                    <tr key={e.subProfileId} style={{
-                      backgroundColor: bg,
-                      fontWeight: isActive ? 'bold' : 'normal',
-                    }}>
-                      <td style={{ padding: '0.5rem 0.75rem' }}>
-                        {medalFor(i) || `#${i+1}`}
-                      </td>
-                      <td style={{ padding: '0.5rem 0.75rem' }}>{e.name}</td>
-                      <td style={{ padding: '0.5rem 0.75rem' }}>
-                        {parseFloat(e.time).toFixed(3)}s
-                      </td>
-                    </tr>
-                  );
-                })
-              }
-            </tbody>
-          </table>
-        </div>
+                ) : (
+                  scores.map((e, i) => {
+                    const isActive = activeProfile?._id === e.subProfileId;
+                    const mazes = timeframe === 'daily' ? 1 : e.completedMazes;
+                    const bg = i === 0 ? '#ffebc8' : i === 1 ? '#eceff1' : i === 2 ? '#f4ecec' : (i % 2 ? '#f9f9f9' : '#fff');
+                    return (
+                      <tr key={e.subProfileId} style={{ backgroundColor: bg, fontWeight: isActive ? 'bold' : 'normal' }}>
+                        <td style={{ padding: '0.5rem 0.75rem' }}>{medalFor(i) || `#${i+1}`}</td>
+                        <td style={{ padding: '0.5rem 0.75rem' }}>{e.name}</td>
+                        {timeframe !== 'daily' && <td style={{ padding: '0.5rem 0.75rem' }}>{mazes}</td>}
+                        <td style={{ padding: '0.5rem 0.75rem' }}>{parseFloat(e.time).toFixed(3)}s</td>
+                      </tr>
+                    );
+                  })
+                )}
+          </tbody>
+        </table>
+      </div>
       <NavBar />
     </div>
   );

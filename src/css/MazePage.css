@@ -4,6 +4,12 @@ html, body {
   overflow: hidden;
 }
 
+.maze-page {
+  background-color: #479743;
+  padding-top: 1rem;
+  height:100vh;
+}
+
 .maze-page,
 .maze-page * {
   /* Prevent text selection */

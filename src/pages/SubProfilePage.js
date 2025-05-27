@@ -139,10 +139,11 @@ export default function SubProfilePage() {
     <div style={{ 
       padding:'1rem', 
       position:'relative' ,
-      backgroundImage: "url('/textures/blueGreenMazeBG.png')",
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      backgroundRepeat: 'no-repeat',
+      background: '#479743',
+      // backgroundImage: "url('/textures/blueGreenMazeBG.png')",
+      // backgroundSize: 'cover',
+      // backgroundPosition: 'center',
+      // backgroundRepeat: 'no-repeat',
       // width:'100vw',
       height:'100vh'
       }}>
