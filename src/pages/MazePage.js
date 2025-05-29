@@ -249,7 +249,7 @@ const MazePage = () => {
         className="back-btn"
         onClick={() => setShowQuitModal(true)}
       >
-      ←
+      🢀
       </button>
       <div className="maze-banner" style={{
         backgroundImage: "url('/assets/mazeBanner.png')"
@@ -309,12 +309,12 @@ const MazePage = () => {
       </div>
       <div className="dpad">
         <div className="dpad-row">
-          <button className="dpad-btn" onClick={() => movePlayer('up')}>↑</button>
+          <button className="dpad-btn" onClick={() => movePlayer('up')}>🢙</button>
         </div>
         <div className="dpad-row">
-          <button className="dpad-btn" onClick={() => movePlayer('left')}>←</button>
-          <button className="dpad-btn" onClick={() => movePlayer('down')}>↓</button>
-          <button className="dpad-btn" onClick={() => movePlayer('right')}>→</button>
+          <button className="dpad-btn" onClick={() => movePlayer('left')}>🢘</button>
+          <button className="dpad-btn" onClick={() => movePlayer('down')}>🢛</button>
+          <button className="dpad-btn" onClick={() => movePlayer('right')}>🢚</button>
         </div>
       </div>     
 
