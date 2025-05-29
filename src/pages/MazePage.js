@@ -238,7 +238,33 @@ const MazePage = () => {
     month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC',
   });
 
-  if (!mazeData) return <p>Loading maze...</p>;
+  if (!mazeData) {
+    return (
+      <div
+        style={{
+          backgroundColor: '#90500E',   // pick any solid color you like
+          color: 'black',             // text color
+          position: 'fixed',
+          fontSize: '3rem',
+          top: 0,
+          left: 0,
+          width: '100vw',
+          height: '100vh',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          margin: 0,
+          padding: 0,
+          zIndex: 9999,              // make sure it sits on top
+        }}
+      >
+        <p style={{ margin: 0, fontSize: '1.5rem' }}>
+          Loading maze…
+        </p>
+      </div>
+    );
+  }
+  
 
   return (
     <div ref={containerRef} className="maze-page" style={{
