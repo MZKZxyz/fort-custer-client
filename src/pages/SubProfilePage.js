@@ -140,11 +140,6 @@ export default function SubProfilePage() {
       padding:'1rem', 
       position:'relative' ,
       background: '#479743',
-      // backgroundImage: "url('/textures/blueGreenMazeBG.png')",
-      // backgroundSize: 'cover',
-      // backgroundPosition: 'center',
-      // backgroundRepeat: 'no-repeat',
-      // width:'100vw',
       height:'100vh'
       }}>
       {/* Logout */}
@@ -251,7 +246,9 @@ export default function SubProfilePage() {
                   float: 'right',
                   background: 'none',
                   border: 'none',
-                  cursor: 'pointer'
+                  cursor: 'pointer',
+                  fontWeight: 'bold',
+                  fontSize: '1.25rem'
                 }}
               >⋮</button>
 

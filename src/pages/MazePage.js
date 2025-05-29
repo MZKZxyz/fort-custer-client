@@ -1,7 +1,6 @@
-import { useRef, useMemo, useEffect, useState } from 'react';
+import { useRef, useMemo, useEffect, useState, useCallback  } from 'react';
 import { useNavigate } from 'react-router-dom';
 import API from '../utils/api';
-// import NavBar from '../components/NavBar';
 import '../css/MazePage.css'; // Add CSS below to this file
 const PUBLIC = process.env.PUBLIC_URL;
 
@@ -20,7 +19,6 @@ const MazePage = () => {
   useEffect(() => {
     const el = containerRef.current;
     if (!el) return;
-    // Use non-passive listeners to allow preventDefault
     const opts = { passive: false };
     const events = ['touchstart','touchmove','touchend','mousedown','contextmenu'];
     events.forEach((evt) => el.addEventListener(evt, prevent, opts));
@@ -30,13 +28,14 @@ const MazePage = () => {
   }, []);
 
   // --- your existing state ---
-  const [mazeData, setMazeData] = useState(null);
-  const [mazeGrid, setMazeGrid] = useState([]);
-  const [playerPos, setPlayerPos] = useState([0, 0]);
-  const [inventory, setInventory] = useState([]);
+  const [mazeData, setMazeData]     = useState(null);
+  const [mazeGrid, setMazeGrid]     = useState([]);
+  const [playerPos, setPlayerPos]   = useState([0, 0]);
+  const [inventory, setInventory]   = useState([]);
 
-  // --- NEW state for quit modal ---
+  // --- quit modal & finished flag ---
   const [showQuitModal, setShowQuitModal] = useState(false);
+  const [finished, setFinished]           = useState(false);
 
   const VISION_RADIUS = 1; // can be 1 or 2
 
@@ -60,11 +59,13 @@ const MazePage = () => {
   };
 
   // --- timer state ---
-  const [startTime] = useState(performance.now());
+  const [startTime]    = useState(performance.now());
   const [displayTime, setDisplayTime] = useState('0:00.000');
 
   useEffect(() => {
+    let rafId;
     const update = () => {
+      if (finished) return;           // ← stop updating once finished
       const now = performance.now();
       const elapsed = now - startTime;
       const minutes = Math.floor(elapsed / 60000);
@@ -74,11 +75,11 @@ const MazePage = () => {
         .toString()
         .padStart(2, '0')}.${ms.toString().padStart(3, '0')}`;
       setDisplayTime(formatted);
-      requestAnimationFrame(update);
+      rafId = requestAnimationFrame(update);
     };
-    const rafId = requestAnimationFrame(update);
+    rafId = requestAnimationFrame(update);
     return () => cancelAnimationFrame(rafId);
-  }, [startTime]);
+  }, [startTime, finished]);
 
   // --- fetch maze on mount ---
   useEffect(() => {
@@ -105,21 +106,41 @@ const MazePage = () => {
     fetchMaze();
   }, [profile, selectedDate, navigate]);
 
-  // --- keyboard handler (guarded by quit-modal) ---
+  const handleFinish = useCallback(async () => {
+    setFinished(true);    // ← freeze timer & input immediately
+    try {
+      const res = await API.post('/maze/complete', {
+        subProfileId: profile._id,
+        date: selectedDate,
+      });
+      const { time, reward } = res.data;
+      localStorage.setItem('lastMazeTime', time);
+      if (reward) {
+        localStorage.setItem('lastReward', JSON.stringify(reward));
+      }
+      localStorage.removeItem('mazeStartTime');
+      navigate('/results');
+    } catch (err) {
+      console.error('Maze completion failed:', err);
+      alert(err.response?.data?.error || 'Something went wrong!');
+    }
+  }, [profile._id, selectedDate, navigate]);
+
+  // --- keyboard handler (guarded by quit-modal & finished) ---
   useEffect(() => {
     const handleKey = (e) => {
-      if (showQuitModal || !mazeGrid.length) return;
+      if (showQuitModal || finished || !mazeGrid.length) return;
 
       const [r, c] = playerPos;
       let next = [r, c];
-      if (e.key === 'ArrowUp') next = [r - 1, c];
-      if (e.key === 'ArrowDown') next = [r + 1, c];
-      if (e.key === 'ArrowLeft') next = [r, c - 1];
+      if (e.key === 'ArrowUp')    next = [r - 1, c];
+      if (e.key === 'ArrowDown')  next = [r + 1, c];
+      if (e.key === 'ArrowLeft')  next = [r, c - 1];
       if (e.key === 'ArrowRight') next = [r, c + 1];
 
       const [nr, nc] = next;
       const height = mazeGrid.length;
-      const width = mazeGrid[0].length;
+      const width  = mazeGrid[0].length;
       if (nr < 0 || nc < 0 || nr >= height || nc >= width) return;
 
       const nextTile = mazeGrid[nr][nc];
@@ -149,21 +170,21 @@ const MazePage = () => {
     };
     window.addEventListener('keydown', handleKey);
     return () => window.removeEventListener('keydown', handleKey);
-  }, [playerPos, mazeGrid, inventory, showQuitModal]);
+  }, [playerPos, mazeGrid, inventory, showQuitModal, finished, handleFinish]);
 
   // --- D-pad movement (also guarded) ---
   const movePlayer = (direction) => {
-    if (showQuitModal || !mazeGrid.length) return;
+    if (showQuitModal || finished || !mazeGrid.length) return;
     const [r, c] = playerPos;
     let next = [r, c];
-    if (direction === 'up') next = [r - 1, c];
-    if (direction === 'down') next = [r + 1, c];
-    if (direction === 'left') next = [r, c - 1];
+    if (direction === 'up')    next = [r - 1, c];
+    if (direction === 'down')  next = [r + 1, c];
+    if (direction === 'left')  next = [r, c - 1];
     if (direction === 'right') next = [r, c + 1];
 
     const [nr, nc] = next;
     const height = mazeGrid.length;
-    const width = mazeGrid[0].length;
+    const width  = mazeGrid[0].length;
     if (nr < 0 || nc < 0 || nr >= height || nc >= width) return;
 
     const nextTile = mazeGrid[nr][nc];
@@ -187,29 +208,10 @@ const MazePage = () => {
     setPlayerPos(next);
   };
 
-  const handleFinish = async () => {
-    try {
-      const res = await API.post('/maze/complete', {
-        subProfileId: profile._id,
-        date: selectedDate,
-      });
-      const { time, reward } = res.data;
-      localStorage.setItem('lastMazeTime', time);
-      if (reward) {
-        localStorage.setItem('lastReward', JSON.stringify(reward));
-      }
-      localStorage.removeItem('mazeStartTime');
-      navigate('/results');
-    } catch (err) {
-      console.error('Maze completion failed:', err);
-      alert(err.response?.data?.error || 'Something went wrong!');
-    }
-  };
-
   const renderCell = (cell, row, col) => {
     const isPlayer = playerPos[0] === row && playerPos[1] === col;
-    const visible = isVisible(row, col);
-    const bg = cell === '#' ? `url(textures/wall.png)` : `url(textures/floor.png)`;
+    const visible  = isVisible(row, col);
+    const bg       = cell === '#' ? `url(textures/wall.png)` : `url(textures/floor.png)`;
     return (
       <div
         key={`${row}-${col}`}
@@ -223,9 +225,9 @@ const MazePage = () => {
       >
         {visible && (
           isPlayer ? '🧍‍♂️' :
-          cell === 'X' ? '🧯' :
-          cell === 'F' ? '🔥' :
-          cell === 'E' ? '🏁' :
+          cell     === 'X' ? '🧯' :
+          cell     === 'F' ? '🔥' :
+          cell     === 'E' ? '🏁' :
           null
         )}
       </div>
@@ -286,6 +288,7 @@ const MazePage = () => {
         </div>
       </div>
 
+      {/* inventory & D-pad… */}
       <div style={{
         display: 'flex',
         alignItems: 'center',
@@ -307,7 +310,6 @@ const MazePage = () => {
           {inventory.includes('extinguisher') ? '🧯' : ''}
         </div>
       </div>
-
       <div className="dpad">
         <div className="dpad-row">
           <button className="dpad-btn" onClick={() => movePlayer('up')}>↑</button>
@@ -318,8 +320,6 @@ const MazePage = () => {
           <button className="dpad-btn" onClick={() => movePlayer('right')}>→</button>
         </div>
       </div>
-
-      {/* <NavBar /> */}
 
       {/* Quit Confirmation Modal */}
       {showQuitModal && (
@@ -335,6 +335,6 @@ const MazePage = () => {
       )}
     </div>
   );
-}
+};
 
 export default MazePage;
