@@ -234,29 +234,49 @@ const MazePage = () => {
     );
   };
 
+  const formattedDate = new Date(selectedDate).toLocaleDateString('en-US', {
+    month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC',
+  });
+
   if (!mazeData) return <p>Loading maze...</p>;
 
   return (
-    <div ref={containerRef} className="maze-page">
+    <div ref={containerRef} className="maze-page" style={{
+      backgroundImage: "url('/assets/fortBG.png')"
+    }}>
       {/* BACK / QUIT button */}
       <button
         className="back-btn"
         onClick={() => setShowQuitModal(true)}
       >
-        ← Quit
+      ←
       </button>
+      <div className="maze-banner" style={{
+        backgroundImage: "url('/assets/mazeBanner.png')"
+      }}/>
 
-      <h2 style={{ textAlign: 'center', margin: '1rem 0' }}>
-        {new Date(selectedDate).toLocaleDateString('en-US', {
-          month: 'long',
-          day: 'numeric',
-          year: 'numeric',
-          timeZone: 'UTC',
-        })}
-      </h2>
-      <p style={{ textAlign: 'center', fontSize: '1.25rem', margin: '0 0 1rem' }}>
-        ⏱ Time: {displayTime}
-      </p>
+      <div className="maze-hud">
+        {/* ── Column 1: Date on top, Timer below ── */}
+
+          <div className="maze-hud__item">
+            <span className="maze-hud__icon">📅</span>
+            <h2 className="maze-date">{formattedDate}</h2>
+          </div>
+          <div className="maze-hud__item">
+            <span className="maze-hud__icon">⏱</span>
+            <p className="maze-timer">{displayTime}</p>
+          </div>
+
+
+        {/* ── Column 2: Inventory slot ── */}
+
+          <div className="maze-hud__item">
+            <div className="maze-slot">
+              {inventory.includes('extinguisher') && '🧯'}
+            </div>
+          </div>
+
+      </div>
 
       <div className="maze-container">
         <div className="maze-grid" style={{ position: 'relative' }}>
@@ -287,29 +307,6 @@ const MazePage = () => {
           </div>
         </div>
       </div>
-
-      {/* inventory & D-pad… */}
-      <div style={{
-        display: 'flex',
-        alignItems: 'center',
-        gap: '0.5rem',
-        margin: '0.5rem 0',
-        fontSize: '1.25rem',
-        padding: '0 8px'
-      }}>
-        <div style={{
-          width: '40px',
-          height: '40px',
-          border: '2px solid #000',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          background: '#fff',
-          fontSize: '1.25rem',
-        }}>
-          {inventory.includes('extinguisher') ? '🧯' : ''}
-        </div>
-      </div>
       <div className="dpad">
         <div className="dpad-row">
           <button className="dpad-btn" onClick={() => movePlayer('up')}>↑</button>
@@ -319,7 +316,7 @@ const MazePage = () => {
           <button className="dpad-btn" onClick={() => movePlayer('down')}>↓</button>
           <button className="dpad-btn" onClick={() => movePlayer('right')}>→</button>
         </div>
-      </div>
+      </div>     
 
       {/* Quit Confirmation Modal */}
       {showQuitModal && (

@@ -4,10 +4,31 @@ html, body {
   overflow: hidden;
 }
 
+.maze-banner {
+  margin-top: .1rem;
+  /* full-width */
+  width: 100%;
+
+  /* pick a fixed height (or use padding to control aspect ratio) */
+  height: 60px;              /* adjust to suit your design */
+
+  /* make the BG image fit & center nicely */
+  background-size: contain;   /* or use cover to fill/crop */
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* space below before maze content */
+  margin-bottom: .5rem;
+  
+}
+
 .maze-page {
-  background-color: #479743;
+  background-color: #90500E;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   padding-top: 1rem;
-  height:100vh;
+  height: 100vh;
 }
 
 .maze-page,
@@ -48,6 +69,9 @@ html, body {
   flex-direction: column;
   width: 100%;
   max-width: 95vw;
+  border: 10px solid #6A3600;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .maze-row {
@@ -156,6 +180,8 @@ html, body {
   flex-direction: column;
   align-items: center;
   margin: 1rem 0;
+  /* background: linear-gradient(180deg, #814201 0%, #6A3600 100%);
+  border-radius: 8px; */
 }
 
 .dpad-row {
@@ -168,7 +194,7 @@ html, body {
   height: 60px;
   margin: 4px;
   font-size: 1.5rem;
-  background: #fff;
+  background: #B97927;
   border: 2px solid #000;
   border-radius: 10px;
   box-shadow: 2px 2px 0 #000;
@@ -257,4 +283,62 @@ html, body {
 
 /* Cancel keeps default #eee/black */
 
+/* 1) HUD container: center the panels in a row */
+.maze-hud {
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(180deg, #814201 0%, #6A3600 100%);
+  padding: 0.5rem;
+  border-radius: 8px;
+  margin: .5rem .5rem;
+}
+
+/* 2) Each little wood‐panel */
+.maze-hud__item {
+  width: max-content;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(180deg, #c38c3a 0%, #B97927 100%);
+  border: 2px solid #8C5B1D;
+  border-radius: 8px;
+  box-shadow:
+    inset 0 -2px 0 rgba(0,0,0,0.2),   /* highlight along top edge */
+    0 4px 8px rgba(0,0,0,0.15);       /* outer drop shadow */
+  padding: 0.1rem .5rem;
+  flex-shrink: 0;
+}
+
+/* 3) Icon spacing & size */
+.maze-hud__icon {
+  font-size: 1rem;
+  margin-right: 0.1rem;
+  color: #4a2f0c;
+}
+
+/* 4) Date & timer text */
+.maze-date,
+.maze-timer {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #4a2f0c;
+  text-align: center;
+  font-family: 'Source Code Pro', Consolas, Menlo, monospace;
+  text-transform: uppercase;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* 5) Inventory slot (white box inside its panel) */
+.maze-slot {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #000;
+  border-radius: 6px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
 
