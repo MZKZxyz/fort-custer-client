@@ -242,8 +242,8 @@ const MazePage = () => {
     return (
       <div
         style={{
-          backgroundColor: '#90500E',   // pick any solid color you like
-          color: 'black',             // text color
+          backgroundColor: '#542700',   // pick any solid color you like
+          color: '#B97927',             // text color
           position: 'fixed',
           fontSize: '3rem',
           top: 0,
