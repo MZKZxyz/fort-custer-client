@@ -7,19 +7,45 @@ export default function ResultsPage() {
   const [reward, setReward] = useState(null);
   const navigate = useNavigate();
 
+  // On mount, load lastTime/reward and ensure selectedMazeDate is set
   useEffect(() => {
     const lastTime = localStorage.getItem('lastMazeTime');
     if (lastTime) setTime(Number(lastTime));
 
     const rewardData = JSON.parse(localStorage.getItem('lastReward'));
     if (rewardData) setReward(rewardData);
+
+    // If this is first render and no selectedMazeDate exists,
+    // seed it to today so Replay still works
+    if (!localStorage.getItem('selectedMazeDate')) {
+      const todayStr = new Date().toISOString().split('T')[0];
+      localStorage.setItem('selectedMazeDate', todayStr);
+    }
   }, []);
 
+  // Helpers
   const formatTime = (seconds) => {
     const ms = seconds * 1000;
     const date = new Date(ms);
     return date.toISOString().substr(14, 9); // mm:ss.SSS
   };
+
+  // What date did we just play?
+  const lastPlayedDate = localStorage.getItem('selectedMazeDate');
+
+  // Today in UTC (YYYY-MM-DD)
+  const todayUTC = new Date().toISOString().split('T')[0];
+
+  // Compute next-day
+  const getNextDate = () => {
+    const d = new Date(lastPlayedDate);
+    d.setDate(d.getDate() + 1);
+    return d.toISOString().split('T')[0];
+  };
+  const nextDate = getNextDate();
+
+  // Only playable if nextDate <= todayUTC
+  const nextPlayable = nextDate <= todayUTC;
 
   return (
     <div style={{
@@ -30,7 +56,9 @@ export default function ResultsPage() {
       color: '#000',
       textAlign: 'center',
     }}>
-      <h2 style={{ fontSize: '2rem', marginBottom: '1rem' }}>Maze Complete!</h2>
+      <h2 style={{ fontSize: '2rem', marginBottom: '1rem' }}>
+        Maze Complete!
+      </h2>
 
       {time !== null && (
         <p style={{ fontSize: '1.25rem' }}>
@@ -50,9 +78,9 @@ export default function ResultsPage() {
             <img
               src={`/images/${reward.image}`}
               alt={reward.name}
-              style={{ width: '64px', height: '64px', objectFit: 'contain' }}
+              style={{ width: 200, height: 200, objectFit: 'contain' }}
             />
-            <span style={{ fontSize: '1.5rem', marginTop: '0.5rem' }}>
+            <span style={{ fontSize: '1.5rem', marginTop: 8 }}>
               {reward.name}
             </span>
           </div>
@@ -63,6 +91,7 @@ export default function ResultsPage() {
         </p>
       )}
 
+      {/* Replay always available */}
       <button
         onClick={() => navigate('/maze')}
         style={{
@@ -75,9 +104,34 @@ export default function ResultsPage() {
           border: '2px solid #000',
           marginTop: '2rem',
           boxShadow: '4px 4px 0 #000',
+          cursor: 'pointer',
         }}
       >
-        Play Again
+        Replay Maze
+      </button>
+
+      {/* Next Maze (disabled if tomorrow is not yet unlocked) */}
+      <button
+        onClick={() => {
+          if (!nextPlayable) return;
+          localStorage.setItem('selectedMazeDate', nextDate);
+          navigate('/maze');
+        }}
+        disabled={!nextPlayable}
+        style={{
+          backgroundColor: nextPlayable ? '#4CAF50' : '#aaa',
+          color: '#fff',
+          fontSize: '1.2rem',
+          fontWeight: 'bold',
+          padding: '1rem',
+          width: '100%',
+          border: '2px solid #000',
+          marginTop: '1rem',
+          boxShadow: nextPlayable ? '4px 4px 0 #000' : 'none',
+          cursor: nextPlayable ? 'pointer' : 'not-allowed',
+        }}
+      >
+        {nextPlayable ? 'Next Maze' : 'Next Unavailable'}
       </button>
 
       <NavBar />
