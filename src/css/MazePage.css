@@ -118,7 +118,7 @@ html, body {
   inset: 0;                   /* fill the entire grid */
   background-repeat: repeat;
   background-size: cover;     /* you can tweak this to “zoom out” the pattern */
-  opacity: .97;
+  /* opacity: .97; */
   pointer-events: none;
   /* carve out a hole via mask-image which we’ll drive from JS */
   mask-image: radial-gradient(
@@ -138,6 +138,7 @@ html, body {
   position: absolute;
   inset: 0;
   background-repeat: repeat;
+  background-size: 200px 200px;
   mask-image: radial-gradient(
     circle at var(--px) var(--py),
     transparent var(--rad),
@@ -211,12 +212,22 @@ html, body {
   box-shadow: none;
 }
 
+.dpad-btn img {
+  /* make the image fill the button, preserving aspect ratio */
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+  display: block;
+}
+
 /* Position the quit button (keep as is or style like login) */
 .back-btn {
+  width: 50px;
+  height: 50px;
   position: absolute;
   top: 1rem;
   left: 1rem;
-  padding: 0.5rem 1rem;
+  padding: 0.75rem .75rem;
   font-size: 1.2rem;
   background: #B97927;
   color: #4a2f0c;
@@ -225,6 +236,14 @@ html, body {
   box-shadow: 4px 4px 0 #000;
   cursor: pointer;
   z-index: 100;
+}
+
+.back-btn img {
+  /* make the image fill the button, preserving aspect ratio */
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
 }
 
 /* overlay dims the screen */
@@ -339,7 +358,7 @@ html, body {
   border-radius: 8px;
   background: #bb996c;
   display: flex;
-  
+
   align-items: center;
   justify-content: center;
   font-size: 1.25rem;

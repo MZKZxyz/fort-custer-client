@@ -275,7 +275,7 @@ const MazePage = () => {
         className="back-btn"
         onClick={() => setShowQuitModal(true)}
       >
-      ↩
+        <img src="/icons/arrowBack.png" alt="Back" />
       </button>
       <div className="maze-banner" style={{
         backgroundImage: "url('/assets/mazeBanner.png')"
@@ -315,16 +315,7 @@ const MazePage = () => {
             <div
               className="maze-fog-main"
               style={{
-                backgroundImage: `url(${PUBLIC}/textures/fog2.png)`,
-                '--px': `${((playerPos[1] + 0.5) / mazeGrid[0].length) * 100}%`,
-                '--py': `${((playerPos[0] + 0.5) / mazeGrid.length) * 100}%`,
-                '--rad': `${((VISION_RADIUS + 0.5) / Math.max(mazeGrid.length, mazeGrid[0].length)) * 100}%`
-              }}
-            />
-            <div
-              className="maze-fog-noise"
-              style={{
-                backgroundImage: `url(${PUBLIC}/textures/fog-noise.png)`,
+                backgroundImage: `url(${PUBLIC}/textures/clouds.png)`,
                 '--px': `${((playerPos[1] + 0.5) / mazeGrid[0].length) * 100}%`,
                 '--py': `${((playerPos[0] + 0.5) / mazeGrid.length) * 100}%`,
                 '--rad': `${((VISION_RADIUS + 0.5) / Math.max(mazeGrid.length, mazeGrid[0].length)) * 100}%`
@@ -335,12 +326,20 @@ const MazePage = () => {
       </div>
       <div className="dpad">
         <div className="dpad-row">
-          <button className="dpad-btn" onClick={() => movePlayer('up')}>⬆</button>
+          <button className="dpad-btn" onClick={() => movePlayer('up')}>
+          <img src="/icons/arrowUp.png" alt="Up" />
+          </button>
         </div>
         <div className="dpad-row">
-          <button className="dpad-btn" onClick={() => movePlayer('left')}>⬅</button>
-          <button className="dpad-btn" onClick={() => movePlayer('down')}>⬇</button>
-          <button className="dpad-btn" onClick={() => movePlayer('right')}>➡</button>
+          <button className="dpad-btn" onClick={() => movePlayer('left')}>
+            <img src="/icons/arrowLeft.png" alt="Left" />
+          </button>
+          <button className="dpad-btn" onClick={() => movePlayer('down')}>
+            <img src="/icons/arrowDown.png" alt="Down" />
+          </button>
+          <button className="dpad-btn" onClick={() => movePlayer('right')}>
+            <img src="/icons/arrowRight.png" alt="Right" />
+          </button>
         </div>
       </div>     
 
