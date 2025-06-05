@@ -37,6 +37,19 @@ const MazePage = () => {
   const [showQuitModal, setShowQuitModal] = useState(false);
   const [finished, setFinished]           = useState(false);
 
+  // pick one teepee image for the goal when the component mounts
+  const teepeeImages = useMemo(
+    () =>
+      Array.from({ length: 9 }, (_, i) =>
+        `${PUBLIC}/images/teepee_${String(i + 1).padStart(2, '0')}.png`
+      ),
+    []
+  );
+  const goalImg = useMemo(
+    () => teepeeImages[Math.floor(Math.random() * teepeeImages.length)],
+    [teepeeImages]
+  );
+
   const VISION_RADIUS = 1; // can be 1 or 2
 
   const isVisible = (row, col) => {
@@ -227,7 +240,13 @@ const MazePage = () => {
           isPlayer ? '🧍‍♂️' :
           cell     === 'X' ? '🧯' :
           cell     === 'F' ? '🔥' :
-          cell     === 'E' ? '🏁' :
+          cell     === 'E' ? (
+            <img
+              src={goalImg}
+              alt="Goal"
+              style={{ width: '90%', height: '90%', objectFit: 'contain' }}
+            />
+          ) :
           null
         )}
       </div>
