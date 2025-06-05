@@ -3,10 +3,10 @@ import axios from 'axios';
 
 const API = axios.create({
   baseURL:
-    process.env.REACT_APP_API_URL ||
     (process.env.NODE_ENV === 'production'
-      ? 'https://fort-custer-api.up.railway.app/api'
-      : 'http://localhost:5000/api'),
+      ? process.env.REACT_APP_API_URL
+      : 'http://localhost:5000/api'
+    ),
 });
 
 API.interceptors.request.use((config) => {
