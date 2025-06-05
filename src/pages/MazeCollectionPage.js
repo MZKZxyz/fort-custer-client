@@ -12,7 +12,10 @@ export default function MazeCollectionPage() {
   const navigate = useNavigate();
   const [completedMap, setCompletedMap] = useState({});
   const [todayStr, setTodayStr] = useState(null);
-  const [currentMonth, setCurrentMonth] = useState(new Date(Date.UTC(2025, 4, 1))); // May 2025
+  const now = new Date();
+  const [currentMonth, setCurrentMonth] = useState(
+    new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), 1))
+  );
   const [selectedDate, setSelectedDate] = useState(null);
 
   const profile = useMemo(() => {
@@ -30,6 +33,16 @@ export default function MazeCollectionPage() {
         const res = await API.get(`/users/subprofile/${profile._id}`);
         setCompletedMap(res.data.subProfile.progress || {});
         setTodayStr(res.data.today);
+
+        const rawToday = new Date(res.data.today);
+        const monthStart = new Date(
+          Date.UTC(rawToday.getUTCFullYear(), rawToday.getUTCMonth(), 1)
+        );
+        const minMonth = new Date(Date.UTC(2025, 4, 1));
+        const maxMonth = new Date(Date.UTC(2025, 8, 1));
+        const clampedMonth =
+          monthStart < minMonth ? minMonth : monthStart > maxMonth ? maxMonth : monthStart;
+        setCurrentMonth(clampedMonth);
       } catch (err) {
         console.error('Failed to load progress:', err);
       }
