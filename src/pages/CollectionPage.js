@@ -77,29 +77,36 @@ export default function FieldKitPage() {
               marginTop: '1rem',
             }}
           >
-            {slots.map((item, idx) => (
-              <div
-                key={idx}
-                onClick={() => item && setSelectedItem(item)}
-                style={{
-                  width: '100px',
-                  height: '100px',
-                  border: '2px solid black',
-                  borderRadius: '10px',
-                  background: '#fff',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  flexDirection: 'column',
-                  cursor: item ? 'pointer' : 'default',
-                  boxShadow: '4px 4px 0 #000',
-                  position: 'relative',
-                }}
-              >
-                {item ? (
-                  <> 
-                    <img
-                      src={`/images/${item.image}`}
+            {slots.map((item, idx) => {
+              const isSelected =
+                item && selectedItem &&
+                ((selectedItem._id && item._id && selectedItem._id === item._id) ||
+                  selectedItem === item);
+              return (
+                <div
+                  key={idx}
+                  onClick={() => item && setSelectedItem(item)}
+                  style={{
+                    width: '100px',
+                    height: '100px',
+                    border: isSelected ? '2px solid #ff0' : '2px solid black',
+                    borderRadius: '10px',
+                    background: isSelected ? '#fff9c4' : '#fff',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexDirection: 'column',
+                    cursor: item ? 'pointer' : 'default',
+                    boxShadow: isSelected
+                      ? '0 0 0 2px #ff0, 4px 4px 0 #000'
+                      : '4px 4px 0 #000',
+                    position: 'relative',
+                  }}
+                >
+                  {item ? (
+                    <>
+                      <img
+                        src={`/images/${item.image}`}
                       alt={item.name}
                       style={{
                         width: '90%',
@@ -124,7 +131,8 @@ export default function FieldKitPage() {
                   </>
                 ) : null}
               </div>
-            ))}
+              );
+            })}
           </div>
 
           {/* Pagination Controls */}
