@@ -52,6 +52,20 @@ const MazePage = () => {
 
   const VISION_RADIUS = 1; // can be 1 or 2
 
+  // radius of the visible circle as percentage of grid size
+  const baseRadius = useMemo(() => {
+    if (!mazeGrid.length) return 0;
+    const size = Math.max(mazeGrid.length, mazeGrid[0].length);
+    return ((VISION_RADIUS + 0.5) / size) * 100;
+  }, [mazeGrid]);
+
+  const [fogRadius, setFogRadius] = useState(baseRadius);
+  const [closing, setClosing] = useState(false);
+
+  useEffect(() => {
+    setFogRadius(baseRadius);
+  }, [baseRadius]);
+
   const isVisible = (row, col) => {
     const [pr, pc] = playerPos;
     return (
@@ -139,6 +153,26 @@ const MazePage = () => {
     }
   }, [profile._id, selectedDate, navigate]);
 
+  // play fog closing animation then call handleFinish
+  useEffect(() => {
+    if (!closing) return;
+    const duration = 3000;
+    const start = performance.now();
+    const startRadius = baseRadius;
+    let raf;
+    const step = (now) => {
+      const progress = Math.min((now - start) / duration, 1);
+      setFogRadius(startRadius * (1 - progress));
+      if (progress < 1) {
+        raf = requestAnimationFrame(step);
+      } else {
+        handleFinish();
+      }
+    };
+    raf = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(raf);
+  }, [closing, baseRadius, handleFinish]);
+
   // --- keyboard handler (guarded by quit-modal & finished) ---
   useEffect(() => {
     const handleKey = (e) => {
@@ -176,7 +210,8 @@ const MazePage = () => {
       }
       if (nextTile === 'E') {
         setPlayerPos(next);
-        handleFinish();
+        setFinished(true);
+        setClosing(true);
         return;
       }
       setPlayerPos(next);
@@ -215,7 +250,8 @@ const MazePage = () => {
       setInventory(prev => prev.filter(i => i !== 'extinguisher'));
     } else if (nextTile === 'E') {
       setPlayerPos(next);
-      handleFinish();
+      setFinished(true);
+      setClosing(true);
       return;
     }
     setPlayerPos(next);
@@ -337,7 +373,7 @@ const MazePage = () => {
                 backgroundImage: `url(${PUBLIC}/textures/clouds.png)`,
                 '--px': `${((playerPos[1] + 0.5) / mazeGrid[0].length) * 100}%`,
                 '--py': `${((playerPos[0] + 0.5) / mazeGrid.length) * 100}%`,
-                '--rad': `${((VISION_RADIUS + 0.5) / Math.max(mazeGrid.length, mazeGrid[0].length)) * 100}%`
+                '--rad': `${fogRadius}%`
               }}
             />
           </div>

@@ -5,6 +5,7 @@ import NavBar from '../components/NavBar';
 export default function ResultsPage() {
   const [time, setTime] = useState(null);
   const [reward, setReward] = useState(null);
+  const [revealed, setRevealed] = useState(false);
   const navigate = useNavigate();
 
   // On mount, load lastTime/reward and ensure selectedMazeDate is set
@@ -47,6 +48,8 @@ export default function ResultsPage() {
   // Only playable if nextDate <= todayUTC
   const nextPlayable = nextDate <= todayUTC;
 
+  const actionsDisabled = reward && !revealed;
+
   return (
     <div style={{
       backgroundColor: '#fff66c',
@@ -75,14 +78,31 @@ export default function ResultsPage() {
             alignItems: 'center',
             margin: '1rem 0'
           }}>
-            <img
-              src={`/images/${reward.image}`}
-              alt={reward.name}
-              style={{ width: 200, height: 200, objectFit: 'contain' }}
-            />
-            <span style={{ fontSize: '1.5rem', marginTop: 8 }}>
-              {reward.name}
-            </span>
+            {revealed ? (
+              <>
+                <img
+                  src={`/images/${reward.image}`}
+                  alt={reward.name}
+                  style={{ width: 200, height: 200, objectFit: 'contain' }}
+                />
+                <span style={{ fontSize: '1.5rem', marginTop: 8 }}>
+                  {reward.name}
+                </span>
+              </>
+            ) : (
+              <div
+                onClick={() => setRevealed(true)}
+                style={{
+                  width: 200,
+                  height: 200,
+                  backgroundImage: 'url(/images/crate.png)',
+                  backgroundSize: 'contain',
+                  backgroundRepeat: 'no-repeat',
+                  backgroundPosition: 'center',
+                  cursor: 'pointer'
+                }}
+              />
+            )}
           </div>
         </>
       ) : (
@@ -94,8 +114,9 @@ export default function ResultsPage() {
       {/* Replay always available */}
       <button
         onClick={() => navigate('/maze')}
+        disabled={actionsDisabled}
         style={{
-          backgroundColor: '#00aef0',
+          backgroundColor: actionsDisabled ? '#aaa' : '#00aef0',
           color: '#fff',
           fontSize: '1.2rem',
           fontWeight: 'bold',
@@ -103,8 +124,8 @@ export default function ResultsPage() {
           width: '100%',
           border: '2px solid #000',
           marginTop: '2rem',
-          boxShadow: '4px 4px 0 #000',
-          cursor: 'pointer',
+          boxShadow: actionsDisabled ? 'none' : '4px 4px 0 #000',
+          cursor: actionsDisabled ? 'not-allowed' : 'pointer',
         }}
       >
         Replay Maze
@@ -113,13 +134,14 @@ export default function ResultsPage() {
       {/* Next Maze (disabled if tomorrow is not yet unlocked) */}
       <button
         onClick={() => {
-          if (!nextPlayable) return;
+          if (!nextPlayable || actionsDisabled) return;
           localStorage.setItem('selectedMazeDate', nextDate);
           navigate('/maze');
         }}
-        disabled={!nextPlayable}
+        disabled={!nextPlayable || actionsDisabled}
         style={{
-          backgroundColor: nextPlayable ? '#4CAF50' : '#aaa',
+          backgroundColor:
+            !nextPlayable || actionsDisabled ? '#aaa' : '#4CAF50',
           color: '#fff',
           fontSize: '1.2rem',
           fontWeight: 'bold',
@@ -127,8 +149,10 @@ export default function ResultsPage() {
           width: '100%',
           border: '2px solid #000',
           marginTop: '1rem',
-          boxShadow: nextPlayable ? '4px 4px 0 #000' : 'none',
-          cursor: nextPlayable ? 'pointer' : 'not-allowed',
+          boxShadow:
+            !nextPlayable || actionsDisabled ? 'none' : '4px 4px 0 #000',
+          cursor:
+            !nextPlayable || actionsDisabled ? 'not-allowed' : 'pointer',
         }}
       >
         {nextPlayable ? 'Next Maze' : 'Next Unavailable'}
