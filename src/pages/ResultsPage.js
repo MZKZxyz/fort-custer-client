@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import NavBar from '../components/NavBar';
+import '../css/ResultsPage.css';
 
 export default function ResultsPage() {
   const [time, setTime] = useState(null);
   const [reward, setReward] = useState(null);
   const [revealed, setRevealed] = useState(false);
+  const [opening, setOpening] = useState(false);
   const navigate = useNavigate();
 
   // On mount, load lastTime/reward and ensure selectedMazeDate is set
@@ -48,6 +50,7 @@ export default function ResultsPage() {
   // Only playable if nextDate <= todayUTC
   const nextPlayable = nextDate <= todayUTC;
 
+  const showActions = reward ? revealed : true;
   const actionsDisabled = reward && !revealed;
 
   return (
@@ -83,6 +86,7 @@ export default function ResultsPage() {
                 <img
                   src={`/images/${reward.image}`}
                   alt={reward.name}
+                  className="reveal"
                   style={{ width: 200, height: 200, objectFit: 'contain' }}
                 />
                 <span style={{ fontSize: '1.5rem', marginTop: 8 }}>
@@ -91,16 +95,15 @@ export default function ResultsPage() {
               </>
             ) : (
               <div
-                onClick={() => setRevealed(true)}
-                style={{
-                  width: 200,
-                  height: 200,
-                  backgroundImage: 'url(/images/crate.png)',
-                  backgroundSize: 'contain',
-                  backgroundRepeat: 'no-repeat',
-                  backgroundPosition: 'center',
-                  cursor: 'pointer'
+                onClick={() => {
+                  if (opening) return;
+                  setOpening(true);
+                  setTimeout(() => {
+                    setRevealed(true);
+                    setOpening(false);
+                  }, 600);
                 }}
+                className={`crate${opening ? ' opening' : ''}`}
               />
             )}
           </div>
@@ -111,52 +114,56 @@ export default function ResultsPage() {
         </p>
       )}
 
-      {/* Replay always available */}
-      <button
-        onClick={() => navigate('/maze')}
-        disabled={actionsDisabled}
-        style={{
-          backgroundColor: actionsDisabled ? '#aaa' : '#00aef0',
-          color: '#fff',
-          fontSize: '1.2rem',
-          fontWeight: 'bold',
-          padding: '1rem',
-          width: '100%',
-          border: '2px solid #000',
-          marginTop: '2rem',
-          boxShadow: actionsDisabled ? 'none' : '4px 4px 0 #000',
-          cursor: actionsDisabled ? 'not-allowed' : 'pointer',
-        }}
-      >
-        Replay Maze
-      </button>
+      {showActions && (
+        <>
+          {/* Replay always available */}
+          <button
+            onClick={() => navigate('/maze')}
+            disabled={actionsDisabled}
+            style={{
+              backgroundColor: actionsDisabled ? '#aaa' : '#00aef0',
+              color: '#fff',
+              fontSize: '1.2rem',
+              fontWeight: 'bold',
+              padding: '1rem',
+              width: '100%',
+              border: '2px solid #000',
+              marginTop: '2rem',
+              boxShadow: actionsDisabled ? 'none' : '4px 4px 0 #000',
+              cursor: actionsDisabled ? 'not-allowed' : 'pointer',
+            }}
+          >
+            Replay Maze
+          </button>
 
-      {/* Next Maze (disabled if tomorrow is not yet unlocked) */}
-      <button
-        onClick={() => {
-          if (!nextPlayable || actionsDisabled) return;
-          localStorage.setItem('selectedMazeDate', nextDate);
-          navigate('/maze');
-        }}
-        disabled={!nextPlayable || actionsDisabled}
-        style={{
-          backgroundColor:
-            !nextPlayable || actionsDisabled ? '#aaa' : '#4CAF50',
-          color: '#fff',
-          fontSize: '1.2rem',
-          fontWeight: 'bold',
-          padding: '1rem',
-          width: '100%',
-          border: '2px solid #000',
-          marginTop: '1rem',
-          boxShadow:
-            !nextPlayable || actionsDisabled ? 'none' : '4px 4px 0 #000',
-          cursor:
-            !nextPlayable || actionsDisabled ? 'not-allowed' : 'pointer',
-        }}
-      >
-        {nextPlayable ? 'Next Maze' : 'Next Unavailable'}
-      </button>
+          {/* Next Maze (disabled if tomorrow is not yet unlocked) */}
+          <button
+            onClick={() => {
+              if (!nextPlayable || actionsDisabled) return;
+              localStorage.setItem('selectedMazeDate', nextDate);
+              navigate('/maze');
+            }}
+            disabled={!nextPlayable || actionsDisabled}
+            style={{
+              backgroundColor:
+                !nextPlayable || actionsDisabled ? '#aaa' : '#4CAF50',
+              color: '#fff',
+              fontSize: '1.2rem',
+              fontWeight: 'bold',
+              padding: '1rem',
+              width: '100%',
+              border: '2px solid #000',
+              marginTop: '1rem',
+              boxShadow:
+                !nextPlayable || actionsDisabled ? 'none' : '4px 4px 0 #000',
+              cursor:
+                !nextPlayable || actionsDisabled ? 'not-allowed' : 'pointer',
+            }}
+          >
+            {nextPlayable ? 'Next Maze' : 'Next Unavailable'}
+          </button>
+        </>
+      )}
 
       <NavBar />
     </div>
