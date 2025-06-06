@@ -366,13 +366,15 @@ html, body {
 
 .thought-bubble {
   position: absolute;
-  top: -1rem;
+  /* place bubble well above the player so it doesn't overlap */
+  top: -2.5rem;
   left: 50%;
   transform: translateX(-50%);
   pointer-events: none;
-  font-size: 1.5rem;
-  width: 2.4em;
-  height: 2.4em;
+  /* enlarge the bubble so the emoji inside has some padding */
+  font-size: 2rem;
+  width: 3em;
+  height: 3em;
 }
 
 .thought-bubble::before {
@@ -382,6 +384,7 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 2.5em; /* ensure bubble shape dwarfs the icon */
 }
 
 .bubble-icon {
