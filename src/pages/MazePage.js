@@ -134,7 +134,8 @@ const MazePage = () => {
   }, [profile, selectedDate, navigate]);
 
   const handleFinish = useCallback(async () => {
-    setFinished(true);    // ← freeze timer & input immediately
+    // freeze timer & input immediately
+    setFinished(true);
     try {
       const res = await API.post('/maze/complete', {
         subProfileId: profile._id,
@@ -146,14 +147,13 @@ const MazePage = () => {
         localStorage.setItem('lastReward', JSON.stringify(reward));
       }
       localStorage.removeItem('mazeStartTime');
-      navigate('/results');
     } catch (err) {
       console.error('Maze completion failed:', err);
       alert(err.response?.data?.error || 'Something went wrong!');
     }
-  }, [profile._id, selectedDate, navigate]);
+  }, [profile._id, selectedDate]);
 
-  // play fog closing animation then call handleFinish
+  // play fog closing animation then navigate to results
   useEffect(() => {
     if (!closing) return;
     const duration = 3000;
@@ -166,12 +166,12 @@ const MazePage = () => {
       if (progress < 1) {
         raf = requestAnimationFrame(step);
       } else {
-        handleFinish();
+        navigate('/results');
       }
     };
     raf = requestAnimationFrame(step);
     return () => cancelAnimationFrame(raf);
-  }, [closing, baseRadius, handleFinish]);
+  }, [closing, baseRadius, navigate]);
 
   // --- keyboard handler (guarded by quit-modal & finished) ---
   useEffect(() => {
@@ -210,7 +210,7 @@ const MazePage = () => {
       }
       if (nextTile === 'E') {
         setPlayerPos(next);
-        setFinished(true);
+        handleFinish();
         setClosing(true);
         return;
       }
@@ -250,7 +250,7 @@ const MazePage = () => {
       setInventory(prev => prev.filter(i => i !== 'extinguisher'));
     } else if (nextTile === 'E') {
       setPlayerPos(next);
-      setFinished(true);
+      handleFinish();
       setClosing(true);
       return;
     }
