@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import API from '../utils/api';
 import NavBar from '../components/NavBar';
 
@@ -6,9 +6,22 @@ export default function FieldKitPage() {
   const [items, setItems] = useState([]);
   const [selectedItem, setSelectedItem] = useState(null);
   const [currentPage, setCurrentPage] = useState(0);
+  const [selectedCategory, setSelectedCategory] = useState('all');
 
   const itemsPerPage = 12;
-  const totalPages = Math.ceil(items.length / itemsPerPage);
+
+  // Compute list of unique categories plus an "all" option
+  const categories = useMemo(() => {
+    const set = new Set(items.map((it) => it.category));
+    return ['all', ...Array.from(set).sort()];
+  }, [items]);
+
+  const filteredItems =
+    selectedCategory === 'all'
+      ? items
+      : items.filter((it) => it.category === selectedCategory);
+
+  const totalPages = Math.ceil(filteredItems.length / itemsPerPage);
 
   useEffect(() => {
     const profile = JSON.parse(localStorage.getItem('activeSubProfile'));
@@ -27,15 +40,15 @@ export default function FieldKitPage() {
   }, []);
 
   // Adjust currentPage if out of bounds when items change
-  useEffect(() => {
-    if (currentPage >= totalPages) {
-      setCurrentPage(totalPages > 0 ? totalPages - 1 : 0);
-      setSelectedItem(null);
-    }
-  }, [items.length, totalPages, currentPage]);
+useEffect(() => {
+  if (currentPage >= totalPages) {
+    setCurrentPage(totalPages > 0 ? totalPages - 1 : 0);
+    setSelectedItem(null);
+  }
+}, [filteredItems.length, totalPages, currentPage]);
 
-  // Slice items for current page
-  const pagedItems = items.slice(
+// Slice items for current page
+const pagedItems = filteredItems.slice(
     currentPage * itemsPerPage,
     currentPage * itemsPerPage + itemsPerPage
   );
@@ -62,9 +75,49 @@ export default function FieldKitPage() {
         Field Kit
       </h2>
 
+      <div
+        style={{
+          display: 'flex',
+          overflowX: 'auto',
+          gap: '0.5rem',
+          padding: '0.5rem 0',
+          justifyContent: 'center',
+        }}
+      >
+        {categories.map((cat) => (
+          <button
+            key={cat}
+            onClick={() => {
+              setSelectedCategory(cat);
+              setCurrentPage(0);
+              setSelectedItem(null);
+            }}
+            style={{
+              flex: '0 0 auto',
+              padding: '0.25rem 0.75rem',
+              border: '2px solid black',
+              borderRadius: '8px',
+              background: selectedCategory === cat ? '#fff9c4' : '#fff',
+              cursor: 'pointer',
+              fontWeight: 'bold',
+              boxShadow: '2px 2px 0 #000',
+              whiteSpace: 'nowrap',
+            }}
+          >
+            {cat === 'all'
+              ? 'All Items'
+              : cat.charAt(0).toUpperCase() + cat.slice(1)}
+          </button>
+        ))}
+      </div>
+
       {items.length === 0 ? (
         <p style={{ textAlign: 'center', fontStyle: 'italic', marginTop: '2rem' }}>
           You haven't collected any items yet.
+        </p>
+      ) : filteredItems.length === 0 ? (
+        <p style={{ textAlign: 'center', fontStyle: 'italic', marginTop: '2rem' }}>
+          No items in this category.
         </p>
       ) : (
         <>
