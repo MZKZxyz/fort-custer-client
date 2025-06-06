@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import NavBar from '../components/NavBar';
 import '../css/ResultsPage.css';
+const PUBLIC = process.env.PUBLIC_URL;
 
 export default function ResultsPage() {
   const [time, setTime] = useState(null);
@@ -83,9 +84,9 @@ export default function ResultsPage() {
           }}>
             {revealed ? (
               <>
-                <img
-                  src={`/images/${reward.image}`}
-                  alt={reward.name}
+                  <img
+                    src={`${PUBLIC}/images/${reward.image}`}
+                    alt={reward.name}
                   className="reveal"
                   style={{ width: 200, height: 200, objectFit: 'contain' }}
                 />
@@ -94,17 +95,18 @@ export default function ResultsPage() {
                 </span>
               </>
             ) : (
-              <div
-                onClick={() => {
-                  if (opening) return;
-                  setOpening(true);
-                  setTimeout(() => {
-                    setRevealed(true);
-                    setOpening(false);
-                  }, 600);
-                }}
-                className={`crate${opening ? ' opening' : ''}`}
-              />
+                <div
+                  onClick={() => {
+                      if (opening) return;
+                      setOpening(true);
+                      setTimeout(() => {
+                        setRevealed(true);
+                        setOpening(false);
+                      }, 600);
+                  }}
+                  className={`crate${opening ? ' opening' : ''}`}
+                  style={{ backgroundImage: `url(${PUBLIC}/images/crate.png)` }}
+                />
             )}
           </div>
         </>

@@ -1,7 +1,7 @@
 .crate {
   width: 200px;
   height: 200px;
-  background-image: url('/images/crate.png');
+  /* Image applied inline to respect PUBLIC_URL base */
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
