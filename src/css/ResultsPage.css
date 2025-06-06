@@ -1,9 +1,6 @@
 .crate {
   width: 200px;
   height: 200px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
   cursor: pointer;
   animation: crate-idle 2s ease-in-out infinite;
 }

@@ -94,7 +94,9 @@ export default function ResultsPage() {
                 </span>
               </>
             ) : (
-              <div
+              <img
+                src="/images/crate.png"
+                alt="crate"
                 onClick={() => {
                   if (opening) return;
                   setOpening(true);
