@@ -102,9 +102,6 @@ export default function ResultsPage() {
                   className="reveal"
                   style={{ width: 200, height: 200, objectFit: 'contain' }}
                 />
-                <span style={{ fontSize: '1.5rem', marginTop: 8 }}>
-                  {reward.name}
-                </span>
               </>
             ) : (
               <img
