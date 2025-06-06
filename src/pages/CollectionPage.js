@@ -76,13 +76,14 @@ const pagedItems = filteredItems.slice(
       </h2>
 
       <div
-        style={{
-          display: 'flex',
-          overflowX: 'auto',
-          gap: '0.5rem',
-          padding: '0.5rem 0',
-          justifyContent: 'center',
-        }}
+          style={{
+            display: 'flex',
+            overflowX: 'auto',
+            gap: '0.5rem',
+            padding: '0.5rem',
+            justifyContent: 'center',
+            scrollPadding: '0.5rem',
+          }}
       >
         {categories.map((cat) => (
           <button
