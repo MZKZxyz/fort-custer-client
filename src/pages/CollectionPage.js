@@ -79,10 +79,12 @@ const pagedItems = filteredItems.slice(
           style={{
             display: 'flex',
             overflowX: 'auto',
+            flexWrap: 'nowrap',
             gap: '0.5rem',
             padding: '0.5rem',
-            justifyContent: 'center',
+            justifyContent: 'flex-start',
             scrollPadding: '0.5rem',
+            WebkitOverflowScrolling: 'touch',
           }}
       >
         {categories.map((cat) => (
