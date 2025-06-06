@@ -80,7 +80,7 @@ export default function ResultsPage() {
       )}
       {newRecord && (
         <p className="new-record" style={{ fontSize: '1.25rem', margin: '0.5rem 0' }}>
-          🎉 New fastest time! 🎉
+          🎉 New personal best time! 🎉
         </p>
       )}
 

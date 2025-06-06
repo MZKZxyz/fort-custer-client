@@ -160,10 +160,18 @@ const MazePage = () => {
 
       const key = selectedDate;
       const bestTimes = JSON.parse(localStorage.getItem('bestTimes') || '{}');
-      const best = bestTimes[key];
-      if (!best || time < best) {
+      const prevBest = bestTimes[key];
+      let isNewRecord = false;
+
+      if (prevBest === undefined || time < prevBest) {
+        if (prevBest !== undefined && time < prevBest) {
+          isNewRecord = true;
+        }
         bestTimes[key] = time;
         localStorage.setItem('bestTimes', JSON.stringify(bestTimes));
+      }
+
+      if (isNewRecord) {
         localStorage.setItem('lastNewRecord', 'true');
       } else {
         localStorage.removeItem('lastNewRecord');
