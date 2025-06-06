@@ -8,6 +8,7 @@ export default function ResultsPage() {
   const [reward, setReward] = useState(null);
   const [revealed, setRevealed] = useState(false);
   const [opening, setOpening] = useState(false);
+  const [newRecord, setNewRecord] = useState(false);
   const navigate = useNavigate();
 
   // On mount, load lastTime/reward and ensure selectedMazeDate is set
@@ -17,6 +18,11 @@ export default function ResultsPage() {
 
     const rewardData = JSON.parse(localStorage.getItem('lastReward'));
     if (rewardData) setReward(rewardData);
+
+    if (localStorage.getItem('lastNewRecord') === 'true') {
+      setNewRecord(true);
+      localStorage.removeItem('lastNewRecord');
+    }
 
     // If this is first render and no selectedMazeDate exists,
     // seed it to today so Replay still works
@@ -71,10 +77,17 @@ export default function ResultsPage() {
           You finished in <strong>{formatTime(time)}</strong>
         </p>
       )}
+      {newRecord && (
+        <p className="new-record" style={{ fontSize: '1.25rem', margin: '0.5rem 0' }}>
+          🎉 New fastest time! 🎉
+        </p>
+      )}
 
       {reward ? (
         <>
-          <h3 style={{ marginTop: '1.5rem' }}>You found:</h3>
+          <h3 style={{ marginTop: '1.5rem' }}>
+            {revealed ? 'You found:' : 'Tap to open:'}
+          </h3>
           <div style={{
             display: 'flex',
             flexDirection: 'column',
@@ -109,6 +122,39 @@ export default function ResultsPage() {
               />
             )}
           </div>
+          {revealed && (
+            <div
+              style={{
+                marginTop: '1rem',
+                border: '2px solid black',
+                background: '#fff',
+                padding: '1rem',
+                borderRadius: '8px',
+                maxWidth: '400px',
+                margin: '1rem auto 0',
+                boxShadow: '4px 4px 0 #000',
+              }}
+            >
+              {reward.emoji && (
+                <div style={{ fontSize: '2rem' }}>{reward.emoji}</div>
+              )}
+              <h3 style={{ margin: '0.5rem 0' }}>{reward.name}</h3>
+              {reward.description && <p style={{ margin: 0 }}>{reward.description}</p>}
+              {(reward.category || reward.rarity) && (
+                <p
+                  style={{
+                    fontSize: '0.9rem',
+                    fontStyle: 'italic',
+                    marginTop: '0.5rem',
+                  }}
+                >
+                  {reward.category && `Category: ${reward.category}`}
+                  {reward.category && reward.rarity ? ', ' : ''}
+                  {reward.rarity && `Rarity: ${reward.rarity}`}
+                </p>
+              )}
+            </div>
+          )}
         </>
       ) : (
         <p style={{ fontSize: '1rem', marginTop: '1.5rem' }}>

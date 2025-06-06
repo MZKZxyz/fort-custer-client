@@ -157,6 +157,18 @@ const MazePage = () => {
       if (reward) {
         localStorage.setItem('lastReward', JSON.stringify(reward));
       }
+
+      const key = selectedDate;
+      const bestTimes = JSON.parse(localStorage.getItem('bestTimes') || '{}');
+      const best = bestTimes[key];
+      if (!best || time < best) {
+        bestTimes[key] = time;
+        localStorage.setItem('bestTimes', JSON.stringify(bestTimes));
+        localStorage.setItem('lastNewRecord', 'true');
+      } else {
+        localStorage.removeItem('lastNewRecord');
+      }
+
       localStorage.removeItem('mazeStartTime');
     } catch (err) {
       console.error('Maze completion failed:', err);
