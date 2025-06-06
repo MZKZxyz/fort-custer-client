@@ -371,5 +371,25 @@ html, body {
   transform: translateX(-50%);
   pointer-events: none;
   font-size: 1.25rem;
+  width: 1.6em;
+  height: 1.6em;
+}
+
+.thought-bubble::before {
+  content: '💭';
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bubble-icon {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8em;
 }
 

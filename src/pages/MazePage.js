@@ -304,7 +304,9 @@ const MazePage = () => {
             <>
               🧍‍♂️
               {showFireHint && (
-                <div className="thought-bubble">💭🧯</div>
+                <div className="thought-bubble">
+                  <span className="bubble-icon">🧯</span>
+                </div>
               )}
             </>
           ) :
