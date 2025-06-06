@@ -370,9 +370,9 @@ html, body {
   left: 50%;
   transform: translateX(-50%);
   pointer-events: none;
-  font-size: 1.25rem;
-  width: 1.6em;
-  height: 1.6em;
+  font-size: 1.5rem;
+  width: 2.4em;
+  height: 2.4em;
 }
 
 .thought-bubble::before {
@@ -390,6 +390,6 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.8em;
+  font-size: 1.2em;
 }
 
