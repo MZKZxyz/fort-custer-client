@@ -53,6 +53,7 @@ export default function MazeCollectionPage() {
   }, [profile, navigate]);
 
   useEffect(() => {
+    if (!todayStr) return;
     const days = Object.keys(completedMap)
       .filter(d => completedMap[d]?.completed)
       .sort();
@@ -73,13 +74,33 @@ export default function MazeCollectionPage() {
     }
     if (run > best) best = run;
 
-    let current = 1;
-    for (let i = days.length - 1; i > 0; i--) {
-      if (parse(days[i]) - parse(days[i - 1]) === 86400000) current++;
-      else break;
+    const now = new Date();
+    const todayStrLocal = formatDate(now);
+    const yesterdayStr = formatDate(new Date(now.getTime() - 86400000));
+
+    let current = 0;
+    let dateToCheck = null;
+
+    if (completedMap[todayStrLocal]?.completed) {
+      current = 1;
+      dateToCheck = new Date(now.getTime() - 86400000);
+    } else if (completedMap[yesterdayStr]?.completed) {
+      current = 1;
+      dateToCheck = new Date(now.getTime() - 2 * 86400000);
     }
+
+    while (current > 0) {
+      const dStr = formatDate(dateToCheck);
+      if (completedMap[dStr]?.completed) {
+        current++;
+        dateToCheck = new Date(dateToCheck.getTime() - 86400000);
+      } else {
+        break;
+      }
+    }
+
     setStreaks({ current, best });
-  }, [completedMap]);
+  }, [completedMap, todayStr]);
 
   useEffect(() => {
     if (!todayStr || !currentMonth || selectedDate) return;
