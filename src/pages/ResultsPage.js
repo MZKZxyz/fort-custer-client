@@ -8,6 +8,7 @@ export default function ResultsPage() {
   const [reward, setReward] = useState(null);
   const [revealed, setRevealed] = useState(false);
   const [opening, setOpening] = useState(false);
+  const [showDetails, setShowDetails] = useState(false);
   const [newRecord, setNewRecord] = useState(false);
   const navigate = useNavigate();
 
@@ -56,8 +57,8 @@ export default function ResultsPage() {
   // Only playable if nextDate <= todayUTC
   const nextPlayable = nextDate <= todayUTC;
 
-  const showActions = reward ? revealed : true;
-  const actionsDisabled = reward && !revealed;
+  const showActions = reward ? showDetails : true;
+  const actionsDisabled = reward && !showDetails;
 
   return (
     <div style={{
@@ -110,17 +111,22 @@ export default function ResultsPage() {
                 onClick={() => {
                   if (opening) return;
                   setOpening(true);
+                  setShowDetails(false);
                   setTimeout(() => {
                     setRevealed(true);
                     setOpening(false);
+                    setTimeout(() => {
+                      setShowDetails(true);
+                    }, 600);
                   }, 600);
                 }}
                 className={`crate${opening ? ' opening' : ''}`}
               />
             )}
           </div>
-          {revealed && (
+          {showDetails && (
             <div
+              className="fade-in"
               style={{
                 marginTop: '1rem',
                 border: '2px solid black',
@@ -130,6 +136,7 @@ export default function ResultsPage() {
                 maxWidth: '400px',
                 margin: '1rem auto 0',
                 boxShadow: '4px 4px 0 #000',
+                textAlign: 'left',
               }}
             >
               {reward.emoji && (
@@ -163,6 +170,7 @@ export default function ResultsPage() {
         <>
           {/* Replay always available */}
           <button
+            className="fade-in"
             onClick={() => navigate('/maze')}
             disabled={actionsDisabled}
             style={{
@@ -183,6 +191,7 @@ export default function ResultsPage() {
 
           {/* Next Maze (disabled if tomorrow is not yet unlocked) */}
           <button
+            className="fade-in"
             onClick={() => {
               if (!nextPlayable || actionsDisabled) return;
               localStorage.setItem('selectedMazeDate', nextDate);
