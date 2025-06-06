@@ -33,6 +33,10 @@ const MazePage = () => {
   const [playerPos, setPlayerPos]   = useState([0, 0]);
   const [inventory, setInventory]   = useState([]);
 
+  // hint when bumping into fire without extinguisher
+  const [showFireHint, setShowFireHint] = useState(false);
+  const hintTimeoutRef = useRef(null);
+
   // --- quit modal & finished flag ---
   const [showQuitModal, setShowQuitModal] = useState(false);
   const [finished, setFinished]           = useState(false);
@@ -65,6 +69,13 @@ const MazePage = () => {
   useEffect(() => {
     setFogRadius(baseRadius);
   }, [baseRadius]);
+
+  // clean up hint timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (hintTimeoutRef.current) clearTimeout(hintTimeoutRef.current);
+    };
+  }, []);
 
   const isVisible = (row, col) => {
     const [pr, pc] = playerPos;
@@ -193,7 +204,15 @@ const MazePage = () => {
       const nextTile = mazeGrid[nr][nc];
       if (nextTile === '#') return;
       if (nextTile === 'F') {
-        if (!inventory.includes('extinguisher')) return;
+        if (!inventory.includes('extinguisher')) {
+          if (hintTimeoutRef.current) clearTimeout(hintTimeoutRef.current);
+          setShowFireHint(true);
+          hintTimeoutRef.current = setTimeout(() => {
+            setShowFireHint(false);
+            hintTimeoutRef.current = null;
+          }, 2000);
+          return;
+        }
         const newGrid = mazeGrid.map(row => [...row]);
         newGrid[nr][nc] = ' ';
         setMazeGrid(newGrid);
@@ -237,7 +256,15 @@ const MazePage = () => {
 
     const nextTile = mazeGrid[nr][nc];
     if (nextTile === '#') return;
-    if (nextTile === 'F' && !inventory.includes('extinguisher')) return;
+    if (nextTile === 'F' && !inventory.includes('extinguisher')) {
+      if (hintTimeoutRef.current) clearTimeout(hintTimeoutRef.current);
+      setShowFireHint(true);
+      hintTimeoutRef.current = setTimeout(() => {
+        setShowFireHint(false);
+        hintTimeoutRef.current = null;
+      }, 2000);
+      return;
+    }
 
     const newGrid = mazeGrid.map(row => [...row]);
     if (nextTile === 'X') {
@@ -273,7 +300,14 @@ const MazePage = () => {
         }}
       >
         {visible && (
-          isPlayer ? '🧍‍♂️' :
+          isPlayer ? (
+            <>
+              🧍‍♂️
+              {showFireHint && (
+                <div className="thought-bubble">💭🧯</div>
+              )}
+            </>
+          ) :
           cell     === 'X' ? '🧯' :
           cell     === 'F' ? '🔥' :
           cell     === 'E' ? (
