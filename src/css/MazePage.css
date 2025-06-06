@@ -366,11 +366,12 @@ html, body {
 
 .thought-bubble {
   position: absolute;
-  /* place bubble well above the player so it doesn't overlap */
-  top: -2.5rem;
+  /* position bubble so its bottom sits just above the player */
+  bottom: calc(100% + 0.25rem);
   left: 50%;
   transform: translateX(-50%);
   pointer-events: none;
+  z-index: 3000;
   /* enlarge the bubble so the emoji inside has some padding */
   font-size: 2rem;
   width: 3em;
