@@ -12,6 +12,7 @@ export default function MazeCollectionPage() {
   const navigate = useNavigate();
   const [completedMap, setCompletedMap] = useState({});
   const [todayStr, setTodayStr] = useState(null);
+  const [streaks, setStreaks] = useState({ current: 0, best: 0 });
   const now = new Date();
   const [currentMonth, setCurrentMonth] = useState(
     new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), 1))
@@ -50,6 +51,35 @@ export default function MazeCollectionPage() {
 
     fetchProgress();
   }, [profile, navigate]);
+
+  useEffect(() => {
+    const days = Object.keys(completedMap)
+      .filter(d => completedMap[d]?.completed)
+      .sort();
+    if (days.length === 0) {
+      setStreaks({ current: 0, best: 0 });
+      return;
+    }
+
+    const parse = (d) => new Date(`${d}T00:00:00Z`);
+    let best = 1;
+    let run = 1;
+    for (let i = 1; i < days.length; i++) {
+      if (parse(days[i]) - parse(days[i - 1]) === 86400000) run++;
+      else {
+        if (run > best) best = run;
+        run = 1;
+      }
+    }
+    if (run > best) best = run;
+
+    let current = 1;
+    for (let i = days.length - 1; i > 0; i--) {
+      if (parse(days[i]) - parse(days[i - 1]) === 86400000) current++;
+      else break;
+    }
+    setStreaks({ current, best });
+  }, [completedMap]);
 
   useEffect(() => {
     if (!todayStr || !currentMonth || selectedDate) return;
@@ -155,6 +185,11 @@ export default function MazeCollectionPage() {
   return (
     <div className="maze-calendar full-height">
       <h2 className="calendar-title">Daily Maze Archive</h2>
+
+      <div className="streak-card">
+        <div>Current Streak: {streaks.current} day{streaks.current === 1 ? '' : 's'}</div>
+        <div>Best Streak: {streaks.best} day{streaks.best === 1 ? '' : 's'}</div>
+      </div>
 
       <div className="month-selector">
         <button onClick={() => changeMonth(-1)} disabled={isAtMinMonth} className="month-arrow">
