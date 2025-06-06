@@ -10,9 +10,10 @@ export default function FieldKitPage() {
 
   const itemsPerPage = 12;
 
+  // Compute list of unique categories plus an "all" option
   const categories = useMemo(() => {
     const set = new Set(items.map((it) => it.category));
-    return ['all', ...Array.from(set)];
+    return ['all', ...Array.from(set).sort()];
   }, [items]);
 
   const filteredItems =
@@ -104,7 +105,7 @@ const pagedItems = filteredItems.slice(
             }}
           >
             {cat === 'all'
-              ? 'All'
+              ? 'All Items'
               : cat.charAt(0).toUpperCase() + cat.slice(1)}
           </button>
         ))}
