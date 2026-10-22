@@ -35,7 +35,7 @@ export default function ResultsPage() {
 
   // Helpers
   const formatTime = (seconds) => {
-    const ms = seconds * 1000;
+    const ms = Math.round(seconds * 1000); // Preserve the server millisecond despite floating-point rounding.
     const date = new Date(ms);
     return date.toISOString().substr(14, 9); // mm:ss.SSS
   };

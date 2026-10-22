@@ -18,6 +18,7 @@ const key = direction => fireEvent.keyDown(window, { key: `Arrow${direction}` })
 const pad = direction => fireEvent.click(screen.getByRole('button', { name: direction }));
 beforeEach(() => {
   localStorage.clear();
+  sessionStorage.clear();
   localStorage.setItem('activeSubProfile', JSON.stringify({ _id: 'synthetic-profile' }));
   localStorage.setItem('selectedMazeDate', '2025-05-26');
   now = 100;
@@ -47,7 +48,7 @@ test.each([['keyboard', key], ['D-pad', pad]])('%s follows the same pickup, fire
   input('Left');
   expect(position(container)).toBe(3);
   expect(API.post).toHaveBeenCalledTimes(2);
-  expect(API.post).toHaveBeenLastCalledWith('/maze/complete', { subProfileId: 'synthetic-profile', date: '2025-05-26' });
+  expect(API.post).toHaveBeenLastCalledWith('/maze/complete', { subProfileId: 'synthetic-profile', date: '2025-05-26' }, { timeout: 15000 });
   act(() => frame(now + 4000));
   expect(mockNavigate).not.toHaveBeenCalled();
   localStorage.setItem('lastReward', '{"id":"stale"}');
@@ -142,4 +143,42 @@ test('missing profile redirects without starting a maze or crashing', async () =
   render(<MazePage />);
   await waitFor(() => expect(mockNavigate).toHaveBeenCalledWith('/profiles'));
   expect(API.post).not.toHaveBeenCalled();
+});
+
+test('refresh during ambiguous save recovers the same attempt without starting another maze', async () => {
+  const attemptId = '01234567-89ab-4cde-8fab-0123456789ab';
+  const pending = deferred();
+  API.post.mockResolvedValueOnce({ data: { ...fixture.data, attemptId, maze: { grid: [['S', 'E']] } } })
+    .mockReturnValueOnce(pending.promise);
+  const first = render(<MazePage />);
+  await screen.findByRole('button', { name: 'Right' });
+  key('Right');
+  expect(JSON.parse(sessionStorage.getItem('mazeCompletion:synthetic-profile:2025-05-26')).attemptId).toBe(attemptId);
+  first.unmount();
+  API.post.mockResolvedValueOnce({ data: { time: '8.000', reward: null } });
+  render(<StrictMode><MazePage /></StrictMode>);
+  expect(await screen.findByRole('alert')).toHaveTextContent('may already be saved');
+  expect(API.post).toHaveBeenCalledTimes(2);
+  fireEvent.click(screen.getByRole('button', { name: 'Retry saving' }));
+  await waitFor(() => expect(localStorage.getItem('lastMazeTime')).toBe('8.000'));
+  expect(API.post).toHaveBeenLastCalledWith('/maze/complete', {
+    subProfileId: 'synthetic-profile', date: '2025-05-26', attemptId,
+  }, { timeout: 15000 });
+  act(() => frame(now + 3001));
+  expect(mockNavigate).toHaveBeenCalledWith('/results');
+  expect(sessionStorage.getItem('mazeCompletion:synthetic-profile:2025-05-26')).toBeNull();
+});
+
+test('timeout offers retry and keeps the same stable identifier', async () => {
+  const attemptId = '01234567-89ab-4cde-8fab-0123456789ab';
+  API.post.mockResolvedValueOnce({ data: { ...fixture.data, attemptId, maze: { grid: [['S', 'E']] } } })
+    .mockRejectedValueOnce(new Error('timeout'))
+    .mockResolvedValueOnce({ data: { time: '8.000', reward: null } });
+  render(<MazePage />);
+  await screen.findByRole('button', { name: 'Right' });
+  key('Right');
+  await screen.findByRole('alert');
+  fireEvent.click(screen.getByRole('button', { name: 'Retry saving' }));
+  await waitFor(() => expect(localStorage.getItem('lastMazeTime')).toBe('8.000'));
+  expect(API.post.mock.calls[1]).toEqual(API.post.mock.calls[2]);
 });
