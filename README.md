@@ -89,3 +89,16 @@ Completion failures keep the player on the maze with explicit retry/back control
 1. Introduce stable attempt identifiers and idempotent completion/status recovery with the server; reconcile server and display timing after delayed or lost responses.
 2. Add browser-level keyboard and touch tests with local synthetic API fixtures, including background/resume, slow networks, and visual regression checks.
 3. Add recoverable maze-loading errors, validate stored profile/date and server grid data, and replace the hardcoded 2025 season with an explicit season configuration.
+
+## Mobile D-pad browser regressions
+
+```sh
+npx playwright install --with-deps chromium
+npm run test:e2e -- --workers=2
+```
+
+Playwright starts the client on port 3100 and mocks all API traffic with an open synthetic maze. No backend, database, or credentials are needed. Tests use native Chromium touch taps and mouse clicks at viewport coordinates for all four arrows across five portrait/landscape sizes. They check button bounds, `elementFromPoint` hit targets, real click delivery, and actual player movement. They do not force clicks, dispatch synthetic DOM events, or scroll clipped buttons into view. Font requests are blocked for offline determinism.
+
+If using an existing Chromium installation, set `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/absolute/path/to/chromium`. Failure traces are written to the ignored `test-results/` directory. CI installs Playwright's matching Chromium automatically.
+
+A confirmed layout bug placed the D-pad below the viewport on shorter screens: the square maze was constrained by screen width alone while page scrolling was disabled. The maze now also reserves screen height for the banner/HUD and both control rows, retaining the existing buttons and movement rules. Before the fix, six of ten viewport/pointer cases failed visibility checks; afterward all ten passed. The separate report of LEFT/RIGHT alone failing while DOWN worked was not reproduced with open adjacent tiles; browser hit testing did not reveal an intercepting overlay. Exact device/maze reproduction details remain useful if that symptom persists.

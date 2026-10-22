@@ -24,3 +24,5 @@ jobs:
       - run: npm run build
         env:
           REACT_APP_API_URL: /api
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:e2e -- --workers=2
