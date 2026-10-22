@@ -14,6 +14,14 @@ const MazePage = () => {
     localStorage.getItem('selectedMazeDate') || new Date().toISOString()
   ).toISOString().slice(0, 10), []);
 
+  const recoveryKey = `mazeCompletion:${profile?._id}:${selectedDate}`;
+  const recovery = useMemo(() => {
+    try {
+      const value = JSON.parse(sessionStorage.getItem(recoveryKey));
+      return typeof value?.attemptId === 'string' ? value : null;
+    } catch { return null; }
+  }, [recoveryKey]);
+  const attemptIdRef = useRef(recovery?.attemptId);
   const containerRef = useRef(null);
   const prevent = (e) => e.preventDefault();
 
@@ -36,7 +44,7 @@ const MazePage = () => {
   const gameRef = useRef(null);
   const startRequestRef = useRef(null);
   const completionPendingRef = useRef(false);
-  const [completionError, setCompletionError] = useState(null);
+  const [completionError, setCompletionError] = useState(recovery ? 'Your result may already be saved. Retry saving to recover the server result.' : null);
 
   // hint when bumping into fire without extinguisher
   const [showFireHint, setShowFireHint] = useState(false);
@@ -44,7 +52,7 @@ const MazePage = () => {
 
   // --- quit modal & finished flag ---
   const [showQuitModal, setShowQuitModal] = useState(false);
-  const [finished, setFinished]           = useState(false);
+  const [finished, setFinished]           = useState(Boolean(recovery));
 
   // pick one teepee image for the goal when the component mounts
   const teepeeImages = useMemo(
@@ -111,6 +119,7 @@ const MazePage = () => {
       navigate('/profiles');
       return;
     }
+    if (recovery) return; // Never create a new attempt while recovering an ambiguous save.
     let active = true;
     const fetchMaze = async () => {
       try {
@@ -123,6 +132,7 @@ const MazePage = () => {
         const res = await startRequestRef.current;
         if (!active) return;
         const { maze, seed } = res.data;
+        attemptIdRef.current = res.data.attemptId;
         setMazeData({ seed });
         setMazeGrid(maze.grid);
         const position = findStart(maze.grid);
@@ -138,7 +148,7 @@ const MazePage = () => {
     };
     fetchMaze();
     return () => { active = false; };
-  }, [profile, selectedDate, navigate]);
+  }, [profile, selectedDate, navigate, recovery]);
 
   const handleFinish = useCallback(async () => {
     if (completionPendingRef.current) return;
@@ -149,10 +159,13 @@ const MazePage = () => {
       setDisplayTime(formatElapsed(performance.now() - startTime));
     }
     try {
+      // Persist intent before sending: a refresh or timeout must reuse this attempt.
+      if (attemptIdRef.current) sessionStorage.setItem(recoveryKey, JSON.stringify({ attemptId: attemptIdRef.current }));
       const res = await API.post('/maze/complete', {
         subProfileId: profile._id,
         date: selectedDate,
-      });
+        ...(attemptIdRef.current ? { attemptId: attemptIdRef.current } : {}),
+      }, { timeout: 15000 });
       const { time, reward } = res.data;
       localStorage.setItem('lastMazeTime', time);
       if (reward) {
@@ -191,7 +204,7 @@ const MazePage = () => {
     } finally {
       completionPendingRef.current = false;
     }
-  }, [profile?._id, selectedDate, startTime, finished]);
+  }, [profile?._id, selectedDate, startTime, finished, recoveryKey]);
 
   // play fog closing animation then navigate to results
   useEffect(() => {
@@ -206,12 +219,13 @@ const MazePage = () => {
       if (progress < 1) {
         raf = requestAnimationFrame(step);
       } else {
+        sessionStorage.removeItem(recoveryKey);
         navigate('/results');
       }
     };
     raf = requestAnimationFrame(step);
     return () => cancelAnimationFrame(raf);
-  }, [closing, baseRadius, navigate]);
+  }, [closing, baseRadius, navigate, recoveryKey]);
 
   const movePlayer = useCallback((direction) => {
     if (showQuitModal || finished || !gameRef.current) return;
@@ -289,6 +303,20 @@ const MazePage = () => {
   const formattedDate = new Date(selectedDate).toLocaleDateString('en-US', {
     month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC',
   });
+
+  if (!mazeData && recovery) {
+    return <div className="maze-page">
+      <div role="alert">
+        <p>{completionError || (closing ? 'Result saved. Opening results…' : 'Saving your result…')}</p>
+        {completionError && <button onClick={handleFinish}>Retry saving</button>}
+        <button onClick={() => navigate('/mazes')}>Back to mazes</button>
+        <button onClick={() => {
+          sessionStorage.removeItem(recoveryKey);
+          navigate('/mazes');
+        }}>Dismiss recovery and return to mazes</button>
+      </div>
+    </div>;
+  }
 
   if (!mazeData) {
     return (
@@ -395,6 +423,7 @@ const MazePage = () => {
         </div>
       </div>     
 
+      {finished && !closing && !completionError && <p role="status">Saving your result…</p>}
       {completionError && (
         <div className="modal-overlay">
           <div className="modal-content" role="alert">
