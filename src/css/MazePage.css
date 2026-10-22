@@ -68,10 +68,7 @@ html, body {
   display: flex;
   flex-direction: column;
   width: 100%;
-  /* Leave room for the banner, HUD, border, and both D-pad rows.
-     Width-only sizing clipped controls because the page cannot scroll.
-     svh also keeps controls reachable when mobile browser chrome is visible. */
-  max-width: min(95vw, calc(100svh - 22rem));
+  max-width: 95vw;
   border: 10px solid #6A3600;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
