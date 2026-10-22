@@ -108,7 +108,7 @@ export default function LeaderboardPage() {
   const medalFor = (idx) => ['🥇','🥈','🥉'][idx] || '';
 
   return (
-    <div style={{
+    <div className="page-with-nav" style={{
       backgroundColor: '#ee4444',
       minHeight: '100vh',
       padding: '1rem',
@@ -194,7 +194,7 @@ export default function LeaderboardPage() {
         border: '4px solid #000',
         borderRadius: '8px',
         boxShadow: '4px 4px 0 #000',
-        overflow: 'hidden',
+        overflowX: 'auto',
       }}>
         <table style={{ width: '100%', borderCollapse: 'collapse' }}>
           <thead>

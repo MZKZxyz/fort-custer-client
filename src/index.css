@@ -11,3 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Document scrolling is shared by all routes, including short-screen forms. */
+html { overflow-y: auto; scroll-padding-bottom: calc(104px + env(safe-area-inset-bottom)); }
+body { overflow: visible; }
+#root { min-height: 100%; }
+.page-with-nav { box-sizing: border-box; padding-bottom: calc(104px + env(safe-area-inset-bottom)) !important; }

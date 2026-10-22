@@ -22,20 +22,6 @@ const MazePage = () => {
     } catch { return null; }
   }, [recoveryKey]);
   const attemptIdRef = useRef(recovery?.attemptId);
-  const containerRef = useRef(null);
-  const prevent = (e) => e.preventDefault();
-
-  useEffect(() => {
-    const el = containerRef.current;
-    if (!el) return;
-    const opts = { passive: false };
-    const events = ['touchstart','touchmove','touchend','mousedown','contextmenu'];
-    events.forEach((evt) => el.addEventListener(evt, prevent, opts));
-    return () => {
-      events.forEach((evt) => el.removeEventListener(evt, prevent, opts));
-    };
-  }, []);
-
   // --- your existing state ---
   const [mazeData, setMazeData]     = useState(null);
   const [mazeGrid, setMazeGrid]     = useState([]);
@@ -347,7 +333,7 @@ const MazePage = () => {
   
 
   return (
-    <div ref={containerRef} className="maze-page" style={{
+    <div className="maze-page" style={{
       backgroundImage: "url('/assets/fortBG.png')"
     }}>
       {/* BACK / QUIT button */}

@@ -1,6 +1,8 @@
 const { test, expect } = require('@playwright/test');
 
-test('lost completion response survives browser refresh and recovers the original result', async ({ page }) => {
+for (const viewport of [{ width: 1280, height: 720 }, { width: 320, height: 568 }, { width: 844, height: 390 }]) {
+test(`lost completion response survives refresh at ${viewport.width}×${viewport.height}`, async ({ page }) => {
+  await page.setViewportSize(viewport);
   const attemptId = '01234567-89ab-4cde-8fab-0123456789ab';
   let starts = 0;
   const completions = [];
@@ -29,9 +31,11 @@ test('lost completion response survives browser refresh and recovers the origina
   await page.reload();
   await expect(page.getByRole('alert')).toContainText('may already be saved');
   expect(starts).toBe(1);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   await page.getByRole('button', { name: 'Retry saving', exact: true }).click();
   await expect(page).toHaveURL(/\/results$/);
   await expect(page.getByText('You finished in')).toContainText('00:08.123');
   expect(completions).toEqual(Array(2).fill({ subProfileId: 'synthetic-profile', date: '2025-05-26', attemptId }));
   expect(await page.evaluate(() => sessionStorage.getItem('mazeCompletion:synthetic-profile:2025-05-26'))).toBeNull();
 });
+}

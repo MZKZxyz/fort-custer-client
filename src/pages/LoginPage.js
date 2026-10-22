@@ -47,11 +47,14 @@ export default function LoginPage() {
       alignItems: 'center',         // <–– add this
       background: '#ffe066',
       minHeight: '100vh',
-      // padding: '2rem 1rem',
+      padding: 'max(1rem, env(safe-area-inset-top)) max(1rem, env(safe-area-inset-right)) max(1rem, env(safe-area-inset-bottom)) max(1rem, env(safe-area-inset-left))',
       boxSizing: 'border-box',
     }}>
       <div style={{
         maxWidth: '360px',
+        width: '100%',
+        minWidth: 0,
+        boxSizing: 'border-box',
         margin: '0 auto',
         background: '#fff',
         border: '4px solid #000',

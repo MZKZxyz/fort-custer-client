@@ -103,4 +103,45 @@ If using an existing Chromium installation, set `PLAYWRIGHT_CHROMIUM_EXECUTABLE_
 
 The reported directional-input issue was traced to Chrome DevTools focus, not the D-pad. A separate short-screen clipping issue was reproduced, but the proposed height-based maze cap was reverted: at 844×390 it shrank a 21×21 board from approximately 822px to 58px (about 1.8px per tile), and at 390×240 it could collapse the board. It also substantially reduced desktop board sizes. Original `max-width: 95vw` sizing is restored. A browser layout regression test checks original board and tile widths across seven mobile/desktop/short-screen sizes.
 
-Known layout limitation: controls can remain below the viewport in the original non-scrolling layout. Playwright explicitly scrolls them into view to verify pointer behavior; this does not establish that a user can naturally reach them on a short screen. There is no defined minimum playable tile size yet. A separate responsive-layout change should establish that minimum and choose a scrolling or landscape layout rather than shrinking the maze toward zero.
+Historical layout limitation (addressed by Sprint 2 below): controls could remain below the viewport in the original non-scrolling layout. Playwright explicitly scrolls them into view to verify pointer behavior; this does not establish that a user can naturally reach them on a short screen. There is no defined minimum playable tile size yet. A separate responsive-layout change should establish that minimum and choose a scrolling or landscape layout rather than shrinking the maze toward zero.
+
+## Responsive layout (Sprint 2)
+
+Pages use document scrolling rather than a global overflow lock. Maze dimensions
+remain width-based (`95vw`); viewport height never reduces the board. The HUD wraps,
+emoji no longer widen individual flex cells, and native touch scrolling/pinch zoom
+are restored by removing the page-wide event cancellation. The D-pad retains its
+60px buttons, and the existing movement engine, fog masks, inventory and assets
+are unchanged. Quit/save dialogs have viewport gutters and scrollable content.
+
+The calendar is centered at a maximum 400px width, with shorter weekday headers
+and full document scrolling. Play and the last row clear the fixed navigation.
+Shared navigation includes safe-area padding; collection, profiles, results and
+leaderboard pages reserve bottom clearance. Account forms have narrow-screen
+gutters, the title artwork uses the small viewport height, and wide leaderboard
+tables scroll within their card. `viewport-fit=cover` enables safe-area insets.
+
+Run the existing checks above plus `npm run test:e2e -- --workers=2`. The responsive
+suite covers 320×568, 375×667, 390×844, 412×915, 844×390, 1280×800 and 1440×900.
+It checks document overflow, calendar-to-maze navigation, Play clearance, real
+Chromium touch swipes on overflowing pages, unforced taps, keyboard movement, fog,
+inventory and quit/cancel controls. It also visits collection, weekly leaderboard,
+profiles and results, and checks title/account navigation and form bounds. The
+existing real-touch/mouse D-pad suite and height-invariant tile sizing test remain.
+The 21-column fixture retains at least 13 CSS pixels per tile at 320px; generated
+mazes currently default to 13 columns. No artificial height cap or minimum board
+width introduces horizontal scrolling. Tests use intercepted synthetic responses
+and never need a backend or database.
+
+Remaining limitations: a short screen can require vertical scrolling between the
+board and D-pad; the controls are not a sticky overlay. Very wide custom grids may
+have smaller tiles because this change preserves width-based sizing. Chromium
+emulation does not verify physical iOS browser chrome, virtual keyboards or notch
+hardware; safe-area behavior still needs device testing. Long leaderboard content
+may require intentional horizontal scrolling inside its table card. Calendar date
+rules and the existing 2025 season remain unchanged.
+
+Coordination: based on main after gameplay PR #24. No open client pull requests
+were visible during the sprint audit. Concurrent work on MazePage, navigation,
+calendar CSS or account forms should reconcile these layout changes; there is no
+backend/API dependency. No production resources, deployments or data changes.

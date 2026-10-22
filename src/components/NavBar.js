@@ -30,6 +30,9 @@ export default function NavBar() {
       left: 0,
       right: 0,
       height: '80px',
+      paddingBottom: 'env(safe-area-inset-bottom)',
+      paddingLeft: 'env(safe-area-inset-left)',
+      paddingRight: 'env(safe-area-inset-right)',
       background: '#00aef0',
       borderTop: '3px solid #000',
       display: 'flex',
@@ -69,6 +72,7 @@ export default function NavBar() {
             onClick={() => navigate(item.path)}
             style={{
               flex: 1,
+              minWidth: 0,
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
@@ -85,6 +89,7 @@ export default function NavBar() {
             {iconContent}
             {isProfile && (
               <span style={{
+                maxWidth: '100%',
                 fontSize: '0.8rem',
                 marginTop: '2px',
                 overflow: 'hidden',

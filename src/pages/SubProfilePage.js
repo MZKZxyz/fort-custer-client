@@ -136,11 +136,11 @@ export default function SubProfilePage() {
   };
 
   return (
-    <div style={{ 
+    <div className="page-with-nav" style={{
       padding:'1rem', 
       position:'relative' ,
       background: '#479743',
-      height:'100vh'
+      minHeight:'100svh'
       }}>
       {/* Logout */}
       <button
