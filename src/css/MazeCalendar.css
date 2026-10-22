@@ -174,7 +174,8 @@
 .full-height {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
+  min-height: 100svh;
   background-color: #00aef0;
 }
 
@@ -202,3 +203,18 @@
   pointer-events: none;
 }
 
+
+/* Bound desktop calendar cells while retaining the original mobile scale. */
+.maze-calendar {
+  box-sizing: border-box;
+  padding: max(1rem, env(safe-area-inset-top)) max(1rem, env(safe-area-inset-right)) calc(104px + env(safe-area-inset-bottom)) max(1rem, env(safe-area-inset-left));
+  align-items: center;
+  gap: .5rem;
+}
+.maze-calendar > :not(nav) { width: 100%; max-width: 400px; box-sizing: border-box; flex-shrink: 0; }
+.calendar-grid { grid-template-columns: repeat(7, minmax(0, 1fr)); }
+.calendar-cell { min-width: 0; box-sizing: border-box; }
+.month-selector { font-size: clamp(1rem, 4vw, 1.5rem); }
+.month-arrow { min-height: 44px; min-width: 44px; }
+
+.calendar-cell.header { aspect-ratio: auto; min-height: 32px; }

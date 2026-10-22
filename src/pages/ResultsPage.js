@@ -61,7 +61,7 @@ export default function ResultsPage() {
   const actionsDisabled = reward && !showDetails;
 
   return (
-    <div style={{
+    <div className="page-with-nav" style={{
       backgroundColor: '#fff66c',
       minHeight: '100vh',
       padding: '2rem 1rem',
