@@ -68,3 +68,24 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Gameplay development checks
+
+Use Node.js 24 and install the locked dependencies with `npm ci`.
+
+```sh
+CI=true npm test -- --watchAll=false --runInBand
+REACT_APP_API_URL=/api npm run build
+```
+
+The gameplay tests use synthetic grids, mocked API responses, and a controlled monotonic clock. They need no backend, MongoDB, credentials, or production integration. The pull request workflow runs these checks without deploying. Jest maps the locked React Router and Axios versions to their CommonJS entry points because Create React App's older Jest resolver does not support their package exports; jsdom also needs a TextEncoder polyfill.
+
+Keyboard arrows and D-pad buttons share a pure transition in `src/game/movement.js`. Fire consumes the extinguisher and clears the tile without moving the player; the next input enters the cleared tile. Inventory holds at most one extinguisher, matching the single visible inventory slot. Walls, fog, grid assets, API request bodies, and the results animation are preserved. The client timer starts when the maze becomes playable and stops at the exit; the server's response remains the authoritative saved completion time.
+
+Completion failures keep the player on the maze with explicit retry/back controls. A retry cannot distinguish a request rejected by the server from a successful write whose response was lost. Recovering that case requires an idempotent completion API or attempt status lookup; no API contract is changed here. Physical touchscreen behavior and full browser/backend integration have not been verified by jsdom tests.
+
+### Recommended next sprint
+
+1. Introduce stable attempt identifiers and idempotent completion/status recovery with the server; reconcile server and display timing after delayed or lost responses.
+2. Add browser-level keyboard and touch tests with local synthetic API fixtures, including background/resume, slow networks, and visual regression checks.
+3. Add recoverable maze-loading errors, validate stored profile/date and server grid data, and replace the hardcoded 2025 season with an explicit season configuration.
