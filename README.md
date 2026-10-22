@@ -68,3 +68,39 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Gameplay development checks
+
+Use Node.js 24 and install the locked dependencies with `npm ci`.
+
+```sh
+CI=true npm test -- --watchAll=false --runInBand
+REACT_APP_API_URL=/api npm run build
+```
+
+The gameplay tests use synthetic grids, mocked API responses, and a controlled monotonic clock. They need no backend, MongoDB, credentials, or production integration. The pull request workflow runs these checks without deploying. Jest maps the locked React Router and Axios versions to their CommonJS entry points because Create React App's older Jest resolver does not support their package exports; jsdom also needs a TextEncoder polyfill.
+
+Keyboard arrows and D-pad buttons share a pure transition in `src/game/movement.js`. Fire consumes the extinguisher and clears the tile without moving the player; the next input enters the cleared tile. Inventory holds at most one extinguisher, matching the single visible inventory slot. Walls, fog, grid assets, API request bodies, and the results animation are preserved. The client timer starts when the maze becomes playable and stops at the exit; the server's response remains the authoritative saved completion time.
+
+Completion failures keep the player on the maze with explicit retry/back controls. A retry cannot distinguish a request rejected by the server from a successful write whose response was lost. Recovering that case requires an idempotent completion API or attempt status lookup; no API contract is changed here. Physical touchscreen behavior and full browser/backend integration have not been verified by jsdom tests.
+
+### Recommended next sprint
+
+1. Introduce stable attempt identifiers and idempotent completion/status recovery with the server; reconcile server and display timing after delayed or lost responses.
+2. Add browser-level keyboard and touch tests with local synthetic API fixtures, including background/resume, slow networks, and visual regression checks.
+3. Add recoverable maze-loading errors, validate stored profile/date and server grid data, and replace the hardcoded 2025 season with an explicit season configuration.
+
+## Mobile D-pad browser regressions
+
+```sh
+npx playwright install --with-deps chromium
+npm run test:e2e -- --workers=2
+```
+
+Playwright starts the client on port 3100 and mocks all API traffic with an open synthetic maze. No backend, database, or credentials are needed. Tests use native Chromium touch taps and mouse clicks at viewport coordinates for all four arrows across seven viewport sizes, including portrait, landscape, desktop-width, and extremely short screens. They check button bounds, `elementFromPoint` hit targets, real click delivery, and actual player movement. They do not force clicks or dispatch synthetic DOM events. They explicitly scroll each button into view before pointer testing: these are input-delivery checks, not a claim that all controls fit in the original fixed-screen layout. Font requests are blocked for offline determinism.
+
+If using an existing Chromium installation, set `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/absolute/path/to/chromium`. Failure traces are written to the ignored `test-results/` directory. CI installs Playwright's matching Chromium automatically.
+
+The reported directional-input issue was traced to Chrome DevTools focus, not the D-pad. A separate short-screen clipping issue was reproduced, but the proposed height-based maze cap was reverted: at 844×390 it shrank a 21×21 board from approximately 822px to 58px (about 1.8px per tile), and at 390×240 it could collapse the board. It also substantially reduced desktop board sizes. Original `max-width: 95vw` sizing is restored. A browser layout regression test checks original board and tile widths across seven mobile/desktop/short-screen sizes.
+
+Known layout limitation: controls can remain below the viewport in the original non-scrolling layout. Playwright explicitly scrolls them into view to verify pointer behavior; this does not establish that a user can naturally reach them on a short screen. There is no defined minimum playable tile size yet. A separate responsive-layout change should establish that minimum and choose a scrolling or landscape layout rather than shrinking the maze toward zero.

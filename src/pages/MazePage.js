@@ -1,6 +1,7 @@
 import { useRef, useMemo, useEffect, useState, useCallback  } from 'react';
 import { useNavigate } from 'react-router-dom';
 import API from '../utils/api';
+import { move, findStart, formatElapsed } from '../game/movement';
 import '../css/MazePage.css'; // Add CSS below to this file
 const PUBLIC = process.env.PUBLIC_URL;
 
@@ -9,9 +10,9 @@ const MazePage = () => {
   const profile = useMemo(() => {
     return JSON.parse(localStorage.getItem('activeSubProfile'));
   }, []);
-  const selectedDate = new Date(
+  const selectedDate = useMemo(() => new Date(
     localStorage.getItem('selectedMazeDate') || new Date().toISOString()
-  ).toISOString().slice(0, 10);
+  ).toISOString().slice(0, 10), []);
 
   const containerRef = useRef(null);
   const prevent = (e) => e.preventDefault();
@@ -32,6 +33,10 @@ const MazePage = () => {
   const [mazeGrid, setMazeGrid]     = useState([]);
   const [playerPos, setPlayerPos]   = useState([0, 0]);
   const [inventory, setInventory]   = useState([]);
+  const gameRef = useRef(null);
+  const startRequestRef = useRef(null);
+  const completionPendingRef = useRef(false);
+  const [completionError, setCompletionError] = useState(null);
 
   // hint when bumping into fire without extinguisher
   const [showFireHint, setShowFireHint] = useState(false);
@@ -85,34 +90,15 @@ const MazePage = () => {
     );
   };
 
-  const findStartPosition = (grid) => {
-    for (let r = 0; r < grid.length; r++) {
-      for (let c = 0; c < grid[0].length; c++) {
-        if (grid[r][c] === 'S') {
-          return [r, c];
-        }
-      }
-    }
-    return [0, 0];
-  };
-
-  // --- timer state ---
-  const [startTime]    = useState(performance.now());
+  // Monotonic elapsed time starts only once the maze is ready, not at mount.
+  const [startTime, setStartTime] = useState(null);
   const [displayTime, setDisplayTime] = useState('0:00.000');
 
   useEffect(() => {
+    if (startTime === null || finished) return;
     let rafId;
     const update = () => {
-      if (finished) return;           // ← stop updating once finished
-      const now = performance.now();
-      const elapsed = now - startTime;
-      const minutes = Math.floor(elapsed / 60000);
-      const seconds = Math.floor((elapsed % 60000) / 1000);
-      const ms = Math.floor(elapsed % 1000);
-      const formatted = `${minutes}:${seconds
-        .toString()
-        .padStart(2, '0')}.${ms.toString().padStart(3, '0')}`;
-      setDisplayTime(formatted);
+      setDisplayTime(formatElapsed(performance.now() - startTime));
       rafId = requestAnimationFrame(update);
     };
     rafId = requestAnimationFrame(update);
@@ -125,28 +111,43 @@ const MazePage = () => {
       navigate('/profiles');
       return;
     }
+    let active = true;
     const fetchMaze = async () => {
       try {
-        const res = await API.post('/maze/start', {
-          subProfileId: profile._id,
-          date: selectedDate,
-        });
+        // Reuse the request during StrictMode effect replay to avoid two attempts.
+        if (!startRequestRef.current) {
+          startRequestRef.current = API.post('/maze/start', {
+            subProfileId: profile._id, date: selectedDate,
+          });
+        }
+        const res = await startRequestRef.current;
+        if (!active) return;
         const { maze, seed } = res.data;
         setMazeData({ seed });
         setMazeGrid(maze.grid);
-        setPlayerPos(findStartPosition(maze.grid));
+        const position = findStart(maze.grid);
+        gameRef.current = { grid: maze.grid, position, inventory: [], completed: false };
+        setPlayerPos(position);
+        setStartTime(performance.now());
         localStorage.setItem('mazeStartTime', Date.now().toString());
       } catch (err) {
+        if (!active) return;
         console.error('Failed to start maze:', err);
         alert(err.response?.data?.error || 'Could not load maze.');
       }
     };
     fetchMaze();
+    return () => { active = false; };
   }, [profile, selectedDate, navigate]);
 
   const handleFinish = useCallback(async () => {
-    // freeze timer & input immediately
+    if (completionPendingRef.current) return;
+    completionPendingRef.current = true;
+    setCompletionError(null);
     setFinished(true);
+    if (startTime !== null && !finished) {
+      setDisplayTime(formatElapsed(performance.now() - startTime));
+    }
     try {
       const res = await API.post('/maze/complete', {
         subProfileId: profile._id,
@@ -156,15 +157,20 @@ const MazePage = () => {
       localStorage.setItem('lastMazeTime', time);
       if (reward) {
         localStorage.setItem('lastReward', JSON.stringify(reward));
+      } else {
+        localStorage.removeItem('lastReward');
       }
 
       const key = selectedDate;
-      const bestTimes = JSON.parse(localStorage.getItem('bestTimes') || '{}');
-      const prevBest = bestTimes[key];
+      let bestTimes;
+      try { bestTimes = JSON.parse(localStorage.getItem('bestTimes') || '{}'); }
+      catch { bestTimes = {}; }
+      if (!bestTimes || typeof bestTimes !== 'object' || Array.isArray(bestTimes)) bestTimes = {};
+      const prevBest = bestTimes[key] === undefined ? undefined : Number(bestTimes[key]);
       let isNewRecord = false;
 
-      if (prevBest === undefined || time < prevBest) {
-        if (prevBest !== undefined && time < prevBest) {
+      if (prevBest === undefined || Number(time) < prevBest) {
+        if (prevBest !== undefined && Number(time) < prevBest) {
           isNewRecord = true;
         }
         bestTimes[key] = time;
@@ -178,11 +184,14 @@ const MazePage = () => {
       }
 
       localStorage.removeItem('mazeStartTime');
+      setClosing(true);
     } catch (err) {
       console.error('Maze completion failed:', err);
-      alert(err.response?.data?.error || 'Something went wrong!');
+      setCompletionError(err.response?.data?.error || 'Could not save your result. Check your connection and retry.');
+    } finally {
+      completionPendingRef.current = false;
     }
-  }, [profile._id, selectedDate]);
+  }, [profile?._id, selectedDate, startTime, finished]);
 
   // play fog closing animation then navigate to results
   useEffect(() => {
@@ -204,105 +213,37 @@ const MazePage = () => {
     return () => cancelAnimationFrame(raf);
   }, [closing, baseRadius, navigate]);
 
-  // --- keyboard handler (guarded by quit-modal & finished) ---
-  useEffect(() => {
-    const handleKey = (e) => {
-      if (showQuitModal || finished || !mazeGrid.length) return;
-
-      const [r, c] = playerPos;
-      let next = [r, c];
-      if (e.key === 'ArrowUp')    next = [r - 1, c];
-      if (e.key === 'ArrowDown')  next = [r + 1, c];
-      if (e.key === 'ArrowLeft')  next = [r, c - 1];
-      if (e.key === 'ArrowRight') next = [r, c + 1];
-
-      const [nr, nc] = next;
-      const height = mazeGrid.length;
-      const width  = mazeGrid[0].length;
-      if (nr < 0 || nc < 0 || nr >= height || nc >= width) return;
-
-      const nextTile = mazeGrid[nr][nc];
-      if (nextTile === '#') return;
-      if (nextTile === 'F') {
-        if (!inventory.includes('extinguisher')) {
-          if (hintTimeoutRef.current) clearTimeout(hintTimeoutRef.current);
-          setShowFireHint(true);
-          hintTimeoutRef.current = setTimeout(() => {
-            setShowFireHint(false);
-            hintTimeoutRef.current = null;
-          }, 2000);
-          return;
-        }
-        const newGrid = mazeGrid.map(row => [...row]);
-        newGrid[nr][nc] = ' ';
-        setMazeGrid(newGrid);
-        setInventory(prev => prev.filter(i => i !== 'extinguisher'));
-        return;
-      }
-      if (nextTile === 'X') {
-        setInventory(prev => [...prev, 'extinguisher']);
-        const newGrid = mazeGrid.map(row => [...row]);
-        newGrid[nr][nc] = ' ';
-        setMazeGrid(newGrid);
-        setPlayerPos(next);
-        return;
-      }
-      if (nextTile === 'E') {
-        setPlayerPos(next);
-        handleFinish();
-        setClosing(true);
-        return;
-      }
-      setPlayerPos(next);
-    };
-    window.addEventListener('keydown', handleKey);
-    return () => window.removeEventListener('keydown', handleKey);
-  }, [playerPos, mazeGrid, inventory, showQuitModal, finished, handleFinish]);
-
-  // --- D-pad movement (also guarded) ---
-  const movePlayer = (direction) => {
-    if (showQuitModal || finished || !mazeGrid.length) return;
-    const [r, c] = playerPos;
-    let next = [r, c];
-    if (direction === 'up')    next = [r - 1, c];
-    if (direction === 'down')  next = [r + 1, c];
-    if (direction === 'left')  next = [r, c - 1];
-    if (direction === 'right') next = [r, c + 1];
-
-    const [nr, nc] = next;
-    const height = mazeGrid.length;
-    const width  = mazeGrid[0].length;
-    if (nr < 0 || nc < 0 || nr >= height || nc >= width) return;
-
-    const nextTile = mazeGrid[nr][nc];
-    if (nextTile === '#') return;
-    if (nextTile === 'F' && !inventory.includes('extinguisher')) {
+  const movePlayer = useCallback((direction) => {
+    if (showQuitModal || finished || !gameRef.current) return;
+    const result = move(gameRef.current, direction);
+    if (result.blockedByFire) {
       if (hintTimeoutRef.current) clearTimeout(hintTimeoutRef.current);
       setShowFireHint(true);
       hintTimeoutRef.current = setTimeout(() => {
         setShowFireHint(false);
         hintTimeoutRef.current = null;
       }, 2000);
-      return;
     }
+    if (result.state === gameRef.current) return;
+    // Update synchronously so multiple input events cannot reuse stale state.
+    gameRef.current = result.state;
+    setMazeGrid(result.state.grid);
+    setInventory(result.state.inventory);
+    setPlayerPos(result.state.position);
+    if (result.state.completed) handleFinish();
+  }, [showQuitModal, finished, handleFinish]);
 
-    const newGrid = mazeGrid.map(row => [...row]);
-    if (nextTile === 'X') {
-      setInventory(prev => [...new Set([...prev, 'extinguisher'])]);
-      newGrid[nr][nc] = ' ';
-      setMazeGrid(newGrid);
-    } else if (nextTile === 'F') {
-      newGrid[nr][nc] = ' ';
-      setMazeGrid(newGrid);
-      setInventory(prev => prev.filter(i => i !== 'extinguisher'));
-    } else if (nextTile === 'E') {
-      setPlayerPos(next);
-      handleFinish();
-      setClosing(true);
-      return;
-    }
-    setPlayerPos(next);
-  };
+  useEffect(() => {
+    const directions = { ArrowUp: 'up', ArrowDown: 'down', ArrowLeft: 'left', ArrowRight: 'right' };
+    const handleKey = (event) => {
+      const direction = directions[event.key];
+      if (!direction || event.target.closest?.('input, textarea, select, [contenteditable="true"]')) return;
+      event.preventDefault();
+      movePlayer(direction);
+    };
+    window.addEventListener('keydown', handleKey);
+    return () => window.removeEventListener('keydown', handleKey);
+  }, [movePlayer]);
 
   const renderCell = (cell, row, col) => {
     const isPlayer = playerPos[0] === row && playerPos[1] === col;
@@ -453,6 +394,18 @@ const MazePage = () => {
           </button>
         </div>
       </div>     
+
+      {completionError && (
+        <div className="modal-overlay">
+          <div className="modal-content" role="alert">
+            <p>{completionError}</p>
+            <div className="modal-buttons">
+              <button onClick={handleFinish}>Retry saving</button>
+              <button onClick={() => navigate('/mazes')}>Back to mazes</button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Quit Confirmation Modal */}
       {showQuitModal && (
