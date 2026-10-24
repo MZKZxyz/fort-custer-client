@@ -182,3 +182,14 @@ test('timeout offers retry and keeps the same stable identifier', async () => {
   await waitFor(() => expect(localStorage.getItem('lastMazeTime')).toBe('8.000'));
   expect(API.post.mock.calls[1]).toEqual(API.post.mock.calls[2]);
 });
+
+test('camera presentation requires an explicit true build flag', async () => {
+  API.post.mockResolvedValueOnce(fixture);
+  const { container } = render(<MazePage />);
+  await screen.findByRole('button', { name: 'Right' });
+  const enabled = process.env.REACT_APP_MAZE_CAMERA === 'true';
+  expect(Boolean(container.querySelector('.maze-viewport'))).toBe(enabled);
+  expect(Boolean(container.querySelector('.maze-fog'))).toBe(!enabled);
+  // Goal is three cells from start: exposed only by the opted-in camera path.
+  expect(Boolean(container.querySelector('img[alt="Goal"]'))).toBe(enabled);
+});

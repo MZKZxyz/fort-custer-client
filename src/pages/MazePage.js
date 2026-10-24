@@ -6,8 +6,8 @@ import { createMazeScene, createMazeViewModel } from '../game/scene';
 import { createCamera } from '../game/camera';
 import '../css/MazePage.css'; // Add CSS below to this file
 const PUBLIC = process.env.PUBLIC_URL;
-// Build-time rollback; no storage or server migration.
-const CAMERA_ENABLED = process.env.REACT_APP_MAZE_CAMERA !== 'false';
+// Explicit preview/release opt-in; ordinary production builds stay on legacy.
+const CAMERA_ENABLED = process.env.REACT_APP_MAZE_CAMERA === 'true';
 
 const MazePage = () => {
   const navigate = useNavigate();

@@ -61,12 +61,17 @@ These are observed rAF callbacks, not physical input-to-photon or GPU presentati
 
 ## Local checks and reproduction
 
-Final local run: **6 Jest suites / 39 tests passed**, production build compiled successfully, and **34/34 Playwright tests passed** in Chromium (including all 32 existing cases and 2 new camera cases). Both camera-enabled and flag-disabled unit runs pass 39 tests. Browser rollback/state comparison passed. Existing tests were not skipped. Final browser run and evidence use the final runtime files; source/artifact hashes are recorded in [manifest](evidence/manifest.json).
+Original implementation local run (before the rollout correction below): **6 Jest suites / 39 tests passed**, production build compiled successfully, and **34/34 Playwright tests passed** in Chromium (including all 32 existing cases and 2 new camera cases). Both camera-enabled and flag-disabled unit runs pass 39 tests. Browser rollback/state comparison passed. Existing tests were not skipped. Original browser run and evidence use the original implementation runtime files; source/artifact hashes are recorded in [manifest](evidence/manifest.json).
 
 ```sh
+# Ordinary build/test defaults to legacy.
 CI=true npm test -- --watch=false --runInBand
 npm run build
-PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run test:e2e -- --workers=2
+# Explicit camera preview/test opt-in (not authorization to enable production).
+REACT_APP_MAZE_CAMERA=true CI=true npm test -- --watch=false --runInBand
+REACT_APP_MAZE_CAMERA=true BROWSER=none HOST=127.0.0.1 PORT=3100 npm start
+# Stop that preview server before using Playwright's managed server:
+REACT_APP_MAZE_CAMERA=true CI=true PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run test:e2e -- --workers=2
 # Camera tests regenerate the single contact sheet and both measurement JSON files.
 ```
 
@@ -74,8 +79,25 @@ Browser APIs use synthetic local routes only; no production server or database a
 
 ## Reversible rollout and executed drill
 
-Build with `REACT_APP_MAZE_CAMERA=false` to retain VIS-02 whole-board DOM and radius-one mechanical fog. Flag unset selects this PR's camera for review. **Do not enable generally until pinned-SHA independent QA, EG-09 Gameplay/fairness and EG-08/11 device/accessibility evidence are accepted by Integrator/owner.** This is a build-time switch, so rebuild/restart is necessary; no storage/schema migration or new attempt is needed.
+The camera is enabled **only** by the exact build-time value `REACT_APP_MAZE_CAMERA=true`. Unset, `false`, empty, or malformed values retain VIS-02 whole-board DOM and radius-one mechanical fog in production and development. Ordinary `npm run build` therefore stays on legacy; camera previews require explicit opt-in. No deployment environment or CI configuration is changed by this PR. **Do not enable generally until pinned-SHA independent QA, EG-09 Gameplay/fairness and EG-08/11 device/accessibility evidence are accepted by Integrator/owner.** This is a build-time switch, so rebuild/restart is necessary; no storage/schema migration or new attempt is needed.
 
-Executed fallback unit run: all 6 suites / 39 tests pass. Browser drill runs default on :3100 and `REACT_APP_MAZE_CAMERA=false` on :3101, then `node docs/viewport-camera/verify.cjs`. It verifies legacy fog exists, legacy board is exactly 374px wide at 390px viewport, and logical before/after traces match. Camera board is 752.25px wide inside a 354px content viewport. The legacy adapter and existing DOM gameplay/recovery tests remain. Reduced-motion disables legacy fog sweep as well.
+Executed fallback unit run: all 6 suites / 39 tests pass. Browser drill runs an explicitly opted-in camera on :3100 and an unset/false legacy build on :3101, then `node docs/viewport-camera/verify.cjs`. It verifies legacy fog exists, legacy board is exactly 374px wide at 390px viewport, and logical before/after traces match. Camera board is 752.25px wide inside a 354px content viewport. The legacy adapter and existing DOM gameplay/recovery tests remain. Reduced-motion disables legacy fog sweep as well.
 
-One cohesive implementation commit can be reverted with `git revert <PR implementation SHA>` followed by the local checks above. No server change, data rollback, reward rewrite, recovery reset or asset rollback is involved. Revert removes camera/scene/presentation tests and evidence together while preserving merged VIS-02. No merge, deployment or GitHub CI polling is part of this handoff.
+The opt-in camera can be disabled by removing the flag (or setting `false`) and rebuilding. To remove this PR entirely, revert its rollout correction first, then its original implementation commit; do not deploy the intermediate default-on revision. Originally the cohesive implementation could be reverted with `git revert 0cc2b2c1553f1063dbbde3c49fc2c606bfa7e3fe` followed by the local checks above. No server change, data rollback, reward rewrite, recovery reset or asset rollback is involved. Revert removes camera/scene/presentation tests and evidence together while preserving merged VIS-02. No merge, deployment or GitHub CI polling is part of this handoff.
+
+
+## Integrator rollout correction
+
+Addresses [PR review](https://github.com/MZKZxyz/fort-custer-client/pull/39#pullrequestreview-5640486797) and [issue handoff](https://github.com/MZKZxyz/fort-custer-client/issues/32#issuecomment-6390660735). The sole runtime change is opt-in flag equality; camera geometry, gameplay and persistence are unchanged. Preview hosting must set `REACT_APP_MAZE_CAMERA=true` only in its explicitly approved preview environment; do not set a global/production flag before remaining gates are approved. Restart/rebuild after changing the flag; this is not a runtime URL or local-storage toggle.
+
+Verification for this correction: full Jest suite passes **40/40** with flag unset, `true`, and `false`; the 12-test MazePage suite also passes with malformed `TRUE` selecting legacy. Both unset and explicit-true optimized production builds compile successfully. Chromium loads each compiled production bundle through local file-backed routes with synthetic API responses: unset has legacy fog/no viewport and 374px board; true has a viewport/no fog and 752.25px world; logical position/equipment traces match. See [production trace](evidence/rollout-production-trace.json) and [rollout manifest](evidence/rollout-manifest.json). No server or deployment configuration is changed.
+
+The explicit-true preview browser regression run: **34/34 passed**, including geometry/resize/reduced-motion and all existing movement/recovery cases. The original contact sheet, geometry/timing JSON and manifest remain historical evidence at `0cc2b2c`; visual mechanics did not change in this correction. Independent QA, EG-09 and EG-08/11 remain open at the updated PR SHA.
+
+Production-bundle verification can be reproduced without a running web server (the harness supplies compiled static files to Chromium and intercepts synthetic start responses):
+
+```sh
+env -u REACT_APP_MAZE_CAMERA BUILD_PATH=/tmp/vis03-optin-legacy npm run build
+REACT_APP_MAZE_CAMERA=true BUILD_PATH=/tmp/vis03-optin-camera npm run build
+node docs/viewport-camera/verify.cjs docs/viewport-camera/evidence/rollout-production-trace.json /tmp/vis03-optin-camera /tmp/vis03-optin-legacy
+```

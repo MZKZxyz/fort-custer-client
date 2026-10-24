@@ -1,0 +1,146 @@
+[
+  {
+    "mode": "camera",
+    "boardWidth": 752.25,
+    "states": [
+      {
+        "label": "initial",
+        "revealedCells": 88,
+        "position": [
+          1,
+          1
+        ],
+        "equipment": "",
+        "fireCount": 1,
+        "goalCount": 1
+      },
+      {
+        "label": "wall",
+        "revealedCells": 88,
+        "position": [
+          1,
+          1
+        ],
+        "equipment": "",
+        "fireCount": 1,
+        "goalCount": 1
+      },
+      {
+        "label": "pickup",
+        "revealedCells": 88,
+        "position": [
+          1,
+          2
+        ],
+        "equipment": "🧯",
+        "fireCount": 1,
+        "goalCount": 1
+      },
+      {
+        "label": "clear",
+        "revealedCells": 88,
+        "position": [
+          1,
+          2
+        ],
+        "equipment": "",
+        "fireCount": 0,
+        "goalCount": 1
+      },
+      {
+        "label": "advance",
+        "revealedCells": 88,
+        "position": [
+          1,
+          3
+        ],
+        "equipment": "",
+        "fireCount": 0,
+        "goalCount": 1
+      },
+      {
+        "label": "modal-blocked",
+        "revealedCells": 88,
+        "position": [
+          1,
+          3
+        ],
+        "equipment": "",
+        "fireCount": 0,
+        "goalCount": 1
+      }
+    ]
+  },
+  {
+    "mode": "legacy",
+    "boardWidth": 374,
+    "states": [
+      {
+        "label": "initial",
+        "revealedCells": 9,
+        "position": [
+          1,
+          1
+        ],
+        "equipment": "",
+        "fireCount": 0,
+        "goalCount": 0
+      },
+      {
+        "label": "wall",
+        "revealedCells": 9,
+        "position": [
+          1,
+          1
+        ],
+        "equipment": "",
+        "fireCount": 0,
+        "goalCount": 0
+      },
+      {
+        "label": "pickup",
+        "revealedCells": 9,
+        "position": [
+          1,
+          2
+        ],
+        "equipment": "🧯",
+        "fireCount": 1,
+        "goalCount": 0
+      },
+      {
+        "label": "clear",
+        "revealedCells": 9,
+        "position": [
+          1,
+          2
+        ],
+        "equipment": "",
+        "fireCount": 0,
+        "goalCount": 0
+      },
+      {
+        "label": "advance",
+        "revealedCells": 9,
+        "position": [
+          1,
+          3
+        ],
+        "equipment": "",
+        "fireCount": 0,
+        "goalCount": 1
+      },
+      {
+        "label": "modal-blocked",
+        "revealedCells": 9,
+        "position": [
+          1,
+          3
+        ],
+        "equipment": "",
+        "fireCount": 0,
+        "goalCount": 1
+      }
+    ]
+  }
+]
