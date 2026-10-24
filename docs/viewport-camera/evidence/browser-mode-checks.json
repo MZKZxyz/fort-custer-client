@@ -1,0 +1,30 @@
+{
+  "parentSha": "915f9ad8aa858b3c093dd2fe9c55939dc9fb8a18",
+  "browser": "Chromium 154.0.8037.57",
+  "runtimeAndProductionOptIn": "unchanged from rollout safeguard; source hash verified",
+  "results": {
+    "unset": {
+      "browserPassed": 32,
+      "browserSkipped": 2,
+      "skipScope": "Only camera.spec.js geometry/evidence cases",
+      "jestSuitesPassed": 6,
+      "jestTestsPassed": 40,
+      "productionBuild": "compiled successfully"
+    },
+    "true": {
+      "browserPassed": 34,
+      "browserSkipped": 0,
+      "jestSuitesPassed": 6,
+      "jestTestsPassed": 40
+    }
+  },
+  "workflowCoverage": "Checked-in CI does not opt in; default browser tests cover legacy. Camera-enabled browser coverage verified locally, not claimed as default CI coverage. No workflow changes or remote CI polling.",
+  "sha256": {
+    "e2e/camera.spec.js": "3b254fa0ade79904a5a0764fa9c69641053f25ad241aa09a4ac65d0446b58b57",
+    "e2e/dpad.spec.js": "f277fddba0e0b9a5c1e782b1e58b76e216f63dd46dd9fc246569cef4a9f52de7",
+    "e2e/responsive.spec.js": "f3693ef4362775dd4c0370bd9e4e3c9d73c3638258cad0c2de1e31a59810fb27",
+    "src/pages/MazePage.js": "1deb5c8e174f1b19b7d1c53c5fae580a5c9ff9bc9336fc4ec2dab937e2f1eba4",
+    ".github/workflows/client-checks.yml": "a6a2a5ee61c580b4c0e76eb6da99b226211fba6dd113156c2dae46cce6387e3a",
+    "docs/viewport-camera/README.md": "f09b51aba4acb95b83c0e3a7fcc0a967b2420cc7af9b4867076fb5b9d6cf42e0"
+  }
+}

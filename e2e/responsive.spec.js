@@ -1,4 +1,5 @@
 const { test, expect } = require('@playwright/test');
+const cameraEnabled = process.env.REACT_APP_MAZE_CAMERA === 'true';
 
 const viewports = [[320,568], [375,667], [390,844], [412,915], [844,390], [1280,800], [1440,900]];
 for (const [width, height] of viewports) {
@@ -53,7 +54,15 @@ for (const [width, height] of viewports) {
     expect(box.y + box.height).toBeLessThanOrEqual(nav.y);
     await play.tap();
     await expect(page).toHaveURL(/\/maze$/);
-    await expect(page.locator('.maze-viewport')).toBeVisible();
+    if (cameraEnabled) {
+      await expect(page.locator('.maze-viewport')).toBeVisible();
+      await expect(page.locator('.maze-fog')).toHaveCount(0);
+      await expect(page.locator('.maze-legacy-host')).toHaveCount(0);
+    } else {
+      await expect(page.locator('.maze-legacy-host')).toBeAttached();
+      await expect(page.locator('.maze-fog')).toBeVisible();
+      await expect(page.locator('.maze-viewport')).toHaveCount(0);
+    }
     await expect(page.locator('.maze-slot')).toBeVisible();
     // Preserve width-based tile size, independent of viewport height.
     const tile = await page.locator('.maze-cell').first().boundingBox();

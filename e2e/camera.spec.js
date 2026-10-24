@@ -1,5 +1,8 @@
 const { test, expect } = require('@playwright/test');
 const fs = require('node:fs');
+
+// Only these two geometry/evidence cases require the opted-in camera.
+test.skip(process.env.REACT_APP_MAZE_CAMERA !== 'true', 'Camera requires REACT_APP_MAZE_CAMERA=true');
 const viewports = [[320,568],[375,667],[390,844],[412,915],[844,390],[1280,800],[390,240]];
 for (const [rows, columns] of [[13,17],[21,21]]) {
   test(`camera geometry, visibility, resize and motion ${rows}×${columns}`, async ({ page }) => {

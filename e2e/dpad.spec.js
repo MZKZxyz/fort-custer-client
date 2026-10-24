@@ -1,4 +1,5 @@
 const { test, expect } = require('@playwright/test');
+const cameraEnabled = process.env.REACT_APP_MAZE_CAMERA === 'true';
 
 for (const viewport of [
   { width: 320, height: 568 },
@@ -66,7 +67,7 @@ for (const viewport of [
 }
 
 // Sizing must remain width-based: short windows must not collapse the maze.
-test.describe('camera cell proportions', () => {
+test.describe('feature-mode board and cell proportions', () => {
   test.use({ isMobile: false, hasTouch: false });
   test('retains readable cell widths across viewport heights', async ({ page }) => {
     await page.addInitScript(() => {
@@ -88,8 +89,11 @@ test.describe('camera cell proportions', () => {
       { width: 390, height: 240 },
     ]) {
       await page.setViewportSize(viewport);
-      const tileSize = Math.max(36, Math.min((viewport.width - 36) / 8, 48));
-      const expectedWidth = 21 * tileSize;
+      const legacyWidth = Math.min(viewport.width - 16, viewport.width * 0.95 + 20);
+      const tileSize = cameraEnabled
+        ? Math.max(36, Math.min((viewport.width - 36) / 8, 48))
+        : (legacyWidth - 20) / 21;
+      const expectedWidth = cameraEnabled ? 21 * tileSize : legacyWidth;
       await expect.poll(async () => {
         const box = await page.locator('.maze-grid').boundingBox();
         return Math.abs(box.width - expectedWidth);

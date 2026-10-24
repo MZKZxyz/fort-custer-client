@@ -101,3 +101,26 @@ env -u REACT_APP_MAZE_CAMERA BUILD_PATH=/tmp/vis03-optin-legacy npm run build
 REACT_APP_MAZE_CAMERA=true BUILD_PATH=/tmp/vis03-optin-camera npm run build
 node docs/viewport-camera/verify.cjs docs/viewport-camera/evidence/rollout-production-trace.json /tmp/vis03-optin-camera /tmp/vis03-optin-legacy
 ```
+
+## Browser feature-mode correction
+
+Addresses the [integrator follow-up](https://github.com/MZKZxyz/fort-custer-client/pull/39#issuecomment-6390794443). Browser expectations now use the same exact `REACT_APP_MAZE_CAMERA === 'true'` selection as the app. The production safeguard and all runtime files remain unchanged.
+
+- Shared responsive cases assert legacy host/fog and absence of a camera viewport when disabled; opted-in cases assert viewport and absence of legacy host/fog. All route, touch scrolling, keyboard, D-pad, hit-target, modal and recovery assertions remain active in both modes.
+- The board-sizing case retains the original legacy board formula `min(width − 16, 0.95 × width + 20)` and tile width `(board − 20) / 21`; when enabled it retains camera square-cell/world sizing expectations. All seven sizing/height cases run in both modes.
+- Only the two camera geometry/evidence cases are explicitly skipped without opt-in. With exact `true`, both execute their complete existing geometry, visibility, resize and motion checks.
+- The checked-in `.github/workflows/client-checks.yml` does **not** set the camera flag. Its default browser run therefore covers legacy mode, not opted-in camera geometry. No CI/workflow configuration was changed. Local camera coverage is recorded separately; this handoff makes no claim about the next GitHub CI result.
+
+Local results: **unset: 32 browser cases passed, 2 camera-only cases skipped; true: 34 browser cases passed, 0 skipped**. All 32 shared functional/presentation cases execute in both modes. All **6 Jest suites / 40 tests passed in each mode**. The ordinary/unset production build compiled successfully. The full local browser runs each took 2.9 minutes. No runtime or CI files changed; the opt-in safeguard remains exact-true.
+
+Exact local commands (run sequentially so each mode gets a fresh managed server; `CI=true` prevents reuse of a server from the other mode):
+
+```sh
+env -u REACT_APP_MAZE_CAMERA CI=true npm test -- --watch=false --runInBand
+REACT_APP_MAZE_CAMERA=true CI=true npm test -- --watch=false --runInBand
+env -u REACT_APP_MAZE_CAMERA BUILD_PATH=/tmp/vis03-modes-legacy-build npm run build
+env -u REACT_APP_MAZE_CAMERA CI=true PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run test:e2e -- --workers=2
+REACT_APP_MAZE_CAMERA=true CI=true PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run test:e2e -- --workers=2
+```
+
+[Mode-check evidence](evidence/browser-mode-checks.json) records counts and source hashes. Existing contact sheet/measurement files remain historical visual evidence; this correction changes test selection/assertions only. Independent pinned-SHA QA, EG-09 and EG-08/11 gates remain open.
