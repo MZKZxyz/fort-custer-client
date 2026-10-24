@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "status": "owner review pending",
+  "sha256": {
+    "renders/daylight.jpg": "cbe1bfa8201df71dffd11ef7dcae1ec1b0c377af181f27b81d81dd299513be2c",
+    "renders/dusk.jpg": "3adeb5c9679104b357f50553ba2a96850f0645d70eae7e544227c80ac95767e8",
+    "previews/art-checks.json": "0b518b3c6e46cc0fe700712e3d4b06a6845e20eeff805408e3e3a62ba0e5172e",
+    "previews/browser-checks.json": "35bb75cac68bf970acd4c68e3629fc9d4b61d293b73eda9daebb48d746a526e7",
+    "previews/collision-plan.svg": "2233afaa8173beea12f9a6a3b2ad2ad4184e267d4b3e539058901781861a1105",
+    "previews/contact-sheet.jpg": "dcdb8d9d1aa9efad5fd26f70ccb916d128a5b4f2b3d585185540d8268f7a48e3",
+    "previews/daylight-detail.jpg": "123b11184bb2ecbf0ff387625fb1df0b218426e3138d821a07b8c359c17271f3",
+    "previews/desktop-daylight.jpg": "75de9968e22efa33716a1a41c09a53983dd99c56b945a9597708b2e549b38e1d",
+    "previews/desktop-dusk.jpg": "f327c346f08a08396d0b7b03b3c8a2df6a7b0064e50f960dd72e43178d94bab0",
+    "previews/mobile-daylight.jpg": "fc70362386d052d66840f2eee64d5c8af9c24733e6b323012c8d001424da0135",
+    "previews/mobile-dusk.jpg": "119499e0d862d35166907e1616812851ba3e86f05ae674bda023ab4a3e72a805"
+  }
+}

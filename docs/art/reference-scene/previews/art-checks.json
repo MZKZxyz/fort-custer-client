@@ -1,0 +1,24 @@
+{
+  "author_checks_only": true,
+  "independent_QA": "pending",
+  "fixture": {
+    "rows": 11,
+    "columns": 9,
+    "connected_path_cells": 43,
+    "one_each": "S X F E"
+  },
+  "ui_contrast_ratios": {
+    "ink / paper": 10.18,
+    "secondary / paper": 5.55,
+    "accent / paper": 5.8,
+    "selected button": 11.26
+  },
+  "motion": "no animation, transitions, flashes, moving fire or fog",
+  "limitations": [
+    "not a game renderer",
+    "not a transparent sprite pack",
+    "not real-device testing",
+    "no screen-reader gameplay claim",
+    "image texture contrast is not measured by UI token ratios"
+  ]
+}
