@@ -1,0 +1,26 @@
+[
+  {
+    "label": "initial",
+    "domSha256": "87dc44e35f398bb6cd0acb90af084c5bfa1476bffd7506d19f6eac49edabcb54"
+  },
+  {
+    "label": "wall",
+    "domSha256": "87dc44e35f398bb6cd0acb90af084c5bfa1476bffd7506d19f6eac49edabcb54"
+  },
+  {
+    "label": "pickup",
+    "domSha256": "2d4704883e3b37d96cccfb2ae6217c0c00d635927ebefe145df5bed74c37324a"
+  },
+  {
+    "label": "cleared",
+    "domSha256": "24b23fccedc6f19729b76057fdb589048024b50c6164045570d1e8029d3295a7"
+  },
+  {
+    "label": "advanced",
+    "domSha256": "049c6e1771a1f8aafd97513ec331a0e4c8fdde781316dfb3f2a878410d97aeb9"
+  },
+  {
+    "label": "modal",
+    "domSha256": "3d832a3697905ea7a44c4185fc4e6c06456b8bc24c282e71dcc1534143fba40d"
+  }
+]

@@ -2,6 +2,7 @@ import { useRef, useMemo, useEffect, useState, useCallback  } from 'react';
 import { useNavigate } from 'react-router-dom';
 import API from '../utils/api';
 import { move, findStart, formatElapsed } from '../game/movement';
+import { createMazeScene, createMazeViewModel } from '../game/scene';
 import '../css/MazePage.css'; // Add CSS below to this file
 const PUBLIC = process.env.PUBLIC_URL;
 
@@ -55,12 +56,11 @@ const MazePage = () => {
 
   const VISION_RADIUS = 1; // can be 1 or 2
 
-  // radius of the visible circle as percentage of grid size
-  const baseRadius = useMemo(() => {
-    if (!mazeGrid.length) return 0;
-    const size = Math.max(mazeGrid.length, mazeGrid[0].length);
-    return ((VISION_RADIUS + 0.5) / size) * 100;
-  }, [mazeGrid]);
+  // Memoize geometry independently of the timer; renderers only read this snapshot.
+  const scene = useMemo(() => createMazeScene({
+    grid: mazeGrid, position: playerPos, inventory, completed: finished,
+  }, { visionRadius: VISION_RADIUS }), [mazeGrid, playerPos, inventory, finished]);
+  const baseRadius = scene.camera.visibilityRadiusPercent;
 
   const [fogRadius, setFogRadius] = useState(baseRadius);
   const [closing, setClosing] = useState(false);
@@ -75,14 +75,6 @@ const MazePage = () => {
       if (hintTimeoutRef.current) clearTimeout(hintTimeoutRef.current);
     };
   }, []);
-
-  const isVisible = (row, col) => {
-    const [pr, pc] = playerPos;
-    return (
-      Math.abs(pr - row) <= VISION_RADIUS &&
-      Math.abs(pc - col) <= VISION_RADIUS
-    );
-  };
 
   // Monotonic elapsed time starts only once the maze is ready, not at mount.
   const [startTime, setStartTime] = useState(null);
@@ -245,13 +237,11 @@ const MazePage = () => {
     return () => window.removeEventListener('keydown', handleKey);
   }, [movePlayer]);
 
-  const renderCell = (cell, row, col) => {
-    const isPlayer = playerPos[0] === row && playerPos[1] === col;
-    const visible  = isVisible(row, col);
-    const bg       = cell === '#' ? `url(textures/wall.png)` : `url(textures/floor.png)`;
+  const renderCell = ({ id, terrain, object, isPlayer, visible }) => {
+    const bg = terrain === 'wall' ? `url(textures/wall.png)` : `url(textures/floor.png)`;
     return (
       <div
-        key={`${row}-${col}`}
+        key={id}
         className="maze-cell"
         style={{
           backgroundImage: bg,
@@ -264,16 +254,16 @@ const MazePage = () => {
           isPlayer ? (
             <>
               🧍‍♂️
-              {showFireHint && (
+              {view.ui.showFireHint && (
                 <div className="thought-bubble">
                   <span className="bubble-icon">🧯</span>
                 </div>
               )}
             </>
           ) :
-          cell     === 'X' ? '🧯' :
-          cell     === 'F' ? '🔥' :
-          cell     === 'E' ? (
+          object   === 'extinguisher' ? '🧯' :
+          object   === 'fire' ? '🔥' :
+          object   === 'exit' ? (
             <img
               src={goalImg}
               alt="Goal"
@@ -288,6 +278,11 @@ const MazePage = () => {
 
   const formattedDate = new Date(selectedDate).toLocaleDateString('en-US', {
     month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC',
+  });
+
+  const view = createMazeViewModel(scene, {
+    dateLabel: formattedDate, elapsedLabel: displayTime, showFireHint, showQuitModal,
+    finished, closing, completionError, fogRadius,
   });
 
   if (!mazeData && recovery) {
@@ -352,11 +347,11 @@ const MazePage = () => {
 
           <div className="maze-hud__item">
             <span className="maze-hud__icon">📅</span>
-            <h2 className="maze-date">{formattedDate}</h2>
+            <h2 className="maze-date">{view.hud.dateLabel}</h2>
           </div>
           <div className="maze-hud__item">
             <span className="maze-hud__icon">⏱</span>
-            <p className="maze-timer">{displayTime}</p>
+            <p className="maze-timer">{view.hud.elapsedLabel}</p>
           </div>
 
 
@@ -364,7 +359,7 @@ const MazePage = () => {
 
           <div className="maze-hud__item">
             <div className="maze-slot">
-              {inventory.includes('extinguisher') && '🧯'}
+              {view.hud.equipment === 'extinguisher' && '🧯'}
             </div>
           </div>
 
@@ -372,9 +367,9 @@ const MazePage = () => {
 
       <div className="maze-container">
         <div className="maze-grid" style={{ position: 'relative' }}>
-          {mazeGrid.map((row, rowIndex) => (
+          {view.scene.rows.map((row, rowIndex) => (
             <div key={rowIndex} className="maze-row">
-              {row.map((cell, colIndex) => renderCell(cell, rowIndex, colIndex))}
+              {row.map(renderCell)}
             </div>
           ))}
           <div className="maze-fog">
@@ -382,9 +377,9 @@ const MazePage = () => {
               className="maze-fog-main"
               style={{
                 backgroundImage: `url(${PUBLIC}/textures/clouds.png)`,
-                '--px': `${((playerPos[1] + 0.5) / mazeGrid[0].length) * 100}%`,
-                '--py': `${((playerPos[0] + 0.5) / mazeGrid.length) * 100}%`,
-                '--rad': `${fogRadius}%`
+                '--px': `${view.scene.camera.focusPercent.x}%`,
+                '--py': `${view.scene.camera.focusPercent.y}%`,
+                '--rad': `${view.effects.fogRadius}%`
               }}
             />
           </div>
@@ -409,11 +404,11 @@ const MazePage = () => {
         </div>
       </div>     
 
-      {finished && !closing && !completionError && <p role="status">Saving your result…</p>}
-      {completionError && (
+      {view.ui.finished && !view.ui.closing && !view.ui.completionError && <p role="status">Saving your result…</p>}
+      {view.ui.completionError && (
         <div className="modal-overlay">
           <div className="modal-content" role="alert">
-            <p>{completionError}</p>
+            <p>{view.ui.completionError}</p>
             <div className="modal-buttons">
               <button onClick={handleFinish}>Retry saving</button>
               <button onClick={() => navigate('/mazes')}>Back to mazes</button>
@@ -423,7 +418,7 @@ const MazePage = () => {
       )}
 
       {/* Quit Confirmation Modal */}
-      {showQuitModal && (
+      {view.ui.showQuitModal && (
         <div className="modal-overlay">
           <div className="modal-content">
             <p>Are you sure you want to quit?</p>
