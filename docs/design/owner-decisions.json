@@ -1,0 +1,246 @@
+[
+  {
+    "id": "OD-01",
+    "status": "APPROVED",
+    "title": "Renderer foundation",
+    "choice": "Evolve existing React/CSS, extract reversible rendering boundary; no mandatory Canvas/Three migration.",
+    "domain": "ENG",
+    "priority": "P0",
+    "audit_crosswalk": [
+      "AUD-D01"
+    ]
+  },
+  {
+    "id": "OD-02",
+    "status": "APPROVED",
+    "title": "Responsive framing",
+    "choice": "Adapt camera zoom across orientations; test 7–9 visible columns on portrait phones as a starting target.",
+    "domain": "UX",
+    "priority": "P0",
+    "audit_crosswalk": [
+      "AUD-D02",
+      "AUD-D05"
+    ]
+  },
+  {
+    "id": "OD-03",
+    "status": "APPROVED",
+    "title": "Visibility",
+    "choice": "Remove mechanical fog, reveal every in-viewport tile; decorative mist may not obscure interaction; validate difficulty.",
+    "domain": "GAME",
+    "priority": "P0",
+    "audit_crosswalk": [
+      "AUD-D03"
+    ]
+  },
+  {
+    "id": "OD-04",
+    "status": "APPROVED",
+    "title": "Continuous directional input",
+    "choice": "Hold/drag enables repeat of discrete atomic grid moves; hard-stop on release, obstruction, interaction safeguards, modal, completion; retain accessible keyboard and on-screen controls.",
+    "domain": "UX",
+    "priority": "P0",
+    "audit_crosswalk": [
+      "AUD-D06"
+    ]
+  },
+  {
+    "id": "OD-05",
+    "status": "APPROVED",
+    "title": "Playable-session official time",
+    "choice": "Server-authoritative time starts from ready/playable handshake, not request creation; latency safeguards, retry/idempotency and historical compatibility required.",
+    "domain": "ENG",
+    "priority": "P0",
+    "audit_crosswalk": [
+      "AUD-D08"
+    ]
+  },
+  {
+    "id": "OD-06",
+    "status": "APPROVED",
+    "title": "Deterministic generation",
+    "choice": "Future date mazes reproducible by seed + version + configuration; historical stored grids immutable and remain authoritative.",
+    "domain": "GAME",
+    "priority": "P1",
+    "audit_crosswalk": [
+      "AUD-D12"
+    ]
+  },
+  {
+    "id": "OD-07",
+    "status": "APPROVED",
+    "title": "Release calendar",
+    "choice": "One new daily maze year-round; seasons shape aesthetics/events, not access; schedule and time boundary need engineering specification.",
+    "domain": "GAME",
+    "priority": "P1",
+    "audit_crosswalk": [
+      "AUD-D13"
+    ]
+  },
+  {
+    "id": "OD-08",
+    "status": "APPROVED",
+    "title": "Archive access",
+    "choice": "Every previously published daily maze remains replayable and catch-up eligible; no unpublished future access.",
+    "domain": "GAME",
+    "priority": "P1",
+    "audit_crosswalk": [
+      "NEW"
+    ]
+  },
+  {
+    "id": "OD-09",
+    "status": "APPROVED",
+    "title": "Reward eligibility",
+    "choice": "First successful completion of each date per subprofile provides one collectible opportunity, including catch-up; replays give no additional item; protect all legacy awards.",
+    "domain": "PROG",
+    "priority": "P0",
+    "audit_crosswalk": [
+      "AUD-D10"
+    ]
+  },
+  {
+    "id": "OD-10",
+    "status": "APPROVED",
+    "title": "Rarity selection",
+    "choice": "Weight new-item selection by rarity among unowned items; guarantee novelty until exhaustion; disclose/test rates; no paid rolls.",
+    "domain": "PROG",
+    "priority": "P1",
+    "audit_crosswalk": [
+      "AUD-D11"
+    ]
+  },
+  {
+    "id": "OD-11",
+    "status": "APPROVED",
+    "title": "Catalog exhaustion",
+    "choice": "Award permanent full-collection distinction; no ongoing substitute item or currency once exhausted; preserve completed-at-catalog-version provenance.",
+    "domain": "PROG",
+    "priority": "P1",
+    "audit_crosswalk": [
+      "AUD-D10"
+    ]
+  },
+  {
+    "id": "OD-12",
+    "status": "APPROVED",
+    "title": "Competitive ranking",
+    "choice": "Permanent leaderboard per dated maze; catch-up and replay runs qualify; fastest valid time per subprofile ranks; preserve legacy records.",
+    "domain": "PROG",
+    "priority": "P0",
+    "audit_crosswalk": [
+      "AUD-D09"
+    ]
+  },
+  {
+    "id": "OD-13",
+    "status": "APPROVED",
+    "title": "Expedition sequencing",
+    "choice": "First major milestone: improved daily maze. Design extension boundaries now; implement authored expeditions in later milestone.",
+    "domain": "GAME",
+    "priority": "P1",
+    "audit_crosswalk": [
+      "AUD-D16"
+    ]
+  },
+  {
+    "id": "OD-14",
+    "status": "APPROVED",
+    "title": "Future keyring",
+    "choice": "Keys use level-local expedition keyring; one consumable equipment slot remains distinct; deferred until expedition work.",
+    "domain": "GAME",
+    "priority": "P2",
+    "audit_crosswalk": [
+      "AUD-D07"
+    ]
+  },
+  {
+    "id": "OD-15",
+    "status": "APPROVED",
+    "title": "Collectible abilities",
+    "choice": "Selected permanent collectibles may unlock optional utilities; assisted runs separated from standard ranked runs; no pay-for-power; server-aware verification; implementation later.",
+    "domain": "PROG",
+    "priority": "P1",
+    "audit_crosswalk": [
+      "AUD-D17"
+    ]
+  },
+  {
+    "id": "OD-16",
+    "status": "APPROVED",
+    "title": "Initial achievements",
+    "choice": "Launch 5–8 permanent achievements, extensible IDs; retroactive awards only from verifiable historical evidence; no competitive power.",
+    "domain": "PROG",
+    "priority": "P2",
+    "audit_crosswalk": [
+      "AUD-D15"
+    ]
+  },
+  {
+    "id": "OD-17",
+    "status": "APPROVED",
+    "title": "Field Journal",
+    "choice": "Curated Kearny museum journal, collection progress, anonymous undiscovered entries, illustrated detail, source-backed history, clearly fictional annotations, ability labels; incremental after visual milestone.",
+    "domain": "UX",
+    "priority": "P1",
+    "audit_crosswalk": [
+      "AUD-D15"
+    ]
+  },
+  {
+    "id": "OD-18",
+    "status": "APPROVED",
+    "title": "Historical research standard",
+    "choice": "Historical factual claims sourced and editorially verified; enhanced Indigenous/sensitive-content review; separate Kearny fiction; preserve stable item IDs; withhold unsupported claims.",
+    "domain": "NARR",
+    "priority": "P1",
+    "audit_crosswalk": [
+      "AUD-D19"
+    ]
+  },
+  {
+    "id": "OD-19",
+    "status": "APPROVED",
+    "title": "Narrative placement",
+    "choice": "Environmental story, sparse signs, optional Kearny lore, deeper Field Journal and future expeditions; no required dialogue interrupts ranked daily puzzles.",
+    "domain": "NARR",
+    "priority": "P1",
+    "audit_crosswalk": [
+      "AUD-D18"
+    ]
+  },
+  {
+    "id": "OD-20",
+    "status": "APPROVED",
+    "title": "Asset standard",
+    "choice": "Approve polished representative scene then lock common art bible: projections, cell scale, lighting, anchors, occlusion, formats, test gates; renderer-neutral where practical.",
+    "domain": "ART",
+    "priority": "P0",
+    "audit_crosswalk": [
+      "AUD-D04"
+    ]
+  },
+  {
+    "id": "OD-21",
+    "status": "APPROVED",
+    "title": "Accessibility",
+    "choice": "Accessibility in first milestone definition of done: input parity, reduced motion, readable/responsive UI, semantic focus/keyboard/screen-reader where applicable, WCAG 2.2 AA target for web UI with known limitations.",
+    "domain": "UX",
+    "priority": "P0",
+    "audit_crosswalk": [
+      "AUD-D20"
+    ]
+  },
+  {
+    "id": "OD-22",
+    "status": "APPROVED",
+    "title": "Program governance",
+    "choice": "One cross-repo integrated GitHub Projects program; specialist roles, integrator dependency ownership, cohesive PRs, automated QA, independent review; owner signs product/release gates.",
+    "domain": "LEAD",
+    "priority": "P0",
+    "audit_crosswalk": [
+      "AUD-D21",
+      "AUD-D22"
+    ]
+  }
+]
