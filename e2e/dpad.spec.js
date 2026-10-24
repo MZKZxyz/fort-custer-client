@@ -66,9 +66,9 @@ for (const viewport of [
 }
 
 // Sizing must remain width-based: short windows must not collapse the maze.
-test.describe('original desktop and short-screen maze proportions', () => {
+test.describe('camera cell proportions', () => {
   test.use({ isMobile: false, hasTouch: false });
-  test('retains original board and tile widths across viewport heights', async ({ page }) => {
+  test('retains readable cell widths across viewport heights', async ({ page }) => {
     await page.addInitScript(() => {
       localStorage.setItem('token', 'synthetic-token');
       localStorage.setItem('activeSubProfile', JSON.stringify({ _id: 'synthetic-profile' }));
@@ -88,13 +88,14 @@ test.describe('original desktop and short-screen maze proportions', () => {
       { width: 390, height: 240 },
     ]) {
       await page.setViewportSize(viewport);
-      const expectedWidth = Math.min(viewport.width - 16, viewport.width * 0.95 + 20);
+      const tileSize = Math.max(36, Math.min((viewport.width - 36) / 8, 48));
+      const expectedWidth = 21 * tileSize;
       await expect.poll(async () => {
         const box = await page.locator('.maze-grid').boundingBox();
         return Math.abs(box.width - expectedWidth);
       }).toBeLessThan(1);
       const tile = await page.locator('.maze-cell').first().boundingBox();
-      expect(Math.abs(tile.width - (expectedWidth - 20) / 21)).toBeLessThan(1);
+      expect(Math.abs(tile.width - tileSize)).toBeLessThan(1);
     }
   });
 });

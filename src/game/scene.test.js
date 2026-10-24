@@ -121,3 +121,14 @@ test('accepts frozen inputs, is deterministic and handles the loading/recovery e
   Object.freeze(game.grid);
   expect(createMazeScene(game, { visionRadius: 2 }).rows[1][3].visible).toBe(true);
 });
+
+test('viewport path exposes all objects without changing logical coordinates or input grid', () => {
+  const grid = [['S', ' ', 'F', 'X', 'E', '#']];
+  const state = { grid, position: [0,0], inventory: [], completed: false };
+  const legacy = createMazeScene(state);
+  const viewport = createMazeScene(state, { revealAll: true });
+  expect(legacy.rows[0].filter(c => c.visible)).toHaveLength(2);
+  expect(viewport.rows[0].every(c => c.visible)).toBe(true);
+  expect(viewport.rows[0].map(({visible,...cell}) => cell)).toEqual(legacy.rows[0].map(({visible,...cell}) => cell));
+  expect(grid[0].join('')).toBe('S FXE#');
+});

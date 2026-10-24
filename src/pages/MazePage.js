@@ -1,10 +1,13 @@
-import { useRef, useMemo, useEffect, useState, useCallback  } from 'react';
+import { useRef, useMemo, useLayoutEffect, useEffect, useState, useCallback  } from 'react';
 import { useNavigate } from 'react-router-dom';
 import API from '../utils/api';
 import { move, findStart, formatElapsed } from '../game/movement';
 import { createMazeScene, createMazeViewModel } from '../game/scene';
+import { createCamera } from '../game/camera';
 import '../css/MazePage.css'; // Add CSS below to this file
 const PUBLIC = process.env.PUBLIC_URL;
+// Build-time rollback; no storage or server migration.
+const CAMERA_ENABLED = process.env.REACT_APP_MAZE_CAMERA !== 'false';
 
 const MazePage = () => {
   const navigate = useNavigate();
@@ -59,8 +62,32 @@ const MazePage = () => {
   // Memoize geometry independently of the timer; renderers only read this snapshot.
   const scene = useMemo(() => createMazeScene({
     grid: mazeGrid, position: playerPos, inventory, completed: finished,
-  }, { visionRadius: VISION_RADIUS }), [mazeGrid, playerPos, inventory, finished]);
-  const baseRadius = scene.camera.visibilityRadiusPercent;
+  }, { visionRadius: VISION_RADIUS, revealAll: CAMERA_ENABLED }), [mazeGrid, playerPos, inventory, finished]);
+  const viewportRef = useRef(null);
+  const [viewportSize, setViewportSize] = useState({ width: 0, height: 0, tileSize: 36 });
+  useLayoutEffect(() => {
+    const element = viewportRef.current;
+    if (!CAMERA_ENABLED || !element) return;
+    const measure = () => {
+      const tileSize = element.querySelector('.maze-cell')?.getBoundingClientRect().width || 36;
+      setViewportSize({ width: element.clientWidth, height: element.clientHeight, tileSize });
+    };
+    measure();
+    const observer = typeof ResizeObserver === 'undefined' ? null : new ResizeObserver(measure);
+    observer?.observe(element);
+    window.addEventListener('resize', measure);
+    return () => { observer?.disconnect(); window.removeEventListener('resize', measure); };
+  }, [mazeData]);
+  const camera = useMemo(() => createCamera({
+    ...viewportSize, rows: scene.camera.bounds.rows, columns: scene.camera.bounds.columns,
+    row: scene.player.row, column: scene.player.column,
+  }), [scene, viewportSize]);
+  useLayoutEffect(() => {
+    if (!CAMERA_ENABLED || !viewportRef.current) return;
+    viewportRef.current.scrollLeft = camera.x;
+    viewportRef.current.scrollTop = camera.y;
+  }, [camera]);
+  const baseRadius = CAMERA_ENABLED ? 0 : scene.camera.visibilityRadiusPercent;
 
   const [fogRadius, setFogRadius] = useState(baseRadius);
   const [closing, setClosing] = useState(false);
@@ -184,15 +211,15 @@ const MazePage = () => {
     }
   }, [profile?._id, selectedDate, startTime, finished, recoveryKey]);
 
-  // play fog closing animation then navigate to results
+  // Camera path opens results without fog; legacy fallback retains its closing effect.
   useEffect(() => {
     if (!closing) return;
-    const duration = 3000;
+    const duration = CAMERA_ENABLED || window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ? 0 : 3000;
     const start = performance.now();
     const startRadius = baseRadius;
     let raf;
     const step = (now) => {
-      const progress = Math.min((now - start) / duration, 1);
+      const progress = duration ? Math.min((now - start) / duration, 1) : 1;
       setFogRadius(startRadius * (1 - progress));
       if (progress < 1) {
         raf = requestAnimationFrame(step);
@@ -237,12 +264,14 @@ const MazePage = () => {
     return () => window.removeEventListener('keydown', handleKey);
   }, [movePlayer]);
 
-  const renderCell = ({ id, terrain, object, isPlayer, visible }) => {
+  const renderCell = ({ id, row, column, terrain, object, isPlayer, visible }) => {
     const bg = terrain === 'wall' ? `url(textures/wall.png)` : `url(textures/floor.png)`;
     return (
       <div
         key={id}
         className="maze-cell"
+        data-row={row} data-column={column} data-terrain={terrain}
+        data-player={isPlayer || undefined}
         style={{
           backgroundImage: bg,
           backgroundSize: 'cover',
@@ -255,7 +284,7 @@ const MazePage = () => {
             <>
               🧍‍♂️
               {view.ui.showFireHint && (
-                <div className="thought-bubble">
+                <div className="thought-bubble" role="status" aria-label="Fire blocks the path. Find an extinguisher.">
                   <span className="bubble-icon">🧯</span>
                 </div>
               )}
@@ -358,21 +387,24 @@ const MazePage = () => {
         {/* ── Column 2: Inventory slot ── */}
 
           <div className="maze-hud__item">
-            <div className="maze-slot">
+            <div className="maze-slot" role="img" aria-label={view.hud.equipment ? 'Equipment: extinguisher' : 'Equipment: empty'}>
               {view.hud.equipment === 'extinguisher' && '🧯'}
             </div>
           </div>
 
       </div>
 
-      <div className="maze-container">
+      <div className={`maze-container${CAMERA_ENABLED ? ' camera-enabled' : ''}`}>
+        <div ref={viewportRef} className={CAMERA_ENABLED ? 'maze-viewport' : 'maze-legacy-host'}
+          role={CAMERA_ENABLED ? 'region' : undefined} aria-label={CAMERA_ENABLED ? 'Maze viewport' : undefined}
+          style={CAMERA_ENABLED ? { '--world-columns': scene.camera.bounds.columns, '--world-rows': scene.camera.bounds.rows } : undefined}>
         <div className="maze-grid" style={{ position: 'relative' }}>
           {view.scene.rows.map((row, rowIndex) => (
             <div key={rowIndex} className="maze-row">
               {row.map(renderCell)}
             </div>
           ))}
-          <div className="maze-fog">
+          {!CAMERA_ENABLED && <div className="maze-fog">
             <div
               className="maze-fog-main"
               style={{
@@ -382,7 +414,8 @@ const MazePage = () => {
                 '--rad': `${view.effects.fogRadius}%`
               }}
             />
-          </div>
+          </div>}
+        </div>
         </div>
       </div>
       <div className="dpad">

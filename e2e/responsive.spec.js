@@ -53,7 +53,7 @@ for (const [width, height] of viewports) {
     expect(box.y + box.height).toBeLessThanOrEqual(nav.y);
     await play.tap();
     await expect(page).toHaveURL(/\/maze$/);
-    await expect(page.locator('.maze-fog')).toBeVisible();
+    await expect(page.locator('.maze-viewport')).toBeVisible();
     await expect(page.locator('.maze-slot')).toBeVisible();
     // Preserve width-based tile size, independent of viewport height.
     const tile = await page.locator('.maze-cell').first().boundingBox();
