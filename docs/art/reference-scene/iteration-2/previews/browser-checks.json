@@ -1,0 +1,1479 @@
+{
+  "kind": "actual Chromium static-concept captures; DPR 1; not physical-device or gameplay QA",
+  "results": [
+    {
+      "device": "phone-320",
+      "treatment": "original",
+      "mood": "daylight",
+      "file": "phone-320-original-daylight-on.jpg",
+      "width": 320,
+      "height": 568,
+      "pageWidth": 320,
+      "pageHeight": 568,
+      "imageWidth": 1400,
+      "imageSource": "../renders/daylight.jpg",
+      "selectedTreatment": "original",
+      "pressedMood": "daylight",
+      "visibleBadgeCount": 4,
+      "motion": true,
+      "badges": true,
+      "tilePitchX": 32.02141608391608,
+      "tilePitchY": 30.109357353766754,
+      "elevation": 70.1,
+      "targets": [
+        {
+          "token": "S",
+          "x": 86.36145104895105,
+          "y": 281.90205405297763,
+          "cropped": false
+        },
+        {
+          "token": "X",
+          "x": 86.36145104895105,
+          "y": 221.68333934544415,
+          "cropped": false
+        },
+        {
+          "token": "F",
+          "x": 150.40428321678323,
+          "y": 161.46462463791065,
+          "cropped": false
+        },
+        {
+          "token": "E",
+          "x": 246.46853146853147,
+          "y": 41.027195222843645,
+          "cropped": false
+        }
+      ],
+      "scene": {
+        "x": 16,
+        "y": 161,
+        "width": 288,
+        "height": 314,
+        "top": 161,
+        "right": 304,
+        "bottom": 475,
+        "left": 16
+      },
+      "image": {
+        "x": -68.953125,
+        "y": 89.046875,
+        "width": 457.90625,
+        "height": 457.90625,
+        "top": 89.046875,
+        "right": 388.953125,
+        "bottom": 546.953125,
+        "left": -68.953125
+      },
+      "errors": []
+    },
+    {
+      "device": "phone-320",
+      "treatment": "original",
+      "mood": "dusk",
+      "file": "phone-320-original-dusk-on.jpg",
+      "width": 320,
+      "height": 568,
+      "pageWidth": 320,
+      "pageHeight": 568,
+      "imageWidth": 1400,
+      "imageSource": "../renders/dusk.jpg",
+      "selectedTreatment": "original",
+      "pressedMood": "dusk",
+      "visibleBadgeCount": 4,
+      "motion": true,
+      "badges": true,
+      "tilePitchX": 32.02141608391608,
+      "tilePitchY": 30.109357353766754,
+      "elevation": 70.1,
+      "targets": [
+        {
+          "token": "S",
+          "x": 86.36145104895105,
+          "y": 281.90205405297763,
+          "cropped": false
+        },
+        {
+          "token": "X",
+          "x": 86.36145104895105,
+          "y": 221.68333934544415,
+          "cropped": false
+        },
+        {
+          "token": "F",
+          "x": 150.40428321678323,
+          "y": 161.46462463791065,
+          "cropped": false
+        },
+        {
+          "token": "E",
+          "x": 246.46853146853147,
+          "y": 41.027195222843645,
+          "cropped": false
+        }
+      ],
+      "scene": {
+        "x": 16,
+        "y": 161,
+        "width": 288,
+        "height": 314,
+        "top": 161,
+        "right": 304,
+        "bottom": 475,
+        "left": 16
+      },
+      "image": {
+        "x": -68.953125,
+        "y": 89.046875,
+        "width": 457.90625,
+        "height": 457.90625,
+        "top": 89.046875,
+        "right": 388.953125,
+        "bottom": 546.953125,
+        "left": -68.953125
+      },
+      "errors": []
+    },
+    {
+      "device": "phone-320",
+      "treatment": "refined-70.1",
+      "mood": "daylight",
+      "file": "phone-320-refined-70.1-daylight-on.jpg",
+      "width": 320,
+      "height": 568,
+      "pageWidth": 320,
+      "pageHeight": 568,
+      "imageWidth": 1400,
+      "imageSource": "renders/angle-70.1-daylight.jpg",
+      "selectedTreatment": "refined-70.1",
+      "pressedMood": "daylight",
+      "visibleBadgeCount": 4,
+      "motion": true,
+      "badges": true,
+      "tilePitchX": 32.02141608391608,
+      "tilePitchY": 30.109357353766754,
+      "elevation": 70.1,
+      "targets": [
+        {
+          "token": "S",
+          "x": 86.36145104895105,
+          "y": 281.90205405297763,
+          "cropped": false
+        },
+        {
+          "token": "X",
+          "x": 86.36145104895105,
+          "y": 221.68333934544415,
+          "cropped": false
+        },
+        {
+          "token": "F",
+          "x": 150.40428321678323,
+          "y": 161.46462463791065,
+          "cropped": false
+        },
+        {
+          "token": "E",
+          "x": 246.46853146853147,
+          "y": 41.027195222843645,
+          "cropped": false
+        }
+      ],
+      "scene": {
+        "x": 16,
+        "y": 161,
+        "width": 288,
+        "height": 314,
+        "top": 161,
+        "right": 304,
+        "bottom": 475,
+        "left": 16
+      },
+      "image": {
+        "x": -68.953125,
+        "y": 89.046875,
+        "width": 457.90625,
+        "height": 457.90625,
+        "top": 89.046875,
+        "right": 388.953125,
+        "bottom": 546.953125,
+        "left": -68.953125
+      },
+      "errors": []
+    },
+    {
+      "device": "phone-320",
+      "treatment": "refined-70.1",
+      "mood": "daylight",
+      "file": "phone-320-refined-70.1-daylight-off.jpg",
+      "width": 320,
+      "height": 568,
+      "pageWidth": 320,
+      "pageHeight": 568,
+      "imageWidth": 1400,
+      "imageSource": "renders/angle-70.1-daylight.jpg",
+      "selectedTreatment": "refined-70.1",
+      "pressedMood": "daylight",
+      "visibleBadgeCount": 0,
+      "motion": true,
+      "badges": false,
+      "tilePitchX": 32.02141608391608,
+      "tilePitchY": 30.109357353766754,
+      "elevation": 70.1,
+      "targets": [
+        {
+          "token": "S",
+          "x": 86.36145104895105,
+          "y": 281.90205405297763,
+          "cropped": false
+        },
+        {
+          "token": "X",
+          "x": 86.36145104895105,
+          "y": 221.68333934544415,
+          "cropped": false
+        },
+        {
+          "token": "F",
+          "x": 150.40428321678323,
+          "y": 161.46462463791065,
+          "cropped": false
+        },
+        {
+          "token": "E",
+          "x": 246.46853146853147,
+          "y": 41.027195222843645,
+          "cropped": false
+        }
+      ],
+      "scene": {
+        "x": 16,
+        "y": 161,
+        "width": 288,
+        "height": 314,
+        "top": 161,
+        "right": 304,
+        "bottom": 475,
+        "left": 16
+      },
+      "image": {
+        "x": -68.953125,
+        "y": 89.046875,
+        "width": 457.90625,
+        "height": 457.90625,
+        "top": 89.046875,
+        "right": 388.953125,
+        "bottom": 546.953125,
+        "left": -68.953125
+      },
+      "errors": []
+    },
+    {
+      "device": "phone-320",
+      "treatment": "refined-70.1",
+      "mood": "dusk",
+      "file": "phone-320-refined-70.1-dusk-on.jpg",
+      "width": 320,
+      "height": 568,
+      "pageWidth": 320,
+      "pageHeight": 568,
+      "imageWidth": 1400,
+      "imageSource": "renders/angle-70.1-dusk.jpg",
+      "selectedTreatment": "refined-70.1",
+      "pressedMood": "dusk",
+      "visibleBadgeCount": 4,
+      "motion": true,
+      "badges": true,
+      "tilePitchX": 32.02141608391608,
+      "tilePitchY": 30.109357353766754,
+      "elevation": 70.1,
+      "targets": [
+        {
+          "token": "S",
+          "x": 86.36145104895105,
+          "y": 281.90205405297763,
+          "cropped": false
+        },
+        {
+          "token": "X",
+          "x": 86.36145104895105,
+          "y": 221.68333934544415,
+          "cropped": false
+        },
+        {
+          "token": "F",
+          "x": 150.40428321678323,
+          "y": 161.46462463791065,
+          "cropped": false
+        },
+        {
+          "token": "E",
+          "x": 246.46853146853147,
+          "y": 41.027195222843645,
+          "cropped": false
+        }
+      ],
+      "scene": {
+        "x": 16,
+        "y": 161,
+        "width": 288,
+        "height": 314,
+        "top": 161,
+        "right": 304,
+        "bottom": 475,
+        "left": 16
+      },
+      "image": {
+        "x": -68.953125,
+        "y": 89.046875,
+        "width": 457.90625,
+        "height": 457.90625,
+        "top": 89.046875,
+        "right": 388.953125,
+        "bottom": 546.953125,
+        "left": -68.953125
+      },
+      "errors": []
+    },
+    {
+      "device": "phone-320",
+      "treatment": "refined-70.1",
+      "mood": "dusk",
+      "file": "phone-320-refined-70.1-dusk-off.jpg",
+      "width": 320,
+      "height": 568,
+      "pageWidth": 320,
+      "pageHeight": 568,
+      "imageWidth": 1400,
+      "imageSource": "renders/angle-70.1-dusk.jpg",
+      "selectedTreatment": "refined-70.1",
+      "pressedMood": "dusk",
+      "visibleBadgeCount": 0,
+      "motion": true,
+      "badges": false,
+      "tilePitchX": 32.02141608391608,
+      "tilePitchY": 30.109357353766754,
+      "elevation": 70.1,
+      "targets": [
+        {
+          "token": "S",
+          "x": 86.36145104895105,
+          "y": 281.90205405297763,
+          "cropped": false
+        },
+        {
+          "token": "X",
+          "x": 86.36145104895105,
+          "y": 221.68333934544415,
+          "cropped": false
+        },
+        {
+          "token": "F",
+          "x": 150.40428321678323,
+          "y": 161.46462463791065,
+          "cropped": false
+        },
+        {
+          "token": "E",
+          "x": 246.46853146853147,
+          "y": 41.027195222843645,
+          "cropped": false
+        }
+      ],
+      "scene": {
+        "x": 16,
+        "y": 161,
+        "width": 288,
+        "height": 314,
+        "top": 161,
+        "right": 304,
+        "bottom": 475,
+        "left": 16
+      },
+      "image": {
+        "x": -68.953125,
+        "y": 89.046875,
+        "width": 457.90625,
+        "height": 457.90625,
+        "top": 89.046875,
+        "right": 388.953125,
+        "bottom": 546.953125,
+        "left": -68.953125
+      },
+      "errors": []
+    },
+    {
+      "device": "phone-320",
+      "treatment": "refined-58",
+      "mood": "daylight",
+      "file": "phone-320-refined-58-daylight-on.jpg",
+      "width": 320,
+      "height": 568,
+      "pageWidth": 320,
+      "pageHeight": 568,
+      "imageWidth": 1400,
+      "imageSource": "renders/angle-58-daylight.jpg",
+      "selectedTreatment": "refined-58",
+      "pressedMood": "daylight",
+      "visibleBadgeCount": 4,
+      "motion": true,
+      "badges": true,
+      "tilePitchX": 32.02141608391608,
+      "tilePitchY": 27.15570094619779,
+      "elevation": 58,
+      "targets": [
+        {
+          "token": "S",
+          "x": 86.36145104895105,
+          "y": 269.22114703059117,
+          "cropped": false
+        },
+        {
+          "token": "X",
+          "x": 86.36145104895105,
+          "y": 214.90974513819555,
+          "cropped": false
+        },
+        {
+          "token": "F",
+          "x": 150.40428321678323,
+          "y": 160.59834324579998,
+          "cropped": false
+        },
+        {
+          "token": "E",
+          "x": 246.46853146853147,
+          "y": 51.975539461008836,
+          "cropped": false
+        }
+      ],
+      "scene": {
+        "x": 16,
+        "y": 161,
+        "width": 288,
+        "height": 314,
+        "top": 161,
+        "right": 304,
+        "bottom": 475,
+        "left": 16
+      },
+      "image": {
+        "x": -68.953125,
+        "y": 89.046875,
+        "width": 457.90625,
+        "height": 457.90625,
+        "top": 89.046875,
+        "right": 388.953125,
+        "bottom": 546.953125,
+        "left": -68.953125
+      },
+      "errors": []
+    },
+    {
+      "device": "phone-320",
+      "treatment": "refined-58",
+      "mood": "daylight",
+      "file": "phone-320-refined-58-daylight-off.jpg",
+      "width": 320,
+      "height": 568,
+      "pageWidth": 320,
+      "pageHeight": 568,
+      "imageWidth": 1400,
+      "imageSource": "renders/angle-58-daylight.jpg",
+      "selectedTreatment": "refined-58",
+      "pressedMood": "daylight",
+      "visibleBadgeCount": 0,
+      "motion": true,
+      "badges": false,
+      "tilePitchX": 32.02141608391608,
+      "tilePitchY": 27.15570094619779,
+      "elevation": 58,
+      "targets": [
+        {
+          "token": "S",
+          "x": 86.36145104895105,
+          "y": 269.22114703059117,
+          "cropped": false
+        },
+        {
+          "token": "X",
+          "x": 86.36145104895105,
+          "y": 214.90974513819555,
+          "cropped": false
+        },
+        {
+          "token": "F",
+          "x": 150.40428321678323,
+          "y": 160.59834324579998,
+          "cropped": false
+        },
+        {
+          "token": "E",
+          "x": 246.46853146853147,
+          "y": 51.975539461008836,
+          "cropped": false
+        }
+      ],
+      "scene": {
+        "x": 16,
+        "y": 161,
+        "width": 288,
+        "height": 314,
+        "top": 161,
+        "right": 304,
+        "bottom": 475,
+        "left": 16
+      },
+      "image": {
+        "x": -68.953125,
+        "y": 89.046875,
+        "width": 457.90625,
+        "height": 457.90625,
+        "top": 89.046875,
+        "right": 388.953125,
+        "bottom": 546.953125,
+        "left": -68.953125
+      },
+      "errors": []
+    },
+    {
+      "device": "phone-320",
+      "treatment": "refined-58",
+      "mood": "dusk",
+      "file": "phone-320-refined-58-dusk-on.jpg",
+      "width": 320,
+      "height": 568,
+      "pageWidth": 320,
+      "pageHeight": 568,
+      "imageWidth": 1400,
+      "imageSource": "renders/angle-58-dusk.jpg",
+      "selectedTreatment": "refined-58",
+      "pressedMood": "dusk",
+      "visibleBadgeCount": 4,
+      "motion": true,
+      "badges": true,
+      "tilePitchX": 32.02141608391608,
+      "tilePitchY": 27.15570094619779,
+      "elevation": 58,
+      "targets": [
+        {
+          "token": "S",
+          "x": 86.36145104895105,
+          "y": 269.22114703059117,
+          "cropped": false
+        },
+        {
+          "token": "X",
+          "x": 86.36145104895105,
+          "y": 214.90974513819555,
+          "cropped": false
+        },
+        {
+          "token": "F",
+          "x": 150.40428321678323,
+          "y": 160.59834324579998,
+          "cropped": false
+        },
+        {
+          "token": "E",
+          "x": 246.46853146853147,
+          "y": 51.975539461008836,
+          "cropped": false
+        }
+      ],
+      "scene": {
+        "x": 16,
+        "y": 161,
+        "width": 288,
+        "height": 314,
+        "top": 161,
+        "right": 304,
+        "bottom": 475,
+        "left": 16
+      },
+      "image": {
+        "x": -68.953125,
+        "y": 89.046875,
+        "width": 457.90625,
+        "height": 457.90625,
+        "top": 89.046875,
+        "right": 388.953125,
+        "bottom": 546.953125,
+        "left": -68.953125
+      },
+      "errors": []
+    },
+    {
+      "device": "phone-320",
+      "treatment": "refined-58",
+      "mood": "dusk",
+      "file": "phone-320-refined-58-dusk-off.jpg",
+      "width": 320,
+      "height": 568,
+      "pageWidth": 320,
+      "pageHeight": 568,
+      "imageWidth": 1400,
+      "imageSource": "renders/angle-58-dusk.jpg",
+      "selectedTreatment": "refined-58",
+      "pressedMood": "dusk",
+      "visibleBadgeCount": 0,
+      "motion": true,
+      "badges": false,
+      "tilePitchX": 32.02141608391608,
+      "tilePitchY": 27.15570094619779,
+      "elevation": 58,
+      "targets": [
+        {
+          "token": "S",
+          "x": 86.36145104895105,
+          "y": 269.22114703059117,
+          "cropped": false
+        },
+        {
+          "token": "X",
+          "x": 86.36145104895105,
+          "y": 214.90974513819555,
+          "cropped": false
+        },
+        {
+          "token": "F",
+          "x": 150.40428321678323,
+          "y": 160.59834324579998,
+          "cropped": false
+        },
+        {
+          "token": "E",
+          "x": 246.46853146853147,
+          "y": 51.975539461008836,
+          "cropped": false
+        }
+      ],
+      "scene": {
+        "x": 16,
+        "y": 161,
+        "width": 288,
+        "height": 314,
+        "top": 161,
+        "right": 304,
+        "bottom": 475,
+        "left": 16
+      },
+      "image": {
+        "x": -68.953125,
+        "y": 89.046875,
+        "width": 457.90625,
+        "height": 457.90625,
+        "top": 89.046875,
+        "right": 388.953125,
+        "bottom": 546.953125,
+        "left": -68.953125
+      },
+      "errors": []
+    },
+    {
+      "device": "phone-390",
+      "treatment": "refined-58",
+      "mood": "daylight",
+      "file": "phone-390-refined-58-daylight-on.jpg",
+      "width": 390,
+      "height": 844,
+      "pageWidth": 390,
+      "pageHeight": 844,
+      "imageWidth": 1400,
+      "imageSource": "renders/angle-58-daylight.jpg",
+      "selectedTreatment": "refined-58",
+      "pressedMood": "daylight",
+      "visibleBadgeCount": 4,
+      "motion": true,
+      "badges": true,
+      "tilePitchX": 39.80550699300699,
+      "tilePitchY": 33.75698442196088,
+      "elevation": 58,
+      "targets": [
+        {
+          "token": "S",
+          "x": 107.35008741258741,
+          "y": 399.50100274088703,
+          "cropped": false
+        },
+        {
+          "token": "X",
+          "x": 107.35008741258741,
+          "y": 331.9870338969653,
+          "cropped": false
+        },
+        {
+          "token": "F",
+          "x": 186.9611013986014,
+          "y": 264.4730650530435,
+          "cropped": false
+        },
+        {
+          "token": "E",
+          "x": 306.3776223776224,
+          "y": 129.4451273652,
+          "cropped": false
+        }
+      ],
+      "scene": {
+        "x": 16,
+        "y": 161,
+        "width": 358,
+        "height": 520,
+        "top": 161,
+        "right": 374,
+        "bottom": 681,
+        "left": 16
+      },
+      "image": {
+        "x": -89.609375,
+        "y": 136.390625,
+        "width": 569.21875,
+        "height": 569.21875,
+        "top": 136.390625,
+        "right": 479.609375,
+        "bottom": 705.609375,
+        "left": -89.609375
+      },
+      "errors": []
+    },
+    {
+      "device": "phone-390",
+      "treatment": "refined-58",
+      "mood": "daylight",
+      "file": "phone-390-refined-58-daylight-off.jpg",
+      "width": 390,
+      "height": 844,
+      "pageWidth": 390,
+      "pageHeight": 844,
+      "imageWidth": 1400,
+      "imageSource": "renders/angle-58-daylight.jpg",
+      "selectedTreatment": "refined-58",
+      "pressedMood": "daylight",
+      "visibleBadgeCount": 0,
+      "motion": true,
+      "badges": false,
+      "tilePitchX": 39.80550699300699,
+      "tilePitchY": 33.75698442196088,
+      "elevation": 58,
+      "targets": [
+        {
+          "token": "S",
+          "x": 107.35008741258741,
+          "y": 399.50100274088703,
+          "cropped": false
+        },
+        {
+          "token": "X",
+          "x": 107.35008741258741,
+          "y": 331.9870338969653,
+          "cropped": false
+        },
+        {
+          "token": "F",
+          "x": 186.9611013986014,
+          "y": 264.4730650530435,
+          "cropped": false
+        },
+        {
+          "token": "E",
+          "x": 306.3776223776224,
+          "y": 129.4451273652,
+          "cropped": false
+        }
+      ],
+      "scene": {
+        "x": 16,
+        "y": 161,
+        "width": 358,
+        "height": 520,
+        "top": 161,
+        "right": 374,
+        "bottom": 681,
+        "left": 16
+      },
+      "image": {
+        "x": -89.609375,
+        "y": 136.390625,
+        "width": 569.21875,
+        "height": 569.21875,
+        "top": 136.390625,
+        "right": 479.609375,
+        "bottom": 705.609375,
+        "left": -89.609375
+      },
+      "errors": []
+    },
+    {
+      "device": "phone-390",
+      "treatment": "refined-58",
+      "mood": "dusk",
+      "file": "phone-390-refined-58-dusk-on.jpg",
+      "width": 390,
+      "height": 844,
+      "pageWidth": 390,
+      "pageHeight": 844,
+      "imageWidth": 1400,
+      "imageSource": "renders/angle-58-dusk.jpg",
+      "selectedTreatment": "refined-58",
+      "pressedMood": "dusk",
+      "visibleBadgeCount": 4,
+      "motion": true,
+      "badges": true,
+      "tilePitchX": 39.80550699300699,
+      "tilePitchY": 33.75698442196088,
+      "elevation": 58,
+      "targets": [
+        {
+          "token": "S",
+          "x": 107.35008741258741,
+          "y": 399.50100274088703,
+          "cropped": false
+        },
+        {
+          "token": "X",
+          "x": 107.35008741258741,
+          "y": 331.9870338969653,
+          "cropped": false
+        },
+        {
+          "token": "F",
+          "x": 186.9611013986014,
+          "y": 264.4730650530435,
+          "cropped": false
+        },
+        {
+          "token": "E",
+          "x": 306.3776223776224,
+          "y": 129.4451273652,
+          "cropped": false
+        }
+      ],
+      "scene": {
+        "x": 16,
+        "y": 161,
+        "width": 358,
+        "height": 520,
+        "top": 161,
+        "right": 374,
+        "bottom": 681,
+        "left": 16
+      },
+      "image": {
+        "x": -89.609375,
+        "y": 136.390625,
+        "width": 569.21875,
+        "height": 569.21875,
+        "top": 136.390625,
+        "right": 479.609375,
+        "bottom": 705.609375,
+        "left": -89.609375
+      },
+      "errors": []
+    },
+    {
+      "device": "phone-390",
+      "treatment": "refined-58",
+      "mood": "dusk",
+      "file": "phone-390-refined-58-dusk-off.jpg",
+      "width": 390,
+      "height": 844,
+      "pageWidth": 390,
+      "pageHeight": 844,
+      "imageWidth": 1400,
+      "imageSource": "renders/angle-58-dusk.jpg",
+      "selectedTreatment": "refined-58",
+      "pressedMood": "dusk",
+      "visibleBadgeCount": 0,
+      "motion": true,
+      "badges": false,
+      "tilePitchX": 39.80550699300699,
+      "tilePitchY": 33.75698442196088,
+      "elevation": 58,
+      "targets": [
+        {
+          "token": "S",
+          "x": 107.35008741258741,
+          "y": 399.50100274088703,
+          "cropped": false
+        },
+        {
+          "token": "X",
+          "x": 107.35008741258741,
+          "y": 331.9870338969653,
+          "cropped": false
+        },
+        {
+          "token": "F",
+          "x": 186.9611013986014,
+          "y": 264.4730650530435,
+          "cropped": false
+        },
+        {
+          "token": "E",
+          "x": 306.3776223776224,
+          "y": 129.4451273652,
+          "cropped": false
+        }
+      ],
+      "scene": {
+        "x": 16,
+        "y": 161,
+        "width": 358,
+        "height": 520,
+        "top": 161,
+        "right": 374,
+        "bottom": 681,
+        "left": 16
+      },
+      "image": {
+        "x": -89.609375,
+        "y": 136.390625,
+        "width": 569.21875,
+        "height": 569.21875,
+        "top": 136.390625,
+        "right": 479.609375,
+        "bottom": 705.609375,
+        "left": -89.609375
+      },
+      "errors": []
+    },
+    {
+      "device": "landscape",
+      "treatment": "refined-58",
+      "mood": "daylight",
+      "file": "landscape-refined-58-daylight-on.jpg",
+      "width": 844,
+      "height": 390,
+      "pageWidth": 844,
+      "pageHeight": 390,
+      "imageWidth": 1400,
+      "imageSource": "renders/angle-58-daylight.jpg",
+      "selectedTreatment": "refined-58",
+      "pressedMood": "daylight",
+      "visibleBadgeCount": 4,
+      "motion": true,
+      "badges": true,
+      "tilePitchX": 25.174825174825173,
+      "tilePitchY": 21.34946256058135,
+      "elevation": 58,
+      "targets": [
+        {
+          "token": "S",
+          "x": 250.1853146853147,
+          "y": 226.22682138759365,
+          "cropped": false
+        },
+        {
+          "token": "X",
+          "x": 250.1853146853147,
+          "y": 183.52789626643096,
+          "cropped": false
+        },
+        {
+          "token": "F",
+          "x": 300.534965034965,
+          "y": 140.82897114526827,
+          "cropped": false
+        },
+        {
+          "token": "E",
+          "x": 376.05944055944053,
+          "y": 55.43112090294285,
+          "cropped": false
+        }
+      ],
+      "scene": {
+        "x": 237,
+        "y": 46,
+        "width": 591,
+        "height": 276,
+        "top": 46,
+        "right": 828,
+        "bottom": 322,
+        "left": 237
+      },
+      "image": {
+        "x": 352.5,
+        "y": 4,
+        "width": 360,
+        "height": 360,
+        "top": 4,
+        "right": 712.5,
+        "bottom": 364,
+        "left": 352.5
+      },
+      "errors": []
+    },
+    {
+      "device": "landscape",
+      "treatment": "refined-58",
+      "mood": "daylight",
+      "file": "landscape-refined-58-daylight-off.jpg",
+      "width": 844,
+      "height": 390,
+      "pageWidth": 844,
+      "pageHeight": 390,
+      "imageWidth": 1400,
+      "imageSource": "renders/angle-58-daylight.jpg",
+      "selectedTreatment": "refined-58",
+      "pressedMood": "daylight",
+      "visibleBadgeCount": 0,
+      "motion": true,
+      "badges": false,
+      "tilePitchX": 25.174825174825173,
+      "tilePitchY": 21.34946256058135,
+      "elevation": 58,
+      "targets": [
+        {
+          "token": "S",
+          "x": 250.1853146853147,
+          "y": 226.22682138759365,
+          "cropped": false
+        },
+        {
+          "token": "X",
+          "x": 250.1853146853147,
+          "y": 183.52789626643096,
+          "cropped": false
+        },
+        {
+          "token": "F",
+          "x": 300.534965034965,
+          "y": 140.82897114526827,
+          "cropped": false
+        },
+        {
+          "token": "E",
+          "x": 376.05944055944053,
+          "y": 55.43112090294285,
+          "cropped": false
+        }
+      ],
+      "scene": {
+        "x": 237,
+        "y": 46,
+        "width": 591,
+        "height": 276,
+        "top": 46,
+        "right": 828,
+        "bottom": 322,
+        "left": 237
+      },
+      "image": {
+        "x": 352.5,
+        "y": 4,
+        "width": 360,
+        "height": 360,
+        "top": 4,
+        "right": 712.5,
+        "bottom": 364,
+        "left": 352.5
+      },
+      "errors": []
+    },
+    {
+      "device": "landscape",
+      "treatment": "refined-58",
+      "mood": "dusk",
+      "file": "landscape-refined-58-dusk-on.jpg",
+      "width": 844,
+      "height": 390,
+      "pageWidth": 844,
+      "pageHeight": 390,
+      "imageWidth": 1400,
+      "imageSource": "renders/angle-58-dusk.jpg",
+      "selectedTreatment": "refined-58",
+      "pressedMood": "dusk",
+      "visibleBadgeCount": 4,
+      "motion": true,
+      "badges": true,
+      "tilePitchX": 25.174825174825173,
+      "tilePitchY": 21.34946256058135,
+      "elevation": 58,
+      "targets": [
+        {
+          "token": "S",
+          "x": 250.1853146853147,
+          "y": 226.22682138759365,
+          "cropped": false
+        },
+        {
+          "token": "X",
+          "x": 250.1853146853147,
+          "y": 183.52789626643096,
+          "cropped": false
+        },
+        {
+          "token": "F",
+          "x": 300.534965034965,
+          "y": 140.82897114526827,
+          "cropped": false
+        },
+        {
+          "token": "E",
+          "x": 376.05944055944053,
+          "y": 55.43112090294285,
+          "cropped": false
+        }
+      ],
+      "scene": {
+        "x": 237,
+        "y": 46,
+        "width": 591,
+        "height": 276,
+        "top": 46,
+        "right": 828,
+        "bottom": 322,
+        "left": 237
+      },
+      "image": {
+        "x": 352.5,
+        "y": 4,
+        "width": 360,
+        "height": 360,
+        "top": 4,
+        "right": 712.5,
+        "bottom": 364,
+        "left": 352.5
+      },
+      "errors": []
+    },
+    {
+      "device": "landscape",
+      "treatment": "refined-58",
+      "mood": "dusk",
+      "file": "landscape-refined-58-dusk-off.jpg",
+      "width": 844,
+      "height": 390,
+      "pageWidth": 844,
+      "pageHeight": 390,
+      "imageWidth": 1400,
+      "imageSource": "renders/angle-58-dusk.jpg",
+      "selectedTreatment": "refined-58",
+      "pressedMood": "dusk",
+      "visibleBadgeCount": 0,
+      "motion": true,
+      "badges": false,
+      "tilePitchX": 25.174825174825173,
+      "tilePitchY": 21.34946256058135,
+      "elevation": 58,
+      "targets": [
+        {
+          "token": "S",
+          "x": 250.1853146853147,
+          "y": 226.22682138759365,
+          "cropped": false
+        },
+        {
+          "token": "X",
+          "x": 250.1853146853147,
+          "y": 183.52789626643096,
+          "cropped": false
+        },
+        {
+          "token": "F",
+          "x": 300.534965034965,
+          "y": 140.82897114526827,
+          "cropped": false
+        },
+        {
+          "token": "E",
+          "x": 376.05944055944053,
+          "y": 55.43112090294285,
+          "cropped": false
+        }
+      ],
+      "scene": {
+        "x": 237,
+        "y": 46,
+        "width": 591,
+        "height": 276,
+        "top": 46,
+        "right": 828,
+        "bottom": 322,
+        "left": 237
+      },
+      "image": {
+        "x": 352.5,
+        "y": 4,
+        "width": 360,
+        "height": 360,
+        "top": 4,
+        "right": 712.5,
+        "bottom": 364,
+        "left": 352.5
+      },
+      "errors": []
+    },
+    {
+      "device": "desktop",
+      "treatment": "refined-58",
+      "mood": "daylight",
+      "file": "desktop-refined-58-daylight-on.jpg",
+      "width": 1440,
+      "height": 1000,
+      "pageWidth": 1440,
+      "pageHeight": 1000,
+      "imageWidth": 1400,
+      "imageSource": "renders/angle-58-daylight.jpg",
+      "selectedTreatment": "refined-58",
+      "pressedMood": "daylight",
+      "visibleBadgeCount": 4,
+      "motion": true,
+      "badges": true,
+      "tilePitchX": 55.94405594405594,
+      "tilePitchY": 47.443250134625224,
+      "elevation": 58,
+      "targets": [
+        {
+          "token": "S",
+          "x": 438.3006993006993,
+          "y": 576.0596030835414,
+          "cropped": false
+        },
+        {
+          "token": "X",
+          "x": 438.3006993006993,
+          "y": 481.173102814291,
+          "cropped": false
+        },
+        {
+          "token": "F",
+          "x": 550.1888111888112,
+          "y": 386.2866025450406,
+          "cropped": false
+        },
+        {
+          "token": "E",
+          "x": 718.020979020979,
+          "y": 196.51360200653968,
+          "cropped": false
+        }
+      ],
+      "scene": {
+        "x": 334,
+        "y": 83,
+        "width": 1078,
+        "height": 760,
+        "top": 83,
+        "right": 1412,
+        "bottom": 843,
+        "left": 334
+      },
+      "image": {
+        "x": 473,
+        "y": 63,
+        "width": 800,
+        "height": 800,
+        "top": 63,
+        "right": 1273,
+        "bottom": 863,
+        "left": 473
+      },
+      "errors": []
+    },
+    {
+      "device": "desktop",
+      "treatment": "refined-58",
+      "mood": "daylight",
+      "file": "desktop-refined-58-daylight-off.jpg",
+      "width": 1440,
+      "height": 1000,
+      "pageWidth": 1440,
+      "pageHeight": 1000,
+      "imageWidth": 1400,
+      "imageSource": "renders/angle-58-daylight.jpg",
+      "selectedTreatment": "refined-58",
+      "pressedMood": "daylight",
+      "visibleBadgeCount": 0,
+      "motion": true,
+      "badges": false,
+      "tilePitchX": 55.94405594405594,
+      "tilePitchY": 47.443250134625224,
+      "elevation": 58,
+      "targets": [
+        {
+          "token": "S",
+          "x": 438.3006993006993,
+          "y": 576.0596030835414,
+          "cropped": false
+        },
+        {
+          "token": "X",
+          "x": 438.3006993006993,
+          "y": 481.173102814291,
+          "cropped": false
+        },
+        {
+          "token": "F",
+          "x": 550.1888111888112,
+          "y": 386.2866025450406,
+          "cropped": false
+        },
+        {
+          "token": "E",
+          "x": 718.020979020979,
+          "y": 196.51360200653968,
+          "cropped": false
+        }
+      ],
+      "scene": {
+        "x": 334,
+        "y": 83,
+        "width": 1078,
+        "height": 760,
+        "top": 83,
+        "right": 1412,
+        "bottom": 843,
+        "left": 334
+      },
+      "image": {
+        "x": 473,
+        "y": 63,
+        "width": 800,
+        "height": 800,
+        "top": 63,
+        "right": 1273,
+        "bottom": 863,
+        "left": 473
+      },
+      "errors": []
+    },
+    {
+      "device": "desktop",
+      "treatment": "refined-58",
+      "mood": "dusk",
+      "file": "desktop-refined-58-dusk-on.jpg",
+      "width": 1440,
+      "height": 1000,
+      "pageWidth": 1440,
+      "pageHeight": 1000,
+      "imageWidth": 1400,
+      "imageSource": "renders/angle-58-dusk.jpg",
+      "selectedTreatment": "refined-58",
+      "pressedMood": "dusk",
+      "visibleBadgeCount": 4,
+      "motion": true,
+      "badges": true,
+      "tilePitchX": 55.94405594405594,
+      "tilePitchY": 47.443250134625224,
+      "elevation": 58,
+      "targets": [
+        {
+          "token": "S",
+          "x": 438.3006993006993,
+          "y": 576.0596030835414,
+          "cropped": false
+        },
+        {
+          "token": "X",
+          "x": 438.3006993006993,
+          "y": 481.173102814291,
+          "cropped": false
+        },
+        {
+          "token": "F",
+          "x": 550.1888111888112,
+          "y": 386.2866025450406,
+          "cropped": false
+        },
+        {
+          "token": "E",
+          "x": 718.020979020979,
+          "y": 196.51360200653968,
+          "cropped": false
+        }
+      ],
+      "scene": {
+        "x": 334,
+        "y": 83,
+        "width": 1078,
+        "height": 760,
+        "top": 83,
+        "right": 1412,
+        "bottom": 843,
+        "left": 334
+      },
+      "image": {
+        "x": 473,
+        "y": 63,
+        "width": 800,
+        "height": 800,
+        "top": 63,
+        "right": 1273,
+        "bottom": 863,
+        "left": 473
+      },
+      "errors": []
+    },
+    {
+      "device": "desktop",
+      "treatment": "refined-58",
+      "mood": "dusk",
+      "file": "desktop-refined-58-dusk-off.jpg",
+      "width": 1440,
+      "height": 1000,
+      "pageWidth": 1440,
+      "pageHeight": 1000,
+      "imageWidth": 1400,
+      "imageSource": "renders/angle-58-dusk.jpg",
+      "selectedTreatment": "refined-58",
+      "pressedMood": "dusk",
+      "visibleBadgeCount": 0,
+      "motion": true,
+      "badges": false,
+      "tilePitchX": 55.94405594405594,
+      "tilePitchY": 47.443250134625224,
+      "elevation": 58,
+      "targets": [
+        {
+          "token": "S",
+          "x": 438.3006993006993,
+          "y": 576.0596030835414,
+          "cropped": false
+        },
+        {
+          "token": "X",
+          "x": 438.3006993006993,
+          "y": 481.173102814291,
+          "cropped": false
+        },
+        {
+          "token": "F",
+          "x": 550.1888111888112,
+          "y": 386.2866025450406,
+          "cropped": false
+        },
+        {
+          "token": "E",
+          "x": 718.020979020979,
+          "y": 196.51360200653968,
+          "cropped": false
+        }
+      ],
+      "scene": {
+        "x": 334,
+        "y": 83,
+        "width": 1078,
+        "height": 760,
+        "top": 83,
+        "right": 1412,
+        "bottom": 843,
+        "left": 334
+      },
+      "image": {
+        "x": 473,
+        "y": 63,
+        "width": 800,
+        "height": 800,
+        "top": 63,
+        "right": 1273,
+        "bottom": 863,
+        "left": 473
+      },
+      "errors": []
+    }
+  ]
+}

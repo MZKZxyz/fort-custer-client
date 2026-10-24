@@ -1,3 +1,56 @@
+# The Pallet Garden — focused second pass (v0.2)
+
+**Direction retained; final reference approval pending.** Updates existing [draft PR #38](https://github.com/MZKZxyz/fort-custer-client/pull/38) under the [owner's focused second-pass direction](https://github.com/MZKZxyz/fort-custer-client/issues/30#issuecomment-6390478720). The complete original v0.1 study, source, renders, page and evidence remain unchanged and are documented below.
+
+![Original versus revised, both camera angles and lighting moods](iteration-2/previews/contact-sheet.jpg)
+
+[Interactive comparison page](iteration-2/index.html) · [Native silhouette / badge / grayscale sheet](iteration-2/previews/silhouette-sheet.jpg) · [Revised source](iteration-2/source/render.py) · [Contract deltas](asset-contract.md) · [New image/source hashes](iteration-2/manifest.json)
+
+## Recommendation for owner review
+
+Choose **refined 58° daylight** as the primary reference, with matching lantern dusk and **badges ON by default**. It reveals more clay character and pallet-slat depth while preserving continuous wall footprints; retain 70.1° as a clarity fallback. This is a recommendation, not final approval or a camera/art-bible lock.
+
+Tradeoff: at 320 px, 58° compresses vertical ground pitch from 30.1 to 27.2 CSS px (about 10%). Tall flames, the hat and roof overlap neighboring wall tops in projection, even though their world X/Y bounds remain inside their own cells. No corridor-width false openings were observed in this authored fixture; other grids and runtime sorting still need Engineering/independent QA review. **Remaining ambiguity:** the goal clearly reads as a canvas structure, but “exit” is learned from the E badge/legend; its neutral fictional portrayal remains provisional for Narrative/owner review. Badge-off/grayscale evidence supports comparison, not a universal recognition or WCAG compliance claim.
+
+## What changed / what stayed fixed
+
+- Larger visible explorer body/pose, smaller rear-set hat, separate boots and front-facing nose; unchanged logical feet-center anchor. Extinguisher leans away from the camera to expose its cylinder, with a raised loop/nozzle. Fire has three raised tips and golden core. Goal is a wider neutral canvas A-frame with an actual entrance opening.
+- All revised renders are badge-free masters. The page's optional 15 px S/X/F/E annotations are the only semantic letters in revised maze tiles. Original masters retain their original baked letters; the baseline cannot honestly be shown badge-free, so its OFF control is disabled.
+- Revised 70.1° versus 58° uses **identical meshes, fixture, object positions, palette, cell units, lighting recipes and orthographic scale**. Wall-construction AST and logical fixture match v0.1. All original source/render/evidence bytes are checked against commit `a91847d`.
+- Four revised 1400×1400 renders, 22 actual Chromium screenshots (native DPR 1), one main comparison sheet and one native target-crop sheet. No production rendering, physical-device testing, performance measurement or new gameplay is claimed.
+
+## Device and occlusion evidence
+
+The 58° candidate is captured in both moods with badges ON and OFF at every required size. The original and revised 70.1° controls are additionally captured at 320×568 for the A/B board. Full-size captures and actual DOM measurements are indexed in [browser-checks.json](iteration-2/previews/browser-checks.json); mesh/body cropping and visibility samples are joined in [framing-checks.json](iteration-2/previews/framing-checks.json).
+
+| CSS viewport | Horizontal / vertical cell pitch | Framing |
+|---|---|---|
+| 320×568 | 32.02 / 27.16 px | Nine-column crop, native mobile evidence |
+| 390×844 | 39.81 / 33.76 px | Nine-column crop with more vertical context |
+| 844×390 | 25.17 / 21.35 px | Short landscape; complete fixture at smaller pitch |
+| 1440×1000 | 55.94 / 47.44 px | Complete diorama and perimeter |
+
+All 22 captures passed image/treatment/lighting/badge-state, keyboard activation, page-bounds and script-error checks with reduced motion requested. No target badge or conservative target-body bounds are cropped, and no sampled target point is wall-occluded at either revised angle. These are author checks, not independent signoff.
+
+Finite parallel-ray samples check coat, face, both boots, cylinder, lever, nozzle, flame tips/core and ridge; the entrance sample passes through the open doorway. These author diagnostics do not replace independent perception or full-scene occlusion review. [Geometry checks](iteration-2/previews/geometry-checks.json) record every sample and [export bounds](iteration-2/previews/export-bounds.json) evaluate the proposed common body canvas; no transparent sprite or shadow export was produced.
+
+## Reproduce the second pass
+
+```sh
+blender -b --threads 2 --python docs/art/reference-scene/iteration-2/source/render.py
+blender -b --threads 2 /tmp/fort-custer-iteration-2.blend --python docs/art/reference-scene/iteration-2/source/audit.py
+python3 -m http.server 8031 --bind 127.0.0.1 --directory docs/art/reference-scene
+# In another terminal, from repository root:
+node docs/art/reference-scene/iteration-2/source/capture.cjs
+python3 docs/art/reference-scene/iteration-2/source/finish.py
+```
+
+Blender 4.3.2 / Cycles, 64 samples, no denoiser; existing Python/Pillow and Chromium tooling. `refine-cache.py` records the local shortcut used to regenerate X from the authoritative source in the temporary authoring cache; a clean `render.py` run builds the same revised geometry. No external artwork or paid image API. Original provenance applies. Review gates remain owner visual approval, Engineering projection/alpha/occlusion compatibility, independent QA perception/accessibility and Narrative goal portrayal. Rollback removes the second-pass directory and reverts the two documentation deltas; v0.1 remains available. No production files, dependencies, server, CI or deployment changes.
+
+---
+
+## Original v0.1 package (preserved)
+
 # Fort Custer / The Pallet Garden
 
 **FC-VIS-01 · Sprint 1 · study v0.1 · OWNER REVIEW PENDING**

@@ -1,3 +1,19 @@
+# Focused second pass — v0.2 candidate deltas
+
+**Direction retained; final art and camera approval pending.** Owner authority: [focused second-pass comment](https://github.com/MZKZxyz/fort-custer-client/issues/30#issuecomment-6390478720). Existing v0.1 source, images and contract below remain the baseline.
+
+- Revised authoring source: `iteration-2/source/render.py`; original `source/render.py` is unchanged. Wall construction AST and authored fixture are checked against the original. All props remain within the original cell in world X/Y; logical row/column and ground/feet-center anchors are unchanged.
+- Two **unapproved** camera candidates share identical revised geometry, orthographic scale 14.3 and 1400×1400 output: 70.1° control and 58° alternative, zero yaw, radius 25, target origin. Camera position formula `(0, −25 cos(elevation), 25 sin(elevation))`. Ground depth is `sin(elevation)` times cell width; positive height projects upward by `cos(elevation)` times its world height. Light/material recipes remain the original daylight/dusk pair.
+- Explorer: broader indigo coat, spread arms, separated boots, forward face/nose and a smaller rear-set hat; maximum height 1.195 cells. X: cylinder leaning away from the camera, broad lever, looped hose and raised nozzle; maximum height .800. F: three pointed orange tongues with raised golden core, crossed dark logs; maximum height 1.120. E: provisional neutral/fictional canvas A-frame with a real entrance opening and ridge; maximum height 1.063. This is not a historical/cultural portrayal claim.
+- Revised masters contain **no baked S/X/F/E letters**. Browser badges stay an accessible redundant-cue default; badge-off removes the annotations entirely. Browser badge ground offset is (+.20, −.17), projected at z=.06. These art-study labels are not a production UI implementation.
+- Measured source projections/ray intersections: [geometry checks](iteration-2/previews/geometry-checks.json). Browser CSS pitch, target bounds and viewport cropping: [framing checks](iteration-2/previews/framing-checks.json). Geometry checks are finite, parallel orthographic rays; they do not certify human recognition or every possible occlusion.
+- The proposed **256×352 RGBA canvas / (128,208) ground-center anchor / 224 px cell width** is retained for evaluation. [Calculated body bounds](iteration-2/previews/export-bounds.json) check the revised meshes against that canvas at both elevations. Actual transparent sprites, alpha halos, shadows, atlases and DOM sorting are **not produced or validated**. Recheck all of those with Engineering before production; do not derive collision from art overlap.
+- Source filenames distinguish `angle-70.1` / `angle-58` and `daylight` / `dusk`. These JPEGs are review masters, not runtime files. Future PNG naming, alpha handling, separated shadows and migration/rollback requirements in the original recipe remain proposals. No sprite library or additional explorer headings are commissioned here.
+
+Owner chooses the reference; Engineering validates cell-center/projection/export compatibility, independent QA reviews native-scale perception and occlusion, and Narrative reviews E. A recommendation in the README does not lock the camera or art bible.
+
+---
+
 # FC-VIS-01 — Proposed source / export contract
 
 **Study v0.1 · proposal for owner and Engineering review · not a binding art bible.**

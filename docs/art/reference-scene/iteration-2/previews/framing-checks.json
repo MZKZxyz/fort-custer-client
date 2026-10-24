@@ -1,0 +1,1405 @@
+{
+  "kind": "author projection/raycast evidence; human perception review still pending",
+  "results": [
+    {
+      "file": "phone-320-refined-70.1-daylight-on.jpg",
+      "tile_pitch": [
+        32.02141608391608,
+        30.109357353766754
+      ],
+      "cropped_badge_centers": [],
+      "targets": {
+        "S": {
+          "visual_bounds_in_scene": [
+            66.83214963413775,
+            259.1433301847428,
+            92.96578136924654,
+            284.22754666768014
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "X": {
+          "visual_bounds_in_scene": [
+            71.79171785805374,
+            199.98257434275,
+            91.92302569188178,
+            222.24359509442002
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "F": {
+          "visual_bounds_in_scene": [
+            132.5823636939749,
+            138.1684146337211,
+            154.67715436220166,
+            164.60122230835256
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "E": {
+          "visual_bounds_in_scene": [
+            226.63495188206434,
+            14.437636019662023,
+            253.49353565089405,
+            50.74378191865979
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        }
+      }
+    },
+    {
+      "file": "phone-320-refined-70.1-daylight-off.jpg",
+      "tile_pitch": [
+        32.02141608391608,
+        30.109357353766754
+      ],
+      "cropped_badge_centers": [],
+      "targets": {
+        "S": {
+          "visual_bounds_in_scene": [
+            66.83214963413775,
+            259.1433301847428,
+            92.96578136924654,
+            284.22754666768014
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "X": {
+          "visual_bounds_in_scene": [
+            71.79171785805374,
+            199.98257434275,
+            91.92302569188178,
+            222.24359509442002
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "F": {
+          "visual_bounds_in_scene": [
+            132.5823636939749,
+            138.1684146337211,
+            154.67715436220166,
+            164.60122230835256
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "E": {
+          "visual_bounds_in_scene": [
+            226.63495188206434,
+            14.437636019662023,
+            253.49353565089405,
+            50.74378191865979
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        }
+      }
+    },
+    {
+      "file": "phone-320-refined-70.1-dusk-on.jpg",
+      "tile_pitch": [
+        32.02141608391608,
+        30.109357353766754
+      ],
+      "cropped_badge_centers": [],
+      "targets": {
+        "S": {
+          "visual_bounds_in_scene": [
+            66.83214963413775,
+            259.1433301847428,
+            92.96578136924654,
+            284.22754666768014
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "X": {
+          "visual_bounds_in_scene": [
+            71.79171785805374,
+            199.98257434275,
+            91.92302569188178,
+            222.24359509442002
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "F": {
+          "visual_bounds_in_scene": [
+            132.5823636939749,
+            138.1684146337211,
+            154.67715436220166,
+            164.60122230835256
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "E": {
+          "visual_bounds_in_scene": [
+            226.63495188206434,
+            14.437636019662023,
+            253.49353565089405,
+            50.74378191865979
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        }
+      }
+    },
+    {
+      "file": "phone-320-refined-70.1-dusk-off.jpg",
+      "tile_pitch": [
+        32.02141608391608,
+        30.109357353766754
+      ],
+      "cropped_badge_centers": [],
+      "targets": {
+        "S": {
+          "visual_bounds_in_scene": [
+            66.83214963413775,
+            259.1433301847428,
+            92.96578136924654,
+            284.22754666768014
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "X": {
+          "visual_bounds_in_scene": [
+            71.79171785805374,
+            199.98257434275,
+            91.92302569188178,
+            222.24359509442002
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "F": {
+          "visual_bounds_in_scene": [
+            132.5823636939749,
+            138.1684146337211,
+            154.67715436220166,
+            164.60122230835256
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "E": {
+          "visual_bounds_in_scene": [
+            226.63495188206434,
+            14.437636019662023,
+            253.49353565089405,
+            50.74378191865979
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        }
+      }
+    },
+    {
+      "file": "phone-320-refined-58-daylight-on.jpg",
+      "tile_pitch": [
+        32.02141608391608,
+        27.15570094619779
+      ],
+      "cropped_badge_centers": [],
+      "targets": {
+        "S": {
+          "visual_bounds_in_scene": [
+            66.83214963413775,
+            240.59285256732255,
+            92.96578136924654,
+            271.46137375663966
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "X": {
+          "visual_bounds_in_scene": [
+            71.79171785805374,
+            190.5907452115789,
+            91.92302569188178,
+            214.13773258775473
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "F": {
+          "visual_bounds_in_scene": [
+            132.5823636939749,
+            132.0206991136074,
+            154.67715436220166,
+            163.53443484567103
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "E": {
+          "visual_bounds_in_scene": [
+            226.63495188206434,
+            20.83423950150609,
+            253.49353565089405,
+            60.79258902184665
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        }
+      }
+    },
+    {
+      "file": "phone-320-refined-58-daylight-off.jpg",
+      "tile_pitch": [
+        32.02141608391608,
+        27.15570094619779
+      ],
+      "cropped_badge_centers": [],
+      "targets": {
+        "S": {
+          "visual_bounds_in_scene": [
+            66.83214963413775,
+            240.59285256732255,
+            92.96578136924654,
+            271.46137375663966
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "X": {
+          "visual_bounds_in_scene": [
+            71.79171785805374,
+            190.5907452115789,
+            91.92302569188178,
+            214.13773258775473
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "F": {
+          "visual_bounds_in_scene": [
+            132.5823636939749,
+            132.0206991136074,
+            154.67715436220166,
+            163.53443484567103
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "E": {
+          "visual_bounds_in_scene": [
+            226.63495188206434,
+            20.83423950150609,
+            253.49353565089405,
+            60.79258902184665
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        }
+      }
+    },
+    {
+      "file": "phone-320-refined-58-dusk-on.jpg",
+      "tile_pitch": [
+        32.02141608391608,
+        27.15570094619779
+      ],
+      "cropped_badge_centers": [],
+      "targets": {
+        "S": {
+          "visual_bounds_in_scene": [
+            66.83214963413775,
+            240.59285256732255,
+            92.96578136924654,
+            271.46137375663966
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "X": {
+          "visual_bounds_in_scene": [
+            71.79171785805374,
+            190.5907452115789,
+            91.92302569188178,
+            214.13773258775473
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "F": {
+          "visual_bounds_in_scene": [
+            132.5823636939749,
+            132.0206991136074,
+            154.67715436220166,
+            163.53443484567103
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "E": {
+          "visual_bounds_in_scene": [
+            226.63495188206434,
+            20.83423950150609,
+            253.49353565089405,
+            60.79258902184665
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        }
+      }
+    },
+    {
+      "file": "phone-320-refined-58-dusk-off.jpg",
+      "tile_pitch": [
+        32.02141608391608,
+        27.15570094619779
+      ],
+      "cropped_badge_centers": [],
+      "targets": {
+        "S": {
+          "visual_bounds_in_scene": [
+            66.83214963413775,
+            240.59285256732255,
+            92.96578136924654,
+            271.46137375663966
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "X": {
+          "visual_bounds_in_scene": [
+            71.79171785805374,
+            190.5907452115789,
+            91.92302569188178,
+            214.13773258775473
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "F": {
+          "visual_bounds_in_scene": [
+            132.5823636939749,
+            132.0206991136074,
+            154.67715436220166,
+            163.53443484567103
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "E": {
+          "visual_bounds_in_scene": [
+            226.63495188206434,
+            20.83423950150609,
+            253.49353565089405,
+            60.79258902184665
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        }
+      }
+    },
+    {
+      "file": "phone-390-refined-58-daylight-on.jpg",
+      "tile_pitch": [
+        39.80550699300699,
+        33.75698442196088
+      ],
+      "cropped_badge_centers": [],
+      "targets": {
+        "S": {
+          "visual_bounds_in_scene": [
+            83.07340514473617,
+            363.91345181968063,
+            115.55986539553851,
+            402.28580652270466
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "X": {
+          "visual_bounds_in_scene": [
+            89.23859556298703,
+            301.7563245771453,
+            114.263626081869,
+            331.0273526981473
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "F": {
+          "visual_bounds_in_scene": [
+            164.80684874672443,
+            228.94847705960274,
+            192.27266544103622,
+            268.122891606763
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "E": {
+          "visual_bounds_in_scene": [
+            281.7226949110627,
+            90.73368405923247,
+            315.11033589579165,
+            140.40551484562457
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        }
+      }
+    },
+    {
+      "file": "phone-390-refined-58-daylight-off.jpg",
+      "tile_pitch": [
+        39.80550699300699,
+        33.75698442196088
+      ],
+      "cropped_badge_centers": [],
+      "targets": {
+        "S": {
+          "visual_bounds_in_scene": [
+            83.07340514473617,
+            363.91345181968063,
+            115.55986539553851,
+            402.28580652270466
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "X": {
+          "visual_bounds_in_scene": [
+            89.23859556298703,
+            301.7563245771453,
+            114.263626081869,
+            331.0273526981473
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "F": {
+          "visual_bounds_in_scene": [
+            164.80684874672443,
+            228.94847705960274,
+            192.27266544103622,
+            268.122891606763
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "E": {
+          "visual_bounds_in_scene": [
+            281.7226949110627,
+            90.73368405923247,
+            315.11033589579165,
+            140.40551484562457
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        }
+      }
+    },
+    {
+      "file": "phone-390-refined-58-dusk-on.jpg",
+      "tile_pitch": [
+        39.80550699300699,
+        33.75698442196088
+      ],
+      "cropped_badge_centers": [],
+      "targets": {
+        "S": {
+          "visual_bounds_in_scene": [
+            83.07340514473617,
+            363.91345181968063,
+            115.55986539553851,
+            402.28580652270466
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "X": {
+          "visual_bounds_in_scene": [
+            89.23859556298703,
+            301.7563245771453,
+            114.263626081869,
+            331.0273526981473
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "F": {
+          "visual_bounds_in_scene": [
+            164.80684874672443,
+            228.94847705960274,
+            192.27266544103622,
+            268.122891606763
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "E": {
+          "visual_bounds_in_scene": [
+            281.7226949110627,
+            90.73368405923247,
+            315.11033589579165,
+            140.40551484562457
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        }
+      }
+    },
+    {
+      "file": "phone-390-refined-58-dusk-off.jpg",
+      "tile_pitch": [
+        39.80550699300699,
+        33.75698442196088
+      ],
+      "cropped_badge_centers": [],
+      "targets": {
+        "S": {
+          "visual_bounds_in_scene": [
+            83.07340514473617,
+            363.91345181968063,
+            115.55986539553851,
+            402.28580652270466
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "X": {
+          "visual_bounds_in_scene": [
+            89.23859556298703,
+            301.7563245771453,
+            114.263626081869,
+            331.0273526981473
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "F": {
+          "visual_bounds_in_scene": [
+            164.80684874672443,
+            228.94847705960274,
+            192.27266544103622,
+            268.122891606763
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "E": {
+          "visual_bounds_in_scene": [
+            281.7226949110627,
+            90.73368405923247,
+            315.11033589579165,
+            140.40551484562457
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        }
+      }
+    },
+    {
+      "file": "landscape-refined-58-daylight-on.jpg",
+      "tile_pitch": [
+        25.174825174825173,
+        21.34946256058135
+      ],
+      "cropped_badge_centers": [],
+      "targets": {
+        "S": {
+          "visual_bounds_in_scene": [
+            234.83162927627563,
+            203.7196247577667,
+            255.37755417823792,
+            227.9880588054657
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "X": {
+          "visual_bounds_in_scene": [
+            238.7307779788971,
+            164.40861153602597,
+            254.5577530860901,
+            182.92094993591306
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "F": {
+          "visual_bounds_in_scene": [
+            286.52360129356384,
+            118.36159515380857,
+            303.8942413330078,
+            143.13728857040402
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "E": {
+          "visual_bounds_in_scene": [
+            360.4665355682373,
+            30.948231697082505,
+            381.58240842819214,
+            62.36297178268431
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        }
+      }
+    },
+    {
+      "file": "landscape-refined-58-daylight-off.jpg",
+      "tile_pitch": [
+        25.174825174825173,
+        21.34946256058135
+      ],
+      "cropped_badge_centers": [],
+      "targets": {
+        "S": {
+          "visual_bounds_in_scene": [
+            234.83162927627563,
+            203.7196247577667,
+            255.37755417823792,
+            227.9880588054657
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "X": {
+          "visual_bounds_in_scene": [
+            238.7307779788971,
+            164.40861153602597,
+            254.5577530860901,
+            182.92094993591306
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "F": {
+          "visual_bounds_in_scene": [
+            286.52360129356384,
+            118.36159515380857,
+            303.8942413330078,
+            143.13728857040402
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "E": {
+          "visual_bounds_in_scene": [
+            360.4665355682373,
+            30.948231697082505,
+            381.58240842819214,
+            62.36297178268431
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        }
+      }
+    },
+    {
+      "file": "landscape-refined-58-dusk-on.jpg",
+      "tile_pitch": [
+        25.174825174825173,
+        21.34946256058135
+      ],
+      "cropped_badge_centers": [],
+      "targets": {
+        "S": {
+          "visual_bounds_in_scene": [
+            234.83162927627563,
+            203.7196247577667,
+            255.37755417823792,
+            227.9880588054657
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "X": {
+          "visual_bounds_in_scene": [
+            238.7307779788971,
+            164.40861153602597,
+            254.5577530860901,
+            182.92094993591306
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "F": {
+          "visual_bounds_in_scene": [
+            286.52360129356384,
+            118.36159515380857,
+            303.8942413330078,
+            143.13728857040402
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "E": {
+          "visual_bounds_in_scene": [
+            360.4665355682373,
+            30.948231697082505,
+            381.58240842819214,
+            62.36297178268431
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        }
+      }
+    },
+    {
+      "file": "landscape-refined-58-dusk-off.jpg",
+      "tile_pitch": [
+        25.174825174825173,
+        21.34946256058135
+      ],
+      "cropped_badge_centers": [],
+      "targets": {
+        "S": {
+          "visual_bounds_in_scene": [
+            234.83162927627563,
+            203.7196247577667,
+            255.37755417823792,
+            227.9880588054657
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "X": {
+          "visual_bounds_in_scene": [
+            238.7307779788971,
+            164.40861153602597,
+            254.5577530860901,
+            182.92094993591306
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "F": {
+          "visual_bounds_in_scene": [
+            286.52360129356384,
+            118.36159515380857,
+            303.8942413330078,
+            143.13728857040402
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "E": {
+          "visual_bounds_in_scene": [
+            360.4665355682373,
+            30.948231697082505,
+            381.58240842819214,
+            62.36297178268431
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        }
+      }
+    },
+    {
+      "file": "desktop-refined-58-daylight-on.jpg",
+      "tile_pitch": [
+        55.94405594405594,
+        47.443250134625224
+      ],
+      "cropped_badge_centers": [],
+      "targets": {
+        "S": {
+          "visual_bounds_in_scene": [
+            404.18139839172363,
+            526.0436105728149,
+            449.83900928497314,
+            579.973464012146
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "X": {
+          "visual_bounds_in_scene": [
+            412.846173286438,
+            438.6858034133911,
+            448.0172290802002,
+            479.82433319091797
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "F": {
+          "visual_bounds_in_scene": [
+            519.0524473190308,
+            336.3591003417969,
+            557.6538696289062,
+            391.4161968231201
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "E": {
+          "visual_bounds_in_scene": [
+            683.3700790405273,
+            142.10718154907227,
+            730.2942409515381,
+            211.91771507263184
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        }
+      }
+    },
+    {
+      "file": "desktop-refined-58-daylight-off.jpg",
+      "tile_pitch": [
+        55.94405594405594,
+        47.443250134625224
+      ],
+      "cropped_badge_centers": [],
+      "targets": {
+        "S": {
+          "visual_bounds_in_scene": [
+            404.18139839172363,
+            526.0436105728149,
+            449.83900928497314,
+            579.973464012146
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "X": {
+          "visual_bounds_in_scene": [
+            412.846173286438,
+            438.6858034133911,
+            448.0172290802002,
+            479.82433319091797
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "F": {
+          "visual_bounds_in_scene": [
+            519.0524473190308,
+            336.3591003417969,
+            557.6538696289062,
+            391.4161968231201
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "E": {
+          "visual_bounds_in_scene": [
+            683.3700790405273,
+            142.10718154907227,
+            730.2942409515381,
+            211.91771507263184
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        }
+      }
+    },
+    {
+      "file": "desktop-refined-58-dusk-on.jpg",
+      "tile_pitch": [
+        55.94405594405594,
+        47.443250134625224
+      ],
+      "cropped_badge_centers": [],
+      "targets": {
+        "S": {
+          "visual_bounds_in_scene": [
+            404.18139839172363,
+            526.0436105728149,
+            449.83900928497314,
+            579.973464012146
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "X": {
+          "visual_bounds_in_scene": [
+            412.846173286438,
+            438.6858034133911,
+            448.0172290802002,
+            479.82433319091797
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "F": {
+          "visual_bounds_in_scene": [
+            519.0524473190308,
+            336.3591003417969,
+            557.6538696289062,
+            391.4161968231201
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "E": {
+          "visual_bounds_in_scene": [
+            683.3700790405273,
+            142.10718154907227,
+            730.2942409515381,
+            211.91771507263184
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        }
+      }
+    },
+    {
+      "file": "desktop-refined-58-dusk-off.jpg",
+      "tile_pitch": [
+        55.94405594405594,
+        47.443250134625224
+      ],
+      "cropped_badge_centers": [],
+      "targets": {
+        "S": {
+          "visual_bounds_in_scene": [
+            404.18139839172363,
+            526.0436105728149,
+            449.83900928497314,
+            579.973464012146
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "X": {
+          "visual_bounds_in_scene": [
+            412.846173286438,
+            438.6858034133911,
+            448.0172290802002,
+            479.82433319091797
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "F": {
+          "visual_bounds_in_scene": [
+            519.0524473190308,
+            336.3591003417969,
+            557.6538696289062,
+            391.4161968231201
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        },
+        "E": {
+          "visual_bounds_in_scene": [
+            683.3700790405273,
+            142.10718154907227,
+            730.2942409515381,
+            211.91771507263184
+          ],
+          "cropped_pixels": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "wall_occluded_samples": []
+        }
+      }
+    }
+  ]
+}
