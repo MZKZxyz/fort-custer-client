@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f2e9">
+  <title>Fort Custer · Movement & Controls Lab</title>
+  <link rel="stylesheet" href="lab.css">
+</head>
+<body data-mood="day">
+  <a class="skip" href="#play-board">Skip to playable maze</a>
+  <svg class="symbol-library" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="tipi" viewBox="0 0 40 40"><path d="M15 3 30 35M25 3 10 35" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="m20 10 14 25H6Z" fill="#f1dfb5" stroke="currentColor" stroke-width="2"/><path d="m20 24 5 11H15Z" fill="currentColor"/><path d="m11 26 5-4 4 3 4-3 5 4" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+    <symbol id="kit" viewBox="0 0 40 40"><path d="M18 10V5h12v8" fill="none" stroke="currentColor" stroke-width="3"/><rect x="10" y="10" width="17" height="25" rx="5" fill="#e9b45d" stroke="currentColor" stroke-width="2"/><path d="M14 23h9M18 19v9" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="fire" viewBox="0 0 40 40"><path d="M22 3c4 13-5 9 2 17 2-1 4-5 4-5 12 14 2 23-8 23S1 28 10 18c0 5 4 5 4 5-3-12 7-10 8-20Z" fill="#d96935" stroke="#632e1a" stroke-width="2"/><path d="M20 22c7 7 7 12 0 13-6 0-7-6 0-13Z" fill="#ffdf8a"/></symbol>
+  </svg>
+  <header class="masthead">
+    <a class="wordmark" href="#">FORT CUSTER <span>FIELD STUDIES</span></a>
+    <div class="study-id">VIS–04B <span>INTERACTION STUDY / 02</span></div>
+  </header>
+  <main>
+    <section class="intro" aria-labelledby="title">
+      <div><p class="eyebrow">A small experiment in deliberate movement</p><h1 id="title">Find your <em>rhythm.</em></h1><p class="lede">Two ways to explore. The same rules beneath your feet.</p></div>
+      <div class="study-note"><span class="dot"></span> PLAYABLE LOCAL STUDY<p>Try each scheme. Adjust the pace.<br>Notice where stopping feels most certain.</p></div>
+    </section>
+    <div class="workspace">
+      <section class="field panel" aria-labelledby="field-title">
+        <div class="panel-heading"><div><p class="eyebrow">01 / The proving ground</p><h2 id="field-title">Reach the tipi</h2></div><button id="pause" type="button">Pause / help</button></div>
+        <div class="field-tools"><label>Fixture <select id="fixture"><option value="rules">Rule check · 13 × 17</option><option value="garden">Garden maze · 11 × 9</option></select></label><label class="mood-label">Light <select id="mood"><option value="day">Daylight</option><option value="dusk">Lantern dusk</option></select></label></div>
+        <div class="scene-wrap"><div class="scene-caption"><span id="scene-label">RULE CHECK</span><span>SCHEMATIC · LIVE</span></div>
+          <div id="play-board" tabindex="0" role="region" aria-label="Playable maze. Use arrow keys to move." aria-describedby="board-help" data-play-input><div id="world" aria-hidden="true"></div></div>
+          <div class="scene-footer"><span id="position">Row 2 · column 2</span><span id="equipment">Equipment: empty</span></div>
+        </div>
+        <p id="board-help" class="hint">Focus the maze for arrow keys. X equips; F clears in place. Release, then press again to enter.</p>
+        <div class="legend" aria-label="Map legend"><span><i class="legend-player">↑</i>You</span><span><b>S</b>Start</span><span><b>X</b>Equipment</span><span><b>F</b>Fire</span><span><svg aria-hidden="true"><use href="#tipi"/></svg>Tipi</span></div>
+        <div id="feedback" class="feedback" role="status" aria-live="polite" aria-atomic="true">Collect X, clear F, then reach the tipi. Nothing is saved.</div>
+        <div class="field-bottom"><span>Discrete cells. One equipment slot.</span><button id="reset" type="button">↺ Reset fixture</button></div>
+      </section>
+      <section class="controls panel" aria-labelledby="controls-title">
+        <div class="panel-heading"><div><p class="eyebrow">02 / Choose a feel</p><h2 id="controls-title">Your movement, your pace</h2></div></div>
+        <fieldset class="scheme-picker"><legend class="sr-only">Movement scheme</legend>
+          <label><input type="radio" name="scheme" value="hold" checked><span><strong>A <span>Hold to repeat</span></strong><small>Press. Travel. Release.</small></span></label>
+          <label><input type="radio" name="scheme" value="drag"><span><strong>B <span>Drag to steer</span></strong><small>Choose a direction. Let go.</small></span></label>
+        </fieldset>
+        <p id="scheme-help" class="hint">A tap takes one step. Hold for a deliberate first delay, then steady repeats.</p>
+        <div id="drag-controls" hidden>
+          <div id="drag-pad" tabindex="0" role="region" aria-label="Drag direction selector; arrow keys also work" aria-describedby="drag-help" data-play-input><span class="drag-cross" aria-hidden="true">✛</span><span id="drag-preview">Touch or press, then drag</span><small>18 px threshold · return to center to pause</small></div>
+          <p id="drag-help" class="hint">Steer from your first contact. Diagonals pause. Release anywhere to stop. D-pad remains available below.</p>
+        </div>
+        <div class="pad-area"><div class="dpad" role="group" aria-label="Directional controls">
+          <button class="up direction" data-direction="up" data-play-input aria-label="Up" type="button">↑</button>
+          <button class="left direction" data-direction="left" data-play-input aria-label="Left" type="button">←</button>
+          <span class="pad-center" aria-hidden="true">✦</span>
+          <button class="right direction" data-direction="right" data-play-input aria-label="Right" type="button">→</button>
+          <button class="down direction" data-direction="down" data-play-input aria-label="Down" type="button">↓</button>
+        </div><p class="pad-note">Always available<br><strong>Keyboard + D-pad</strong><br><span>Arrows, or Tab to a button<br>and hold Space / Enter.</span></p></div>
+        <fieldset class="timing"><legend>Set the cadence</legend><label for="delay">First repeat delay <output id="delay-value" for="delay">400 ms</output></label><input id="delay" type="range" min="200" max="800" step="20" value="400"><label for="repeat">Between repeat steps <output id="repeat-value" for="repeat">180 ms</output></label><input id="repeat" type="range" min="100" max="400" step="10" value="180"><p id="rate" class="hint">5.6 steps / second after the first delay. Changes stop movement.</p></fieldset>
+        <div class="diagnostics" aria-label="Live input diagnostics"><span id="input-phase">IDLE</span><span id="input-direction">—</span><span id="input-reason">ready</span></div>
+      </section>
+    </div>
+    <section class="review-grid" aria-label="Review guide and evidence">
+      <article class="review-card"><p class="eyebrow">03 / A sixty-second test</p><h2>Move. Stop. Compare.</h2><ol><li>In A, hold Right to pick up X and clear F. You stay beside the cleared tile.</li><li>Release. Press Right again to enter, then reach the tipi. Reset and try B.</li><li>In B, drag right and hold. Return to center to pause. Try a wall, Pause / help, and a resize.</li></ol><p class="hint">Switching A/B resets the same fixture for a fair start. Page scrolling and zoom remain available outside the input pads.</p></article>
+      <article class="review-card"><p class="eyebrow">04 / Working recommendation</p><h2>Lead with the D-pad.</h2><p>Its visible directions and immediate first step make stopping and re-pressing explicit. Keep drag as an optional alternative for players who prefer steering from one contact.</p><p class="hint">A design hypothesis, pending physical-device playtests and independent QA. This schematic does not evaluate final art or ranked visibility.</p><a href="evidence/review.md">Read measured evidence & limitations ↗</a></article>
+      <article class="review-card log-card"><p class="eyebrow">05 / What actually happened</p><h2>Transition notebook <span id="command-count">0 commands</span></h2><ol id="event-log" aria-label="Recent movement commands"><li>No commands yet.</li></ol><p class="hint">Latest 8 reducer calls. Coordinates are one-based. No timer, account, storage or network saving.</p></article>
+    </section>
+    <details class="evidence-review">
+      <summary>Author validation & native browser captures <span>17 logic checks · 43 browser checks</span></summary>
+      <div class="evidence-body"><p>Tested in headless Chromium 154 on Linux cloud hardware. The existing 40 unit tests, 32 legacy browser cases and normal production build also pass; two opt-in camera cases are intentionally skipped. Native touch injection is browser emulation. Physical phones, Safari, Firefox and screen readers remain unverified. This is author evidence, pending independent QA.</p>
+        <div class="capture-gallery">
+          <figure><a href="evidence/desktop-hold-clear.png"><img loading="lazy" src="evidence/desktop-hold-clear.png" alt="Desktop hold scheme after stationary fire clear, with transition notebook"></a><figcaption>A / 1280 × 800 · daylight · full page</figcaption></figure>
+          <figure><a href="evidence/portrait-320-hold.png"><img loading="lazy" src="evidence/portrait-320-hold.png" alt="Small portrait view with maze retained above directional buttons"></a><figcaption>A / 320 × 568 · daylight · DPR 1</figcaption></figure>
+          <figure><a href="evidence/portrait-390-drag-dusk.png"><img loading="lazy" src="evidence/portrait-390-drag-dusk.png" alt="Dusk drag scheme stopped after fire clear, requiring release"></a><figcaption>B / 390 × 844 · dusk · DPR 2</figcaption></figure>
+          <figure><a href="evidence/landscape-garden.png"><img loading="lazy" src="evidence/landscape-garden.png" alt="Landscape garden fixture and directional controls side by side"></a><figcaption>A / 844 × 390 · garden fixture</figcaption></figure>
+        </div>
+        <p><a href="evidence/report.json">Measured geometry, contrast & source hashes</a> · <a href="evidence/review.md">Findings & limits</a> · <a href="README.md">Run locally & inspect source</a></p>
+      </div>
+    </details>
+    <footer><span>FORT CUSTER / UX EXPLORATIONS</span><span>Local prototype · author evidence · <a href="README.md">Source & reproduction</a></span></footer>
+  </main>
+  <dialog id="pause-dialog" aria-labelledby="pause-title" aria-describedby="pause-description"><p class="eyebrow">Movement is paused</p><h2 id="pause-title">Take your bearings.</h2><p id="pause-description">Every step follows the same maze rules. Fire consumes the extinguisher without moving you. Release your input, then press again.</p><p>Closing this dialog never resumes a held direction. Use a fresh press to continue.</p><form method="dialog"><button id="resume" autofocus>Return to the lab</button></form></dialog>
+  <script type="module" src="lab.mjs"></script>
+</body>
+</html>
