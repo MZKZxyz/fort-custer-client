@@ -1,0 +1,46 @@
+{
+  "collection": "Fort Custer art references",
+  "role": "visual reference, not production assets",
+  "files": [
+    {
+      "file": "01_Final_Direction/01_Lantern_Lit_Prairie_Tilt_Shift.png",
+      "sha256": "9887b57ae2148aa4f161eae4a671b1e7a1b916ffd2047fb6e7dd4d937182d0d1"
+    },
+    {
+      "file": "01_Final_Direction/02_Nearly_Overhead_PWA_Gameplay.png",
+      "sha256": "ac27d778509c45614320203ffd439e08b8a3257579b22b363b82a54f41c669b7"
+    },
+    {
+      "file": "01_Final_Direction/03_Web_Friendly_Style_Comparison.png",
+      "sha256": "c87e8b07f5e07b17e03a6cc7af84d34edf76a160fdea5ddbd0751d88ea16c080"
+    },
+    {
+      "file": "01_Final_Direction/04_Scrolling_Maze_Pallet_Visual_Language.png",
+      "sha256": "856c9cb43df2ac6ce1314056c5251c67a1ece7cd35482d4b9f6e5b942049c765"
+    },
+    {
+      "file": "02_Real_Maze_Architecture_References/01_Pallet_Cubes_and_Bridge.png",
+      "sha256": "b8dc5533d571994237d76a859a5a1991f97eb67ea7b4d921d4ca5f297d46d7a0"
+    },
+    {
+      "file": "02_Real_Maze_Architecture_References/02_Bridge_Tower_and_Picket_Walls.png",
+      "sha256": "7a655f540880034a6e0ad13b712f229e713bd37f2fe30d22e6620c530310e79b"
+    },
+    {
+      "file": "03_Development_Explorations/01_Classic_Claymation_Concept_Board.png",
+      "sha256": "49ac7a63696aca433a62100ecb5b4c986d2fac47e676e156d165612dc4f65c8f"
+    },
+    {
+      "file": "03_Development_Explorations/02_Grid_And_Compact_HUD_Study.png",
+      "sha256": "f87390d9f2a2101fbfc8254c4774a54a3a00255d0ed0983a4d1699688ed16e85"
+    },
+    {
+      "file": "03_Development_Explorations/03_3D_2D_Style_Comparison.png",
+      "sha256": "9b70ae994afb8aaa8894dda55147ca6a9e5d787d9eaeb2e88c8aca3791b96e3b"
+    },
+    {
+      "file": "03_Development_Explorations/04_Clay_Gameplay_With_HUD.png",
+      "sha256": "e4933565c8c3771c93d62950fdebaa8b0b9f1baa653e93221bae77365c98580a"
+    }
+  ]
+}
