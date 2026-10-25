@@ -1,0 +1,17 @@
+.pallet-maze { margin: auto; width: min(960px, calc(100% - 32px)); color: #241500; }
+.pallet-instructions, .pallet-position, .pallet-status { background: #fae9ca; padding: .5rem; border-radius: 4px; margin: .5rem auto; line-height: 1.4; }
+.pallet-status { width: min(944px, calc(100% - 48px)); }
+.pallet-position { font-size: .875rem; }
+.pallet-viewport {
+  position: relative; box-sizing: content-box; overflow: hidden; min-width: 0;
+  width: min(100%, var(--pallet-world-width));
+  height: min(var(--pallet-world-height), clamp(132px, calc(100svh - 380px), 560px));
+  margin: auto; background: #776649; outline: 4px solid #6a3600; border-radius: 4px;
+  touch-action: auto;
+}
+.pallet-world { position: relative; background: #776649; pointer-events: none; }
+.pallet-sprite { position: absolute; display: block; max-width: none; }
+.pallet-badge, .pallet-player-cue { position: absolute; min-width: 18px; line-height: 18px; font: bold 12px/18px system-ui; text-align: center; border-radius: 3px; background: #fff3d4; color: #241500; border: 1px solid #241500; }
+.pallet-player-cue { background: #173d46; color: white; }
+.pallet-fallback { min-height: 44px; padding: .5rem 1rem; background: #fae9ca; color: #241500; border: 2px solid #6a3600; border-radius: 4px; }
+.pallet-viewport:focus-visible, .pallet-fallback:focus-visible { outline: 3px solid white; outline-offset: 4px; }

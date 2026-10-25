@@ -446,3 +446,7 @@
 .maze-legacy-host { display: contents; }
 /* 4.93:1 against the darkest HUD panel stop (#B97927). */
 .maze-date, .maze-timer { color: #241500; }
+
+.maze-dialog { position: fixed; margin: auto; border: 2px solid #6a3600; max-width: min(320px, calc(100vw - 32px)); box-sizing: border-box; color: #241500; }
+.maze-dialog::backdrop { background: rgb(0 0 0 / 65%); }
+.maze-dialog button:focus-visible { outline: 3px solid #173d46; outline-offset: 3px; }
