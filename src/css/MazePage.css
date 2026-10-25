@@ -444,12 +444,16 @@
 }
 .dpad-btn:focus-visible, .back-btn:focus-visible { outline: 3px solid white; outline-offset: 3px; }
 .maze-legacy-host { display: contents; }
-.maze-drag-pad { box-sizing: border-box; width: min(360px, calc(100% - 32px)); min-height: 80px; margin: .5rem auto; padding: 1.5rem .5rem; text-align: center; border: 2px solid #6a3600; border-radius: 8px; background: #fae9ca; color: #241500; touch-action: none; user-select: none; }
-.maze-drag-pad:focus-visible { outline: 3px solid #173d46; outline-offset: 3px; }
-.maze-drag-pad[data-input-phase="blocked"] { border-style: dashed; }
 /* 4.93:1 against the darkest HUD panel stop (#B97927). */
 .maze-date, .maze-timer { color: #241500; }
 
 .maze-dialog { position: fixed; margin: auto; border: 2px solid #6a3600; max-width: min(320px, calc(100vw - 32px)); box-sizing: border-box; color: #241500; }
 .maze-dialog::backdrop { background: rgb(0 0 0 / 65%); }
 .maze-dialog button:focus-visible { outline: 3px solid #173d46; outline-offset: 3px; }
+
+/* One-finger maze drags belong to gameplay; retain browser pinch zoom. Match
+   descendants too so the broad .maze-page * auto rule cannot change hit policy. */
+.maze-page [data-maze-surface], .maze-page [data-maze-surface] * { touch-action: pinch-zoom; }
+.maze-page [data-maze-surface]:focus-visible { outline: 3px solid white; outline-offset: 3px; }
+
+.maze-page .maze-input-help, .maze-page .pallet-status { box-sizing: border-box; width: min(944px, calc(100% - 32px)); background: #fae9ca; color: #241500; padding: .5rem; border-radius: 4px; margin: .5rem auto; line-height: 1.4; }

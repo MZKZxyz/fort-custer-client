@@ -1,7 +1,7 @@
 {
   "date": "2026-10-25",
   "baselineMain": "c4803f2d307abc4ce5c78dc2ff8bd3267abbf770",
-  "reviewRevision": "The commit containing this manifest; pinned in the draft PR body.",
+  "reviewRevision": "Historical initial integration 4fbfa3492e6459504e526e0b9222a1c52babfed6; current owner revision recorded in surface-revision/evidence/validation.json.",
   "environment": {
     "node": "24.19.0",
     "playwright": "1.62.1",
@@ -287,13 +287,13 @@
     },
     {
       "file": "integrated-desktop-trace.zip",
-      "sha256": "a73b8da6881afd7755df09fe08b041f271b031486377642d7019862f971b4a4b",
-      "bytes": 5234655
+      "sha256": "9cb4893e7542f96bc3ae2fda73a48c86603b5bdbc8947e3a956dfc566ace1548",
+      "bytes": 5224645
     },
     {
       "file": "integrated-mobile-trace.zip",
-      "sha256": "167e5c53602ab999703072d87dde04310be38be260ab4c741c072ef55016fa19",
-      "bytes": 4529088
+      "sha256": "5ffb39ce160e08dfca73986be1de7bdeab0993347fce286c15c7fb47ed0ceaf4",
+      "bytes": 4522984
     }
   ],
   "buildSourceMaps": "Optimized classic, integrated and both-flags main source maps match current inputController, inputCoordinator and MazePage source.",
@@ -315,5 +315,6 @@
     "live database writes",
     "physical-device signoff"
   ],
-  "rollbackReverseApply": "PASS: complete staged binary diff reverse-apply check; no changes were reversed."
+  "rollbackReverseApply": "PASS: complete staged binary diff reverse-apply check; no changes were reversed.",
+  "tracePathRedaction": "Owner revision made original trace source references repository-relative; original actions and snapshots retained."
 }

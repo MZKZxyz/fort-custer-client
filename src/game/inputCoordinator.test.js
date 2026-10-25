@@ -13,7 +13,7 @@ const pointer = (type, target, extra = {}) => {
 beforeEach(() => {
   jest.useFakeTimers();
   root = document.createElement('div');
-  root.innerHTML = '<button data-direction="right">Right</button><div data-drag-pad tabindex="0"></div><input />';
+  root.innerHTML = '<button data-direction="right">Right</button><div data-maze-surface tabindex="0"></div><input />';
   document.body.append(root);
   commands = [];
   state = { grid: ['#######', '#SXFE #', '#     #', '#######'].map(row => [...row]), position: [1, 1], inventory: [], completed: false };
@@ -64,7 +64,7 @@ test('Space/Enter use the same hold and suppress the browser default activation'
 });
 
 test('drag wall pauses, redirects within the same contact, then release stops', () => {
-  const pad = root.querySelector('[data-drag-pad]');
+  const pad = root.querySelector('[data-maze-surface]');
   pointer('pointerdown', pad);
   pointer('pointermove', window, { clientY: 60 });
   jest.advanceTimersByTime(2000);
@@ -74,6 +74,25 @@ test('drag wall pauses, redirects within the same contact, then release stops', 
   jest.advanceTimersByTime(1); expect(state.position).toEqual([2, 1]);
   pointer('pointerup', window); jest.advanceTimersByTime(1000);
   expect(commands).toHaveLength(2);
+});
+
+test('a child hit captures on the stable maze surface and suppresses native image dragging', () => {
+  const surface = root.querySelector('[data-maze-surface]');
+  surface.innerHTML = '<span><img alt="Maze sprite" /></span>';
+  surface.setPointerCapture = jest.fn();
+  pointer('pointerdown', surface.querySelector('img'));
+  expect(surface.setPointerCapture).toHaveBeenCalledWith(1);
+  expect(document.activeElement).toBe(surface);
+  // Rendering can replace sprites while the same captured host survives.
+  surface.innerHTML = '<span>Updated maze</span>';
+  pointer('pointermove', window, { clientY: 140 });
+  expect(state.position).toEqual([2, 1]);
+  const drag = new Event('dragstart', { bubbles: true, cancelable: true });
+  surface.querySelector('span').dispatchEvent(drag);
+  expect(drag.defaultPrevented).toBe(true);
+  pointer('pointerup', window);
+  jest.advanceTimersByTime(2000);
+  expect(commands).toEqual(['step']);
 });
 
 test.each(['pointercancel', 'lostpointercapture'])('%s terminates captured input', type => {

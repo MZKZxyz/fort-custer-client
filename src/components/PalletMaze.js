@@ -40,7 +40,7 @@ const asset = (role, layer) => kit[`${role}-${layer}`];
 const arrows = { up: '↑', right: '→', down: '↓', left: '←' };
 const symbols = { '#': 'wall', ' ': 'open path', S: 'start', X: 'extinguisher', F: 'fire', E: 'tipi goal' };
 
-function PalletMaze({ scene, facing, onFallback }) {
+function PalletMaze({ scene, facing, inputPhase, onFallback }) {
   const ref = useRef(null);
   const [size, setSize] = useState({ width: 284, height: 260, tile: 36 });
   const [assetError, setAssetError] = useState(false);
@@ -86,7 +86,8 @@ function PalletMaze({ scene, facing, onFallback }) {
     .map(([r, c, direction]) => `${direction}: ${symbols[scene.rows[scene.player.row + r]?.[scene.player.column + c]?.tile] || 'maze edge'}`).join('. ');
   return <section className="pallet-maze" aria-label="Daily maze">
     <p className="pallet-instructions">Reach the tipi · X: extinguisher · F: fire</p>
-    <div ref={ref} className="pallet-viewport" role="region" tabIndex="0" aria-label="Maze viewport"
+    <div ref={ref} className="pallet-viewport" role="region" tabIndex="0" aria-label="Maze viewport" aria-describedby="maze-input-help"
+      data-maze-surface data-input-phase={inputPhase}
       data-row={scene.player.row} data-column={scene.player.column} data-completed={scene.completed}
       data-camera-x={geometry.x} data-camera-y={geometry.y} data-tile={tile} data-pitch={tile * SIN58}
       style={{ '--pallet-world-width': `${geometry.worldWidth}px`, '--pallet-world-height': `${geometry.worldHeight}px` }}>

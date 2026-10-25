@@ -1,0 +1,294 @@
+{
+  "date": "2026-10-25",
+  "initialIntegration": "4fbfa3492e6459504e526e0b9222a1c52babfed6",
+  "reviewRevision": "The owner-revision commit containing this manifest, pinned in draft PR 44.",
+  "evidenceClass": "Author local validation, synthetic intercepted APIs, Linux Chromium mouse and CDP mobile touch; no physical-device signoff.",
+  "environment": {
+    "node": "24.19.0",
+    "playwright": "1.62.1",
+    "chromium": "154.0.8037.57"
+  },
+  "cadence": {
+    "initialDelayMs": 400,
+    "repeatMs": 180,
+    "ownerApproved": true,
+    "controllerByteIdenticalToInitialIntegration": true,
+    "deadZoneCssPixels": 18,
+    "axisRatio": 1.25
+  },
+  "checks": [
+    {
+      "check": "complete optimized classic regression",
+      "passed": 62,
+      "skipped": 22
+    },
+    {
+      "check": "optimized integrated regression",
+      "passed": 49,
+      "skipped": 4
+    },
+    {
+      "check": "square camera: surface, unified input and camera geometry",
+      "passed": 31,
+      "skipped": 7
+    },
+    {
+      "check": "both flags: captured, manual, missing-image and failed-chunk fallback",
+      "passed": 7,
+      "skipped": 0
+    },
+    {
+      "check": "Jest default",
+      "passed": 59,
+      "suites": 9
+    },
+    {
+      "check": "Jest integrated",
+      "passed": 59,
+      "suites": 9
+    },
+    {
+      "check": "Jest camera",
+      "passed": 59,
+      "suites": 9
+    },
+    {
+      "check": "unchanged controller invariants",
+      "passed": 24
+    },
+    {
+      "check": "optimized build classic",
+      "status": "PASS"
+    },
+    {
+      "check": "optimized build integrated",
+      "status": "PASS"
+    },
+    {
+      "check": "optimized build camera",
+      "status": "PASS"
+    },
+    {
+      "check": "optimized build both",
+      "status": "PASS"
+    }
+  ],
+  "viewports": [
+    [
+      320,
+      568
+    ],
+    [
+      390,
+      844
+    ],
+    [
+      844,
+      390
+    ],
+    [
+      1280,
+      800
+    ]
+  ],
+  "gestureOrigins": [
+    "wall",
+    "explorer",
+    "equipment",
+    "fire",
+    "goal",
+    "center",
+    "top",
+    "bottom",
+    "left",
+    "right",
+    "top-left",
+    "top-right",
+    "bottom-left",
+    "bottom-right"
+  ],
+  "initiationCoverage": "Per renderer: 56 mouse origins and 42 native emulated touch origins across required layouts; square-camera fallback repeats the same matrix. No command before displacement; capture on stable surface; one step; no page displacement.",
+  "pinchEvaluation": "Raw two-contact Chromium input increases visualViewport.scale on both app renderers while logical movement remains stopped. Plain-page positive controls zoom with auto/pinch-zoom and stay at scale 1 with none. This is browser-engine emulation, not Safari/PWA certification.",
+  "touchPolicy": {
+    "surfaceAndDescendants": "pinch-zoom",
+    "dpad": "manipulation",
+    "outside": "auto",
+    "documentScrollOrZoomDisabled": false,
+    "bodyPositionHack": false,
+    "globalRefreshSuppression": false
+  },
+  "coverage": [
+    "stable pointer capture through camera and React updates",
+    "relative origin retained",
+    "one-finger downward drag with page-at-top and surface-at-display-top",
+    "multitouch cancellation",
+    "native touchCancel",
+    "dispatched window blur, native focus/modal interruption and active-pointer resize",
+    "wall pause and same-contact redirection",
+    "terminal stationary fire clearing with fresh input",
+    "completion lockout, canonical payload and same-attempt retry/refresh",
+    "keyboard, D-pad, Space/Enter and activation parity",
+    "native page scrolling outside maze without player movement",
+    "captured fallback onto a fresh classic surface without another attempt",
+    "default-off rendering, missing-image/chunk and both-flag fallback",
+    "reduced motion, focus and responsive regressions"
+  ],
+  "skips": {
+    "classic": "13 integrated-only + 2 camera-only + 3 desktop-native-touch-only + 4 integrated-to-classic captured-fallback-only.",
+    "integrated": "1 default-build-only + 3 desktop-native-touch-only.",
+    "camera": "3 desktop-native-touch-only + 4 integrated-to-classic captured-fallback-only."
+  },
+  "physicalTargets": {
+    "iOS Safari": {
+      "status": "NOT RUN",
+      "reason": "No physical mobile device, remote Safari, simulator or installed-PWA device session was available."
+    },
+    "installed iOS PWA": {
+      "status": "NOT RUN",
+      "reason": "No physical mobile device, remote Safari, simulator or installed-PWA device session was available."
+    },
+    "Android Chrome": {
+      "status": "NOT RUN",
+      "reason": "No physical mobile device, remote Safari, simulator or installed-PWA device session was available."
+    },
+    "installed Android PWA": {
+      "status": "NOT RUN",
+      "reason": "No physical mobile device, remote Safari, simulator or installed-PWA device session was available."
+    }
+  },
+  "sourceSha256": {
+    "src/game/inputCoordinator.js": "14c711a6790cfaf0bc808bf0a1e6a3643e46fe8b4e1d95d507b6ba5788510c7b",
+    "src/game/inputCoordinator.test.js": "303c9e4adfe8cc023343c6fec9b49e9b1d22084228f13b6bb9b28c76ef657b01",
+    "src/game/inputController.js": "1a97da13c580652a6032cf4cb1443fe9f9e3029a8e226a624569488b17c7b0f1",
+    "src/pages/MazePage.js": "e2df4e40839ddd202fe8e17fd527df2feaf9030982ae4f16a4d037d59a0bf3d0",
+    "src/components/PalletMaze.js": "68e182d298c593c3eb963bde46a09be1a2e79de8d37192d0e0c1e9be6c208bcd",
+    "src/css/MazePage.css": "b91b6b13510def4f7ed622a39bc94ff6e9df37189e931dd39e820e209577953e",
+    "src/css/PalletMaze.css": "8f7d2ea8e20032099a6b56c85e2b75a0889378bf7d207cbc90faf0ff59979853",
+    "e2e/maze-surface.spec.js": "5a3f1632af039f14aeaba0ddbc69543a4696db2bf7f81f54a07e6e4e6a89f6ba",
+    "e2e/unified-input.spec.js": "9922b6307db549cdcb01fa9b8ec00d38e1669f341a689ac961fcb583eab455b5",
+    "e2e/responsive.spec.js": "cf916cfe99ac93bad5072f3075e35ef945169e381153ff55f9f2c74a3ed8a777",
+    "docs/unified-input/playwright.config.cjs": "f66a4edb346abc13a15411ed208ea3f24e31328176ebb1b4597e8646396a931a"
+  },
+  "artifacts": [
+    {
+      "file": "camera-13x17.json",
+      "sha256": "195ced949402acea67e174302802016f60216e9ee3ac051274096b9689cda631",
+      "bytes": 1914
+    },
+    {
+      "file": "camera-21x21.json",
+      "sha256": "fcaaadb389b6d91b3c2d76b702a61fa58d6850d642908777c2d3ce2bc13e013d",
+      "bytes": 1876
+    },
+    {
+      "file": "classic-1280x800-surface.png",
+      "sha256": "a7738d44170dfb933c37fcca04d3d5dfcab5b581304df19f434fb5502d565eea",
+      "bytes": 857876,
+      "imagePixels": [
+        1280,
+        1674
+      ]
+    },
+    {
+      "file": "classic-320x568-surface.png",
+      "sha256": "a172020b97ce02d18403ecfadb76ced90cceaa87260e2cf2f0181ac5af69fcfe",
+      "bytes": 203999,
+      "imagePixels": [
+        320,
+        825
+      ]
+    },
+    {
+      "file": "classic-390x844-surface.png",
+      "sha256": "1bf062cd56f222bad9b1f8640d4bead7816d6ce77668e71c154a647329eb27bf",
+      "bytes": 274970,
+      "imagePixels": [
+        390,
+        895
+      ]
+    },
+    {
+      "file": "classic-844x390-surface.png",
+      "sha256": "77a7fe1ba5932d20f734f43b4bd1e7fea594a51207187d671984c5f72c4415c1",
+      "bytes": 545322,
+      "imagePixels": [
+        844,
+        1260
+      ]
+    },
+    {
+      "file": "desktop-surface-trace.zip",
+      "sha256": "9757c01a8e65ca40455c7f9b0a440f5316d5d58eb8d9fc962fd06455e6de69df",
+      "bytes": 5841577
+    },
+    {
+      "file": "integrated-1280x800-surface.png",
+      "sha256": "f3b49807e0ae3c60ffaec2f91e21459ee5db80aec00ed09655a8fb3713e5263b",
+      "bytes": 542866,
+      "imagePixels": [
+        1280,
+        1000
+      ]
+    },
+    {
+      "file": "integrated-320x568-surface.png",
+      "sha256": "e7b34c3f80dc080f892245fbf4c661ab55e2abffa8e05608ebae29a7bb6f54ab",
+      "bytes": 184488,
+      "imagePixels": [
+        320,
+        893
+      ]
+    },
+    {
+      "file": "integrated-390x844-surface.png",
+      "sha256": "9d937276aa95719c9f0e3cb5854a99fa93e5e7a3912dfa3236c477f46f7a2c7c",
+      "bytes": 248008,
+      "imagePixels": [
+        390,
+        1146
+      ]
+    },
+    {
+      "file": "integrated-844x390-surface.png",
+      "sha256": "b9f1d50898a00ad70538db56ffa104f71df9eedfa1391d5f4f17c874c05723e4",
+      "bytes": 319676,
+      "imagePixels": [
+        844,
+        712
+      ]
+    },
+    {
+      "file": "mobile-gestures-trace.zip",
+      "sha256": "023e23d2c5dac79ffdbb2aa9db870bf75e5285f47ec413282356e00e157997be",
+      "bytes": 6944277
+    }
+  ],
+  "tracePrivacy": "Retained archives contain repository-relative source references; no absolute workstation source paths. Original integration archives were also sanitized; their original actions/snapshots remain historical.",
+  "rollbackReverseApply": "PASS: complete owner-revision staged binary diff reverse-applies; no working files reversed, no migration or recovery-storage removal.",
+  "featureFlags": {
+    "visualDefault": false,
+    "visualActivation": "exact REACT_APP_MAZE_VISUAL_INTEGRATION=true",
+    "oldVisualAliasActivates": false,
+    "cameraIndependent": true,
+    "productionSettingsChanged": false
+  },
+  "releaseGates": {
+    "EG-08": "Owner visual approval and physical readability/performance remain open.",
+    "EG-09": "Ranked logical-view equality/version policy and fog-removal difficulty remain open; no ranked activation.",
+    "EG-11": "Physical devices/PWAs, Safari/Firefox, screen readers, browser chrome/refresh/OS interruptions and full accessibility signoff remain open.",
+    "EG-07": "Cadence owner-approved; physical gesture comfort/stability awaits independent QA and second owner playtest.",
+    "EG-01": "Existing server timing/recovery contracts unchanged; no live server/database certification."
+  },
+  "requiredNextReviews": [
+    "independent QA on the combined revision",
+    "second owner playtest"
+  ],
+  "notPerformed": [
+    "merge",
+    "deployment",
+    "production setting changes",
+    "GitHub CI polling",
+    "live API/database writes",
+    "physical-device signoff"
+  ]
+}

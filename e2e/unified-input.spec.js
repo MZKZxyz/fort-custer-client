@@ -56,7 +56,7 @@ for (const [width, height] of [[320, 568], [390, 844], [844, 390], [1280, 800]])
       await position(page, 1, 2);
       await capture(page, `${width}x${height}-cleared`);
       await page.keyboard.up('ArrowRight');
-      const pad = page.locator('[data-drag-pad]'); await pad.scrollIntoViewIfNeeded();
+      const pad = page.locator('[data-maze-surface]'); await pad.scrollIntoViewIfNeeded();
       const box = await pad.boundingBox(); const x = box.x + box.width / 2; const y = box.y + box.height / 2;
       await page.mouse.move(x, y); await page.mouse.down();
       await page.mouse.move(x, y - 35);
@@ -111,7 +111,7 @@ for (const [width, height] of [[320, 568], [390, 844], [844, 390], [1280, 800]])
     });
     test('pointer fire clear stays terminal through steering until a fresh contact', async ({ page }) => {
       await setup(page);
-      const pad = page.locator('[data-drag-pad]'); await pad.scrollIntoViewIfNeeded();
+      const pad = page.locator('[data-maze-surface]'); await pad.scrollIntoViewIfNeeded();
       const box = await pad.boundingBox(); const x = box.x + box.width / 2; const y = box.y + box.height / 2;
       await page.mouse.move(x, y); await page.mouse.down(); await page.mouse.move(x + 35, y);
       await page.clock.runFor(400);
@@ -126,7 +126,7 @@ for (const [width, height] of [[320, 568], [390, 844], [844, 390], [1280, 800]])
     test('native touch drag redirects at a wall and cancellation stops it', async ({ page, context }) => {
       test.skip(width === 1280, 'Desktop coverage uses native mouse and keyboard.');
       await setup(page, false);
-      const pad = page.locator('[data-drag-pad]'); await pad.scrollIntoViewIfNeeded();
+      const pad = page.locator('[data-maze-surface]'); await pad.scrollIntoViewIfNeeded();
       const box = await pad.boundingBox(); const x = box.x + box.width / 2; const y = box.y + box.height / 2;
       const cdp = await context.newCDPSession(page);
       const touch = (type, points) => cdp.send('Input.dispatchTouchEvent', { type, touchPoints: points });
@@ -140,17 +140,25 @@ for (const [width, height] of [[320, 568], [390, 844], [844, 390], [1280, 800]])
       const stoppedRow = Number(await player(page).getAttribute('data-row'));
       await page.waitForTimeout(600);
       await position(page, stoppedRow, 1);
-      expect(await pad.evaluate(el => getComputedStyle(el).touchAction)).toBe('none');
-      expect(await page.locator(integrated ? '.pallet-viewport' : '.maze-grid').evaluate(el => getComputedStyle(el).touchAction)).toBe('auto');
-      // Native page swiping away from the dedicated pad must still scroll.
+      expect(await pad.evaluate(el => getComputedStyle(el).touchAction)).toBe('pinch-zoom');
+      expect(await page.locator(integrated ? '.pallet-viewport' : '.maze-grid').evaluate(el => getComputedStyle(el).touchAction)).toBe('pinch-zoom');
+      // Native page swiping away from the maze surface must still scroll.
       await page.evaluate(() => window.scrollTo(0, 0));
       const before = await page.evaluate(() => scrollY);
-      await touch('touchStart', [{ x: width - 5, y: height - 35, id: 2 }]);
-      for (let n = 1; n <= 5; n++) await touch('touchMove', [{ x: width - 5, y: height - 35 - n * 25, id: 2 }]);
+      const outside = await page.locator('#maze-input-help').boundingBox();
+      const outsideY = outside.y + outside.height / 2;
+      expect(await page.evaluate(({ x, y }) => !document.elementFromPoint(x, y)?.closest('[data-maze-surface], [data-direction]'), { x: width / 2, y: outsideY })).toBe(true);
+      const distance = Math.min(120, outsideY - 10);
+      await touch('touchStart', [{ x: width / 2, y: outsideY, id: 2 }]);
+      for (let n = 1; n <= 5; n++) {
+        await touch('touchMove', [{ x: width / 2, y: outsideY - n * distance / 5, id: 2 }]);
+        await page.waitForTimeout(20);
+      }
       await touch('touchEnd', []);
       if (await page.evaluate(() => document.documentElement.scrollHeight > innerHeight + 20)) {
         await expect.poll(() => page.evaluate(() => scrollY)).toBeGreaterThan(before);
       }
+      await position(page, stoppedRow, 1);
     });
   });
 }

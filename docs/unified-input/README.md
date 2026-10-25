@@ -1,5 +1,7 @@
 # Sprint 1.2 — unified input and gameplay integration
 
+**Current owner revision:** [Full-maze drag and mobile gesture stability](surface-revision/README.md). The owner-approved 400ms/180ms cadence is unchanged. The visible maze now owns drag gestures; the dedicated box is removed. New evidence and physical-device gaps are recorded in the linked revision.
+
 Draft implementation for FC-VIS-04 / #33. **Default OFF; no ranked production activation.** Independent QA and owner review are required on this combined revision. Client Engineering owns implementation; Integrator coordinates shared MazePage/completion review; independent QA, Gameplay and Art/owner own their respective activation evidence. Author checks below are not independent signoff.
 
 ## Baseline and authority
@@ -15,13 +17,13 @@ Started from current `main` **c4803f2d307abc4ce5c78dc2ff8bd3267abbf770** after f
 
 `src/game/inputController.js` is the extracted reviewed scheduler: immediate first atomic command, 400ms initial delay, 180ms repeats, bounded timing, owner token, timer invalidation, diagonal/dead-zone neutrality and drag-only collision pause. It now also ignores command returns after synchronous shell cancellation. The lab's former controller re-exports this module; there is one implementation and no runtime import from `docs/`.
 
-`src/game/inputCoordinator.js` binds keyboard arrows, Space/Enter on semantic D-pad buttons, mouse/touch/pen D-pad holds, a dedicated drag pad, and non-pointer assistive activation to that scheduler. Pointer clicks are never translated into a second command. Native key repeat does not drive movement. The page supplies the existing synchronous `movePlayer`/canonical `move()` boundary, commits gameRef before subsequent input, and retains completion/save ownership. `commandOutcome` remains the common outcome classifier.
+`src/game/inputCoordinator.js` binds keyboard arrows, Space/Enter on semantic D-pad buttons, mouse/touch/pen D-pad holds, the visible maze surface, and non-pointer assistive activation to that scheduler. Pointer clicks are never translated into a second command. Native key repeat does not drive movement. The page supplies the existing synchronous `movePlayer`/canonical `move()` boundary, commits gameRef before subsequent input, and retains completion/save ownership. `commandOutcome` remains the common outcome classifier.
 
 - Wall/boundary/unequipped fire pauses drag with no retry timer. Keep the same contact and choose a different cardinal direction to resume after 180ms. No wall sliding. Dead zone <18px and ambiguous diagonal <1.25 axis ratio pause. Repeating the unchanged blocked direction does nothing.
 - X equips the existing single slot. Successful F clear consumes it while stationary and halts the held session. Neither steering nor native keyboard repeat can enter F until release + fresh press. Completion is terminal and still calls the existing completion handler exactly once per arrival; an explicit save retry is a separate intentional request using the same attempt ID.
 - Only one input owner runs at once. Release, cancel, lost capture, extra pointers, focus loss, blur, hidden document, resize/orientation/visual viewport resize, pagehide, modal, completion, fallback and unmount invalidate movement. Cancellation does not resume an old native key repeat.
-- The board retains normal browser scrolling/zoom. Only the explicitly labeled drag pad uses `touch-action: none`; the D-pad retains `manipulation`. Arrow keys remain available on initial page load/body and inside the maze shell, without taking them from forms, dialogs or unrelated navigation.
-- Quit/save dialogs retain focus containment/return. Fallback cancels input, focuses the surviving drag control, and preserves the attempt, position, grid and equipment. Classic fog, square-camera fallback, reduced motion, server requests, rewards and recovery remain on existing contracts.
+- The page retains normal browser scrolling outside the board. Maze surfaces and descendants use scoped `touch-action: pinch-zoom` to reserve one-finger drags for gameplay and allow browser pinch zoom; the D-pad retains `manipulation`. Arrow keys remain available on initial page load/body and inside the maze shell, without taking them from forms, dialogs or unrelated navigation.
+- Quit/save dialogs retain focus containment/return. Fallback cancels input, focuses the surviving D-pad, and preserves the attempt, position, grid and equipment. Classic fog, square-camera fallback, reduced motion, server requests, rewards and recovery remain on existing contracts.
 
 The integrated arrival composition omits the explorer body/shadow on E, retaining a small directional cue below the intact original tipi. No asset pixels, grid cells, goal rules or projection constants changed.
 
@@ -31,11 +33,13 @@ The sole sprite activation flag is now **`REACT_APP_MAZE_VISUAL_INTEGRATION=true
 
 1. **Current attempt:** select **Use classic view**. Input stops, focus moves to the surviving control, and the same cleared grid/equipment/attempt continues. This retains the unified input coordinator.
 2. **Visual build rollback:** unset `REACT_APP_MAZE_VISUAL_INTEGRATION` and rebuild. Also unset `REACT_APP_MAZE_CAMERA` to restore full-grid/fog instead of square camera. This retains unified input.
-3. **Full input/visual rollback:** revert this PR's single implementation commit and rebuild. That restores the merged PR #41/#43 baseline, including its disclosed native-repeat fire limitation and old preview flag spelling. Do not enable the old visual flag for ranked play. No schema, API, attempt, stored grid or reward migration is needed. Do not clear pending `mazeCompletion:*` storage; keep the existing backend completion contract available for retries.
+3. **Full input/visual rollback:** revert this PR's commits in reverse order (the owner surface revision, then the initial integration) and rebuild. That restores the merged PR #41/#43 baseline, including its disclosed native-repeat fire limitation and old preview flag spelling. Do not enable the old visual flag for ranked play. No schema, API, attempt, stored grid or reward migration is needed. Do not clear pending `mazeCompletion:*` storage; keep the existing backend completion contract available for retries.
 
 Rollback checks: default build browser assertion requests no sprite kit; manual, missing-image and failed-chunk fallback preserve attempts; reverse application of the complete commit diff must pass before handoff. No rollback is deployed by this work.
 
-## Local validation and interactive owner playtest
+## Initial integration validation and interactive owner playtest
+
+The result table and screenshot/trace links below record initial integration `4fbfa34`. Use the [owner revision evidence](surface-revision/README.md) for the current surface controls. Historical trace source references have been made repository-relative; original actions and snapshots are retained.
 
 | Local check | Result |
 | --- | --- |
@@ -49,7 +53,7 @@ Rollback checks: default build browser assertion requests no sprite kit; manual,
 | Optimized default / integrated / both-flags builds | Compiled successfully; current runtime source verified against source maps |
 | Complete staged binary diff reverse-apply | Passed; no working files were reversed |
 
-Classic skips: 13 opt-in renderer cases, 2 square-camera-only cases and 1 desktop touch-only case. Integrated skips: default-build assertion and desktop touch-only case. No skips hide a shared input, fire, completion or recovery requirement. The default suite also exercises calendar/account/navigation sizing. The local static host now serves `/` as well as deep routes; the native page-scroll probe explicitly swipes outside the dedicated drag pad and asserts no player movement.
+Classic skips: 13 opt-in renderer cases, 2 square-camera-only cases and 1 desktop touch-only case. Integrated skips: default-build assertion and desktop touch-only case. No skips hide a shared input, fire, completion or recovery requirement. The default suite also exercises calendar/account/navigation sizing. The local static host now serves `/` as well as deep routes; the native page-scroll probe explicitly swipes outside the maze surface and asserts no player movement.
 
 Use existing dependencies (`npm ci` if needed) and a Chromium installation. All browser scenarios use synthetic intercepted APIs; no account, live backend or database is required. Browser evidence is headless Chromium with native mouse/keyboard/CDP touch events, not physical-device or Safari certification.
 
@@ -81,10 +85,10 @@ The test pauses in Playwright Inspector after synthetic `/maze` setup; the brows
 Playtest sequence:
 
 1. Hold Right: collect X, then clear F without moving. Keep holding, steer away/back, or generate native repeat: position must stay at column 3 (one-based). Release + fresh Right enters column 4.
-2. On drag pad, steer Up into the boundary wall. Keep contact; observe BLOCKED. Steer Down to resume, return to center/diagonal to pause, then release. Repeat wall hits must never accumulate catch-up steps.
+2. Anywhere on the maze, steer Up into the boundary wall. Keep contact; observe BLOCKED. Steer Down to resume, return to center/diagonal to pause, then release. Repeat wall hits must never accumulate catch-up steps.
 3. Use D-pad taps/holds, arrows, Space/Enter and programmatic/assistive activation. While holding, open Back, press Escape to close, resize, change focus, or select classic view. No old input may resume. Tab/Shift+Tab must stay inside the dialog and return to its opener.
 4. Move Right along row 2 to column 8 (E). The tipi must remain recognizable, movement must stop, and only one completion request should be present. Repeat with the recovery test's failed-response fixture to verify retry + refresh reuses the same UUID.
-5. Scroll outside the drag pad, enlarge text to 200%, enable reduced motion and rotate/resize. Controls must remain reachable without horizontal page overflow. Check camera edges with the existing 13×17/21×21 fixture scenarios; missing-image/chunk scenarios must offer classic fallback.
+5. Scroll outside the maze surface, enlarge text to 200%, enable reduced motion and rotate/resize. Controls must remain reachable without horizontal page overflow. Check camera edges with the existing 13×17/21×21 fixture scenarios; missing-image/chunk scenarios must offer classic fallback.
 
 Recorded results and hashes: [validation.json](evidence/validation.json). Screenshots are full-page captures at the named viewport size; their image height can exceed the viewport because short layouts scroll. Representative arrival comparisons:
 
@@ -101,8 +105,8 @@ Replay the retained [mobile trace](evidence/integrated-mobile-trace.zip) or [des
 
 - **EG-08:** owner/Art must review integrated arrival treatment, real-device readability/performance, arbitrary-grid occlusion and final representative scene. Original tipi projection/lighting mismatch remains; daylight only, dusk and lantern polish remain unimplemented. Omitting the explorer on E is a bounded arrival treatment pending visual approval.
 - **EG-09:** adaptive physical extents and 58° row pitch still reveal unequal logical tactical windows. QA measured about 17.918% more projected rows than square at equal height before clamps. Gameplay/owner must settle ranked equal-view geometry/version policy, fog-removal difficulty and representative-maze/analyzer evidence. **Do not enable ranked production gameplay.**
-- **EG-11:** physical iOS/Android, Safari/Firefox, screen readers/touch exploration, physical pinch/browser chrome/OS interruptions, contrast audit and motor/cognitive usability remain unverified. No WCAG AA certification. Short layouts require scrolling between board, feedback and controls; simultaneous board/control visibility and drag ergonomics need owner/device evaluation. The drag pad is optional; keyboard and D-pad remain usable.
-- **EG-07:** the lab's 400/180ms timing and simultaneous available D-pad/drag controls are evaluation defaults, not an independently approved production input preference. Synchronous ownership and interaction safety are tested; physical comfort/scheme selection remains open.
+- **EG-11:** physical iOS/Android, Safari/Firefox, screen readers/touch exploration, physical pinch/browser chrome/OS interruptions, contrast audit and motor/cognitive usability remain unverified. No WCAG AA certification. Short layouts require scrolling between board, feedback and controls; simultaneous board/control visibility and drag ergonomics need owner/device evaluation. Keyboard and D-pad remain usable as alternatives to maze dragging.
+- **EG-07:** the owner has approved the 400ms initial delay and 180ms repeat cadence. Physical gesture stability and usability still require device evaluation. Synchronous ownership and interaction safety are tested; physical comfort/scheme selection remains open.
 - **EG-01 / persistence:** server timing starts on its existing contract; lazy artwork may add measured-attempt latency. Payloads, reward semantics and client recovery are unchanged; no live-server or database concurrency certification is claimed. Existing recovery/backend rollout restrictions continue to apply.
 
 Independent QA must reproduce the combined revision and inspect native-size arrival PNGs, held fire sessions, recovery and fallback. Owner review must evaluate movement feel and integrated composition. Neither approval is supplied by this implementation PR. After local validation: commit, push, update the draft PR and stop; no GitHub CI polling, merge, deploy or production-setting changes.

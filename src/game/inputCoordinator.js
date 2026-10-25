@@ -30,12 +30,12 @@ export function bindMazeInput(root, { command, changed }) {
     clearPointer();
   };
   listen(root, 'pointerdown', event => {
-    const element = event.target.closest?.('[data-direction], [data-drag-pad]');
+    const element = event.target.closest?.('[data-direction], [data-maze-surface]');
     if (!element || event.button !== 0 || rejectedPointers.has(event)) return;
     if (!event.isPrimary || pointer || heldKey) { cancel('additional input'); return; }
     element.focus({ preventScroll: true });
     const owner = `pointer:${event.pointerId}`;
-    const drag = element.hasAttribute('data-drag-pad');
+    const drag = element.hasAttribute('data-maze-surface');
     pointer = { id: event.pointerId, owner, element, drag, x: event.clientX, y: event.clientY };
     element.setPointerCapture?.(event.pointerId);
     controller.press(owner, drag ? null : element.dataset.direction, { drag });
@@ -47,7 +47,10 @@ export function bindMazeInput(root, { command, changed }) {
     controller.release('activation', 'single activation');
   });
   listen(root, 'contextmenu', event => {
-    if (event.target.closest?.('[data-direction], [data-drag-pad]')) event.preventDefault();
+    if (event.target.closest?.('[data-direction], [data-maze-surface]')) event.preventDefault();
+  });
+  listen(root, 'dragstart', event => {
+    if (event.target.closest?.('[data-maze-surface]')) event.preventDefault();
   });
   listen(window, 'pointermove', event => {
     if (!pointer?.drag || event.pointerId !== pointer.id) return;

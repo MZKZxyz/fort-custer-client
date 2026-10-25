@@ -23,7 +23,7 @@ const MazePage = () => {
   const [inputStatus, setInputStatus] = useState('idle');
   const [integrated, setIntegrated] = useState(INTEGRATION_ENABLED);
   const [facing, setFacing] = useState('down');
-  const [movementStatus, setMovementStatus] = useState('Reach the tipi. Tap for one cell; hold to repeat. Release after clearing fire.');
+  const [movementStatus, setMovementStatus] = useState('Reach the tipi. Drag the maze or hold a direction to move. Release after clearing fire.');
   const navigate = useNavigate();
   const profile = useMemo(() => {
     return JSON.parse(localStorage.getItem('activeSubProfile'));
@@ -287,7 +287,7 @@ const MazePage = () => {
   }, [showQuitModal, finished, completionError]);
   const useClassic = useCallback(() => {
     inputRef.current?.cancel('renderer changed');
-    inputRootRef.current?.querySelector('[data-drag-pad]')?.focus({ preventScroll: true });
+    inputRootRef.current?.querySelector('[data-direction]')?.focus({ preventScroll: true });
     setIntegrated(false);
   }, []);
 
@@ -421,17 +421,23 @@ const MazePage = () => {
 
       </div>
 
+      <p id="maze-input-help" className="maze-input-help">Drag anywhere on the maze to steer; release to stop. Arrow keys and direction buttons also work.</p>
       {integrated ? <>
         <MazeRenderBoundary onFallback={useClassic}>
         <Suspense fallback={<p role="status">Loading maze artwork…</p>}>
-          <PalletMaze scene={view.scene} facing={facing} onFallback={useClassic} />
+          <PalletMaze scene={view.scene} inputPhase={inputStatus} facing={facing} onFallback={useClassic} />
         </Suspense>
         </MazeRenderBoundary>
       </> : <div className={`maze-container${CAMERA_ENABLED ? ' camera-enabled' : ''}`}>
         <div ref={viewportRef} className={CAMERA_ENABLED ? 'maze-viewport' : 'maze-legacy-host'}
+          data-maze-surface={CAMERA_ENABLED || undefined} data-input-phase={CAMERA_ENABLED ? inputStatus : undefined}
+          tabIndex={CAMERA_ENABLED ? 0 : undefined} aria-describedby={CAMERA_ENABLED ? 'maze-input-help' : undefined}
           role={CAMERA_ENABLED ? 'region' : undefined} aria-label={CAMERA_ENABLED ? 'Maze viewport' : undefined}
           style={CAMERA_ENABLED ? { '--world-columns': scene.camera.bounds.columns, '--world-rows': scene.camera.bounds.rows } : undefined}>
-        <div className="maze-grid" style={{ position: 'relative' }}>
+        <div className="maze-grid" style={{ position: 'relative' }}
+          data-maze-surface={!CAMERA_ENABLED || undefined} data-input-phase={!CAMERA_ENABLED ? inputStatus : undefined}
+          tabIndex={!CAMERA_ENABLED ? 0 : undefined} role={!CAMERA_ENABLED ? 'region' : undefined}
+          aria-label={!CAMERA_ENABLED ? 'Maze viewport' : undefined} aria-describedby={!CAMERA_ENABLED ? 'maze-input-help' : undefined}>
           {view.scene.rows.map((row, rowIndex) => (
             <div key={rowIndex} className="maze-row">
               {row.map(renderCell)}
@@ -452,9 +458,6 @@ const MazePage = () => {
         </div>
       </div>}
       <p className="pallet-status" role="status">{movementStatus}{inputStatus === 'blocked' ? ' Keep holding and drag another direction to continue.' : ''}</p>
-      <div className="maze-drag-pad" data-drag-pad tabIndex="0" role="group" aria-label="Drag movement control" data-input-phase={inputStatus}>
-        Drag to steer · release to stop
-      </div>
       <div className="dpad" role="group" aria-label="Movement controls">
         <div className="dpad-row">
           <button className="dpad-btn" data-direction="up">
