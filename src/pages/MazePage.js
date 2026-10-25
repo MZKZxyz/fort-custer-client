@@ -4,6 +4,7 @@ import API from '../utils/api';
 import { move, findStart, formatElapsed } from '../game/movement';
 import { createMazeScene, createMazeViewModel } from '../game/scene';
 import { createCamera } from '../game/camera';
+import { bindMazeInput } from '../game/inputCoordinator';
 import { commandOutcome } from '../game/commandOutcome';
 import MazeDialog from '../components/MazeDialog';
 import MazeRenderBoundary from '../components/MazeRenderBoundary';
@@ -12,13 +13,17 @@ const PUBLIC = process.env.PUBLIC_URL;
 // Explicit preview/release opt-in; ordinary production builds stay on legacy.
 const CAMERA_ENABLED = process.env.REACT_APP_MAZE_CAMERA === 'true';
 
-const INTEGRATION_ENABLED = process.env.REACT_APP_MAZE_VISUALS === 'true';
+const INTEGRATION_ENABLED = process.env.REACT_APP_MAZE_VISUAL_INTEGRATION === 'true';
 const PalletMaze = INTEGRATION_ENABLED ? lazy(() => import('../components/PalletMaze')) : null;
 
 const MazePage = () => {
+  const inputRootRef = useRef(null);
+  const inputRef = useRef(null);
+  const commandRef = useRef(null);
+  const [inputStatus, setInputStatus] = useState('idle');
   const [integrated, setIntegrated] = useState(INTEGRATION_ENABLED);
   const [facing, setFacing] = useState('down');
-  const [movementStatus, setMovementStatus] = useState('Reach the tipi. Arrow keys or direction buttons move one cell.');
+  const [movementStatus, setMovementStatus] = useState('Reach the tipi. Tap for one cell; hold to repeat. Release after clearing fire.');
   const navigate = useNavigate();
   const profile = useMemo(() => {
     return JSON.parse(localStorage.getItem('activeSubProfile'));
@@ -246,10 +251,8 @@ const MazePage = () => {
     const before = gameRef.current;
     const result = move(before, direction);
     const outcome = commandOutcome(before, result);
-    if (integrated) {
-      setMovementStatus(outcome.message);
-      if (outcome.reason === 'step' || outcome.reason === 'complete') setFacing(direction);
-    }
+    setMovementStatus(outcome.message);
+    if (outcome.reason === 'step' || outcome.reason === 'complete') setFacing(direction);
     if (result.blockedByFire) {
       if (hintTimeoutRef.current) clearTimeout(hintTimeoutRef.current);
       setShowFireHint(true);
@@ -266,19 +269,27 @@ const MazePage = () => {
     setPlayerPos(result.state.position);
     if (result.state.completed) handleFinish();
     return outcome;
-  }, [showQuitModal, finished, handleFinish, integrated]);
+  }, [showQuitModal, finished, handleFinish]);
 
-  useEffect(() => {
-    const directions = { ArrowUp: 'up', ArrowDown: 'down', ArrowLeft: 'left', ArrowRight: 'right' };
-    const handleKey = (event) => {
-      const direction = directions[event.key];
-      if (!direction || event.target.closest?.('input, textarea, select, [contenteditable="true"]')) return;
-      event.preventDefault();
-      movePlayer(direction);
-    };
-    window.addEventListener('keydown', handleKey);
-    return () => window.removeEventListener('keydown', handleKey);
-  }, [movePlayer]);
+  // The controller survives renders; commands always read the current shell.
+  useLayoutEffect(() => { commandRef.current = movePlayer; }, [movePlayer]);
+  useLayoutEffect(() => {
+    if (!mazeData || !inputRootRef.current) return;
+    const coordinator = bindMazeInput(inputRootRef.current, {
+      command: direction => commandRef.current(direction),
+      changed: input => setInputStatus(input.phase),
+    });
+    inputRef.current = coordinator;
+    return () => { coordinator.destroy(); inputRef.current = null; };
+  }, [mazeData]);
+  useLayoutEffect(() => {
+    if (showQuitModal || finished || completionError) inputRef.current?.cancel('shell interrupted');
+  }, [showQuitModal, finished, completionError]);
+  const useClassic = useCallback(() => {
+    inputRef.current?.cancel('renderer changed');
+    inputRootRef.current?.querySelector('[data-drag-pad]')?.focus({ preventScroll: true });
+    setIntegrated(false);
+  }, []);
 
   const renderCell = ({ id, row, column, terrain, object, isPlayer, visible }) => {
     const bg = terrain === 'wall' ? `url(textures/wall.png)` : `url(textures/floor.png)`;
@@ -373,13 +384,13 @@ const MazePage = () => {
   
 
   return (
-    <div className={`maze-page${integrated ? ' pallet-enabled' : ''}`} style={{
+    <div ref={inputRootRef} className={`maze-page${integrated ? ' pallet-enabled' : ''}`} style={{
       backgroundImage: "url('/assets/fortBG.png')"
     }}>
       {/* BACK / QUIT button */}
       <button
         className="back-btn"
-        onClick={() => setShowQuitModal(true)}
+        onClick={() => { inputRef.current?.cancel('modal opened'); setShowQuitModal(true); }}
       >
         <img src="/icons/arrowBack.png" alt="Back" />
       </button>
@@ -411,12 +422,11 @@ const MazePage = () => {
       </div>
 
       {integrated ? <>
-        <MazeRenderBoundary onFallback={() => setIntegrated(false)}>
+        <MazeRenderBoundary onFallback={useClassic}>
         <Suspense fallback={<p role="status">Loading maze artwork…</p>}>
-          <PalletMaze scene={view.scene} facing={facing} onFallback={() => setIntegrated(false)} />
+          <PalletMaze scene={view.scene} facing={facing} onFallback={useClassic} />
         </Suspense>
         </MazeRenderBoundary>
-        <p className="pallet-status" role="status">{movementStatus}</p>
       </> : <div className={`maze-container${CAMERA_ENABLED ? ' camera-enabled' : ''}`}>
         <div ref={viewportRef} className={CAMERA_ENABLED ? 'maze-viewport' : 'maze-legacy-host'}
           role={CAMERA_ENABLED ? 'region' : undefined} aria-label={CAMERA_ENABLED ? 'Maze viewport' : undefined}
@@ -441,20 +451,24 @@ const MazePage = () => {
         </div>
         </div>
       </div>}
+      <p className="pallet-status" role="status">{movementStatus}{inputStatus === 'blocked' ? ' Keep holding and drag another direction to continue.' : ''}</p>
+      <div className="maze-drag-pad" data-drag-pad tabIndex="0" role="group" aria-label="Drag movement control" data-input-phase={inputStatus}>
+        Drag to steer · release to stop
+      </div>
       <div className="dpad" role="group" aria-label="Movement controls">
         <div className="dpad-row">
-          <button className="dpad-btn" onClick={() => movePlayer('up')}>
+          <button className="dpad-btn" data-direction="up">
           <img src="/icons/arrowUp.png" alt="Up" />
           </button>
         </div>
         <div className="dpad-row">
-          <button className="dpad-btn" onClick={() => movePlayer('left')}>
+          <button className="dpad-btn" data-direction="left">
             <img src="/icons/arrowLeft.png" alt="Left" />
           </button>
-          <button className="dpad-btn" onClick={() => movePlayer('down')}>
+          <button className="dpad-btn" data-direction="down">
             <img src="/icons/arrowDown.png" alt="Down" />
           </button>
-          <button className="dpad-btn" onClick={() => movePlayer('right')}>
+          <button className="dpad-btn" data-direction="right">
             <img src="/icons/arrowRight.png" alt="Right" />
           </button>
         </div>

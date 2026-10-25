@@ -1,0 +1,319 @@
+{
+  "date": "2026-10-25",
+  "baselineMain": "c4803f2d307abc4ce5c78dc2ff8bd3267abbf770",
+  "reviewRevision": "The commit containing this manifest; pinned in the draft PR body.",
+  "environment": {
+    "node": "24.19.0",
+    "playwright": "1.62.1",
+    "chromium": "154.0.8037.57",
+    "mode": "headless Linux Chromium; synthetic intercepted APIs only"
+  },
+  "checks": [
+    {
+      "check": "optimized classic, complete browser discovery",
+      "passed": 48,
+      "skipped": 16
+    },
+    {
+      "check": "optimized integrated browser suite",
+      "passed": 31,
+      "skipped": 2
+    },
+    {
+      "check": "both flags true, manual/image/chunk fallback",
+      "passed": 3,
+      "skipped": 0
+    },
+    {
+      "check": "extracted UX lab browser suite",
+      "passed": 45,
+      "skipped": 0
+    },
+    {
+      "check": "Jest default",
+      "passed": 58,
+      "suites": 9
+    },
+    {
+      "check": "Jest integrated",
+      "passed": 58,
+      "suites": 9
+    },
+    {
+      "check": "Jest camera",
+      "passed": 58,
+      "suites": 9
+    },
+    {
+      "check": "MazePage malformed new flag TRUE plus old flag true",
+      "passed": 12,
+      "activation": false
+    },
+    {
+      "check": "pure controller invariant tests",
+      "passed": 24
+    },
+    {
+      "check": "optimized build classic",
+      "status": "PASS"
+    },
+    {
+      "check": "optimized build integrated",
+      "status": "PASS"
+    },
+    {
+      "check": "optimized build both",
+      "status": "PASS"
+    }
+  ],
+  "viewports": [
+    [
+      320,
+      568
+    ],
+    [
+      390,
+      844
+    ],
+    [
+      844,
+      390
+    ],
+    [
+      1280,
+      800
+    ]
+  ],
+  "testTiming": "Focused mouse/keyboard tests freeze browser time after renderer readiness and advance across scheduler boundaries. CDP touch, inherited renderer/recovery and UX-lab checks use wall time.",
+  "covered": [
+    "continuous keyboard and D-pad hold",
+    "native key repeats ignored",
+    "drag wall pause and redirection in one contact",
+    "stationary fire clear and fresh deliberate input",
+    "dead zone and diagonal neutrality",
+    "pointer cancellation, focus/blur/resize and lifecycle invalidation",
+    "multi-owner rejection and stale callbacks",
+    "completion exactly once, explicit retry and refresh using same UUID",
+    "canonical completion payload",
+    "camera edges and resize, enlarged text, reduced motion",
+    "native page scrolling outside drag pad without movement",
+    "modal focus containment and return",
+    "manual, missing-image and failed-chunk fallback",
+    "default-off no sprite requests",
+    "unobstructed tipi arrival without asset edits"
+  ],
+  "skips": {
+    "classic": [
+      "13 integrated-renderer-only",
+      "2 square-camera-only",
+      "1 desktop native-touch-only"
+    ],
+    "integrated": [
+      "1 default-build-only",
+      "1 desktop native-touch-only"
+    ]
+  },
+  "flag": {
+    "name": "REACT_APP_MAZE_VISUAL_INTEGRATION",
+    "activation": "exact lowercase true",
+    "default": false,
+    "oldFlagActivates": false,
+    "productionSettingsChanged": false,
+    "rankedActivation": false
+  },
+  "sourceHashes": {
+    "src/game/inputController.js": "1a97da13c580652a6032cf4cb1443fe9f9e3029a8e226a624569488b17c7b0f1",
+    "src/game/inputCoordinator.js": "78ab3140b77b738cf4e33ce626393febe781a94c522270c492030a994e23007e",
+    "src/game/inputCoordinator.test.js": "91d3fa59f8d10643310ec31b439bba402411f292fc9d20c8bf9c3b932257558b",
+    "src/pages/MazePage.js": "9e86316ee6faa8f498e44cd0ecb1331c3412bb41fd9f631dce999c6982434f28",
+    "src/pages/MazePage.test.js": "7e1ea0aebb93ebb4ff5e26e54516d68b550a04da8fe19482f46d3aa49e4e716c",
+    "src/components/PalletMaze.js": "d5f07ebccf5c6d19c3ec02ce769b92eab57ef6ee6e7edb67fa9ec95feb5e5c3c",
+    "src/css/MazePage.css": "3b06fe8a444907d81b468f8e1f63b3487f82a13ba15bfc25c0b3f1f2eab1a14f",
+    "docs/ux-interaction-lab/controller.mjs": "5b88545e8a9f026586c41a3eaa65c41ec782a29f3fe4569f020760567ba2019a",
+    "e2e/unified-input.spec.js": "4bce20f953018f6c8957e60af9f42a47083b0841a466b497c3aee6d8ee8038e1",
+    "e2e/responsive.spec.js": "76e1d022c0f618eddfe9760ab8f0865e44eadcad44cefe89ce48996997072e00",
+    "e2e/production-integration.spec.js": "212d50c557a85c0705a527d774824e9c772f3157c7abef93ef95017b139643d6",
+    "docs/production-integration/serve.cjs": "2c37ea420d103d86530b4262ba6ce011ea0073697dba7968898409576ad3aa5b"
+  },
+  "artifacts": [
+    {
+      "file": "classic-1280x800-arrival.png",
+      "sha256": "c6e0d7c51438907cdfea1c9f78d14e3110682fca179f78cc825f1eb39a93804f",
+      "bytes": 827084,
+      "imagePixels": [
+        1280,
+        1459
+      ]
+    },
+    {
+      "file": "classic-1280x800-cleared.png",
+      "sha256": "825764084fd1d9c5308f055adbc5dadf6b8541bbbeaff39ad8b92f7eeb5cbb6b",
+      "bytes": 834459,
+      "imagePixels": [
+        1280,
+        1425
+      ]
+    },
+    {
+      "file": "classic-320x568-arrival.png",
+      "sha256": "8390ea72110d8c52649664ba512be2f3a46238f8338a8150c58556cfeb18685c",
+      "bytes": 197007,
+      "imagePixels": [
+        320,
+        784
+      ]
+    },
+    {
+      "file": "classic-320x568-cleared.png",
+      "sha256": "4f09a711813fdc9514a56eb0aa6ee86e48377ce45336440e576be44dd68735f6",
+      "bytes": 199331,
+      "imagePixels": [
+        320,
+        768
+      ]
+    },
+    {
+      "file": "classic-390x844-arrival.png",
+      "sha256": "fbfc8c40a807cdade0b991bc956b580301b8abdd9fb94f79b254f85ad3827d8c",
+      "bytes": 241522,
+      "imagePixels": [
+        390,
+        844
+      ]
+    },
+    {
+      "file": "classic-390x844-cleared.png",
+      "sha256": "4a3946835dedaa69501651d2dbb2bc7699334587a451d62c84065ecf0f5c01c9",
+      "bytes": 246179,
+      "imagePixels": [
+        390,
+        844
+      ]
+    },
+    {
+      "file": "classic-844x390-arrival.png",
+      "sha256": "05a891a41e65abf75d4e3a210780daf082e85595099afb8dfef304450ffe90eb",
+      "bytes": 564569,
+      "imagePixels": [
+        844,
+        1142
+      ]
+    },
+    {
+      "file": "classic-844x390-cleared.png",
+      "sha256": "f3465cac1d270b23eaa6798321ad0bc1ed84f1ee24670776043942f5c05350fa",
+      "bytes": 551536,
+      "imagePixels": [
+        844,
+        1108
+      ]
+    },
+    {
+      "file": "geometry.json",
+      "sha256": "ccdb29a1e459eb398420a25dbd20e5055517f20cc4b26f9cdafcf7a777d86f37",
+      "bytes": 970
+    },
+    {
+      "file": "integrated-1280x800-arrival.png",
+      "sha256": "84136f04ef29522fd167f9d60d9648d031676b5302bfcdf5af10a670bcd8d635",
+      "bytes": 613158,
+      "imagePixels": [
+        1280,
+        1075
+      ]
+    },
+    {
+      "file": "integrated-1280x800-cleared.png",
+      "sha256": "eb9af7583c9ebb9ea432060179cdd5197e733dd137b0447bfb4c3c0c363a35b9",
+      "bytes": 592298,
+      "imagePixels": [
+        1280,
+        1041
+      ]
+    },
+    {
+      "file": "integrated-320x568-arrival.png",
+      "sha256": "18363d4cab9bfe9d657a4231dfd04c6e31bb7d2b52ea5e531baffb8f0dc018e3",
+      "bytes": 183409,
+      "imagePixels": [
+        320,
+        923
+      ]
+    },
+    {
+      "file": "integrated-320x568-cleared.png",
+      "sha256": "bb7d39fc483b8a975ef8fee042f00e2d87b085641a3591b0a5967b7dd28f0da0",
+      "bytes": 187469,
+      "imagePixels": [
+        320,
+        934
+      ]
+    },
+    {
+      "file": "integrated-390x844-arrival.png",
+      "sha256": "d45b7fa61943c4842c8a13b7b16b70bbad227616908caf571c53ec0871684ff6",
+      "bytes": 241972,
+      "imagePixels": [
+        390,
+        1177
+      ]
+    },
+    {
+      "file": "integrated-390x844-cleared.png",
+      "sha256": "4849d8ef50d778d506a87b0c630085df0597cb95585f6b8745efd02d737af1a7",
+      "bytes": 267417,
+      "imagePixels": [
+        390,
+        1165
+      ]
+    },
+    {
+      "file": "integrated-844x390-arrival.png",
+      "sha256": "dfb97d4cd8533797215b271dd0f07be629163ca6d35c98e942434b41e6495554",
+      "bytes": 357692,
+      "imagePixels": [
+        844,
+        787
+      ]
+    },
+    {
+      "file": "integrated-844x390-cleared.png",
+      "sha256": "2002d6e918be151d0b16940b04f57e5cb0331c710695f1dd401af1a8adacd790",
+      "bytes": 339814,
+      "imagePixels": [
+        844,
+        753
+      ]
+    },
+    {
+      "file": "integrated-desktop-trace.zip",
+      "sha256": "a73b8da6881afd7755df09fe08b041f271b031486377642d7019862f971b4a4b",
+      "bytes": 5234655
+    },
+    {
+      "file": "integrated-mobile-trace.zip",
+      "sha256": "167e5c53602ab999703072d87dde04310be38be260ab4c741c072ef55016fa19",
+      "bytes": 4529088
+    }
+  ],
+  "buildSourceMaps": "Optimized classic, integrated and both-flags main source maps match current inputController, inputCoordinator and MazePage source.",
+  "rollback": "State-preserving classic fallback and default-off build checked. Complete staged binary diff reverse-apply check required before commit; no migration or recovery-storage deletion.",
+  "independentQA": "Required on this combined revision; author validation is not signoff.",
+  "ownerReview": "Required before activation; movement feel, arrival composition and device usability remain open.",
+  "releaseGates": {
+    "EG-08": "Owner scene approval, arbitrary-grid occlusion and physical-device performance/readability remain open; daylight only, original tipi lighting/projection mismatch.",
+    "EG-09": "Ranked logical-view equality/versioning and fog-removal difficulty remain unresolved; no ranked production activation.",
+    "EG-11": "Physical devices, Safari/Firefox, screen readers, pinch/OS interruptions, contrast and full WCAG audit remain unverified. Short layouts scroll between board and controls.",
+    "EG-07": "Cadence and control preference remain owner/device evaluation defaults.",
+    "EG-01": "Existing server timing and recovery contracts unchanged; no live backend or database certification."
+  },
+  "notPerformed": [
+    "GitHub CI polling",
+    "merge",
+    "deployment",
+    "production setting changes",
+    "live database writes",
+    "physical-device signoff"
+  ],
+  "rollbackReverseApply": "PASS: complete staged binary diff reverse-apply check; no changes were reversed."
+}

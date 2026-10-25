@@ -2,7 +2,7 @@ const { test, expect } = require('@playwright/test');
 const fs = require('node:fs');
 const path = require('node:path');
 const crypto = require('node:crypto');
-const enabled = process.env.REACT_APP_MAZE_VISUALS === 'true';
+const enabled = process.env.REACT_APP_MAZE_VISUAL_INTEGRATION === 'true';
 const evidence = process.env.FC_EVIDENCE_DIR;
 const attemptId = '01234567-89ab-4cde-8fab-0123456789ab';
 

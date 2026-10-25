@@ -1,3 +1,5 @@
+> Sprint 1.2 continuation: the current runtime flag is `REACT_APP_MAZE_VISUAL_INTEGRATION` (exact `true`, default off). The former `REACT_APP_MAZE_VISUALS` spelling no longer activates sprites. See [unified input integration](../unified-input/README.md) for current controls, arrival treatment, tests and rollback. Evidence below records the earlier renderer-only baseline.
+
 # FC-VIS-04 · Daily-maze production-route integration
 
 Sprint 1.1 engineering implementation for client issue #33. Base: `9d48caf` (merged 58° pilot #40, camera #39 and owner reference library #42). This is a default-off review candidate. Independent QA, integrator review and owner activation approval are required. The broader VIS-04 issue remains open.

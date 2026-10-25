@@ -61,7 +61,9 @@ function PalletMaze({ scene, facing, onFallback }) {
   for (const cell of cells) {
     if (cell.terrain === 'wall') sprites.push({ cell, role: 'wall', order: 0 });
     if (cell.object) sprites.push({ cell, role: cell.object, order: 1 });
-    if (cell.isPlayer) sprites.push({ cell, role: `explorer-${facing}`, order: 2 });
+    // At arrival the goal remains visible; the small directional cue marks
+    // the explorer's logical cell without covering the tipi artwork.
+    if (cell.isPlayer && cell.object !== 'exit') sprites.push({ cell, role: `explorer-${facing}`, order: 2 });
   }
   sprites.sort((a, b) => a.cell.row - b.cell.row || a.cell.column - b.cell.column || a.order - b.order);
   const img = (role, cell, layer = 'body') => {
@@ -97,7 +99,7 @@ function PalletMaze({ scene, facing, onFallback }) {
           const p = project(cell.row, cell.column, tile);
           return <span key={cell.id} className="pallet-badge" style={{ left: p.x + tile * .26, top: p.y + tile * .18 }}>{cell.tile}</span>;
         })}
-        <span className="pallet-player-cue" style={{ left: player.x - tile * .32, top: player.y - tile * .30 }}>{arrows[facing]}</span>
+        <span className="pallet-player-cue" style={{ left: player.x - tile * .32, top: player.y + tile * (scene.completed ? .20 : -.30) }}>{arrows[facing]}</span>
       </div>
     </div>
     <p className="pallet-position">Row {scene.player.row + 1}, column {scene.player.column + 1}. {neighbors}</p>

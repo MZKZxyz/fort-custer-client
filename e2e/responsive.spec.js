@@ -26,11 +26,11 @@ for (const [width, height] of viewports) {
     await page.route('https://fonts.gstatic.com/**', r => r.abort());
     const noOverflow = async () => expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     // Use a browser touch gesture, not scrollIntoView, to prove scrolling is enabled.
-    const swipeUp = async () => {
+    const swipeUp = async (x = width / 2) => {
       const cdp = await page.context().newCDPSession(page);
-      await cdp.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [{ x: width / 2, y: height - 110 }] });
+      await cdp.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [{ x, y: height - 110 }] });
       for (let i = 1; i <= 10; i++) {
-        await cdp.send('Input.dispatchTouchEvent', { type: 'touchMove', touchPoints: [{ x: width / 2, y: height - 110 - i * (height - 150) / 10 }] });
+        await cdp.send('Input.dispatchTouchEvent', { type: 'touchMove', touchPoints: [{ x, y: height - 110 - i * (height - 150) / 10 }] });
         await page.waitForTimeout(20);
       }
       await cdp.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });
@@ -47,7 +47,7 @@ for (const [width, height] of viewports) {
     }
     const calendarOverflows = await page.evaluate(() => document.documentElement.scrollHeight > innerHeight);
     await swipeUp();
-    if (calendarOverflows) expect(await page.evaluate(() => scrollY)).toBeGreaterThan(0);
+    if (calendarOverflows) await expect.poll(() => page.evaluate(() => scrollY)).toBeGreaterThan(0);
     await play.scrollIntoViewIfNeeded();
     const box = await play.boundingBox();
     const nav = await page.locator('nav').boundingBox();
@@ -69,9 +69,12 @@ for (const [width, height] of viewports) {
     expect(tile.width).toBeGreaterThanOrEqual(13);
     await noOverflow();
     const mazeOverflows = await page.evaluate(() => document.documentElement.scrollHeight > innerHeight);
-    await swipeUp();
-    if (mazeOverflows) expect(await page.evaluate(() => scrollY)).toBeGreaterThan(0);
+    // The dedicated drag pad intentionally steers. Verify page scrolling in
+    // the ordinary page margin, outside either movement control.
+    await swipeUp(5);
+    if (mazeOverflows) await expect.poll(() => page.evaluate(() => scrollY)).toBeGreaterThan(0);
     const playerIndex = () => page.locator('.maze-cell').filter({ hasText: '🧍' }).evaluate(el => [...document.querySelectorAll('.maze-cell')].indexOf(el));
+    expect(await playerIndex()).toBe(220);
     await page.getByRole('button', { name: 'Right', exact: true }).tap();
     expect(await playerIndex()).toBe(221);
     await page.keyboard.press('ArrowLeft');

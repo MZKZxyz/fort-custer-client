@@ -444,6 +444,9 @@
 }
 .dpad-btn:focus-visible, .back-btn:focus-visible { outline: 3px solid white; outline-offset: 3px; }
 .maze-legacy-host { display: contents; }
+.maze-drag-pad { box-sizing: border-box; width: min(360px, calc(100% - 32px)); min-height: 80px; margin: .5rem auto; padding: 1.5rem .5rem; text-align: center; border: 2px solid #6a3600; border-radius: 8px; background: #fae9ca; color: #241500; touch-action: none; user-select: none; }
+.maze-drag-pad:focus-visible { outline: 3px solid #173d46; outline-offset: 3px; }
+.maze-drag-pad[data-input-phase="blocked"] { border-style: dashed; }
 /* 4.93:1 against the darkest HUD panel stop (#B97927). */
 .maze-date, .maze-timer { color: #241500; }
 

@@ -13,7 +13,7 @@ const deferred = () => {
   return { promise, resolve, reject };
 };
 const fixture = { data: { seed: 'synthetic', maze: { grid: [['S', 'X', 'F', 'E']], width: 4, height: 1 } } };
-const integrated = process.env.REACT_APP_MAZE_VISUALS === 'true';
+const integrated = process.env.REACT_APP_MAZE_VISUAL_INTEGRATION === 'true';
 const position = container => integrated
   ? Number(container.querySelector('.pallet-viewport')?.dataset.column)
   : [...container.querySelectorAll('.maze-cell')].findIndex(cell => cell.textContent.includes('🧍'));
@@ -21,7 +21,10 @@ const ready = async () => {
   await screen.findByRole('button', { name: 'Right' });
   if (integrated) await screen.findByRole('region', { name: 'Maze viewport' });
 };
-const key = direction => fireEvent.keyDown(window, { key: `Arrow${direction}` });
+const key = direction => {
+  fireEvent.keyDown(window, { key: `Arrow${direction}` });
+  fireEvent.keyUp(window, { key: `Arrow${direction}` });
+};
 const pad = direction => fireEvent.click(screen.getByRole('button', { name: direction }));
 beforeEach(() => {
   localStorage.clear();
