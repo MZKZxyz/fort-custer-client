@@ -1,0 +1,58 @@
+{
+  "kind": "actual Chromium screenshots of offline-render concept page; not production",
+  "reducedMotion": "reduce; page has no animation or transitions",
+  "results": [
+    {
+      "label": "mobile",
+      "mood": "daylight",
+      "width": 320,
+      "height": 568,
+      "overflow": false,
+      "pageHeight": 568,
+      "imageLoaded": 1400,
+      "active": "daylight",
+      "pressed": "true",
+      "labelsInsideScene": true,
+      "errors": []
+    },
+    {
+      "label": "mobile",
+      "mood": "dusk",
+      "width": 320,
+      "height": 568,
+      "overflow": false,
+      "pageHeight": 568,
+      "imageLoaded": 1400,
+      "active": "dusk",
+      "pressed": "true",
+      "labelsInsideScene": true,
+      "errors": []
+    },
+    {
+      "label": "desktop",
+      "mood": "daylight",
+      "width": 1440,
+      "height": 1000,
+      "overflow": false,
+      "pageHeight": 1000,
+      "imageLoaded": 1400,
+      "active": "daylight",
+      "pressed": "true",
+      "labelsInsideScene": true,
+      "errors": []
+    },
+    {
+      "label": "desktop",
+      "mood": "dusk",
+      "width": 1440,
+      "height": 1000,
+      "overflow": false,
+      "pageHeight": 1000,
+      "imageLoaded": 1400,
+      "active": "dusk",
+      "pressed": "true",
+      "labelsInsideScene": true,
+      "errors": []
+    }
+  ]
+}

@@ -1,0 +1,265 @@
+{
+  "kind": "author geometry/raycast diagnostic; not human perception approval",
+  "angles": {
+    "70.1": {
+      "S": {
+        "cell": [
+          9,
+          2
+        ],
+        "mesh_count": 13,
+        "pixel_bounds_1400": [
+          464.06744718551636,
+          1012.2924447059631,
+          543.968266248703,
+          1088.9847874641418
+        ],
+        "height": 1.1950000524520874,
+        "within_logical_cell_xy": true,
+        "sample_rays": {
+          "coat": {
+            "first_hit": "Indigo coat",
+            "wall_occluded": false,
+            "hit_distance": 49.96426121420831
+          },
+          "face": {
+            "first_hit": "Nose",
+            "wall_occluded": false,
+            "hit_distance": 49.95858880816316
+          },
+          "left_boot": {
+            "first_hit": "Separated boot",
+            "wall_occluded": false,
+            "hit_distance": 49.938354332100666
+          },
+          "right_boot": {
+            "first_hit": "Separated boot.001",
+            "wall_occluded": false,
+            "hit_distance": 49.938354332100666
+          }
+        }
+      },
+      "X": {
+        "cell": [
+          7,
+          2
+        ],
+        "mesh_count": 9,
+        "pixel_bounds_1400": [
+          479.2308032512665,
+          831.4146816730499,
+          540.7801508903503,
+          899.4754016399384
+        ],
+        "height": 0.7999999523162842,
+        "within_logical_cell_xy": true,
+        "sample_rays": {
+          "body": {
+            "first_hit": "Cream body label",
+            "wall_occluded": false,
+            "hit_distance": 49.94858562616851
+          },
+          "lever": {
+            "first_hit": "Broad squeeze lever",
+            "wall_occluded": false,
+            "hit_distance": 49.98936044026331
+          },
+          "nozzle": {
+            "first_hit": "Flared nozzle",
+            "wall_occluded": false,
+            "hit_distance": 49.95719817173419
+          }
+        }
+      },
+      "F": {
+        "cell": [
+          5,
+          4
+        ],
+        "mesh_count": 6,
+        "pixel_bounds_1400": [
+          665.0917828083038,
+          642.4244165420532,
+          732.6442718505859,
+          723.2399344444275
+        ],
+        "height": 1.1200000047683716,
+        "within_logical_cell_xy": true,
+        "sample_rays": {
+          "left_tip": {
+            "first_hit": "Raised orange tongue",
+            "wall_occluded": false,
+            "hit_distance": 49.98013979351495
+          },
+          "central_tip": {
+            "first_hit": "Raised orange tongue.002",
+            "wall_occluded": false,
+            "hit_distance": 49.97120264462323
+          },
+          "golden_core": {
+            "first_hit": "Pointed golden core",
+            "wall_occluded": false,
+            "hit_distance": 50.000715632085736
+          }
+        }
+      },
+      "E": {
+        "cell": [
+          1,
+          7
+        ],
+        "mesh_count": 6,
+        "pixel_bounds_1400": [
+          952.6476383209229,
+          264.13062810897827,
+          1034.7649216651917,
+          375.13283491134644
+        ],
+        "height": 1.0630379915237427,
+        "within_logical_cell_xy": true,
+        "sample_rays": {
+          "entrance": {
+            "first_hit": null,
+            "wall_occluded": false,
+            "hit_distance": null
+          },
+          "ridge": {
+            "first_hit": "Ridge pole",
+            "wall_occluded": false,
+            "hit_distance": 49.99676899961027
+          }
+        }
+      }
+    },
+    "58.0": {
+      "S": {
+        "cell": [
+          9,
+          2
+        ],
+        "mesh_count": 13,
+        "pixel_bounds_1400": [
+          464.06744718551636,
+          955.5763185024261,
+          543.968266248703,
+          1049.9535620212555
+        ],
+        "height": 1.1950000524520874,
+        "within_logical_cell_xy": true,
+        "sample_rays": {
+          "coat": {
+            "first_hit": "Indigo coat",
+            "wall_occluded": false,
+            "hit_distance": 49.97506091909431
+          },
+          "face": {
+            "first_hit": "Nose",
+            "wall_occluded": false,
+            "hit_distance": 49.957083632635374
+          },
+          "left_boot": {
+            "first_hit": "Separated boot",
+            "wall_occluded": false,
+            "hit_distance": 49.93997128975822
+          },
+          "right_boot": {
+            "first_hit": "Separated boot.001",
+            "wall_occluded": false,
+            "hit_distance": 49.93997128975822
+          }
+        }
+      },
+      "X": {
+        "cell": [
+          7,
+          2
+        ],
+        "mesh_count": 9,
+        "pixel_bounds_1400": [
+          479.2308032512665,
+          802.7001559734344,
+          540.7801508903503,
+          874.6925830841064
+        ],
+        "height": 0.7999999523162842,
+        "within_logical_cell_xy": true,
+        "sample_rays": {
+          "body": {
+            "first_hit": "Cream body label",
+            "wall_occluded": false,
+            "hit_distance": 49.96697578835039
+          },
+          "lever": {
+            "first_hit": "Broad squeeze lever",
+            "wall_occluded": false,
+            "hit_distance": 49.98820661697367
+          },
+          "nozzle": {
+            "first_hit": "Flared nozzle",
+            "wall_occluded": false,
+            "hit_distance": 49.959240588852495
+          }
+        }
+      },
+      "F": {
+        "cell": [
+          5,
+          4
+        ],
+        "mesh_count": 6,
+        "pixel_bounds_1400": [
+          665.0917828083038,
+          623.6284255981445,
+          732.6442718505859,
+          719.9783444404602
+        ],
+        "height": 1.1200000047683716,
+        "within_logical_cell_xy": true,
+        "sample_rays": {
+          "left_tip": {
+            "first_hit": "Raised orange tongue",
+            "wall_occluded": false,
+            "hit_distance": 49.98213731217352
+          },
+          "central_tip": {
+            "first_hit": "Raised orange tongue.002",
+            "wall_occluded": false,
+            "hit_distance": 49.97544990554581
+          },
+          "golden_core": {
+            "first_hit": "Pointed golden core",
+            "wall_occluded": false,
+            "hit_distance": 50.00063415125196
+          }
+        }
+      },
+      "E": {
+        "cell": [
+          1,
+          7
+        ],
+        "mesh_count": 6,
+        "pixel_bounds_1400": [
+          952.6476383209229,
+          283.68756771087646,
+          1034.7649216651917,
+          405.8560013771057
+        ],
+        "height": 1.0630379915237427,
+        "within_logical_cell_xy": true,
+        "sample_rays": {
+          "entrance": {
+            "first_hit": null,
+            "wall_occluded": false,
+            "hit_distance": null
+          },
+          "ridge": {
+            "first_hit": "Ridge pole",
+            "wall_occluded": false,
+            "hit_distance": 49.99642504309527
+          }
+        }
+      }
+    }
+  }
+}

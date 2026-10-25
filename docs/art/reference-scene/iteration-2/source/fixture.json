@@ -1,0 +1,21 @@
+{
+  "grid": [
+    "#########",
+    "#   #  E#",
+    "# # # # #",
+    "# #   # #",
+    "# ### # #",
+    "#   F   #",
+    "### ### #",
+    "# X #   #",
+    "# # # ###",
+    "# S     #",
+    "#########"
+  ],
+  "player": [
+    9,
+    2
+  ],
+  "cell_unit": 1,
+  "purpose": "authored static art fixture; not a published maze"
+}
