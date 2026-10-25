@@ -4,9 +4,9 @@ const OBJECTS = { X: 'extinguisher', F: 'fire', E: 'exit' };
  * Read-only projection of a move() state. Inputs remain caller-owned; every
  * output object is detached and frozen. Coordinates are logical cells, never
  * pixels. This adapter neither transitions gameplay nor owns assets or effects.
- * visionRadius preserves the current DOM visibility until FC-VIS-03.
+ * revealAll exposes objects for viewport clipping; visionRadius preserves rollback.
  */
-export function createMazeScene({ grid, position, inventory, completed }, { visionRadius = 1 } = {}) {
+export function createMazeScene({ grid, position, inventory, completed }, { visionRadius = 1, revealAll = false } = {}) {
   const [playerRow, playerColumn] = position;
   const height = grid.length;
   const width = grid[0]?.length || 0;
@@ -18,7 +18,7 @@ export function createMazeScene({ grid, position, inventory, completed }, { visi
     terrain: tile === '#' ? 'wall' : 'floor',
     object: OBJECTS[tile] || null,
     isPlayer: playerRow === r && playerColumn === c,
-    visible: Math.abs(playerRow - r) <= visionRadius && Math.abs(playerColumn - c) <= visionRadius,
+    visible: revealAll || (Math.abs(playerRow - r) <= visionRadius && Math.abs(playerColumn - c) <= visionRadius),
   })))));
 
   return Object.freeze({

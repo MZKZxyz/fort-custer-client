@@ -1,0 +1,97 @@
+[
+  {
+    "viewport": "320×568",
+    "width": 284,
+    "height": 188,
+    "tileWidth": 36,
+    "tileHeight": 36,
+    "columns": 7.888888888888889,
+    "rows": 5.222222222222222,
+    "scrollX": 0,
+    "scrollY": 0
+  },
+  {
+    "viewport": "375×667",
+    "width": 339,
+    "height": 287,
+    "tileWidth": 42.375,
+    "tileHeight": 42.375,
+    "columns": 8,
+    "rows": 6.772861356932153,
+    "scrollX": 0,
+    "scrollY": 0
+  },
+  {
+    "viewport": "390×844",
+    "width": 354,
+    "height": 464,
+    "tileWidth": 44.25,
+    "tileHeight": 44.25,
+    "columns": 8,
+    "rows": 10.485875706214689,
+    "scrollX": 0,
+    "scrollY": 0
+  },
+  {
+    "viewport": "412×915",
+    "width": 376,
+    "height": 535,
+    "tileWidth": 47,
+    "tileHeight": 47,
+    "columns": 8,
+    "rows": 11.382978723404255,
+    "scrollX": 0,
+    "scrollY": 0
+  },
+  {
+    "viewport": "844×390",
+    "width": 808,
+    "height": 144,
+    "tileWidth": 48,
+    "tileHeight": 48,
+    "columns": 16.833333333333332,
+    "rows": 3,
+    "scrollX": 0,
+    "scrollY": 0
+  },
+  {
+    "viewport": "1280×800",
+    "width": 960,
+    "height": 420,
+    "tileWidth": 48,
+    "tileHeight": 48,
+    "columns": 20,
+    "rows": 8.75,
+    "scrollX": 0,
+    "scrollY": 0
+  },
+  {
+    "viewport": "390×240",
+    "width": 354,
+    "height": 133,
+    "tileWidth": 44.25,
+    "tileHeight": 44.25,
+    "columns": 8,
+    "rows": 3.005649717514124,
+    "scrollX": 0,
+    "scrollY": 0
+  },
+  {
+    "pacing": {
+      "frames": {
+        "samples": 1059,
+        "medianMs": 33.39999999999418,
+        "worstMs": 333.3000000000029
+      },
+      "inputToNextFrame": {
+        "samples": 100,
+        "medianMs": 0.29999999998835847,
+        "worstMs": 35.09999999997672
+      }
+    },
+    "traversalWallTimeMs": 50705.873085,
+    "note": "Includes Playwright round trips/assertions; not a frame benchmark",
+    "browser": "154.0.8037.57",
+    "domCells": 441
+  }
+]

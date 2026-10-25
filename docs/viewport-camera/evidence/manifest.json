@@ -1,0 +1,24 @@
+{
+  "baseSha": "3e25eacd82d10a40df2568c139629d313c9e665a",
+  "browser": "Chromium 154.0.8037.57",
+  "validation": {
+    "unit": "6 suites / 39 tests passed",
+    "fallbackUnit": "6 suites / 39 tests passed",
+    "build": "compiled successfully",
+    "browser": "34 passed",
+    "rollbackBrowser": "PASS: logical traces equal; legacy geometry/fog verified"
+  },
+  "sha256": {
+    "src/pages/MazePage.js": "17675762f8f53278e01dbfefbdae0d00437408a009305f0dcd3e8368c855dc81",
+    "src/css/MazePage.css": "a587885f3e6f55feda0fd137082b0995165b625d62e4b2b7cd9199ef76f06240",
+    "src/game/scene.js": "88326f7ccd742dc28f8f40c5c74c5a71e3d16249d81ad232512ab8f6eec5b96f",
+    "src/game/camera.js": "c6a3a4ef18b168035bf45e63430494d5af8e81239aab07fc378186e8b13dfd90",
+    "src/game/movement.js": "1b81e8d528554a3074750ceb902df5f663c851acda214a8d6e34e7406f218312",
+    "e2e/camera.spec.js": "ad2d3b88637818d18a6816b4f41188e0569a287f6de5d8841c2d9ffecf0e4d97",
+    "docs/viewport-camera/verify.cjs": "4bdbd530b658edb6b002a248eb9ed5fc0ca04fcc22b407d07e1550354a22cbf6",
+    "docs/viewport-camera/evidence/contact-sheet.png": "fbc1d8e49090a5d4b0081c61c3261cab41ca30c6bbe2cb7c949f40e6810b781f",
+    "docs/viewport-camera/evidence/trace-and-rollback.json": "44b160e8ce626bc8fa8b05e9229d828efae5b17dbac70e41123804e7485812f3",
+    "docs/viewport-camera/evidence/13x17.json": "09ef512ecad71a15488367feee78a415fff3547f0baab7fcc08a80fc9d6ce8f4",
+    "docs/viewport-camera/evidence/21x21.json": "be70a29bbf9d1dada3c7a439b822789ec870929ad0f9feb4499e32a98d01038c"
+  }
+}

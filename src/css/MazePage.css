@@ -411,3 +411,38 @@
 .back-btn { top: max(1rem, env(safe-area-inset-top)); left: max(1rem, env(safe-area-inset-left)); }
 /* Emoji must not enlarge one flex cell and distort the square grid. */
 .maze-cell { min-width: 0; min-height: 0; }
+
+/* VIS-03: explicit square logical cells, clipped world, no mechanical fog.
+   Short screens retain three readable rows and use normal page scrolling. */
+.camera-enabled .maze-viewport {
+  --tile-size: clamp(36px, calc((100vw - 36px) / var(--camera-columns, 8)), 48px);
+  width: min(100%, calc(var(--world-columns) * var(--tile-size)), 960px);
+  height: min(calc(var(--world-rows) * var(--tile-size)), clamp(calc(3 * var(--tile-size)), calc(100svh - 380px), 560px));
+  overflow: hidden;
+  border: 10px solid #6A3600;
+  border-radius: 8px;
+  background: #6A3600;
+  flex-shrink: 1;
+  min-width: 0;
+}
+.camera-enabled .maze-grid {
+  width: calc(var(--world-columns) * var(--tile-size));
+  max-width: none;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+.camera-enabled .maze-cell {
+  flex: 0 0 var(--tile-size);
+  width: var(--tile-size);
+  height: var(--tile-size);
+  font-size: 24px;
+}
+.camera-enabled .thought-bubble { font-size: .8rem; bottom: 0; }
+@media (prefers-reduced-motion: reduce) {
+  .maze-fog, .maze-fog-main, .maze-fog-noise { animation: none; }
+}
+.dpad-btn:focus-visible, .back-btn:focus-visible { outline: 3px solid white; outline-offset: 3px; }
+.maze-legacy-host { display: contents; }
+/* 4.93:1 against the darkest HUD panel stop (#B97927). */
+.maze-date, .maze-timer { color: #241500; }

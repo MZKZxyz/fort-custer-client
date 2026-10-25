@@ -1,0 +1,59 @@
+{
+  "parentSha": "0cc2b2c1553f1063dbbde3c49fc2c606bfa7e3fe",
+  "activation": "Only exact REACT_APP_MAZE_CAMERA=true; all other values select legacy",
+  "validation": {
+    "unsetUnit": "6 suites / 40 tests passed",
+    "trueUnit": "6 suites / 40 tests passed",
+    "falseUnit": "6 suites / 40 tests passed",
+    "malformedTRUEUnit": "MazePage suite / 12 tests passed; legacy selected",
+    "productionBuilds": "unset and true compiled successfully",
+    "cameraPreviewBrowser": "34 passed",
+    "productionBrowser": "PASS: camera true and legacy unset bundles verified; logical traces equal"
+  },
+  "sourceAndEvidenceSha256": {
+    "src/pages/MazePage.js": "1deb5c8e174f1b19b7d1c53c5fae580a5c9ff9bc9336fc4ec2dab937e2f1eba4",
+    "src/pages/MazePage.test.js": "e7ba293ce3c1d246c18408888eafab82a5ebe6e952fb505cfc1a760fa58f9d2b",
+    "docs/viewport-camera/verify.cjs": "f6728f3c0d0d3b7f7ab044531929cb3091f9ed28efd22238379d71bf6ac2978e",
+    "docs/viewport-camera/README.md": "a4a040a48b69517663d68d220e216417d1bb53576ee549bbb1ae9e4251d2c671",
+    "docs/viewport-camera/evidence/rollout-production-trace.json": "44b160e8ce626bc8fa8b05e9229d828efae5b17dbac70e41123804e7485812f3"
+  },
+  "productionBundles": {
+    "legacy": {
+      "NODE_ENV": "production",
+      "REACT_APP_MAZE_CAMERA": "unset",
+      "artifacts": {
+        "index.html": {
+          "bytes": 775,
+          "sha256": "6b1b7bbde0c7a27ec039030cc2921c13c7ce1c451e1834ea0d1b6d8fb89fc226"
+        },
+        "asset-manifest.json": {
+          "bytes": 517,
+          "sha256": "9658c41adcf107233aeaa4b0d608ef731892bf47c6b5d1c341be9ed6e94b2fb8"
+        },
+        "static/js/main.ec61bf99.js": {
+          "bytes": 314141,
+          "sha256": "5de4882ec89689220aa7bea885978ec1d4c3d683cd661e24f2c7091b6dd47ce7"
+        }
+      }
+    },
+    "camera": {
+      "NODE_ENV": "production",
+      "REACT_APP_MAZE_CAMERA": "true",
+      "artifacts": {
+        "index.html": {
+          "bytes": 775,
+          "sha256": "2089e4b8ff3bb5ee129f705fd91fa42ccfe0245cffbff69026ebeaac2ed72a14"
+        },
+        "asset-manifest.json": {
+          "bytes": 517,
+          "sha256": "cd5d80f750e8981ac1a90ce0993ef67a4ff79afce8e2b72158b07f4eb9870dbb"
+        },
+        "static/js/main.a876bca1.js": {
+          "bytes": 313434,
+          "sha256": "1a632e4b2639a56d22db9e66551b259ba2f4bf4a8393fde697e9f74f8cb9bf34"
+        }
+      }
+    }
+  },
+  "releaseGates": "Independent pinned-SHA QA, Gameplay EG-09, target-device EG-08/11 remain open; no production enablement or deployment configuration changed"
+}
