@@ -85,7 +85,10 @@ const controller = createController({
       return line;
     }));
     $('#feedback').textContent = result.reason === 'step' && !before.inventory.length && state.inventory.length
-      ? 'Extinguisher equipped. One slot. Approach F to clear it without moving.' : messages[result.reason];
+      ? 'Extinguisher equipped. One slot. Approach F to clear it without moving.'
+      : pointer?.drag && ['obstruction', 'fire blocked'].includes(result.reason)
+        ? `${result.reason === 'fire blocked' ? 'Fire blocks the path. Find an extinguisher.' : 'Path blocked.'} Keep holding and drag another direction to continue.`
+        : messages[result.reason];
     render();
     return result;
   },
@@ -97,6 +100,7 @@ const controller = createController({
       button.dataset.active = input.phase === 'holding' && button.dataset.direction === input.direction;
     });
     $('#drag-preview').textContent = input.phase === 'stopped' ? 'Stopped — release, then try again'
+      : input.phase === 'blocked' ? 'Path blocked — drag another direction'
       : input.phase === 'holding' ? `${glyphs[input.direction]} ${input.direction} · release to stop`
       : input.phase === 'preview' ? 'Neutral · choose a clear direction' : 'Touch or press, then drag';
   },
@@ -133,7 +137,7 @@ function pointerPress(event, direction) {
   const element = event.currentTarget;
   element.focus({ preventScroll: true });
   const owner = `pointer:${event.pointerId}`;
-  if (!controller.press(owner, direction)) return;
+  if (!controller.press(owner, direction, { drag: direction === null })) return;
   pointer = { id: event.pointerId, owner, element, x: event.clientX, y: event.clientY, drag: direction === null };
   element.setPointerCapture(event.pointerId);
   if (pointer.drag) element.dataset.active = 'true';

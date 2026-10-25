@@ -18,7 +18,7 @@ The page is the primary review interface: a live maze, A/B selection, adjustable
 
 - **A — Hold to repeat:** pointer down takes one immediate step. First repeat is **400 ms** later; subsequent steps are **180 ms** apart. Tap = one step, with no second command from the synthetic click. Delay is bounded to **200–800 ms**, repeat interval to **100–400 ms** (2.5–10 repeat steps/s). Settings stop the current input. Timers schedule one future callback at a time; no catch-up burst after a stall.
 - **B — Drag to steer:** a dedicated input pad measures displacement from the original contact, with an **18 CSS px** dead zone and **1.25 axis-dominance ratio**. First clear direction takes one step; holding displacement repeats at the same cadence as A. Neutral/diagonal displacement pauses. Steering later in the same contact waits a repeat interval, preventing jitter from issuing unlimited steps. Release anywhere ends the press. There is no momentum or release-time move.
-- Both use the same `move()` import and controller. **X** equips the existing one-slot extinguisher. **F** clears and consumes it **without advancing**. Fire clear, obstruction and completion latch the current press stopped. Steering cannot revive it; release and consciously press again. Without equipment, fire blocks.
+- Both use the same `move()` import and controller. **X** equips the existing one-slot extinguisher. **F** clears and consumes it **without advancing**. Fire clear and completion latch the current press stopped; release and consciously press again. In a drag, collision with walls, bounds or unequipped fire pauses movement while retaining the contact and pointer capture. Redirect while held to resume after the existing repeat interval. The blocked direction has no retry loop or automatic wall sliding. Keyboard and D-pad collisions retain their release-before-retry behavior.
 - Stop on pointerup/cancel, lost capture, window blur, hidden document, focus leaving an input control, modal open, resize/orientation/visual-viewport resize, settings/fixture/scheme change, pagehide/unmount. Additional pointers stop the active contact. Stale owners and invalidated timeout callbacks cannot issue later steps. Repeated native keydown events cannot re-arm a cancelled key.
 - Keyboard arrows work while the maze, drag pad or a directional button has focus. D-pad buttons support Tab + held Enter/Space and single assistive activation. Form fields keep native arrows. One input owner at a time; changing to another simultaneous input does not transfer a hold.
 - Native modal semantics, explicit Tab containment, Escape and return-focus behavior apply **inside this lab only**. Closing never resumes movement. No production dialog is changed.
@@ -44,9 +44,9 @@ The schematic uses locally authored SVG marks and CSS cells, not the approved sp
 Use the repository's existing dependencies. No package/lockfile modification:
 
 ```sh
-# Node 24 as tested; runs 17 deterministic checks with an adversarial fake clock.
+# Node 24 as tested; runs 24 deterministic checks with an adversarial fake clock.
 node docs/ux-interaction-lab/tests/controller.test.mjs
-# 43 browser checks; config serves repository root automatically if :8765 is free.
+# 45 browser checks; config serves repository root automatically if :8765 is free.
 # Stop the manual static server first when using CI=true.
 node_modules/.bin/playwright test --config=docs/ux-interaction-lab/playwright.config.cjs --workers=2
 # Existing regression checks (default camera remains off).
@@ -57,7 +57,7 @@ BUILD_PATH=/tmp/vis04b-production-build npm run build
 node docs/ux-interaction-lab/capture.cjs /tmp/vis04b-production-build
 ```
 
-Chromium defaults to `/usr/bin/chromium`; optionally supply `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH`. The dedicated config writes transient Playwright results under `/tmp/fort-custer-ux-results`. [Review evidence](evidence/review.md), [raw measurements/source hashes](evidence/report.json), and four native PNGs are committed here. The capture script asserts no overflow, running animation, page error, API call, out-of-scope tracked diff, production-bundle lab marker, or measured core text contrast below 4.5:1. It records source hashes and does not run deployment or CI.
+Chromium defaults to `/usr/bin/chromium`; optionally supply `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH`. The dedicated config writes transient Playwright results under `/tmp/fort-custer-ux-results`. [Review evidence](evidence/review.md), [raw measurements/source hashes](evidence/report.json), and four native PNGs are committed here. The original captures/report remain pinned to the initial lab source; [collision continuity validation](evidence/collision-continuity.json) records the focused follow-up and current source hashes. The capture script asserts no overflow, running animation, page error, API call, out-of-scope tracked diff, production-bundle lab marker, or measured core text contrast below 4.5:1. It records source hashes and does not run deployment or CI.
 
 ## Ownership, review and rollback
 

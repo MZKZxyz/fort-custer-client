@@ -19,7 +19,7 @@ Coordinates above are one-based. [Machine-readable report](report.json) includes
 
 - Zero horizontal overflow in all four captures; every measured D-pad target is at least **46×46 CSS px** (portrait 50×46, desktop 54×46). Responsive tests also hit-test each target at all four sizes, for both fixtures.
 - Both schemes import the same canonical `move()` implementation. The training trace is pickup → stationary fire clear → fresh press enters → tipi/completion. The garden is also completed through X and F, checking actual input state, equipment and player-follow bounds at every step.
-- Pointer release/cancel, lost capture, blur, hidden document, modal, resize/orientation, focus loss, timing/scheme change and unmount all stop further commands. Terminal fire/wall states keep the current contact latched stopped, so steering cannot revive them. Old callbacks and foreign releases are rejected, including after a fresh session begins.
+- Pointer release/cancel, lost capture, blur, hidden document, modal, resize/orientation, focus loss, timing/scheme change and unmount all stop further commands. Fire clearing/completion keep the current contact latched stopped. Drag collisions pause movement while preserving pointer capture; redirecting within the same contact resumes at the existing repeat interval, without wall sliding. Keyboard/D-pad collision behavior is unchanged. Old callbacks and foreign releases are rejected, including after a fresh session begins.
 - Chromium native CDP touch hold/drag reproduced the stationary clear and native `touchCancel` termination. Pointer/mouse, touch taps, arrows, held-key scheduling, Space activation and semantic click activation share movement rules. Native repeated keydown events do not re-arm a cancelled hold.
 - Native dialog plus explicit Tab containment prevented focus reaching controls behind the modal. Escape closes it and restores focus; closing does not resume movement. No production dialog behavior was changed.
 - Native touch swipe outside controls scrolls the page. Browser page scale 1.5 is allowed; computed text-size doubling reflows without page-wide horizontal overflow. These are browser probes, not physical pinch or assistive-technology tests.
@@ -31,14 +31,14 @@ Coordinates above are one-based. [Machine-readable report](report.json) includes
 
 | Check | Result |
 | --- | --- |
-| Deterministic controller/rule checks, Node 24 | 17 passed |
-| Scoped Chromium browser tests | 43 passed |
+| Deterministic controller/rule checks, Node 24 | 24 passed |
+| Scoped Chromium browser tests | 45 passed |
 | Existing Jest suites | 6 suites, 40 tests passed |
 | Existing default-mode browser regressions | 32 passed; 2 expected opt-in camera skips |
 | Normal optimized production build | Compiled successfully; camera default remains OFF |
 | Native capture/geometry/contrast/isolation assertions | 4 captures passed |
 
-[Validation summary](validation.json) lists the browser cases and commands. The existing toolchain reports stale Browserslist data and Node/module deprecation notices; dependencies were left unchanged. No GitHub CI wait or polling was performed.
+[Original validation summary](validation.json) lists the initial browser cases and commands. [Collision continuity validation](collision-continuity.json) records the follow-up: seven new controller checks and native mouse/touch repeated-collision tests, with all 45 browser cases passing. The four PNGs and report/source hashes above are retained from the initial candidate `28f4c371f24686fe6a5b6fb95ad00d75014bed39`; no visual/rendering changes were made for this fix. The existing toolchain reports stale Browserslist data and Node/module deprecation notices; dependencies were left unchanged. No GitHub CI wait or polling was performed.
 
 ## Limits and next review
 

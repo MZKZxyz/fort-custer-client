@@ -36,18 +36,22 @@ export function createController({ command, changed = () => {}, clock = globalTh
     const result = command(session.direction);
     if (result.terminal) {
       invalidate();
-      session.halted = true; // Keep ownership until release; drag cannot restart.
-      publish('stopped', result.reason);
+      const collision = result.reason === 'obstruction' || result.reason === 'fire blocked';
+      // A drag keeps its owner/capture and can steer after collision. Stop its
+      // timer without sliding or retrying the blocked direction. Fire clearing
+      // and completion still require release, as do collisions in other inputs.
+      session.halted = !(session.drag && collision);
+      publish(session.halted ? 'stopped' : 'blocked', result.reason);
     } else {
       publish('holding', result.reason);
       tick(wait);
     }
   };
   return {
-    press(owner, direction = null) {
+    press(owner, direction = null, { drag = false } = {}) {
       if (destroyed || session) return false;
       invalidate();
-      session = { owner, direction, halted: false, started: Boolean(direction) };
+      session = { owner, direction, drag, halted: false, started: Boolean(direction) };
       if (direction) execute(pace.delay); else publish('preview', 'choose direction');
       return true;
     },

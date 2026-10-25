@@ -265,3 +265,65 @@ test('existing garden fixture: complete via pickup and stationary fire clear, wi
   await expect(board(page)).toHaveAttribute('data-completed','true');
   expect(await page.locator('#event-log').textContent()).toContain('complete');
 });
+
+for (const device of ['mouse', 'touch']) test(`${device} drag continuity across repeated collisions without releasing`, async ({ browser }) => {
+  const context = await browser.newContext({ hasTouch: device === 'touch', viewport: { width: 1280, height: 900 } });
+  try {
+    const page = await context.newPage(); await boot(page);
+    await page.getByRole('radio', { name: /B Drag/ }).check(); await freeze(page);
+    const pad = page.locator('#drag-pad'); await pad.scrollIntoViewIfNeeded();
+    await pad.evaluate(element => element.addEventListener('pointerdown', event => { window.dragTestPointer = event.pointerId; }));
+    const box = await pad.boundingBox(), origin = { x: box.x + box.width/2, y: box.y + box.height/2 };
+    const cdp = device === 'touch' ? await context.newCDPSession(page) : null;
+    const press = async () => {
+      if (cdp) await cdp.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [{ ...origin, id: 1 }] });
+      else { await page.mouse.move(origin.x, origin.y); await page.mouse.down(); }
+    };
+    const steer = async (dx, dy) => {
+      const point = { x: origin.x + dx, y: origin.y + dy };
+      if (cdp) await cdp.send('Input.dispatchTouchEvent', { type: 'touchMove', touchPoints: [{ ...point, id: 1 }] });
+      else await page.mouse.move(point.x, point.y);
+      // CDP may acknowledge before a touch move reaches the compositor. Wait
+      // for the requested direction before advancing the controlled game clock.
+      const direction = Math.abs(dx) > Math.abs(dy) ? (dx > 0 ? 'RIGHT' : 'LEFT') : (dy > 0 ? 'DOWN' : 'UP');
+      await expect(page.locator('#input-direction')).toContainText(direction);
+    };
+    const end = async (cancel = false) => {
+      if (cdp) await cdp.send('Input.dispatchTouchEvent', { type: cancel ? 'touchCancel' : 'touchEnd', touchPoints: [] });
+      else if (cancel) {
+        await pad.evaluate(e => e.releasePointerCapture(window.dragTestPointer));
+        await page.mouse.move(origin.x, origin.y); // Flush native lostcapture.
+      }
+      else await page.mouse.up();
+    };
+    const expectBlocked = async () => {
+      await expect(page.locator('#input-phase')).toHaveText('BLOCKED');
+      await expect(pad).toHaveAttribute('data-active', 'true');
+      expect(await pad.evaluate(e => e.hasPointerCapture(window.dragTestPointer))).toBe(true);
+      await expect(page.locator('#drag-preview')).toHaveText('Path blocked — drag another direction');
+      const commands = await count(page); await page.clock.runFor(1500);
+      expect(await count(page)).toBe(commands); // No wall sliding or extra blocked steps.
+    };
+    await press(); await steer(0, -30); expect(await position(page)).toBe('1,1'); await expectBlocked();
+    for (const [dx, dy, expected, blocked] of [
+      [0,30,'2,1',false], [-30,0,'2,1',true], [30,0,'2,2',false], [-30,0,'2,1',false],
+    ]) {
+      const commands = await count(page); await steer(dx,dy); await page.clock.runFor(179);
+      expect(await count(page)).toBe(commands);
+      await page.clock.runFor(1); expect(await position(page)).toBe(expected);
+      if (blocked) await expectBlocked();
+    }
+    await page.clock.runFor(180); await expectBlocked();
+    await end(); await expect(page.locator('#input-phase')).toHaveText('IDLE');
+    await expect(pad).toHaveAttribute('data-active', 'false');
+    expect(await pad.evaluate(e => e.hasPointerCapture(window.dragTestPointer))).toBe(false);
+    if (!cdp) await page.mouse.move(origin.x, origin.y + 30);
+    const commands = await count(page); await page.clock.runFor(1000); expect(await count(page)).toBe(commands);
+    await press(); await steer(0, 30); expect(await position(page)).toBe('3,1'); // Clean new drag.
+    await steer(-30, 0); await page.clock.runFor(180); await expectBlocked();
+    await end(true); await page.clock.runFor(1000);
+    await expect(page.locator('#input-phase')).toHaveText('IDLE');
+    expect(await position(page)).toBe('3,1');
+    if (!cdp) await page.mouse.up();
+  } finally { await context.close(); }
+});

@@ -3,10 +3,10 @@ import assert from 'node:assert/strict';
 import { createController, transition, dragDirection, boundedTiming } from '../controller.mjs';
 import { ruleFixture, initialState } from '../fixtures.mjs';
 
-function harness() {
+function harness(grid = ruleFixture()) {
   let now = 0, serial = 0;
   const pending = new Map(), callbacks = [], log = [], changes = [];
-  let state = initialState(ruleFixture());
+  let state = initialState(grid);
   const clock = {
     setTimeout(callback, delay) { const id = ++serial; pending.set(id, { callback, at: now + delay }); callbacks.push(callback); return id; },
     clearTimeout(id) { pending.delete(id); },
@@ -93,3 +93,61 @@ test('timing values clamp and nonfinite inputs fall back', () => {
   assert.deepEqual(boundedTiming({ delay: -1, repeat: 900 }), { delay: 200, repeat: 400 });
   assert.deepEqual(boundedTiming({ delay: Infinity, repeat: NaN }), { delay: 400, repeat: 180 });
 });
+
+
+test('drag collision preserves ownership across repeated redirects at the existing cadence', () => {
+  const h = harness();
+  h.controller.press('drag', null, { drag: true });
+  h.controller.steer('drag', 'up');
+  assert.deepEqual(h.state().position, [1, 1]);
+  assert.equal(h.changes.at(-1).phase, 'blocked');
+  assert.equal(h.changes.at(-1).owner, 'drag');
+  h.advance(2000); assert.equal(h.log.length, 1); // No sliding or blocked retry loop.
+  assert.equal(h.controller.press('other', 'down'), false);
+  for (const [direction, position, phase] of [
+    ['down', [2, 1], 'holding'], ['left', [2, 1], 'blocked'],
+    ['right', [2, 2], 'holding'], ['left', [2, 1], 'holding'],
+  ]) {
+    const commands = h.log.length;
+    h.controller.steer('drag', direction);
+    h.advance(179); assert.equal(h.log.length, commands);
+    h.advance(1); assert.deepEqual(h.state().position, position);
+    assert.equal(h.changes.at(-1).phase, phase);
+    assert.equal(h.changes.at(-1).owner, 'drag');
+  }
+  h.advance(180); assert.equal(h.changes.at(-1).phase, 'blocked');
+  const commands = h.log.length;
+  h.controller.release('drag'); h.controller.steer('drag', 'down'); h.advance(2000);
+  assert.equal(h.log.length, commands); assert.equal(h.changes.at(-1).phase, 'idle');
+  h.controller.press('fresh', null, { drag: true }); h.controller.steer('fresh', 'down');
+  assert.deepEqual(h.state().position, [3, 1]);
+});
+
+test('drag can redirect from unequipped fire, but clearing it still requires a fresh press', () => {
+  const h = harness([['S', 'F', 'E'], [' ', 'X', '#']]);
+  h.controller.press('drag', null, { drag: true }); h.controller.steer('drag', 'right');
+  assert.equal(h.changes.at(-1).phase, 'blocked');
+  for (const direction of ['down', 'right', 'up']) {
+    h.controller.steer('drag', direction); h.advance(180);
+  }
+  assert.equal(h.log.at(-1).reason, 'fire cleared');
+  assert.deepEqual(h.state().position, [1, 1]); assert.deepEqual(h.state().inventory, []);
+  const commands = h.log.length;
+  h.controller.steer('drag', 'left'); h.advance(1000); assert.equal(h.log.length, commands);
+  assert.equal(h.changes.at(-1).phase, 'stopped');
+});
+
+for (const reason of ['release', 'pointercancel', 'lost capture', 'blur', 'unmount']) {
+  test(`blocked drag cannot resume after ${reason}`, () => {
+    const h = harness(); h.controller.press('drag', null, { drag: true });
+    h.controller.steer('drag', 'down'); const stale = h.callbacks.at(-1);
+    h.controller.steer('drag', 'left'); h.advance(180);
+    assert.equal(h.changes.at(-1).phase, 'blocked');
+    if (reason === 'release') h.controller.release('drag');
+    else if (reason === 'unmount') h.controller.destroy();
+    else h.controller.cancel(reason);
+    const commands = h.log.length;
+    h.controller.steer('drag', 'right'); stale(); h.advance(1000);
+    assert.equal(h.log.length, commands);
+  });
+}
