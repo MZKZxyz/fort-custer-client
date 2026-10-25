@@ -1,0 +1,417 @@
+{
+  "generatedAtUTC": "2026-10-25T01:25:50.663Z",
+  "base": "344b43159fbbe6276787ab45977cf9e40a3799e8",
+  "browser": "154.0.8037.57",
+  "host": {
+    "platform": "linux",
+    "release": "6.18.55",
+    "cpu": "AMD EPYC 9V45 96-Core Processor"
+  },
+  "note": "Author measurements in headless cloud Chromium. CDP touch and page scale are emulation, not physical-device or screen-reader certification. No performance benchmark.",
+  "captures": [
+    {
+      "file": "desktop-hold-clear.png",
+      "width": 1280,
+      "height": 800,
+      "dpr": 1,
+      "scheme": "hold",
+      "mood": "day",
+      "fixture": "rules",
+      "clear": true,
+      "fullPage": true,
+      "textContrast": {
+        "body": 10.709266063418212,
+        "headingVsPanel": 11.887528090491513,
+        "instructionsVsPanel": 5.938476250787244
+      },
+      "viewport": {
+        "width": 1280,
+        "height": 800,
+        "dpr": 1
+      },
+      "horizontalOverflow": 0,
+      "position": "1,2",
+      "completed": "false",
+      "equipment": "Equipment: empty",
+      "board": {
+        "x": 82,
+        "y": 502.46875,
+        "width": 544.59375,
+        "height": 288
+      },
+      "player": {
+        "x": 179,
+        "y": 551.46875,
+        "width": 48,
+        "height": 48
+      },
+      "cell": {
+        "x": 179,
+        "y": 551.46875,
+        "width": 48,
+        "height": 48
+      },
+      "mountedCells": 221,
+      "camera": {
+        "x": 0,
+        "y": 0
+      },
+      "inputPhase": "STOPPED",
+      "inputReason": "fire cleared",
+      "commandLog": [
+        "02 → [2,3] fire cleared",
+        "01 → [2,3] step"
+      ],
+      "dpad": [
+        {
+          "name": "Up",
+          "x": 854.796875,
+          "y": 511.609375,
+          "width": 54,
+          "height": 46
+        },
+        {
+          "name": "Left",
+          "x": 795.796875,
+          "y": 562.609375,
+          "width": 54,
+          "height": 46
+        },
+        {
+          "name": "Right",
+          "x": 913.796875,
+          "y": 562.609375,
+          "width": 54,
+          "height": 46
+        },
+        {
+          "name": "Down",
+          "x": 854.796875,
+          "y": 613.609375,
+          "width": 54,
+          "height": 46
+        }
+      ],
+      "reducedMotion": true,
+      "runningAnimations": 0,
+      "touchAction": {
+        "board": "auto",
+        "dpad": "none",
+        "drag": "none"
+      },
+      "storage": {
+        "local": 0,
+        "session": 0
+      },
+      "feedback": "Fire cleared. Equipment used. You stayed in place. Release, then press again to enter.",
+      "errors": [],
+      "apiCalls": []
+    },
+    {
+      "file": "portrait-320-hold.png",
+      "width": 320,
+      "height": 568,
+      "dpr": 1,
+      "scheme": "hold",
+      "mood": "day",
+      "fixture": "rules",
+      "textContrast": {
+        "body": 10.709266063418212,
+        "headingVsPanel": 11.887528090491513,
+        "instructionsVsPanel": 5.938476250787244
+      },
+      "viewport": {
+        "width": 320,
+        "height": 568,
+        "dpr": 1
+      },
+      "horizontalOverflow": 0,
+      "position": "1,1",
+      "completed": "false",
+      "equipment": "Equipment: empty",
+      "board": {
+        "x": 22,
+        "y": 36,
+        "width": 276,
+        "height": 168
+      },
+      "player": {
+        "x": 59,
+        "y": 73,
+        "width": 36,
+        "height": 36
+      },
+      "cell": {
+        "x": 59,
+        "y": 73,
+        "width": 36,
+        "height": 36
+      },
+      "mountedCells": 221,
+      "camera": {
+        "x": 0,
+        "y": 0
+      },
+      "inputPhase": "IDLE",
+      "inputReason": "light changed",
+      "commandLog": [
+        "No commands yet."
+      ],
+      "dpad": [
+        {
+          "name": "Up",
+          "x": 84,
+          "y": 334.5625,
+          "width": 50,
+          "height": 46
+        },
+        {
+          "name": "Left",
+          "x": 29,
+          "y": 385.5625,
+          "width": 50,
+          "height": 46
+        },
+        {
+          "name": "Right",
+          "x": 139,
+          "y": 385.5625,
+          "width": 50,
+          "height": 46
+        },
+        {
+          "name": "Down",
+          "x": 84,
+          "y": 436.5625,
+          "width": 50,
+          "height": 46
+        }
+      ],
+      "reducedMotion": true,
+      "runningAnimations": 0,
+      "touchAction": {
+        "board": "auto",
+        "dpad": "none",
+        "drag": "none"
+      },
+      "storage": {
+        "local": 0,
+        "session": 0
+      },
+      "feedback": "Collect X, clear F, then reach the tipi. Nothing is saved.",
+      "errors": [],
+      "apiCalls": []
+    },
+    {
+      "file": "portrait-390-drag-dusk.png",
+      "width": 390,
+      "height": 844,
+      "dpr": 2,
+      "scheme": "drag",
+      "mood": "dusk",
+      "fixture": "rules",
+      "clear": true,
+      "textContrast": {
+        "body": 12.443537216533286,
+        "headingVsPanel": 10.493451111147039,
+        "instructionsVsPanel": 7.2224208788597695
+      },
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "dpr": 2
+      },
+      "horizontalOverflow": 0,
+      "position": "1,2",
+      "completed": "false",
+      "equipment": "Equipment: empty",
+      "board": {
+        "x": 22,
+        "y": 36,
+        "width": 346,
+        "height": 168
+      },
+      "player": {
+        "x": 109,
+        "y": 80,
+        "width": 43,
+        "height": 43
+      },
+      "cell": {
+        "x": 109,
+        "y": 80,
+        "width": 43,
+        "height": 43
+      },
+      "mountedCells": 221,
+      "camera": {
+        "x": 0,
+        "y": 0
+      },
+      "inputPhase": "STOPPED",
+      "inputReason": "fire cleared",
+      "commandLog": [
+        "02 → [2,3] fire cleared",
+        "01 → [2,3] step"
+      ],
+      "dpad": [
+        {
+          "name": "Up",
+          "x": 93.5,
+          "y": 749.65625,
+          "width": 50,
+          "height": 46
+        },
+        {
+          "name": "Left",
+          "x": 38.5,
+          "y": 800.65625,
+          "width": 50,
+          "height": 46
+        },
+        {
+          "name": "Right",
+          "x": 148.5,
+          "y": 800.65625,
+          "width": 50,
+          "height": 46
+        },
+        {
+          "name": "Down",
+          "x": 93.5,
+          "y": 851.65625,
+          "width": 50,
+          "height": 46
+        }
+      ],
+      "reducedMotion": true,
+      "runningAnimations": 0,
+      "touchAction": {
+        "board": "auto",
+        "dpad": "none",
+        "drag": "none"
+      },
+      "storage": {
+        "local": 0,
+        "session": 0
+      },
+      "feedback": "Fire cleared. Equipment used. You stayed in place. Release, then press again to enter.",
+      "errors": [],
+      "apiCalls": []
+    },
+    {
+      "file": "landscape-garden.png",
+      "width": 844,
+      "height": 390,
+      "dpr": 1,
+      "scheme": "hold",
+      "mood": "day",
+      "fixture": "garden",
+      "textContrast": {
+        "body": 10.709266063418212,
+        "headingVsPanel": 11.887528090491513,
+        "instructionsVsPanel": 5.938476250787244
+      },
+      "viewport": {
+        "width": 844,
+        "height": 390,
+        "dpr": 1
+      },
+      "horizontalOverflow": 0,
+      "position": "9,2",
+      "completed": "false",
+      "equipment": "Equipment: empty",
+      "board": {
+        "x": 60,
+        "y": 93.859375,
+        "width": 345.109375,
+        "height": 210
+      },
+      "player": {
+        "x": 146.75,
+        "y": 216.734375,
+        "width": 42.875,
+        "height": 42.875
+      },
+      "cell": {
+        "x": 146.75,
+        "y": 216.734375,
+        "width": 42.875,
+        "height": 42.875
+      },
+      "mountedCells": 99,
+      "camera": {
+        "x": 0,
+        "y": 264
+      },
+      "inputPhase": "IDLE",
+      "inputReason": "light changed",
+      "commandLog": [
+        "No commands yet."
+      ],
+      "dpad": [
+        {
+          "name": "Up",
+          "x": 540.046875,
+          "y": 121.140625,
+          "width": 46,
+          "height": 46
+        },
+        {
+          "name": "Left",
+          "x": 489.046875,
+          "y": 172.140625,
+          "width": 46,
+          "height": 46
+        },
+        {
+          "name": "Right",
+          "x": 591.046875,
+          "y": 172.140625,
+          "width": 46,
+          "height": 46
+        },
+        {
+          "name": "Down",
+          "x": 540.046875,
+          "y": 223.140625,
+          "width": 46,
+          "height": 46
+        }
+      ],
+      "reducedMotion": true,
+      "runningAnimations": 0,
+      "touchAction": {
+        "board": "auto",
+        "dpad": "none",
+        "drag": "none"
+      },
+      "storage": {
+        "local": 0,
+        "session": 0
+      },
+      "feedback": "Collect X, clear F, then reach the tipi. Nothing is saved.",
+      "errors": [],
+      "apiCalls": []
+    }
+  ],
+  "sourceSHA256": {
+    "src/game/movement.js": "1b81e8d528554a3074750ceb902df5f663c851acda214a8d6e34e7406f218312",
+    "src/game/scene.js": "88326f7ccd742dc28f8f40c5c74c5a71e3d16249d81ad232512ab8f6eec5b96f",
+    "src/game/camera.js": "c6a3a4ef18b168035bf45e63430494d5af8e81239aab07fc378186e8b13dfd90",
+    "docs/art/reference-scene/iteration-2/source/fixture.json": "8b9850f8757f9a860fb8c82a28341480a58bb5bdfedc70420a61449b09900b37",
+    "docs/ux-interaction-lab/index.html": "6fdb4c1b4330d7663ea6c3df5ba09ed18591f5b571d02ca85101c5dbfcccc223",
+    "docs/ux-interaction-lab/lab.css": "901657291695f2050f2f58e089e12f59c0a1f967c468f9e87bcb07d849eaa553",
+    "docs/ux-interaction-lab/lab.mjs": "417ed0c4c403dff93631f0b63661b3e454b028bd177587054a959408a1285604",
+    "docs/ux-interaction-lab/controller.mjs": "1d000c0178cfa5b42f65b2748a0c84a4563efd2ad165e9d17d5ec083f9f660b8",
+    "docs/ux-interaction-lab/fixtures.mjs": "621c1680c6fa77f9a68bdab9aabf4f5565c11443e95388c736551ea89401bcf9",
+    "docs/ux-interaction-lab/capture.cjs": "1ebec53d5085333c9ca6408961729dcc0d3d77a44b6672570bd88f4ef716e008",
+    "docs/ux-interaction-lab/playwright.config.cjs": "31c6a78d55c3da0e92935ad13608bf28ff5419fec61dd765fdd6d676273e5b01",
+    "docs/ux-interaction-lab/tests/controller.test.mjs": "1dd7512e54d0e83a919392d3f90eb399c9185a929b6086c0b4d20ca78d6428b8",
+    "docs/ux-interaction-lab/tests/browser.spec.cjs": "a4c5ad17ed05381f3d9b1399c5c81cbcbe53b7038dd1582869c64e870281914b"
+  },
+  "isolation": {
+    "changedTrackedPathsOutsideLab": [],
+    "productionFilesContainingLabMarkers": []
+  }
+}

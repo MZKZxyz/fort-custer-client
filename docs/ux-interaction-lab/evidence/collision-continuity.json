@@ -1,0 +1,48 @@
+{
+  "previousCandidate": "28f4c371f24686fe6a5b6fb95ad00d75014bed39",
+  "scope": "Drag collision continuity only; production movement, rendering, timing constants and keyboard/D-pad collision behavior unchanged.",
+  "logic": {
+    "command": "node docs/ux-interaction-lab/tests/controller.test.mjs",
+    "passed": 24,
+    "added": 7,
+    "regressionsConfirmedFailBeforeFix": true
+  },
+  "browser": {
+    "command": "node_modules/.bin/playwright test --config=docs/ux-interaction-lab/playwright.config.cjs --workers=2 --reporter=json",
+    "startTime": "2026-10-25T02:31:55.765Z",
+    "duration": 29210.465,
+    "expected": 45,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0,
+    "focusedCases": [
+      {
+        "title": "mouse drag continuity across repeated collisions without releasing",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1750
+          }
+        ]
+      },
+      {
+        "title": "touch drag continuity across repeated collisions without releasing",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1171
+          }
+        ]
+      }
+    ]
+  },
+  "sourceSHA256": {
+    "controller.mjs": "53e72bf1edeee41f09425a37e0fd7464c3cf3725a32b7ece0749621a34ba0e68",
+    "lab.mjs": "1e21898d8a86367e98b8c62fad5bc246f4feeede0a31abd3b291e6e33a1e43aa",
+    "tests/controller.test.mjs": "107d184ed6617d324da49946804520fa4301f115fe38102345209c765b3711c0",
+    "tests/browser.spec.cjs": "aac3bbcf71b774ec1f25128983cee23930bd47944f8d9b97843115c1e1f82817"
+  },
+  "limitations": "Native Chromium mouse events and CDP touch emulation, with controlled movement clock; no physical-device certification. Original screenshots and full validation are retained separately. No GitHub CI waiting or polling."
+}

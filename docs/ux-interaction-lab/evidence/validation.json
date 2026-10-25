@@ -1,0 +1,470 @@
+{
+  "base": "344b43159fbbe6276787ab45977cf9e40a3799e8",
+  "browser": {
+    "command": "node_modules/.bin/playwright test --config=docs/ux-interaction-lab/playwright.config.cjs --workers=2 --reporter=json",
+    "startTime": "2026-10-25T01:25:48.133Z",
+    "duration": 29247.79,
+    "expected": 43,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0,
+    "cases": [
+      {
+        "title": "pointer hold: pickup → stationary clear → fresh press → completion; no click duplicate",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 2431
+          }
+        ]
+      },
+      {
+        "title": "drag: threshold, neutral, direction preview and stationary-clear latch across steering",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 2869
+          }
+        ]
+      },
+      {
+        "title": "keyboard: same atomic rule trace",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1256
+          }
+        ]
+      },
+      {
+        "title": "D-pad keyboard: same atomic rule trace",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1774
+          }
+        ]
+      },
+      {
+        "title": "assistive activation: same atomic rule trace",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1909
+          }
+        ]
+      },
+      {
+        "title": "touch tap: same atomic rule trace",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 2744
+          }
+        ]
+      },
+      {
+        "title": "hold cancellation: pointerup prevents stale movement",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1520
+          }
+        ]
+      },
+      {
+        "title": "hold cancellation: pointercancel prevents stale movement",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1224
+          }
+        ]
+      },
+      {
+        "title": "hold cancellation: lost capture prevents stale movement",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1025
+          }
+        ]
+      },
+      {
+        "title": "hold cancellation: blur prevents stale movement",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1040
+          }
+        ]
+      },
+      {
+        "title": "hold cancellation: hidden prevents stale movement",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 995
+          }
+        ]
+      },
+      {
+        "title": "hold cancellation: modal prevents stale movement",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 962
+          }
+        ]
+      },
+      {
+        "title": "hold cancellation: resize prevents stale movement",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1097
+          }
+        ]
+      },
+      {
+        "title": "hold cancellation: orientation prevents stale movement",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 900
+          }
+        ]
+      },
+      {
+        "title": "hold cancellation: focus prevents stale movement",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1016
+          }
+        ]
+      },
+      {
+        "title": "hold cancellation: timing prevents stale movement",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1069
+          }
+        ]
+      },
+      {
+        "title": "hold cancellation: switch prevents stale movement",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 969
+          }
+        ]
+      },
+      {
+        "title": "hold cancellation: unmount prevents stale movement",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 937
+          }
+        ]
+      },
+      {
+        "title": "drag cancellation: pointerup prevents stale movement",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1001
+          }
+        ]
+      },
+      {
+        "title": "drag cancellation: pointercancel prevents stale movement",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1080
+          }
+        ]
+      },
+      {
+        "title": "drag cancellation: lost capture prevents stale movement",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 908
+          }
+        ]
+      },
+      {
+        "title": "drag cancellation: blur prevents stale movement",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1009
+          }
+        ]
+      },
+      {
+        "title": "drag cancellation: hidden prevents stale movement",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1120
+          }
+        ]
+      },
+      {
+        "title": "drag cancellation: modal prevents stale movement",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1027
+          }
+        ]
+      },
+      {
+        "title": "drag cancellation: resize prevents stale movement",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1165
+          }
+        ]
+      },
+      {
+        "title": "drag cancellation: orientation prevents stale movement",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1048
+          }
+        ]
+      },
+      {
+        "title": "drag cancellation: focus prevents stale movement",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1018
+          }
+        ]
+      },
+      {
+        "title": "drag cancellation: timing prevents stale movement",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1006
+          }
+        ]
+      },
+      {
+        "title": "drag cancellation: switch prevents stale movement",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 980
+          }
+        ]
+      },
+      {
+        "title": "drag cancellation: unmount prevents stale movement",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 994
+          }
+        ]
+      },
+      {
+        "title": "keyboard repeat is internal, native repeats never rearm after blur or fire",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1089
+          }
+        ]
+      },
+      {
+        "title": "obstruction latches, and form fields retain arrow-key behavior in either scheme",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1061
+          }
+        ]
+      },
+      {
+        "title": "native modal traps and restores focus; close never resumes movement",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 979
+          }
+        ]
+      },
+      {
+        "title": "multi-pointer interruption and foreign pointer events cannot take over",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 964
+          }
+        ]
+      },
+      {
+        "title": "responsive controls, reduced motion, and both fixtures at 320×568",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1929
+          }
+        ]
+      },
+      {
+        "title": "responsive controls, reduced motion, and both fixtures at 390×844",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1941
+          }
+        ]
+      },
+      {
+        "title": "responsive controls, reduced motion, and both fixtures at 844×390",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1800
+          }
+        ]
+      },
+      {
+        "title": "responsive controls, reduced motion, and both fixtures at 1280×800",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1804
+          }
+        ]
+      },
+      {
+        "title": "200% text scaling reflows, zoom permitted and no API/storage side effects",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 607
+          }
+        ]
+      },
+      {
+        "title": "native touch hold: repeat, fire latch, release and pointercancel",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1221
+          }
+        ]
+      },
+      {
+        "title": "native touch drag: repeat, fire latch, release and pointercancel",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1236
+          }
+        ]
+      },
+      {
+        "title": "native page swipe outside input controls still scrolls",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 998
+          }
+        ]
+      },
+      {
+        "title": "existing garden fixture: complete via pickup and stationary fire clear, with player-follow at every step",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1325
+          }
+        ]
+      }
+    ]
+  },
+  "logic": {
+    "command": "node docs/ux-interaction-lab/tests/controller.test.mjs",
+    "passed": 17
+  },
+  "existingUnit": {
+    "command": "CI=true npm test -- --watch=false --runInBand",
+    "suitesPassed": 6,
+    "testsPassed": 40
+  },
+  "existingBrowser": {
+    "command": "PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run test:e2e -- --workers=2",
+    "passed": 32,
+    "skipped": 2,
+    "skipReason": "Opt-in camera geometry cases intentionally excluded in default mode"
+  },
+  "productionBuild": {
+    "command": "npm run build",
+    "result": "Compiled successfully",
+    "bundle": "main.ec61bf99.js",
+    "isolatedBuildMovedTo": "/tmp/vis04b-production-build"
+  },
+  "capture": {
+    "command": "node docs/ux-interaction-lab/capture.cjs /tmp/vis04b-production-build",
+    "passed": 4
+  },
+  "scope": "Author validation only; no independent QA, physical-device or screen-reader certification; no GitHub CI polling"
+}
