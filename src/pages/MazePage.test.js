@@ -13,7 +13,14 @@ const deferred = () => {
   return { promise, resolve, reject };
 };
 const fixture = { data: { seed: 'synthetic', maze: { grid: [['S', 'X', 'F', 'E']], width: 4, height: 1 } } };
-const position = container => [...container.querySelectorAll('.maze-cell')].findIndex(cell => cell.textContent.includes('🧍'));
+const integrated = process.env.REACT_APP_MAZE_VISUALS === 'true';
+const position = container => integrated
+  ? Number(container.querySelector('.pallet-viewport')?.dataset.column)
+  : [...container.querySelectorAll('.maze-cell')].findIndex(cell => cell.textContent.includes('🧍'));
+const ready = async () => {
+  await screen.findByRole('button', { name: 'Right' });
+  if (integrated) await screen.findByRole('region', { name: 'Maze viewport' });
+};
 const key = direction => fireEvent.keyDown(window, { key: `Arrow${direction}` });
 const pad = direction => fireEvent.click(screen.getByRole('button', { name: direction }));
 beforeEach(() => {
@@ -35,7 +42,7 @@ test.each([['keyboard', key], ['D-pad', pad]])('%s follows the same pickup, fire
   const complete = deferred();
   API.post.mockResolvedValueOnce(fixture).mockReturnValueOnce(complete.promise);
   const { container } = render(<MazePage />);
-  await screen.findByRole('button', { name: 'Right' });
+  await ready();
   input('Right');
   expect(position(container)).toBe(1);
   expect(container.querySelector('.maze-slot')).toHaveTextContent('🧯');
@@ -65,7 +72,7 @@ test('failed completion stays on the maze and supports an explicit retry', async
     .mockRejectedValueOnce(new Error('offline'))
     .mockResolvedValueOnce({ data: { time: '5.000', reward: { id: 'synthetic-reward' } } });
   render(<MazePage />);
-  await screen.findByRole('button', { name: 'Right' });
+  await ready();
   key('Right');
   expect(await screen.findByRole('alert')).toHaveTextContent('Could not save your result');
   act(() => frame(now + 4000));
@@ -96,7 +103,7 @@ test('timer excludes loading time and freezes at the exit', async () => {
 test('quit dialog blocks both movement methods; unrelated keys do not move', async () => {
   API.post.mockResolvedValueOnce(fixture);
   const { container } = render(<MazePage />);
-  await screen.findByRole('button', { name: 'Right' });
+  await ready();
   fireEvent.keyDown(window, { key: 'a' });
   expect(position(container)).toBe(0);
   fireEvent.click(screen.getByRole('button', { name: 'Back' }));
@@ -110,14 +117,14 @@ test('quit dialog blocks both movement methods; unrelated keys do not move', asy
 test('StrictMode starts a single backend attempt', async () => {
   API.post.mockResolvedValueOnce(fixture);
   render(<StrictMode><MazePage /></StrictMode>);
-  await screen.findByRole('button', { name: 'Right' });
+  await ready();
   expect(API.post).toHaveBeenCalledTimes(1);
 });
 
 test('rapid mixed inputs use the latest position and consume inventory exactly once', async () => {
   API.post.mockResolvedValueOnce(fixture);
   const { container } = render(<MazePage />);
-  await screen.findByRole('button', { name: 'Right' });
+  await ready();
   act(() => {
     key('Right');
     pad('Right');
@@ -131,10 +138,11 @@ test('rapid mixed inputs use the latest position and consume inventory exactly o
 test('fire without inventory shows a hint and does not move either input method', async () => {
   API.post.mockResolvedValueOnce({ data: { ...fixture.data, maze: { grid: [['S', 'F', 'E']] } } });
   const { container } = render(<MazePage />);
-  await screen.findByRole('button', { name: 'Right' });
+  await ready();
   key('Right'); pad('Right');
   expect(position(container)).toBe(0);
-  expect(container.querySelector('.thought-bubble')).toBeInTheDocument();
+  if (integrated) expect(container.querySelector('.pallet-status')).toHaveTextContent('Fire blocks the path');
+  else expect(container.querySelector('.thought-bubble')).toBeInTheDocument();
   expect(API.post).toHaveBeenCalledTimes(1);
 });
 
@@ -151,7 +159,7 @@ test('refresh during ambiguous save recovers the same attempt without starting a
   API.post.mockResolvedValueOnce({ data: { ...fixture.data, attemptId, maze: { grid: [['S', 'E']] } } })
     .mockReturnValueOnce(pending.promise);
   const first = render(<MazePage />);
-  await screen.findByRole('button', { name: 'Right' });
+  await ready();
   key('Right');
   expect(JSON.parse(sessionStorage.getItem('mazeCompletion:synthetic-profile:2025-05-26')).attemptId).toBe(attemptId);
   first.unmount();
@@ -175,7 +183,7 @@ test('timeout offers retry and keeps the same stable identifier', async () => {
     .mockRejectedValueOnce(new Error('timeout'))
     .mockResolvedValueOnce({ data: { time: '8.000', reward: null } });
   render(<MazePage />);
-  await screen.findByRole('button', { name: 'Right' });
+  await ready();
   key('Right');
   await screen.findByRole('alert');
   fireEvent.click(screen.getByRole('button', { name: 'Retry saving' }));
@@ -186,8 +194,14 @@ test('timeout offers retry and keeps the same stable identifier', async () => {
 test('camera presentation requires an explicit true build flag', async () => {
   API.post.mockResolvedValueOnce(fixture);
   const { container } = render(<MazePage />);
-  await screen.findByRole('button', { name: 'Right' });
+  await ready();
   const enabled = process.env.REACT_APP_MAZE_CAMERA === 'true';
+  if (integrated) {
+    expect(container.querySelector('.pallet-viewport')).toBeInTheDocument();
+    expect(container.querySelectorAll('[data-role=tipi]')).toHaveLength(1);
+    expect(container.querySelector('.maze-fog')).not.toBeInTheDocument();
+    return;
+  }
   expect(Boolean(container.querySelector('.maze-viewport'))).toBe(enabled);
   expect(Boolean(container.querySelector('.maze-fog'))).toBe(!enabled);
   // Goal is three cells from start: exposed only by the opted-in camera path.

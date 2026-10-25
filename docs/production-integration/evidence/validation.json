@@ -1,0 +1,256 @@
+{
+  "localDate": "2026-10-24",
+  "timezone": "America/Los_Angeles",
+  "recordedUtc": "2026-10-25T02:45:57.870886+00:00",
+  "baseCommit": "9d48caf9b5f60cd434742d21290250a66a23a244",
+  "environment": {
+    "node": "v24.19.0",
+    "playwright": "Version 1.62.1",
+    "browser": "Chromium 154.0.8037.57 built on Debian GNU/Linux 13 (trixie)",
+    "platform": "Managed Linux cloud; headless Chromium; synthetic intercepted APIs; DPR 1. No physical-device claim."
+  },
+  "checks": {
+    "unit_default": {
+      "passed": 44,
+      "suites": 8
+    },
+    "unit_square_camera": {
+      "passed": 44,
+      "suites": 8
+    },
+    "unit_integrated": {
+      "passed": 44,
+      "suites": 8
+    },
+    "focused_integrated_shell": {
+      "passed": 12,
+      "suites": 1
+    },
+    "legacy_browser": {
+      "passed": 32,
+      "skipped": 14,
+      "duration": "4.7m",
+      "note": "All 32 pre-existing shared cases passed. This early collection skipped 2 camera-only and 12 opt-in integration cases; later chunk/default additions were validated in optimized suites."
+    },
+    "square_camera_browser": {
+      "passed": 34,
+      "skipped": 14,
+      "duration": "3.6m"
+    },
+    "optimized_integrated_browser": {
+      "passed": 16,
+      "skipped": 1,
+      "duration": "1.3m"
+    },
+    "optimized_default_browser": {
+      "passed": 4,
+      "skipped": 13,
+      "duration": "21.6s"
+    },
+    "focused_dialog_and_camera_after_test_refinement": {
+      "passed": 2,
+      "skipped": 0,
+      "duration": "17.3s"
+    },
+    "optimized_legacy_build": {
+      "compiled": true,
+      "assetManifestSha256": "f02317b24dfd527ab792c07c70304e9c3b248ed34e01ea08a51b31a2df365e1c"
+    },
+    "optimized_integrated_build": {
+      "compiled": true,
+      "assetManifestSha256": "c7d2e2a900034481302ab003dd51400ac3b2429556f8738094142c98d7cd0d9e"
+    }
+  },
+  "protectedSourceSha256": {
+    "src/game/movement.js": "1b81e8d528554a3074750ceb902df5f663c851acda214a8d6e34e7406f218312",
+    "src/game/scene.js": "88326f7ccd742dc28f8f40c5c74c5a71e3d16249d81ad232512ab8f6eec5b96f",
+    "src/game/camera.js": "c6a3a4ef18b168035bf45e63430494d5af8e81239aab07fc378186e8b13dfd90",
+    "src/utils/api.js": "61be6330cc3c380cc3f87cabca2804999f131fb829ab90351509de880287d632",
+    "src/pages/ResultsPage.js": "b2c13b973b1ef55d40488e2e61aabe0c51062ba7f37b6650517d314e076e4090",
+    "package.json": "3c5b9a3f484c162e21401f49b5148ef24bf05dd7e50ecbe941b92121616c5c0e",
+    "package-lock.json": "d9a555aab73da7f7bf163676e4b41f8be0e18b98b733d55fbf29538aae5fbbf2",
+    "public/images/teepee_01.png": "2af0d7f2eb35832fc5bb1960222be35c775b0e961476f70581682d7f4d07cb1c"
+  },
+  "art": {
+    "pilotDaylightPngs": 15,
+    "encodedSourceBytes": 621431,
+    "rawDecodedBytes": 4718592,
+    "tipi": "Unmodified public/images/teepee_01.png; original baked contact shadow; no visible E badge."
+  },
+  "sourceAndEvidence": {
+    "docs/production-integration/README.md": {
+      "sha256": "791f3dc505afc86dfc6e213413a577c6bc07682c06768d1081adff8cf3b46bde",
+      "bytes": 11138
+    },
+    "docs/production-integration/evidence/1280x800-classic.png": {
+      "sha256": "8991867b55aa046baeed80df10b3bcc9434d682e3cbee8971f052209a870e953",
+      "bytes": 730120
+    },
+    "docs/production-integration/evidence/1280x800-cleared.png": {
+      "sha256": "b28415e5e72602ad17e23054d9a1e4c920ef00fa6b4f24c9f21ae0e050d79cb4",
+      "bytes": 544671
+    },
+    "docs/production-integration/evidence/320x568-classic.png": {
+      "sha256": "91b218b27b68d49afa108c69c8f3ba8416226adaeabd9b7b98c869461c7b1338",
+      "bytes": 173846
+    },
+    "docs/production-integration/evidence/320x568-cleared.png": {
+      "sha256": "61a61daea608dcd940515dd085ef1b2d465a75d7ad36a704a53325b9e0ea2095",
+      "bytes": 158436
+    },
+    "docs/production-integration/evidence/390x844-classic.png": {
+      "sha256": "9592fefe312a440cdf18dfe89ec804bb126a7971a3d3897b87b85e27c98b7cf8",
+      "bytes": 258231
+    },
+    "docs/production-integration/evidence/390x844-cleared.png": {
+      "sha256": "2faf7f7341cc538438c3b0eba60769525c69b73a999ca75bd5745463c7c20575",
+      "bytes": 270478
+    },
+    "docs/production-integration/evidence/844x390-classic.png": {
+      "sha256": "889bda32755ee3923d0462b97addb26606084702024fca413a29a0428d60ddbf",
+      "bytes": 474286
+    },
+    "docs/production-integration/evidence/844x390-cleared.png": {
+      "sha256": "795eb48a625fd9f905a5a35e2e3cdba0a04ad549dc511d8402956bbb230277fa",
+      "bytes": 299606
+    },
+    "docs/production-integration/evidence/geometry.json": {
+      "sha256": "ccdb29a1e459eb398420a25dbd20e5055517f20cc4b26f9cdafcf7a777d86f37",
+      "bytes": 970
+    },
+    "docs/production-integration/playwright.config.cjs": {
+      "sha256": "3e1c3364473e3f82893e06d5b2d7f08c8224dcf7d4316efc27b29eb84847d880",
+      "bytes": 652
+    },
+    "docs/production-integration/serve.cjs": {
+      "sha256": "2c77e7bac77549f8d93ff09954e6522b42a8f36a2a6238e688d071a125653248",
+      "bytes": 903
+    },
+    "e2e/production-integration.spec.js": {
+      "sha256": "16ce0ea706363c7ae4bc4cf766443dc9d75a63e70f9ebc5ff3f7a232f160a366",
+      "bytes": 12136
+    },
+    "src/assets/pallet-garden/explorer-down-daylight-body.png": {
+      "sha256": "4e1c876c881f1a46269a04dbcebdbce9633bb15956bfdf137e006ddaa96529b6",
+      "bytes": 66423
+    },
+    "src/assets/pallet-garden/explorer-down-daylight-shadow.png": {
+      "sha256": "7b072d0a07ee33fd5f22a536e47d08d01eec03071f2cd0e42b471780e8ecd6ff",
+      "bytes": 12725
+    },
+    "src/assets/pallet-garden/explorer-left-daylight-body.png": {
+      "sha256": "1c76169f0d0f70d97b245d762f73bd5c03bc97636f5d4241d8a0370dd47f686f",
+      "bytes": 63209
+    },
+    "src/assets/pallet-garden/explorer-left-daylight-shadow.png": {
+      "sha256": "c5d214697afe179316b28707c41f221e97e924daa1b418e2aefa18af6cea109a",
+      "bytes": 12977
+    },
+    "src/assets/pallet-garden/explorer-right-daylight-body.png": {
+      "sha256": "f7062f472c360730d29fdd2f6b4f4ed40fd61be138ac1c2a6f3da9242c9360b3",
+      "bytes": 63567
+    },
+    "src/assets/pallet-garden/explorer-right-daylight-shadow.png": {
+      "sha256": "e1ddabaf735e666826b67b719056230ddb206b3dbd94179575705a58c7d86d83",
+      "bytes": 12605
+    },
+    "src/assets/pallet-garden/explorer-up-daylight-body.png": {
+      "sha256": "94e1e332724e0bd873ef945eeff2b76b5c2a50b323c3ca6d24d81a26d27176fb",
+      "bytes": 61619
+    },
+    "src/assets/pallet-garden/explorer-up-daylight-shadow.png": {
+      "sha256": "77ce7aca9732620b8a6b9cd259e40a594362a0797420706da73d0730d2242637",
+      "bytes": 13022
+    },
+    "src/assets/pallet-garden/extinguisher-daylight-body.png": {
+      "sha256": "99a3947032775a9b8c8ee29c8d2552479e0b77805034339987e577010ae9902e",
+      "bytes": 48754
+    },
+    "src/assets/pallet-garden/extinguisher-daylight-shadow.png": {
+      "sha256": "a4d94169ed34ee8c644ca5fbb396df7b797c51624792bc0216adea130ac2ae95",
+      "bytes": 8284
+    },
+    "src/assets/pallet-garden/fire-daylight-body.png": {
+      "sha256": "7f524a33b948a5bc93c79030894e0c580b6e2fc4ccd6c3848552d148228a2ef2",
+      "bytes": 62389
+    },
+    "src/assets/pallet-garden/fire-daylight-shadow.png": {
+      "sha256": "715d7ff27348e91342659aa3924b3a2e026b23caf26f6a2083b99fc1053f709c",
+      "bytes": 9033
+    },
+    "src/assets/pallet-garden/ground-daylight-body.png": {
+      "sha256": "7c43c5e57cce0fa9b3d21da814b525ff6a4c2757147bcce6ab5334c58e5b9c35",
+      "bytes": 59617
+    },
+    "src/assets/pallet-garden/wall-daylight-body.png": {
+      "sha256": "1e1cce62916f24392321ea098a32bf294064f0fda8cb47e0fb60d2dd0666cb36",
+      "bytes": 108592
+    },
+    "src/assets/pallet-garden/wall-daylight-shadow.png": {
+      "sha256": "62b9152bc8208eb399bef2c3d3930831fc67dc18fe15bff0d3f940df27af37f3",
+      "bytes": 18615
+    },
+    "src/components/MazeDialog.js": {
+      "sha256": "14d2fcc8a368f50d2fa25201cd069866f510d2aa324173a26345e86f5397d971",
+      "bytes": 1091
+    },
+    "src/components/MazeRenderBoundary.js": {
+      "sha256": "c86b7303870892048a1ae406b35b2896026cab16ffeb1632d7c54e282d909987",
+      "bytes": 407
+    },
+    "src/components/PalletMaze.js": {
+      "sha256": "de99b95c9c274e0a72dfe3ea3befa8700a4974d6cc3b82bad657fff0d435fb65",
+      "bytes": 6630
+    },
+    "src/css/MazePage.css": {
+      "sha256": "b816274259f30d91fc3222c7336720324f4212c3509a334d235f9d5f966574b3",
+      "bytes": 11045
+    },
+    "src/css/PalletMaze.css": {
+      "sha256": "13cb89ff7a1b40a83eec06b1a1ee3fe80e96a9136d0a8ce68574bb45b1037a19",
+      "bytes": 1376
+    },
+    "src/game/commandOutcome.js": {
+      "sha256": "cd39a3175312c4f43f02f84d517033cddd9188d4d4cafef1b37d13befd6fa662",
+      "bytes": 1035
+    },
+    "src/game/commandOutcome.test.js": {
+      "sha256": "229fb260866f2464c30f101eb8f4e8ad08d8fffd32a9d250237a291fb194f5a9",
+      "bytes": 1030
+    },
+    "src/game/palletProjection.js": {
+      "sha256": "90c08dd440d766a0c638f7faf21b8b25be0abcdfea6b6f776bb853301297757b",
+      "bytes": 1071
+    },
+    "src/game/palletProjection.test.js": {
+      "sha256": "fd6ab88dd5e033ea2513ffb6fbb5fa9d44e9c116fd7e1a6da4d9c0b44b0b7747",
+      "bytes": 1133
+    },
+    "src/pages/MazePage.js": {
+      "sha256": "55c49e6bb964f2031b935d741f0d817e1f25fd758e20c59e3ff307d2ba7d9fbb",
+      "bytes": 19275
+    },
+    "src/pages/MazePage.test.js": {
+      "sha256": "77f63bab8f6514f9f1fca40b14a5e99645372c3e7ed079312406f7c55fc284cd",
+      "bytes": 9697
+    },
+    "src/setupTests.js": {
+      "sha256": "7aa65637eea7b841d98be156d56476ad46bf78e312206be9a7f8b36be1e9c98e",
+      "bytes": 690
+    }
+  },
+  "pendingGates": [
+    "Independent pinned-commit QA",
+    "Owner integrated visual and activation approval",
+    "EG-09 ranked equal logical visibility/version policy",
+    "EG-08/11 physical devices, other browsers and assistive technology",
+    "EG-01 ready/playable timing protocol remains separate"
+  ],
+  "notPerformed": [
+    "GitHub CI polling/waiting",
+    "Merge",
+    "Deployment",
+    "Production data access",
+    "Live backend validation"
+  ]
+}

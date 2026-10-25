@@ -1,15 +1,24 @@
-import { useRef, useMemo, useLayoutEffect, useEffect, useState, useCallback  } from 'react';
+import { lazy, Suspense, useRef, useMemo, useLayoutEffect, useEffect, useState, useCallback  } from 'react';
 import { useNavigate } from 'react-router-dom';
 import API from '../utils/api';
 import { move, findStart, formatElapsed } from '../game/movement';
 import { createMazeScene, createMazeViewModel } from '../game/scene';
 import { createCamera } from '../game/camera';
+import { commandOutcome } from '../game/commandOutcome';
+import MazeDialog from '../components/MazeDialog';
+import MazeRenderBoundary from '../components/MazeRenderBoundary';
 import '../css/MazePage.css'; // Add CSS below to this file
 const PUBLIC = process.env.PUBLIC_URL;
 // Explicit preview/release opt-in; ordinary production builds stay on legacy.
 const CAMERA_ENABLED = process.env.REACT_APP_MAZE_CAMERA === 'true';
 
+const INTEGRATION_ENABLED = process.env.REACT_APP_MAZE_VISUALS === 'true';
+const PalletMaze = INTEGRATION_ENABLED ? lazy(() => import('../components/PalletMaze')) : null;
+
 const MazePage = () => {
+  const [integrated, setIntegrated] = useState(INTEGRATION_ENABLED);
+  const [facing, setFacing] = useState('down');
+  const [movementStatus, setMovementStatus] = useState('Reach the tipi. Arrow keys or direction buttons move one cell.');
   const navigate = useNavigate();
   const profile = useMemo(() => {
     return JSON.parse(localStorage.getItem('activeSubProfile'));
@@ -62,12 +71,12 @@ const MazePage = () => {
   // Memoize geometry independently of the timer; renderers only read this snapshot.
   const scene = useMemo(() => createMazeScene({
     grid: mazeGrid, position: playerPos, inventory, completed: finished,
-  }, { visionRadius: VISION_RADIUS, revealAll: CAMERA_ENABLED }), [mazeGrid, playerPos, inventory, finished]);
+  }, { visionRadius: VISION_RADIUS, revealAll: CAMERA_ENABLED || integrated }), [mazeGrid, playerPos, inventory, finished, integrated]);
   const viewportRef = useRef(null);
   const [viewportSize, setViewportSize] = useState({ width: 0, height: 0, tileSize: 36 });
   useLayoutEffect(() => {
     const element = viewportRef.current;
-    if (!CAMERA_ENABLED || !element) return;
+    if (!CAMERA_ENABLED || integrated || !element) return;
     const measure = () => {
       const tileSize = element.querySelector('.maze-cell')?.getBoundingClientRect().width || 36;
       setViewportSize({ width: element.clientWidth, height: element.clientHeight, tileSize });
@@ -77,17 +86,17 @@ const MazePage = () => {
     observer?.observe(element);
     window.addEventListener('resize', measure);
     return () => { observer?.disconnect(); window.removeEventListener('resize', measure); };
-  }, [mazeData]);
+  }, [mazeData, integrated]);
   const camera = useMemo(() => createCamera({
     ...viewportSize, rows: scene.camera.bounds.rows, columns: scene.camera.bounds.columns,
     row: scene.player.row, column: scene.player.column,
   }), [scene, viewportSize]);
   useLayoutEffect(() => {
-    if (!CAMERA_ENABLED || !viewportRef.current) return;
+    if (!CAMERA_ENABLED || integrated || !viewportRef.current) return;
     viewportRef.current.scrollLeft = camera.x;
     viewportRef.current.scrollTop = camera.y;
-  }, [camera]);
-  const baseRadius = CAMERA_ENABLED ? 0 : scene.camera.visibilityRadiusPercent;
+  }, [camera, integrated]);
+  const baseRadius = CAMERA_ENABLED || integrated ? 0 : scene.camera.visibilityRadiusPercent;
 
   const [fogRadius, setFogRadius] = useState(baseRadius);
   const [closing, setClosing] = useState(false);
@@ -214,7 +223,7 @@ const MazePage = () => {
   // Camera path opens results without fog; legacy fallback retains its closing effect.
   useEffect(() => {
     if (!closing) return;
-    const duration = CAMERA_ENABLED || window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ? 0 : 3000;
+    const duration = integrated || CAMERA_ENABLED || window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ? 0 : 3000;
     const start = performance.now();
     const startRadius = baseRadius;
     let raf;
@@ -230,11 +239,17 @@ const MazePage = () => {
     };
     raf = requestAnimationFrame(step);
     return () => cancelAnimationFrame(raf);
-  }, [closing, baseRadius, navigate, recoveryKey]);
+  }, [closing, baseRadius, navigate, recoveryKey, integrated]);
 
   const movePlayer = useCallback((direction) => {
-    if (showQuitModal || finished || !gameRef.current) return;
-    const result = move(gameRef.current, direction);
+    if (showQuitModal || finished || !gameRef.current) return { reason: 'inactive', terminal: true };
+    const before = gameRef.current;
+    const result = move(before, direction);
+    const outcome = commandOutcome(before, result);
+    if (integrated) {
+      setMovementStatus(outcome.message);
+      if (outcome.reason === 'step' || outcome.reason === 'complete') setFacing(direction);
+    }
     if (result.blockedByFire) {
       if (hintTimeoutRef.current) clearTimeout(hintTimeoutRef.current);
       setShowFireHint(true);
@@ -243,14 +258,15 @@ const MazePage = () => {
         hintTimeoutRef.current = null;
       }, 2000);
     }
-    if (result.state === gameRef.current) return;
+    if (result.state === gameRef.current) return outcome;
     // Update synchronously so multiple input events cannot reuse stale state.
     gameRef.current = result.state;
     setMazeGrid(result.state.grid);
     setInventory(result.state.inventory);
     setPlayerPos(result.state.position);
     if (result.state.completed) handleFinish();
-  }, [showQuitModal, finished, handleFinish]);
+    return outcome;
+  }, [showQuitModal, finished, handleFinish, integrated]);
 
   useEffect(() => {
     const directions = { ArrowUp: 'up', ArrowDown: 'down', ArrowLeft: 'left', ArrowRight: 'right' };
@@ -357,7 +373,7 @@ const MazePage = () => {
   
 
   return (
-    <div className="maze-page" style={{
+    <div className={`maze-page${integrated ? ' pallet-enabled' : ''}`} style={{
       backgroundImage: "url('/assets/fortBG.png')"
     }}>
       {/* BACK / QUIT button */}
@@ -394,7 +410,14 @@ const MazePage = () => {
 
       </div>
 
-      <div className={`maze-container${CAMERA_ENABLED ? ' camera-enabled' : ''}`}>
+      {integrated ? <>
+        <MazeRenderBoundary onFallback={() => setIntegrated(false)}>
+        <Suspense fallback={<p role="status">Loading maze artwork…</p>}>
+          <PalletMaze scene={view.scene} facing={facing} onFallback={() => setIntegrated(false)} />
+        </Suspense>
+        </MazeRenderBoundary>
+        <p className="pallet-status" role="status">{movementStatus}</p>
+      </> : <div className={`maze-container${CAMERA_ENABLED ? ' camera-enabled' : ''}`}>
         <div ref={viewportRef} className={CAMERA_ENABLED ? 'maze-viewport' : 'maze-legacy-host'}
           role={CAMERA_ENABLED ? 'region' : undefined} aria-label={CAMERA_ENABLED ? 'Maze viewport' : undefined}
           style={CAMERA_ENABLED ? { '--world-columns': scene.camera.bounds.columns, '--world-rows': scene.camera.bounds.rows } : undefined}>
@@ -417,8 +440,8 @@ const MazePage = () => {
           </div>}
         </div>
         </div>
-      </div>
-      <div className="dpad">
+      </div>}
+      <div className="dpad" role="group" aria-label="Movement controls">
         <div className="dpad-row">
           <button className="dpad-btn" onClick={() => movePlayer('up')}>
           <img src="/icons/arrowUp.png" alt="Up" />
@@ -439,28 +462,26 @@ const MazePage = () => {
 
       {view.ui.finished && !view.ui.closing && !view.ui.completionError && <p role="status">Saving your result…</p>}
       {view.ui.completionError && (
-        <div className="modal-overlay">
-          <div className="modal-content" role="alert">
+        <MazeDialog label="Save result" onCancel={() => {}}>
+          <div role="alert">
             <p>{view.ui.completionError}</p>
             <div className="modal-buttons">
               <button onClick={handleFinish}>Retry saving</button>
               <button onClick={() => navigate('/mazes')}>Back to mazes</button>
             </div>
           </div>
-        </div>
+        </MazeDialog>
       )}
 
       {/* Quit Confirmation Modal */}
       {view.ui.showQuitModal && (
-        <div className="modal-overlay">
-          <div className="modal-content">
+        <MazeDialog label="Quit maze" onCancel={() => setShowQuitModal(false)}>
             <p>Are you sure you want to quit?</p>
             <div className="modal-buttons">
               <button onClick={() => navigate('/mazes')}>Yes</button>
               <button onClick={() => setShowQuitModal(false)}>Cancel</button>
             </div>
-          </div>
-        </div>
+        </MazeDialog>
       )}
     </div>
   );
