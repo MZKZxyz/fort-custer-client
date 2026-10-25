@@ -1,0 +1,21 @@
+{
+  "base": "344b43159fbbe6276787ab45977cf9e40a3799e8",
+  "protected": {
+    "src/pages/MazePage.js": "1deb5c8e174f1b19b7d1c53c5fae580a5c9ff9bc9336fc4ec2dab937e2f1eba4",
+    "src/css/MazePage.css": "a587885f3e6f55feda0fd137082b0995165b625d62e4b2b7cd9199ef76f06240",
+    "src/game/movement.js": "1b81e8d528554a3074750ceb902df5f663c851acda214a8d6e34e7406f218312",
+    "src/game/scene.js": "88326f7ccd742dc28f8f40c5c74c5a71e3d16249d81ad232512ab8f6eec5b96f",
+    "src/game/camera.js": "c6a3a4ef18b168035bf45e63430494d5af8e81239aab07fc378186e8b13dfd90",
+    "package.json": "3c5b9a3f484c162e21401f49b5148ef24bf05dd7e50ecbe941b92121616c5c0e",
+    "package-lock.json": "d9a555aab73da7f7bf163676e4b41f8be0e18b98b733d55fbf29538aae5fbbf2",
+    "playwright.config.js": "41e56a0f0badac8c37747e1a00bd4652b3620111a6359c7c3bf9abf9401d6323"
+  },
+  "defaultProductionBuild": "/tmp/vis04a-production-build",
+  "legacyE2E": "32 PASS, 2 camera-only skips",
+  "productionDefaultUnitTests": "40/40 PASS",
+  "cameraOptInUnitTests": "40/40 PASS",
+  "normalBuild": "PASS",
+  "prototypeGeometryTests": "3/3 PASS",
+  "defaultBuildContainsPrototype": false,
+  "rollback": "Remove docs/visual-integration/ or revert the single prototype commit. Source/API/state are untouched; switching Presentation restores square comparator without resetting game."
+}

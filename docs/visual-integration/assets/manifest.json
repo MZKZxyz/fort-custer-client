@@ -1,0 +1,885 @@
+{
+  "blender": "4.3.2",
+  "engine": "Cycles CPU, 32 samples, no denoising",
+  "projection": {
+    "elevation": 58,
+    "yaw": 0,
+    "anchor": [
+      128.0,
+      207.99987506866455
+    ],
+    "groundPitch": 189.9627735390394,
+    "heightRise": 118.7019151882379
+  },
+  "color": "AgX to sRGB, straight-alpha RGBA PNG; RGB edge dilation in finish.py",
+  "lighting": "Fixed source softboxes; dusk excludes position-dependent lantern pools",
+  "source": "docs/art/reference-scene/iteration-2/source/render.py",
+  "sourceSha256": "304dc06f9885d1402857dbb96437ee86ef3ca5cf5077fb13d6060706b4a271ac",
+  "license": "Original procedural geometry from repository PR #38; repository contribution terms; no external artwork",
+  "assets": [
+    {
+      "file": "ground-daylight-body.png",
+      "role": "ground",
+      "layer": "body",
+      "mood": "daylight",
+      "anchor": [
+        128,
+        208
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "cellWidth": 224,
+      "bounds": [
+        15,
+        112,
+        241,
+        304
+      ],
+      "bytes": 59617,
+      "decodedBytes": 360448,
+      "sha256": "7c43c5e57cce0fa9b3d21da814b525ff6a4c2757147bcce6ab5334c58e5b9c35",
+      "outerTransparentPixels": 15
+    },
+    {
+      "file": "wall-daylight-body.png",
+      "role": "wall",
+      "layer": "body",
+      "mood": "daylight",
+      "anchor": [
+        128,
+        208
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "cellWidth": 224,
+      "bounds": [
+        15,
+        43,
+        241,
+        304
+      ],
+      "bytes": 108592,
+      "decodedBytes": 360448,
+      "sha256": "1e1cce62916f24392321ea098a32bf294064f0fda8cb47e0fb60d2dd0666cb36",
+      "outerTransparentPixels": 15
+    },
+    {
+      "file": "wall-daylight-shadow.png",
+      "role": "wall",
+      "layer": "shadow",
+      "mood": "daylight",
+      "anchor": [
+        128,
+        150
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "cellWidth": 112,
+      "bounds": [
+        46,
+        78,
+        230,
+        232
+      ],
+      "bytes": 18615,
+      "decodedBytes": 262144,
+      "sha256": "62b9152bc8208eb399bef2c3d3930831fc67dc18fe15bff0d3f940df27af37f3",
+      "outerTransparentPixels": 24
+    },
+    {
+      "file": "extinguisher-daylight-body.png",
+      "role": "extinguisher",
+      "layer": "body",
+      "mood": "daylight",
+      "anchor": [
+        128,
+        208
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "cellWidth": 224,
+      "bounds": [
+        70,
+        69,
+        209,
+        227
+      ],
+      "bytes": 48754,
+      "decodedBytes": 360448,
+      "sha256": "99a3947032775a9b8c8ee29c8d2552479e0b77805034339987e577010ae9902e",
+      "outerTransparentPixels": 47
+    },
+    {
+      "file": "extinguisher-daylight-shadow.png",
+      "role": "extinguisher",
+      "layer": "shadow",
+      "mood": "daylight",
+      "anchor": [
+        128,
+        150
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "cellWidth": 112,
+      "bounds": [
+        80,
+        95,
+        209,
+        188
+      ],
+      "bytes": 8284,
+      "decodedBytes": 262144,
+      "sha256": "a4d94169ed34ee8c644ca5fbb396df7b797c51624792bc0216adea130ac2ae95",
+      "outerTransparentPixels": 47
+    },
+    {
+      "file": "fire-daylight-body.png",
+      "role": "fire",
+      "layer": "body",
+      "mood": "daylight",
+      "anchor": [
+        128,
+        208
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "cellWidth": 224,
+      "bounds": [
+        47,
+        33,
+        204,
+        250
+      ],
+      "bytes": 62389,
+      "decodedBytes": 360448,
+      "sha256": "7f524a33b948a5bc93c79030894e0c580b6e2fc4ccd6c3848552d148228a2ef2",
+      "outerTransparentPixels": 33
+    },
+    {
+      "file": "fire-daylight-shadow.png",
+      "role": "fire",
+      "layer": "shadow",
+      "mood": "daylight",
+      "anchor": [
+        128,
+        150
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "cellWidth": 112,
+      "bounds": [
+        79,
+        101,
+        212,
+        186
+      ],
+      "bytes": 9033,
+      "decodedBytes": 262144,
+      "sha256": "715d7ff27348e91342659aa3924b3a2e026b23caf26f6a2083b99fc1053f709c",
+      "outerTransparentPixels": 44
+    },
+    {
+      "file": "exit-daylight-body.png",
+      "role": "exit",
+      "layer": "body",
+      "mood": "daylight",
+      "anchor": [
+        128,
+        208
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "cellWidth": 224,
+      "bounds": [
+        35,
+        16,
+        221,
+        296
+      ],
+      "bytes": 83225,
+      "decodedBytes": 360448,
+      "sha256": "f2ccaf26d472a19d78b9b68445ace0ce761524b85d3440e8b4ef5f265c7bd5ce",
+      "outerTransparentPixels": 16
+    },
+    {
+      "file": "exit-daylight-shadow.png",
+      "role": "exit",
+      "layer": "shadow",
+      "mood": "daylight",
+      "anchor": [
+        128,
+        150
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "cellWidth": 112,
+      "bounds": [
+        74,
+        85,
+        216,
+        227
+      ],
+      "bytes": 15405,
+      "decodedBytes": 262144,
+      "sha256": "d99327c5b5ad7a49000246da6ee8fc682d22f7a86dc50ef011a26a1d41b06bb3",
+      "outerTransparentPixels": 29
+    },
+    {
+      "file": "explorer-down-daylight-body.png",
+      "role": "explorer-down",
+      "layer": "body",
+      "mood": "daylight",
+      "anchor": [
+        128,
+        208
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "cellWidth": 224,
+      "bounds": [
+        45,
+        40,
+        211,
+        240
+      ],
+      "bytes": 66423,
+      "decodedBytes": 360448,
+      "sha256": "4e1c876c881f1a46269a04dbcebdbce9633bb15956bfdf137e006ddaa96529b6",
+      "outerTransparentPixels": 40
+    },
+    {
+      "file": "explorer-down-daylight-shadow.png",
+      "role": "explorer-down",
+      "layer": "shadow",
+      "mood": "daylight",
+      "anchor": [
+        128,
+        150
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "cellWidth": 112,
+      "bounds": [
+        66,
+        90,
+        233,
+        221
+      ],
+      "bytes": 12725,
+      "decodedBytes": 262144,
+      "sha256": "7b072d0a07ee33fd5f22a536e47d08d01eec03071f2cd0e42b471780e8ecd6ff",
+      "outerTransparentPixels": 23
+    },
+    {
+      "file": "explorer-left-daylight-body.png",
+      "role": "explorer-left",
+      "layer": "body",
+      "mood": "daylight",
+      "anchor": [
+        128,
+        208
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "cellWidth": 224,
+      "bounds": [
+        49,
+        39,
+        190,
+        244
+      ],
+      "bytes": 63209,
+      "decodedBytes": 360448,
+      "sha256": "1c76169f0d0f70d97b245d762f73bd5c03bc97636f5d4241d8a0370dd47f686f",
+      "outerTransparentPixels": 39
+    },
+    {
+      "file": "explorer-left-daylight-shadow.png",
+      "role": "explorer-left",
+      "layer": "shadow",
+      "mood": "daylight",
+      "anchor": [
+        128,
+        150
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "cellWidth": 112,
+      "bounds": [
+        62,
+        90,
+        233,
+        220
+      ],
+      "bytes": 12977,
+      "decodedBytes": 262144,
+      "sha256": "c5d214697afe179316b28707c41f221e97e924daa1b418e2aefa18af6cea109a",
+      "outerTransparentPixels": 23
+    },
+    {
+      "file": "explorer-up-daylight-body.png",
+      "role": "explorer-up",
+      "layer": "body",
+      "mood": "daylight",
+      "anchor": [
+        128,
+        208
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "cellWidth": 224,
+      "bounds": [
+        45,
+        36,
+        211,
+        224
+      ],
+      "bytes": 61619,
+      "decodedBytes": 360448,
+      "sha256": "94e1e332724e0bd873ef945eeff2b76b5c2a50b323c3ca6d24d81a26d27176fb",
+      "outerTransparentPixels": 36
+    },
+    {
+      "file": "explorer-up-daylight-shadow.png",
+      "role": "explorer-up",
+      "layer": "shadow",
+      "mood": "daylight",
+      "anchor": [
+        128,
+        150
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "cellWidth": 112,
+      "bounds": [
+        58,
+        86,
+        231,
+        217
+      ],
+      "bytes": 13022,
+      "decodedBytes": 262144,
+      "sha256": "77ce7aca9732620b8a6b9cd259e40a594362a0797420706da73d0730d2242637",
+      "outerTransparentPixels": 25
+    },
+    {
+      "file": "explorer-right-daylight-body.png",
+      "role": "explorer-right",
+      "layer": "body",
+      "mood": "daylight",
+      "anchor": [
+        128,
+        208
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "cellWidth": 224,
+      "bounds": [
+        67,
+        38,
+        207,
+        244
+      ],
+      "bytes": 63567,
+      "decodedBytes": 360448,
+      "sha256": "f7062f472c360730d29fdd2f6b4f4ed40fd61be138ac1c2a6f3da9242c9360b3",
+      "outerTransparentPixels": 38
+    },
+    {
+      "file": "explorer-right-daylight-shadow.png",
+      "role": "explorer-right",
+      "layer": "shadow",
+      "mood": "daylight",
+      "anchor": [
+        128,
+        150
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "cellWidth": 112,
+      "bounds": [
+        63,
+        91,
+        232,
+        223
+      ],
+      "bytes": 12605,
+      "decodedBytes": 262144,
+      "sha256": "e1ddabaf735e666826b67b719056230ddb206b3dbd94179575705a58c7d86d83",
+      "outerTransparentPixels": 24
+    },
+    {
+      "file": "ground-dusk-body.png",
+      "role": "ground",
+      "layer": "body",
+      "mood": "dusk",
+      "anchor": [
+        128,
+        208
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "cellWidth": 224,
+      "bounds": [
+        15,
+        112,
+        241,
+        304
+      ],
+      "bytes": 55661,
+      "decodedBytes": 360448,
+      "sha256": "27216ec4b3a9f32c2371638596a80942623190b8529781897e7ba5b9496571df",
+      "outerTransparentPixels": 15
+    },
+    {
+      "file": "wall-dusk-body.png",
+      "role": "wall",
+      "layer": "body",
+      "mood": "dusk",
+      "anchor": [
+        128,
+        208
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "cellWidth": 224,
+      "bounds": [
+        15,
+        43,
+        241,
+        304
+      ],
+      "bytes": 95858,
+      "decodedBytes": 360448,
+      "sha256": "753538e4e035d65772d3857aba677efe0801124fd66ce1432693bdfab1f88c5f",
+      "outerTransparentPixels": 15
+    },
+    {
+      "file": "wall-dusk-shadow.png",
+      "role": "wall",
+      "layer": "shadow",
+      "mood": "dusk",
+      "anchor": [
+        128,
+        150
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "cellWidth": 112,
+      "bounds": [
+        43,
+        79,
+        230,
+        236
+      ],
+      "bytes": 19165,
+      "decodedBytes": 262144,
+      "sha256": "9d4d4ab2abf3e22b266929a1cc46f1806fbe7a1673089c2bc54fd92efabb67d7",
+      "outerTransparentPixels": 20
+    },
+    {
+      "file": "extinguisher-dusk-body.png",
+      "role": "extinguisher",
+      "layer": "body",
+      "mood": "dusk",
+      "anchor": [
+        128,
+        208
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "cellWidth": 224,
+      "bounds": [
+        70,
+        69,
+        209,
+        227
+      ],
+      "bytes": 46518,
+      "decodedBytes": 360448,
+      "sha256": "01042877ec401c27df8de8af009a27136de0771b03d78111b444e61260d798ee",
+      "outerTransparentPixels": 47
+    },
+    {
+      "file": "extinguisher-dusk-shadow.png",
+      "role": "extinguisher",
+      "layer": "shadow",
+      "mood": "dusk",
+      "anchor": [
+        128,
+        150
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "cellWidth": 112,
+      "bounds": [
+        75,
+        95,
+        207,
+        189
+      ],
+      "bytes": 8212,
+      "decodedBytes": 262144,
+      "sha256": "0a94f4f23f55ceebdac3a06df1b57a508c497e8ef43487958f7f27ef884ab781",
+      "outerTransparentPixels": 49
+    },
+    {
+      "file": "fire-dusk-body.png",
+      "role": "fire",
+      "layer": "body",
+      "mood": "dusk",
+      "anchor": [
+        128,
+        208
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "cellWidth": 224,
+      "bounds": [
+        47,
+        33,
+        204,
+        250
+      ],
+      "bytes": 61421,
+      "decodedBytes": 360448,
+      "sha256": "0c3c608316ca5566f06597b7c92c0ef236902b8b2f323a676c4666f8d5fd5c34",
+      "outerTransparentPixels": 33
+    },
+    {
+      "file": "fire-dusk-shadow.png",
+      "role": "fire",
+      "layer": "shadow",
+      "mood": "dusk",
+      "anchor": [
+        128,
+        150
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "cellWidth": 112,
+      "bounds": [
+        79,
+        103,
+        211,
+        186
+      ],
+      "bytes": 8945,
+      "decodedBytes": 262144,
+      "sha256": "e68d8390788889e2536f6a6a409b347fe54dcaa1e73adaf7794ea705c7f116fa",
+      "outerTransparentPixels": 45
+    },
+    {
+      "file": "exit-dusk-body.png",
+      "role": "exit",
+      "layer": "body",
+      "mood": "dusk",
+      "anchor": [
+        128,
+        208
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "cellWidth": 224,
+      "bounds": [
+        35,
+        16,
+        221,
+        296
+      ],
+      "bytes": 76191,
+      "decodedBytes": 360448,
+      "sha256": "add8a52fea777b236c2ae8a1ac7a9396b7c3d30bae1cdc3ec077069ff1f8d93f",
+      "outerTransparentPixels": 16
+    },
+    {
+      "file": "exit-dusk-shadow.png",
+      "role": "exit",
+      "layer": "shadow",
+      "mood": "dusk",
+      "anchor": [
+        128,
+        150
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "cellWidth": 112,
+      "bounds": [
+        69,
+        87,
+        212,
+        233
+      ],
+      "bytes": 15398,
+      "decodedBytes": 262144,
+      "sha256": "5b184a8cdaba7e1a0c0b18de2e0e2129e2aef28859cf7766b6f8b83b3286bc97",
+      "outerTransparentPixels": 23
+    },
+    {
+      "file": "explorer-down-dusk-body.png",
+      "role": "explorer-down",
+      "layer": "body",
+      "mood": "dusk",
+      "anchor": [
+        128,
+        208
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "cellWidth": 224,
+      "bounds": [
+        45,
+        40,
+        211,
+        240
+      ],
+      "bytes": 63004,
+      "decodedBytes": 360448,
+      "sha256": "256957c040303c990b5489f018db85e344232b165ae432babfdff7b1d67663a2",
+      "outerTransparentPixels": 40
+    },
+    {
+      "file": "explorer-down-dusk-shadow.png",
+      "role": "explorer-down",
+      "layer": "shadow",
+      "mood": "dusk",
+      "anchor": [
+        128,
+        150
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "cellWidth": 112,
+      "bounds": [
+        60,
+        92,
+        230,
+        228
+      ],
+      "bytes": 12892,
+      "decodedBytes": 262144,
+      "sha256": "478aeb3c63123a1446362673c6fd0051f106b3871b04b23e83e4d0c5920c23b2",
+      "outerTransparentPixels": 26
+    },
+    {
+      "file": "explorer-left-dusk-body.png",
+      "role": "explorer-left",
+      "layer": "body",
+      "mood": "dusk",
+      "anchor": [
+        128,
+        208
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "cellWidth": 224,
+      "bounds": [
+        49,
+        39,
+        190,
+        244
+      ],
+      "bytes": 59976,
+      "decodedBytes": 360448,
+      "sha256": "8fa62afa7fca3ddc479f25bac8801b1b0af07944e5ce39f53eae8cf60a491330",
+      "outerTransparentPixels": 39
+    },
+    {
+      "file": "explorer-left-dusk-shadow.png",
+      "role": "explorer-left",
+      "layer": "shadow",
+      "mood": "dusk",
+      "anchor": [
+        128,
+        150
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "cellWidth": 112,
+      "bounds": [
+        56,
+        92,
+        231,
+        222
+      ],
+      "bytes": 13232,
+      "decodedBytes": 262144,
+      "sha256": "4e1f509452db8d533dce3bcc18b3c2e7e5fd19e764217a601236669db0145dbf",
+      "outerTransparentPixels": 25
+    },
+    {
+      "file": "explorer-up-dusk-body.png",
+      "role": "explorer-up",
+      "layer": "body",
+      "mood": "dusk",
+      "anchor": [
+        128,
+        208
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "cellWidth": 224,
+      "bounds": [
+        45,
+        36,
+        211,
+        224
+      ],
+      "bytes": 58170,
+      "decodedBytes": 360448,
+      "sha256": "db9fdaf0d870eb9d27988983212078ddeb021e289377ca03ef5777fb6fb498b4",
+      "outerTransparentPixels": 36
+    },
+    {
+      "file": "explorer-up-dusk-shadow.png",
+      "role": "explorer-up",
+      "layer": "shadow",
+      "mood": "dusk",
+      "anchor": [
+        128,
+        150
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "cellWidth": 112,
+      "bounds": [
+        55,
+        87,
+        228,
+        223
+      ],
+      "bytes": 13176,
+      "decodedBytes": 262144,
+      "sha256": "0e1f556a1318ecbd11c1aeace0977f013d6a02f8c923a9962397f1a5334e6729",
+      "outerTransparentPixels": 28
+    },
+    {
+      "file": "explorer-right-dusk-body.png",
+      "role": "explorer-right",
+      "layer": "body",
+      "mood": "dusk",
+      "anchor": [
+        128,
+        208
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "cellWidth": 224,
+      "bounds": [
+        67,
+        38,
+        207,
+        244
+      ],
+      "bytes": 60275,
+      "decodedBytes": 360448,
+      "sha256": "974430d2d6a9f7789bf515ba720495c4673233dfdd944e241e3edc4ede165825",
+      "outerTransparentPixels": 38
+    },
+    {
+      "file": "explorer-right-dusk-shadow.png",
+      "role": "explorer-right",
+      "layer": "shadow",
+      "mood": "dusk",
+      "anchor": [
+        128,
+        150
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "cellWidth": 112,
+      "bounds": [
+        61,
+        92,
+        230,
+        226
+      ],
+      "bytes": 12868,
+      "decodedBytes": 262144,
+      "sha256": "c2a381924a241b64d9ee3bef622fe63ac3717041078a1ab3d7cdb5bc2ee6bd05",
+      "outerTransparentPixels": 26
+    }
+  ],
+  "processing": "Shadows rendered 512\u00b2 at 224px/cell then uniformly downsampled 2:1; alpha floor 32/255 remapped to zero. All PNG RGB dilated 2px into zero alpha without changing alpha.",
+  "totals": {
+    "images": 34,
+    "decodedBytes": 10682368,
+    "transferByMood": {
+      "daylight": 720061,
+      "dusk": 680962
+    }
+  },
+  "sourceHashes": {
+    "docs/visual-integration/source/export.py": "3e21537ff5a86e83711cf92efc0f84287f3356b64be14bee90582c53d41e2818",
+    "docs/visual-integration/source/finish.py": "266e64f2fedd3c53d6ec233a528a6e035ca6894aff410cc517ed8de0c0bc51d4",
+    "docs/art/reference-scene/iteration-2/source/render.py": "304dc06f9885d1402857dbb96437ee86ef3ca5cf5077fb13d6060706b4a271ac"
+  }
+}

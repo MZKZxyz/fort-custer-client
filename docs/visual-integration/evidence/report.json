@@ -1,0 +1,577 @@
+{
+  "environment": {
+    "node": "v24.19.0",
+    "os": "Linux 6.18.55 x64",
+    "cpu": "AMD EPYC 9V45 96-Core Processor",
+    "logicalCPUs": 3,
+    "physicalDevice": false,
+    "build": "webpack production standalone React/CSS",
+    "date": "2026-10-25T00:36:46.760Z",
+    "chromium": "154.0.8037.57"
+  },
+  "limitations": [
+    "Cloud headless Chromium is not a physical phone. Device performance budgets remain UNVERIFIED.",
+    "rAF after DOM update is a proxy for presentation, not a measured display scanout.",
+    "Independent QA, physical phone, Safari/Firefox, screen reader, owner visual, Narrative E and EG-09 remain pending."
+  ],
+  "screens": [
+    {
+      "name": "320x568-dpr1",
+      "tile": 36,
+      "pitch": 30.529731461631336,
+      "width": 280,
+      "height": 228,
+      "camera": {
+        "x": 0,
+        "y": 0
+      },
+      "anchorError": 0.014683072032227074,
+      "pitchError": 0,
+      "cues": [
+        {
+          "cue": "player",
+          "left": 69.46875,
+          "top": 60.984375,
+          "right": 87.46875,
+          "bottom": 80.984375,
+          "contained": true
+        }
+      ],
+      "worldChildren": 214,
+      "visibleLogicalExtent": {
+        "columns": 7.777777777777778,
+        "rows": 7.468129887959944
+      },
+      "squareEquivalentRows": 6.333333333333333,
+      "rowIncreasePercent": 17.917840336209643,
+      "pageOverflow": false,
+      "externalRequests": []
+    },
+    {
+      "name": "320x568-dpr2",
+      "tile": 36,
+      "pitch": 30.529731461631336,
+      "width": 280,
+      "height": 228,
+      "camera": {
+        "x": 0,
+        "y": 0
+      },
+      "anchorError": 0.014683072032227074,
+      "pitchError": 0,
+      "cues": [
+        {
+          "cue": "player",
+          "left": 69.46875,
+          "top": 60.984375,
+          "right": 87.46875,
+          "bottom": 80.984375,
+          "contained": true
+        }
+      ],
+      "worldChildren": 214,
+      "visibleLogicalExtent": {
+        "columns": 7.777777777777778,
+        "rows": 7.468129887959944
+      },
+      "squareEquivalentRows": 6.333333333333333,
+      "rowIncreasePercent": 17.917840336209643,
+      "pageOverflow": false,
+      "externalRequests": []
+    },
+    {
+      "name": "390x844-dpr1",
+      "tile": 44.25,
+      "pitch": 37.52612825492185,
+      "width": 350,
+      "height": 400,
+      "camera": {
+        "x": 0,
+        "y": 0
+      },
+      "anchorError": 0.01292619762813274,
+      "pitchError": 0,
+      "cues": [
+        {
+          "cue": "player",
+          "left": 87.453125,
+          "top": 77.25,
+          "right": 105.453125,
+          "bottom": 97.25,
+          "contained": true
+        }
+      ],
+      "worldChildren": 214,
+      "visibleLogicalExtent": {
+        "columns": 7.909604519774011,
+        "rows": 10.659239804403132
+      },
+      "squareEquivalentRows": 9.03954802259887,
+      "rowIncreasePercent": 17.917840336209643,
+      "pageOverflow": false,
+      "externalRequests": []
+    },
+    {
+      "name": "390x844-dpr2",
+      "tile": 44.25,
+      "pitch": 37.52612825492185,
+      "width": 350,
+      "height": 400,
+      "camera": {
+        "x": 0,
+        "y": 0
+      },
+      "anchorError": 0.01292619762813274,
+      "pitchError": 0,
+      "cues": [
+        {
+          "cue": "player",
+          "left": 87.453125,
+          "top": 77.25,
+          "right": 105.453125,
+          "bottom": 97.25,
+          "contained": true
+        }
+      ],
+      "worldChildren": 214,
+      "visibleLogicalExtent": {
+        "columns": 7.909604519774011,
+        "rows": 10.659239804403132
+      },
+      "squareEquivalentRows": 9.03954802259887,
+      "rowIncreasePercent": 17.917840336209643,
+      "pageOverflow": false,
+      "externalRequests": []
+    },
+    {
+      "name": "844x390-dpr1",
+      "tile": 48,
+      "pitch": 40.70630861550845,
+      "width": 454,
+      "height": 180,
+      "camera": {
+        "x": 0,
+        "y": 19.059462923262675
+      },
+      "anchorError": 0.013195517284259495,
+      "pitchError": 0,
+      "cues": [
+        {
+          "cue": "player",
+          "left": 95.625,
+          "top": 65.5968017578125,
+          "right": 113.625,
+          "bottom": 85.5968017578125,
+          "contained": true
+        }
+      ],
+      "worldChildren": 214,
+      "visibleLogicalExtent": {
+        "columns": 9.458333333333334,
+        "rows": 4.421919012607861
+      },
+      "squareEquivalentRows": 3.75,
+      "rowIncreasePercent": 17.917840336209643,
+      "pageOverflow": false,
+      "externalRequests": []
+    },
+    {
+      "name": "844x390-dpr2",
+      "tile": 48,
+      "pitch": 40.70630861550845,
+      "width": 454,
+      "height": 180,
+      "camera": {
+        "x": 0,
+        "y": 19.059462923262675
+      },
+      "anchorError": 0.013195517284259495,
+      "pitchError": 0,
+      "cues": [
+        {
+          "cue": "player",
+          "left": 95.625,
+          "top": 65.5968017578125,
+          "right": 113.625,
+          "bottom": 85.5968017578125,
+          "contained": true
+        }
+      ],
+      "worldChildren": 214,
+      "visibleLogicalExtent": {
+        "columns": 9.458333333333334,
+        "rows": 4.421919012607861
+      },
+      "squareEquivalentRows": 3.75,
+      "rowIncreasePercent": 17.917840336209643,
+      "pageOverflow": false,
+      "externalRequests": []
+    },
+    {
+      "name": "1280x800-dpr1",
+      "tile": 48,
+      "pitch": 40.70630861550845,
+      "width": 624,
+      "height": 460,
+      "camera": {
+        "x": 0,
+        "y": 0
+      },
+      "anchorError": 0.013210198359445258,
+      "pitchError": 0,
+      "cues": [
+        {
+          "cue": "player",
+          "left": 95.625,
+          "top": 84.65625,
+          "right": 113.625,
+          "bottom": 104.65625,
+          "contained": true
+        }
+      ],
+      "worldChildren": 214,
+      "visibleLogicalExtent": {
+        "columns": 13,
+        "rows": 11.300459698886756
+      },
+      "squareEquivalentRows": 9.583333333333334,
+      "rowIncreasePercent": 17.917840336209643,
+      "pageOverflow": false,
+      "externalRequests": []
+    },
+    {
+      "name": "1280x800-dpr2",
+      "tile": 48,
+      "pitch": 40.70630861550845,
+      "width": 624,
+      "height": 460,
+      "camera": {
+        "x": 0,
+        "y": 0
+      },
+      "anchorError": 0.013210198359445258,
+      "pitchError": 0,
+      "cues": [
+        {
+          "cue": "player",
+          "left": 95.625,
+          "top": 84.65625,
+          "right": 113.625,
+          "bottom": 104.65625,
+          "contained": true
+        }
+      ],
+      "worldChildren": 214,
+      "visibleLogicalExtent": {
+        "columns": 13,
+        "rows": 11.300459698886756
+      },
+      "squareEquivalentRows": 9.583333333333334,
+      "rowIncreasePercent": 17.917840336209643,
+      "pageOverflow": false,
+      "externalRequests": []
+    }
+  ],
+  "traces": [
+    {
+      "mode": "projected",
+      "trace": [
+        {
+          "row": "1",
+          "column": "1",
+          "completed": "false",
+          "equipment": "",
+          "actions": "0"
+        },
+        {
+          "row": "1",
+          "column": "1",
+          "completed": "false",
+          "equipment": "",
+          "actions": "0"
+        },
+        {
+          "row": "1",
+          "column": "2",
+          "completed": "false",
+          "equipment": "extinguisher",
+          "actions": "1"
+        },
+        {
+          "row": "1",
+          "column": "2",
+          "completed": "false",
+          "equipment": "",
+          "actions": "2"
+        },
+        {
+          "row": "1",
+          "column": "3",
+          "completed": "false",
+          "equipment": "",
+          "actions": "3"
+        },
+        {
+          "row": "1",
+          "column": "4",
+          "completed": "false",
+          "equipment": "",
+          "actions": "4"
+        },
+        {
+          "row": "1",
+          "column": "5",
+          "completed": "false",
+          "equipment": "",
+          "actions": "5"
+        },
+        {
+          "row": "1",
+          "column": "6",
+          "completed": "false",
+          "equipment": "",
+          "actions": "6"
+        },
+        {
+          "row": "1",
+          "column": "7",
+          "completed": "false",
+          "equipment": "",
+          "actions": "7"
+        },
+        {
+          "row": "1",
+          "column": "8",
+          "completed": "false",
+          "equipment": "",
+          "actions": "8"
+        },
+        {
+          "row": "1",
+          "column": "9",
+          "completed": "true",
+          "equipment": "",
+          "actions": "9"
+        },
+        {
+          "row": "1",
+          "column": "9",
+          "completed": "true",
+          "equipment": "",
+          "actions": "9"
+        }
+      ]
+    },
+    {
+      "mode": "legacy",
+      "trace": [
+        {
+          "row": "1",
+          "column": "1",
+          "completed": "false",
+          "equipment": "",
+          "actions": "0"
+        },
+        {
+          "row": "1",
+          "column": "1",
+          "completed": "false",
+          "equipment": "",
+          "actions": "0"
+        },
+        {
+          "row": "1",
+          "column": "2",
+          "completed": "false",
+          "equipment": "extinguisher",
+          "actions": "1"
+        },
+        {
+          "row": "1",
+          "column": "2",
+          "completed": "false",
+          "equipment": "",
+          "actions": "2"
+        },
+        {
+          "row": "1",
+          "column": "3",
+          "completed": "false",
+          "equipment": "",
+          "actions": "3"
+        },
+        {
+          "row": "1",
+          "column": "4",
+          "completed": "false",
+          "equipment": "",
+          "actions": "4"
+        },
+        {
+          "row": "1",
+          "column": "5",
+          "completed": "false",
+          "equipment": "",
+          "actions": "5"
+        },
+        {
+          "row": "1",
+          "column": "6",
+          "completed": "false",
+          "equipment": "",
+          "actions": "6"
+        },
+        {
+          "row": "1",
+          "column": "7",
+          "completed": "false",
+          "equipment": "",
+          "actions": "7"
+        },
+        {
+          "row": "1",
+          "column": "8",
+          "completed": "false",
+          "equipment": "",
+          "actions": "8"
+        },
+        {
+          "row": "1",
+          "column": "9",
+          "completed": "true",
+          "equipment": "",
+          "actions": "9"
+        },
+        {
+          "row": "1",
+          "column": "9",
+          "completed": "true",
+          "equipment": "",
+          "actions": "9"
+        }
+      ]
+    }
+  ],
+  "composition": [
+    {
+      "surface": "light",
+      "tile": 44.25,
+      "filter": "auto",
+      "shadows": false
+    },
+    {
+      "surface": "dark",
+      "tile": 44.25,
+      "filter": "auto",
+      "shadows": false
+    },
+    {
+      "surface": "checker",
+      "tile": 44.25,
+      "filter": "auto",
+      "shadows": false
+    },
+    {
+      "permutation": "rear-of-wall",
+      "position": [
+        2,
+        2
+      ],
+      "bodyDepthOrder": true
+    },
+    {
+      "permutation": "front-of-wall",
+      "position": [
+        5,
+        2
+      ],
+      "bodyDepthOrder": true
+    },
+    {
+      "permutation": "left-of-wall",
+      "position": [
+        3,
+        1
+      ],
+      "bodyDepthOrder": true
+    },
+    {
+      "permutation": "right-of-wall",
+      "position": [
+        3,
+        5
+      ],
+      "bodyDepthOrder": true
+    }
+  ],
+  "benchmarks": [
+    {
+      "fixture": "13×17",
+      "mode": "projected",
+      "durationMs": 30012.900000000023,
+      "frameSamples": 1802,
+      "inputSamples": 146,
+      "frameP50Ms": 16.69999999999891,
+      "frameP95Ms": 16.700000000000728,
+      "frameWorstMs": 16.80000000000291,
+      "inputToNextUpdatedFrameP95Ms": 16.599999999929423,
+      "longTasks": [],
+      "heapBefore": 7899110,
+      "heapAfter": 5279365,
+      "domElements": 548,
+      "deviceBudget": "UNVERIFIED — virtual cloud host; long tasks are observed, not automatically attributable to art",
+      "frameP95RegressionPercent": -2.178257574314557e-11
+    },
+    {
+      "fixture": "13×17",
+      "mode": "legacy",
+      "durationMs": 30012.29999999993,
+      "frameSamples": 1802,
+      "inputSamples": 146,
+      "frameP50Ms": 16.69999999999709,
+      "frameP95Ms": 16.700000000004366,
+      "frameWorstMs": 16.80000000000291,
+      "inputToNextUpdatedFrameP95Ms": 16.59999999995489,
+      "longTasks": [],
+      "heapBefore": 6323557,
+      "heapAfter": 5305408,
+      "domElements": 364,
+      "deviceBudget": "UNVERIFIED — virtual cloud host; long tasks are observed, not automatically attributable to art"
+    },
+    {
+      "fixture": "21×21",
+      "mode": "projected",
+      "durationMs": 30012.800000000047,
+      "frameSamples": 1802,
+      "inputSamples": 147,
+      "frameP50Ms": 16.69999999999709,
+      "frameP95Ms": 16.70000000001164,
+      "frameWorstMs": 16.80000000000291,
+      "inputToNextUpdatedFrameP95Ms": 16.599999999903957,
+      "longTasks": [],
+      "heapBefore": 5150658,
+      "heapAfter": 8190166,
+      "domElements": 928,
+      "deviceBudget": "UNVERIFIED — virtual cloud host; long tasks are observed, not automatically attributable to art",
+      "frameP95RegressionPercent": 0
+    },
+    {
+      "fixture": "21×21",
+      "mode": "legacy",
+      "durationMs": 30012.300000000047,
+      "frameSamples": 1802,
+      "inputSamples": 146,
+      "frameP50Ms": 16.69999999999709,
+      "frameP95Ms": 16.70000000001164,
+      "frameWorstMs": 16.80000000000291,
+      "inputToNextUpdatedFrameP95Ms": 16.500000000043656,
+      "longTasks": [],
+      "heapBefore": 9884466,
+      "heapAfter": 12512511,
+      "domElements": 584,
+      "deviceBudget": "UNVERIFIED — virtual cloud host; long tasks are observed, not automatically attributable to art"
+    }
+  ],
+  "errors": [],
+  "result": "PASS for automated scoped checks; human/device gates pending"
+}
