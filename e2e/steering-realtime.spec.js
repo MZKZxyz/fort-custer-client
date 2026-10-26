@@ -61,27 +61,27 @@ for (const [width,height] of [[390,844],[320,568],[844,390],[1280,800]]) {
             window.addEventListener('pointermove',requested,true);
             const observer=new MutationObserver(()=>{
               const position=read(),key=JSON.stringify(position);
-              if(key===previous)return;
+              if(key===previous){signal?.();return;}
               previous=key; moves.push({at:performance.now(),position});
               for(const [target,resolve] of waiting) if(target===key){waiting.delete(target);resolve(true);}
               signal?.();
             });
-            observer.observe(document.querySelector('.maze-page'),{subtree:true,attributes:true,attributeFilter:['data-row','data-column','data-player']});
+            observer.observe(document.querySelector('.maze-page'),{subtree:true,attributes:true,attributeFilter:['data-row','data-column','data-player','data-input-phase']});
             window.turnTrial={moves,requests,read,
               mark(direction){armed=direction;},
               until(position){const key=JSON.stringify(position);if(JSON.stringify(read())===key)return Promise.resolve(true);return new Promise(resolve=>waiting.set(key,resolve));},
               settled(){return new Promise(resolve=>{
                 const check=()=>{
-                  const status=document.querySelector('.pallet-status')?.textContent||'';
-                  if(JSON.stringify(read())==='[10,5]'||status.includes('Turn unavailable')){signal=null;resolve(true);}
+                  const status=document.querySelector('[role=status]')?.textContent||'';
+                  if(JSON.stringify(read())==='[10,5]'||document.querySelector('[data-maze-surface]')?.dataset.inputPhase === 'blocked'){signal=null;resolve(true);}
                 };
                 signal=check; check();
                 // A read-only observer also checks status-only expiry mutations.
                 const statusObserver=new MutationObserver(check);
-                statusObserver.observe(document.querySelector('.pallet-status'),{subtree:true,childList:true,characterData:true});
+                statusObserver.observe(document.querySelector('[role=status]'),{subtree:true,childList:true,characterData:true});
                 setTimeout(()=>{statusObserver.disconnect();resolve(false);},3500);
               });},
-              finish(){observer.disconnect();window.removeEventListener('pointermove',requested,true);return {moves,requests,position:read(),status:document.querySelector('.pallet-status').textContent};}
+              finish(){observer.disconnect();window.removeEventListener('pointermove',requested,true);return {moves,requests,position:read(),status:document.querySelector('[role=status]').textContent};}
             };
           });
           const cdp = input === 'touch' ? await context.newCDPSession(page) : null;
@@ -101,7 +101,7 @@ for (const [width,height] of [[390,844],[320,568],[844,390],[1280,800]]) {
             window.turnTrial.settled().then(()=>false)
           ]));
           if(first) { await page.evaluate(()=>window.turnTrial.mark('left')); await move(-30,0); await page.evaluate(()=>window.turnTrial.settled()); }
-          const statusBeforeRelease=await page.locator('.pallet-status').textContent();
+          const statusBeforeRelease=await page.getByRole('status').textContent();
           if(cdp) await cdp.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});
           else await page.mouse.up();
           const record=await page.evaluate(()=>window.turnTrial.finish());

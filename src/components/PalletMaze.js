@@ -85,7 +85,6 @@ function PalletMaze({ scene, facing, inputPhase, onFallback }) {
   const neighbors = [[-1, 0, 'Up'], [0, 1, 'Right'], [1, 0, 'Down'], [0, -1, 'Left']]
     .map(([r, c, direction]) => `${direction}: ${symbols[scene.rows[scene.player.row + r]?.[scene.player.column + c]?.tile] || 'maze edge'}`).join('. ');
   return <section className="pallet-maze" aria-label="Daily maze">
-    <p className="pallet-instructions">Reach the tipi · X: extinguisher · F: fire</p>
     <div ref={ref} className="pallet-viewport" role="region" tabIndex="0" aria-label="Maze viewport" aria-describedby="maze-input-help maze-position-help"
       data-maze-surface data-input-phase={inputPhase}
       data-row={scene.player.row} data-column={scene.player.column} data-completed={scene.completed}

@@ -18,7 +18,12 @@ const position = container => integrated
   ? Number(container.querySelector('.pallet-viewport')?.dataset.column)
   : [...container.querySelectorAll('.maze-cell')].findIndex(cell => cell.textContent.includes('🧍'));
 const ready = async () => {
-  await screen.findByRole('button', { name: 'Right' });
+  await screen.findByRole('button', { name: 'Controls' });
+  if (!screen.queryByRole('button', { name: 'Right' })) {
+    fireEvent.click(screen.getByRole('button', { name: 'Controls' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Show direction buttons' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Close Controls' }));
+  }
   if (integrated) await screen.findByRole('region', { name: 'Maze viewport' });
 };
 const key = direction => {
@@ -48,10 +53,10 @@ test.each([['keyboard', key], ['D-pad', pad]])('%s follows the same pickup, fire
   await ready();
   input('Right');
   expect(position(container)).toBe(1);
-  expect(container.querySelector('.maze-slot')).toHaveTextContent('🧯');
+  expect(screen.getByRole('img', {name:'Equipment: extinguisher'})).toBeInTheDocument();
   input('Right');
   expect(position(container)).toBe(1);
-  expect(container.querySelector('.maze-slot')).toBeEmptyDOMElement();
+  expect(screen.getByRole('img', {name:'Equipment: empty'})).toBeInTheDocument();
   input('Right');
   expect(position(container)).toBe(2);
   input('Right');
@@ -134,7 +139,7 @@ test('rapid mixed inputs use the latest position and consume inventory exactly o
     key('Right');
   });
   expect(position(container)).toBe(2);
-  expect(container.querySelector('.maze-slot')).toBeEmptyDOMElement();
+  expect(screen.getByRole('img', {name:'Equipment: empty'})).toBeInTheDocument();
   expect(API.post).toHaveBeenCalledTimes(1);
 });
 
@@ -144,7 +149,7 @@ test('fire without inventory shows a hint and does not move either input method'
   await ready();
   key('Right'); pad('Right');
   expect(position(container)).toBe(0);
-  if (integrated) expect(container.querySelector('.pallet-status')).toHaveTextContent('Fire blocks the path');
+  if (integrated) expect(container.querySelector('[role=status]')).toHaveTextContent('Fire blocks the path');
   else expect(container.querySelector('.thought-bubble')).toBeInTheDocument();
   expect(API.post).toHaveBeenCalledTimes(1);
 });
@@ -209,4 +214,37 @@ test('camera presentation requires an explicit true build flag', async () => {
   expect(Boolean(container.querySelector('.maze-fog'))).toBe(!enabled);
   // Goal is three cells from start: exposed only by the opted-in camera path.
   expect(Boolean(container.querySelector('img[alt="Goal"]'))).toBe(enabled);
+});
+
+test('minimal HUD starts collapsed, Help cancels input and controls preference is resilient', async () => {
+  API.post.mockResolvedValueOnce(fixture);
+  render(<MazePage />);
+  await screen.findByRole('button',{name:'Help'});
+  expect(screen.queryByRole('button',{name:'Right'})).not.toBeInTheDocument();
+  expect(screen.getByRole('status')).toBeEmptyDOMElement();
+  fireEvent.click(screen.getByRole('button',{name:'Help'}));
+  expect(screen.getByText(/Reach the tipi/)).toBeInTheDocument();
+  fireEvent.click(screen.getByRole('button',{name:'Close Help'}));
+  fireEvent.click(screen.getByRole('button',{name:'Controls'}));
+  jest.spyOn(Storage.prototype,'setItem').mockImplementation(()=>{throw new Error('storage unavailable');});
+  fireEvent.click(screen.getByRole('button',{name:'Show direction buttons'}));
+  fireEvent.click(screen.getByRole('button',{name:'Close Controls'}));
+  expect(screen.getByRole('button',{name:'Right'})).toBeInTheDocument();
+});
+
+test('pickup clears obsolete fire hint and ordinary movement has no live narration', async () => {
+  API.post.mockResolvedValueOnce({data:{...fixture.data,maze:{grid:[['F','#','#'],['S','X',' ']]}}});
+  const {container}=render(<MazePage />);await ready();key('Up');
+  expect(screen.getByRole('status')).toHaveTextContent('Fire blocks');key('Right');
+  expect(container.querySelector('.thought-bubble')).not.toBeInTheDocument();
+  expect(screen.getByRole('status')).toHaveTextContent('picked up');key('Right');
+  expect(screen.getByRole('status')).toBeEmptyDOMElement();
+});
+
+test('maze loading failure remains actionable without a browser alert', async () => {
+  API.post.mockRejectedValueOnce(new Error('synthetic failure'));
+  render(<MazePage />);
+  expect(await screen.findByRole('alert')).toHaveTextContent('Could not load maze');
+  fireEvent.click(screen.getByRole('button',{name:'Back to mazes'}));
+  expect(mockNavigate).toHaveBeenCalledWith('/mazes');
 });

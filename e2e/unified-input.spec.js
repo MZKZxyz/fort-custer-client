@@ -18,6 +18,7 @@ async function setup(page, deterministic = true) {
   const requests = [];
   await page.addInitScript(() => {
     localStorage.setItem('token', 'synthetic-token');
+    localStorage.setItem('mazeDirectionButtons', 'true');
     localStorage.setItem('activeSubProfile', JSON.stringify({ _id: 'synthetic-profile' }));
     localStorage.setItem('selectedMazeDate', '2025-05-26');
   });
@@ -49,7 +50,7 @@ for (const [width, height] of [[320, 568], [390, 844], [844, 390], [1280, 800]])
       await page.keyboard.down('ArrowRight');
       await page.clock.runFor(400);
       await expect(page.getByRole('img', { name: 'Equipment: empty' })).toBeVisible();
-      await expect(page.locator('.pallet-status')).toContainText('Fire cleared');
+      await expect(page.getByRole('status')).toContainText('Fire cleared');
       await position(page, 1, 2);
       await page.keyboard.down('ArrowRight');
       await page.clock.runFor(700);
@@ -115,7 +116,7 @@ for (const [width, height] of [[320, 568], [390, 844], [844, 390], [1280, 800]])
       const box = await pad.boundingBox(); const x = box.x + box.width / 2; const y = box.y + box.height / 2;
       await page.mouse.move(x, y); await page.mouse.down(); await page.mouse.move(x + 35, y);
       await page.clock.runFor(400);
-      await expect(page.locator('.pallet-status')).toContainText('Fire cleared');
+      await expect(page.getByRole('status')).toContainText('Fire cleared');
       await position(page, 1, 2);
       await page.mouse.move(x, y + 35); await page.clock.runFor(250);
       await page.mouse.move(x + 35, y); await page.clock.runFor(500);
@@ -145,7 +146,7 @@ for (const [width, height] of [[320, 568], [390, 844], [844, 390], [1280, 800]])
       // Native page swiping away from the maze surface must still scroll.
       await page.evaluate(() => window.scrollTo(0, 0));
       const before = await page.evaluate(() => scrollY);
-      const outside = await page.locator('#maze-input-help').boundingBox();
+      const outside = await page.locator('.field-meta').boundingBox();
       const outsideY = outside.y + outside.height / 2;
       expect(await page.evaluate(({ x, y }) => !document.elementFromPoint(x, y)?.closest('[data-maze-surface], [data-direction]'), { x: width / 2, y: outsideY })).toBe(true);
       const distance = Math.min(120, outsideY - 10);

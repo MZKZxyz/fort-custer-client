@@ -27,6 +27,7 @@ async function setup(page, kind = 'corners', native = false) {
   if (!manual && !native) await page.clock.install();
   await page.addInitScript(() => {
     localStorage.setItem('token', 'synthetic-token');
+    localStorage.setItem('mazeDirectionButtons', 'true');
     localStorage.setItem('activeSubProfile', JSON.stringify({ _id: 'synthetic-profile' }));
     localStorage.setItem('selectedMazeDate', '2025-05-26');
   });
@@ -64,7 +65,7 @@ for (const [width, height] of [[320,568],[390,844],[844,390],[1280,800]]) {
     test('production UI has instructions and no comparison or visible diagnostics', async ({page}) => {
       await setup(page);
       await expect(page.getByRole('combobox',{name:'Drag steering'})).toHaveCount(process.env.REACT_APP_MAZE_INPUT_PREVIEW === 'true' ? 1 : 0);
-      await expect(page.locator('#maze-input-help')).toBeVisible();
+      await expect(page.locator('#maze-input-help')).toHaveCSS('width','1px');
       if(integrated) {
         await expect(page.getByRole('button',{name:'Use classic view'})).toBeVisible();
         await expect(page.locator('.pallet-position')).toHaveCSS('width','1px');
@@ -76,7 +77,7 @@ for (const [width, height] of [[320,568],[390,844],[844,390],[1280,800]]) {
       await steer(page, p, 0, 30);
       await page.clock.runFor(399); await pos(page, 6, 4);
       await page.clock.runFor(1); await pos(page, 6, 5);
-      await expect(page.locator('.pallet-status')).toContainText('Turn queued: down');
+      await expect(host(page)).toHaveAttribute('data-input-phase','holding');
       await screenshot(page, `${width}x${height}`, 'queued');
       await page.clock.runFor(180); await pos(page, 6, 6);
       await page.clock.runFor(180); await pos(page, 7, 6);
@@ -91,7 +92,7 @@ for (const [width, height] of [[320,568],[390,844],[844,390],[1280,800]]) {
     test('farther opening expires and identical jitter cannot re-arm; reversal is direct', async ({ page }) => {
       const p = await setup(page, 'far'); await press(page, p); await steer(page, p, 30, 0); await steer(page, p, 0, 30);
       await page.clock.runFor(760); await pos(page, 6, 6);
-      await expect(page.locator('.pallet-status')).toContainText('Turn unavailable');
+      await expect(host(page)).toHaveAttribute('data-input-phase','blocked');
       for (const a of [70,80,100,90,75,95]) await steer(page, p, 30*Math.cos(a*Math.PI/180), 30*Math.sin(a*Math.PI/180));
       await page.clock.runFor(1000); await pos(page, 6, 6);
       await steer(page, p, -30, 0); await page.clock.runFor(179); await pos(page, 6, 6);
@@ -101,7 +102,7 @@ for (const [width, height] of [[320,568],[390,844],[844,390],[1280,800]]) {
       const p = await setup(page, 'side-fire'); await press(page, p); await steer(page, p, 30, 0); await steer(page, p, 0, 30);
       await page.clock.runFor(580); await pos(page, 6, 5);
       await expect(page.getByRole('img', { name: 'Equipment: extinguisher' })).toBeVisible();
-      await expect(page.locator('.pallet-status')).toContainText('Fire blocks queued travel');
+      await expect(page.getByRole('status')).toContainText('Fire blocks queued travel');
       await steer(page, p, 0, -30); await steer(page, p, 0, 30); await page.clock.runFor(180);
       await pos(page, 6, 5); await expect(page.getByRole('img', { name: 'Equipment: empty' })).toBeVisible();
       await steer(page, p, -30, 0); await steer(page, p, 0, 30); await page.clock.runFor(800); await pos(page, 6, 5);
@@ -131,10 +132,11 @@ for (const [width, height] of [[320,568],[390,844],[844,390],[1280,800]]) {
         await press(page, point); await steer(page, point, 240, 0);
         const before = Number(await player(page).getAttribute('data-column'));
         await steer(page, point, 240, 64); await page.clock.runFor(400);
-        if (mode === 'trailing') await expect(page.locator('.pallet-status')).toContainText('Turn queued: down');
-        else await expect(page.locator('.pallet-status')).not.toContainText('Turn queued');
         expect(Number(await player(page).getAttribute('data-column'))).toBe(before+1);
+        await page.clock.runFor(360);
+        await expect(player(page)).toHaveAttribute('data-row',mode === 'trailing' ? '7' : '6');
         await page.mouse.up();
+        if (mode === 'trailing') await page.keyboard.press('ArrowUp');
         // Return to the same initial cell with exact keyboard commands for A/B.
         while (Number(await player(page).getAttribute('data-column')) > 3) await page.keyboard.press('ArrowLeft');
         await pos(page,6,3);
