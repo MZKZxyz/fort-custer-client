@@ -1,12 +1,14 @@
-import { createController, dragDirection } from './inputController';
+import { createController } from './inputController';
+import { createDragSteering, STEERING_MODES } from './dragSteering';
 
 const arrows = { ArrowUp: 'up', ArrowDown: 'down', ArrowLeft: 'left', ArrowRight: 'right' };
 
 // One ownership/scheduler boundary for all production input adapters. The shell
 // supplies a synchronous canonical command and cancels before modal/view changes.
-export function bindMazeInput(root, { command, changed }) {
-  const controller = createController({ command, changed });
+export function bindMazeInput(root, { command, inspect, changed, steeringMode = 'trailing' }) {
+  const controller = createController({ command, inspect, changed });
   const removers = [];
+  let mode = steeringMode;
   let pointer = null;
   let heldKey = null;
   const rejectedPointers = new WeakSet();
@@ -36,9 +38,9 @@ export function bindMazeInput(root, { command, changed }) {
     element.focus({ preventScroll: true });
     const owner = `pointer:${event.pointerId}`;
     const drag = element.hasAttribute('data-maze-surface');
-    pointer = { id: event.pointerId, owner, element, drag, x: event.clientX, y: event.clientY };
+    pointer = { id: event.pointerId, owner, element, drag, steering: drag ? createDragSteering(event.clientX, event.clientY, mode) : null };
     element.setPointerCapture?.(event.pointerId);
-    controller.press(owner, drag ? null : element.dataset.direction, { drag });
+    controller.press(owner, drag ? null : element.dataset.direction, { drag, anticipate: mode !== 'legacy' });
   });
   listen(root, 'click', event => {
     const button = event.target.closest?.('[data-direction]');
@@ -54,7 +56,12 @@ export function bindMazeInput(root, { command, changed }) {
   });
   listen(window, 'pointermove', event => {
     if (!pointer?.drag || event.pointerId !== pointer.id) return;
-    controller.steer(pointer.owner, dragDirection(event.clientX - pointer.x, event.clientY - pointer.y));
+    const active = pointer;
+    const samples = event.getCoalescedEvents?.() || [];
+    for (const sample of [...samples, event]) {
+      if (pointer !== active) break;
+      controller.steer(active.owner, active.steering.sample(sample.clientX, sample.clientY));
+    }
   });
   listen(window, 'pointerup', event => release(event, 'pointerup'));
   listen(window, 'pointercancel', event => release(event, 'pointercancel'));
@@ -88,5 +95,7 @@ export function bindMazeInput(root, { command, changed }) {
   listen(document, 'visibilitychange', () => { if (document.hidden) cancel('document hidden'); });
   for (const type of ['resize', 'orientationchange', 'pagehide']) listen(window, type, () => cancel(type));
   if (window.visualViewport) listen(window.visualViewport, 'resize', () => cancel('viewport resize'));
-  return { cancel, destroy() { cancel('unmount'); controller.destroy(); removers.forEach(remove => remove()); } };
+  return { cancel, configureSteering(value) {
+    cancel('steering changed'); mode = STEERING_MODES[value] ? value : 'trailing';
+  }, destroy() { cancel('unmount'); controller.destroy(); removers.forEach(remove => remove()); } };
 }

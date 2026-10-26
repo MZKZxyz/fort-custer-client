@@ -1,5 +1,7 @@
 # Owner revision — full-maze drag and mobile gesture stability
 
+**Historical surface revision: `e14e0ca`.** The [current continuous-steering prototype](../continuous-steering/README.md) retains this gesture policy but changes direction selection, deadlines and anchor behavior. Use that record for current evidence and rollback; revert later revisions first before applying historical rollback steps.
+
 Continuation of draft PR #44 from initial integration `4fbfa3492e6459504e526e0b9222a1c52babfed6`. Client Engineering implements; independent QA and a second owner playtest are required. No production activation, merge, deployment or CI polling is authorized. The owner-approved **400ms initial delay / 180ms repeat** remains unchanged, as do the controller, dead zone (18px), axis ratio (1.25), and relative displacement from initial contact.
 
 ## What changed

@@ -17,57 +17,98 @@ export function transition(state, direction) {
   return { state: next.state, reason, terminal };
 }
 
-export function createController({ command, changed = () => {}, clock = globalThis, timing = DEFAULT_TIMING }) {
-  let session = null;
-  let timer = null;
-  let generation = 0;
-  let destroyed = false;
+const perpendicular = (a, b) => ['left', 'right'].includes(a) !== ['left', 'right'].includes(b);
+
+// inspect() reads authoritative adjacent tiles; it must never call move(). Only
+// command() commits gameplay. Every input shares this single deadline scheduler.
+export function createController({ command, inspect, changed = () => {}, clock = globalThis, timing = DEFAULT_TIMING }) {
+  let session = null, timer = null, generation = 0, destroyed = false;
   let pace = boundedTiming(timing);
+  const now = () => clock.now ? clock.now() : performance.now();
   const invalidate = () => { generation++; clock.clearTimeout(timer); timer = null; };
-  const publish = (phase, reason) => changed({ phase, reason, direction: session?.direction || null, owner: session?.owner || null });
-  const tick = wait => {
+  const publish = (phase, reason) => changed({ phase, reason, direction: session?.direction || null,
+    owner: session?.owner || null, heading: session?.heading || null,
+    pending: session?.pending?.direction || null });
+  const pause = reason => {
+    invalidate(); session.pending = null; session.paused = true; publish('blocked', reason);
+  };
+  const schedule = at => {
+    session.nextAt = at;
+    invalidate();
     const ticket = generation;
     timer = clock.setTimeout(() => {
       if (destroyed || ticket !== generation || !session || session.halted || !session.direction) return;
-      execute(pace.repeat);
-    }, wait);
+      timer = null;
+      execute(false);
+    }, Math.max(0, at - now()));
   };
-  const execute = wait => {
-    const active = session;
-    const ticket = generation;
-    const result = command(session.direction);
-    // A synchronous shell interruption must not schedule work for a cancelled
-    // or replacement owner after the command returns.
+  const choose = at => {
+    const s = session, q = s.direction, h = s.heading;
+    if (!s.anticipate || !h || !perpendicular(q, h)) { s.pending = null; return { direction: q }; }
+    const expiresAt = s.pending?.expiresAt ?? (s.opportunityAt ?? at) + 360;
+    if (at > expiresAt) return { pause: 'turn expired' };
+    const side = inspect(q);
+    // A fresh explicit fire request is a normal interaction. An already queued
+    // request encountering fire must pause, without spending equipment.
+    if (side === 'fire') return s.pending ? { pause: 'turn hazard' } : { direction: q };
+    if (side === 'open') { s.pending = null; return { direction: q }; }
+    if (side !== 'wall') return { pause: 'inactive' };
+    if (!s.pending) s.pending = { direction: q, steps: 0, expiresAt };
+    if (s.pending.steps >= 2) return { pause: 'turn expired' };
+    const forward = inspect(h);
+    if (forward === 'fire') return { pause: 'turn hazard' };
+    if (forward !== 'open') return { pause: 'obstruction' };
+    return { direction: h, continued: true };
+  };
+  const execute = first => {
+    const active = session, ticket = generation, at = now();
+    active.nextAt = at + (first ? pace.delay : pace.repeat);
+    active.paused = false;
+    const decision = choose(at);
+    if (decision.pause) { pause(decision.pause); return; }
+    const result = command(decision.direction);
     if (destroyed || session !== active || ticket !== generation) return;
     if (result.terminal) {
-      invalidate();
+      invalidate(); active.pending = null; active.paused = true;
       const collision = result.reason === 'obstruction' || result.reason === 'fire blocked';
-      // A drag keeps its owner/capture and can steer after collision. Stop its
-      // timer without sliding or retrying the blocked direction. Fire clearing
-      // and completion still require release, as do collisions in other inputs.
-      session.halted = !(session.drag && collision);
-      publish(session.halted ? 'stopped' : 'blocked', result.reason);
+      active.halted = !(active.drag && collision);
+      if (active.halted) active.heading = null;
+      publish(active.halted ? 'stopped' : 'blocked', result.reason);
     } else {
-      publish('holding', result.reason);
-      tick(wait);
+      active.heading = decision.direction;
+      if (decision.continued) active.pending.steps++;
+      publish('holding', active.pending ? 'turn queued' : result.reason);
+      if (session === active && ticket === generation && !destroyed) schedule(active.nextAt);
     }
   };
   return {
-    press(owner, direction = null, { drag = false } = {}) {
+    press(owner, direction = null, { drag = false, anticipate = Boolean(inspect) } = {}) {
       if (destroyed || session) return false;
       invalidate();
-      session = { owner, direction, drag, halted: false, started: Boolean(direction) };
-      if (direction) execute(pace.delay); else publish('preview', 'choose direction');
+      session = { owner, direction, drag, anticipate: drag && anticipate && Boolean(inspect),
+        heading: null, pending: null, halted: false, paused: false, started: Boolean(direction), nextAt: null, opportunityAt: null };
+      if (direction) execute(true); else publish('preview', 'choose direction');
       return true;
     },
     steer(owner, direction) {
       if (!session || session.owner !== owner || session.halted || session.direction === direction) return;
-      invalidate();
-      session.direction = direction;
-      if (direction) {
-        if (!session.started) { session.started = true; execute(pace.delay); }
-        else { publish('holding', 'direction selected'); tick(pace.repeat); }
-      } else publish('preview', 'neutral — paused');
+      session.direction = direction; session.pending = null;
+      session.opportunityAt = Math.max(now(), session.nextAt || 0);
+      if (!direction) {
+        invalidate(); session.heading = null; session.paused = true; publish('preview', 'neutral — paused');
+      } else if (!session.started) {
+        session.started = true; execute(true);
+      } else {
+        const active = session;
+        publish('holding', 'direction selected');
+        if (session !== active || destroyed) return;
+        // Updating intent never changes an active deadline. A paused contact
+        // resumes at a bounded future deadline, retaining any protected delay.
+        if (timer === null) {
+          const at = Math.max(session.nextAt || 0, now() + pace.repeat);
+          session.opportunityAt = at; schedule(at);
+        }
+      }
     },
     release(owner, reason = 'release') {
       if (!session || session.owner !== owner) return;

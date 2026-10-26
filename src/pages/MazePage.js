@@ -1,9 +1,10 @@
 import { lazy, Suspense, useRef, useMemo, useLayoutEffect, useEffect, useState, useCallback  } from 'react';
 import { useNavigate } from 'react-router-dom';
 import API from '../utils/api';
-import { move, findStart, formatElapsed } from '../game/movement';
+import { move, findStart, formatElapsed, inspectDirection } from '../game/movement';
 import { createMazeScene, createMazeViewModel } from '../game/scene';
 import { createCamera } from '../game/camera';
+import { STEERING_MODES } from '../game/dragSteering';
 import { bindMazeInput } from '../game/inputCoordinator';
 import { commandOutcome } from '../game/commandOutcome';
 import MazeDialog from '../components/MazeDialog';
@@ -20,6 +21,8 @@ const MazePage = () => {
   const inputRootRef = useRef(null);
   const inputRef = useRef(null);
   const commandRef = useRef(null);
+  const [steeringMode, setSteeringMode] = useState('trailing');
+  const [steeringFeedback, setSteeringFeedback] = useState('');
   const [inputStatus, setInputStatus] = useState('idle');
   const [integrated, setIntegrated] = useState(INTEGRATION_ENABLED);
   const [facing, setFacing] = useState('down');
@@ -277,7 +280,14 @@ const MazePage = () => {
     if (!mazeData || !inputRootRef.current) return;
     const coordinator = bindMazeInput(inputRootRef.current, {
       command: direction => commandRef.current(direction),
-      changed: input => setInputStatus(input.phase),
+      inspect: direction => inspectDirection(gameRef.current, direction),
+      changed: input => {
+        setInputStatus(input.phase);
+        const arrows = { up: '↑', down: '↓', left: '←', right: '→' };
+        setSteeringFeedback(input.pending ? `${arrows[input.heading]} ↱ ${arrows[input.pending]} Turn queued: ${input.pending}.`
+          : input.reason === 'turn expired' ? 'Turn unavailable—steer again.'
+          : input.reason === 'turn hazard' ? 'Fire blocks queued travel. Steer again to interact.' : '');
+      },
     });
     inputRef.current = coordinator;
     return () => { coordinator.destroy(); inputRef.current = null; };
@@ -421,6 +431,9 @@ const MazePage = () => {
 
       </div>
 
+      <label className="maze-steering-choice">Drag steering <select aria-label="Drag steering" value={steeringMode} onChange={event => {
+        inputRef.current?.configureSteering(event.target.value); setSteeringMode(event.target.value);
+      }}>{Object.entries(STEERING_MODES).map(([value, label]) => <option key={value} value={value}>{label}</option>)}</select></label>
       <p id="maze-input-help" className="maze-input-help">Drag anywhere on the maze to steer; release to stop. Arrow keys and direction buttons also work.</p>
       {integrated ? <>
         <MazeRenderBoundary onFallback={useClassic}>
@@ -457,7 +470,7 @@ const MazePage = () => {
         </div>
         </div>
       </div>}
-      <p className="pallet-status" role="status">{movementStatus}{inputStatus === 'blocked' ? ' Keep holding and drag another direction to continue.' : ''}</p>
+      <p className="pallet-status" role="status">{movementStatus} {steeringFeedback}{inputStatus === 'blocked' ? ' Keep holding and drag another direction to continue.' : ''}</p>
       <div className="dpad" role="group" aria-label="Movement controls">
         <div className="dpad-row">
           <button className="dpad-btn" data-direction="up">

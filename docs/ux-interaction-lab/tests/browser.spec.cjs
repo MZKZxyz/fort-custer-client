@@ -320,7 +320,9 @@ for (const device of ['mouse', 'touch']) test(`${device} drag continuity across 
     if (!cdp) await page.mouse.move(origin.x, origin.y + 30);
     const commands = await count(page); await page.clock.runFor(1000); expect(await count(page)).toBe(commands);
     await press(); await steer(0, 30); expect(await position(page)).toBe('3,1'); // Clean new drag.
-    await steer(-30, 0); await page.clock.runFor(180); await expectBlocked();
+    const freshCommands = await count(page);
+    await steer(-30, 0); await page.clock.runFor(399); expect(await count(page)).toBe(freshCommands);
+    await page.clock.runFor(1); await expectBlocked();
     await end(true); await page.clock.runFor(1000);
     await expect(page.locator('#input-phase')).toHaveText('IDLE');
     expect(await position(page)).toBe('3,1');

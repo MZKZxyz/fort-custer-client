@@ -134,3 +134,22 @@ test('a synchronous shell cancellation inside a command cannot re-arm its timer'
   expect(command).toHaveBeenCalledTimes(1);
   controller.destroy();
 });
+
+test('coalesced samples select intent without extra commands; comparison changes cancel the held gesture', () => {
+  binding.destroy();
+  const command = jest.fn(() => ({ reason: 'step', terminal: false }));
+  binding = bindMazeInput(root, { command, inspect: () => 'open' });
+  const host = root.querySelector('[data-maze-surface]');
+  pointer('pointerdown', host);
+  pointer('pointermove', window, { clientX: 200, clientY: 200,
+    getCoalescedEvents: () => [{ clientX: 140, clientY: 100 }, { clientX: 200, clientY: 100 }] });
+  expect(command.mock.calls).toEqual([['right']]);
+  jest.advanceTimersByTime(400);
+  expect(command.mock.calls).toEqual([['right'], ['down']]);
+  binding.configureSteering('legacy');
+  pointer('pointermove', window, { clientX: 100, clientY: 200 });
+  jest.advanceTimersByTime(1000); expect(command).toHaveBeenCalledTimes(2);
+  pointer('pointerup', window); pointer('pointerdown', host);
+  pointer('pointermove', window, { clientX: 140, clientY: 140 });
+  jest.advanceTimersByTime(1000); expect(command).toHaveBeenCalledTimes(2);
+});

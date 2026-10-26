@@ -1,0 +1,252 @@
+{
+  "baseline_commit": "e14e0ca3375bb990c50d097818d27a3f83dce0da",
+  "revision_identification": "The commit containing this record; exact pushed SHA is pinned in draft PR #44. Source hashes below identify the validated code without a self-referential commit hash.",
+  "specification": {
+    "issue": 33,
+    "ux_comment": "6404380667",
+    "handoff_comment": "6404404642"
+  },
+  "environment": {
+    "browser": "Chromium 154.0.8037.57",
+    "playwright": "1.62.1",
+    "node": "24.19.0",
+    "evidence": "Local optimized builds with intercepted synthetic APIs; mouse and CDP touch emulation only; no live account/server data"
+  },
+  "units": {
+    "default": {
+      "suites": 10,
+      "passed": 94
+    },
+    "integrated": {
+      "suites": 10,
+      "passed": 94
+    },
+    "camera": {
+      "suites": 10,
+      "passed": 94
+    },
+    "legacy_controller": {
+      "passed": 24
+    },
+    "legacy_browser": {
+      "passed": 45
+    }
+  },
+  "browser_regressions": {
+    "classic": {
+      "passed": 93,
+      "skipped": 23,
+      "failed": 0,
+      "duration": "5.6m",
+      "scope": "All configured regressions, default renderer, default camera"
+    },
+    "integrated": {
+      "passed": 80,
+      "skipped": 5,
+      "failed": 0,
+      "duration": "2.7m",
+      "scope": "Continuous steering, whole-maze surface, unified input, production integration, completion recovery"
+    },
+    "camera": {
+      "passed": 62,
+      "skipped": 8,
+      "failed": 0,
+      "duration": "3.0m",
+      "scope": "Continuous steering, whole-maze surface, unified input and square-camera regressions"
+    },
+    "both": {
+      "passed": 11,
+      "skipped": 0,
+      "failed": 0,
+      "duration": "47.0s",
+      "scope": "Combined flags: fallback/classic-view cases from steering, surface and production integration"
+    }
+  },
+  "new_steering_matrix": {
+    "cases_per_renderer": 32,
+    "passed_per_renderer": 31,
+    "skipped_per_renderer": 1,
+    "skip_reason": "1280x800 desktop native-CDP-touch case; mouse path is covered there. Mobile native-touch cases run at the other three dimensions.",
+    "viewports": [
+      [
+        320,
+        568
+      ],
+      [
+        390,
+        844
+      ],
+      [
+        844,
+        390
+      ],
+      [
+        1280,
+        800
+      ]
+    ]
+  },
+  "builds": {
+    "classic": {
+      "result": "PASS",
+      "final_runtime_source_maps_match": true
+    },
+    "integrated": {
+      "result": "PASS",
+      "final_runtime_source_maps_match": true
+    },
+    "camera": {
+      "result": "PASS",
+      "final_runtime_source_maps_match": true
+    },
+    "both": {
+      "result": "PASS",
+      "final_runtime_source_maps_match": true
+    }
+  },
+  "contracts": {
+    "one_scheduler": true,
+    "canonical_move_baseline_unchanged": true,
+    "inspection": "Read-only adjacent tile classifier appended; no speculative move",
+    "timing_ms": {
+      "first_repeat": 400,
+      "repeat": 180
+    },
+    "snap_switching_hysteresis_degrees": 8,
+    "neutral_disengage_reengage_px": [
+      12,
+      18
+    ],
+    "neutral_distance_metric": "Maximum axis per explicit UX specification; Euclidean only for trailing bound",
+    "trailing_anchor_px": 48,
+    "turn_buffer_max_forward_translations": 2,
+    "turn_buffer_budget_ms": 360,
+    "deadline": "Inclusive, immutable first eligible deadline +360; late callbacks expire without catch-up",
+    "production_visual_activation": "Default OFF, exact true opt-in unchanged",
+    "ranked_activation": false
+  },
+  "limitations": [
+    "Final two-cell opportunity can expire with real callback latency; no hidden grace or acceleration. Exact boundary is tested with a deterministic clock; native timing exercises one-cell early turns.",
+    "Prototype tuning and long-gesture sampling comfort require independent QA and owner playtest.",
+    "Original selector comparison shares the protected-deadline scheduler; it does not restore the former timer-reset flaw.",
+    "Short layouts may require scrolling between board, status and controls.",
+    "No physical-browser zoom, refresh, OS interruption, screen-reader, WCAG or FPS certification."
+  ],
+  "physical_devices": {
+    "iOS Safari": "NOT RUN: no physical or remote device session available",
+    "installed iOS PWA": "NOT RUN: no physical or remote device session available",
+    "Android Chrome": "NOT RUN: no physical or remote device session available",
+    "installed Android PWA": "NOT RUN: no physical or remote device session available"
+  },
+  "release_gates": {
+    "EG-08": "OPEN: owner/Art arrival, asset/readability/occlusion and real-device visual review",
+    "EG-09": "OPEN: ranked equal-view geometry/version policy, difficulty and representative-maze/analyzer evidence",
+    "EG-11": "OPEN: physical browsers/PWAs, accessibility and gesture usability",
+    "EG-01": "Existing server timing/recovery limitations unchanged"
+  },
+  "independent_qa_and_second_owner_playtest": "REQUIRED on pushed SHA; not activation approval",
+  "infrastructure": "An earlier attempt exhausted temporary disk while archiving a trace. Obsolete temporary artifacts were removed; current configured steering traces are always retained and other regressions retain failures only. Final completed runs above are authoritative.",
+  "rollback": {
+    "result": "PASS: complete staged binary diff reverse-apply checked; no rollback applied",
+    "target": "e14e0ca3375bb990c50d097818d27a3f83dce0da",
+    "migration": "None; preserve mazeCompletion recovery data and backend contract"
+  },
+  "source_sha256": {
+    "src/game/inputController.js": "7a9131358a6cb5888cfa1da3dcb92df3ff68b0680e29fe5254f791405166c545",
+    "src/game/inputCoordinator.js": "e397475e55527349ec2ccfeb394bdfc50b38c940749590295102e281ffbc7869",
+    "src/game/dragSteering.js": "53fdb2b24c7284a6333a92afa4266ea74c12d9c370efe0d489e65538fa8e49c0",
+    "src/game/movement.js": "be61c1c0c4579d37ccbadd3257f7e960fe9a2dd051ff6913a3cfea4437434cc7",
+    "src/pages/MazePage.js": "407850d7490914fd3fa122593e5f9ced2c1f5dd62f79743da2fb104a9562287f",
+    "src/css/MazePage.css": "72fc9b2049be08960c16369346c1ad430f6b86cb9e2837615ac14fe45b597712",
+    "src/game/continuousSteering.test.js": "92d632a448997ab3f8205c8948682312752abf0a54efeea11384f35f10822a9d",
+    "src/game/inputCoordinator.test.js": "4b675dcca830dc20e20edfbd0fb1cc5cb04e59b142fa9da6afd392881e1db063",
+    "e2e/continuous-steering.spec.js": "023e12f2c4a7acd99c80bfbcce6e4ae0e4e543ea944862506d4178a71850d630",
+    "docs/unified-input/playwright.config.cjs": "c23d1ca3ec7a0cc11ba3e180f96b91c526b4d9355c34ce14753e60eddf0a94d5",
+    "docs/ux-interaction-lab/tests/controller.test.mjs": "9657060f5d0832faa61f3174f482d3c55c97b4fd63fbe6395bd3045ad77f84be",
+    "docs/ux-interaction-lab/tests/browser.spec.cjs": "758744748c4268af4944eeff63c0837d86d6876758b0beca122133a7ec348214"
+  },
+  "artifacts": {
+    "camera-13x17.json": {
+      "sha256": "8574d23c94d7fd30d98d9da9e819e13324b6791ca1a6b713687229c9ac7057d0",
+      "bytes": 1916
+    },
+    "camera-21x21.json": {
+      "sha256": "ed743095c31974e6b2bc895383959e70b0574786f84b5d445a0fd7ad42ffa2bd",
+      "bytes": 1902
+    },
+    "classic-1280x800-queued.png": {
+      "sha256": "d8d7f8d17915ab04a8c2600037c8a4fbcc3cb425f261e504db976163a4d4f903",
+      "bytes": 372604,
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      }
+    },
+    "classic-320x568-queued.png": {
+      "sha256": "3a7b2e9727b068edf67224067932c54ecd39f819bc2ea395a093cca2786b8ced",
+      "bytes": 135684,
+      "viewport": {
+        "width": 320,
+        "height": 568
+      }
+    },
+    "classic-390x844-queued.png": {
+      "sha256": "b2a424ece5ffd58e238b121c11659fe2caa67a5047077a31efb58f15108315fb",
+      "bytes": 235787,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      }
+    },
+    "classic-844x390-queued.png": {
+      "sha256": "096f5d26f81982c2b293eadb40b09af646d9befdeaa33e25d26dfb6c0c729215",
+      "bytes": 158343,
+      "viewport": {
+        "width": 844,
+        "height": 390
+      }
+    },
+    "desktop-corners-trace.zip": {
+      "sha256": "56e85b00eed000493e665268796b0fb39b3767f3d3652a9de227c3fa5cc73521",
+      "bytes": 6846673,
+      "privacy": "Portable repository-relative references; no embedded test source or workstation paths; synthetic local fixture only"
+    },
+    "integrated-1280x800-queued.png": {
+      "sha256": "5f14848135f6590b57fc2b13a05d92b88a67d23ecc24f254dbc1fc77809105e5",
+      "bytes": 354295,
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      }
+    },
+    "integrated-320x568-queued.png": {
+      "sha256": "25f4e983b46fbc1c8ef1d4bad154a303b5bd12aec59d51575d261e5592993eb6",
+      "bytes": 84922,
+      "viewport": {
+        "width": 320,
+        "height": 568
+      }
+    },
+    "integrated-390x844-queued.png": {
+      "sha256": "e243b191dd0f8f519b3eb364ed61aad153cd22cc85daea47a64709f872f23ec5",
+      "bytes": 161425,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      }
+    },
+    "integrated-844x390-queued.png": {
+      "sha256": "d4d6371a28a83a48986ebc478668064bc3366b1396bdd71767dad8199154e7f6",
+      "bytes": 139519,
+      "viewport": {
+        "width": 844,
+        "height": 390
+      }
+    },
+    "mobile-corner-trace.zip": {
+      "sha256": "dc2790436421eaa6e77388d1cdc904ef9da608acf836dbbbf4509dd07444e7b5",
+      "bytes": 4839282,
+      "privacy": "Portable repository-relative references; no embedded test source or workstation paths; synthetic local fixture only"
+    }
+  }
+}

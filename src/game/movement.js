@@ -37,3 +37,12 @@ export function formatElapsed(elapsed) {
   const ms = Math.max(0, Math.floor(elapsed));
   return `${Math.floor(ms / 60000)}:${String(Math.floor(ms / 1000) % 60).padStart(2, '0')}.${String(ms % 1000).padStart(3, '0')}`;
 }
+
+// Read-only adjacent classification for input arbitration. No speculative move,
+// interaction, inventory mutation, messaging or completion is performed here.
+export function inspectDirection(state, direction) {
+  const delta = DELTAS[direction];
+  if (!state || state.completed || !delta) return 'inactive';
+  const tile = state.grid[state.position[0] + delta[0]]?.[state.position[1] + delta[1]];
+  return tile === undefined || tile === '#' ? 'wall' : tile === 'F' ? 'fire' : 'open';
+}

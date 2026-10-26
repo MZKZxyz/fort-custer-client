@@ -457,3 +457,6 @@
 .maze-page [data-maze-surface]:focus-visible { outline: 3px solid white; outline-offset: 3px; }
 
 .maze-page .maze-input-help, .maze-page .pallet-status { box-sizing: border-box; width: min(944px, calc(100% - 32px)); background: #fae9ca; color: #241500; padding: .5rem; border-radius: 4px; margin: .5rem auto; line-height: 1.4; }
+
+.maze-steering-choice { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: .5rem; padding: .5rem; background: #fae9ca; color: #241500; }
+.maze-steering-choice select { min-height: 44px; max-width: 100%; font: inherit; }
