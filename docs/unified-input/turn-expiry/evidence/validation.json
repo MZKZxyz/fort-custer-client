@@ -1,0 +1,548 @@
+{
+  "baseline_commit": "5c21a5ec66f90e845d22791ed71e6bd69187ce89",
+  "revision_identification": "Commit containing this file; exact pushed SHA pinned in draft PR #44. Source hashes identify validated code without a self-referential commit hash.",
+  "environment": {
+    "node": "24.19.0",
+    "chromium": "154.0.8037.57",
+    "playwright": "1.62.1",
+    "evidence": "Headless Linux Chromium native mouse/CDP touch with synthetic intercepted APIs; no live account or backend"
+  },
+  "qa_comment": "6410544775",
+  "owner_decision_comment": "6410592660",
+  "approved_default": "Cardinal snapping + trailing anchor; fixed/original modes retained for validation only",
+  "policy": {
+    "max_forward_continuations": 2,
+    "max_eligible_opportunities": 3,
+    "callback_grace_ms": 180,
+    "expiry": "first eligible scheduled deadline + 2*repeat +180ms; immutable, inclusive",
+    "default_cap_from_first_deadline_ms": 540,
+    "late_callbacks": "One command then next deadline from actual callback time; never catch up",
+    "early_callbacks": "Re-arm same deadline without command",
+    "unchanged_timing_ms": [
+      400,
+      180
+    ]
+  },
+  "deterministic_regressions": {
+    "each_flag_mode": {
+      "suites": 10,
+      "passed": 112
+    },
+    "flag_modes": [
+      "default",
+      "integrated",
+      "camera"
+    ],
+    "shared_controller_node_passed": 24
+  },
+  "browser_regression_scope": {
+    "classic": "Continuous steering, unified input, completion recovery, production integration; focused, not the full unrelated responsive suite",
+    "integrated": "Same focused suite as classic with visual opt-in",
+    "camera": "Continuous steering, unified input and camera geometry/resize",
+    "both": "Captured/manual/image/chunk fallback and classic-view cases",
+    "lab": "Complete legacy UX lab browser suite"
+  },
+  "browser_regressions": {
+    "classic": {
+      "passed": 50,
+      "skipped": 15,
+      "failed": 0,
+      "duration": "2.5m"
+    },
+    "integrated": {
+      "passed": 62,
+      "skipped": 3,
+      "failed": 0,
+      "duration": "2.0m"
+    },
+    "camera": {
+      "passed": 48,
+      "skipped": 2,
+      "failed": 0,
+      "duration": "2.0m"
+    },
+    "both": {
+      "passed": 11,
+      "skipped": 0,
+      "failed": 0,
+      "duration": "23.7s"
+    },
+    "lab": {
+      "passed": 45,
+      "skipped": 0,
+      "failed": 0,
+      "duration": "51.2s"
+    }
+  },
+  "realtime": {
+    "trials_per_renderer": 30,
+    "corners_per_renderer": 60,
+    "first_and_second_turns_passed": 120,
+    "remaining_final_failures": 0,
+    "retry_count": 0,
+    "workers": 1,
+    "fresh_context_per_trial": true,
+    "unmodified_timers": true,
+    "summaries": [
+      {
+        "renderer": "classic",
+        "viewport": {
+          "width": 1280,
+          "height": 800
+        },
+        "input": "mouse",
+        "trials": 2,
+        "first_turns": 2,
+        "second_turns": 2,
+        "first_turn_dom_offsets_ms": {
+          "min": 764.1,
+          "median": 768.95,
+          "max": 773.8
+        },
+        "second_turn_dom_offsets_ms": {
+          "min": 1501.5,
+          "median": 1505.95,
+          "max": 1510.4
+        },
+        "repeat_dom_intervals_ms": {
+          "min": 179.2,
+          "median": 183.85,
+          "max": 191.5
+        }
+      },
+      {
+        "renderer": "classic",
+        "viewport": {
+          "width": 320,
+          "height": 568
+        },
+        "input": "touch",
+        "trials": 2,
+        "first_turns": 2,
+        "second_turns": 2,
+        "first_turn_dom_offsets_ms": {
+          "min": 761.7,
+          "median": 764.1,
+          "max": 766.5
+        },
+        "second_turn_dom_offsets_ms": {
+          "min": 1495.5,
+          "median": 1496.5,
+          "max": 1497.5
+        },
+        "repeat_dom_intervals_ms": {
+          "min": 180.4,
+          "median": 182.85,
+          "max": 187.8
+        }
+      },
+      {
+        "renderer": "classic",
+        "viewport": {
+          "width": 320,
+          "height": 568
+        },
+        "input": "mouse",
+        "trials": 2,
+        "first_turns": 2,
+        "second_turns": 2,
+        "first_turn_dom_offsets_ms": {
+          "min": 762.4,
+          "median": 766.05,
+          "max": 769.7
+        },
+        "second_turn_dom_offsets_ms": {
+          "min": 1495.4,
+          "median": 1497.7,
+          "max": 1500.0
+        },
+        "repeat_dom_intervals_ms": {
+          "min": 179.6,
+          "median": 183.35,
+          "max": 187.4
+        }
+      },
+      {
+        "renderer": "classic",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "input": "touch",
+        "trials": 10,
+        "first_turns": 10,
+        "second_turns": 10,
+        "first_turn_dom_offsets_ms": {
+          "min": 754.1,
+          "median": 765.8,
+          "max": 769.1
+        },
+        "second_turn_dom_offsets_ms": {
+          "min": 1484.5,
+          "median": 1497.2,
+          "max": 1503.7
+        },
+        "repeat_dom_intervals_ms": {
+          "min": 174.7,
+          "median": 183.35,
+          "max": 190.7
+        }
+      },
+      {
+        "renderer": "classic",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "input": "mouse",
+        "trials": 10,
+        "first_turns": 10,
+        "second_turns": 10,
+        "first_turn_dom_offsets_ms": {
+          "min": 760.9,
+          "median": 768.5,
+          "max": 773.9
+        },
+        "second_turn_dom_offsets_ms": {
+          "min": 1492.9,
+          "median": 1500.55,
+          "max": 1508.1
+        },
+        "repeat_dom_intervals_ms": {
+          "min": 176.8,
+          "median": 183.25,
+          "max": 197.0
+        }
+      },
+      {
+        "renderer": "classic",
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "input": "touch",
+        "trials": 2,
+        "first_turns": 2,
+        "second_turns": 2,
+        "first_turn_dom_offsets_ms": {
+          "min": 759.7,
+          "median": 763.3,
+          "max": 766.9
+        },
+        "second_turn_dom_offsets_ms": {
+          "min": 1492.1,
+          "median": 1498.25,
+          "max": 1504.4
+        },
+        "repeat_dom_intervals_ms": {
+          "min": 177.6,
+          "median": 182.65,
+          "max": 189.3
+        }
+      },
+      {
+        "renderer": "classic",
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "input": "mouse",
+        "trials": 2,
+        "first_turns": 2,
+        "second_turns": 2,
+        "first_turn_dom_offsets_ms": {
+          "min": 772.0,
+          "median": 772.65,
+          "max": 773.3
+        },
+        "second_turn_dom_offsets_ms": {
+          "min": 1500.1,
+          "median": 1508.7,
+          "max": 1517.3
+        },
+        "repeat_dom_intervals_ms": {
+          "min": 177.8,
+          "median": 184.45,
+          "max": 193.8
+        }
+      },
+      {
+        "renderer": "integrated",
+        "viewport": {
+          "width": 1280,
+          "height": 800
+        },
+        "input": "mouse",
+        "trials": 2,
+        "first_turns": 2,
+        "second_turns": 2,
+        "first_turn_dom_offsets_ms": {
+          "min": 764.8,
+          "median": 767.7,
+          "max": 770.6
+        },
+        "second_turn_dom_offsets_ms": {
+          "min": 1497.3,
+          "median": 1497.9,
+          "max": 1498.5
+        },
+        "repeat_dom_intervals_ms": {
+          "min": 177.3,
+          "median": 183.5,
+          "max": 187.2
+        }
+      },
+      {
+        "renderer": "integrated",
+        "viewport": {
+          "width": 320,
+          "height": 568
+        },
+        "input": "touch",
+        "trials": 2,
+        "first_turns": 2,
+        "second_turns": 2,
+        "first_turn_dom_offsets_ms": {
+          "min": 765.8,
+          "median": 767.95,
+          "max": 770.1
+        },
+        "second_turn_dom_offsets_ms": {
+          "min": 1498.2,
+          "median": 1498.6,
+          "max": 1499.0
+        },
+        "repeat_dom_intervals_ms": {
+          "min": 175.9,
+          "median": 183.3,
+          "max": 188.5
+        }
+      },
+      {
+        "renderer": "integrated",
+        "viewport": {
+          "width": 320,
+          "height": 568
+        },
+        "input": "mouse",
+        "trials": 2,
+        "first_turns": 2,
+        "second_turns": 2,
+        "first_turn_dom_offsets_ms": {
+          "min": 765.5,
+          "median": 766.3,
+          "max": 767.1
+        },
+        "second_turn_dom_offsets_ms": {
+          "min": 1493.7,
+          "median": 1495.3,
+          "max": 1496.9
+        },
+        "repeat_dom_intervals_ms": {
+          "min": 178.8,
+          "median": 182.65,
+          "max": 185.7
+        }
+      },
+      {
+        "renderer": "integrated",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "input": "touch",
+        "trials": 10,
+        "first_turns": 10,
+        "second_turns": 10,
+        "first_turn_dom_offsets_ms": {
+          "min": 760.7,
+          "median": 765.0,
+          "max": 766.8
+        },
+        "second_turn_dom_offsets_ms": {
+          "min": 1488.8,
+          "median": 1497.0,
+          "max": 1500.7
+        },
+        "repeat_dom_intervals_ms": {
+          "min": 171.7,
+          "median": 182.6,
+          "max": 189.4
+        }
+      },
+      {
+        "renderer": "integrated",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "input": "mouse",
+        "trials": 10,
+        "first_turns": 10,
+        "second_turns": 10,
+        "first_turn_dom_offsets_ms": {
+          "min": 761.2,
+          "median": 765.0,
+          "max": 768.9
+        },
+        "second_turn_dom_offsets_ms": {
+          "min": 1489.8,
+          "median": 1497.35,
+          "max": 1500.7
+        },
+        "repeat_dom_intervals_ms": {
+          "min": 175.1,
+          "median": 182.7,
+          "max": 191.1
+        }
+      },
+      {
+        "renderer": "integrated",
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "input": "touch",
+        "trials": 2,
+        "first_turns": 2,
+        "second_turns": 2,
+        "first_turn_dom_offsets_ms": {
+          "min": 760.5,
+          "median": 763.05,
+          "max": 765.6
+        },
+        "second_turn_dom_offsets_ms": {
+          "min": 1493.6,
+          "median": 1495.95,
+          "max": 1498.3
+        },
+        "repeat_dom_intervals_ms": {
+          "min": 180.1,
+          "median": 183.05,
+          "max": 186.2
+        }
+      },
+      {
+        "renderer": "integrated",
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "input": "mouse",
+        "trials": 2,
+        "first_turns": 2,
+        "second_turns": 2,
+        "first_turn_dom_offsets_ms": {
+          "min": 765.7,
+          "median": 766.15,
+          "max": 766.6
+        },
+        "second_turn_dom_offsets_ms": {
+          "min": 1495.8,
+          "median": 1496.85,
+          "max": 1497.9
+        },
+        "repeat_dom_intervals_ms": {
+          "min": 177.8,
+          "median": 182.7,
+          "max": 187.8
+        }
+      }
+    ]
+  },
+  "builds": {
+    "optimized_modes": [
+      "classic",
+      "integrated",
+      "camera",
+      "both"
+    ],
+    "result": "PASS",
+    "final_controller_source_maps_match": true
+  },
+  "unchanged_runtime_files": {
+    "src/game/dragSteering.js": "53fdb2b24c7284a6333a92afa4266ea74c12d9c370efe0d489e65538fa8e49c0",
+    "src/game/inputCoordinator.js": "e397475e55527349ec2ccfeb394bdfc50b38c940749590295102e281ffbc7869",
+    "src/game/movement.js": "be61c1c0c4579d37ccbadd3257f7e960fe9a2dd051ff6913a3cfea4437434cc7",
+    "src/pages/MazePage.js": "407850d7490914fd3fa122593e5f9ced2c1f5dd62f79743da2fb104a9562287f",
+    "src/css/MazePage.css": "72fc9b2049be08960c16369346c1ad430f6b86cb9e2837615ac14fe45b597712"
+  },
+  "source_sha256": {
+    "src/game/inputController.js": "69d60250c4d143a3667f80c82fe4251b89bdbe42714ad68bd8534f4e5ca21b16",
+    "src/game/continuousSteering.test.js": "c1741f78faefdd134839d93e68fb2f8686b2ee4a77401e66df1b1b4d9146000c",
+    "e2e/steering-realtime.spec.js": "b40125710ab36dbd348db295a3204f898f041f29afa43148ad6d237a1728cc86",
+    "docs/unified-input/playwright.config.cjs": "f012e19e08da7c3322d3f3bc44cc341ab68e04e563b0e294f2d9bb09b74c1a9f",
+    "docs/unified-input/turn-expiry/export-trace.py": "f88062211e4501a4b53a8b70255e63813b0a1bb3f711000940c9249988ee201c"
+  },
+  "prior_failures": {
+    "old_policy": "Baseline pilot and final characterization misses retained in native-timing.json; final classic 1/6 first turns and 0/1 reached second turns, integrated 5/6 and 5/5. Sample variability is not a renderer ranking.",
+    "corrected_run_harness": "Two initial 390px groups failed at trace startup before gameplay; no movement assertion failed. Automatic tracing now owns lifecycle. Ten other initial trials passed both corners.",
+    "deterministic_assertion": "One new assertion initially expected an observed 179.3ms repeat to execute early. It was strengthened to require re-arming until the protected 180ms deadline; final 112 tests pass."
+  },
+  "limitations": [
+    "Callbacks after the fixed cap intentionally expire; arbitrary stalls/background throttling are not guaranteed.",
+    "DOM timestamps approximate rendered commits and may have shorter intervals due to varying React commit delay; exact command cadence is proved by deterministic clock tests.",
+    "No physical iOS Safari/PWA or Android Chrome/PWA session available; NOT RUN.",
+    "UX concurrence, fresh pinned-SHA independent QA and owner confirmation required.",
+    "EG-08/09/11, ranked fairness and existing EG-01 server timing/recovery remain unresolved."
+  ],
+  "production_activation": {
+    "visual_flag_default": "OFF",
+    "ranked_enabled": false,
+    "deployment_settings_changed": false
+  },
+  "rollback": {
+    "result": "PASS: complete staged binary diff reverse-apply checked; no rollback applied",
+    "target": "5c21a5ec66f90e845d22791ed71e6bd69187ce89",
+    "migration": "None; preserve completion recovery records and backend contract"
+  },
+  "artifacts": {
+    "classic-mouse-390x844.png": {
+      "bytes": 235803,
+      "sha256": "1f3f4e8cc6bf069be9b3f1d771e2a98dfb371f15212c17698f524fe6ebc11687",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      }
+    },
+    "classic-native-corners-trace.zip": {
+      "bytes": 16187664,
+      "sha256": "e7dd01b9ad446b82ca5a242f55c913f28c36f768a5e49f13cbb5f8351dce22d9",
+      "privacy": "Repository-relative references; no embedded sources or workstation paths; synthetic local fixtures"
+    },
+    "classic-touch-390x844.png": {
+      "bytes": 237177,
+      "sha256": "92784900e9f4d8417ed0697971854aaa1e0aeb9f9caca95560246a4f1aff6400",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      }
+    },
+    "integrated-mouse-390x844.png": {
+      "bytes": 153841,
+      "sha256": "f33601553c33b36dbfc2583b7f8f5a0a31f6410feb0ced789a13438dbbdf5025",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      }
+    },
+    "integrated-native-corners-trace.zip": {
+      "bytes": 4519445,
+      "sha256": "7eb8042b75c539881b58319d5facf1caeeb6d1acad6e600ac3ebf9209f1b6d94",
+      "privacy": "Repository-relative references; no embedded sources or workstation paths; synthetic local fixtures"
+    },
+    "integrated-touch-390x844.png": {
+      "bytes": 153841,
+      "sha256": "f33601553c33b36dbfc2583b7f8f5a0a31f6410feb0ced789a13438dbbdf5025",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      }
+    },
+    "native-timing.json": {
+      "bytes": 211195,
+      "sha256": "01b0a7116ac3169d8f16e413b456e5af2c52ba1e730a23dec3e00106fa216c13"
+    }
+  },
+  "trace_resource_integrity": "PASS: both first-context traces resolve every sha1/_sha1 resource reference"
+}

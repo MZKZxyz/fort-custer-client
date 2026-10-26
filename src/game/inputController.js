@@ -3,6 +3,9 @@ import { move } from './movement.js';
 import { commandOutcome } from './commandOutcome.js';
 
 export const DEFAULT_TIMING = Object.freeze({ delay: 400, repeat: 180 });
+// Two forward opportunities plus one fixed repeat of callback tolerance. This
+// changes intent lifetime only; it never adds opportunities or alters cadence.
+export const TURN_POLICY = Object.freeze({ maxForwardSteps: 2, callbackGraceMs: 180 });
 export function boundedTiming({ delay, repeat }) {
   const bound = (value, low, high, fallback) => Number.isFinite(Number(value))
     ? Math.max(low, Math.min(high, Number(value))) : fallback;
@@ -39,13 +42,17 @@ export function createController({ command, inspect, changed = () => {}, clock =
     timer = clock.setTimeout(() => {
       if (destroyed || ticket !== generation || !session || session.halted || !session.direction) return;
       timer = null;
+      // Browsers may round a fractional timeout down. Keep the same deadline
+      // rather than executing early and accumulating a faster repeat cadence.
+      if (now() < at) { schedule(at); return; }
       execute(false);
     }, Math.max(0, at - now()));
   };
   const choose = at => {
     const s = session, q = s.direction, h = s.heading;
     if (!s.anticipate || !h || !perpendicular(q, h)) { s.pending = null; return { direction: q }; }
-    const expiresAt = s.pending?.expiresAt ?? (s.opportunityAt ?? at) + 360;
+    const expiresAt = s.pending?.expiresAt ?? (s.opportunityAt ?? at)
+      + TURN_POLICY.maxForwardSteps * pace.repeat + TURN_POLICY.callbackGraceMs;
     if (at > expiresAt) return { pause: 'turn expired' };
     const side = inspect(q);
     // A fresh explicit fire request is a normal interaction. An already queued
@@ -54,7 +61,7 @@ export function createController({ command, inspect, changed = () => {}, clock =
     if (side === 'open') { s.pending = null; return { direction: q }; }
     if (side !== 'wall') return { pause: 'inactive' };
     if (!s.pending) s.pending = { direction: q, steps: 0, expiresAt };
-    if (s.pending.steps >= 2) return { pause: 'turn expired' };
+    if (s.pending.steps >= TURN_POLICY.maxForwardSteps) return { pause: 'turn expired' };
     const forward = inspect(h);
     if (forward === 'fire') return { pause: 'turn hazard' };
     if (forward !== 'open') return { pause: 'obstruction' };

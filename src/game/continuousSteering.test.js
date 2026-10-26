@@ -111,10 +111,72 @@ test('a late callback expires intent even before the first buffer evaluation; no
   expect(h.log).toHaveLength(1); expect(h.tasks.size).toBe(0);
   expect(h.phases.at(-1).reason).toBe('turn expired');
 });
-test('late callback during a pending turn cannot revive it at a now-open side', () => {
-  const h = harness(); start(h); h.controller.steer('drag', 'down'); h.advance(580); h.late(181);
+test('late callback beyond the fixed cap cannot revive a pending turn at a now-open side', () => {
+  const h = harness(); start(h); h.controller.steer('drag', 'down'); h.advance(580); h.late(360.001);
   expect(h.log).toHaveLength(3); expect(h.state().position).toEqual([1, 4]);
   expect(h.phases.at(-1).reason).toBe('turn expired');
+});
+test.each([760, 760.001, 761, 764, 768, 776, 939.999, 940])('final opportunity at %sms tolerates delay within the immutable cap', at => {
+  const h = harness(); start(h); h.controller.steer('drag', 'down'); h.advance(580);
+  h.late(at - 580);
+  expect(h.log.at(-1)).toMatchObject({ at, direction: 'down', position: [2, 4] });
+  expect(h.log).toHaveLength(4); expect(h.tasks.size).toBe(1);
+  h.advance(179.999); expect(h.log).toHaveLength(4);
+  h.controller.destroy();
+});
+test.each([
+  { offsets: [403.7, 584.7, 764], commands: [0, 403.7, 584.7, 764.7] },
+  { offsets: [404.2, 584.6, 764.9], commands: [0, 404.2, 584.6, 764.9] },
+  { offsets: [450, 650, 850], commands: [0, 450, 650, 850] },
+  { offsets: [580, 760, 940], commands: [0, 580, 760, 940] },
+])('native-style callback offsets $offsets turn without rescheduling earlier', ({ offsets, commands }) => {
+  const h = harness(); start(h); h.controller.steer('drag', 'down');
+  let previous = 0;
+  for (const at of offsets) { h.late(at - previous); previous = at; }
+  h.advance(1); // An early native delivery must wait for the protected deadline.
+  expect(h.log.map(x => x.at)).toEqual(commands);
+  expect(h.log.at(-1).position).toEqual([2, 4]); h.controller.destroy();
+});
+test('ordinary lateness at every opportunity keeps two-cell and consecutive corners without catch-up', () => {
+  const h = harness(); start(h); h.controller.steer('drag', 'down');
+  for (const delay of [404.2, 184.4, 184.3]) h.late(delay);
+  expect(h.log.map(x => x.direction)).toEqual(['right', 'right', 'right', 'down']);
+  h.late(184); h.controller.steer('drag', 'left');
+  for (const delay of [184, 184, 184]) h.late(delay);
+  expect(h.log.map(x => x.direction)).toEqual(['right', 'right', 'right', 'down', 'down', 'down', 'left', 'left']);
+  expect(h.log.slice(1).every((x, n) => x.at - h.log[n].at >= (n === 0 ? 400 : 180))).toBe(true);
+  h.controller.destroy();
+});
+test('late first evaluation cannot extend the cap; unchanged samples cannot renew it', () => {
+  const h = harness(); start(h); h.controller.steer('drag', 'down'); h.late(600);
+  h.controller.steer('drag', 'down'); h.late(200); // second continuation at 800
+  for (let n = 0; n < 100; n++) h.controller.steer('drag', 'down');
+  h.late(180); // final callback at 980 exceeds the original 940 cap
+  expect(h.log.map(x => x.at)).toEqual([0, 600, 800]);
+  expect(h.phases.at(-1).reason).toBe('turn expired'); expect(h.tasks.size).toBe(0);
+});
+test('wall-clock headroom never permits a third continuation or a later retry without new intent', () => {
+  const h = harness(cornerGrid(5)); start(h); h.controller.steer('drag', 'down'); h.advance(760);
+  expect(h.log.map(x => x.at)).toEqual([0, 400, 580]); expect(h.tasks.size).toBe(0);
+  h.controller.steer('drag', 'down'); h.advance(10000); expect(h.log).toHaveLength(3);
+});
+test.each([true, false])('fire safeguards still apply within callback tolerance, side=%s', side => {
+  const grid = cornerGrid(); grid[side ? 2 : 1][4] = 'F';
+  const h = harness(grid, ['extinguisher']); start(h); h.controller.steer('drag', 'down');
+  h.late(side ? 404 : 600); h.late(side ? 184 : 200); h.late(184);
+  expect(h.log).toHaveLength(side ? 3 : 2);
+  expect(h.state().inventory).toEqual(['extinguisher']);
+  expect(h.state().grid[side ? 2 : 1][4]).toBe('F');
+  expect(h.phases.at(-1).reason).toBe('turn hazard'); expect(h.tasks.size).toBe(0);
+});
+test('early timeout delivery re-arms the same protected deadline without a command or acceleration', () => {
+  const h = harness(); start(h); h.controller.steer('drag', 'down');
+  h.late(399.75); expect(h.log).toHaveLength(1); expect(h.tasks.size).toBe(1);
+  h.advance(.25); expect(h.log.at(-1).at).toBe(400);
+  h.late(179.75); expect(h.log).toHaveLength(2);
+  h.advance(.25); expect(h.log.at(-1).at).toBe(580);
+  h.controller.cancel('interruption'); for (const callback of h.callbacks) callback();
+  expect(h.log).toHaveLength(3); expect(h.tasks.size).toBe(0);
 });
 test('no request at a T junction means no automatic turn; reversal cancels pending side without forward fallback', () => {
   const straight = harness(); start(straight); straight.advance(760);

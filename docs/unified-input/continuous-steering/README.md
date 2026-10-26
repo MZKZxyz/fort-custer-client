@@ -1,5 +1,7 @@
 # Continuous cardinal steering — owner comparison prototype
 
+**Historical steering baseline (`5c21a5e`):** the owner has selected cardinal snapping + trailing anchor as the preferred default. [The current timing correction](../turn-expiry/README.md) supersedes this record's strict 360ms expiry and its timing limitation. The remaining modes are validation comparisons. Baseline evidence below is preserved.
+
 Continuation of draft PR #44 from `e14e0ca3375bb990c50d097818d27a3f83dce0da`. Implements [UX specification #33, comment 6404380667](https://github.com/MZKZxyz/fort-custer-client/issues/33#issuecomment-6404380667) and [engineering handoff #44, comment 6404404642](https://github.com/MZKZxyz/fort-custer-client/pull/44#issuecomment-6404404642).
 
 The owner approved whole-maze dragging and the existing **400ms initial / 180ms repeat** cadence. The new snapping, buffer and anchor parameters are a reversible first playtest candidate. Independent pinned-SHA QA and owner playtesting are still required. The production visual flag remains default OFF; this is not ranked-production activation.

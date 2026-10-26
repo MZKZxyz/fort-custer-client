@@ -1,6 +1,8 @@
 # Sprint 1.2 — unified input and gameplay integration
 
-**Current prototype:** [Continuous cardinal steering, anticipated turns and trailing-anchor comparison](continuous-steering/README.md). This supersedes the original selector/anchor policy below; the approved cadence and scoped whole-maze gesture behavior remain. Use its validation record and rollback instructions for the latest revision.
+**Current correction:** [Bounded turn expiry with callback tolerance](turn-expiry/README.md) addresses independent QA's two-cell timing P2. The owner-selected cardinal snapping + trailing anchor remains the default; comparison modes remain for validation. Use the correction's timing results, validation record and rollback instructions for the latest revision.
+
+**Steering baseline (`5c21a5e`):** [Continuous cardinal steering, anticipated turns and trailing-anchor comparison](continuous-steering/README.md). Its strict 360ms expiry is superseded by the current correction; geometry and approved cadence are preserved.
 
 **Gesture-policy baseline (`e14e0ca`):** [Full-maze drag and mobile gesture stability](surface-revision/README.md). The owner-approved 400ms/180ms cadence is unchanged. The visible maze now owns drag gestures; the dedicated box is removed. New evidence and physical-device gaps are recorded in the linked revision.
 
@@ -35,7 +37,7 @@ The sole sprite activation flag is now **`REACT_APP_MAZE_VISUAL_INTEGRATION=true
 
 1. **Current attempt:** select **Use classic view**. Input stops, focus moves to the surviving control, and the same cleared grid/equipment/attempt continues. This retains the unified input coordinator.
 2. **Visual build rollback:** unset `REACT_APP_MAZE_VISUAL_INTEGRATION` and rebuild. Also unset `REACT_APP_MAZE_CAMERA` to restore full-grid/fog instead of square camera. This retains unified input.
-3. **Full input/visual rollback:** revert this PR's commits in reverse order (the continuous-steering revision, the owner surface revision, then the initial integration) and rebuild. That restores the merged PR #41/#43 baseline, including its disclosed native-repeat fire limitation and old preview flag spelling. Do not enable the old visual flag for ranked play. No schema, API, attempt, stored grid or reward migration is needed. Do not clear pending `mazeCompletion:*` storage; keep the existing backend completion contract available for retries.
+3. **Full input/visual rollback:** revert this PR's commits in reverse order (the turn-expiry correction, the continuous-steering revision, the owner surface revision, then the initial integration) and rebuild. That restores the merged PR #41/#43 baseline, including its disclosed native-repeat fire limitation and old preview flag spelling. Do not enable the old visual flag for ranked play. No schema, API, attempt, stored grid or reward migration is needed. Do not clear pending `mazeCompletion:*` storage; keep the existing backend completion contract available for retries.
 
 Rollback checks: default build browser assertion requests no sprite kit; manual, missing-image and failed-chunk fallback preserve attempts; reverse application of the complete commit diff must pass before handoff. No rollback is deployed by this work.
 
