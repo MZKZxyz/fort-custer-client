@@ -15,6 +15,7 @@ for (const viewport of [
       await page.setViewportSize(viewport);
       await page.addInitScript(() => {
         localStorage.setItem('token', 'synthetic-token');
+    localStorage.setItem('mazeDirectionButtons', 'true');
         localStorage.setItem('activeSubProfile', JSON.stringify({ _id: 'synthetic-profile' }));
         localStorage.setItem('selectedMazeDate', '2025-05-26');
       });
@@ -72,6 +73,7 @@ test.describe('feature-mode board and cell proportions', () => {
   test('retains readable cell widths across viewport heights', async ({ page }) => {
     await page.addInitScript(() => {
       localStorage.setItem('token', 'synthetic-token');
+    localStorage.setItem('mazeDirectionButtons', 'true');
       localStorage.setItem('activeSubProfile', JSON.stringify({ _id: 'synthetic-profile' }));
       localStorage.setItem('selectedMazeDate', '2025-05-26');
     });

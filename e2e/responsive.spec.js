@@ -8,6 +8,7 @@ for (const [width, height] of viewports) {
     await page.setViewportSize({ width, height });
     await page.addInitScript(() => {
       localStorage.setItem('token', 'synthetic');
+      localStorage.setItem('mazeDirectionButtons', 'true');
       localStorage.setItem('activeSubProfile', JSON.stringify({ _id: 'fixture', name: 'Player' }));
       localStorage.setItem('selectedMazeDate', '2025-05-26');
     });
@@ -63,7 +64,7 @@ for (const [width, height] of viewports) {
       await expect(page.locator('.maze-fog')).toBeVisible();
       await expect(page.locator('.maze-viewport')).toHaveCount(0);
     }
-    await expect(page.locator('.maze-slot')).toBeVisible();
+    await expect(page.locator('.field-kit')).toBeVisible();
     // Preserve width-based tile size, independent of viewport height.
     const tile = await page.locator('.maze-cell').first().boundingBox();
     expect(tile.width).toBeGreaterThanOrEqual(13);
@@ -71,7 +72,7 @@ for (const [width, height] of viewports) {
     const mazeOverflows = await page.evaluate(() => document.documentElement.scrollHeight > innerHeight);
     // The classic border can reach the display edge. Hit-test real outside
     // content instead of assuming that a five-pixel margin is scrollable.
-    const outside = await page.locator('#maze-input-help').boundingBox();
+    const outside = await page.locator('.field-meta').boundingBox();
     const outsideY = outside.y + outside.height / 2;
     expect(await page.evaluate(({ x, y }) => !document.elementFromPoint(x, y)?.closest('[data-maze-surface], [data-direction]'), { x: width / 2, y: outsideY })).toBe(true);
     const beforeScroll = await page.evaluate(() => scrollY);

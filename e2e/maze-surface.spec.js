@@ -10,6 +10,7 @@ async function setup(page, deterministic = true) {
   if (deterministic) await page.clock.install();
   await page.addInitScript(() => {
     localStorage.setItem('token', 'synthetic-token');
+    localStorage.setItem('mazeDirectionButtons', 'true');
     localStorage.setItem('activeSubProfile', JSON.stringify({ _id: 'synthetic-profile' }));
     localStorage.setItem('selectedMazeDate', '2025-05-26');
     document.addEventListener('pointerdown', event => { window.surfacePointer = event.pointerId; }, true);

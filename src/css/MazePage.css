@@ -460,3 +460,27 @@
 
 .maze-steering-choice { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: .5rem; padding: .5rem; background: #fae9ca; color: #241500; }
 .maze-steering-choice select { min-height: 44px; max-width: 100%; font: inherit; }
+
+/* Field strip: presentation only; maze dimensions/fog remain unchanged. */
+.field-strip { display:flex; flex-wrap:wrap; gap:.4rem .7rem; align-items:center; justify-content:space-between; padding:.5rem max(.5rem, env(safe-area-inset-right)); color:#241500; background:#fae9ca; margin-bottom:.5rem; }
+.field-meta { display:flex; flex-wrap:wrap; gap:.4rem; align-items:baseline; }
+.field-strip .maze-date, .field-strip .maze-timer { margin:0; padding:0; font:inherit; }
+.field-strip nav { display:flex; flex-wrap:wrap; gap:.25rem; }
+.field-strip button, .maze-dialog button { min-width:48px; min-height:48px; font:inherit; }
+.field-strip button:focus-visible { outline:3px solid #241500; outline-offset:2px; }
+.field-kit { font-size:.9rem; }
+.maze-page .hud-sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; padding:0; margin:-1px; border:0; }
+.field-notice { position:sticky; bottom:.5rem; z-index:8; width:fit-content; max-width:calc(100% - 2rem); margin:.5rem auto; padding:.5rem; background:#fae9ca; color:#241500; border-radius:4px; }
+.maze-page .dpad-btn { min-width:48px; min-height:48px; }
+
+.maze-page .field-notice { width:max-content; max-width:min(38rem, calc(100% - 2rem)); position:fixed; left:50%; transform:translateX(-50%); bottom:max(.5rem, env(safe-area-inset-bottom)); box-sizing:border-box; margin:0; }
+
+.maze-page button { min-height:48px; }
+.maze-dialog button { max-width:100%; white-space:normal; }
+
+.maze-page .field-notice { pointer-events:none; }
+.maze-page .field-notice { bottom:max(var(--notice-bottom, 8px), env(safe-area-inset-bottom)); }
+
+.maze-dialog { box-sizing:border-box; max-height:calc(100svh - 2rem); max-width:calc(100vw - 2rem); padding:1rem; }
+.maze-dialog p { font-size:1rem; font-weight:normal; line-height:1.45; }
+.maze-dialog h2 { font-size:1.25rem; margin:.25rem 0 .75rem; }

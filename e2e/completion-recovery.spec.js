@@ -8,6 +8,7 @@ test(`lost completion response survives refresh at ${viewport.width}×${viewport
   const completions = [];
   await page.addInitScript(() => {
     localStorage.setItem('token', 'synthetic-token');
+    localStorage.setItem('mazeDirectionButtons', 'true');
     localStorage.setItem('activeSubProfile', JSON.stringify({ _id: 'synthetic-profile' }));
     localStorage.setItem('selectedMazeDate', '2025-05-26');
   });

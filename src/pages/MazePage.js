@@ -22,11 +22,40 @@ const MazePage = () => {
   const inputRef = useRef(null);
   const commandRef = useRef(null);
   const [steeringMode, setSteeringMode] = useState('trailing');
-  const [steeringFeedback, setSteeringFeedback] = useState('');
+  const [helpOpen, setHelpOpen] = useState(false);
+  const [controlsOpen, setControlsOpen] = useState(false);
+  const [showDirections, setShowDirections] = useState(() => {
+    try { return localStorage.getItem('mazeDirectionButtons') === 'true'; } catch { return false; }
+  });
+  const toggleDirections = () => {
+    inputRef.current?.cancel('controls changed');
+    const next = !showDirections;
+    setShowDirections(next);
+    try { localStorage.setItem('mazeDirectionButtons', String(next)); } catch { /* preference is optional */ }
+  };
   const [inputStatus, setInputStatus] = useState('idle');
   const [integrated, setIntegrated] = useState(INTEGRATION_ENABLED);
   const [facing, setFacing] = useState('down');
-  const [movementStatus, setMovementStatus] = useState('Reach the tipi. Drag the maze or hold a direction to move. Release after clearing fire.');
+  const [movementStatus, setMovementStatus] = useState('');
+  const dpadRef = useRef(null);
+  const [noticeBottom, setNoticeBottom] = useState(8);
+  useLayoutEffect(() => {
+    const placeNotice = () => {
+      const rect = showDirections && dpadRef.current?.getBoundingClientRect();
+      setNoticeBottom(rect && rect.top >= 0 && rect.top < window.innerHeight
+        ? window.innerHeight - rect.top + 8 : 8);
+    };
+    placeNotice();
+    window.addEventListener('scroll', placeNotice, { passive: true });
+    window.addEventListener('resize', placeNotice);
+    return () => { window.removeEventListener('scroll', placeNotice); window.removeEventListener('resize', placeNotice); };
+  }, [showDirections, movementStatus]);
+
+  useEffect(() => {
+    if (!movementStatus.startsWith('Extinguisher picked up')) return;
+    const timer = setTimeout(() => setMovementStatus(''), 5000);
+    return () => clearTimeout(timer);
+  }, [movementStatus]);
   const navigate = useNavigate();
   const profile = useMemo(() => {
     return JSON.parse(localStorage.getItem('activeSubProfile'));
@@ -44,6 +73,7 @@ const MazePage = () => {
   }, [recoveryKey]);
   const attemptIdRef = useRef(recovery?.attemptId);
   // --- your existing state ---
+  const [loadError, setLoadError] = useState('');
   const [mazeData, setMazeData]     = useState(null);
   const [mazeGrid, setMazeGrid]     = useState([]);
   const [playerPos, setPlayerPos]   = useState([0, 0]);
@@ -165,7 +195,7 @@ const MazePage = () => {
       } catch (err) {
         if (!active) return;
         console.error('Failed to start maze:', err);
-        alert(err.response?.data?.error || 'Could not load maze.');
+        setLoadError(err.response?.data?.error || 'Could not load maze. Return to mazes and try again.');
       }
     };
     fetchMaze();
@@ -177,6 +207,7 @@ const MazePage = () => {
     completionPendingRef.current = true;
     setCompletionError(null);
     setFinished(true);
+    setMovementStatus('Saving your result…');
     if (startTime !== null && !finished) {
       setDisplayTime(formatElapsed(performance.now() - startTime));
     }
@@ -219,9 +250,11 @@ const MazePage = () => {
       }
 
       localStorage.removeItem('mazeStartTime');
+      setMovementStatus('Result saved. Opening results…');
       setClosing(true);
     } catch (err) {
       console.error('Maze completion failed:', err);
+      setMovementStatus('');
       setCompletionError(err.response?.data?.error || 'Could not save your result. Check your connection and retry.');
     } finally {
       completionPendingRef.current = false;
@@ -250,11 +283,15 @@ const MazePage = () => {
   }, [closing, baseRadius, navigate, recoveryKey, integrated]);
 
   const movePlayer = useCallback((direction) => {
-    if (showQuitModal || finished || !gameRef.current) return { reason: 'inactive', terminal: true };
+    if (showQuitModal || helpOpen || controlsOpen || finished || !gameRef.current) return { reason: 'inactive', terminal: true };
     const before = gameRef.current;
     const result = move(before, direction);
     const outcome = commandOutcome(before, result);
-    setMovementStatus(outcome.message);
+    const meaningful = ['fire blocked', 'fire cleared', 'complete'].includes(outcome.reason)
+      || result.state.inventory.length > before.inventory.length;
+    if (meaningful) setMovementStatus(outcome.reason === 'fire cleared'
+      ? 'Fire cleared. Extinguisher used. You stayed in place. Release, then use a fresh input to enter.' : outcome.message);
+    else if (outcome.reason === 'step') setMovementStatus('');
     if (outcome.reason === 'step' || outcome.reason === 'complete') setFacing(direction);
     if (result.blockedByFire) {
       if (hintTimeoutRef.current) clearTimeout(hintTimeoutRef.current);
@@ -265,6 +302,8 @@ const MazePage = () => {
       }, 2000);
     }
     if (result.state === gameRef.current) return outcome;
+    if (hintTimeoutRef.current) clearTimeout(hintTimeoutRef.current);
+    setShowFireHint(false);
     // Update synchronously so multiple input events cannot reuse stale state.
     gameRef.current = result.state;
     setMazeGrid(result.state.grid);
@@ -272,7 +311,7 @@ const MazePage = () => {
     setPlayerPos(result.state.position);
     if (result.state.completed) handleFinish();
     return outcome;
-  }, [showQuitModal, finished, handleFinish]);
+  }, [showQuitModal, helpOpen, controlsOpen, finished, handleFinish]);
 
   // The controller survives renders; commands always read the current shell.
   useLayoutEffect(() => { commandRef.current = movePlayer; }, [movePlayer]);
@@ -283,21 +322,18 @@ const MazePage = () => {
       inspect: direction => inspectDirection(gameRef.current, direction),
       changed: input => {
         setInputStatus(input.phase);
-        const arrows = { up: '↑', down: '↓', left: '←', right: '→' };
-        setSteeringFeedback(input.pending ? `${arrows[input.heading]} ↱ ${arrows[input.pending]} Turn queued: ${input.pending}.`
-          : input.reason === 'turn expired' ? 'Turn unavailable—steer again.'
-          : input.reason === 'turn hazard' ? 'Fire blocks queued travel. Steer again to interact.' : '');
+        if (input.reason === 'turn hazard') setMovementStatus('Fire blocks queued travel. Steer again to interact.');
       },
     });
     inputRef.current = coordinator;
     return () => { coordinator.destroy(); inputRef.current = null; };
   }, [mazeData]);
   useLayoutEffect(() => {
-    if (showQuitModal || finished || completionError) inputRef.current?.cancel('shell interrupted');
-  }, [showQuitModal, finished, completionError]);
+    if (showQuitModal || helpOpen || controlsOpen || finished || completionError) inputRef.current?.cancel('shell interrupted');
+  }, [showQuitModal, helpOpen, controlsOpen, finished, completionError]);
   const useClassic = useCallback(() => {
     inputRef.current?.cancel('renderer changed');
-    inputRootRef.current?.querySelector('[data-direction]')?.focus({ preventScroll: true });
+    (inputRootRef.current?.querySelector('[data-direction]') || inputRootRef.current?.querySelector('[data-hud-controls]'))?.focus({ preventScroll: true });
     setIntegrated(false);
   }, []);
 
@@ -321,7 +357,7 @@ const MazePage = () => {
             <>
               🧍‍♂️
               {view.ui.showFireHint && (
-                <div className="thought-bubble" role="status" aria-label="Fire blocks the path. Find an extinguisher.">
+                <div className="thought-bubble" aria-hidden="true">
                   <span className="bubble-icon">🧯</span>
                 </div>
               )}
@@ -365,6 +401,8 @@ const MazePage = () => {
     </div>;
   }
 
+  if (loadError) return <div className="maze-page"><div role="alert"><p>{loadError}</p><button onClick={() => navigate('/mazes')}>Back to mazes</button></div></div>;
+
   if (!mazeData) {
     return (
       <div
@@ -397,44 +435,22 @@ const MazePage = () => {
     <div ref={inputRootRef} className={`maze-page${integrated ? ' pallet-enabled' : ''}`} style={{
       backgroundImage: "url('/assets/fortBG.png')"
     }}>
-      {/* BACK / QUIT button */}
-      <button
-        className="back-btn"
-        onClick={() => { inputRef.current?.cancel('modal opened'); setShowQuitModal(true); }}
-      >
-        <img src="/icons/arrowBack.png" alt="Back" />
-      </button>
-      <div className="maze-banner" style={{
-        backgroundImage: "url('/assets/mazeBanner.png')"
-      }}/>
-
-      <div className="maze-hud">
-        {/* ── Column 1: Date on top, Timer below ── */}
-
-          <div className="maze-hud__item">
-            <span className="maze-hud__icon">📅</span>
-            <h2 className="maze-date">{view.hud.dateLabel}</h2>
-          </div>
-          <div className="maze-hud__item">
-            <span className="maze-hud__icon">⏱</span>
-            <p className="maze-timer">{view.hud.elapsedLabel}</p>
-          </div>
-
-
-        {/* ── Column 2: Inventory slot ── */}
-
-          <div className="maze-hud__item">
-            <div className="maze-slot" role="img" aria-label={view.hud.equipment ? 'Equipment: extinguisher' : 'Equipment: empty'}>
-              {view.hud.equipment === 'extinguisher' && '🧯'}
-            </div>
-          </div>
-
-      </div>
-
+      <header className="field-strip" aria-label="Maze field strip">
+        <div className="field-meta"><span className="maze-date">{view.hud.dateLabel}</span>
+          <span className="maze-timer" aria-label="Provisional elapsed time">{view.hud.elapsedLabel}</span></div>
+        <span className="field-kit" role="img" aria-label={view.hud.equipment ? 'Equipment: extinguisher' : 'Equipment: empty'}>
+          {view.hud.equipment ? '🧯 Kit: 1 charge' : 'Kit empty'}
+        </span>
+        <nav aria-label="Maze actions">
+          <button onClick={() => { inputRef.current?.cancel('modal opened'); setShowQuitModal(true); }}>Back</button>
+          <button onClick={() => { inputRef.current?.cancel('help opened'); setHelpOpen(true); }}>Help</button>
+          <button data-hud-controls onClick={() => { inputRef.current?.cancel('controls opened'); setControlsOpen(true); }}>Controls</button>
+        </nav>
+      </header>
       {process.env.REACT_APP_MAZE_INPUT_PREVIEW === 'true' && <label className="maze-steering-choice">Drag steering <select aria-label="Drag steering" value={steeringMode} onChange={event => {
         inputRef.current?.configureSteering(event.target.value); setSteeringMode(event.target.value);
       }}>{Object.entries(STEERING_MODES).map(([value, label]) => <option key={value} value={value}>{label}</option>)}</select></label>}
-      <p id="maze-input-help" className="maze-input-help">Drag anywhere on the maze to steer; release to stop. Arrow keys and direction buttons also work.</p>
+      <p id="maze-input-help" className="hud-sr-only">Drag anywhere on the maze to steer; release to stop. Arrow keys and direction buttons also work.</p>
       {integrated ? <>
         <MazeRenderBoundary onFallback={useClassic}>
         <Suspense fallback={<p role="status">Loading maze artwork…</p>}>
@@ -470,8 +486,9 @@ const MazePage = () => {
         </div>
         </div>
       </div>}
-      <p className="pallet-status" role="status">{movementStatus} {steeringFeedback}{inputStatus === 'blocked' ? ' Keep holding and drag another direction to continue.' : ''}</p>
-      <div className="dpad" role="group" aria-label="Movement controls">
+      <div className="hud-sr-only" role="status" aria-live="polite" aria-atomic="true">{movementStatus}</div>
+      {movementStatus && !finished && <p style={{'--notice-bottom': `${noticeBottom}px`}} className="field-notice" aria-hidden="true">{movementStatus}</p>}
+      {showDirections && <div ref={dpadRef} id="maze-directions" className="dpad" role="group" aria-label="Movement controls">
         <div className="dpad-row">
           <button className="dpad-btn" data-direction="up">
           <img src="/icons/arrowUp.png" alt="Up" />
@@ -488,9 +505,20 @@ const MazePage = () => {
             <img src="/icons/arrowRight.png" alt="Right" />
           </button>
         </div>
-      </div>     
+      </div>}
 
-      {view.ui.finished && !view.ui.closing && !view.ui.completionError && <p role="status">Saving your result…</p>}
+      {view.ui.finished && !view.ui.closing && !view.ui.completionError && <p className="field-notice" aria-hidden="true">Saving your result…</p>}
+      {helpOpen && <MazeDialog label="Maze help" initialFocus="#maze-help-title" onCancel={() => setHelpOpen(false)}>
+        <h2 id="maze-help-title" tabIndex={-1}>Maze help</h2><p>Reach the tipi. Drag anywhere on the maze to steer; release to stop. Arrow keys also move.</p>
+        <p>Find an extinguisher to clear fire. Clearing consumes its charge without moving. Release and use a fresh input to enter the cleared tile.</p>
+        <p>Use Controls to show or hide direction buttons. Your choice is remembered on this device when storage is available.</p>
+        <button onClick={() => setHelpOpen(false)}>Close Help</button>
+      </MazeDialog>}
+      {controlsOpen && <MazeDialog label="Maze controls" onCancel={() => setControlsOpen(false)}>
+        <h2>Maze controls</h2><p>Drag or use arrow keys. Direction buttons offer another way to move.</p>
+        <button aria-expanded={showDirections} aria-controls="maze-directions" onClick={toggleDirections}>{showDirections ? 'Hide direction buttons' : 'Show direction buttons'}</button>
+        <button onClick={() => setControlsOpen(false)}>Close Controls</button>
+      </MazeDialog>}
       {view.ui.completionError && (
         <MazeDialog label="Save result" onCancel={() => {}}>
           <div role="alert">

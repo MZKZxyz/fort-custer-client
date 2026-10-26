@@ -16,6 +16,7 @@ async function setup(page, grid = gridFor()) {
   const requests = [];
   await page.addInitScript(() => {
     localStorage.setItem('token', 'synthetic-token');
+    localStorage.setItem('mazeDirectionButtons', 'true');
     localStorage.setItem('activeSubProfile', JSON.stringify({ _id: 'synthetic-profile' }));
     localStorage.setItem('selectedMazeDate', '2025-05-26');
   });
@@ -61,7 +62,7 @@ for (const [width, height] of [[320, 568], [390, 844], [844, 390], [1280, 800]])
       await expect(position(page)).toHaveAttribute('data-column', '2');
       await expect(page.getByRole('img', { name: 'Equipment: empty' })).toBeVisible();
       await expect(page.locator('[data-role=fire]')).toHaveCount(0);
-      await expect(page.locator('.pallet-status')).toContainText('You stayed in place');
+      await expect(page.getByRole('status')).toContainText('You stayed in place');
       // Runtime switch preserves the same grid/position/equipment/attempt.
       if (rows === 13) {
         if (evidence) {
@@ -143,6 +144,7 @@ test('missing sprite offers same-attempt fallback', async ({ page }) => {
   // Other sprites load; wall failure is deliberately expected here.
   await page.addInitScript(() => {
     localStorage.setItem('token', 'synthetic-token');
+    localStorage.setItem('mazeDirectionButtons', 'true');
     localStorage.setItem('activeSubProfile', JSON.stringify({ _id: 'synthetic-profile' }));
   });
   let starts = 0;
@@ -157,6 +159,7 @@ test('missing sprite offers same-attempt fallback', async ({ page }) => {
 test('failed renderer chunk offers classic view without another start', async ({ page }) => {
   await page.addInitScript(() => {
     localStorage.setItem('token', 'synthetic-token');
+    localStorage.setItem('mazeDirectionButtons', 'true');
     localStorage.setItem('activeSubProfile', JSON.stringify({ _id: 'synthetic-profile' }));
   });
   let starts = 0;
@@ -188,6 +191,7 @@ test('default build keeps classic rendering and never requests the sprite kit', 
   page.on('request', request => { if (/daylight|945\.|PalletMaze/.test(request.url())) spriteRequests.push(request.url()); });
   await page.addInitScript(() => {
     localStorage.setItem('token', 'synthetic-token');
+    localStorage.setItem('mazeDirectionButtons', 'true');
     localStorage.setItem('activeSubProfile', JSON.stringify({ _id: 'synthetic-profile' }));
     localStorage.setItem('selectedMazeDate', '2025-05-26');
   });
@@ -204,4 +208,18 @@ test('default build keeps classic rendering and never requests the sprite kit', 
     await page.setViewportSize({ width, height });
     await page.screenshot({ path: path.join(evidence, `${width}x${height}-classic.png`), fullPage: true });
   }
+});
+
+test('classic fallback keeps focus when optional directions are hidden', async ({page}) => {
+  test.skip(!enabled, 'Requires the local integrated opt-in build');
+  const requests=await setup(page);
+  await page.keyboard.press('ArrowRight');
+  await page.getByRole('button',{name:'Controls',exact:true}).click();
+  await page.getByRole('button',{name:'Hide direction buttons'}).click();
+  await page.getByRole('button',{name:'Close Controls'}).click();
+  await page.getByRole('button',{name:'Use classic view'}).click();
+  await expect(page.getByRole('button',{name:'Controls',exact:true})).toBeFocused();
+  await expect(page.locator('.maze-cell[data-player]')).toHaveAttribute('data-column','2');
+  await expect(page.locator('.maze-fog')).toHaveCount(1);
+  expect(requests.filter(r=>r.url.endsWith('/start'))).toHaveLength(1);
 });
