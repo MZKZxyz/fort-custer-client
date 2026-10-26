@@ -1,6 +1,8 @@
 import { lazy, Suspense, useRef, useMemo, useLayoutEffect, useEffect, useState, useCallback  } from 'react';
 import { useNavigate } from 'react-router-dom';
 import API from '../utils/api';
+import SessionGate, { pendingV2 } from '../session/SessionGate';
+import { EXPERIMENTAL_V2 } from '../session/contract';
 import { move, findStart, formatElapsed, inspectDirection } from '../game/movement';
 import { createMazeScene, createMazeViewModel } from '../game/scene';
 import { createCamera } from '../game/camera';
@@ -17,7 +19,9 @@ const CAMERA_ENABLED = process.env.REACT_APP_MAZE_CAMERA === 'true';
 const INTEGRATION_ENABLED = process.env.REACT_APP_MAZE_VISUAL_INTEGRATION === 'true';
 const PalletMaze = INTEGRATION_ENABLED ? lazy(() => import('../components/PalletMaze')) : null;
 
-const MazePage = () => {
+const MazePage = ({ v2 = null }) => {
+  const [serverReady, setServerReady] = useState(!v2);
+  const readyRequestRef = useRef(null);
   const inputRootRef = useRef(null);
   const inputRef = useRef(null);
   const commandRef = useRef(null);
@@ -171,6 +175,13 @@ const MazePage = () => {
       navigate('/profiles');
       return;
     }
+    if (v2) {
+      const { session, state } = v2.snapshot;
+      gameRef.current = state;
+      setMazeData({ seed: session.manifest.mazeVersion });
+      setMazeGrid(state.grid); setPlayerPos(state.position); setInventory(state.inventory);
+      return;
+    }
     if (recovery) return; // Never create a new attempt while recovering an ambiguous save.
     let active = true;
     const fetchMaze = async () => {
@@ -200,7 +211,29 @@ const MazePage = () => {
     };
     fetchMaze();
     return () => { active = false; };
-  }, [profile, selectedDate, navigate, recovery]);
+  }, [profile, selectedDate, navigate, recovery, v2]);
+
+  // Run only after the shell has rendered and its single coordinator is bound.
+  useEffect(() => {
+    if (!v2 || !mazeData) return;
+    let active = true;
+    if (!readyRequestRef.current) readyRequestRef.current = (async () => {
+      const deadline = performance.now() + 15000;
+      while (true) {
+        if (performance.now() > deadline) throw new Error('RENDER_NOT_READY');
+        const root = inputRootRef.current;
+        if (root?.querySelector('[data-maze-surface]') && inputRef.current
+          && Array.from(root.querySelectorAll('img')).every(img => img.complete)) break;
+        await new Promise(resolve => requestAnimationFrame(resolve));
+      }
+      return v2.session.ready();
+    })();
+    readyRequestRef.current.then(elapsed => {
+      if (!active) return;
+      setStartTime(performance.now() - elapsed); setServerReady(true);
+    }).catch(failure => { if (active) v2.fail(failure); });
+    return () => { active = false; };
+  }, [v2, mazeData]);
 
   const handleFinish = useCallback(async () => {
     if (completionPendingRef.current) return;
@@ -212,6 +245,11 @@ const MazePage = () => {
       setDisplayTime(formatElapsed(performance.now() - startTime));
     }
     try {
+      if (v2) {
+        await v2.session.submit();
+        navigate('/results?protocol=session-v2');
+        return;
+      }
       // Persist intent before sending: a refresh or timeout must reuse this attempt.
       if (attemptIdRef.current) sessionStorage.setItem(recoveryKey, JSON.stringify({ attemptId: attemptIdRef.current }));
       const res = await API.post('/maze/complete', {
@@ -253,13 +291,14 @@ const MazePage = () => {
       setMovementStatus('Result saved. Opening results…');
       setClosing(true);
     } catch (err) {
+      if (v2) { v2.fail(err); return; }
       console.error('Maze completion failed:', err);
       setMovementStatus('');
       setCompletionError(err.response?.data?.error || 'Could not save your result. Check your connection and retry.');
     } finally {
       completionPendingRef.current = false;
     }
-  }, [profile?._id, selectedDate, startTime, finished, recoveryKey]);
+  }, [profile?._id, selectedDate, startTime, finished, recoveryKey, v2, navigate]);
 
   // Camera path opens results without fog; legacy fallback retains its closing effect.
   useEffect(() => {
@@ -283,9 +322,13 @@ const MazePage = () => {
   }, [closing, baseRadius, navigate, recoveryKey, integrated]);
 
   const movePlayer = useCallback((direction) => {
-    if (showQuitModal || helpOpen || controlsOpen || finished || !gameRef.current) return { reason: 'inactive', terminal: true };
+    if (!serverReady || showQuitModal || helpOpen || controlsOpen || finished || !gameRef.current || (v2 && gameRef.current.completed)) return { reason: 'inactive', terminal: true };
     const before = gameRef.current;
     const result = move(before, direction);
+    if (v2) {
+      try { v2.session.append(direction, before, result.state); }
+      catch (failure) { v2.fail(failure); return { reason: 'inactive', terminal: true }; }
+    }
     const outcome = commandOutcome(before, result);
     const meaningful = ['fire blocked', 'fire cleared', 'complete'].includes(outcome.reason)
       || result.state.inventory.length > before.inventory.length;
@@ -311,7 +354,7 @@ const MazePage = () => {
     setPlayerPos(result.state.position);
     if (result.state.completed) handleFinish();
     return outcome;
-  }, [showQuitModal, helpOpen, controlsOpen, finished, handleFinish]);
+  }, [showQuitModal, helpOpen, controlsOpen, finished, handleFinish, serverReady, v2]);
 
   // The controller survives renders; commands always read the current shell.
   useLayoutEffect(() => { commandRef.current = movePlayer; }, [movePlayer]);
@@ -486,7 +529,8 @@ const MazePage = () => {
         </div>
         </div>
       </div>}
-      <div className="hud-sr-only" role="status" aria-live="polite" aria-atomic="true">{movementStatus}</div>
+      {!serverReady && <p className="field-notice" aria-hidden="true">Waiting for server-ready acknowledgment…</p>}
+      <div className="hud-sr-only" role="status" aria-live="polite" aria-atomic="true">{serverReady ? movementStatus : 'Waiting for server-ready acknowledgment…'}</div>
       {movementStatus && !finished && <p style={{'--notice-bottom': `${noticeBottom}px`}} className="field-notice" aria-hidden="true">{movementStatus}</p>}
       {showDirections && <div ref={dpadRef} id="maze-directions" className="dpad" role="group" aria-label="Movement controls">
         <div className="dpad-row">
@@ -512,6 +556,7 @@ const MazePage = () => {
         <h2 id="maze-help-title" tabIndex={-1}>Maze help</h2><p>Reach the tipi. Drag anywhere on the maze to steer; release to stop. Arrow keys also move.</p>
         <p>Find an extinguisher to clear fire. Clearing consumes its charge without moving. Release and use a fresh input to enter the cleared tile.</p>
         <p>Use Controls to show or hide direction buttons. Your choice is remembered on this device when storage is available.</p>
+        {v2 && <p>Play begins after the server acknowledges readiness. The timer is provisional; only a saved server receipt can supply an official time. Keep this tab open while saving, or recover the original attempt after interruption.</p>}
         <button onClick={() => setHelpOpen(false)}>Close Help</button>
       </MazeDialog>}
       {controlsOpen && <MazeDialog label="Maze controls" onCancel={() => setControlsOpen(false)}>
@@ -545,4 +590,15 @@ const MazePage = () => {
   );
 };
 
-export default MazePage;
+export default function GameplayPage() {
+  // An unresolved durable v2 record also blocks legacy in a flag-OFF build.
+  // Legacy completion recovery always precedes admission of a new v2 attempt.
+  let legacyRecovery = false;
+  try {
+    const profile = JSON.parse(localStorage.getItem('activeSubProfile'));
+    const date = localStorage.getItem('selectedMazeDate') || new Date().toISOString().slice(0, 10);
+    legacyRecovery = Boolean(sessionStorage.getItem(`mazeCompletion:${profile?._id}:${date}`));
+  } catch { /* the existing legacy shell handles its own state */ }
+  if (pendingV2() || (EXPERIMENTAL_V2 && !legacyRecovery)) return <SessionGate>{v2 => <MazePage key={v2?.generation || 'legacy'} v2={v2} />}</SessionGate>;
+  return <MazePage />;
+}
