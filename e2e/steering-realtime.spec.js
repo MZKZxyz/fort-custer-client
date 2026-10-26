@@ -3,7 +3,7 @@
 const { test, expect } = require('@playwright/test');
 const fs = require('node:fs');
 const path = require('node:path');
-test.use({ trace: { mode: 'on', sources: false } });
+test.use({ trace: { mode: 'retain-on-failure', sources: false } });
 const integrated = process.env.REACT_APP_MAZE_VISUAL_INTEGRATION === 'true';
 const characterize = process.env.FC_EXPIRY_CHARACTERIZE === 'true';
 const expected = [[6,4],[6,5],[6,6],[7,6],[8,6],[9,6],[10,6],[10,5]];

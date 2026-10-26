@@ -144,29 +144,22 @@ for (const [width, height] of [[320,568],[390,844],[844,390],[1280,800]]) {
       }
       expect(p.requests).toHaveLength(1);
     });
-    test('native touch anticipates a corner while page offsets stay fixed', async ({page,context})=>{
+    test('native touch anticipates and cancels under controlled deadlines while page offsets stay fixed', async ({page,context})=>{
       test.skip(width===1280,'Desktop mouse coverage; native CDP touch uses mobile layouts.');
-      const p=await setup(page,'corners',true);
+      const p=await setup(page);
       const cdp=await context.newCDPSession(page);
       const touch=(type,points)=>cdp.send('Input.dispatchTouchEvent',{type,touchPoints:points});
       const scroll=await page.evaluate(()=>[scrollX,scrollY,visualViewport.offsetTop]);
-      await page.evaluate(() => {
-        window.cornerReady = new Promise(resolve => {
-          const observer = new MutationObserver(() => {
-            const el = document.querySelector('.pallet-viewport, .maze-cell[data-player]');
-            if (el?.dataset.column === '5') { observer.disconnect(); resolve(true); }
-          });
-          observer.observe(document.querySelector('.maze-page'), { attributes: true, subtree: true, attributeFilter: ['data-column', 'data-player'] });
-        });
-      });
       await touch('touchStart',[{x:p.x,y:p.y,id:1}]);
       await touch('touchMove',[{x:p.x+30,y:p.y,id:1}]);
-      await page.evaluate(() => window.cornerReady);
+      await page.clock.runFor(400);
+      await pos(page,6,5);
       await touch('touchMove',[{x:p.x,y:p.y+30,id:1}]);
+      await page.clock.runFor(360);
       await expect.poll(()=>player(page).getAttribute('data-row').then(Number)).toBeGreaterThan(6);
       await touch('touchCancel',[]);
       const stopped=await player(page).evaluate(el=>[el.dataset.row,el.dataset.column]);
-      await page.waitForTimeout(500);
+      await page.clock.runFor(500);
       expect(await player(page).evaluate(el=>[el.dataset.row,el.dataset.column])).toEqual(stopped);
       expect(await page.evaluate(()=>[scrollX,scrollY,visualViewport.offsetTop])).toEqual(scroll);
     });

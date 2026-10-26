@@ -79,7 +79,9 @@ for (const [width, height] of [[320, 568], [390, 844], [844, 390], [1280, 800]])
     test.use({ viewport: { width, height }, isMobile: width !== 1280, hasTouch: width !== 1280 });
     for (const device of ['mouse', 'touch']) test(`${device} starts on walls, sprites, center, edges and corners`, async ({ page, context }) => {
       test.skip(device === 'touch' && width === 1280, 'Desktop uses native mouse.');
-      const starts = await setup(page, device === 'mouse');
+      // Keep native CDP hit-testing/capture while freezing repeat deadlines
+      // across transport round trips. Real cadence has a separate native run.
+      const starts = await setup(page);
       const host = await surface(page).elementHandle();
       const cdp = device === 'touch' ? await context.newCDPSession(page) : null;
       const touch = (type, points) => cdp.send('Input.dispatchTouchEvent', { type, touchPoints: points });
