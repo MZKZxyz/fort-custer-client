@@ -40,7 +40,7 @@ const asset = (role, layer) => kit[`${role}-${layer}`];
 const arrows = { up: '↑', right: '→', down: '↓', left: '←' };
 const symbols = { '#': 'wall', ' ': 'open path', S: 'start', X: 'extinguisher', F: 'fire', E: 'tipi goal' };
 
-function PalletMaze({ scene, facing, onFallback }) {
+function PalletMaze({ scene, facing, inputPhase, onFallback }) {
   const ref = useRef(null);
   const [size, setSize] = useState({ width: 284, height: 260, tile: 36 });
   const [assetError, setAssetError] = useState(false);
@@ -61,7 +61,9 @@ function PalletMaze({ scene, facing, onFallback }) {
   for (const cell of cells) {
     if (cell.terrain === 'wall') sprites.push({ cell, role: 'wall', order: 0 });
     if (cell.object) sprites.push({ cell, role: cell.object, order: 1 });
-    if (cell.isPlayer) sprites.push({ cell, role: `explorer-${facing}`, order: 2 });
+    // At arrival the goal remains visible; the small directional cue marks
+    // the explorer's logical cell without covering the tipi artwork.
+    if (cell.isPlayer && cell.object !== 'exit') sprites.push({ cell, role: `explorer-${facing}`, order: 2 });
   }
   sprites.sort((a, b) => a.cell.row - b.cell.row || a.cell.column - b.cell.column || a.order - b.order);
   const img = (role, cell, layer = 'body') => {
@@ -84,7 +86,8 @@ function PalletMaze({ scene, facing, onFallback }) {
     .map(([r, c, direction]) => `${direction}: ${symbols[scene.rows[scene.player.row + r]?.[scene.player.column + c]?.tile] || 'maze edge'}`).join('. ');
   return <section className="pallet-maze" aria-label="Daily maze">
     <p className="pallet-instructions">Reach the tipi · X: extinguisher · F: fire</p>
-    <div ref={ref} className="pallet-viewport" role="region" tabIndex="0" aria-label="Maze viewport"
+    <div ref={ref} className="pallet-viewport" role="region" tabIndex="0" aria-label="Maze viewport" aria-describedby="maze-input-help maze-position-help"
+      data-maze-surface data-input-phase={inputPhase}
       data-row={scene.player.row} data-column={scene.player.column} data-completed={scene.completed}
       data-camera-x={geometry.x} data-camera-y={geometry.y} data-tile={tile} data-pitch={tile * SIN58}
       style={{ '--pallet-world-width': `${geometry.worldWidth}px`, '--pallet-world-height': `${geometry.worldHeight}px` }}>
@@ -97,10 +100,10 @@ function PalletMaze({ scene, facing, onFallback }) {
           const p = project(cell.row, cell.column, tile);
           return <span key={cell.id} className="pallet-badge" style={{ left: p.x + tile * .26, top: p.y + tile * .18 }}>{cell.tile}</span>;
         })}
-        <span className="pallet-player-cue" style={{ left: player.x - tile * .32, top: player.y - tile * .30 }}>{arrows[facing]}</span>
+        <span className="pallet-player-cue" style={{ left: player.x - tile * .32, top: player.y + tile * (scene.completed ? .20 : -.30) }}>{arrows[facing]}</span>
       </div>
     </div>
-    <p className="pallet-position">Row {scene.player.row + 1}, column {scene.player.column + 1}. {neighbors}</p>
+    <p className="pallet-position maze-assistive-position" id="maze-position-help">Row {scene.player.row + 1}, column {scene.player.column + 1}. {neighbors}</p>
     {assetError && <p role="alert">Maze artwork could not load. Use the classic view to continue this attempt.</p>}
     <button className="pallet-fallback" onClick={onFallback}>Use classic view</button>
   </section>;

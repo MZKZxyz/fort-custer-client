@@ -8,6 +8,7 @@ function harness(grid = ruleFixture()) {
   const pending = new Map(), callbacks = [], log = [], changes = [];
   let state = initialState(grid);
   const clock = {
+    now: () => now,
     setTimeout(callback, delay) { const id = ++serial; pending.set(id, { callback, at: now + delay }); callbacks.push(callback); return id; },
     clearTimeout(id) { pending.delete(id); },
   };
@@ -81,7 +82,7 @@ test('one owner, neutral drag, axis ambiguity and steering rate cap', () => {
   assert.equal(h.log.length, 0);
   h.controller.steer('drag', 'down'); assert.equal(h.log.length, 1);
   for (let i = 0; i < 50; i++) { h.controller.steer('drag', 'right'); h.controller.steer('drag', 'down'); }
-  assert.equal(h.log.length, 1); h.advance(180); assert.equal(h.log.length, 2);
+  assert.equal(h.log.length, 1); h.advance(399); assert.equal(h.log.length, 1); h.advance(1); assert.equal(h.log.length, 2);
   h.controller.steer('drag', null); h.advance(1000); assert.equal(h.log.length, 2);
   h.controller.steer('drag', 'down'); h.advance(179); assert.equal(h.log.length, 2);
   h.advance(1); assert.equal(h.log.length, 3);
@@ -127,8 +128,8 @@ test('drag can redirect from unequipped fire, but clearing it still requires a f
   const h = harness([['S', 'F', 'E'], [' ', 'X', '#']]);
   h.controller.press('drag', null, { drag: true }); h.controller.steer('drag', 'right');
   assert.equal(h.changes.at(-1).phase, 'blocked');
-  for (const direction of ['down', 'right', 'up']) {
-    h.controller.steer('drag', direction); h.advance(180);
+  for (const [direction, wait] of [['down', 400], ['right', 180], ['up', 180]]) {
+    h.controller.steer('drag', direction); h.advance(wait);
   }
   assert.equal(h.log.at(-1).reason, 'fire cleared');
   assert.deepEqual(h.state().position, [1, 1]); assert.deepEqual(h.state().inventory, []);
@@ -141,7 +142,7 @@ for (const reason of ['release', 'pointercancel', 'lost capture', 'blur', 'unmou
   test(`blocked drag cannot resume after ${reason}`, () => {
     const h = harness(); h.controller.press('drag', null, { drag: true });
     h.controller.steer('drag', 'down'); const stale = h.callbacks.at(-1);
-    h.controller.steer('drag', 'left'); h.advance(180);
+    h.controller.steer('drag', 'left'); h.advance(400);
     assert.equal(h.changes.at(-1).phase, 'blocked');
     if (reason === 'release') h.controller.release('drag');
     else if (reason === 'unmount') h.controller.destroy();

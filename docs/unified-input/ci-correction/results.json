@@ -1,0 +1,74 @@
+{
+  "baseline_commit": "c072941cd5682bc8466bbabcbc845d8b4e4a3e15",
+  "baseline_full_command": {
+    "passed": 91,
+    "failed": 9,
+    "skipped": 23,
+    "interrupted": 0
+  },
+  "first_corrected_command": {
+    "passed": 92,
+    "failed": 1,
+    "skipped": 23,
+    "interrupted": 0
+  },
+  "corrected_full_command": {
+    "passed": 93,
+    "failed": 0,
+    "skipped": 23,
+    "interrupted": 0
+  },
+  "corrected_ci_native_smoke": {
+    "passed": 2,
+    "failed": 0,
+    "skipped": 0,
+    "interrupted": 0
+  },
+  "baseline_failure_classes": {
+    "touch_location_extra_step": 3,
+    "native_timeout": 2,
+    "late_injection_despite_final_sequence": 4,
+    "ci_resource_exceptions_locally_reproduced": false
+  },
+  "unit_tests": 112,
+  "notes": [
+    "Initial exploratory run interrupted; authoritative baseline run used an untouched detached worktree.",
+    "Baseline runner failures are retained separately; they do not constitute accepted two-cell trials.",
+    "Native early-request and exact sequence assertions remain strict.",
+    "No runtime source changed; flags, cadence and expiry preserved."
+  ],
+  "isolated_classic": {
+    "groups": {
+      "passed": 7,
+      "failed": 0,
+      "skipped": 0,
+      "interrupted": 0
+    },
+    "trials": 30,
+    "two_cell_corners": 60,
+    "failures": 0,
+    "retries": 0
+  },
+  "isolated_integrated": {
+    "groups": {
+      "passed": 7,
+      "failed": 0,
+      "skipped": 0,
+      "interrupted": 0
+    },
+    "trials": 30,
+    "two_cell_corners": 60,
+    "failures": 0,
+    "retries": 0
+  },
+  "source_sha256": {
+    "playwright.config.js": "43b087d9843c13010377c4caa4123f7c38440a1203a85d8c7aa68947eaa33ffe",
+    "playwright.native.config.cjs": "d8173a96b0bd8270483442e3b2fdeafc88720d9df85de1bab57f73a404623198",
+    "e2e/maze-surface.spec.js": "982a0c967de1afb914699cd2ac96f705ee030934fbd596e644735d9d1656224c",
+    "e2e/continuous-steering.spec.js": "19109ed64f601dac55668fe9970eff03daf3617d747ceb51a9196c702486c999",
+    "e2e/steering-realtime.spec.js": "aa83e6472404c8b5b22b8ead4ba1cec884f813c869b883c6c4e0bac634857a72",
+    ".github/workflows/client-checks.yml": "c72ab2e20de88a92c193206b6e017fc2df1489234e38bc05cc1a42402211db35",
+    "package.json": "363c91601ad4762125d6af1a8aba89dadae23f1373af95a2b2ff770c54b09730"
+  },
+  "rollback": "PASS: complete binary diff reverse-apply checked; no rollback applied. Revert correction commit to restore baseline harness."
+}

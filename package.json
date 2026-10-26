@@ -19,7 +19,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "test:e2e:native": "playwright test --config=playwright.native.config.cjs"
   },
   "eslintConfig": {
     "extends": [

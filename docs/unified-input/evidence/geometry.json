@@ -1,0 +1,50 @@
+[
+  {
+    "viewportWidth": 320,
+    "viewportHeight": 568,
+    "x": 540,
+    "y": 525.124360694258,
+    "width": 288,
+    "height": 188,
+    "worldWidth": 828,
+    "worldHeight": 713,
+    "pitch": 30.529731461631336,
+    "visible": true
+  },
+  {
+    "viewportWidth": 390,
+    "viewportHeight": 844,
+    "x": 659.75,
+    "y": 412.54869335335883,
+    "width": 358,
+    "height": 464,
+    "worldWidth": 1018,
+    "worldHeight": 877,
+    "pitch": 37.52612825492185,
+    "visible": true
+  },
+  {
+    "viewportWidth": 844,
+    "viewportHeight": 390,
+    "x": 292,
+    "y": 775.7730180024147,
+    "width": 812,
+    "height": 132,
+    "worldWidth": 1104,
+    "worldHeight": 951,
+    "pitch": 40.70630861550845,
+    "visible": true
+  },
+  {
+    "viewportWidth": 1280,
+    "viewportHeight": 800,
+    "x": 144,
+    "y": 530.8324809256774,
+    "width": 960,
+    "height": 420,
+    "worldWidth": 1104,
+    "worldHeight": 951,
+    "pitch": 40.70630861550845,
+    "visible": true
+  }
+]

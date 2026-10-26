@@ -7,7 +7,7 @@
   width: min(100%, var(--pallet-world-width));
   height: min(var(--pallet-world-height), clamp(132px, calc(100svh - 380px), 560px));
   margin: auto; background: #776649; outline: 4px solid #6a3600; border-radius: 4px;
-  touch-action: auto;
+  touch-action: pinch-zoom;
 }
 .pallet-world { position: relative; background: #776649; pointer-events: none; }
 .pallet-sprite { position: absolute; display: block; max-width: none; }
@@ -15,3 +15,5 @@
 .pallet-player-cue { background: #173d46; color: white; }
 .pallet-fallback { min-height: 44px; padding: .5rem 1rem; background: #fae9ca; color: #241500; border: 2px solid #6a3600; border-radius: 4px; }
 .pallet-viewport:focus-visible, .pallet-fallback:focus-visible { outline: 3px solid white; outline-offset: 4px; }
+
+.pallet-maze .maze-assistive-position { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }

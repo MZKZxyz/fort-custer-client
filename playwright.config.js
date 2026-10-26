@@ -2,6 +2,7 @@ const { defineConfig } = require('@playwright/test');
 
 module.exports = defineConfig({
   testDir: './e2e',
+  testIgnore: '**/steering-realtime.spec.js',
   fullyParallel: true,
   use: {
     baseURL: 'http://127.0.0.1:3100',
