@@ -1,0 +1,108 @@
+{
+  "checks": [
+    {
+      "name": "Actual save error \u2192 refresh/recovery \u2192 retry \u2192 results 320x568",
+      "passed": true,
+      "starts": 1,
+      "completionRequests": 2,
+      "sameAttempt": true
+    },
+    {
+      "name": "Actual save error \u2192 refresh/recovery \u2192 retry \u2192 results 390x844",
+      "passed": true,
+      "starts": 1,
+      "completionRequests": 2,
+      "sameAttempt": true
+    },
+    {
+      "name": "Actual save error \u2192 refresh/recovery \u2192 retry \u2192 results 844x390",
+      "passed": true,
+      "starts": 1,
+      "completionRequests": 2,
+      "sameAttempt": true
+    },
+    {
+      "name": "Actual save error \u2192 refresh/recovery \u2192 retry \u2192 results 1280x800",
+      "passed": true,
+      "starts": 1,
+      "completionRequests": 2,
+      "sameAttempt": true
+    },
+    {
+      "name": "Owner comparison controls switch all 4 designs and replay real stationary clear",
+      "passed": true
+    },
+    {
+      "name": "One existing polite live status retained; visual mirror does not duplicate announcements",
+      "passed": true
+    },
+    {
+      "name": "Help starts at title, Tab contains focus and Escape restores trigger",
+      "passed": true
+    },
+    {
+      "name": "Extracted runtime kit loads all 4 presentations without missing local game assets",
+      "passed": true,
+      "typography": "Original remote font import unavailable; existing monospace fallback, disclosed in audit"
+    },
+    {
+      "name": "baseline: native CDP touch one-contact corner then one-step D-pad tap",
+      "passed": true
+    },
+    {
+      "name": "A: native CDP touch one-contact corner then one-step D-pad tap",
+      "passed": true
+    }
+  ],
+  "limitations": "Browser automation with local synthetic API, not physical-device or screen-reader certification. Recovery/results are original compiled UI; HUD overlays do not replace recovery/results.",
+  "mechanics": [
+    {
+      "mode": "baseline",
+      "name": "Native one-contact cornering",
+      "passed": true
+    },
+    {
+      "mode": "A",
+      "name": "Native one-contact cornering; Help cancels held input and stale motion",
+      "passed": true
+    },
+    {
+      "mode": "B",
+      "name": "Native one-contact cornering; Help cancels held input and stale motion",
+      "passed": true
+    },
+    {
+      "mode": "C",
+      "name": "Native one-contact cornering; Help cancels held input and stale motion",
+      "passed": true
+    },
+    {
+      "mode": "baseline",
+      "name": "Native held-key stationary fire clear, wait, release and fresh entry",
+      "passed": true
+    },
+    {
+      "mode": "A",
+      "name": "Native held-key stationary fire clear, wait, release and fresh entry",
+      "passed": true
+    },
+    {
+      "mode": "B",
+      "name": "Native held-key stationary fire clear, wait, release and fresh entry",
+      "passed": true
+    },
+    {
+      "mode": "C",
+      "name": "Native held-key stationary fire clear, wait, release and fresh entry",
+      "passed": true
+    }
+  ],
+  "finalPrototypeSHA256": {
+    "overlay.js": "7a4968c67c6175f172838d6ccb0532534a77d218c000e8f5865c9363d0d31a7d",
+    "overlay.css": "34549b48af33a5b1d45037a936e229ff0fdf507ec171af4b8a67daff5eb629de",
+    "session.js": "d684b0c4a6698b39d04bf45df06b49f47a0c71752cf1926ef30d353d915e47a6",
+    "serve.cjs": "225726be5cc3c9b2e835f841acb23e6bdab637764314e609a19d8e2164aeacb7",
+    "review.js": "317c76c792000abc6ca4ece2b31364c6ee4714cefe5de114bce4bca6fc445104",
+    "index.html": "712d46043f8c684190bfc572be8dcaa0006b0773d87670d8a707b436668c63da"
+  }
+}

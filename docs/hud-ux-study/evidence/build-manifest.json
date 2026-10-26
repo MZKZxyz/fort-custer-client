@@ -1,0 +1,177 @@
+{
+  "sourceCommit": "8664c4f2026e8ec4857b31f40e51e5a7e1ce3b97",
+  "build": "Optimized production build; source maps disabled; unchanged application source",
+  "flags": {
+    "REACT_APP_MAZE_CAMERA": "unset",
+    "REACT_APP_MAZE_VISUAL_INTEGRATION": "unset",
+    "REACT_APP_MAZE_INPUT_PREVIEW": "unset",
+    "REACT_APP_MAZE_VISUALS": "unset"
+  },
+  "localAPIOnly": true,
+  "files": {
+    "asset-manifest.json": {
+      "bytes": 1997,
+      "sha256": "396297e20410b922aba06783b48b2379fda9f2a4b72f047b3b9a842bdb915ce8"
+    },
+    "assets/fortBG.png": {
+      "bytes": 1771050,
+      "sha256": "24f7ccaf5b2f4e9b58ee238da089d61ba3ea8875b904f9a475dcdaeb3c3fb0d7"
+    },
+    "assets/mazeBanner.png": {
+      "bytes": 157930,
+      "sha256": "b292721e53bcf5cab0749abe69216be9f18579c337297573a2ffe2824c42886b"
+    },
+    "favicon.ico": {
+      "bytes": 15406,
+      "sha256": "a0a1559cafa43f79fdcbdffe0b04247c4e15361bde5d88818cf1236b616601b6"
+    },
+    "icons/americanFlag.png": {
+      "bytes": 82203,
+      "sha256": "c82a328b671d834889355bef66923037009506b1f0b896f8f345f93c956b9c7f"
+    },
+    "icons/arrowBack.png": {
+      "bytes": 6114,
+      "sha256": "2c9d8951eed65c94067d6a588075b9b18826a7f262c4f5a3baf975f2fe2ed12a"
+    },
+    "icons/arrowDown.png": {
+      "bytes": 1116,
+      "sha256": "b9675b8556f08c77186e136ef751b5bdd190e1bef7aa6132c2dc90333f482121"
+    },
+    "icons/arrowLeft.png": {
+      "bytes": 1174,
+      "sha256": "9c0309ffdb6216523a1db5b466ec3a773b992afe028e5c1fcb1b3a96166ea3ab"
+    },
+    "icons/arrowRight.png": {
+      "bytes": 1134,
+      "sha256": "7eae5e5ae43b90bfeac864908516e0081ec3a826bff173248768071265a3f2c1"
+    },
+    "icons/arrowUp.png": {
+      "bytes": 1051,
+      "sha256": "52766fd948caf62acd399530e314080fbefcc2793905db9749e547dc9294c239"
+    },
+    "icons/backpackMap.png": {
+      "bytes": 83352,
+      "sha256": "6890fdc90b69caf085f31d4b5e7cc8410d98e1fb575bf87d5d18d9c4a085fff7"
+    },
+    "icons/buffaloNickel.png": {
+      "bytes": 105007,
+      "sha256": "9f66ce7fce60e985ecb6721b3746cec14ff7012d1b272acd24b2cd9904689413"
+    },
+    "icons/fort.png": {
+      "bytes": 105133,
+      "sha256": "fdcac321aa0da70d1ea7904f256a0367dfd02d42393787e6c1e828640518b69d"
+    },
+    "icons/metalStar.png": {
+      "bytes": 79913,
+      "sha256": "859c6c9d61f5c768c8010e0a8e00c426c472f29ed3ac58fb0a0a33f5e69b01b1"
+    },
+    "images/teepee_01.png": {
+      "bytes": 82802,
+      "sha256": "2af0d7f2eb35832fc5bb1960222be35c775b0e961476f70581682d7f4d07cb1c"
+    },
+    "index.html": {
+      "bytes": 775,
+      "sha256": "d5c154f7630907ba94a962ee0ae49862f4d74ea010ea440e1ebecf48b39600d9"
+    },
+    "logo192.png": {
+      "bytes": 46514,
+      "sha256": "1db77c669e574086c6d50fb8b6a73a9dd284748abea44324b5d64898c76e7122"
+    },
+    "logo512.png": {
+      "bytes": 277413,
+      "sha256": "34b9c763c79479708ea7f98501874083583d59c62bd2d49e85270fc72c115cf4"
+    },
+    "manifest.json": {
+      "bytes": 492,
+      "sha256": "50b3d8c3903af3f78d871b94557ab14f4e39ca192eaca3d2cfa863c867279a14"
+    },
+    "static/css/60.08fa9501.chunk.css": {
+      "bytes": 1377,
+      "sha256": "b53c16b3df2afee0824e102bc2b22bf0215d4b028508a4c9182a018da1825a3a"
+    },
+    "static/css/main.5d692e4d.css": {
+      "bytes": 12656,
+      "sha256": "b442df29bfb649d21ca41b92d2a0aac72fbacd68c1f4d09aca1c2bf87488e36a"
+    },
+    "static/js/168.bc4b1b39.chunk.js": {
+      "bytes": 4465,
+      "sha256": "db056299a91bf69fb758987c0c2f97d578042ea0b301189e71e6658d126cdf95"
+    },
+    "static/js/60.35c0b4a1.chunk.js": {
+      "bytes": 28824,
+      "sha256": "a3fb4079ea58d54005d8a739f494806820b20600e8e8711e165c26c7143d5f6d"
+    },
+    "static/js/main.101588d9.js": {
+      "bytes": 327953,
+      "sha256": "9c2339da32139b973973545a21227225aae91d0dcc7aaede2bc9af10821fba7a"
+    },
+    "static/js/main.101588d9.js.LICENSE.txt": {
+      "bytes": 1210,
+      "sha256": "fcd44eaa24992e4f238a50dc8ab77d8b2052e6c8006c8aef3187f764cf55406d"
+    },
+    "static/media/explorer-down-daylight-body.74b28da1e186a9034891.png": {
+      "bytes": 66423,
+      "sha256": "4e1c876c881f1a46269a04dbcebdbce9633bb15956bfdf137e006ddaa96529b6"
+    },
+    "static/media/explorer-down-daylight-shadow.3cd8611d0eba15d5f870.png": {
+      "bytes": 12725,
+      "sha256": "7b072d0a07ee33fd5f22a536e47d08d01eec03071f2cd0e42b471780e8ecd6ff"
+    },
+    "static/media/explorer-left-daylight-body.e56d227668cdcf5c6dd4.png": {
+      "bytes": 63209,
+      "sha256": "1c76169f0d0f70d97b245d762f73bd5c03bc97636f5d4241d8a0370dd47f686f"
+    },
+    "static/media/explorer-left-daylight-shadow.9719a65221a1c9f4d121.png": {
+      "bytes": 12977,
+      "sha256": "c5d214697afe179316b28707c41f221e97e924daa1b418e2aefa18af6cea109a"
+    },
+    "static/media/explorer-right-daylight-body.81ae357ff44134e2a4bd.png": {
+      "bytes": 63567,
+      "sha256": "f7062f472c360730d29fdd2f6b4f4ed40fd61be138ac1c2a6f3da9242c9360b3"
+    },
+    "static/media/explorer-right-daylight-shadow.ed0b81993375b19796c8.png": {
+      "bytes": 12605,
+      "sha256": "e1ddabaf735e666826b67b719056230ddb206b3dbd94179575705a58c7d86d83"
+    },
+    "static/media/explorer-up-daylight-body.461f0c759b385a7fbdc9.png": {
+      "bytes": 61619,
+      "sha256": "94e1e332724e0bd873ef945eeff2b76b5c2a50b323c3ca6d24d81a26d27176fb"
+    },
+    "static/media/explorer-up-daylight-shadow.27e23be722a04e091b3f.png": {
+      "bytes": 13022,
+      "sha256": "77ce7aca9732620b8a6b9cd259e40a594362a0797420706da73d0730d2242637"
+    },
+    "static/media/extinguisher-daylight-body.bb6de8d3e7581bdf9a6c.png": {
+      "bytes": 48754,
+      "sha256": "99a3947032775a9b8c8ee29c8d2552479e0b77805034339987e577010ae9902e"
+    },
+    "static/media/fire-daylight-body.9ad3915cd6fd8517e4fe.png": {
+      "bytes": 62389,
+      "sha256": "7f524a33b948a5bc93c79030894e0c580b6e2fc4ccd6c3848552d148228a2ef2"
+    },
+    "static/media/ground-daylight-body.ab1f6fb456de9df6d2b3.png": {
+      "bytes": 59617,
+      "sha256": "7c43c5e57cce0fa9b3d21da814b525ff6a4c2757147bcce6ab5334c58e5b9c35"
+    },
+    "static/media/wall-daylight-body.9c2c86ed09a1aae3cdad.png": {
+      "bytes": 108592,
+      "sha256": "1e1cce62916f24392321ea098a32bf294064f0fda8cb47e0fb60d2dd0666cb36"
+    },
+    "static/media/wall-daylight-shadow.adf59e8d93d797d06acc.png": {
+      "bytes": 18615,
+      "sha256": "62b9152bc8208eb399bef2c3d3930831fc67dc18fe15bff0d3f940df27af37f3"
+    },
+    "textures/clouds.png": {
+      "bytes": 1486631,
+      "sha256": "8a8b0af261d35afda72c80ed232546f30cd7cc1d6c47723f74175a63599051b4"
+    },
+    "textures/floor.png": {
+      "bytes": 2306161,
+      "sha256": "72e849f4409dcd7a8585f490877baa50376edb31637172f393373a3892807ec9"
+    },
+    "textures/wall.png": {
+      "bytes": 2165112,
+      "sha256": "3efbf0f7a5aff3c47475da57ae37e7fd7d0adc8285800a89f120245b887a4e03"
+    }
+  }
+}

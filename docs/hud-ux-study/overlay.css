@@ -1,0 +1,70 @@
+/* Prototype chrome only. No maze/fog/cell/surface geometry or touch-action rules. */
+.study-nonvisual,[data-hud-study] .maze-hud{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+[data-hud-study]{background-color:#593a22!important;padding-top:max(12px,env(safe-area-inset-top))!important;color:#fff5df;font-family:system-ui,-apple-system,sans-serif}
+[data-hud-study] .maze-banner{display:none}
+[data-hud-study] .back-btn{position:absolute;left:max(12px,env(safe-area-inset-left));top:max(12px,env(safe-area-inset-top));height:44px;width:44px;padding:11px;border:1px solid #b09a72;border-radius:8px;background:#f7ebd0;box-shadow:none;z-index:4}
+.field-header{margin:0 12px 10px;border-radius:10px;background:#24392f;color:#fff4d9;border:1px solid #b09869;padding:12px 14px;box-shadow:0 3px 8px #21100033}
+.field-brand{padding-left:46px;font:bold 14px Georgia,serif;letter-spacing:1.4px;line-height:20px}
+.field-brand span{font:8px system-ui;letter-spacing:1.7px;display:inline-block;margin-left:8px}
+.field-meta{display:flex;justify-content:space-between;gap:8px;margin:8px 0;color:#e5d5b4;font-size:11px;font-variant-numeric:tabular-nums}
+.field-time{font-family:ui-monospace,monospace;min-width:9ch;text-align:right}
+.field-title{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.field-title h1{font:24px/1.1 Georgia,serif;margin:0;letter-spacing:-.4px}
+.field-help,.field-kit button{font:12px system-ui;border:1px solid #b19e79;background:transparent;color:#fff4d9;min-height:44px;padding:6px 10px;border-radius:6px;cursor:pointer}
+.field-help{min-width:64px;font-weight:650}
+.field-kit{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:7px;border-top:1px solid #f7ebd02b;padding-top:6px}
+.field-kit button{font-size:11px;border:0;padding:0;display:flex;align-items:center;gap:7px;text-align:left}
+.field-kit button>span:first-child{display:grid;place-items:center;background:#e1c68f;color:#24392f;width:30px;height:30px;border-radius:5px;font-size:21px}
+.field-input-hint{font-size:10px;color:#e5d5b4;text-align:right}
+.field-status{box-sizing:border-box;width:calc(100% - 24px);margin:8px 12px 0;padding:8px 10px;min-height:42px;border-left:3px solid #e1c68f;border-radius:3px;background:#24392f;color:#fff4d9;font:12px/1.45 system-ui;text-align:left}
+.field-status[data-kind=fire-cleared],.field-status[data-kind=fire-blocked],.field-status[data-kind=hazard]{background:#fff0cd;color:#422819;border-color:#a54c21;font-weight:600}
+.field-status[data-kind=movement]{background:transparent;border-color:transparent}
+[data-hud-study] .dpad{display:grid;grid-template-columns:repeat(3,48px);grid-template-rows:repeat(2,48px);gap:4px;justify-content:center;margin:10px auto 0}
+[data-hud-study] .dpad-row{display:contents}
+[data-hud-study] .dpad-btn{width:48px;height:48px;margin:0;padding:6px;background:#f7ebd0;border:1px solid #b29b70;border-radius:8px;box-shadow:0 2px 0 #392511;color:#24392f}
+[data-hud-study] .dpad-btn[data-direction=up]{grid-area:1/2}
+[data-hud-study] .dpad-btn[data-direction=left]{grid-area:2/1}
+[data-hud-study] .dpad-btn[data-direction=down]{grid-area:2/2}
+[data-hud-study] .dpad-btn[data-direction=right]{grid-area:2/3}
+[data-hud-study] button:focus-visible{outline:3px solid #fff6d8;outline-offset:3px}
+.field-notes{box-sizing:border-box;margin:auto;width:min(420px,calc(100% - 32px));max-height:calc(100svh - 32px);overflow-y:auto;border:1px solid #8c7044;border-radius:12px;padding:24px;background:#fff6e2;color:#2f382a;font:14px/1.6 system-ui}
+.field-notes::backdrop{background:#14251fcc}
+.field-notes .notes-label{font:bold 9px system-ui;letter-spacing:2px;color:#765f3a}
+.field-notes h2{font:28px Georgia,serif;margin:6px 0 20px}
+.field-notes button{font:600 14px system-ui;min-height:44px;width:100%;padding:12px;border:0;border-radius:6px;color:#fff4d9;background:#24392f}
+.field-notes button:focus-visible{outline:3px solid #775b33;outline-offset:3px}
+[data-hud-study] .maze-dialog{background:#fff6e2;color:#2f382a;border:1px solid #8c7044;border-radius:12px;font:14px/1.6 system-ui;box-shadow:0 12px 50px #120d0866}
+[data-hud-study] .modal-buttons>button{min-height:44px;font-size:13px;border:1px solid #8c7044;background:#24392f;color:#fff4d9;border-radius:6px;box-shadow:none;padding:8px 12px}
+[data-hud-study] .modal-buttons>button:last-child{background:#f1e3c4;color:#2f382a}
+/* B: equipment, contextual feedback and controls share one travel card. */
+[data-hud-study=B] .field-header{background:#f5ead0;color:#2f382a;border-color:#8c7044}
+[data-hud-study=B] .field-meta{color:#5e5943}
+[data-hud-study=B] .field-help{color:#2f382a;border-color:#8c7044}
+.travel-card{margin:10px 12px 0;padding:12px;border:1px solid #a89063;background:#24392f;border-radius:10px}
+.travel-label{font:bold 10px system-ui;letter-spacing:1.4px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px}
+.travel-label span{font:11px system-ui;color:#e5d5b4;letter-spacing:0}
+.travel-card .field-kit{margin-top:8px}
+.travel-card .field-status{width:100%;margin:4px 0 0;padding:6px 0;border:0;background:transparent;color:#fff4d9;min-height:36px}
+.travel-card .field-status[data-kind=fire-cleared],.travel-card .field-status[data-kind=fire-blocked]{color:#ffdda1}
+/* C: brief first-use nudge, then only meaningful contextual messages. */
+[data-hud-study=C] .field-brand span{display:none}
+[data-hud-study=C] .field-kit{border:0;margin:0;padding:0}
+[data-hud-study=C] .field-input-hint{display:none}
+[data-hud-study=C] .field-header{margin-bottom:8px}
+[data-hud-study=C] .field-status[data-kind=movement],[data-hud-study=C] .field-status[data-kind=initial]{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);padding:0;margin:0;border:0}
+.start-nudge{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 12px 8px;padding:8px 10px;border:1px solid #b09869;border-radius:7px;background:#f5ead0;color:#2f382a;font:11px/1.5 system-ui}
+.start-nudge button{min-height:44px;min-width:48px;font:600 11px system-ui;border:0;border-radius:5px;background:#24392f;color:#fff4d9;padding:6px}
+@media(min-width:700px){.field-header{display:grid;grid-template-columns:1fr auto;column-gap:24px;align-items:center;padding:12px 16px}.field-brand{grid-area:1/1}.field-meta{grid-area:1/2;min-width:280px;margin:0}.field-title{grid-area:2/1;margin-top:8px}.field-kit{grid-area:2/2;margin-top:8px;border:0;padding:0}.field-title h1{font-size:25px}.field-status{max-width:900px;margin-left:auto;margin-right:auto}.travel-card{max-width:620px;margin-left:auto;margin-right:auto}.travel-card .field-kit{display:flex}.start-nudge{max-width:620px;margin-left:auto;margin-right:auto}}
+@media(max-width:350px){.field-header{padding:10px 10px}.field-brand{font-size:12px}.field-brand span{display:none}.field-title h1{font-size:22px}.field-input-hint{max-width:100px;font-size:9px}}
+@media(max-width:699px){
+ .field-header{display:flex;flex-direction:column;gap:0;padding:8px 10px}
+ .field-brand{display:none}
+ .field-title{order:0;box-sizing:border-box;width:100%;padding-left:44px;min-height:44px}
+ .field-title h1{font-size:22px}
+ .field-help{min-width:44px;width:44px;padding:6px;font-size:17px}
+ .field-help span{display:none}
+ .field-meta{order:1;margin:4px 0 0;line-height:16px;width:100%}
+ .field-kit{order:2;width:100%;margin-top:2px;padding-top:0;min-height:44px;border:0}
+ .field-input-hint{font-size:10px;max-width:110px}
+ .travel-card .field-kit{width:auto;min-height:44px}
+}
