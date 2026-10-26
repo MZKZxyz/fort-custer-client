@@ -1,5 +1,7 @@
 # Sprint 1.2 — unified input and gameplay integration
 
+**Production UI:** [Cleanup and preview-only comparison](production-ui/README.md). Normal gameplay hides the evaluation selector and visual diagnostics; trailing steering remains the default.
+
 **CI harness follow-up:** [Playwright CI correction](ci-correction/README.md) separates deterministic safety coverage from isolated native-timer acceptance. Gameplay and the bounded expiry policy are unchanged.
 
 **Current correction:** [Bounded turn expiry with callback tolerance](turn-expiry/README.md) addresses independent QA's two-cell timing P2. The owner-selected cardinal snapping + trailing anchor remains the default; comparison modes remain for validation. Use the correction's timing results, validation record and rollback instructions for the latest revision.

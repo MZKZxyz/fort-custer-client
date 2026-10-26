@@ -8,6 +8,8 @@ The owner approved whole-maze dragging and the existing **400ms initial / 180ms 
 
 ## Compare the three modes
 
+Current builds require explicit `REACT_APP_MAZE_INPUT_PREVIEW=true` at build time to show this comparison selector. It defaults OFF; normal gameplay uses the owner-selected trailing mode. See [production UI cleanup](../production-ui/README.md).
+
 The real maze route now has a keyboard-accessible **Drag steering** selector. It preserves the current attempt, position and equipment; changing it cancels the current gesture and all queued intent. Begin a fresh gesture after changing modes.
 
 | Mode | Direction selection | Anchor | Turn anticipation |

@@ -61,6 +61,16 @@ async function screenshot(page, size, name) {
 for (const [width, height] of [[320,568],[390,844],[844,390],[1280,800]]) {
   test.describe(`steering ${width}×${height}`, () => {
     test.use({ viewport: { width, height }, isMobile: width !== 1280, hasTouch: width !== 1280 });
+    test('production UI has instructions and no comparison or visible diagnostics', async ({page}) => {
+      await setup(page);
+      await expect(page.getByRole('combobox',{name:'Drag steering'})).toHaveCount(process.env.REACT_APP_MAZE_INPUT_PREVIEW === 'true' ? 1 : 0);
+      await expect(page.locator('#maze-input-help')).toBeVisible();
+      if(integrated) {
+        await expect(page.getByRole('button',{name:'Use classic view'})).toBeVisible();
+        await expect(page.locator('.pallet-position')).toHaveCSS('width','1px');
+        await expect(host(page)).toHaveAttribute('aria-describedby','maze-input-help maze-position-help');
+      }
+    });
     test('two consecutive anticipated corners keep one contact and protected deadlines', async ({ page }) => {
       const p = await setup(page); await press(page, p); await steer(page, p, 30, 0); await pos(page, 6, 4);
       await steer(page, p, 0, 30);
@@ -112,6 +122,7 @@ for (const [width, height] of [[320,568],[390,844],[844,390],[1280,800]]) {
       } }]);
     });
     test('interactive original/fixed/trailing comparison cancels old input and shows the anchor difference', async ({ page }) => {
+      test.skip(process.env.REACT_APP_MAZE_INPUT_PREVIEW !== 'true', 'Comparison is preview-only');
       const p = await setup(page);
       for (const mode of ['legacy','fixed','trailing']) {
         await page.getByRole('combobox', { name: 'Drag steering' }).selectOption(mode);
@@ -133,7 +144,8 @@ for (const [width, height] of [[320,568],[390,844],[844,390],[1280,800]]) {
     test('settings and modal discard queued intent; fallback cancels the old surface owner', async ({ page }) => {
       const p = await setup(page); await press(page,p); await steer(page,p,30,0); await steer(page,p,0,30);
       await page.clock.runFor(400); await pos(page,6,5);
-      await page.getByRole('combobox',{name:'Drag steering'}).selectOption('fixed');
+      if (process.env.REACT_APP_MAZE_INPUT_PREVIEW === 'true') await page.getByRole('combobox',{name:'Drag steering'}).selectOption('fixed');
+      else await page.keyboard.press('Escape');
       await steer(page,p,0,30); await page.clock.runFor(1000); await pos(page,6,5); await page.mouse.up();
       await page.getByRole('button',{name:'Back',exact:true}).click(); await page.keyboard.press('Escape');
       await page.clock.runFor(800); await pos(page,6,5);

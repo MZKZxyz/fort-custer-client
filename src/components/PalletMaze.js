@@ -86,7 +86,7 @@ function PalletMaze({ scene, facing, inputPhase, onFallback }) {
     .map(([r, c, direction]) => `${direction}: ${symbols[scene.rows[scene.player.row + r]?.[scene.player.column + c]?.tile] || 'maze edge'}`).join('. ');
   return <section className="pallet-maze" aria-label="Daily maze">
     <p className="pallet-instructions">Reach the tipi · X: extinguisher · F: fire</p>
-    <div ref={ref} className="pallet-viewport" role="region" tabIndex="0" aria-label="Maze viewport" aria-describedby="maze-input-help"
+    <div ref={ref} className="pallet-viewport" role="region" tabIndex="0" aria-label="Maze viewport" aria-describedby="maze-input-help maze-position-help"
       data-maze-surface data-input-phase={inputPhase}
       data-row={scene.player.row} data-column={scene.player.column} data-completed={scene.completed}
       data-camera-x={geometry.x} data-camera-y={geometry.y} data-tile={tile} data-pitch={tile * SIN58}
@@ -103,7 +103,7 @@ function PalletMaze({ scene, facing, inputPhase, onFallback }) {
         <span className="pallet-player-cue" style={{ left: player.x - tile * .32, top: player.y + tile * (scene.completed ? .20 : -.30) }}>{arrows[facing]}</span>
       </div>
     </div>
-    <p className="pallet-position">Row {scene.player.row + 1}, column {scene.player.column + 1}. {neighbors}</p>
+    <p className="pallet-position maze-assistive-position" id="maze-position-help">Row {scene.player.row + 1}, column {scene.player.column + 1}. {neighbors}</p>
     {assetError && <p role="alert">Maze artwork could not load. Use the classic view to continue this attempt.</p>}
     <button className="pallet-fallback" onClick={onFallback}>Use classic view</button>
   </section>;

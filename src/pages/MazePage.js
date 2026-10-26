@@ -431,9 +431,9 @@ const MazePage = () => {
 
       </div>
 
-      <label className="maze-steering-choice">Drag steering <select aria-label="Drag steering" value={steeringMode} onChange={event => {
+      {process.env.REACT_APP_MAZE_INPUT_PREVIEW === 'true' && <label className="maze-steering-choice">Drag steering <select aria-label="Drag steering" value={steeringMode} onChange={event => {
         inputRef.current?.configureSteering(event.target.value); setSteeringMode(event.target.value);
-      }}>{Object.entries(STEERING_MODES).map(([value, label]) => <option key={value} value={value}>{label}</option>)}</select></label>
+      }}>{Object.entries(STEERING_MODES).map(([value, label]) => <option key={value} value={value}>{label}</option>)}</select></label>}
       <p id="maze-input-help" className="maze-input-help">Drag anywhere on the maze to steer; release to stop. Arrow keys and direction buttons also work.</p>
       {integrated ? <>
         <MazeRenderBoundary onFallback={useClassic}>

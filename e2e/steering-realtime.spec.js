@@ -38,7 +38,7 @@ for (const [width,height] of [[390,844],[320,568],[844,390],[1280,800]]) {
           });
           await page.goto('/maze');
           await expect(page.locator('[data-maze-surface]')).toBeVisible();
-          await expect(page.getByRole('combobox',{name:'Drag steering'})).toHaveValue('trailing');
+          await expect(page.getByRole('combobox',{name:'Drag steering'})).toHaveCount(0);
           if(integrated) await expect.poll(()=>page.locator('.pallet-sprite').evaluateAll(a=>a.every(i=>i.complete&&i.naturalWidth>0))).toBe(true);
           await page.locator('[data-maze-surface]').scrollIntoViewIfNeeded();
           const origin = await page.locator('[data-maze-surface]').evaluate(el => {
