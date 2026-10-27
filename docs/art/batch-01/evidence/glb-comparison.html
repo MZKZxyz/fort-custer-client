@@ -1,0 +1,21 @@
+<!doctype html><html lang="en"><meta charset="utf-8">
+<title>Wall master · GLB clean reimport</title>
+<style>
+body { margin:0; padding:24px; color:#2e2c24; background:#eeeadd; font:14px system-ui,sans-serif; }
+h1 { font:26px Georgia,serif; margin:0 0 8px; } p { margin:8px 0 18px; }
+.pair { display:flex; gap:24px; } figure { margin:0; } figcaption { margin:8px 0; }
+img { display:block; width:256px; height:352px; background:repeating-conic-gradient(#bbb 0 25%,#ddd 0 50%) 0/20px 20px; }
+</style>
+<h1>Wall master · portable GLB reimport</h1>
+<p>Unchanged editable source vs GLB imported alone after a Blender factory reset.<br>
+58° / yaw 0 · 224px cell · 256×352 body · (128,208) pivot. Lights are QA-only.</p>
+<div class="pair">
+<figure><figcaption>Source · daylight</figcaption><img src="glb-source-daylight.png" alt="Blender source wall in daylight"></figure>
+<figure><figcaption>Clean GLB import · daylight</figcaption><img src="glb-reimport-daylight.png" alt="GLB reimported wall in daylight"></figure>
+<figure><figcaption>Source · dusk</figcaption><img src="glb-source-dusk.png" alt="Blender source wall at dusk"></figure>
+<figure><figcaption>Clean GLB import · dusk</figcaption><img src="glb-reimport-dusk.png" alt="GLB reimported wall at dusk"></figure>
+</div>
+<p>GLB contains only an identity root and wall mesh. Base color and normal atlases are embedded;<br>
+procedural detail is sampled at 1024² / 8-bit. Full procedural materials remain in the .blend.<br>
+Author evidence; independent Art QA and owner approval remain pending.</p>
+</html>

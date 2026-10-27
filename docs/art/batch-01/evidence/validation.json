@@ -90,6 +90,12 @@
       "maxAlphaDelta": 0
     }
   },
+  "portableModel": {
+    "file": "wall-master.glb",
+    "sha256": "4502031313c4fbd914480cb17cb6a9808a3dbe8ea56d44f54a530a1778d56db7",
+    "cleanReimport": "evidence/glb-reimport.json",
+    "status": "PASS"
+  },
   "shadowDirection": {
     "daylight": {
       "weightedAlphaCentroid": [
@@ -117,12 +123,17 @@
   "meshSha256": "f5036e15e46dd467989aefed31593f97332e1c14725771006abb9a1accece9d2",
   "sourceHashes": {
     "docs/art/batch-01/source/audit-blend.py": "76551b271e89aa069dc52719a2be55bdf24faba01fb5521f420db764d698330a",
+    "docs/art/batch-01/source/audit-glb.py": "52f67a29173efc118dc2b3ac380ea162ddb7cf2984cee87d94a7142abc628d1f",
+    "docs/art/batch-01/source/capture-glb.cjs": "99f47ddff3f4688592d9600be879d653b385781e1e85f00486a1e006110217ab",
     "docs/art/batch-01/source/capture.cjs": "94e81ae5e0c3011aeaed39652f44442460e5bf6d703c11f6f47da0fcbe9d9da8",
-    "docs/art/batch-01/source/finish.py": "69d62a1165e093d3322ae84bf0f56557f5376e43b67c367e28d83486ce08290d",
+    "docs/art/batch-01/source/check-glb-renders.py": "b85017a99216946832df25485835c0e8584a994ff34e0515ba214c85be5aa95b",
+    "docs/art/batch-01/source/check-glb-repeat.py": "43d48499b95b9a961ea8369248eb3274ebba65bd5fbeab7d1573ca091a7f8c97",
+    "docs/art/batch-01/source/export-glb.py": "3f6e935c63ea8d5f4863f9893095468c43c19fd130a57e54c0df990bd2037143",
+    "docs/art/batch-01/source/finish.py": "d3d5b497fc465bed9445d1d3a07209bbebc5fed30639330d51bd46b42003e4a8",
     "docs/art/batch-01/source/fixtures.mjs": "d0b3794395e6841fc08da12a91667b2c21027bf86eb7d945f75a6dc46ae18191",
     "docs/art/batch-01/source/package-evidence.py": "b4132cd08db23135d044c85386eb94e5b6dd04ac44dd79e828cffb454f73a601",
     "docs/art/batch-01/source/render.py": "8bd724af4dbd6343b2c986d937f2b5e3a314333209b9a8d52642b3a15f8a5111",
-    "docs/art/batch-01/source/validate.py": "522361e455f7c9fbec179fe4c1c8c4fe60c9af653127ade86a4aec0701685afb",
+    "docs/art/batch-01/source/validate.py": "52ef7165f29a8c02a20d395587e54bb976f8c8280fb88bd59a65a8f7a1b7cc1f",
     "docs/art/batch-01/source/viewer.mjs": "cfdfc96a16ee431401578cb7f20a6e2978ba95cacafbbea5ff53d0d6fd804863",
     "docs/art/batch-01/source/wall-master.blend": "452d1f3bcce4c065ec08dcc8fcc67c9413d1f2cb16ebf1cabc65ed4e2b4a06ef"
   },

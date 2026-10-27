@@ -69,5 +69,12 @@ manifest['referenceHashes'] = {p.name: hashlib.sha256(p.read_bytes()).hexdigest(
 manifest['totals'] = {'images': len(manifest['assets']),
                        'decodedBytes': sum(a['decodedBytes'] for a in manifest['assets']),
                        'transferBytes': sum(a['bytes'] for a in manifest['assets'])}
+portable_record = ROOT / 'evidence/glb-export.json'
+if portable_record.exists():
+    model = json.loads(portable_record.read_text())
+    assert hashlib.sha256((ROOT/'assets'/model['file']).read_bytes()).hexdigest() == model['sha256']
+    manifest['models'] = [model]
+    manifest['modelTotals'] = {'models':1, 'embeddedTextureImages':len(model['textures']),
+                               'glbBytes':model['bytes'], 'separateTextureFilesForAudit':True}
 manifest_path.write_text(json.dumps(manifest, indent=2) + '\n')
 print(json.dumps(manifest['totals']))

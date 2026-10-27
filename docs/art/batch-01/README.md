@@ -31,6 +31,37 @@ All four uploaded concepts were inspected. Actual file hashes match the uploaded
 
 Original uploaded images are retained under `references/` as **reference-only** evidence, not shipping sprites, editable geometry, a camera specification or a new license grant. The ZIP SHA-256 is recorded in [evidence/reference-package.json](evidence/reference-package.json). Its kickoff document was read as supporting material; the user's scope and issue #51 govern this work. The package does not contain the separate 46-item inventory; no missing inventory details were invented and no expansion was attempted. Existing owner reference pack, OD-20 and art/visual-integration sources were also inspected.
 
+## Portable 3D preservation · PR #52 correction
+
+[assets/wall-master.glb](assets/wall-master.glb) is a self-contained **glTF 2.0 GLB**, exported from the accepted `.blend` without altering it or the six reviewed sprite PNGs. Only the 48 wall components are evaluated, joined and triangulated for export: one reusable mesh under one identity root. No walkable ground plane, shadow catcher, camera, light, studio background, animation or baked lighting is included. The dark continuous blocked footing is part of the wall itself. Material identities are preserved across 13 mesh primitives; this is one model, not additional crate variants.
+
+The right-handed source basis is **+X right/column, −Y forward/increasing maze row, +Z up**. glTF uses **+X right/column, +Z forward/increasing row, +Y up**. The deterministic conversion is `(X,Y,Z) → (X,Z,−Y)`. One Blender unit / glTF metre is **one logical cell**. Source bounds are X/Y **[−.5,+.5]**, Z **[0,.595]**; native glTF bounds are X/Z **[−.5,+.5]**, Y **[0,.595]**. Root and mesh have identity transforms and a **(0,0,0) ground-center pivot**. The 58° viewpoint belongs only to the sprite/QA camera and is not encoded into the model.
+
+The GLB freezes the evaluated bevel geometry and explicitly preserves the source split/weighted corner normals through the join. A shared non-overlapping **1024² UV atlas** carries unlit sRGB base color and non-color tangent-space normal PNGs. Each original component's local Generated coordinates are retained through a temporary attribute before joining, preventing the wood grain from stretching over the entire wall during baking. Actual Principled Base Color is baked through a temporary **EMIT surface**, excluding lighting/AO and avoiding diffuse-pass darkening of metal; normal baking captures procedural bump, without lighting. Original roughness and metallic scalars are retained per material. Export finishing restores unit/orthogonal tangent frames after Blender's four-decimal tangent conversion, preserving handedness. PNGs are embedded in the GLB and also supplied separately for checksum/audit; the GLB loads with no adjacent files.
+
+**Representation differences:** grain/bump become finite-resolution 8-bit textures, so very fine detail and filtering can differ at close range. Editable shader graphs and modifiers stay in `.blend`; portable core metallic/roughness PBR omits Blender-specific specular/IOR behavior and other render engines can shade it differently. Exact source/import image differences are recorded in `evidence/glb-render-checks.json`, with direct same-camera day/dusk comparisons in [evidence/glb-comparison.html](evidence/glb-comparison.html). These are QA captures, not replacements for the accepted sprites.
+
+The export has **11,824 triangles / 6,008 pre-split vertices**, one atlas pair shared by the 13 material groups and one root suitable for model instancing. glTF adds vertex splits at UV/material/normal seams. This is the preserved evaluated master, not a device-certified runtime LOD. A later authorized runtime pass can consolidate identical materials, use a smaller atlas and dissolve coplanar/decimate interior detail, while retaining the cell footing, height, cap/well silhouettes and verifying the same bounds/normal/readability tests. No LFS, hosting, runtime loader or Three.js dependency is added now.
+
+The clean-import audit parses the binary container and embedded image hashes, validates PBR/UV/tangent data, opens the source for reference geometry, then factory-resets Blender and imports a **GLB-only copy in an otherwise empty temporary directory**. It checks an identity root/mesh, exact bounds and triangles, two-way position agreement, source split-normal agreement, upward floor winding, embedded textures and absence of lights/cameras before adding QA-only lookdev. It renders both the original and imported model at the official camera in both moods. This is author evidence for independent QA, not independent signoff.
+
+For this portable-model correction alone (no sprite rebuild):
+
+```sh
+blender -b -t 2 --python-exit-code 1 --python docs/art/batch-01/source/export-glb.py
+blender -b -t 2 --python-exit-code 1 --python docs/art/batch-01/source/audit-glb.py
+python3 docs/art/batch-01/source/check-glb-renders.py --require-accepted
+python3 docs/art/batch-01/source/finish.py
+python3 docs/art/batch-01/source/validate.py
+python3 docs/art/batch-01/source/package-evidence.py
+```
+
+For the native source/import comparison screenshot, serve the repository root on port 8052, then run `node docs/art/batch-01/source/capture-glb.cjs`. The [portable model review](evidence/glb-review.md) explains measured geometry/material differences and the actual source World shader used for matched lookdev.
+
+`python3 docs/art/batch-01/source/check-glb-repeat.py` optionally repeats the portable export and verifies identical GLB/atlas bytes on this Blender/platform; it does not rerender sprites. After any source/evidence update, refresh `finish.py`, `validate.py` and `package-evidence.py` in that order so all hashes remain current.
+
+`--require-accepted` additionally proves `.blend`, `render.py` and all six sprite PNGs still equal accepted commit `8b2aa6e406adec28ddd21c6cf8caabe6c93ac609`; omit that switch when intentionally rebuilding new source art after a later approval. `assets/manifest.json` includes the GLB/texture hashes, source `.blend` hash, export command/configuration, coordinate contract, material treatment, provenance and license. The pinned upstream procedural builder hash is checked by `validate.py`; AST extraction remains an authoring dependency that must be reviewed if that upstream script changes.
+
 ## Locked export and lighting
 
 Orthographic **58° elevation above ground / yaw 0°**. One world unit equals 224 authoring pixels; row pitch is **189.962773539px**, height rise **118.701915188px/unit**. Bodies are **256×352, anchor (128,208)**. Shadows render at 512²/224px per cell, then uniformly downsample to **256², anchor (128,150), 112px per cell**. Ground uses the body convention. There is no cropping, silhouette scaling or anchor adjustment between moods.
@@ -47,9 +78,12 @@ Existing Blender 4.3.2, Python Pillow/NumPy, repository Playwright and `/usr/bin
 
 ```sh
 blender -b -t 2 --python-exit-code 1 --python docs/art/batch-01/source/render.py
+blender -b -t 2 --python-exit-code 1 --python docs/art/batch-01/source/export-glb.py
+blender -b -t 2 --python-exit-code 1 --python docs/art/batch-01/source/audit-glb.py
 python3 docs/art/batch-01/source/finish.py
 blender -b -t 2 --python-exit-code 1 --python docs/art/batch-01/source/audit-blend.py
 python3 docs/art/batch-01/source/validate.py
+python3 docs/art/batch-01/source/check-glb-renders.py
 # With the static server above running:
 node docs/art/batch-01/source/capture.cjs
 node docs/visual-integration/source/geometry.test.mjs

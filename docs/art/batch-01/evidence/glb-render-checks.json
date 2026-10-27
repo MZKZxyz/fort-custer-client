@@ -1,0 +1,74 @@
+{
+  "status": "PASS",
+  "moods": [
+    {
+      "mood": "daylight",
+      "differentSilhouettePixels": 0,
+      "meanRgb8DifferenceOnBody": 2.046141181076071,
+      "p95Rgb8DifferenceOnBody": 7.0,
+      "maxRgb8DifferenceOnBody": 109.0,
+      "files": [
+        {
+          "file": "glb-source-daylight.png",
+          "sha256": "905c1329c5deb700b2661a31c091ca8a4f8e5c61ab377c0bf453aa32711720ae"
+        },
+        {
+          "file": "glb-reimport-daylight.png",
+          "sha256": "b8a74e9e96d3e68f2661e496ee9b35010d7162e8ab69484d1a63d6a73b3b1885"
+        }
+      ]
+    },
+    {
+      "mood": "dusk",
+      "differentSilhouettePixels": 0,
+      "meanRgb8DifferenceOnBody": 1.4984514063993184,
+      "p95Rgb8DifferenceOnBody": 5.0,
+      "maxRgb8DifferenceOnBody": 54.0,
+      "files": [
+        {
+          "file": "glb-source-dusk.png",
+          "sha256": "b35fb3c50439a30b93de67ca5d29a0ff0c9d23b7ca570b91e1c03ee04612d278"
+        },
+        {
+          "file": "glb-reimport-dusk.png",
+          "sha256": "0a43c7d869894d383af4fc10bb00a774336f5b4621805374cb8eca50b0eca28b"
+        }
+      ]
+    }
+  ],
+  "unchangedAcceptedArtifacts": [
+    {
+      "file": "docs/art/batch-01/source/wall-master.blend",
+      "sha256": "452d1f3bcce4c065ec08dcc8fcc67c9413d1f2cb16ebf1cabc65ed4e2b4a06ef"
+    },
+    {
+      "file": "docs/art/batch-01/source/render.py",
+      "sha256": "8bd724af4dbd6343b2c986d937f2b5e3a314333209b9a8d52642b3a15f8a5111"
+    },
+    {
+      "file": "docs/art/batch-01/assets/wall-daylight-body.png",
+      "sha256": "ca03f87fd44094a70b3b37997cdd181e6d1bc7edd5f92a83fa38bfbe71694afd"
+    },
+    {
+      "file": "docs/art/batch-01/assets/wall-daylight-shadow.png",
+      "sha256": "007076dbba91dd03603bdf700ac0ddef33204ed6e8df9a11ccc013464fe431db"
+    },
+    {
+      "file": "docs/art/batch-01/assets/ground-daylight-body.png",
+      "sha256": "018e696cb42fd74d9a8401f0bb66ee1b756a524dd29e427d2b3ea53ef0640d27"
+    },
+    {
+      "file": "docs/art/batch-01/assets/wall-dusk-body.png",
+      "sha256": "545e00aacb08bc0d009e87ea6c3697b5a17611277a45826a32611031c6cc63a5"
+    },
+    {
+      "file": "docs/art/batch-01/assets/wall-dusk-shadow.png",
+      "sha256": "8dc1a767bca098af3665f798ebd1edefedf2afa9ff9782b770f60fd3f56d3e36"
+    },
+    {
+      "file": "docs/art/batch-01/assets/ground-dusk-body.png",
+      "sha256": "f97990cf687ac8f9fbe56e7e3ab9138849c3990bd4c6a468dd396dded782d560"
+    }
+  ],
+  "acceptedImmutabilityRequested": true
+}

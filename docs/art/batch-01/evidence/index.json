@@ -502,6 +502,86 @@
       "mode": "RGB"
     },
     {
+      "file": "glb-comparison.html",
+      "bytes": 1565,
+      "sha256": "250a3a1130103ffa966582c270990338d9db68c6246789d4b4d1ba7e7677f8bb"
+    },
+    {
+      "file": "glb-comparison.png",
+      "bytes": 415504,
+      "sha256": "7654eb6e1674b877bb68b0f41d8500dddc9d3af47c1b64b21941abf08db540dd",
+      "size": [
+        1180,
+        612
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "glb-export.json",
+      "bytes": 4605,
+      "sha256": "173743290588abf68cf79602d928fef078458fe2808b26b62e3d43a966884aff"
+    },
+    {
+      "file": "glb-reimport-daylight.png",
+      "bytes": 137731,
+      "sha256": "b8a74e9e96d3e68f2661e496ee9b35010d7162e8ab69484d1a63d6a73b3b1885",
+      "size": [
+        256,
+        352
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "file": "glb-reimport-dusk.png",
+      "bytes": 122952,
+      "sha256": "0a43c7d869894d383af4fc10bb00a774336f5b4621805374cb8eca50b0eca28b",
+      "size": [
+        256,
+        352
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "file": "glb-reimport.json",
+      "bytes": 3049,
+      "sha256": "7ba7f6603b5947e13c05c7537c800483c599c87d5a97c3727ee039b6046c1361"
+    },
+    {
+      "file": "glb-render-checks.json",
+      "bytes": 2453,
+      "sha256": "26ae47cef87c44aaa74d5da85b980fa9b379d8b9c7fb8e056306954b1454755b"
+    },
+    {
+      "file": "glb-repeat-export.json",
+      "bytes": 506,
+      "sha256": "d253709f165a4d9062c7ad94ba2ae99d24c7ce48b64a49e650013be518ab9cf7"
+    },
+    {
+      "file": "glb-review.md",
+      "bytes": 5431,
+      "sha256": "f1edcfdeb8ccf88860b1547e9121a3063b0e9ceaf39eadb62bccee55110d8bc9"
+    },
+    {
+      "file": "glb-source-daylight.png",
+      "bytes": 138301,
+      "sha256": "905c1329c5deb700b2661a31c091ca8a4f8e5c61ab377c0bf453aa32711720ae",
+      "size": [
+        256,
+        352
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "file": "glb-source-dusk.png",
+      "bytes": 123249,
+      "sha256": "b35fb3c50439a30b93de67ca5d29a0ff0c9d23b7ca570b91e1c03ee04612d278",
+      "size": [
+        256,
+        352
+      ],
+      "mode": "RGBA"
+    },
+    {
       "file": "maze-cell36-pair.png",
       "bytes": 188182,
       "sha256": "0aac9e20a2937c3b65de4266678357c7d6a2d34af6c6c5ed2899935340f6f668",
@@ -623,8 +703,8 @@
     },
     {
       "file": "validation.json",
-      "bytes": 6181,
-      "sha256": "ba2e4dd5e4974f0731fb38e6ce06bad119b1d2ffe6990f7231ab4908a469ac13"
+      "bytes": 6976,
+      "sha256": "ca95548a0e5cd81ddc5c7aae5e71cd3d2432c902b6827c7c3f74cf994be947ae"
     }
   ]
 }

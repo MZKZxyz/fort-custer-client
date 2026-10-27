@@ -45,6 +45,14 @@ for a in m['assets']:
                     'zeroAlphaBorder':a['outerTransparentPixels'],'sha256':a['sha256'],
                     'dilatedTransparentEdgePixels':int(edge.sum())})
 assert len(results) == 6
+assert len(m['models']) == 1
+portable = m['models'][0]
+assert hashlib.sha256((ROOT/'assets'/portable['file']).read_bytes()).hexdigest() == portable['sha256']
+assert hashlib.sha256((ROOT/'source/wall-master.blend').read_bytes()).hexdigest() == portable['sourceBlendSha256']
+for texture in portable['textures']:
+    assert hashlib.sha256((ROOT/'assets'/texture['file']).read_bytes()).hexdigest() == texture['sha256']
+portable_qa = json.loads((ROOT/'evidence/glb-reimport.json').read_text())
+assert portable_qa['status'] == 'PASS' and portable_qa['glbSha256'] == portable['sha256']
 assert len({a['meshSha256'] for a in m['assets']}) == 1
 assert m['projection']['elevation'] == 58 and m['projection']['yaw'] == 0
 assert abs(m['projection']['groundPitch']-224*math.sin(math.radians(58))) < 1e-8
@@ -90,6 +98,8 @@ subprocess.run(['git','diff','--exit-code',base,'--',*protected],cwd=REPO,check=
 isolation = {p: subprocess.check_output(['git','rev-parse',f'{base}:{p}'],cwd=REPO,text=True).strip()
              for p in protected}
 report = {'status':'PASS','assets':results,'sameMoodSilhouettes':same_alpha,
+          'portableModel':{'file':portable['file'],'sha256':portable['sha256'],
+                           'cleanReimport':'evidence/glb-reimport.json','status':portable_qa['status']},
           'shadowDirection':shadow_centroids,
           'meshSha256':m['geometry']['meshSha256'],'sourceHashes':m['sourceHashes'],
           'referenceChecks':reference_checks,'referenceZipEntriesVerified':5,
