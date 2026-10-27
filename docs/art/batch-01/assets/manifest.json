@@ -1,0 +1,679 @@
+{
+  "schema": "fort-custer-wall-master-v1",
+  "approval": "pending-owner-and-independent-QA",
+  "blender": "4.3.2",
+  "engine": "Cycles CPU / 32 samples / no denoiser / fixed sampling",
+  "seed": 30,
+  "projection": {
+    "elevation": 58,
+    "yaw": 0,
+    "radius": 25,
+    "bodyOrthoScale": 1.5714285714285714,
+    "cellWidth": 224,
+    "groundPitch": 189.9627735390394,
+    "heightRise": 118.7019151882379
+  },
+  "geometry": {
+    "bounds": [
+      [
+        -0.5,
+        0.5
+      ],
+      [
+        -0.5,
+        0.5
+      ],
+      [
+        0.0,
+        0.5949999690055847
+      ]
+    ],
+    "footprint": [
+      [
+        -0.5,
+        -0.5
+      ],
+      [
+        0.5,
+        -0.5
+      ],
+      [
+        0.5,
+        0.5
+      ],
+      [
+        -0.5,
+        0.5
+      ]
+    ],
+    "groundAnchor": [
+      0,
+      0,
+      0
+    ],
+    "height": 0.595,
+    "meshSha256": "f5036e15e46dd467989aefed31593f97332e1c14725771006abb9a1accece9d2",
+    "objects": 48
+  },
+  "color": {
+    "transform": "AgX",
+    "look": "Medium High Contrast",
+    "output": "sRGB / straight RGBA8",
+    "exposure": 0,
+    "gamma": 1
+  },
+  "lighting": {
+    "daylight": {
+      "key": {
+        "position": [
+          -6,
+          -3,
+          12
+        ],
+        "energy": 1800.0,
+        "color": [
+          1.0,
+          0.8399999737739563,
+          0.6299999952316284
+        ],
+        "size": 7
+      },
+      "fill": {
+        "position": [
+          4,
+          6,
+          10
+        ],
+        "energy": 650.0,
+        "color": [
+          0.6600000262260437,
+          0.7900000214576721,
+          1.0
+        ],
+        "size": 9
+      },
+      "world": [
+        0.25,
+        0.25,
+        0.25
+      ]
+    },
+    "dusk": {
+      "key": {
+        "position": [
+          -6,
+          -3,
+          12
+        ],
+        "energy": 1050.0,
+        "color": [
+          0.47999998927116394,
+          0.6200000047683716,
+          1.0
+        ],
+        "size": 7
+      },
+      "fill": {
+        "position": [
+          4,
+          6,
+          10
+        ],
+        "energy": 550.0,
+        "color": [
+          0.44999998807907104,
+          0.550000011920929,
+          0.8500000238418579
+        ],
+        "size": 9
+      },
+      "world": [
+        0.11999999731779099,
+        0.15000000596046448,
+        0.2199999988079071
+      ]
+    }
+  },
+  "assets": [
+    {
+      "file": "wall-daylight-body.png",
+      "role": "wall",
+      "layer": "body",
+      "mood": "daylight",
+      "size": [
+        256,
+        352
+      ],
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224,
+      "projectionSamples": {
+        "(0, 0, 0)": [
+          128.0,
+          207.99987506866455
+        ],
+        "(1, 0, 0)": [
+          352.0,
+          207.99987506866455
+        ],
+        "(0, -1, 0)": [
+          128.0,
+          397.96265745162964
+        ],
+        "(0, 0, 1)": [
+          128.0,
+          89.29795837402344
+        ]
+      },
+      "meshSha256": "f5036e15e46dd467989aefed31593f97332e1c14725771006abb9a1accece9d2",
+      "bounds": [
+        15,
+        43,
+        241,
+        304
+      ],
+      "outerTransparentPixels": 15,
+      "bytes": 116336,
+      "decodedBytes": 360448,
+      "sha256": "ca03f87fd44094a70b3b37997cdd181e6d1bc7edd5f92a83fa38bfbe71694afd"
+    },
+    {
+      "file": "wall-daylight-shadow.png",
+      "role": "wall",
+      "layer": "shadow",
+      "mood": "daylight",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112,
+      "projectionSamples": {
+        "(0, 0, 0)": [
+          256.0,
+          299.99993896484375
+        ],
+        "(1, 0, 0)": [
+          480.0,
+          299.99993896484375
+        ],
+        "(0, -1, 0)": [
+          256.0,
+          489.96270179748535
+        ],
+        "(0, 0, 1)": [
+          256.0,
+          181.29803466796875
+        ]
+      },
+      "meshSha256": "f5036e15e46dd467989aefed31593f97332e1c14725771006abb9a1accece9d2",
+      "bounds": [
+        47,
+        78,
+        231,
+        233
+      ],
+      "outerTransparentPixels": 23,
+      "bytes": 18620,
+      "decodedBytes": 262144,
+      "sha256": "007076dbba91dd03603bdf700ac0ddef33204ed6e8df9a11ccc013464fe431db"
+    },
+    {
+      "file": "ground-daylight-body.png",
+      "role": "ground",
+      "layer": "body",
+      "mood": "daylight",
+      "size": [
+        256,
+        352
+      ],
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224,
+      "projectionSamples": {
+        "(0, 0, 0)": [
+          128.0,
+          207.99987506866455
+        ],
+        "(1, 0, 0)": [
+          352.0,
+          207.99987506866455
+        ],
+        "(0, -1, 0)": [
+          128.0,
+          397.96265745162964
+        ],
+        "(0, 0, 1)": [
+          128.0,
+          89.29795837402344
+        ]
+      },
+      "meshSha256": "f5036e15e46dd467989aefed31593f97332e1c14725771006abb9a1accece9d2",
+      "bounds": [
+        15,
+        112,
+        241,
+        304
+      ],
+      "outerTransparentPixels": 15,
+      "bytes": 62069,
+      "decodedBytes": 360448,
+      "sha256": "018e696cb42fd74d9a8401f0bb66ee1b756a524dd29e427d2b3ea53ef0640d27"
+    },
+    {
+      "file": "wall-dusk-body.png",
+      "role": "wall",
+      "layer": "body",
+      "mood": "dusk",
+      "size": [
+        256,
+        352
+      ],
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224,
+      "projectionSamples": {
+        "(0, 0, 0)": [
+          128.0,
+          207.99987506866455
+        ],
+        "(1, 0, 0)": [
+          352.0,
+          207.99987506866455
+        ],
+        "(0, -1, 0)": [
+          128.0,
+          397.96265745162964
+        ],
+        "(0, 0, 1)": [
+          128.0,
+          89.29795837402344
+        ]
+      },
+      "meshSha256": "f5036e15e46dd467989aefed31593f97332e1c14725771006abb9a1accece9d2",
+      "bounds": [
+        15,
+        43,
+        241,
+        304
+      ],
+      "outerTransparentPixels": 15,
+      "bytes": 102142,
+      "decodedBytes": 360448,
+      "sha256": "545e00aacb08bc0d009e87ea6c3697b5a17611277a45826a32611031c6cc63a5"
+    },
+    {
+      "file": "wall-dusk-shadow.png",
+      "role": "wall",
+      "layer": "shadow",
+      "mood": "dusk",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112,
+      "projectionSamples": {
+        "(0, 0, 0)": [
+          256.0,
+          299.99993896484375
+        ],
+        "(1, 0, 0)": [
+          480.0,
+          299.99993896484375
+        ],
+        "(0, -1, 0)": [
+          256.0,
+          489.96270179748535
+        ],
+        "(0, 0, 1)": [
+          256.0,
+          181.29803466796875
+        ]
+      },
+      "meshSha256": "f5036e15e46dd467989aefed31593f97332e1c14725771006abb9a1accece9d2",
+      "bounds": [
+        42,
+        78,
+        230,
+        235
+      ],
+      "outerTransparentPixels": 21,
+      "bytes": 19238,
+      "decodedBytes": 262144,
+      "sha256": "8dc1a767bca098af3665f798ebd1edefedf2afa9ff9782b770f60fd3f56d3e36"
+    },
+    {
+      "file": "ground-dusk-body.png",
+      "role": "ground",
+      "layer": "body",
+      "mood": "dusk",
+      "size": [
+        256,
+        352
+      ],
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224,
+      "projectionSamples": {
+        "(0, 0, 0)": [
+          128.0,
+          207.99987506866455
+        ],
+        "(1, 0, 0)": [
+          352.0,
+          207.99987506866455
+        ],
+        "(0, -1, 0)": [
+          128.0,
+          397.96265745162964
+        ],
+        "(0, 0, 1)": [
+          128.0,
+          89.29795837402344
+        ]
+      },
+      "meshSha256": "f5036e15e46dd467989aefed31593f97332e1c14725771006abb9a1accece9d2",
+      "bounds": [
+        15,
+        112,
+        241,
+        304
+      ],
+      "outerTransparentPixels": 15,
+      "bytes": 56361,
+      "decodedBytes": 360448,
+      "sha256": "f97990cf687ac8f9fbe56e7e3ab9138849c3990bd4c6a468dd396dded782d560"
+    }
+  ],
+  "materialPalette": [
+    {
+      "name": "Fresh end grain",
+      "linearRGB": [
+        0.7099999785423279,
+        0.5,
+        0.2800000011920929
+      ],
+      "roughness": 0.8500000238418579
+    },
+    {
+      "name": "Inset weathered iron / reference 01\u201304",
+      "linearRGB": [
+        0.18000000715255737,
+        0.17000000178813934,
+        0.14000000059604645
+      ],
+      "roughness": 0.6499999761581421
+    },
+    {
+      "name": "Pallet / honey 0",
+      "linearRGB": [
+        0.4300000071525574,
+        0.25,
+        0.10499999672174454
+      ],
+      "roughness": 0.8500000238418579
+    },
+    {
+      "name": "Pallet / honey 0.001",
+      "linearRGB": [
+        0.4300000071525574,
+        0.25,
+        0.10499999672174454
+      ],
+      "roughness": 0.8500000238418579
+    },
+    {
+      "name": "Pallet / honey 1",
+      "linearRGB": [
+        0.550000011920929,
+        0.3400000035762787,
+        0.1599999964237213
+      ],
+      "roughness": 0.8500000238418579
+    },
+    {
+      "name": "Pallet / honey 1.001",
+      "linearRGB": [
+        0.550000011920929,
+        0.3400000035762787,
+        0.1599999964237213
+      ],
+      "roughness": 0.8500000238418579
+    },
+    {
+      "name": "Pallet / honey 1.002",
+      "linearRGB": [
+        0.550000011920929,
+        0.3400000035762787,
+        0.1599999964237213
+      ],
+      "roughness": 0.8500000238418579
+    },
+    {
+      "name": "Pallet / honey 1.003",
+      "linearRGB": [
+        0.550000011920929,
+        0.3400000035762787,
+        0.1599999964237213
+      ],
+      "roughness": 0.8500000238418579
+    },
+    {
+      "name": "Pallet / honey 2",
+      "linearRGB": [
+        0.6399999856948853,
+        0.41999998688697815,
+        0.2199999988079071
+      ],
+      "roughness": 0.8500000238418579
+    },
+    {
+      "name": "Pallet / honey 2.001",
+      "linearRGB": [
+        0.6399999856948853,
+        0.41999998688697815,
+        0.2199999988079071
+      ],
+      "roughness": 0.8500000238418579
+    },
+    {
+      "name": "Pallet / honey 3",
+      "linearRGB": [
+        0.47999998927116394,
+        0.30000001192092896,
+        0.14000000059604645
+      ],
+      "roughness": 0.8500000238418579
+    },
+    {
+      "name": "Pallet / honey 3.001",
+      "linearRGB": [
+        0.47999998927116394,
+        0.30000001192092896,
+        0.14000000059604645
+      ],
+      "roughness": 0.8500000238418579
+    },
+    {
+      "name": "Recess soil",
+      "linearRGB": [
+        0.1899999976158142,
+        0.14000000059604645,
+        0.08500000089406967
+      ],
+      "roughness": 0.8500000238418579
+    }
+  ],
+  "license": "Original procedural geometry derived from repository PR 38 under repository contribution terms. Uploaded concepts are reference only; no new rights claim.",
+  "provenance": "references/reference_manifest.json; source pixel data is never used as a material or sprite",
+  "processing": "Shadow 512\u00b2/224 px per cell \u2192 256\u00b2/112; catcher alpha remap max(0,(a\u221232)*255/223). Two-pixel RGB-only dilation; alpha unchanged; no border cutting.",
+  "sourceHashes": {
+    "docs/art/batch-01/source/audit-blend.py": "76551b271e89aa069dc52719a2be55bdf24faba01fb5521f420db764d698330a",
+    "docs/art/batch-01/source/capture.cjs": "94e81ae5e0c3011aeaed39652f44442460e5bf6d703c11f6f47da0fcbe9d9da8",
+    "docs/art/batch-01/source/finish.py": "69d62a1165e093d3322ae84bf0f56557f5376e43b67c367e28d83486ce08290d",
+    "docs/art/batch-01/source/fixtures.mjs": "d0b3794395e6841fc08da12a91667b2c21027bf86eb7d945f75a6dc46ae18191",
+    "docs/art/batch-01/source/package-evidence.py": "b4132cd08db23135d044c85386eb94e5b6dd04ac44dd79e828cffb454f73a601",
+    "docs/art/batch-01/source/render.py": "8bd724af4dbd6343b2c986d937f2b5e3a314333209b9a8d52642b3a15f8a5111",
+    "docs/art/batch-01/source/validate.py": "522361e455f7c9fbec179fe4c1c8c4fe60c9af653127ade86a4aec0701685afb",
+    "docs/art/batch-01/source/viewer.mjs": "cfdfc96a16ee431401578cb7f20a6e2978ba95cacafbbea5ff53d0d6fd804863",
+    "docs/art/batch-01/source/wall-master.blend": "452d1f3bcce4c065ec08dcc8fcc67c9413d1f2cb16ebf1cabc65ed4e2b4a06ef"
+  },
+  "authorityHashes": {
+    "docs/art/reference-scene/iteration-2/source/render.py": "304dc06f9885d1402857dbb96437ee86ef3ca5cf5077fb13d6060706b4a271ac",
+    "docs/visual-integration/assets/manifest.json": "90ac37948660ea2e566ae92dfa8df8aa772f4cd901418023e31e75f7dff464d7",
+    "docs/visual-integration/source/projection.mjs": "578698beea62adb08c58354b798153c7908630816060bbb9013e85cdbf19ba6e",
+    "src/game/palletProjection.js": "90c08dd440d766a0c638f7faf21b8b25be0abcdfea6b6f776bb853301297757b",
+    "src/game/camera.js": "c6a3a4ef18b168035bf45e63430494d5af8e81239aab07fc378186e8b13dfd90",
+    "src/components/PalletMaze.js": "e1d7de771371f9c2e8a8b34fbda72e4179b99efb1ef4a21180b390bcb003a598",
+    "src/css/PalletMaze.css": "7954c4f68ee01be817649b539bea48a5ba0c6ac07d384f424bad76a1d7837814"
+  },
+  "reusedPreviewAssets": [
+    {
+      "file": "docs/visual-integration/assets/explorer-down-daylight-body.png",
+      "sha256": "4e1c876c881f1a46269a04dbcebdbce9633bb15956bfdf137e006ddaa96529b6",
+      "size": [
+        256,
+        352
+      ],
+      "bytes": 66423
+    },
+    {
+      "file": "docs/visual-integration/assets/explorer-down-daylight-shadow.png",
+      "sha256": "7b072d0a07ee33fd5f22a536e47d08d01eec03071f2cd0e42b471780e8ecd6ff",
+      "size": [
+        256,
+        256
+      ],
+      "bytes": 12725
+    },
+    {
+      "file": "docs/visual-integration/assets/explorer-down-dusk-body.png",
+      "sha256": "256957c040303c990b5489f018db85e344232b165ae432babfdff7b1d67663a2",
+      "size": [
+        256,
+        352
+      ],
+      "bytes": 63004
+    },
+    {
+      "file": "docs/visual-integration/assets/explorer-down-dusk-shadow.png",
+      "sha256": "478aeb3c63123a1446362673c6fd0051f106b3871b04b23e83e4d0c5920c23b2",
+      "size": [
+        256,
+        256
+      ],
+      "bytes": 12892
+    },
+    {
+      "file": "docs/visual-integration/assets/extinguisher-daylight-body.png",
+      "sha256": "99a3947032775a9b8c8ee29c8d2552479e0b77805034339987e577010ae9902e",
+      "size": [
+        256,
+        352
+      ],
+      "bytes": 48754
+    },
+    {
+      "file": "docs/visual-integration/assets/extinguisher-daylight-shadow.png",
+      "sha256": "a4d94169ed34ee8c644ca5fbb396df7b797c51624792bc0216adea130ac2ae95",
+      "size": [
+        256,
+        256
+      ],
+      "bytes": 8284
+    },
+    {
+      "file": "docs/visual-integration/assets/extinguisher-dusk-body.png",
+      "sha256": "01042877ec401c27df8de8af009a27136de0771b03d78111b444e61260d798ee",
+      "size": [
+        256,
+        352
+      ],
+      "bytes": 46518
+    },
+    {
+      "file": "docs/visual-integration/assets/extinguisher-dusk-shadow.png",
+      "sha256": "0a94f4f23f55ceebdac3a06df1b57a508c497e8ef43487958f7f27ef884ab781",
+      "size": [
+        256,
+        256
+      ],
+      "bytes": 8212
+    },
+    {
+      "file": "docs/visual-integration/assets/fire-daylight-body.png",
+      "sha256": "7f524a33b948a5bc93c79030894e0c580b6e2fc4ccd6c3848552d148228a2ef2",
+      "size": [
+        256,
+        352
+      ],
+      "bytes": 62389
+    },
+    {
+      "file": "docs/visual-integration/assets/fire-daylight-shadow.png",
+      "sha256": "715d7ff27348e91342659aa3924b3a2e026b23caf26f6a2083b99fc1053f709c",
+      "size": [
+        256,
+        256
+      ],
+      "bytes": 9033
+    },
+    {
+      "file": "docs/visual-integration/assets/fire-dusk-body.png",
+      "sha256": "0c3c608316ca5566f06597b7c92c0ef236902b8b2f323a676c4666f8d5fd5c34",
+      "size": [
+        256,
+        352
+      ],
+      "bytes": 61421
+    },
+    {
+      "file": "docs/visual-integration/assets/fire-dusk-shadow.png",
+      "sha256": "e68d8390788889e2536f6a6a409b347fe54dcaa1e73adaf7794ea705c7f116fa",
+      "size": [
+        256,
+        256
+      ],
+      "bytes": 8945
+    },
+    {
+      "file": "public/images/teepee_01.png",
+      "sha256": "2af0d7f2eb35832fc5bb1960222be35c775b0e961476f70581682d7f4d07cb1c",
+      "size": [
+        300,
+        300
+      ],
+      "bytes": 82802
+    }
+  ],
+  "referenceHashes": {
+    "BATCH01_PRODUCTION_CONTRACT.md": "fcf7e979270ec6530ea2cf4c1ce094651ff72ca79ff14bdf36f4cdd37db97aa5",
+    "Wall_Reference_QA.png": "72f111c23223ee094b873fb68a216890165289e428f755d3318b653fdb26e805",
+    "lighting_daylight_vs_lantern_evening.png": "c59fda7c6a761b4f50348c115b44cc2c95889350d14ead14eddbe82717f15f4d",
+    "reference_manifest.json": "c4e5d17a3c5f401ac17b02c118574906e3022f9125ff6b7445ccc19b9fd41f3d",
+    "wall_concept_01.png": "083f18ee4517b2c8c876a89ddf3352805eb2b81afd626139a195504462eaf2f0",
+    "wall_concept_02.png": "faff977daaa2554642f0af4e67fd657103c58fe24664675aeea1391127f8f65a",
+    "wall_concept_03.png": "86aa61099c8357fa237c584d05a3f924324952c14fc0f78d820ccb87f7462796",
+    "wall_concept_04.png": "18d9a3caf37bcffa0b907dc182024c3cbb3070979c12382d979945a2e9a632c5"
+  },
+  "totals": {
+    "images": 6,
+    "decodedBytes": 1966080,
+    "transferBytes": 374766
+  }
+}
