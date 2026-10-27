@@ -1,8 +1,13 @@
 import V2Results from '../session/V2Results';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import NavBar from '../components/NavBar';
 import '../css/ResultsPage.css';
+import useCatalog from '../archive/useCatalog';
+import ArchiveNotice from '../archive/ArchiveNotice';
+import { catalogFresh } from '../archive/catalog';
+import { dateLabel, isDate } from '../archive/dates';
+import { accountId, parsed, readIdentity, stored } from '../archive/identity';
 
 function ResultsPage() {
   const [time, setTime] = useState(null);
@@ -12,13 +17,25 @@ function ResultsPage() {
   const [showDetails, setShowDetails] = useState(false);
   const [newRecord, setNewRecord] = useState(false);
   const navigate = useNavigate();
+  const heading = useRef(null);
 
-  // On mount, load lastTime/reward and ensure selectedMazeDate is set
+  const [context] = useState(() => parsed('mazeResultContext', sessionStorage));
+  const [lastPlayedDate] = useState(() => context?.date || stored('selectedMazeDate'));
+  const catalog = useCatalog(isDate(lastPlayedDate) ? lastPlayedDate.slice(0, 7) : null);
+  const sameOwner = !context || (context.profileId === catalog.identity.profile?._id
+    && (!context.accountId || context.accountId === accountId(catalog.identity.token)));
+  const replayAvailable = sameOwner && catalog.usable && catalog.data.items.some(item => item.date === lastPlayedDate);
+  const go = date => {
+    if (!catalogFresh(catalog) || readIdentity().key !== catalog.identity.key) { catalog.refresh(); return; }
+    try { localStorage.setItem('selectedMazeDate', date); navigate('/maze'); } catch { /* archive remains reachable */ }
+  };
+  // Saved result presentation remains independent of catalog availability.
   useEffect(() => {
+    heading.current?.focus();
     const lastTime = localStorage.getItem('lastMazeTime');
     if (lastTime) setTime(Number(lastTime));
 
-    const rewardData = JSON.parse(localStorage.getItem('lastReward'));
+    const rewardData = parsed('lastReward');
     if (rewardData) setReward(rewardData);
 
     if (localStorage.getItem('lastNewRecord') === 'true') {
@@ -26,12 +43,6 @@ function ResultsPage() {
       localStorage.removeItem('lastNewRecord');
     }
 
-    // If this is first render and no selectedMazeDate exists,
-    // seed it to today so Replay still works
-    if (!localStorage.getItem('selectedMazeDate')) {
-      const todayStr = new Date().toISOString().split('T')[0];
-      localStorage.setItem('selectedMazeDate', todayStr);
-    }
   }, []);
 
   // Helpers
@@ -40,23 +51,6 @@ function ResultsPage() {
     const date = new Date(ms);
     return date.toISOString().substr(14, 9); // mm:ss.SSS
   };
-
-  // What date did we just play?
-  const lastPlayedDate = localStorage.getItem('selectedMazeDate');
-
-  // Today in UTC (YYYY-MM-DD)
-  const todayUTC = new Date().toISOString().split('T')[0];
-
-  // Compute next-day
-  const getNextDate = () => {
-    const d = new Date(lastPlayedDate);
-    d.setDate(d.getDate() + 1);
-    return d.toISOString().split('T')[0];
-  };
-  const nextDate = getNextDate();
-
-  // Only playable if nextDate <= todayUTC
-  const nextPlayable = nextDate <= todayUTC;
 
   const showActions = reward ? showDetails : true;
   const actionsDisabled = reward && !showDetails;
@@ -70,10 +64,11 @@ function ResultsPage() {
       color: '#000',
       textAlign: 'center',
     }}>
-      <h2 style={{ fontSize: '2rem', marginBottom: '1rem' }}>
+      <h2 ref={heading} tabIndex={-1} style={{ fontSize: '2rem', marginBottom: '1rem' }}>
         Maze Complete!
       </h2>
 
+      {isDate(lastPlayedDate) && <p>{dateLabel(lastPlayedDate)} (UTC)</p>}
       {time !== null && (
         <p style={{ fontSize: '1.25rem' }}>
           You finished in <strong>{formatTime(time)}</strong>
@@ -106,9 +101,7 @@ function ResultsPage() {
                 />
               </>
             ) : (
-              <img
-                src="/images/crate.png"
-                alt="crate"
+              <button type="button" className="reward-crate-button" aria-label="Open reward crate" disabled={opening}
                 onClick={() => {
                   if (opening) return;
                   setOpening(true);
@@ -121,8 +114,9 @@ function ResultsPage() {
                     }, 600);
                   }, 600);
                 }}
-                className={`crate${opening ? ' opening' : ''}`}
-              />
+              >
+                <img src="/images/crate.png" alt="" className={`crate${opening ? ' opening' : ''}`} />
+              </button>
             )}
           </div>
           {showDetails && (
@@ -172,8 +166,8 @@ function ResultsPage() {
           {/* Replay always available */}
           <button
             className="fade-in"
-            onClick={() => navigate('/maze')}
-            disabled={actionsDisabled}
+            onClick={() => go(lastPlayedDate)}
+            disabled={actionsDisabled || !replayAvailable}
             style={{
               backgroundColor: actionsDisabled ? '#aaa' : '#00aef0',
               color: '#fff',
@@ -190,33 +184,12 @@ function ResultsPage() {
             Replay Maze
           </button>
 
-          {/* Next Maze (disabled if tomorrow is not yet unlocked) */}
-          <button
-            className="fade-in"
-            onClick={() => {
-              if (!nextPlayable || actionsDisabled) return;
-              localStorage.setItem('selectedMazeDate', nextDate);
-              navigate('/maze');
-            }}
-            disabled={!nextPlayable || actionsDisabled}
-            style={{
-              backgroundColor:
-                !nextPlayable || actionsDisabled ? '#aaa' : '#4CAF50',
-              color: '#fff',
-              fontSize: '1.2rem',
-              fontWeight: 'bold',
-              padding: '1rem',
-              width: '100%',
-              border: '2px solid #000',
-              marginTop: '1rem',
-              boxShadow:
-                !nextPlayable || actionsDisabled ? 'none' : '4px 4px 0 #000',
-              cursor:
-                !nextPlayable || actionsDisabled ? 'not-allowed' : 'pointer',
-            }}
-          >
-            {nextPlayable ? 'Next Maze' : 'Next Unavailable'}
-          </button>
+          <button className="result-archive-action" onClick={() => navigate('/mazes')}>Browse archive</button>
+          <button className="result-archive-action" disabled={!catalog.usable || !catalog.data?.todayMaze.available}
+            onClick={() => go(catalog.data.today)}>Today's maze</button>
+          <ArchiveNotice catalog={catalog} />
+          {!sameOwner && <p>Restore the original profile to replay this result.</p>}
+
         </>
       )}
 

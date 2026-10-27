@@ -52,7 +52,7 @@ async function startedAt(page,column){await expect(pos(page)).toHaveAttribute('d
 
 test('default build sends zero v2 requests; byte-compatible v1 payload and no preview',async({page,context})=>{
  test.skip(!flagOff||integrated,'default classic compiled build only');await identity(context);const state=await fixture(context);await page.goto('/maze');await started(page);
- expect(state.calls.map(x=>x.path)).toEqual(['/api/maze/start']);expect(state.calls[0].body).toEqual({subProfileId:'000000000000000000000002',date:'2025-05-26'});
+ expect(state.calls.map(x=>x.path)).toEqual(['/api/maze/start']);expect(state.archiveReads).toBe(1);expect(state.calls[0].body).toEqual({subProfileId:'000000000000000000000002',date:'2025-05-26'});
  for(let i=0;i<4;i++)await key(page,'right');await expect.poll(()=>state.calls.filter(x=>x.path==='/api/maze/complete').length).toBe(1);
  expect(state.calls.find(x=>x.path==='/api/maze/complete').body).toEqual({subProfileId:'000000000000000000000002',date:'2025-05-26',attemptId:id});
  await expect(page.locator('select,.pallet-viewport,.maze-viewport')).toHaveCount(0);expect(state.creates).toHaveLength(0);

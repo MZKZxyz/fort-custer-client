@@ -1,6 +1,6 @@
 import React, { StrictMode } from 'react';
 import { act, fireEvent, render, screen, waitFor } from '@testing-library/react';
-import MazePage from './MazePage';
+import { MazePage } from './MazePage';
 import API from '../utils/api';
 
 const mockNavigate = jest.fn();
@@ -34,6 +34,7 @@ const pad = direction => fireEvent.click(screen.getByRole('button', { name: dire
 beforeEach(() => {
   localStorage.clear();
   sessionStorage.clear();
+  localStorage.setItem('token', 'synthetic-token');
   localStorage.setItem('activeSubProfile', JSON.stringify({ _id: 'synthetic-profile' }));
   localStorage.setItem('selectedMazeDate', '2025-05-26');
   now = 100;
@@ -63,7 +64,7 @@ test.each([['keyboard', key], ['D-pad', pad]])('%s follows the same pickup, fire
   input('Left');
   expect(position(container)).toBe(3);
   expect(API.post).toHaveBeenCalledTimes(2);
-  expect(API.post).toHaveBeenLastCalledWith('/maze/complete', { subProfileId: 'synthetic-profile', date: '2025-05-26' }, { timeout: 15000 });
+  expect(API.post).toHaveBeenLastCalledWith('/maze/complete', { subProfileId: 'synthetic-profile', date: '2025-05-26' }, { timeout: 15000, headers: { Authorization: 'Bearer synthetic-token' } });
   act(() => frame(now + 4000));
   expect(mockNavigate).not.toHaveBeenCalled();
   localStorage.setItem('lastReward', '{"id":"stale"}');
@@ -179,7 +180,7 @@ test('refresh during ambiguous save recovers the same attempt without starting a
   await waitFor(() => expect(localStorage.getItem('lastMazeTime')).toBe('8.000'));
   expect(API.post).toHaveBeenLastCalledWith('/maze/complete', {
     subProfileId: 'synthetic-profile', date: '2025-05-26', attemptId,
-  }, { timeout: 15000 });
+  }, { timeout: 15000, headers: { Authorization: 'Bearer synthetic-token' } });
   act(() => frame(now + 3001));
   expect(mockNavigate).toHaveBeenCalledWith('/results');
   expect(sessionStorage.getItem('mazeCompletion:synthetic-profile:2025-05-26')).toBeNull();

@@ -1,3 +1,4 @@
+const { archiveFixture } = require('./archive-fixture.cjs');
 // Isolated real-timer acceptance/characterization. No virtual clock, timer
 // wrapping, injected gameplay events, live APIs or production instrumentation.
 const { test, expect } = require('@playwright/test');
@@ -27,6 +28,7 @@ for (const [width,height] of [[390,844],[320,568],[844,390],[1280,800]]) {
           await page.route('https://fonts.googleapis.com/**', r => r.abort());
           await page.route('https://fonts.gstatic.com/**', r => r.abort());
           await page.route('**/api/**', route => {
+    if (archiveFixture(route)) return;
             if (!new URL(route.request().url()).pathname.endsWith('/start')) {
               completeRequests++; return route.fulfill({ status:503,json:{error:'Unexpected completion in non-goal fixture'} });
             }

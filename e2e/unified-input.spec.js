@@ -1,3 +1,4 @@
+const { archiveFixture } = require('./archive-fixture.cjs');
 const { test, expect } = require('@playwright/test');
 const fs = require('node:fs');
 const path = require('node:path');
@@ -25,6 +26,7 @@ async function setup(page, deterministic = true) {
   await page.route('https://fonts.googleapis.com/**', route => route.abort());
   await page.route('https://fonts.gstatic.com/**', route => route.abort());
   await page.route('**/api/**', route => {
+    if (archiveFixture(route)) return;
     requests.push({ url: new URL(route.request().url()).pathname, body: route.request().postDataJSON() });
     if (requests.at(-1).url.endsWith('/start')) return route.fulfill({ json: { maze: { grid }, attemptId, seed: 'synthetic' } });
     // Deliberately keep arrival visible while the completion request is pending.

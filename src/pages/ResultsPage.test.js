@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import ResultsPage from './ResultsPage';
 jest.mock('react-router-dom', () => ({ useNavigate: () => jest.fn() }));
+jest.mock('../archive/useCatalog', () => () => ({ status: 'error', usable: false, identity: {}, problem: {kind: 'unavailable', message: 'Archive temporarily unavailable'}, refresh: jest.fn() }));
 jest.mock('../components/NavBar', () => () => null);
 
 test('renders the exact server millisecond after recovering a saved result', () => {

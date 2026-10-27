@@ -1,3 +1,4 @@
+const { archiveFixture } = require('./archive-fixture.cjs');
 const {test,expect}=require('@playwright/test');
 test.setTimeout(90000);
 const fs=require('node:fs'),path=require('node:path');
@@ -13,6 +14,7 @@ for(const [width,height] of [[320,568],[390,844],[844,390],[1280,800]])test.desc
   });
   await context.route('https://fonts.googleapis.com/**',r=>r.abort());await context.route('https://fonts.gstatic.com/**',r=>r.abort());
   await context.route('**/api/**',async route=>{
+    if (archiveFixture(route)) return;
    if(route.request().url().endsWith('/start')){
     starts++;const grid=Array.from({length:13},()=>Array(17).fill('#'));
     for(let c=3;c<=9;c++)grid[6][c]=' ';grid[6][5]='S';grid[6][6]='X';grid[6][7]='F';grid[6][8]='E';grid[5][5]='F';

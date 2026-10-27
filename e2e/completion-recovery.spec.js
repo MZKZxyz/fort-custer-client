@@ -1,3 +1,4 @@
+const { archiveFixture } = require('./archive-fixture.cjs');
 const { test, expect } = require('@playwright/test');
 
 for (const viewport of [{ width: 1280, height: 720 }, { width: 320, height: 568 }, { width: 844, height: 390 }]) {
@@ -15,6 +16,7 @@ test(`lost completion response survives refresh at ${viewport.width}×${viewport
   await page.route('https://fonts.googleapis.com/**', route => route.abort());
   await page.route('https://fonts.gstatic.com/**', route => route.abort());
   await page.route('**/api/**', async route => {
+    if (archiveFixture(route)) return;
     const path = new URL(route.request().url()).pathname;
     if (path === '/api/maze/start') {
       starts++;
