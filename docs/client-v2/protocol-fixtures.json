@@ -1,0 +1,518 @@
+{
+  "provenance": "Synthetic values; serializer and policy from merged server f33ce52; not HTTP evidence",
+  "headers": {
+    "Authorization": "Bearer <private synthetic JWT>",
+    "X-Fort-Custer-Protocol": "session-v2",
+    "X-Fort-Custer-Capabilities": "route-transcript-v1"
+  },
+  "capabilities": {
+    "protocol": "session-v2",
+    "capabilities": [
+      "route-transcript-v1"
+    ],
+    "admission": true,
+    "timing": "continuous-server-receipt",
+    "publicRanking": false
+  },
+  "create": {
+    "request": {
+      "subProfileId": "000000000000000000000002",
+      "date": "2025-05-26",
+      "createKey": "fixture_create_01"
+    },
+    "response": {
+      "protocol": "session-v2",
+      "attemptId": "01234567-89ab-4cde-8fab-0123456789ab",
+      "date": "2025-05-26",
+      "state": "PREPARED",
+      "revision": 1,
+      "expiresAt": 1748217900500,
+      "startedAt": null,
+      "manifest": {
+        "rulesVersion": "cardinal-fire-v1",
+        "integrityTier": "server-timed-legal-route-v1",
+        "validationPolicyVersion": "route-replay-v1",
+        "publicLabel": "Server-timed · route validated",
+        "date": "2025-05-26",
+        "gridHash": "31223695f63357ec3afdcb50a7208710197c89a6c70f1e37a7b0cf00e75502f0",
+        "mazeVersion": "3bd334d3131f74d95a04600b86dddaa233b60def5c4cfabcb7bee77c97d987c2",
+        "abilityIds": [],
+        "runClass": "standard",
+        "competitionVersion": "cardinal-fire-standard-v1",
+        "scoringMethod": "playable-receipt-v2",
+        "protocol": "session-v2"
+      },
+      "gridHash": "31223695f63357ec3afdcb50a7208710197c89a6c70f1e37a7b0cf00e75502f0",
+      "grid": [
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "S",
+          "X",
+          "F",
+          "E",
+          "#"
+        ],
+        [
+          "#",
+          " ",
+          " ",
+          " ",
+          " ",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ]
+      ],
+      "nonce": "01234567-89ab-4cde-8fab-0123456789ab"
+    }
+  },
+  "ready": {
+    "ifMatch": "1",
+    "request": {
+      "subProfileId": "000000000000000000000002",
+      "key": "fixture_ready_01",
+      "nonce": "01234567-89ab-4cde-8fab-0123456789ab",
+      "gridHash": "31223695f63357ec3afdcb50a7208710197c89a6c70f1e37a7b0cf00e75502f0",
+      "rulesVersion": "cardinal-fire-v1"
+    },
+    "response": {
+      "protocol": "session-v2",
+      "attemptId": "01234567-89ab-4cde-8fab-0123456789ab",
+      "date": "2025-05-26",
+      "state": "STARTED",
+      "revision": 2,
+      "expiresAt": 1748224800500,
+      "startedAt": 1748217600500,
+      "manifest": {
+        "rulesVersion": "cardinal-fire-v1",
+        "integrityTier": "server-timed-legal-route-v1",
+        "validationPolicyVersion": "route-replay-v1",
+        "publicLabel": "Server-timed · route validated",
+        "date": "2025-05-26",
+        "gridHash": "31223695f63357ec3afdcb50a7208710197c89a6c70f1e37a7b0cf00e75502f0",
+        "mazeVersion": "3bd334d3131f74d95a04600b86dddaa233b60def5c4cfabcb7bee77c97d987c2",
+        "abilityIds": [],
+        "runClass": "standard",
+        "competitionVersion": "cardinal-fire-standard-v1",
+        "scoringMethod": "playable-receipt-v2",
+        "protocol": "session-v2"
+      },
+      "gridHash": "31223695f63357ec3afdcb50a7208710197c89a6c70f1e37a7b0cf00e75502f0",
+      "grid": [
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "S",
+          "X",
+          "F",
+          "E",
+          "#"
+        ],
+        [
+          "#",
+          " ",
+          " ",
+          " ",
+          " ",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ]
+      ]
+    }
+  },
+  "complete": {
+    "ifMatch": "2",
+    "request": {
+      "subProfileId": "000000000000000000000002",
+      "completionKey": "fixture_complete_01",
+      "transcript": {
+        "version": "route-transcript-v1",
+        "commands": [
+          {
+            "seq": 1,
+            "dir": "up"
+          },
+          {
+            "seq": 2,
+            "dir": "down"
+          },
+          {
+            "seq": 3,
+            "dir": "right"
+          },
+          {
+            "seq": 4,
+            "dir": "right"
+          },
+          {
+            "seq": 5,
+            "dir": "up"
+          },
+          {
+            "seq": 6,
+            "dir": "left"
+          },
+          {
+            "seq": 7,
+            "dir": "up"
+          },
+          {
+            "seq": 8,
+            "dir": "right"
+          },
+          {
+            "seq": 9,
+            "dir": "right"
+          },
+          {
+            "seq": 10,
+            "dir": "right"
+          }
+        ]
+      }
+    },
+    "response": {
+      "protocol": "session-v2",
+      "attemptId": "01234567-89ab-4cde-8fab-0123456789ab",
+      "date": "2025-05-26",
+      "status": "accepted",
+      "routeValidated": true,
+      "progress": {
+        "completed": true
+      },
+      "timing": {
+        "status": "untimed",
+        "elapsedMs": null,
+        "reason": "TIMING_REVIEW_REQUIRED"
+      },
+      "collectible": {
+        "version": "date-grant-v1",
+        "status": "awarded",
+        "opportunityId": "synthetic",
+        "reward": {
+          "name": "Synthetic keepsake",
+          "description": "Isolated test collectible.",
+          "emoji": "🧭",
+          "category": "fixture",
+          "rarity": "common"
+        },
+        "collectionComplete": false,
+        "message": "This date’s collectible is saved."
+      },
+      "integrity": {
+        "tier": "server-timed-legal-route-v1",
+        "validator": "route-replay-v1",
+        "label": "Route validated · untimed"
+      }
+    }
+  },
+  "status": {
+    "query": {
+      "subProfileId": "000000000000000000000002"
+    },
+    "response": {
+      "protocol": "session-v2",
+      "attemptId": "01234567-89ab-4cde-8fab-0123456789ab",
+      "date": "2025-05-26",
+      "state": "STARTED",
+      "revision": 2,
+      "expiresAt": 1748224800500,
+      "startedAt": 1748217600500,
+      "manifest": {
+        "rulesVersion": "cardinal-fire-v1",
+        "integrityTier": "server-timed-legal-route-v1",
+        "validationPolicyVersion": "route-replay-v1",
+        "publicLabel": "Server-timed · route validated",
+        "date": "2025-05-26",
+        "gridHash": "31223695f63357ec3afdcb50a7208710197c89a6c70f1e37a7b0cf00e75502f0",
+        "mazeVersion": "3bd334d3131f74d95a04600b86dddaa233b60def5c4cfabcb7bee77c97d987c2",
+        "abilityIds": [],
+        "runClass": "standard",
+        "competitionVersion": "cardinal-fire-standard-v1",
+        "scoringMethod": "playable-receipt-v2",
+        "protocol": "session-v2"
+      },
+      "gridHash": "31223695f63357ec3afdcb50a7208710197c89a6c70f1e37a7b0cf00e75502f0",
+      "grid": [
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "S",
+          "X",
+          "F",
+          "E",
+          "#"
+        ],
+        [
+          "#",
+          " ",
+          " ",
+          " ",
+          " ",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ]
+      ]
+    }
+  },
+  "result": {
+    "query": {
+      "subProfileId": "000000000000000000000002"
+    },
+    "response": {
+      "protocol": "session-v2",
+      "attemptId": "01234567-89ab-4cde-8fab-0123456789ab",
+      "date": "2025-05-26",
+      "status": "accepted",
+      "routeValidated": true,
+      "progress": {
+        "completed": true
+      },
+      "timing": {
+        "status": "untimed",
+        "elapsedMs": null,
+        "reason": "TIMING_REVIEW_REQUIRED"
+      },
+      "collectible": {
+        "version": "date-grant-v1",
+        "status": "awarded",
+        "opportunityId": "synthetic",
+        "reward": {
+          "name": "Synthetic keepsake",
+          "description": "Isolated test collectible.",
+          "emoji": "🧭",
+          "category": "fixture",
+          "rarity": "common"
+        },
+        "collectionComplete": false,
+        "message": "This date’s collectible is saved."
+      },
+      "integrity": {
+        "tier": "server-timed-legal-route-v1",
+        "validator": "route-replay-v1",
+        "label": "Route validated · untimed"
+      }
+    }
+  },
+  "recover": {
+    "request": {
+      "subProfileId": "000000000000000000000002"
+    },
+    "noPending": {
+      "outcome": "no-pending",
+      "session": {
+        "protocol": "session-v2",
+        "attemptId": "01234567-89ab-4cde-8fab-0123456789ab",
+        "date": "2025-05-26",
+        "state": "STARTED",
+        "revision": 2,
+        "expiresAt": 1748224800500,
+        "startedAt": 1748217600500,
+        "manifest": {
+          "rulesVersion": "cardinal-fire-v1",
+          "integrityTier": "server-timed-legal-route-v1",
+          "validationPolicyVersion": "route-replay-v1",
+          "publicLabel": "Server-timed · route validated",
+          "date": "2025-05-26",
+          "gridHash": "31223695f63357ec3afdcb50a7208710197c89a6c70f1e37a7b0cf00e75502f0",
+          "mazeVersion": "3bd334d3131f74d95a04600b86dddaa233b60def5c4cfabcb7bee77c97d987c2",
+          "abilityIds": [],
+          "runClass": "standard",
+          "competitionVersion": "cardinal-fire-standard-v1",
+          "scoringMethod": "playable-receipt-v2",
+          "protocol": "session-v2"
+        },
+        "gridHash": "31223695f63357ec3afdcb50a7208710197c89a6c70f1e37a7b0cf00e75502f0",
+        "grid": [
+          [
+            "#",
+            "#",
+            "#",
+            "#",
+            "#",
+            "#"
+          ],
+          [
+            "#",
+            "S",
+            "X",
+            "F",
+            "E",
+            "#"
+          ],
+          [
+            "#",
+            " ",
+            " ",
+            " ",
+            " ",
+            "#"
+          ],
+          [
+            "#",
+            "#",
+            "#",
+            "#",
+            "#",
+            "#"
+          ]
+        ]
+      }
+    },
+    "aborted": {
+      "outcome": "aborted",
+      "revision": 4,
+      "retrySameOperation": true
+    },
+    "winner": {
+      "protocol": "session-v2",
+      "attemptId": "01234567-89ab-4cde-8fab-0123456789ab",
+      "date": "2025-05-26",
+      "status": "accepted",
+      "routeValidated": true,
+      "progress": {
+        "completed": true
+      },
+      "timing": {
+        "status": "untimed",
+        "elapsedMs": null,
+        "reason": "TIMING_REVIEW_REQUIRED"
+      },
+      "collectible": {
+        "version": "date-grant-v1",
+        "status": "awarded",
+        "opportunityId": "synthetic",
+        "reward": {
+          "name": "Synthetic keepsake",
+          "description": "Isolated test collectible.",
+          "emoji": "🧭",
+          "category": "fixture",
+          "rarity": "common"
+        },
+        "collectionComplete": false,
+        "message": "This date’s collectible is saved."
+      },
+      "integrity": {
+        "tier": "server-timed-legal-route-v1",
+        "validator": "route-replay-v1",
+        "label": "Route validated · untimed"
+      }
+    }
+  },
+  "abandon": {
+    "ifMatch": "2",
+    "request": {
+      "subProfileId": "000000000000000000000002",
+      "key": "fixture_abandon_01",
+      "reason": "restart"
+    },
+    "response": {
+      "protocol": "session-v2",
+      "attemptId": "01234567-89ab-4cde-8fab-0123456789ab",
+      "date": "2025-05-26",
+      "state": "ABANDONED",
+      "revision": 3,
+      "expiresAt": 1748224800500,
+      "startedAt": 1748217600500,
+      "manifest": {
+        "rulesVersion": "cardinal-fire-v1",
+        "integrityTier": "server-timed-legal-route-v1",
+        "validationPolicyVersion": "route-replay-v1",
+        "publicLabel": "Server-timed · route validated",
+        "date": "2025-05-26",
+        "gridHash": "31223695f63357ec3afdcb50a7208710197c89a6c70f1e37a7b0cf00e75502f0",
+        "mazeVersion": "3bd334d3131f74d95a04600b86dddaa233b60def5c4cfabcb7bee77c97d987c2",
+        "abilityIds": [],
+        "runClass": "standard",
+        "competitionVersion": "cardinal-fire-standard-v1",
+        "scoringMethod": "playable-receipt-v2",
+        "protocol": "session-v2"
+      },
+      "gridHash": "31223695f63357ec3afdcb50a7208710197c89a6c70f1e37a7b0cf00e75502f0",
+      "grid": [
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ],
+        [
+          "#",
+          "S",
+          "X",
+          "F",
+          "E",
+          "#"
+        ],
+        [
+          "#",
+          " ",
+          " ",
+          " ",
+          " ",
+          "#"
+        ],
+        [
+          "#",
+          "#",
+          "#",
+          "#",
+          "#",
+          "#"
+        ]
+      ]
+    }
+  },
+  "unknown": {
+    "status": 503,
+    "body": {
+      "error": "COMMIT_UNKNOWN",
+      "retrySameOperation": true,
+      "outcome": "unresolved"
+    }
+  }
+}

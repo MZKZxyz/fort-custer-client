@@ -1,0 +1,11 @@
+{
+  "kind": "offline-actual-server-replay-differential",
+  "serverBaseline": "f33ce52a86ffccae5c28c661ce560ff783a9b836",
+  "serverReplaySha256": "5dc0e0b0ea5fd6f2bebc9273d6afd855d90a3b90c14ebce17f3012a380541fb3",
+  "cases": 104,
+  "passed": 104,
+  "commandsChecked": 69354,
+  "maxCommands": 65536,
+  "maxTranscriptBytes": 1627352,
+  "databaseOrHttpAssertions": false
+}
