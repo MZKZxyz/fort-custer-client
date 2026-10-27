@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ATTEMPT_KEY, RECEIPT_KEY, identityDigest, receiptView } from './contract';
 import { formatElapsed } from '../game/movement';
@@ -8,6 +8,14 @@ export default function V2Results() {
   const navigate = useNavigate();
   const [receipt, setReceipt] = useState(null);
   const [error, setError] = useState(false);
+  const headingRef = useRef(null);
+  const arrivalFocusedRef = useRef(false);
+  useEffect(() => {
+    if (!receipt || !headingRef.current || arrivalFocusedRef.current) return;
+    arrivalFocusedRef.current = true;
+    // One semantic arrival cue per mount; subsequent keyboard focus stays put.
+    headingRef.current.focus();
+  }, [receipt]);
   useEffect(() => {
     let active = true;
     (async () => {
@@ -38,7 +46,7 @@ export default function V2Results() {
   nextDate.setUTCDate(nextDate.getUTCDate() + 1);
   const next = nextDate.toISOString().slice(0, 10);
   return <main className="page-with-nav" style={{ padding: '1rem', overflowWrap: 'anywhere' }}>
-    <h1>Maze complete</h1><p>{receipt.date}</p>
+    <h1 ref={headingRef} tabIndex={-1}>Maze complete</h1><p>{receipt.date}</p>
     <p>{receipt.timing.status === 'untimed' ? 'Accepted untimed completion. Your maze date is saved.'
       : `Official server time: ${formatElapsed(receipt.timing.elapsedMs)}`}</p>
     <p>The gameplay timer was provisional. Network and acknowledgment delays are not compensated.</p>

@@ -19,10 +19,18 @@ const pos=page=>page.locator('.maze-cell[data-player]');
 const key=(page,dir)=>page.keyboard.press(`Arrow${dir[0].toUpperCase()+dir.slice(1)}`);
 const stored=page=>page.evaluate(()=>JSON.parse(localStorage.getItem('fc.session-v2.attempt.v1')));
 async function ready(page,column=1){await expect(pos(page)).toHaveAttribute('data-column',String(column));await expect(page.getByText('Waiting for server-ready acknowledgment…')).toHaveCount(0);}
+async function resultArrival(page){
+ const heading=page.getByRole('heading',{name:'Maze complete',level:1});
+ await expect(heading).toBeFocused();await expect(heading).toHaveAttribute('tabindex','-1');
+ await expect(page.locator('[aria-live],[role="status"],[role="alert"]')).toHaveCount(0);
+ await page.keyboard.press('Tab');await expect(page.getByRole('button',{name:'Replay Maze'})).toBeFocused();
+ await page.keyboard.press('Tab');await expect(page.getByRole('button',{name:'Next Maze'})).toBeFocused();
+ await page.keyboard.press('Shift+Tab');await expect(page.getByRole('button',{name:'Replay Maze'})).toBeFocused();
+}
 async function capture(page,name){if(!output)return;fs.mkdirSync(output,{recursive:true});for(const fullPage of [false,true])await page.screenshot({path:path.join(output,`${name}-${fullPage?'page':'window'}.png`),fullPage});}
 async function connect(context,options={}){
  const who=await integration.bootstrap(),state={creates:[],ready:[],completes:[],legacy:[],who,options};
- await context.addInitScript(({token,subProfileId,date})=>{localStorage.setItem('token',token);localStorage.setItem('activeSubProfile',JSON.stringify({_id:subProfileId}));localStorage.setItem('selectedMazeDate',date);},{token:who.token,subProfileId:who.subProfileId,date});
+ await context.addInitScript(({token,subProfileId,date})=>{localStorage.setItem('token',token);localStorage.setItem('activeSubProfile',JSON.stringify({_id:subProfileId}));if(!localStorage.getItem('selectedMazeDate'))localStorage.setItem('selectedMazeDate',date);},{token:who.token,subProfileId:who.subProfileId,date});
  await context.route('https://fonts.googleapis.com/**',r=>r.abort());await context.route('https://fonts.gstatic.com/**',r=>r.abort());
  await context.route('**/api/**',async route=>{
   const request=route.request(),url=new URL(request.url()),body=request.postDataJSON(),p=url.pathname;
@@ -69,9 +77,9 @@ for(const [width,height]of [[320,568],[390,844],[844,390],[1280,800]])test.descr
   await key(page,'right');state.options.fault={operation:'complete',stage:'finish:committed',action:'pause'};state.armed=false;state.faultArmed=false;
   await key(page,'right');await hit(state);await capture(page,`${width}x${height}-actual-saving`);const terminal=await stored(page);
   expect(terminal.commands).toEqual(contract.fixture.transcript.commands);await key(page,'left');expect(state.completes).toHaveLength(1);await integration.control('release',{worker:0});
-  await expect(page.getByText(/Accepted untimed completion/)).toBeVisible();await expect(page.getByRole('heading',{name:'Collectible saved'})).toBeVisible();await capture(page,`${width}x${height}-actual-accepted`);
+  await expect(page.getByText(/Accepted untimed completion/)).toBeVisible();await expect(page.getByRole('heading',{name:'Collectible saved'})).toBeVisible();await resultArrival(page);await capture(page,`${width}x${height}-actual-accepted`);
   expect(state.creates).toHaveLength(1);expect(state.ready).toHaveLength(1);expect(state.completes).toHaveLength(1);await settle(state,terminal.attemptId);
-  expect(await page.evaluate(()=>[localStorage.getItem('lastMazeTime'),localStorage.getItem('bestTimes')])).toEqual([null,null]);await page.reload();await expect(page.getByText(/Accepted untimed completion/)).toBeVisible();expect(state.completes).toHaveLength(1);
+  expect(await page.evaluate(()=>[localStorage.getItem('lastMazeTime'),localStorage.getItem('bestTimes')])).toEqual([null,null]);await page.reload();await expect(page.getByText(/Accepted untimed completion/)).toBeVisible();await resultArrival(page);expect(state.completes).toHaveLength(1);
  });
 });
 for(const operation of ['create','ready','complete'])test(`actual lost ${operation} ACK retains original identity and single grant`,async({page,context})=>{
@@ -93,11 +101,11 @@ test('actual durable intake crash/restart resolves before identical completion r
 test('actual two tabs and same-date replay cannot award twice; next date exhausts catalog',async({page,context})=>{
  const state=await connect(context);await page.goto('/maze');await ready(page);await key(page,'right');const original=await stored(page);
  const other=await context.newPage();await other.goto('/maze');await expect(other.getByRole('alert')).toContainText('another tab');await key(other,'right');expect(state.creates).toHaveLength(1);await page.close();
- await other.getByRole('button',{name:'Recover original attempt'}).click();await ready(other,2);for(let i=0;i<3;i++)await key(other,'right');await expect(other.getByText(/Accepted untimed completion/)).toBeVisible();await settle(state,original.attemptId);
- await other.getByRole('button',{name:'Replay Maze'}).click();await ready(other);for(let i=0;i<4;i++)await key(other,'right');await expect(other.getByText(/Accepted untimed completion/)).toBeVisible();
+ await other.getByRole('button',{name:'Recover original attempt'}).click();await ready(other,2);for(let i=0;i<3;i++)await key(other,'right');await expect(other.getByText(/Accepted untimed completion/)).toBeVisible();await resultArrival(other);await settle(state,original.attemptId);
+ await other.getByRole('button',{name:'Replay Maze'}).click();await ready(other);for(let i=0;i<4;i++)await key(other,'right');await expect(other.getByText(/Accepted untimed completion/)).toBeVisible();await resultArrival(other);
  let snap=await integration.control('snapshot');const owned=rows=>rows.filter(r=>r.accountId===state.who.accountId&&r.profileId===state.who.subProfileId);
  expect(owned(snap.collections.results)).toHaveLength(2);expect(owned(snap.collections.grants)).toHaveLength(1);expect(owned(snap.collections.progress)).toHaveLength(1);
- await other.getByRole('button',{name:'Next Maze'}).click();await ready(other);const next=await stored(other);for(let i=0;i<4;i++)await key(other,'right');await expect(other.getByText(/No unowned item remained/)).toBeVisible();await capture(other,'actual-exhausted');
+ await other.getByRole('button',{name:'Next Maze'}).click();await ready(other);const next=await stored(other);for(let i=0;i<4;i++)await key(other,'right');await expect(other.getByText(/No unowned item remained/)).toBeVisible();await resultArrival(other);const completedCalls=state.completes.length;await other.reload();await expect(other.getByText(/No unowned item remained/)).toBeVisible();await resultArrival(other);expect(state.completes).toHaveLength(completedCalls);await capture(other,'actual-exhausted');
  snap=await integration.control('snapshot');expect(owned(snap.collections.results)).toHaveLength(3);expect(owned(snap.collections.grants)).toHaveLength(2);expect(owned(snap.collections.progress)).toHaveLength(2);
  expect(snap.users.find(u=>u._id===state.who.accountId).subProfiles.find(p=>p._id===state.who.subProfileId).rewards).toEqual({'integration-compass':1});expect(state.creates[1].createKey).not.toBe(state.creates[0].createKey);expect(next.date).toBe(contract.fixture.alternateDate);await other.close();
 });

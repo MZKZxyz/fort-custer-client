@@ -1,5 +1,7 @@
 # Sprint 1.5B — opt-in client playable sessions
 
+Sprint 1.5D follow-up: [accepted-result arrival focus and focused revalidation](result-arrival.md). The original evidence below remains tied to its recorded source hashes.
+
 Tracks [client #47](https://github.com/MZKZxyz/fort-custer-client/issues/47) and [server #9](https://github.com/MZKZxyz/fort-custer-server/issues/9). Client baseline: `9467af75ce730811d2911e4d05a1707ce4c5cbc4`. Frozen server runtime: `f33ce52a86ffccae5c28c661ce560ff783a9b836`; actual disposable harness [server PR #10](https://github.com/MZKZxyz/fort-custer-server/pull/10) at `2db3820468bba805a32d20c07f2e586b0819d6ec`. The exact [server contract](server-contract.json) is copied unchanged from that revision; the separate protocol fixtures use synthetic values. See [protocol fixtures](protocol-fixtures.json), [source/evidence hashes and results](validation.json), and [offline actual-server replay results](differential-results.json). Exact implementation SHA is reported on the draft PR and issue.
 
 **Release remains OFF.** No environment, CI, deployment, server runtime, database or production setting changed. This is author validation, not independent QA or release approval. The published disposable server harness was subsequently available and the compiled client passed **10/10 actual authenticated HTTP/Mongo/browser tests**, including stored result/grant/inventory/outbox assertions. These author results are distinct from fixture-browser tests; Sprint 1.5C independent QA remains required.
