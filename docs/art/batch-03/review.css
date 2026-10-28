@@ -1,0 +1,17 @@
+@import url('../batch-01/review.css');
+header h1 {font-size:25px;}
+.controls {gap:7px;}
+label {font-size:12px;}
+details {margin:6px 0;}
+summary {min-height:28px;cursor:pointer;}
+.viewport {height:min(var(--world-height,360px),360px);}
+.world {margin-inline:auto;}
+.sprite-gallery,.turnarounds {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;background:#d9d3c4;padding:10px;}
+figure {margin:0;min-width:0;text-align:center;}
+figcaption {font:11px/1.4 system-ui,sans-serif;margin:5px 0;}
+.sprite-gallery img {display:block;margin:auto;background:repeating-conic-gradient(#b9b9b9 0 25%,#dedede 0 50%) 0/12px 12px;}
+.turnarounds img {display:block;width:100%;max-width:240px;height:auto;margin:auto;background:#d6d0c0;}
+.portraits {display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.portraits img {display:block;width:100%;max-width:480px;height:auto;margin:auto;background:#d6d0c0;}
+nav {font-size:12px;}
+@media(max-width:700px){header,main{padding:10px 16px;} .viewport{height:min(var(--world-height,320px),320px);} .comparison{gap:8px;} .portraits{grid-template-columns:1fr;} .turnarounds{grid-template-columns:repeat(2,minmax(0,1fr));}}

@@ -1,0 +1,221 @@
+{
+  "file": "character-master.glb",
+  "format": "glTF 2.0 GLB",
+  "sha256": "3123b0125e900d284161014d0d5404f69fa9c32a0cbd0312afff4bba423cc4e1",
+  "bytes": 2092456,
+  "blender": "4.3.2",
+  "exportOptions": {
+    "export_format": "GLB",
+    "use_selection": true,
+    "export_yup": true,
+    "export_normals": true,
+    "export_tangents": true,
+    "export_texcoords": true,
+    "export_materials": "EXPORT",
+    "export_cameras": false,
+    "export_lights": false,
+    "export_animations": false,
+    "export_extras": true,
+    "export_apply": false
+  },
+  "tangentFinishing": "Float32 unit/orthogonal frames restored after Blender four-decimal tangent export; handedness unchanged",
+  "sourceBlendSha256": "96046e6ff080751a4759a5776adbba799ef802a6b5b98cbb92d96c1451d9acbf",
+  "sourceComponents": 135,
+  "triangles": 21874,
+  "verticesBeforeGltfSplits": 11207,
+  "textures": [
+    {
+      "file": "character-master-basecolor.png",
+      "role": "baseColor",
+      "size": [
+        1024,
+        1024
+      ],
+      "colorSpace": "sRGB",
+      "embedded": true,
+      "sha256": "32824f29f01972641a2c8a3b7e8f81e14d2f389bc3bf20cc73ff56082ab3ab5c"
+    },
+    {
+      "file": "character-master-normal.png",
+      "role": "normal",
+      "size": [
+        1024,
+        1024
+      ],
+      "colorSpace": "Non-Color",
+      "embedded": true,
+      "sha256": "5c50b63d25f840fd4789e425a4c76255d15571943fa12f48c3d923d2f9884db0"
+    }
+  ],
+  "materials": [
+    {
+      "name": "Worn brown leather",
+      "roughness": 0.7599999904632568,
+      "metallic": 0.0
+    },
+    {
+      "name": "Dark leather hat band",
+      "roughness": 0.8399999737739563,
+      "metallic": 0.0
+    },
+    {
+      "name": "Brown felt field hat",
+      "roughness": 0.9200000166893005,
+      "metallic": 0.0
+    },
+    {
+      "name": "Dull brass hardware",
+      "roughness": 0.5199999809265137,
+      "metallic": 0.6000000238418579
+    },
+    {
+      "name": "Blonde braided hair",
+      "roughness": 0.7400000095367432,
+      "metallic": 0.0
+    },
+    {
+      "name": "Canvas bedroll",
+      "roughness": 0.9399999976158142,
+      "metallic": 0.0
+    },
+    {
+      "name": "Olive cargo cloth",
+      "roughness": 0.9200000166893005,
+      "metallic": 0.0
+    },
+    {
+      "name": "Natural closed smile",
+      "roughness": 0.75,
+      "metallic": 0.0
+    },
+    {
+      "name": "Blue iris",
+      "roughness": 0.30000001192092896,
+      "metallic": 0.0
+    },
+    {
+      "name": "Leather seam / boot lace",
+      "roughness": 0.8500000238418579,
+      "metallic": 0.0
+    },
+    {
+      "name": "Warm skin / freckles",
+      "roughness": 0.699999988079071,
+      "metallic": 0.0
+    },
+    {
+      "name": "Eye catchlight",
+      "roughness": 0.25,
+      "metallic": 0.0
+    },
+    {
+      "name": "Blue gray scarf",
+      "roughness": 0.8600000143051147,
+      "metallic": 0.0
+    },
+    {
+      "name": "Rolled fabric cuff",
+      "roughness": 0.8999999761581421,
+      "metallic": 0.0
+    },
+    {
+      "name": "Boot sole / neutral umber",
+      "roughness": 0.9200000166893005,
+      "metallic": 0.0
+    },
+    {
+      "name": "Hair ridge highlight",
+      "roughness": 0.7799999713897705,
+      "metallic": 0.0
+    },
+    {
+      "name": "Cargo pocket seams",
+      "roughness": 0.8999999761581421,
+      "metallic": 0.0
+    },
+    {
+      "name": "Visible pupil",
+      "roughness": 0.25,
+      "metallic": 0.0
+    },
+    {
+      "name": "Bedroll spiral seam",
+      "roughness": 0.9200000166893005,
+      "metallic": 0.0
+    },
+    {
+      "name": "Cream field shirt",
+      "roughness": 0.8700000047683716,
+      "metallic": 0.0
+    },
+    {
+      "name": "Visible warm sclera",
+      "roughness": 0.3499999940395355,
+      "metallic": 0.0
+    },
+    {
+      "name": "Subtle freckles",
+      "roughness": 0.75,
+      "metallic": 0.0
+    }
+  ],
+  "coordinates": {
+    "cellUnits": 1,
+    "source": "Right handed Blender +X right, -Y forward/increasing row, +Z up",
+    "glTF": "Right handed +X right, +Z forward/increasing row, +Y up",
+    "conversion": "(X,Y,Z) Blender \u2192 (X,Z,-Y) glTF",
+    "rootPivot": [
+      0,
+      0,
+      0
+    ],
+    "rootScale": [
+      1,
+      1,
+      1
+    ],
+    "sourceBounds": [
+      [
+        -0.2800000011920929,
+        0.2800000011920929
+      ],
+      [
+        -0.15299999713897705,
+        0.26716503500938416
+      ],
+      [
+        0.0,
+        1.3423504829406738
+      ]
+    ],
+    "glTFBounds": [
+      [
+        -0.2800000011920929,
+        0.2800000011920929
+      ],
+      [
+        0.0,
+        1.3423504829406738
+      ],
+      [
+        -0.26716503500938416,
+        0.15299999713897705
+      ]
+    ],
+    "logicalOccupancy": "One logical player cell; height/accessory visual extents are not collision geometry"
+  },
+  "materialTreatment": {
+    "bake": "1024\u00b2 shared UV atlas; actual Principled Base Color via temporary EMIT surface (no lighting/AO), tangent-space NORMAL; 16 fixed samples, seed 30, 4px margin",
+    "retained": "Original roughness/metallic scalar per material; evaluated bevel geometry and split/weighted normals",
+    "losses": [
+      "Procedural grain becomes finite-resolution 8-bit textures; very fine detail/filtering can differ at close range.",
+      "Blender shader graphs and editable modifiers are retained only in the original .blend.",
+      "Core glTF metallic/roughness shading omits Blender-specific default specular-IOR treatment; render engines may differ."
+    ],
+    "unbaked": "No directional lighting, cast shadows, AO, studio background, camera or AgX grade in PBR maps"
+  },
+  "license": "Original geometry/source under repository contribution terms; reference concepts do not establish a separate asset license",
+  "rebuild": "blender -b -t 2 --python-exit-code 1 --python docs/art/batch-03/source/portable.py -- girl",
+  "characterId": "CHR-GIRL-01",
+  "provenance": "Original procedural character sculpture informed by five owner-provided 2D concepts; no concept pixels used as textures"
+}

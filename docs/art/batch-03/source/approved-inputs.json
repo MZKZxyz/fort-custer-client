@@ -1,0 +1,11 @@
+{
+  "baseline": "afece64170a46d01c0c4123f4ffd9084d4f671db",
+  "files": {
+    "docs/art/batch-01/source/wall-master.blend": "452d1f3bcce4c065ec08dcc8fcc67c9413d1f2cb16ebf1cabc65ed4e2b4a06ef",
+    "docs/art/batch-01/source/export-glb.py": "3f6e935c63ea8d5f4863f9893095468c43c19fd130a57e54c0df990bd2037143",
+    "docs/art/batch-01/assets/manifest.json": "b3660ef76d66ba27fb084331dc3e91bebe5825b74021dd5be1b86fe1ab809d76",
+    "docs/art/batch-02/manifest.json": "a3b0ae1d8755366bc0ce2842b11e5cf951716200de8aba9e9cc74392a6e1c2cc",
+    "src/game/palletProjection.js": "90c08dd440d766a0c638f7faf21b8b25be0abcdfea6b6f776bb853301297757b",
+    "src/components/PalletMaze.js": "e1d7de771371f9c2e8a8b34fbda72e4179b99efb1ef4a21180b390bcb003a598"
+  }
+}

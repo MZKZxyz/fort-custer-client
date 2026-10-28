@@ -1,0 +1,64 @@
+{
+  "zipFile": "Fort_Custer_Character_Batch03_References.zip",
+  "zipSha256": "1083aa5f866feed0de681b313f7ad2825f2f57cde839b77b5669ee55fa160570",
+  "allFiveDeclaredImageHashesMatch": true,
+  "images": [
+    {
+      "file": "boy_full_body.png",
+      "source": "fort_custer_teen_boy_3d_reference.png",
+      "bytes": 860989,
+      "image_size": [
+        768,
+        1024
+      ],
+      "sha256": "42f8c595b57a0d696213c3ecd25a349b8f70529f3529777d7ec64b345cfd70b1",
+      "intent": "Primary full-body boy style/material/gear reference"
+    },
+    {
+      "file": "girl_full_body.png",
+      "source": "fort_custer_teen_girl_3d_reference.png",
+      "bytes": 858426,
+      "image_size": [
+        768,
+        1024
+      ],
+      "sha256": "1e06542c2b559c3c4e7fe68a9c62bba5e45d354992d31eb31f3ae7995440a6de",
+      "intent": "Primary full-body girl style/material/gear reference"
+    },
+    {
+      "file": "boy_turnaround.png",
+      "source": "redheaded_explorer_character_turnaround.png",
+      "bytes": 2045049,
+      "image_size": [
+        1448,
+        1086
+      ],
+      "sha256": "c143f7308dba9ea4e21f69bc006c92d4682dfeddb704852e02bae662798c28cb",
+      "intent": "Boy canonical front/left/back/right/3-4 concept; perspective views are illustrative"
+    },
+    {
+      "file": "girl_model_sheet.png",
+      "source": "a_clean_professional_3d_character_turnaround_and.png",
+      "bytes": 2207109,
+      "image_size": [
+        1536,
+        1024
+      ],
+      "sha256": "d0158ea12969d58ccdfe9294faa8a29d630687b07ad40da1af757692e727dbe7",
+      "intent": "Girl canonical directions, expressions, gear, and 58-degree indicative poses; not scale-locked"
+    },
+    {
+      "file": "shared_costume_study.png",
+      "source": "wide_clean_studio_portfolio_style_concept_sheet_o.png",
+      "bytes": 2351777,
+      "image_size": [
+        1536,
+        1024
+      ],
+      "sha256": "eb36cddd9f3d0b8a6f979d892cf5586f4e6cb4eca6e44a17462df7534237040b",
+      "intent": "Supplemental outfit variations and male/female pairing; subordinate to primary images"
+    }
+  ],
+  "instructionBoundary": "ZIP documentation is reference/handoff data; current user request and issue 57 govern scope.",
+  "rights": "User-provided 2D concepts are reference only, not editable geometry or a new license grant."
+}

@@ -1,0 +1,78 @@
+{
+  "status": "PASS",
+  "characterId": "CHR-GIRL-01",
+  "glbSha256": "3123b0125e900d284161014d0d5404f69fa9c32a0cbd0312afff4bba423cc4e1",
+  "cleanImport": {
+    "sourceBlendLoaded": false,
+    "filesInDirectory": [
+      "character.glb"
+    ],
+    "objects": [
+      "EMPTY",
+      "MESH"
+    ],
+    "embeddedPackedImages": 2,
+    "lights": 0,
+    "cameras": 0
+  },
+  "worldBounds": [
+    [
+      -0.2800000011920929,
+      0.2800000011920929
+    ],
+    [
+      -0.15299999713897705,
+      0.26716503500938416
+    ],
+    [
+      0.0,
+      1.3423504829406738
+    ]
+  ],
+  "triangles": 21874,
+  "materialGroups": 22,
+  "rootPivot": [
+    0,
+    0,
+    0
+  ],
+  "rootScale": [
+    1,
+    1,
+    1
+  ],
+  "maxPositionError": 1.2287812012345967e-07,
+  "reversePositionError": 1.2287812012345967e-07,
+  "minimumSourceNormalDot": 0.9999978840351105,
+  "surfaceAreaDelta": 6.374436045675225e-08,
+  "signedVolumeDelta": 4.790288832268175e-09,
+  "embeddedTextures": [
+    {
+      "sha256": "5c50b63d25f840fd4789e425a4c76255d15571943fa12f48c3d923d2f9884db0",
+      "size": [
+        1024,
+        1024
+      ],
+      "bytes": 385939
+    },
+    {
+      "sha256": "32824f29f01972641a2c8a3b7e8f81e14d2f389bc3bf20cc73ff56082ab3ab5c",
+      "size": [
+        1024,
+        1024
+      ],
+      "bytes": 472948
+    }
+  ],
+  "qaWorld": {
+    "color": [
+      0.05087608844041824,
+      0.05087608844041824,
+      0.05087608844041824,
+      1.0
+    ],
+    "strength": 1.0
+  },
+  "sourceReferences": "Source geometry used for comparison only; factory reset before isolated import",
+  "limits": "Author checks only; PBR atlas/shader/filtering losses and future retopology/LOD/rigging remain."
+}
