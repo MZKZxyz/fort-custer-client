@@ -1,0 +1,5 @@
+# Originals, normalized geometry and caches belong in private artifact storage.
+*.glb
+*.blend
+*.blend1
+__pycache__/

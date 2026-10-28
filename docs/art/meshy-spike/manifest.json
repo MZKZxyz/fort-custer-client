@@ -1,0 +1,4703 @@
+{
+  "schema": "fc-meshy-sprites-v1",
+  "approval": "visual evaluation only; owner and independent QA pending",
+  "camera": {
+    "elevation": 58,
+    "yaw": 0,
+    "authoringPixelsPerCell": 224,
+    "facings": {
+      "south": 0,
+      "east": 90,
+      "north": 180,
+      "west": -90
+    }
+  },
+  "lightingAuthority": "../batch-01/assets/manifest.json",
+  "sources": [
+    {
+      "id": "source-1",
+      "sourceSha256": "fd721b4377229f3764174d610b38b902246c6eec18d466ca7385ff51180e7e59",
+      "blender": "4.3.2",
+      "importBounds": [
+        [
+          -0.40369799733161926,
+          0.4030579924583435
+        ],
+        [
+          -0.3695259988307953,
+          0.36601701378822327
+        ],
+        [
+          -0.9521390199661255,
+          0.9508569836616516
+        ]
+      ],
+      "normalizedBounds": [
+        [
+          -0.2437654584646225,
+          0.2437654733657837
+        ],
+        [
+          -0.22224809229373932,
+          0.2222481071949005
+        ],
+        [
+          0.0,
+          1.1500000953674316
+        ]
+      ],
+      "sourceToBlenderNormalization": [
+        [
+          0.6043102741241455,
+          0.0,
+          0.0,
+          0.0001933807652676478
+        ],
+        [
+          0.0,
+          0.6043102741241455,
+          0.0,
+          0.0010602578986436129
+        ],
+        [
+          0.0,
+          0.0,
+          0.6043102741241455,
+          0.5753874182701111
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "heightCells": 1.15,
+      "groundPivot": [
+        0,
+        0,
+        0
+      ],
+      "axes": "+X right, -Y south/front, +Z up; glTF +Y up/+Z front",
+      "triangles": 1544406,
+      "vertices": 827169,
+      "uvLayers": [
+        "UVMap"
+      ],
+      "uvLoopCount": 4633218,
+      "uvBounds": [
+        [
+          3.999999989900971e-06,
+          0.9999970197677612
+        ],
+        [
+          2.5987625122070312e-05,
+          0.9999989867210388
+        ]
+      ],
+      "materials": [
+        "Material_0"
+      ],
+      "images": [
+        {
+          "name": "Image_0",
+          "size": [
+            2048,
+            2048
+          ],
+          "colorspace": "sRGB",
+          "packed": true
+        },
+        {
+          "name": "Image_1",
+          "size": [
+            2048,
+            2048
+          ],
+          "colorspace": "Non-Color",
+          "packed": true
+        },
+        {
+          "name": "Image_2",
+          "size": [
+            2048,
+            2048
+          ],
+          "colorspace": "Non-Color",
+          "packed": true
+        }
+      ],
+      "armatures": 0,
+      "actions": 0,
+      "topologyModified": false,
+      "normalization": "Uniform scale and translation only; imported PBR graph retained; no texture rebake or decimation.",
+      "privateArtifacts": [
+        {
+          "file": "normalized.blend",
+          "bytes": 149416261,
+          "sha256": "0c180c977c0760a1b2e8f633dd760bc68e52ccf1206be277376d8327b1ceeeba"
+        },
+        {
+          "file": "normalized.glb",
+          "bytes": 53774296,
+          "sha256": "1b58b79ca91a2b3ac250b938d3e5e6b2d4e2e9873e4736cdca20c1706bcbf2c1"
+        }
+      ]
+    },
+    {
+      "id": "source-2",
+      "sourceSha256": "e17b1b639d8793a8b23d046d61ba039c99ec833adf7d7a07acbfd9d67fe2704c",
+      "blender": "4.3.2",
+      "importBounds": [
+        [
+          -0.438510000705719,
+          0.43834400177001953
+        ],
+        [
+          -0.29958298802375793,
+          0.2968449890613556
+        ],
+        [
+          -0.9519580006599426,
+          0.9510210156440735
+        ]
+      ],
+      "normalizedBounds": [
+        [
+          -0.264948308467865,
+          0.2649482786655426
+        ],
+        [
+          -0.18021537363529205,
+          0.18021538853645325
+        ],
+        [
+          0.0,
+          1.149999976158142
+        ]
+      ],
+      "sourceToBlenderNormalization": [
+        [
+          0.6043156385421753,
+          0.0,
+          0.0,
+          5.015787610318512e-05
+        ],
+        [
+          0.0,
+          0.6043156385421753,
+          0.0,
+          0.0008273078128695488
+        ],
+        [
+          0.0,
+          0.0,
+          0.6043156385421753,
+          0.5752831101417542
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "heightCells": 1.15,
+      "groundPivot": [
+        0,
+        0,
+        0
+      ],
+      "axes": "+X right, -Y south/front, +Z up; glTF +Y up/+Z front",
+      "triangles": 1658196,
+      "vertices": 888494,
+      "uvLayers": [
+        "UVMap"
+      ],
+      "uvLoopCount": 4974588,
+      "uvBounds": [
+        [
+          4.999999873689376e-06,
+          0.9994670152664185
+        ],
+        [
+          2.002716064453125e-05,
+          0.9999989867210388
+        ]
+      ],
+      "materials": [
+        "Material_0"
+      ],
+      "images": [
+        {
+          "name": "Image_0",
+          "size": [
+            4096,
+            4096
+          ],
+          "colorspace": "sRGB",
+          "packed": true
+        },
+        {
+          "name": "Image_1",
+          "size": [
+            2048,
+            2048
+          ],
+          "colorspace": "Non-Color",
+          "packed": true
+        },
+        {
+          "name": "Image_2",
+          "size": [
+            4096,
+            4096
+          ],
+          "colorspace": "Non-Color",
+          "packed": true
+        }
+      ],
+      "armatures": 0,
+      "actions": 0,
+      "topologyModified": false,
+      "normalization": "Uniform scale and translation only; imported PBR graph retained; no texture rebake or decimation.",
+      "privateArtifacts": [
+        {
+          "file": "normalized.blend",
+          "bytes": 174840429,
+          "sha256": "91a9daa652f92d0a2cb2ce698503ebd4c9e58220c2dbc2019cc2d6ecfc545413"
+        },
+        {
+          "file": "normalized.glb",
+          "bytes": 72187308,
+          "sha256": "f8bed3e551cf752f4bacff1c95227eb04a4b75491e4a32dfef1e17070bf4ebf1"
+        }
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "file": "assets/source-1-0.95-south-daylight-body.png",
+      "id": "source-1",
+      "heightCells": 0.95,
+      "facing": "south",
+      "mood": "daylight",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "bounds": [
+        82,
+        81,
+        174,
+        237
+      ],
+      "outerTransparentPixels": 81,
+      "clipped": false,
+      "bytes": 52384,
+      "sha256": "3f8547fbb2be3ef4439b339cf820b7eac1f96a2763caef35c89f2d1d9146278a",
+      "decodedBytes": 360448,
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224
+    },
+    {
+      "file": "assets/source-1-0.95-south-daylight-shadow.png",
+      "id": "source-1",
+      "heightCells": 0.95,
+      "facing": "south",
+      "mood": "daylight",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "bounds": [
+        81,
+        108,
+        203,
+        211
+      ],
+      "outerTransparentPixels": 45,
+      "clipped": false,
+      "bytes": 6499,
+      "sha256": "b1558638349bdc3a426b225a7df218b9a07003ed628f921059057cf477f8359a",
+      "decodedBytes": 262144,
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112
+    },
+    {
+      "file": "assets/source-1-0.95-east-daylight-body.png",
+      "id": "source-1",
+      "heightCells": 0.95,
+      "facing": "east",
+      "mood": "daylight",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "bounds": [
+        85,
+        74,
+        170,
+        243
+      ],
+      "outerTransparentPixels": 74,
+      "clipped": false,
+      "bytes": 49164,
+      "sha256": "ed37f40deccfb90627ff6954e1a1195020a88982df5a0d3e81bc8b0ca33c400a",
+      "decodedBytes": 360448,
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224
+    },
+    {
+      "file": "assets/source-1-0.95-east-daylight-shadow.png",
+      "id": "source-1",
+      "heightCells": 0.95,
+      "facing": "east",
+      "mood": "daylight",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "bounds": [
+        86,
+        105,
+        207,
+        203
+      ],
+      "outerTransparentPixels": 49,
+      "clipped": false,
+      "bytes": 6564,
+      "sha256": "b4cdc64b70c937cf10483cf613df048a7c5e129864f38d6c9782ae052c324716",
+      "decodedBytes": 262144,
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112
+    },
+    {
+      "file": "assets/source-1-0.95-north-daylight-body.png",
+      "id": "source-1",
+      "heightCells": 0.95,
+      "facing": "north",
+      "mood": "daylight",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "bounds": [
+        82,
+        69,
+        174,
+        218
+      ],
+      "outerTransparentPixels": 69,
+      "clipped": false,
+      "bytes": 51431,
+      "sha256": "905a603711e4d4a5aa3d689dfa1a3520a8fb4af01c03b814c90d20156a34c200",
+      "decodedBytes": 360448,
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224
+    },
+    {
+      "file": "assets/source-1-0.95-north-daylight-shadow.png",
+      "id": "source-1",
+      "heightCells": 0.95,
+      "facing": "north",
+      "mood": "daylight",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "bounds": [
+        84,
+        105,
+        205,
+        205
+      ],
+      "outerTransparentPixels": 51,
+      "clipped": false,
+      "bytes": 6675,
+      "sha256": "f6ef8ce49922fca454f5453bbc9253b57968a3921c485b0fa3bfbbcbdc46e9e3",
+      "decodedBytes": 262144,
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112
+    },
+    {
+      "file": "assets/source-1-0.95-west-daylight-body.png",
+      "id": "source-1",
+      "heightCells": 0.95,
+      "facing": "west",
+      "mood": "daylight",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "bounds": [
+        86,
+        76,
+        170,
+        243
+      ],
+      "outerTransparentPixels": 76,
+      "clipped": false,
+      "bytes": 48312,
+      "sha256": "6528f55fabb10ee596bd7f63f37142f0eab73f5967633706961a89e97bd235bc",
+      "decodedBytes": 360448,
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224
+    },
+    {
+      "file": "assets/source-1-0.95-west-daylight-shadow.png",
+      "id": "source-1",
+      "heightCells": 0.95,
+      "facing": "west",
+      "mood": "daylight",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "bounds": [
+        86,
+        108,
+        203,
+        208
+      ],
+      "outerTransparentPixels": 48,
+      "clipped": false,
+      "bytes": 6446,
+      "sha256": "7240efc4aaaabc7b4fec5d5e41c47fc7b04d613861a704eb6916211388cf7392",
+      "decodedBytes": 262144,
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112
+    },
+    {
+      "file": "assets/source-1-0.95-south-dusk-body.png",
+      "id": "source-1",
+      "heightCells": 0.95,
+      "facing": "south",
+      "mood": "dusk",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "bounds": [
+        82,
+        81,
+        174,
+        237
+      ],
+      "outerTransparentPixels": 81,
+      "clipped": false,
+      "bytes": 50048,
+      "sha256": "e9e6b969f7e490587a6253f3259fc29370f4b1352ef2b375d2a88f8931e39a51",
+      "decodedBytes": 360448,
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224
+    },
+    {
+      "file": "assets/source-1-0.95-south-dusk-shadow.png",
+      "id": "source-1",
+      "heightCells": 0.95,
+      "facing": "south",
+      "mood": "dusk",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "bounds": [
+        79,
+        110,
+        201,
+        211
+      ],
+      "outerTransparentPixels": 45,
+      "clipped": false,
+      "bytes": 6473,
+      "sha256": "6ad1cc34821e5ae72d959cd3f5135b4b6b13e3d130e2c4b98e2956f30fbb0136",
+      "decodedBytes": 262144,
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112
+    },
+    {
+      "file": "assets/source-1-0.95-east-dusk-body.png",
+      "id": "source-1",
+      "heightCells": 0.95,
+      "facing": "east",
+      "mood": "dusk",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "bounds": [
+        85,
+        74,
+        170,
+        243
+      ],
+      "outerTransparentPixels": 74,
+      "clipped": false,
+      "bytes": 47035,
+      "sha256": "8882a0e7b1577ba1b5b6c8751b86f83e5d38d9fff5f749ebeb9876d86ebe50c3",
+      "decodedBytes": 360448,
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224
+    },
+    {
+      "file": "assets/source-1-0.95-east-dusk-shadow.png",
+      "id": "source-1",
+      "heightCells": 0.95,
+      "facing": "east",
+      "mood": "dusk",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "bounds": [
+        82,
+        107,
+        206,
+        206
+      ],
+      "outerTransparentPixels": 50,
+      "clipped": false,
+      "bytes": 6528,
+      "sha256": "05e096e558cb58da850801f0e60b0f13609327e5f25e32fd415ef8fd5bc42e07",
+      "decodedBytes": 262144,
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112
+    },
+    {
+      "file": "assets/source-1-0.95-north-dusk-body.png",
+      "id": "source-1",
+      "heightCells": 0.95,
+      "facing": "north",
+      "mood": "dusk",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "bounds": [
+        82,
+        69,
+        174,
+        218
+      ],
+      "outerTransparentPixels": 69,
+      "clipped": false,
+      "bytes": 48821,
+      "sha256": "c00d489ac4bf9ddd929883fafde978f4b7e6d3a0566bddcad30c8648e84a741e",
+      "decodedBytes": 360448,
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224
+    },
+    {
+      "file": "assets/source-1-0.95-north-dusk-shadow.png",
+      "id": "source-1",
+      "heightCells": 0.95,
+      "facing": "north",
+      "mood": "dusk",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "bounds": [
+        82,
+        107,
+        202,
+        207
+      ],
+      "outerTransparentPixels": 49,
+      "clipped": false,
+      "bytes": 6726,
+      "sha256": "dcb2be211da43e3ec4bca7dac4091e4416759d05b50e11eaa1b1e1cbc5df5ad4",
+      "decodedBytes": 262144,
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112
+    },
+    {
+      "file": "assets/source-1-0.95-west-dusk-body.png",
+      "id": "source-1",
+      "heightCells": 0.95,
+      "facing": "west",
+      "mood": "dusk",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "bounds": [
+        86,
+        76,
+        170,
+        243
+      ],
+      "outerTransparentPixels": 76,
+      "clipped": false,
+      "bytes": 46142,
+      "sha256": "b55c39a0b9b67eb466daee836cb9fb894a0cd2f26c854bb4324c16f1ddc91910",
+      "decodedBytes": 360448,
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224
+    },
+    {
+      "file": "assets/source-1-0.95-west-dusk-shadow.png",
+      "id": "source-1",
+      "heightCells": 0.95,
+      "facing": "west",
+      "mood": "dusk",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "bounds": [
+        81,
+        110,
+        200,
+        209
+      ],
+      "outerTransparentPixels": 47,
+      "clipped": false,
+      "bytes": 6440,
+      "sha256": "3b107abaf7c28f42e6fc1ff72292bdb2dc31b3c50788a938cc22e672a6613c2c",
+      "decodedBytes": 262144,
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112
+    },
+    {
+      "file": "assets/source-1-1.15-south-daylight-body.png",
+      "id": "source-1",
+      "heightCells": 1.15,
+      "facing": "south",
+      "mood": "daylight",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "bounds": [
+        72,
+        54,
+        184,
+        243
+      ],
+      "outerTransparentPixels": 54,
+      "clipped": false,
+      "bytes": 63444,
+      "sha256": "f7d8a9d42501813d74628d519a8646b7214815059799032b8926f8259055735e",
+      "decodedBytes": 360448,
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224
+    },
+    {
+      "file": "assets/source-1-1.15-south-daylight-shadow.png",
+      "id": "source-1",
+      "heightCells": 1.15,
+      "facing": "south",
+      "mood": "daylight",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "bounds": [
+        71,
+        98,
+        219,
+        221
+      ],
+      "outerTransparentPixels": 35,
+      "clipped": false,
+      "bytes": 8729,
+      "sha256": "c6d7c1a51e3b9794debcb96dc574aec7034ee61bc7a9b8e56f0218ea861d4d8e",
+      "decodedBytes": 262144,
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112
+    },
+    {
+      "file": "assets/source-1-1.15-east-daylight-body.png",
+      "id": "source-1",
+      "heightCells": 1.15,
+      "facing": "east",
+      "mood": "daylight",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "bounds": [
+        77,
+        46,
+        179,
+        250
+      ],
+      "outerTransparentPixels": 46,
+      "clipped": false,
+      "bytes": 59245,
+      "sha256": "55b636f501fc301eaa4c33d846b432e7ca333c8da73bfa6fc683a388cc3bce27",
+      "decodedBytes": 360448,
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224
+    },
+    {
+      "file": "assets/source-1-1.15-east-daylight-shadow.png",
+      "id": "source-1",
+      "heightCells": 1.15,
+      "facing": "east",
+      "mood": "daylight",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "bounds": [
+        76,
+        95,
+        227,
+        214
+      ],
+      "outerTransparentPixels": 29,
+      "clipped": false,
+      "bytes": 8901,
+      "sha256": "cb54e9f6bc66f0311fa31027310dd20fcef65d9afea18147249418159ee19658",
+      "decodedBytes": 262144,
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112
+    },
+    {
+      "file": "assets/source-1-1.15-north-daylight-body.png",
+      "id": "source-1",
+      "heightCells": 1.15,
+      "facing": "north",
+      "mood": "daylight",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "bounds": [
+        72,
+        40,
+        184,
+        220
+      ],
+      "outerTransparentPixels": 40,
+      "clipped": false,
+      "bytes": 62490,
+      "sha256": "cefb8884eedbbb8364e24b488561623b3e268e3aa318351d56f0671c91908d65",
+      "decodedBytes": 360448,
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224
+    },
+    {
+      "file": "assets/source-1-1.15-north-daylight-shadow.png",
+      "id": "source-1",
+      "heightCells": 1.15,
+      "facing": "north",
+      "mood": "daylight",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "bounds": [
+        72,
+        95,
+        222,
+        216
+      ],
+      "outerTransparentPixels": 34,
+      "clipped": false,
+      "bytes": 9059,
+      "sha256": "e24ba7178e1a4a3b20274bf1685a408af01c07d9a81d7c4128804442c7eaeb4d",
+      "decodedBytes": 262144,
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112
+    },
+    {
+      "file": "assets/source-1-1.15-west-daylight-body.png",
+      "id": "source-1",
+      "heightCells": 1.15,
+      "facing": "west",
+      "mood": "daylight",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "bounds": [
+        77,
+        49,
+        179,
+        250
+      ],
+      "outerTransparentPixels": 49,
+      "clipped": false,
+      "bytes": 58125,
+      "sha256": "6b0abeb18af29d8b5fb6a708f90c69306c530163d3284c2e1404cce138e2037d",
+      "decodedBytes": 360448,
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224
+    },
+    {
+      "file": "assets/source-1-1.15-west-daylight-shadow.png",
+      "id": "source-1",
+      "heightCells": 1.15,
+      "facing": "west",
+      "mood": "daylight",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "bounds": [
+        76,
+        99,
+        218,
+        223
+      ],
+      "outerTransparentPixels": 33,
+      "clipped": false,
+      "bytes": 8707,
+      "sha256": "cbc35dbd6d334e08a955a5ad0cffcea62fe98af6b34816c192f43e2923d2f0c3",
+      "decodedBytes": 262144,
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112
+    },
+    {
+      "file": "assets/source-1-1.15-south-dusk-body.png",
+      "id": "source-1",
+      "heightCells": 1.15,
+      "facing": "south",
+      "mood": "dusk",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "bounds": [
+        72,
+        54,
+        184,
+        243
+      ],
+      "outerTransparentPixels": 54,
+      "clipped": false,
+      "bytes": 60151,
+      "sha256": "765edfb1dff26eb9649170fcaede78e6194451117064c9d0baf5b5a1d68ef95d",
+      "decodedBytes": 360448,
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224
+    },
+    {
+      "file": "assets/source-1-1.15-south-dusk-shadow.png",
+      "id": "source-1",
+      "heightCells": 1.15,
+      "facing": "south",
+      "mood": "dusk",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "bounds": [
+        68,
+        101,
+        216,
+        223
+      ],
+      "outerTransparentPixels": 33,
+      "clipped": false,
+      "bytes": 8786,
+      "sha256": "f2c30b3530b41b5d6d2eacb3d69fd37931aa6afdee8c8acba1d2709d8c255085",
+      "decodedBytes": 262144,
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112
+    },
+    {
+      "file": "assets/source-1-1.15-east-dusk-body.png",
+      "id": "source-1",
+      "heightCells": 1.15,
+      "facing": "east",
+      "mood": "dusk",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "bounds": [
+        77,
+        46,
+        179,
+        250
+      ],
+      "outerTransparentPixels": 46,
+      "clipped": false,
+      "bytes": 56156,
+      "sha256": "286bd6342ef6a482c26490bd1d7238b177d96258892c9417c83913bb8b9ad4f6",
+      "decodedBytes": 360448,
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224
+    },
+    {
+      "file": "assets/source-1-1.15-east-dusk-shadow.png",
+      "id": "source-1",
+      "heightCells": 1.15,
+      "facing": "east",
+      "mood": "dusk",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "bounds": [
+        69,
+        97,
+        222,
+        218
+      ],
+      "outerTransparentPixels": 34,
+      "clipped": false,
+      "bytes": 8833,
+      "sha256": "c15ef5ada48db5d5b578d2228ac908fed129b41eef87537c9a04ca95c04f408c",
+      "decodedBytes": 262144,
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112
+    },
+    {
+      "file": "assets/source-1-1.15-north-dusk-body.png",
+      "id": "source-1",
+      "heightCells": 1.15,
+      "facing": "north",
+      "mood": "dusk",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "bounds": [
+        72,
+        40,
+        184,
+        220
+      ],
+      "outerTransparentPixels": 40,
+      "clipped": false,
+      "bytes": 58891,
+      "sha256": "778c16b782ebda298e286cd64a68d47bb22dea47996ff57de9e64c1f5323bff3",
+      "decodedBytes": 360448,
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224
+    },
+    {
+      "file": "assets/source-1-1.15-north-dusk-shadow.png",
+      "id": "source-1",
+      "heightCells": 1.15,
+      "facing": "north",
+      "mood": "dusk",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "bounds": [
+        67,
+        97,
+        220,
+        222
+      ],
+      "outerTransparentPixels": 34,
+      "clipped": false,
+      "bytes": 9174,
+      "sha256": "731fc9198768058972003359c4d40103801995ce039b538cfbbb45cb65fed2e8",
+      "decodedBytes": 262144,
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112
+    },
+    {
+      "file": "assets/source-1-1.15-west-dusk-body.png",
+      "id": "source-1",
+      "heightCells": 1.15,
+      "facing": "west",
+      "mood": "dusk",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "bounds": [
+        77,
+        49,
+        179,
+        250
+      ],
+      "outerTransparentPixels": 49,
+      "clipped": false,
+      "bytes": 54892,
+      "sha256": "f318a1f66226f331a67db2740a2ca786c5ca6f717d4a4602679d82ab5911d4ed",
+      "decodedBytes": 360448,
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224
+    },
+    {
+      "file": "assets/source-1-1.15-west-dusk-shadow.png",
+      "id": "source-1",
+      "heightCells": 1.15,
+      "facing": "west",
+      "mood": "dusk",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "bounds": [
+        70,
+        101,
+        215,
+        223
+      ],
+      "outerTransparentPixels": 33,
+      "clipped": false,
+      "bytes": 8759,
+      "sha256": "9295b81327b041d1f96734b95313c33ee003aae59dcd800d57e0ce26f0c6a11b",
+      "decodedBytes": 262144,
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112
+    },
+    {
+      "file": "assets/source-1-1.34-south-daylight-body.png",
+      "id": "source-1",
+      "heightCells": 1.34,
+      "facing": "south",
+      "mood": "daylight",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "bounds": [
+        63,
+        29,
+        193,
+        248
+      ],
+      "outerTransparentPixels": 29,
+      "clipped": false,
+      "bytes": 74857,
+      "sha256": "82cac0f10373405b737593849868b9f94ed75bb823a7bd445da26da334965462",
+      "decodedBytes": 360448,
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224
+    },
+    {
+      "file": "assets/source-1-1.34-south-daylight-shadow.png",
+      "id": "source-1",
+      "heightCells": 1.34,
+      "facing": "south",
+      "mood": "daylight",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "bounds": [
+        64,
+        89,
+        236,
+        235
+      ],
+      "outerTransparentPixels": 20,
+      "clipped": false,
+      "bytes": 11198,
+      "sha256": "556719041ea94d64ae7074fc433a90bdb719439d08b3c7da3201d9cf9f35a660",
+      "decodedBytes": 262144,
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112
+    },
+    {
+      "file": "assets/source-1-1.34-east-daylight-body.png",
+      "id": "source-1",
+      "heightCells": 1.34,
+      "facing": "east",
+      "mood": "daylight",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "bounds": [
+        69,
+        19,
+        187,
+        257
+      ],
+      "outerTransparentPixels": 19,
+      "clipped": false,
+      "bytes": 69353,
+      "sha256": "4eb43f2810ba8691c2335e85123b7bdef7a7733103850ca6d3a9c1e2e16a61a1",
+      "decodedBytes": 360448,
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224
+    },
+    {
+      "file": "assets/source-1-1.34-east-daylight-shadow.png",
+      "id": "source-1",
+      "heightCells": 1.34,
+      "facing": "east",
+      "mood": "daylight",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "bounds": [
+        65,
+        84,
+        247,
+        226
+      ],
+      "outerTransparentPixels": 9,
+      "clipped": false,
+      "bytes": 11464,
+      "sha256": "e0302b8310373b5ce9ba78cbae64b88f37fb74e9fae7a83f31dfefd79ae0cc1c",
+      "decodedBytes": 262144,
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112
+    },
+    {
+      "file": "assets/source-1-1.34-north-daylight-body.png",
+      "id": "source-1",
+      "heightCells": 1.34,
+      "facing": "north",
+      "mood": "daylight",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "bounds": [
+        63,
+        13,
+        192,
+        222
+      ],
+      "outerTransparentPixels": 13,
+      "clipped": false,
+      "bytes": 73140,
+      "sha256": "bb6295136ac960272dd337f684b4ecbb6dd28bbf5ef9466f4ede39906af34d52",
+      "decodedBytes": 360448,
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224
+    },
+    {
+      "file": "assets/source-1-1.34-north-daylight-shadow.png",
+      "id": "source-1",
+      "heightCells": 1.34,
+      "facing": "north",
+      "mood": "daylight",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "bounds": [
+        64,
+        85,
+        239,
+        228
+      ],
+      "outerTransparentPixels": 17,
+      "clipped": false,
+      "bytes": 11619,
+      "sha256": "9caf5426fc7119d33534dd616470ed34332dc7c78fe643d2e09f262e8a8108c3",
+      "decodedBytes": 262144,
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112
+    },
+    {
+      "file": "assets/source-1-1.34-west-daylight-body.png",
+      "id": "source-1",
+      "heightCells": 1.34,
+      "facing": "west",
+      "mood": "daylight",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "bounds": [
+        69,
+        22,
+        187,
+        257
+      ],
+      "outerTransparentPixels": 22,
+      "clipped": false,
+      "bytes": 67770,
+      "sha256": "fe891c470d9036e882c87addc3a6c3ac73f0b32ee8ec07225e903328604b03e1",
+      "decodedBytes": 360448,
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224
+    },
+    {
+      "file": "assets/source-1-1.34-west-daylight-shadow.png",
+      "id": "source-1",
+      "heightCells": 1.34,
+      "facing": "west",
+      "mood": "daylight",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "bounds": [
+        67,
+        89,
+        234,
+        235
+      ],
+      "outerTransparentPixels": 21,
+      "clipped": false,
+      "bytes": 11095,
+      "sha256": "3d8461392c8272aea35f570599c1e84af45d8a2a9c2aefe2838abd2aea249cb4",
+      "decodedBytes": 262144,
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112
+    },
+    {
+      "file": "assets/source-1-1.34-south-dusk-body.png",
+      "id": "source-1",
+      "heightCells": 1.34,
+      "facing": "south",
+      "mood": "dusk",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "bounds": [
+        63,
+        29,
+        193,
+        248
+      ],
+      "outerTransparentPixels": 29,
+      "clipped": false,
+      "bytes": 69917,
+      "sha256": "190f55a2d80984f0085843d011348a65c7a5e32c4691136fab9651120a5fa158",
+      "decodedBytes": 360448,
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224
+    },
+    {
+      "file": "assets/source-1-1.34-south-dusk-shadow.png",
+      "id": "source-1",
+      "heightCells": 1.34,
+      "facing": "south",
+      "mood": "dusk",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "bounds": [
+        57,
+        91,
+        232,
+        237
+      ],
+      "outerTransparentPixels": 19,
+      "clipped": false,
+      "bytes": 11250,
+      "sha256": "3ef7446cdc46508c408f50d713c6c3fa2aaa964ee584e6d19ee1c2e5e08b9da8",
+      "decodedBytes": 262144,
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112
+    },
+    {
+      "file": "assets/source-1-1.34-east-dusk-body.png",
+      "id": "source-1",
+      "heightCells": 1.34,
+      "facing": "east",
+      "mood": "dusk",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "bounds": [
+        69,
+        19,
+        187,
+        257
+      ],
+      "outerTransparentPixels": 19,
+      "clipped": false,
+      "bytes": 65509,
+      "sha256": "6f83d2b2e075919b38aa0891fe71db1e2b3a2e07cb6e5402bf67591fa35f6e7d",
+      "decodedBytes": 360448,
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224
+    },
+    {
+      "file": "assets/source-1-1.34-east-dusk-shadow.png",
+      "id": "source-1",
+      "heightCells": 1.34,
+      "facing": "east",
+      "mood": "dusk",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "bounds": [
+        58,
+        87,
+        239,
+        230
+      ],
+      "outerTransparentPixels": 17,
+      "clipped": false,
+      "bytes": 11393,
+      "sha256": "1e7a88ecc0c41dd0f7990008511ec2d1ad9ae15d798d650794d1d3edfa2e008e",
+      "decodedBytes": 262144,
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112
+    },
+    {
+      "file": "assets/source-1-1.34-north-dusk-body.png",
+      "id": "source-1",
+      "heightCells": 1.34,
+      "facing": "north",
+      "mood": "dusk",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "bounds": [
+        63,
+        13,
+        192,
+        222
+      ],
+      "outerTransparentPixels": 13,
+      "clipped": false,
+      "bytes": 68767,
+      "sha256": "d1d3978e1a3c7e3a08eef30a104e3010c82771678e16c9b1f59c22b82391f8bc",
+      "decodedBytes": 360448,
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224
+    },
+    {
+      "file": "assets/source-1-1.34-north-dusk-shadow.png",
+      "id": "source-1",
+      "heightCells": 1.34,
+      "facing": "north",
+      "mood": "dusk",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "bounds": [
+        60,
+        85,
+        236,
+        232
+      ],
+      "outerTransparentPixels": 20,
+      "clipped": false,
+      "bytes": 11629,
+      "sha256": "367d89839bd7b91c96e7991272e14829e3456468e26104b48a3435c60489e1ea",
+      "decodedBytes": 262144,
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112
+    },
+    {
+      "file": "assets/source-1-1.34-west-dusk-body.png",
+      "id": "source-1",
+      "heightCells": 1.34,
+      "facing": "west",
+      "mood": "dusk",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "bounds": [
+        69,
+        22,
+        187,
+        257
+      ],
+      "outerTransparentPixels": 22,
+      "clipped": false,
+      "bytes": 64083,
+      "sha256": "52ea76568f732e8f72e11c49d28febb6593c5a492201df5ffad7b308528182ae",
+      "decodedBytes": 360448,
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224
+    },
+    {
+      "file": "assets/source-1-1.34-west-dusk-shadow.png",
+      "id": "source-1",
+      "heightCells": 1.34,
+      "facing": "west",
+      "mood": "dusk",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "bounds": [
+        58,
+        91,
+        230,
+        236
+      ],
+      "outerTransparentPixels": 20,
+      "clipped": false,
+      "bytes": 11326,
+      "sha256": "0dcf34f4b89b89048e9f9a72bff19e12c5bb3523ad367a976e7de914bb440dfd",
+      "decodedBytes": 262144,
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112
+    },
+    {
+      "file": "assets/source-2-0.95-south-daylight-body.png",
+      "id": "source-2",
+      "heightCells": 0.95,
+      "facing": "south",
+      "mood": "daylight",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "bounds": [
+        78,
+        82,
+        178,
+        228
+      ],
+      "outerTransparentPixels": 78,
+      "clipped": false,
+      "bytes": 47026,
+      "sha256": "e51be5d134a47c5e74decf0af3027a12e21d2a1f7a620deceb6b98aa1b236260",
+      "decodedBytes": 360448,
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224
+    },
+    {
+      "file": "assets/source-2-0.95-south-daylight-shadow.png",
+      "id": "source-2",
+      "heightCells": 0.95,
+      "facing": "south",
+      "mood": "daylight",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "bounds": [
+        86,
+        110,
+        199,
+        206
+      ],
+      "outerTransparentPixels": 50,
+      "clipped": false,
+      "bytes": 5549,
+      "sha256": "1347598ce4230bd69fe5e6cfca24de2dea3b5b73608c5cdc53081c070e43186e",
+      "decodedBytes": 262144,
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112
+    },
+    {
+      "file": "assets/source-2-0.95-east-daylight-body.png",
+      "id": "source-2",
+      "heightCells": 0.95,
+      "facing": "east",
+      "mood": "daylight",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "bounds": [
+        94,
+        75,
+        163,
+        239
+      ],
+      "outerTransparentPixels": 75,
+      "clipped": false,
+      "bytes": 43174,
+      "sha256": "cf1f61d921081c3e8b4c32b0eaf498e6ec46698995df44313190148bd8fa04cc",
+      "decodedBytes": 360448,
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224
+    },
+    {
+      "file": "assets/source-2-0.95-east-daylight-shadow.png",
+      "id": "source-2",
+      "heightCells": 0.95,
+      "facing": "east",
+      "mood": "daylight",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "bounds": [
+        88,
+        107,
+        205,
+        199
+      ],
+      "outerTransparentPixels": 51,
+      "clipped": false,
+      "bytes": 5550,
+      "sha256": "8b386e4b8d6b1629bafaf6177658036098e6deb666b8efea4e8c2f7e20938c1f",
+      "decodedBytes": 262144,
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112
+    },
+    {
+      "file": "assets/source-2-0.95-north-daylight-body.png",
+      "id": "source-2",
+      "heightCells": 0.95,
+      "facing": "north",
+      "mood": "daylight",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "bounds": [
+        78,
+        74,
+        178,
+        224
+      ],
+      "outerTransparentPixels": 74,
+      "clipped": false,
+      "bytes": 45863,
+      "sha256": "f0cfe7c696908f906d6c4e144074accf42948f457739c0404789e32cfba31887",
+      "decodedBytes": 360448,
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224
+    },
+    {
+      "file": "assets/source-2-0.95-north-daylight-shadow.png",
+      "id": "source-2",
+      "heightCells": 0.95,
+      "facing": "north",
+      "mood": "daylight",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "bounds": [
+        86,
+        109,
+        201,
+        202
+      ],
+      "outerTransparentPixels": 54,
+      "clipped": false,
+      "bytes": 5591,
+      "sha256": "84a354f7b4ac7f9f98335f4d9bdf6eef12d6cc0ea1a98bb9294eaf1390f1a14c",
+      "decodedBytes": 262144,
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112
+    },
+    {
+      "file": "assets/source-2-0.95-west-daylight-body.png",
+      "id": "source-2",
+      "heightCells": 0.95,
+      "facing": "west",
+      "mood": "daylight",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "bounds": [
+        94,
+        79,
+        163,
+        237
+      ],
+      "outerTransparentPixels": 79,
+      "clipped": false,
+      "bytes": 42806,
+      "sha256": "31cabb8921f972eef30a658a042e7b57e4b438e61b186b19098d55b11e617a7f",
+      "decodedBytes": 360448,
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224
+    },
+    {
+      "file": "assets/source-2-0.95-west-daylight-shadow.png",
+      "id": "source-2",
+      "heightCells": 0.95,
+      "facing": "west",
+      "mood": "daylight",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "bounds": [
+        87,
+        109,
+        199,
+        201
+      ],
+      "outerTransparentPixels": 55,
+      "clipped": false,
+      "bytes": 5414,
+      "sha256": "6fa62ba622b3c60dcbfccd486ba7e1826da3d13c95adf79cb24e4bb7bcf98df3",
+      "decodedBytes": 262144,
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112
+    },
+    {
+      "file": "assets/source-2-0.95-south-dusk-body.png",
+      "id": "source-2",
+      "heightCells": 0.95,
+      "facing": "south",
+      "mood": "dusk",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "bounds": [
+        78,
+        82,
+        178,
+        228
+      ],
+      "outerTransparentPixels": 78,
+      "clipped": false,
+      "bytes": 44954,
+      "sha256": "d1ed940c9e9e8db0f46b3a6f932f5503338efa82fa3aeaf5fe81cc79c52b2645",
+      "decodedBytes": 360448,
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224
+    },
+    {
+      "file": "assets/source-2-0.95-south-dusk-shadow.png",
+      "id": "source-2",
+      "heightCells": 0.95,
+      "facing": "south",
+      "mood": "dusk",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "bounds": [
+        84,
+        112,
+        197,
+        208
+      ],
+      "outerTransparentPixels": 48,
+      "clipped": false,
+      "bytes": 5514,
+      "sha256": "606cb16a19874b8746231892517f4c918e3d7dbe29e733b3178906f0ca69d850",
+      "decodedBytes": 262144,
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112
+    },
+    {
+      "file": "assets/source-2-0.95-east-dusk-body.png",
+      "id": "source-2",
+      "heightCells": 0.95,
+      "facing": "east",
+      "mood": "dusk",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "bounds": [
+        94,
+        75,
+        163,
+        239
+      ],
+      "outerTransparentPixels": 75,
+      "clipped": false,
+      "bytes": 42001,
+      "sha256": "f6c570ae65b52574aa53481fca69c575b6144b47754583f2ad624c5084f4a13f",
+      "decodedBytes": 360448,
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224
+    },
+    {
+      "file": "assets/source-2-0.95-east-dusk-shadow.png",
+      "id": "source-2",
+      "heightCells": 0.95,
+      "facing": "east",
+      "mood": "dusk",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "bounds": [
+        86,
+        109,
+        201,
+        202
+      ],
+      "outerTransparentPixels": 54,
+      "clipped": false,
+      "bytes": 5555,
+      "sha256": "f1c49d61ab7af6dfdf580057b7e6484e9194ad47ff96321d53430246f4a527ca",
+      "decodedBytes": 262144,
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112
+    },
+    {
+      "file": "assets/source-2-0.95-north-dusk-body.png",
+      "id": "source-2",
+      "heightCells": 0.95,
+      "facing": "north",
+      "mood": "dusk",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "bounds": [
+        78,
+        74,
+        178,
+        224
+      ],
+      "outerTransparentPixels": 74,
+      "clipped": false,
+      "bytes": 44027,
+      "sha256": "bb3c9372e13af20b8ab9340e9314dd41be4046ee799a2e8c8a7b79bfeef2dd0c",
+      "decodedBytes": 360448,
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224
+    },
+    {
+      "file": "assets/source-2-0.95-north-dusk-shadow.png",
+      "id": "source-2",
+      "heightCells": 0.95,
+      "facing": "north",
+      "mood": "dusk",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "bounds": [
+        84,
+        109,
+        198,
+        203
+      ],
+      "outerTransparentPixels": 53,
+      "clipped": false,
+      "bytes": 5576,
+      "sha256": "1328a461cd87e43f6c89d2fbb51c7fc529fd1b2c56cfd891cc2de30b131c3295",
+      "decodedBytes": 262144,
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112
+    },
+    {
+      "file": "assets/source-2-0.95-west-dusk-body.png",
+      "id": "source-2",
+      "heightCells": 0.95,
+      "facing": "west",
+      "mood": "dusk",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "bounds": [
+        94,
+        79,
+        163,
+        237
+      ],
+      "outerTransparentPixels": 79,
+      "clipped": false,
+      "bytes": 41456,
+      "sha256": "2eeefbcaddcf8b0e792ce7372b3fea2d798debb5d727843e72297ed1d5ed9a5e",
+      "decodedBytes": 360448,
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224
+    },
+    {
+      "file": "assets/source-2-0.95-west-dusk-shadow.png",
+      "id": "source-2",
+      "heightCells": 0.95,
+      "facing": "west",
+      "mood": "dusk",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "bounds": [
+        84,
+        111,
+        197,
+        205
+      ],
+      "outerTransparentPixels": 51,
+      "clipped": false,
+      "bytes": 5523,
+      "sha256": "9ce691ea53a8695a4308d073cc11ae6535757ec7a959a2a2cebb6721d95e25b6",
+      "decodedBytes": 262144,
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112
+    },
+    {
+      "file": "assets/source-2-1.15-south-daylight-body.png",
+      "id": "source-2",
+      "heightCells": 1.15,
+      "facing": "south",
+      "mood": "daylight",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "bounds": [
+        68,
+        56,
+        188,
+        232
+      ],
+      "outerTransparentPixels": 56,
+      "clipped": false,
+      "bytes": 55911,
+      "sha256": "23b87c08914718b9bdd063874756772ee2821762e1d4f80063f00cdd47d403ae",
+      "decodedBytes": 360448,
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224
+    },
+    {
+      "file": "assets/source-2-1.15-south-daylight-shadow.png",
+      "id": "source-2",
+      "heightCells": 1.15,
+      "facing": "south",
+      "mood": "daylight",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "bounds": [
+        78,
+        101,
+        215,
+        217
+      ],
+      "outerTransparentPixels": 39,
+      "clipped": false,
+      "bytes": 7434,
+      "sha256": "7585e1f84486b2a2c46d4b94a1292ce57c4ab9d010c25a4d3013c1bb9dbe07cd",
+      "decodedBytes": 262144,
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112
+    },
+    {
+      "file": "assets/source-2-1.15-east-daylight-body.png",
+      "id": "source-2",
+      "heightCells": 1.15,
+      "facing": "east",
+      "mood": "daylight",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "bounds": [
+        87,
+        47,
+        169,
+        245
+      ],
+      "outerTransparentPixels": 47,
+      "clipped": false,
+      "bytes": 51306,
+      "sha256": "14d18d83142c96ee0c189cae6e15af8357f4f77d9e794ea48523c9e33b0a054a",
+      "decodedBytes": 360448,
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224
+    },
+    {
+      "file": "assets/source-2-1.15-east-daylight-shadow.png",
+      "id": "source-2",
+      "heightCells": 1.15,
+      "facing": "east",
+      "mood": "daylight",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "bounds": [
+        79,
+        97,
+        220,
+        211
+      ],
+      "outerTransparentPixels": 36,
+      "clipped": false,
+      "bytes": 7513,
+      "sha256": "02d948412fa802837326db9e1c3219c55a5d3a6e030222e9244efff9cfe8f61d",
+      "decodedBytes": 262144,
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112
+    },
+    {
+      "file": "assets/source-2-1.15-north-daylight-body.png",
+      "id": "source-2",
+      "heightCells": 1.15,
+      "facing": "north",
+      "mood": "daylight",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "bounds": [
+        68,
+        46,
+        189,
+        227
+      ],
+      "outerTransparentPixels": 46,
+      "clipped": false,
+      "bytes": 54676,
+      "sha256": "9e7efd9417fa5008d05bc5f9f9648155cc575f9dfd0dd60ff737ceea150a5d4d",
+      "decodedBytes": 360448,
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224
+    },
+    {
+      "file": "assets/source-2-1.15-north-daylight-shadow.png",
+      "id": "source-2",
+      "heightCells": 1.15,
+      "facing": "north",
+      "mood": "daylight",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "bounds": [
+        80,
+        98,
+        218,
+        213
+      ],
+      "outerTransparentPixels": 38,
+      "clipped": false,
+      "bytes": 7576,
+      "sha256": "bcf62d2efd15fd153bfd1e2ef2fd6fbbb7c9ef8cdfe1aece8c72f23f5af308b0",
+      "decodedBytes": 262144,
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112
+    },
+    {
+      "file": "assets/source-2-1.15-west-daylight-body.png",
+      "id": "source-2",
+      "heightCells": 1.15,
+      "facing": "west",
+      "mood": "daylight",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "bounds": [
+        86,
+        52,
+        169,
+        243
+      ],
+      "outerTransparentPixels": 52,
+      "clipped": false,
+      "bytes": 50233,
+      "sha256": "1ca0eb527eac764576bc600716dad9f77b1eb5090d52a8d2d5d46388bfe059d9",
+      "decodedBytes": 360448,
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224
+    },
+    {
+      "file": "assets/source-2-1.15-west-daylight-shadow.png",
+      "id": "source-2",
+      "heightCells": 1.15,
+      "facing": "west",
+      "mood": "daylight",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "bounds": [
+        77,
+        101,
+        214,
+        213
+      ],
+      "outerTransparentPixels": 42,
+      "clipped": false,
+      "bytes": 7355,
+      "sha256": "14acf91a2e29e6f55e9f777ccf1fd45b45be025d14471c95407283c8abe4ab4d",
+      "decodedBytes": 262144,
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112
+    },
+    {
+      "file": "assets/source-2-1.15-south-dusk-body.png",
+      "id": "source-2",
+      "heightCells": 1.15,
+      "facing": "south",
+      "mood": "dusk",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "bounds": [
+        68,
+        56,
+        188,
+        232
+      ],
+      "outerTransparentPixels": 56,
+      "clipped": false,
+      "bytes": 53401,
+      "sha256": "0e12b0c5df09a1663090177923e28b63838a813ecd2df826a2c2c9dac4f5f8d5",
+      "decodedBytes": 360448,
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224
+    },
+    {
+      "file": "assets/source-2-1.15-south-dusk-shadow.png",
+      "id": "source-2",
+      "heightCells": 1.15,
+      "facing": "south",
+      "mood": "dusk",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "bounds": [
+        73,
+        103,
+        213,
+        221
+      ],
+      "outerTransparentPixels": 35,
+      "clipped": false,
+      "bytes": 7487,
+      "sha256": "5862b9fa3a37f2f9fbc9e25d635378e58c5f8ab5b37b237ccdf9fe707e04fb91",
+      "decodedBytes": 262144,
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112
+    },
+    {
+      "file": "assets/source-2-1.15-east-dusk-body.png",
+      "id": "source-2",
+      "heightCells": 1.15,
+      "facing": "east",
+      "mood": "dusk",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "bounds": [
+        87,
+        47,
+        169,
+        245
+      ],
+      "outerTransparentPixels": 47,
+      "clipped": false,
+      "bytes": 48666,
+      "sha256": "35960fb3f46e9058144b778b9b298fdbf3a4ba77d0d84b8b8caf6aa7bf3399c0",
+      "decodedBytes": 360448,
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224
+    },
+    {
+      "file": "assets/source-2-1.15-east-dusk-shadow.png",
+      "id": "source-2",
+      "heightCells": 1.15,
+      "facing": "east",
+      "mood": "dusk",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "bounds": [
+        75,
+        98,
+        218,
+        215
+      ],
+      "outerTransparentPixels": 38,
+      "clipped": false,
+      "bytes": 7558,
+      "sha256": "a6699708b98c2cc9530b923748dd0282273cf235bdecf091916de2e0815642c7",
+      "decodedBytes": 262144,
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112
+    },
+    {
+      "file": "assets/source-2-1.15-north-dusk-body.png",
+      "id": "source-2",
+      "heightCells": 1.15,
+      "facing": "north",
+      "mood": "dusk",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "bounds": [
+        68,
+        46,
+        189,
+        227
+      ],
+      "outerTransparentPixels": 46,
+      "clipped": false,
+      "bytes": 51238,
+      "sha256": "2064f11c9b485b934e4eca50befd8b2bc69746bc7ea4882496ef3a0caf3c3643",
+      "decodedBytes": 360448,
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224
+    },
+    {
+      "file": "assets/source-2-1.15-north-dusk-shadow.png",
+      "id": "source-2",
+      "heightCells": 1.15,
+      "facing": "north",
+      "mood": "dusk",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "bounds": [
+        77,
+        102,
+        215,
+        221
+      ],
+      "outerTransparentPixels": 35,
+      "clipped": false,
+      "bytes": 7653,
+      "sha256": "8420c7f91295d34b0d2e839e41faafdd6f1f3640ec88668da58bb49e93bae4b9",
+      "decodedBytes": 262144,
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112
+    },
+    {
+      "file": "assets/source-2-1.15-west-dusk-body.png",
+      "id": "source-2",
+      "heightCells": 1.15,
+      "facing": "west",
+      "mood": "dusk",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "bounds": [
+        86,
+        52,
+        169,
+        243
+      ],
+      "outerTransparentPixels": 52,
+      "clipped": false,
+      "bytes": 47688,
+      "sha256": "9d097cff104b16b3860b8e655d43c6474acfc1b1f1a2e681666c0690ff55ce56",
+      "decodedBytes": 360448,
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224
+    },
+    {
+      "file": "assets/source-2-1.15-west-dusk-shadow.png",
+      "id": "source-2",
+      "heightCells": 1.15,
+      "facing": "west",
+      "mood": "dusk",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "bounds": [
+        72,
+        102,
+        211,
+        218
+      ],
+      "outerTransparentPixels": 38,
+      "clipped": false,
+      "bytes": 7422,
+      "sha256": "c70136aa7f03becb910ea22738313e4fe6be3fb8c542b9f7647384f38643b91e",
+      "decodedBytes": 262144,
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112
+    },
+    {
+      "file": "assets/source-2-1.34-south-daylight-body.png",
+      "id": "source-2",
+      "heightCells": 1.34,
+      "facing": "south",
+      "mood": "daylight",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "bounds": [
+        58,
+        31,
+        198,
+        236
+      ],
+      "outerTransparentPixels": 31,
+      "clipped": false,
+      "bytes": 65245,
+      "sha256": "193d06925d6300bd2a6cf687fc1dd6f48a489d4bef72014edcf2e300d75467f3",
+      "decodedBytes": 360448,
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224
+    },
+    {
+      "file": "assets/source-2-1.34-south-daylight-shadow.png",
+      "id": "source-2",
+      "heightCells": 1.34,
+      "facing": "south",
+      "mood": "daylight",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "bounds": [
+        68,
+        93,
+        231,
+        227
+      ],
+      "outerTransparentPixels": 25,
+      "clipped": false,
+      "bytes": 9578,
+      "sha256": "4e1989480da13f10bb0a6d969dbc4f27b50ada02353c71306425a3461d373f43",
+      "decodedBytes": 262144,
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112
+    },
+    {
+      "file": "assets/source-2-1.34-east-daylight-body.png",
+      "id": "source-2",
+      "heightCells": 1.34,
+      "facing": "east",
+      "mood": "daylight",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "bounds": [
+        80,
+        21,
+        176,
+        251
+      ],
+      "outerTransparentPixels": 21,
+      "clipped": false,
+      "bytes": 59313,
+      "sha256": "9368f3a39d70d1d399f6b7820aa847971dc95b899775b8ad3a4bf0c7039482ab",
+      "decodedBytes": 360448,
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224
+    },
+    {
+      "file": "assets/source-2-1.34-east-daylight-shadow.png",
+      "id": "source-2",
+      "heightCells": 1.34,
+      "facing": "east",
+      "mood": "daylight",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "bounds": [
+        69,
+        88,
+        239,
+        221
+      ],
+      "outerTransparentPixels": 17,
+      "clipped": false,
+      "bytes": 9692,
+      "sha256": "41749e7a98f25308eca444b16d8f497e89a75c527c86a5ff443c71a65e5450ad",
+      "decodedBytes": 262144,
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112
+    },
+    {
+      "file": "assets/source-2-1.34-north-daylight-body.png",
+      "id": "source-2",
+      "heightCells": 1.34,
+      "facing": "north",
+      "mood": "daylight",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "bounds": [
+        58,
+        20,
+        198,
+        230
+      ],
+      "outerTransparentPixels": 20,
+      "clipped": false,
+      "bytes": 63521,
+      "sha256": "930a1a45761fd13694238da785ab4f0bafca2bd8c3f92f5c756188e6fb826b32",
+      "decodedBytes": 360448,
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224
+    },
+    {
+      "file": "assets/source-2-1.34-north-daylight-shadow.png",
+      "id": "source-2",
+      "heightCells": 1.34,
+      "facing": "north",
+      "mood": "daylight",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "bounds": [
+        67,
+        91,
+        235,
+        224
+      ],
+      "outerTransparentPixels": 21,
+      "clipped": false,
+      "bytes": 9697,
+      "sha256": "19d855891cc28fd0b64be9870bf46dc90512e06a3d3a26f180fc72769f8d12b2",
+      "decodedBytes": 262144,
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112
+    },
+    {
+      "file": "assets/source-2-1.34-west-daylight-body.png",
+      "id": "source-2",
+      "heightCells": 1.34,
+      "facing": "west",
+      "mood": "daylight",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "bounds": [
+        80,
+        27,
+        176,
+        248
+      ],
+      "outerTransparentPixels": 27,
+      "clipped": false,
+      "bytes": 57951,
+      "sha256": "9ef66b7929c9fdfa1008fdf810a6533c168bdf08b69368dfa927414b478327cb",
+      "decodedBytes": 360448,
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224
+    },
+    {
+      "file": "assets/source-2-1.34-west-daylight-shadow.png",
+      "id": "source-2",
+      "heightCells": 1.34,
+      "facing": "west",
+      "mood": "daylight",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "bounds": [
+        72,
+        91,
+        230,
+        224
+      ],
+      "outerTransparentPixels": 26,
+      "clipped": false,
+      "bytes": 9418,
+      "sha256": "2fa4bc69434132b8fe2f1642e1f1c35a8e385dc53f884cf715b8d039f5af7b2c",
+      "decodedBytes": 262144,
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112
+    },
+    {
+      "file": "assets/source-2-1.34-south-dusk-body.png",
+      "id": "source-2",
+      "heightCells": 1.34,
+      "facing": "south",
+      "mood": "dusk",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "bounds": [
+        58,
+        31,
+        198,
+        236
+      ],
+      "outerTransparentPixels": 31,
+      "clipped": false,
+      "bytes": 61867,
+      "sha256": "91b32bb141cf8d174630bb73c1c313e4e2430082d5a6cbb3a794f61aaa224f95",
+      "decodedBytes": 360448,
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224
+    },
+    {
+      "file": "assets/source-2-1.34-south-dusk-shadow.png",
+      "id": "source-2",
+      "heightCells": 1.34,
+      "facing": "south",
+      "mood": "dusk",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "bounds": [
+        64,
+        95,
+        227,
+        232
+      ],
+      "outerTransparentPixels": 24,
+      "clipped": false,
+      "bytes": 9582,
+      "sha256": "5f9a08af8fbf3eb4fb9ed02c7081a6ac3520f7cba1229820a222a466878f597d",
+      "decodedBytes": 262144,
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112
+    },
+    {
+      "file": "assets/source-2-1.34-east-dusk-body.png",
+      "id": "source-2",
+      "heightCells": 1.34,
+      "facing": "east",
+      "mood": "dusk",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "bounds": [
+        80,
+        21,
+        176,
+        251
+      ],
+      "outerTransparentPixels": 21,
+      "clipped": false,
+      "bytes": 55743,
+      "sha256": "bf6bb7264b4dd21d028af7a7089f1ab6072b9d448e6b56eecbe01e110290c615",
+      "decodedBytes": 360448,
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224
+    },
+    {
+      "file": "assets/source-2-1.34-east-dusk-shadow.png",
+      "id": "source-2",
+      "heightCells": 1.34,
+      "facing": "east",
+      "mood": "dusk",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "bounds": [
+        62,
+        89,
+        234,
+        225
+      ],
+      "outerTransparentPixels": 22,
+      "clipped": false,
+      "bytes": 9678,
+      "sha256": "d9b23af50f968d540cf352ce7906daba7693db607564f2d5fad68db10aeceaf8",
+      "decodedBytes": 262144,
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112
+    },
+    {
+      "file": "assets/source-2-1.34-north-dusk-body.png",
+      "id": "source-2",
+      "heightCells": 1.34,
+      "facing": "north",
+      "mood": "dusk",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "bounds": [
+        58,
+        20,
+        198,
+        230
+      ],
+      "outerTransparentPixels": 20,
+      "clipped": false,
+      "bytes": 59087,
+      "sha256": "700890df3f235a1282d33c30bb3c45cbfc63fccba4cff97a519e8ab1314e74c6",
+      "decodedBytes": 360448,
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224
+    },
+    {
+      "file": "assets/source-2-1.34-north-dusk-shadow.png",
+      "id": "source-2",
+      "heightCells": 1.34,
+      "facing": "north",
+      "mood": "dusk",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "bounds": [
+        64,
+        93,
+        228,
+        230
+      ],
+      "outerTransparentPixels": 26,
+      "clipped": false,
+      "bytes": 9688,
+      "sha256": "da7dd72e87e6893498a71f468f09ca00a7b4a03114b7ff3feeaf9acf0518c3df",
+      "decodedBytes": 262144,
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112
+    },
+    {
+      "file": "assets/source-2-1.34-west-dusk-body.png",
+      "id": "source-2",
+      "heightCells": 1.34,
+      "facing": "west",
+      "mood": "dusk",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ],
+      "size": [
+        256,
+        352
+      ],
+      "bounds": [
+        80,
+        27,
+        176,
+        248
+      ],
+      "outerTransparentPixels": 27,
+      "clipped": false,
+      "bytes": 54731,
+      "sha256": "11ec87822220b13d99184cedc7f154a2c9f5bf5d854c4f784553f9cda4f66efe",
+      "decodedBytes": 360448,
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224
+    },
+    {
+      "file": "assets/source-2-1.34-west-dusk-shadow.png",
+      "id": "source-2",
+      "heightCells": 1.34,
+      "facing": "west",
+      "mood": "dusk",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "bounds": [
+        66,
+        94,
+        227,
+        230
+      ],
+      "outerTransparentPixels": 26,
+      "clipped": false,
+      "bytes": 9456,
+      "sha256": "2299f577a9a670d57edc61a4a30ccce8b7f1a31cf90f99a695f5b60caed50610",
+      "decodedBytes": 262144,
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112
+    }
+  ],
+  "processing": "Cycles CPU 32 samples seed 30; AgX Medium High Contrast. Straight RGBA8. Shadows 512\u00b2\u2192256\u00b2, 112px/cell; max(0,(alpha\u221232)*255/223). Two-pixel RGB dilation only.",
+  "totals": {
+    "images": 96,
+    "transferBytes": 3057343,
+    "decodedBytes": 29884416
+  },
+  "clipping": []
+}

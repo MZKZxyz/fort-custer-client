@@ -1,0 +1,3752 @@
+{
+  "browser": "156.0.8078.49",
+  "cases": 144,
+  "errors": [],
+  "loadsHighPoly": false,
+  "results": [
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "36",
+      "height": "0.95",
+      "fixture": "corridor",
+      "facing": "south",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "character",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "36",
+      "height": "0.95",
+      "fixture": "corridor",
+      "facing": "east",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "character",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "36",
+      "height": "0.95",
+      "fixture": "corridor",
+      "facing": "north",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "character",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "36",
+      "height": "0.95",
+      "fixture": "corridor",
+      "facing": "west",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "character",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "36",
+      "height": "0.95",
+      "fixture": "occlusion",
+      "facing": "south",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": 1461,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "fire",
+        "tipi",
+        "character"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "36",
+      "height": "0.95",
+      "fixture": "occlusion",
+      "facing": "east",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": 1072,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "fire",
+        "tipi",
+        "character"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "36",
+      "height": "0.95",
+      "fixture": "occlusion",
+      "facing": "north",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": 1165,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "fire",
+        "tipi",
+        "character"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "36",
+      "height": "0.95",
+      "fixture": "occlusion",
+      "facing": "west",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": 1067,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "fire",
+        "tipi",
+        "character"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "36",
+      "height": "0.95",
+      "fixture": "maze",
+      "facing": "south",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "character",
+        "extinguisher",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "36",
+      "height": "0.95",
+      "fixture": "maze",
+      "facing": "east",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "character",
+        "extinguisher",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "36",
+      "height": "0.95",
+      "fixture": "maze",
+      "facing": "north",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "character",
+        "extinguisher",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "36",
+      "height": "0.95",
+      "fixture": "maze",
+      "facing": "west",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "character",
+        "extinguisher",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "36",
+      "height": "1.15",
+      "fixture": "corridor",
+      "facing": "south",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "character",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "36",
+      "height": "1.15",
+      "fixture": "corridor",
+      "facing": "east",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "character",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "36",
+      "height": "1.15",
+      "fixture": "corridor",
+      "facing": "north",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "character",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "36",
+      "height": "1.15",
+      "fixture": "corridor",
+      "facing": "west",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "character",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "36",
+      "height": "1.15",
+      "fixture": "occlusion",
+      "facing": "south",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": 1779,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "fire",
+        "tipi",
+        "character"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "36",
+      "height": "1.15",
+      "fixture": "occlusion",
+      "facing": "east",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": 1335,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "fire",
+        "tipi",
+        "character"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "36",
+      "height": "1.15",
+      "fixture": "occlusion",
+      "facing": "north",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": 1371,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "fire",
+        "tipi",
+        "character"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "36",
+      "height": "1.15",
+      "fixture": "occlusion",
+      "facing": "west",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": 1332,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "fire",
+        "tipi",
+        "character"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "36",
+      "height": "1.15",
+      "fixture": "maze",
+      "facing": "south",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "character",
+        "extinguisher",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "36",
+      "height": "1.15",
+      "fixture": "maze",
+      "facing": "east",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "character",
+        "extinguisher",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "36",
+      "height": "1.15",
+      "fixture": "maze",
+      "facing": "north",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "character",
+        "extinguisher",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "36",
+      "height": "1.15",
+      "fixture": "maze",
+      "facing": "west",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "character",
+        "extinguisher",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "36",
+      "height": "1.34",
+      "fixture": "corridor",
+      "facing": "south",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "character",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "36",
+      "height": "1.34",
+      "fixture": "corridor",
+      "facing": "east",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "character",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "36",
+      "height": "1.34",
+      "fixture": "corridor",
+      "facing": "north",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "character",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "36",
+      "height": "1.34",
+      "fixture": "corridor",
+      "facing": "west",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "character",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "36",
+      "height": "1.34",
+      "fixture": "occlusion",
+      "facing": "south",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": 2151,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "fire",
+        "tipi",
+        "character"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "36",
+      "height": "1.34",
+      "fixture": "occlusion",
+      "facing": "east",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": 1620,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "fire",
+        "tipi",
+        "character"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "36",
+      "height": "1.34",
+      "fixture": "occlusion",
+      "facing": "north",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": 1584,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "fire",
+        "tipi",
+        "character"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "36",
+      "height": "1.34",
+      "fixture": "occlusion",
+      "facing": "west",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": 1619,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "fire",
+        "tipi",
+        "character"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "36",
+      "height": "1.34",
+      "fixture": "maze",
+      "facing": "south",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "character",
+        "extinguisher",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "36",
+      "height": "1.34",
+      "fixture": "maze",
+      "facing": "east",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "character",
+        "extinguisher",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "36",
+      "height": "1.34",
+      "fixture": "maze",
+      "facing": "north",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "character",
+        "extinguisher",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "36",
+      "height": "1.34",
+      "fixture": "maze",
+      "facing": "west",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "character",
+        "extinguisher",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "48",
+      "height": "0.95",
+      "fixture": "corridor",
+      "facing": "south",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "character",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "48",
+      "height": "0.95",
+      "fixture": "corridor",
+      "facing": "east",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "character",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "48",
+      "height": "0.95",
+      "fixture": "corridor",
+      "facing": "north",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "character",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "48",
+      "height": "0.95",
+      "fixture": "corridor",
+      "facing": "west",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "character",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "48",
+      "height": "0.95",
+      "fixture": "occlusion",
+      "facing": "south",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": 2613,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "fire",
+        "tipi",
+        "character"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "48",
+      "height": "0.95",
+      "fixture": "occlusion",
+      "facing": "east",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": 1913,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "fire",
+        "tipi",
+        "character"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "48",
+      "height": "0.95",
+      "fixture": "occlusion",
+      "facing": "north",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": 2088,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "fire",
+        "tipi",
+        "character"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "48",
+      "height": "0.95",
+      "fixture": "occlusion",
+      "facing": "west",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": 1915,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "fire",
+        "tipi",
+        "character"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "48",
+      "height": "0.95",
+      "fixture": "maze",
+      "facing": "south",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "character",
+        "extinguisher",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "48",
+      "height": "0.95",
+      "fixture": "maze",
+      "facing": "east",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "character",
+        "extinguisher",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "48",
+      "height": "0.95",
+      "fixture": "maze",
+      "facing": "north",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "character",
+        "extinguisher",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "48",
+      "height": "0.95",
+      "fixture": "maze",
+      "facing": "west",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "character",
+        "extinguisher",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "48",
+      "height": "1.15",
+      "fixture": "corridor",
+      "facing": "south",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "character",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "48",
+      "height": "1.15",
+      "fixture": "corridor",
+      "facing": "east",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "character",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "48",
+      "height": "1.15",
+      "fixture": "corridor",
+      "facing": "north",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "character",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "48",
+      "height": "1.15",
+      "fixture": "corridor",
+      "facing": "west",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "character",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "48",
+      "height": "1.15",
+      "fixture": "occlusion",
+      "facing": "south",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": 3178,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "fire",
+        "tipi",
+        "character"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "48",
+      "height": "1.15",
+      "fixture": "occlusion",
+      "facing": "east",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": 2360,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "fire",
+        "tipi",
+        "character"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "48",
+      "height": "1.15",
+      "fixture": "occlusion",
+      "facing": "north",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": 2452,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "fire",
+        "tipi",
+        "character"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "48",
+      "height": "1.15",
+      "fixture": "occlusion",
+      "facing": "west",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": 2362,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "fire",
+        "tipi",
+        "character"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "48",
+      "height": "1.15",
+      "fixture": "maze",
+      "facing": "south",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "character",
+        "extinguisher",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "48",
+      "height": "1.15",
+      "fixture": "maze",
+      "facing": "east",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "character",
+        "extinguisher",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "48",
+      "height": "1.15",
+      "fixture": "maze",
+      "facing": "north",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "character",
+        "extinguisher",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "48",
+      "height": "1.15",
+      "fixture": "maze",
+      "facing": "west",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "character",
+        "extinguisher",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "48",
+      "height": "1.34",
+      "fixture": "corridor",
+      "facing": "south",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "character",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "48",
+      "height": "1.34",
+      "fixture": "corridor",
+      "facing": "east",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "character",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "48",
+      "height": "1.34",
+      "fixture": "corridor",
+      "facing": "north",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "character",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "48",
+      "height": "1.34",
+      "fixture": "corridor",
+      "facing": "west",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "character",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "48",
+      "height": "1.34",
+      "fixture": "occlusion",
+      "facing": "south",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": 3803,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "fire",
+        "tipi",
+        "character"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "48",
+      "height": "1.34",
+      "fixture": "occlusion",
+      "facing": "east",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": 2872,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "fire",
+        "tipi",
+        "character"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "48",
+      "height": "1.34",
+      "fixture": "occlusion",
+      "facing": "north",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": 2797,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "fire",
+        "tipi",
+        "character"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "48",
+      "height": "1.34",
+      "fixture": "occlusion",
+      "facing": "west",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": 2870,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "fire",
+        "tipi",
+        "character"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "48",
+      "height": "1.34",
+      "fixture": "maze",
+      "facing": "south",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "character",
+        "extinguisher",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "48",
+      "height": "1.34",
+      "fixture": "maze",
+      "facing": "east",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "character",
+        "extinguisher",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "48",
+      "height": "1.34",
+      "fixture": "maze",
+      "facing": "north",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "character",
+        "extinguisher",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "tile": "48",
+      "height": "1.34",
+      "fixture": "maze",
+      "facing": "west",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "character",
+        "extinguisher",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "36",
+      "height": "0.95",
+      "fixture": "corridor",
+      "facing": "south",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "character",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "36",
+      "height": "0.95",
+      "fixture": "corridor",
+      "facing": "east",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "character",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "36",
+      "height": "0.95",
+      "fixture": "corridor",
+      "facing": "north",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "character",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "36",
+      "height": "0.95",
+      "fixture": "corridor",
+      "facing": "west",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "character",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "36",
+      "height": "0.95",
+      "fixture": "occlusion",
+      "facing": "south",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": 1461,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "fire",
+        "tipi",
+        "character"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "36",
+      "height": "0.95",
+      "fixture": "occlusion",
+      "facing": "east",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": 1072,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "fire",
+        "tipi",
+        "character"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "36",
+      "height": "0.95",
+      "fixture": "occlusion",
+      "facing": "north",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": 1165,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "fire",
+        "tipi",
+        "character"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "36",
+      "height": "0.95",
+      "fixture": "occlusion",
+      "facing": "west",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": 1067,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "fire",
+        "tipi",
+        "character"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "36",
+      "height": "0.95",
+      "fixture": "maze",
+      "facing": "south",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "character",
+        "extinguisher",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "36",
+      "height": "0.95",
+      "fixture": "maze",
+      "facing": "east",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "character",
+        "extinguisher",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "36",
+      "height": "0.95",
+      "fixture": "maze",
+      "facing": "north",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "character",
+        "extinguisher",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "36",
+      "height": "0.95",
+      "fixture": "maze",
+      "facing": "west",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "character",
+        "extinguisher",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "36",
+      "height": "1.15",
+      "fixture": "corridor",
+      "facing": "south",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "character",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "36",
+      "height": "1.15",
+      "fixture": "corridor",
+      "facing": "east",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "character",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "36",
+      "height": "1.15",
+      "fixture": "corridor",
+      "facing": "north",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "character",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "36",
+      "height": "1.15",
+      "fixture": "corridor",
+      "facing": "west",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "character",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "36",
+      "height": "1.15",
+      "fixture": "occlusion",
+      "facing": "south",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": 1779,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "fire",
+        "tipi",
+        "character"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "36",
+      "height": "1.15",
+      "fixture": "occlusion",
+      "facing": "east",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": 1335,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "fire",
+        "tipi",
+        "character"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "36",
+      "height": "1.15",
+      "fixture": "occlusion",
+      "facing": "north",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": 1371,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "fire",
+        "tipi",
+        "character"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "36",
+      "height": "1.15",
+      "fixture": "occlusion",
+      "facing": "west",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": 1332,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "fire",
+        "tipi",
+        "character"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "36",
+      "height": "1.15",
+      "fixture": "maze",
+      "facing": "south",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "character",
+        "extinguisher",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "36",
+      "height": "1.15",
+      "fixture": "maze",
+      "facing": "east",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "character",
+        "extinguisher",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "36",
+      "height": "1.15",
+      "fixture": "maze",
+      "facing": "north",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "character",
+        "extinguisher",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "36",
+      "height": "1.15",
+      "fixture": "maze",
+      "facing": "west",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "character",
+        "extinguisher",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "36",
+      "height": "1.34",
+      "fixture": "corridor",
+      "facing": "south",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "character",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "36",
+      "height": "1.34",
+      "fixture": "corridor",
+      "facing": "east",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "character",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "36",
+      "height": "1.34",
+      "fixture": "corridor",
+      "facing": "north",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "character",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "36",
+      "height": "1.34",
+      "fixture": "corridor",
+      "facing": "west",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "character",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "36",
+      "height": "1.34",
+      "fixture": "occlusion",
+      "facing": "south",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": 2151,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "fire",
+        "tipi",
+        "character"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "36",
+      "height": "1.34",
+      "fixture": "occlusion",
+      "facing": "east",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": 1620,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "fire",
+        "tipi",
+        "character"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "36",
+      "height": "1.34",
+      "fixture": "occlusion",
+      "facing": "north",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": 1584,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "fire",
+        "tipi",
+        "character"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "36",
+      "height": "1.34",
+      "fixture": "occlusion",
+      "facing": "west",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": 1619,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "fire",
+        "tipi",
+        "character"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "36",
+      "height": "1.34",
+      "fixture": "maze",
+      "facing": "south",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "character",
+        "extinguisher",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "36",
+      "height": "1.34",
+      "fixture": "maze",
+      "facing": "east",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "character",
+        "extinguisher",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "36",
+      "height": "1.34",
+      "fixture": "maze",
+      "facing": "north",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "character",
+        "extinguisher",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "36",
+      "height": "1.34",
+      "fixture": "maze",
+      "facing": "west",
+      "maxAnchorError": 0.0004857664089854552,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "character",
+        "extinguisher",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "48",
+      "height": "0.95",
+      "fixture": "corridor",
+      "facing": "south",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "character",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "48",
+      "height": "0.95",
+      "fixture": "corridor",
+      "facing": "east",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "character",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "48",
+      "height": "0.95",
+      "fixture": "corridor",
+      "facing": "north",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "character",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "48",
+      "height": "0.95",
+      "fixture": "corridor",
+      "facing": "west",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "character",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "48",
+      "height": "0.95",
+      "fixture": "occlusion",
+      "facing": "south",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": 2613,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "fire",
+        "tipi",
+        "character"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "48",
+      "height": "0.95",
+      "fixture": "occlusion",
+      "facing": "east",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": 1913,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "fire",
+        "tipi",
+        "character"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "48",
+      "height": "0.95",
+      "fixture": "occlusion",
+      "facing": "north",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": 2088,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "fire",
+        "tipi",
+        "character"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "48",
+      "height": "0.95",
+      "fixture": "occlusion",
+      "facing": "west",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": 1915,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "fire",
+        "tipi",
+        "character"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "48",
+      "height": "0.95",
+      "fixture": "maze",
+      "facing": "south",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "character",
+        "extinguisher",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "48",
+      "height": "0.95",
+      "fixture": "maze",
+      "facing": "east",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "character",
+        "extinguisher",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "48",
+      "height": "0.95",
+      "fixture": "maze",
+      "facing": "north",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "character",
+        "extinguisher",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "48",
+      "height": "0.95",
+      "fixture": "maze",
+      "facing": "west",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "character",
+        "extinguisher",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "48",
+      "height": "1.15",
+      "fixture": "corridor",
+      "facing": "south",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "character",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "48",
+      "height": "1.15",
+      "fixture": "corridor",
+      "facing": "east",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "character",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "48",
+      "height": "1.15",
+      "fixture": "corridor",
+      "facing": "north",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "character",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "48",
+      "height": "1.15",
+      "fixture": "corridor",
+      "facing": "west",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "character",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "48",
+      "height": "1.15",
+      "fixture": "occlusion",
+      "facing": "south",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": 3178,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "fire",
+        "tipi",
+        "character"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "48",
+      "height": "1.15",
+      "fixture": "occlusion",
+      "facing": "east",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": 2360,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "fire",
+        "tipi",
+        "character"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "48",
+      "height": "1.15",
+      "fixture": "occlusion",
+      "facing": "north",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": 2452,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "fire",
+        "tipi",
+        "character"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "48",
+      "height": "1.15",
+      "fixture": "occlusion",
+      "facing": "west",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": 2362,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "fire",
+        "tipi",
+        "character"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "48",
+      "height": "1.15",
+      "fixture": "maze",
+      "facing": "south",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "character",
+        "extinguisher",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "48",
+      "height": "1.15",
+      "fixture": "maze",
+      "facing": "east",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "character",
+        "extinguisher",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "48",
+      "height": "1.15",
+      "fixture": "maze",
+      "facing": "north",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "character",
+        "extinguisher",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "48",
+      "height": "1.15",
+      "fixture": "maze",
+      "facing": "west",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "character",
+        "extinguisher",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "48",
+      "height": "1.34",
+      "fixture": "corridor",
+      "facing": "south",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "character",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "48",
+      "height": "1.34",
+      "fixture": "corridor",
+      "facing": "east",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "character",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "48",
+      "height": "1.34",
+      "fixture": "corridor",
+      "facing": "north",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "character",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "48",
+      "height": "1.34",
+      "fixture": "corridor",
+      "facing": "west",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "character",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "48",
+      "height": "1.34",
+      "fixture": "occlusion",
+      "facing": "south",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": 3803,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "fire",
+        "tipi",
+        "character"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "48",
+      "height": "1.34",
+      "fixture": "occlusion",
+      "facing": "east",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": 2872,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "fire",
+        "tipi",
+        "character"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "48",
+      "height": "1.34",
+      "fixture": "occlusion",
+      "facing": "north",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": 2797,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "fire",
+        "tipi",
+        "character"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "48",
+      "height": "1.34",
+      "fixture": "occlusion",
+      "facing": "west",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": 2870,
+      "roles": [
+        "wall",
+        "extinguisher",
+        "fire",
+        "tipi",
+        "character"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "48",
+      "height": "1.34",
+      "fixture": "maze",
+      "facing": "south",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "character",
+        "extinguisher",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "48",
+      "height": "1.34",
+      "fixture": "maze",
+      "facing": "east",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "character",
+        "extinguisher",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "48",
+      "height": "1.34",
+      "fixture": "maze",
+      "facing": "north",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "character",
+        "extinguisher",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "tile": "48",
+      "height": "1.34",
+      "fixture": "maze",
+      "facing": "west",
+      "maxAnchorError": 0.0005332792795513797,
+      "occludedPixels": null,
+      "roles": [
+        "wall",
+        "character",
+        "extinguisher",
+        "fire",
+        "tipi"
+      ],
+      "variants": [
+        "v04",
+        "v03",
+        "v02",
+        "v01"
+      ],
+      "pageOverflow": false
+    }
+  ]
+}

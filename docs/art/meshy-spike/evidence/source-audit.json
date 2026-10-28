@@ -1,0 +1,511 @@
+{
+  "schema": "fc-meshy-source-audit-v1",
+  "sources": [
+    {
+      "id": "source-1",
+      "sourceFile": "Meshy_AI_Young_Explorer_Charac_1028102606_texture.glb",
+      "bytes": 53774852,
+      "sha256": "fd721b4377229f3764174d610b38b902246c6eec18d466ca7385ff51180e7e59",
+      "asset": {
+        "generator": "pygltflib@v1.16.5",
+        "version": "2.0"
+      },
+      "triangles": 1544406,
+      "vertices": 827169,
+      "meshCount": 1,
+      "primitiveCount": 1,
+      "attributes": [
+        {
+          "POSITION": 0,
+          "NORMAL": 2,
+          "TEXCOORD_0": 1
+        }
+      ],
+      "geometryMetrics": [
+        {
+          "finitePositions": true,
+          "finiteUV": true,
+          "finiteNormals": true,
+          "normalLengthRange": [
+            0.9999998807907104,
+            1.0000001192092896
+          ],
+          "uvBounds": [
+            [
+              3.999999989900971e-06,
+              0.9999970197677612
+            ],
+            [
+              1.0132789611816406e-06,
+              0.9999740123748779
+            ]
+          ],
+          "zeroAreaTriangles": 0,
+          "nearZeroAreaTriangles1eMinus12": 0,
+          "attributeAndIndexBytes": 45002280
+        }
+      ],
+      "positionAccessorBounds": [
+        {
+          "min": [
+            -0.40369799733161926,
+            -0.9521390199661255,
+            -0.36601701378822327
+          ],
+          "max": [
+            0.4030579924583435,
+            0.9508569836616516,
+            0.3695259988307953
+          ]
+        }
+      ],
+      "nodes": [
+        {
+          "mesh": 0,
+          "matrix": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      ],
+      "scenes": [
+        {
+          "nodes": [
+            0
+          ]
+        }
+      ],
+      "materials": [
+        {
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "metallicFactor": 1.0,
+            "roughnessFactor": 1.0,
+            "baseColorTexture": {
+              "index": 0,
+              "texCoord": 0
+            },
+            "metallicRoughnessTexture": {
+              "index": 1,
+              "texCoord": 0
+            }
+          },
+          "normalTexture": {
+            "index": 2,
+            "texCoord": 0
+          },
+          "alphaMode": "OPAQUE",
+          "doubleSided": true
+        }
+      ],
+      "images": [
+        {
+          "channelMeanRGB8": [
+            123.962,
+            82.857,
+            60.044
+          ],
+          "channelMinMaxRGB8": [
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              255
+            ]
+          ],
+          "name": null,
+          "mimeType": "image/jpeg",
+          "size": [
+            2048,
+            2048
+          ],
+          "mode": "RGB",
+          "bytes": 4145715,
+          "sha256": "bd56324421e4105b61402aaeed797322766a9bb9bf6474705e6638c6d3f73b15",
+          "embedded": true
+        },
+        {
+          "channelMeanRGB8": [
+            254.646,
+            161.416,
+            1.849
+          ],
+          "channelMinMaxRGB8": [
+            [
+              230,
+              255
+            ],
+            [
+              90,
+              206
+            ],
+            [
+              0,
+              252
+            ]
+          ],
+          "name": null,
+          "mimeType": "image/jpeg",
+          "size": [
+            2048,
+            2048
+          ],
+          "mode": "RGB",
+          "bytes": 1831856,
+          "sha256": "9f42bcdc96b989e102957cb1f6f11555a4177430f9fda3ef73d1d146c5e4aac7",
+          "embedded": true
+        },
+        {
+          "channelMeanRGB8": [
+            127.109,
+            126.889,
+            253.239
+          ],
+          "channelMinMaxRGB8": [
+            [
+              55,
+              198
+            ],
+            [
+              49,
+              203
+            ],
+            [
+              195,
+              255
+            ]
+          ],
+          "name": null,
+          "mimeType": "image/jpeg",
+          "size": [
+            2048,
+            2048
+          ],
+          "mode": "RGB",
+          "bytes": 2792695,
+          "sha256": "09950fb6aac63188551ac0a6c72c83e31a398754685b14bb1047244103285d0a",
+          "embedded": true
+        }
+      ],
+      "textures": [
+        {
+          "sampler": 0,
+          "source": 0
+        },
+        {
+          "sampler": 1,
+          "source": 1
+        },
+        {
+          "sampler": 2,
+          "source": 2
+        }
+      ],
+      "samplers": [
+        {
+          "magFilter": 9729,
+          "minFilter": 9987,
+          "wrapS": 10497,
+          "wrapT": 10497
+        },
+        {
+          "magFilter": 9729,
+          "minFilter": 9987,
+          "wrapS": 10497,
+          "wrapT": 10497
+        },
+        {
+          "magFilter": 9729,
+          "minFilter": 9987,
+          "wrapS": 10497,
+          "wrapT": 10497
+        }
+      ],
+      "skins": [],
+      "animations": [],
+      "morphTargetCounts": [
+        0
+      ],
+      "externalResources": [],
+      "extensionsUsed": []
+    },
+    {
+      "id": "source-2",
+      "sourceFile": "model.glb",
+      "bytes": 72187876,
+      "sha256": "e17b1b639d8793a8b23d046d61ba039c99ec833adf7d7a07acbfd9d67fe2704c",
+      "asset": {
+        "generator": "pygltflib@v1.16.5",
+        "version": "2.0"
+      },
+      "triangles": 1658196,
+      "vertices": 888494,
+      "meshCount": 1,
+      "primitiveCount": 1,
+      "attributes": [
+        {
+          "POSITION": 0,
+          "NORMAL": 2,
+          "TEXCOORD_0": 1
+        }
+      ],
+      "geometryMetrics": [
+        {
+          "finitePositions": true,
+          "finiteUV": true,
+          "finiteNormals": true,
+          "normalLengthRange": [
+            0.9999998807907104,
+            1.0000001192092896
+          ],
+          "uvBounds": [
+            [
+              4.999999873689376e-06,
+              0.9994670152664185
+            ],
+            [
+              1.0132789611816406e-06,
+              0.9999799728393555
+            ]
+          ],
+          "zeroAreaTriangles": 0,
+          "nearZeroAreaTriangles1eMinus12": 0,
+          "attributeAndIndexBytes": 48330160
+        }
+      ],
+      "positionAccessorBounds": [
+        {
+          "min": [
+            -0.438510000705719,
+            -0.9519580006599426,
+            -0.2968449890613556
+          ],
+          "max": [
+            0.43834400177001953,
+            0.9510210156440735,
+            0.29958298802375793
+          ]
+        }
+      ],
+      "nodes": [
+        {
+          "mesh": 0,
+          "matrix": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      ],
+      "scenes": [
+        {
+          "nodes": [
+            0
+          ]
+        }
+      ],
+      "materials": [
+        {
+          "pbrMetallicRoughness": {
+            "baseColorFactor": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "metallicFactor": 1.0,
+            "roughnessFactor": 1.0,
+            "baseColorTexture": {
+              "index": 0,
+              "texCoord": 0
+            },
+            "metallicRoughnessTexture": {
+              "index": 1,
+              "texCoord": 0
+            }
+          },
+          "normalTexture": {
+            "index": 2,
+            "texCoord": 0
+          },
+          "alphaMode": "OPAQUE",
+          "doubleSided": true
+        }
+      ],
+      "images": [
+        {
+          "channelMeanRGB8": [
+            144.21,
+            101.889,
+            70.91
+          ],
+          "channelMinMaxRGB8": [
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              253
+            ],
+            [
+              0,
+              255
+            ]
+          ],
+          "name": null,
+          "mimeType": "image/jpeg",
+          "size": [
+            4096,
+            4096
+          ],
+          "mode": "RGB",
+          "bytes": 12901976,
+          "sha256": "8192a1f45d13ca1e8a581973d30c01b3d5733bd9bc7ecdc8534a465a2822a435",
+          "embedded": true
+        },
+        {
+          "channelMeanRGB8": [
+            254.686,
+            167.093,
+            0.61
+          ],
+          "channelMinMaxRGB8": [
+            [
+              227,
+              255
+            ],
+            [
+              48,
+              209
+            ],
+            [
+              0,
+              125
+            ]
+          ],
+          "name": null,
+          "mimeType": "image/jpeg",
+          "size": [
+            2048,
+            2048
+          ],
+          "mode": "RGB",
+          "bytes": 1701918,
+          "sha256": "ceb89d2e293dca3912c145ee9e11669f3cf0c1a46be252e0422a3d5b2a6aaa02",
+          "embedded": true
+        },
+        {
+          "channelMeanRGB8": [
+            127.182,
+            126.822,
+            253.498
+          ],
+          "channelMinMaxRGB8": [
+            [
+              59,
+              196
+            ],
+            [
+              57,
+              195
+            ],
+            [
+              214,
+              255
+            ]
+          ],
+          "name": null,
+          "mimeType": "image/jpeg",
+          "size": [
+            4096,
+            4096
+          ],
+          "mode": "RGB",
+          "bytes": 9251500,
+          "sha256": "95341e7442646706f54655e4769cdfed5ad7d60e1b32c77eda8b8324f1edbf1c",
+          "embedded": true
+        }
+      ],
+      "textures": [
+        {
+          "sampler": 0,
+          "source": 0
+        },
+        {
+          "sampler": 1,
+          "source": 1
+        },
+        {
+          "sampler": 2,
+          "source": 2
+        }
+      ],
+      "samplers": [
+        {
+          "magFilter": 9729,
+          "minFilter": 9987,
+          "wrapS": 10497,
+          "wrapT": 10497
+        },
+        {
+          "magFilter": 9729,
+          "minFilter": 9987,
+          "wrapS": 10497,
+          "wrapT": 10497
+        },
+        {
+          "magFilter": 9729,
+          "minFilter": 9987,
+          "wrapS": 10497,
+          "wrapT": 10497
+        }
+      ],
+      "skins": [],
+      "animations": [],
+      "morphTargetCounts": [
+        0
+      ],
+      "externalResources": [],
+      "extensionsUsed": []
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "baseSha":"afece64170a46d01c0c4123f4ffd9084d4f671db",
+  "client":{"command":"CI=true npm test -- --watchAll=false --runInBand","suitesPassed":13,"testsPassed":159,"failed":0},
+  "projection":{"command":"node docs/visual-integration/source/geometry.test.mjs","passed":3,"failed":0},
+  "wallSelectionAndFixtures":{"command":"node docs/art/batch-02/source/selection.test.mjs","passed":3,"failed":0},
+  "art":{"spriteLayers":96,"statures":3,"bodyDayEveningAlphaPairs":24,"clipped":0,"browserCases":144,"phoneViewports":[[320,568],[390,844]],"cellWidths":[36,48],"facings":4,"fixtures":3},
+  "normalized":{"blendReopen":true,"isolatedGlbReimport":true,"triangleAndVertexCountsPreserved":true,"exactEmbeddedPbrImageBytesAndSlotsPreserved":true,"sourceToReimportSilhouetteDifferencePixels":0},
+  "checks":"Python syntax compilation, JavaScript syntax checks, PNG SHA/alpha/size/anchor validation, no high-poly runtime requests, actual foreground-wall alpha intersection/order, strict docs-only isolation and git diff --check.",
+  "limits":"Author local evidence, not independent Art QA. Chrome desktop at phone CSS viewports/DPR1, not physical devices or Safari. No GitHub CI requested or polled."
+}
