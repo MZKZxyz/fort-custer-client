@@ -1,0 +1,50 @@
+[
+  {
+    "id": "source-1",
+    "triangleCount": 1544406,
+    "bounds": [
+      [
+        -0.2437654584646225,
+        0.2437654733657837
+      ],
+      [
+        -0.22224809229373932,
+        0.2222481071949005
+      ],
+      [
+        0.0,
+        1.1500000953674316
+      ]
+    ],
+    "maxBoundsError": 0.0,
+    "packedBlendReopened": true,
+    "glbOnlyDirectoryImport": true,
+    "uvPresent": true,
+    "embeddedTextureImages": 3,
+    "externalFilesRequired": false
+  },
+  {
+    "id": "source-2",
+    "triangleCount": 1658196,
+    "bounds": [
+      [
+        -0.264948308467865,
+        0.2649482786655426
+      ],
+      [
+        -0.18021537363529205,
+        0.18021538853645325
+      ],
+      [
+        0.0,
+        1.149999976158142
+      ]
+    ],
+    "maxBoundsError": 0.0,
+    "packedBlendReopened": true,
+    "glbOnlyDirectoryImport": true,
+    "uvPresent": true,
+    "embeddedTextureImages": 3,
+    "externalFilesRequired": false
+  }
+]

@@ -1,0 +1,118 @@
+{
+  "id": "source-1",
+  "sourceSha256": "fd721b4377229f3764174d610b38b902246c6eec18d466ca7385ff51180e7e59",
+  "blender": "4.3.2",
+  "importBounds": [
+    [
+      -0.40369799733161926,
+      0.4030579924583435
+    ],
+    [
+      -0.3695259988307953,
+      0.36601701378822327
+    ],
+    [
+      -0.9521390199661255,
+      0.9508569836616516
+    ]
+  ],
+  "normalizedBounds": [
+    [
+      -0.2437654584646225,
+      0.2437654733657837
+    ],
+    [
+      -0.22224809229373932,
+      0.2222481071949005
+    ],
+    [
+      0.0,
+      1.1500000953674316
+    ]
+  ],
+  "sourceToBlenderNormalization": [
+    [
+      0.6043102741241455,
+      0.0,
+      0.0,
+      0.0001933807652676478
+    ],
+    [
+      0.0,
+      0.6043102741241455,
+      0.0,
+      0.0010602578986436129
+    ],
+    [
+      0.0,
+      0.0,
+      0.6043102741241455,
+      0.5753874182701111
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "heightCells": 1.15,
+  "groundPivot": [
+    0,
+    0,
+    0
+  ],
+  "axes": "+X right, -Y south/front, +Z up; glTF +Y up/+Z front",
+  "triangles": 1544406,
+  "vertices": 827169,
+  "uvLayers": [
+    "UVMap"
+  ],
+  "uvLoopCount": 4633218,
+  "uvBounds": [
+    [
+      3.999999989900971e-06,
+      0.9999970197677612
+    ],
+    [
+      2.5987625122070312e-05,
+      0.9999989867210388
+    ]
+  ],
+  "materials": [
+    "Material_0"
+  ],
+  "images": [
+    {
+      "name": "Image_0",
+      "size": [
+        2048,
+        2048
+      ],
+      "colorspace": "sRGB",
+      "packed": true
+    },
+    {
+      "name": "Image_1",
+      "size": [
+        2048,
+        2048
+      ],
+      "colorspace": "Non-Color",
+      "packed": true
+    },
+    {
+      "name": "Image_2",
+      "size": [
+        2048,
+        2048
+      ],
+      "colorspace": "Non-Color",
+      "packed": true
+    }
+  ],
+  "armatures": 0,
+  "actions": 0,
+  "topologyModified": false,
+  "normalization": "Uniform scale and translation only; imported PBR graph retained; no texture rebake or decimation."
+}

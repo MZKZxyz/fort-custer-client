@@ -1,0 +1,6 @@
+@import url('../batch-01/review.css');
+h1{font-size:24px} header p{font-size:11px} .controls{gap:6px} label{font-size:12px} select{min-height:44px;padding:3px}
+.status{margin:8px 0}.mood{margin-top:12px}.pair{display:grid;grid-template-columns:1fr 1fr;gap:8px}.pair>section{min-width:0}
+h2{font-size:13px}.viewport{height:230px}.world{margin:auto}.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.gallery img{width:100%;background:#d5d1c8}.gallery figure{margin:0}.gallery figcaption{font-size:11px}.concepts{display:flex;gap:10px}.concepts img{width:48%;object-fit:contain;max-height:500px}
+@media(max-width:500px){header,main{padding:8px 10px}h1{font-size:21px}.controls{gap:4px}label{font-size:11px}.viewport{height:205px}.gallery{grid-template-columns:repeat(2,1fr)}}
+.native img{max-width:100%;height:auto}.native{overflow:auto}.native figcaption{font-size:12px}
