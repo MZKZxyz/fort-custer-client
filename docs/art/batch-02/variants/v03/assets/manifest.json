@@ -1,0 +1,621 @@
+{
+  "variantId": "v03",
+  "name": "Dark weathered / iron patina",
+  "approval": "proposed / owner visual approval pending",
+  "blender": "4.3.2",
+  "engine": "Cycles CPU / 32 samples / no denoiser / fixed sampling",
+  "seed": 30,
+  "geometry": {
+    "bounds": [
+      [
+        -0.5,
+        0.5
+      ],
+      [
+        -0.5,
+        0.5
+      ],
+      [
+        0.0,
+        0.5949999690055847
+      ]
+    ],
+    "footprint": [
+      [
+        -0.5,
+        -0.5
+      ],
+      [
+        0.5,
+        -0.5
+      ],
+      [
+        0.5,
+        0.5
+      ],
+      [
+        -0.5,
+        0.5
+      ]
+    ],
+    "groundAnchor": [
+      0,
+      0,
+      0
+    ],
+    "height": 0.595,
+    "meshSha256": "f5036e15e46dd467989aefed31593f97332e1c14725771006abb9a1accece9d2",
+    "objects": 48
+  },
+  "projection": {
+    "elevation": 58,
+    "yaw": 0,
+    "radius": 25,
+    "bodyOrthoScale": 1.5714285714285714,
+    "cellWidth": 224,
+    "groundPitch": 189.9627735390394,
+    "heightRise": 118.7019151882379
+  },
+  "color": {
+    "transform": "AgX",
+    "look": "Medium High Contrast",
+    "output": "sRGB / straight RGBA8",
+    "exposure": 0,
+    "gamma": 1
+  },
+  "lighting": {
+    "daylight": {
+      "key": {
+        "position": [
+          -6,
+          -3,
+          12
+        ],
+        "energy": 1800.0,
+        "color": [
+          1.0,
+          0.8399999737739563,
+          0.6299999952316284
+        ],
+        "size": 7
+      },
+      "fill": {
+        "position": [
+          4,
+          6,
+          10
+        ],
+        "energy": 650.0,
+        "color": [
+          0.6600000262260437,
+          0.7900000214576721,
+          1.0
+        ],
+        "size": 9
+      },
+      "world": [
+        0.25,
+        0.25,
+        0.25
+      ]
+    },
+    "dusk": {
+      "key": {
+        "position": [
+          -6,
+          -3,
+          12
+        ],
+        "energy": 1050.0,
+        "color": [
+          0.47999998927116394,
+          0.6200000047683716,
+          1.0
+        ],
+        "size": 7
+      },
+      "fill": {
+        "position": [
+          4,
+          6,
+          10
+        ],
+        "energy": 550.0,
+        "color": [
+          0.44999998807907104,
+          0.550000011920929,
+          0.8500000238418579
+        ],
+        "size": 9
+      },
+      "world": [
+        0.11999999731779099,
+        0.15000000596046448,
+        0.2199999988079071
+      ]
+    }
+  },
+  "materials": [
+    {
+      "sourceMaterial": "Fresh end grain",
+      "material": "v03 / Fresh end grain",
+      "repairTone": false,
+      "usedBy": [
+        "Corner upright",
+        "Corner upright.001",
+        "Corner upright.002",
+        "Corner upright.003",
+        "End-grain corner cap",
+        "End-grain corner cap.001",
+        "End-grain corner cap.002",
+        "End-grain corner cap.003"
+      ],
+      "beforeBaseLinearRGBA": [
+        0.7099999785423279,
+        0.5,
+        0.2800000011920929,
+        1.0
+      ],
+      "afterBaseLinearRGBA": [
+        0.46149998903274536,
+        0.3449999988079071,
+        0.20720000565052032,
+        1.0
+      ],
+      "roughness": 0.9599999785423279,
+      "metallic": 0.0
+    },
+    {
+      "sourceMaterial": "Inset weathered iron / reference 01\u201304",
+      "material": "v03 / Inset weathered iron / reference 01\u201304",
+      "repairTone": false,
+      "usedBy": [
+        "Inset cap bolt",
+        "Front/back bolt",
+        "Side bolt",
+        "Front/back bolt.001",
+        "Side bolt.001",
+        "Inset cap bolt.001",
+        "Front/back bolt.002",
+        "Side bolt.002",
+        "Front/back bolt.003",
+        "Side bolt.003",
+        "Inset cap bolt.002",
+        "Front/back bolt.004",
+        "Side bolt.004",
+        "Front/back bolt.005",
+        "Side bolt.005",
+        "Inset cap bolt.003",
+        "Front/back bolt.006",
+        "Side bolt.006",
+        "Front/back bolt.007",
+        "Side bolt.007"
+      ],
+      "beforeBaseLinearRGBA": [
+        0.18000000715255737,
+        0.17000000178813934,
+        0.14000000059604645,
+        1.0
+      ],
+      "afterBaseLinearRGBA": [
+        0.10499999672174454,
+        0.11999999731779099,
+        0.10499999672174454,
+        1.0
+      ],
+      "roughness": 0.8600000143051147,
+      "metallic": 0.3199999928474426
+    },
+    {
+      "sourceMaterial": "Pallet / honey 0",
+      "material": "v03 / Pallet / honey 0",
+      "repairTone": false,
+      "usedBy": [
+        "Horizontal pallet slat.001",
+        "Horizontal pallet slat.004",
+        "Horizontal pallet slat.008",
+        "Recessed floor plank",
+        "Recessed floor plank.004",
+        "Inner frame batten",
+        "Inner frame batten.001"
+      ],
+      "beforeBaseLinearRGBA": [
+        0.4300000071525574,
+        0.25,
+        0.10499999672174454,
+        1.0
+      ],
+      "afterBaseLinearRGBA": [
+        0.21070000529289246,
+        0.14000000059604645,
+        0.06825000047683716,
+        1.0
+      ],
+      "roughness": 0.9599999785423279,
+      "metallic": 0.0
+    },
+    {
+      "sourceMaterial": "Pallet / honey 0.001",
+      "material": "v03 / Pallet / honey 0.001",
+      "repairTone": false,
+      "usedBy": [
+        "Horizontal pallet slat.010"
+      ],
+      "beforeBaseLinearRGBA": [
+        0.4300000071525574,
+        0.25,
+        0.10499999672174454,
+        1.0
+      ],
+      "afterBaseLinearRGBA": [
+        0.21070000529289246,
+        0.14000000059604645,
+        0.06825000047683716,
+        1.0
+      ],
+      "roughness": 0.9599999785423279,
+      "metallic": 0.0
+    },
+    {
+      "sourceMaterial": "Pallet / honey 1",
+      "material": "v03 / Pallet / honey 1",
+      "repairTone": false,
+      "usedBy": [
+        "Recessed floor plank.001"
+      ],
+      "beforeBaseLinearRGBA": [
+        0.550000011920929,
+        0.3400000035762787,
+        0.1599999964237213,
+        1.0
+      ],
+      "afterBaseLinearRGBA": [
+        0.2695000171661377,
+        0.19040000438690186,
+        0.10399999469518661,
+        1.0
+      ],
+      "roughness": 0.9599999785423279,
+      "metallic": 0.0
+    },
+    {
+      "sourceMaterial": "Pallet / honey 1.001",
+      "material": "v03 / Pallet / honey 1.001",
+      "repairTone": false,
+      "usedBy": [
+        "Horizontal pallet slat.002"
+      ],
+      "beforeBaseLinearRGBA": [
+        0.550000011920929,
+        0.3400000035762787,
+        0.1599999964237213,
+        1.0
+      ],
+      "afterBaseLinearRGBA": [
+        0.2695000171661377,
+        0.19040000438690186,
+        0.10399999469518661,
+        1.0
+      ],
+      "roughness": 0.9599999785423279,
+      "metallic": 0.0
+    },
+    {
+      "sourceMaterial": "Pallet / honey 1.002",
+      "material": "v03 / Pallet / honey 1.002",
+      "repairTone": false,
+      "usedBy": [
+        "Horizontal pallet slat.007"
+      ],
+      "beforeBaseLinearRGBA": [
+        0.550000011920929,
+        0.3400000035762787,
+        0.1599999964237213,
+        1.0
+      ],
+      "afterBaseLinearRGBA": [
+        0.2695000171661377,
+        0.19040000438690186,
+        0.10399999469518661,
+        1.0
+      ],
+      "roughness": 0.9599999785423279,
+      "metallic": 0.0
+    },
+    {
+      "sourceMaterial": "Pallet / honey 1.003",
+      "material": "v03 / Pallet / honey 1.003",
+      "repairTone": false,
+      "usedBy": [
+        "Horizontal pallet slat.011"
+      ],
+      "beforeBaseLinearRGBA": [
+        0.550000011920929,
+        0.3400000035762787,
+        0.1599999964237213,
+        1.0
+      ],
+      "afterBaseLinearRGBA": [
+        0.2695000171661377,
+        0.19040000438690186,
+        0.10399999469518661,
+        1.0
+      ],
+      "roughness": 0.9599999785423279,
+      "metallic": 0.0
+    },
+    {
+      "sourceMaterial": "Pallet / honey 2",
+      "material": "v03 / Pallet / honey 2",
+      "repairTone": false,
+      "usedBy": [
+        "Horizontal pallet slat",
+        "Recessed floor plank.002"
+      ],
+      "beforeBaseLinearRGBA": [
+        0.6399999856948853,
+        0.41999998688697815,
+        0.2199999988079071,
+        1.0
+      ],
+      "afterBaseLinearRGBA": [
+        0.31360000371932983,
+        0.23519998788833618,
+        0.14300000667572021,
+        1.0
+      ],
+      "roughness": 0.9599999785423279,
+      "metallic": 0.0
+    },
+    {
+      "sourceMaterial": "Pallet / honey 2.001",
+      "material": "v03 / Pallet / honey 2.001",
+      "repairTone": false,
+      "usedBy": [
+        "Horizontal pallet slat.003"
+      ],
+      "beforeBaseLinearRGBA": [
+        0.6399999856948853,
+        0.41999998688697815,
+        0.2199999988079071,
+        1.0
+      ],
+      "afterBaseLinearRGBA": [
+        0.31360000371932983,
+        0.23519998788833618,
+        0.14300000667572021,
+        1.0
+      ],
+      "roughness": 0.9599999785423279,
+      "metallic": 0.0
+    },
+    {
+      "sourceMaterial": "Pallet / honey 3",
+      "material": "v03 / Pallet / honey 3",
+      "repairTone": false,
+      "usedBy": [
+        "Horizontal pallet slat.005",
+        "Horizontal pallet slat.009",
+        "Recessed floor plank.003"
+      ],
+      "beforeBaseLinearRGBA": [
+        0.47999998927116394,
+        0.30000001192092896,
+        0.14000000059604645,
+        1.0
+      ],
+      "afterBaseLinearRGBA": [
+        0.23519998788833618,
+        0.1680000126361847,
+        0.09099999815225601,
+        1.0
+      ],
+      "roughness": 0.9599999785423279,
+      "metallic": 0.0
+    },
+    {
+      "sourceMaterial": "Pallet / honey 3.001",
+      "material": "v03 / Pallet / honey 3.001",
+      "repairTone": false,
+      "usedBy": [
+        "Horizontal pallet slat.006"
+      ],
+      "beforeBaseLinearRGBA": [
+        0.47999998927116394,
+        0.30000001192092896,
+        0.14000000059604645,
+        1.0
+      ],
+      "afterBaseLinearRGBA": [
+        0.23519998788833618,
+        0.1680000126361847,
+        0.09099999815225601,
+        1.0
+      ],
+      "roughness": 0.9599999785423279,
+      "metallic": 0.0
+    }
+  ],
+  "assets": [
+    {
+      "file": "wall-daylight-body.png",
+      "role": "wall",
+      "layer": "body",
+      "mood": "daylight",
+      "size": [
+        256,
+        352
+      ],
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224,
+      "projectionSamples": {
+        "(0, 0, 0)": [
+          128.0,
+          207.99987506866455
+        ],
+        "(1, 0, 0)": [
+          352.0,
+          207.99987506866455
+        ],
+        "(0, -1, 0)": [
+          128.0,
+          397.96265745162964
+        ],
+        "(0, 0, 1)": [
+          128.0,
+          89.29795837402344
+        ]
+      },
+      "meshSha256": "f5036e15e46dd467989aefed31593f97332e1c14725771006abb9a1accece9d2",
+      "bounds": [
+        15,
+        43,
+        241,
+        304
+      ],
+      "outerTransparentPixels": 15,
+      "bytes": 104038,
+      "decodedBytes": 360448,
+      "sha256": "fc1d3b81e7df9ab4316a31e7f785c5134242c313a6d3d05c39bc8e59c97ba23d"
+    },
+    {
+      "file": "wall-daylight-shadow.png",
+      "role": "wall",
+      "layer": "shadow",
+      "mood": "daylight",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112,
+      "projectionSamples": {
+        "(0, 0, 0)": [
+          256.0,
+          299.99993896484375
+        ],
+        "(1, 0, 0)": [
+          480.0,
+          299.99993896484375
+        ],
+        "(0, -1, 0)": [
+          256.0,
+          489.96270179748535
+        ],
+        "(0, 0, 1)": [
+          256.0,
+          181.29803466796875
+        ]
+      },
+      "meshSha256": "f5036e15e46dd467989aefed31593f97332e1c14725771006abb9a1accece9d2",
+      "bounds": [
+        44,
+        78,
+        231,
+        234
+      ],
+      "outerTransparentPixels": 22,
+      "bytes": 18824,
+      "decodedBytes": 262144,
+      "sha256": "c4350945b4d1997bb9839b28da725404565c283d1c6110f6cc960fea072a4cc7"
+    },
+    {
+      "file": "wall-dusk-body.png",
+      "role": "wall",
+      "layer": "body",
+      "mood": "dusk",
+      "size": [
+        256,
+        352
+      ],
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224,
+      "projectionSamples": {
+        "(0, 0, 0)": [
+          128.0,
+          207.99987506866455
+        ],
+        "(1, 0, 0)": [
+          352.0,
+          207.99987506866455
+        ],
+        "(0, -1, 0)": [
+          128.0,
+          397.96265745162964
+        ],
+        "(0, 0, 1)": [
+          128.0,
+          89.29795837402344
+        ]
+      },
+      "meshSha256": "f5036e15e46dd467989aefed31593f97332e1c14725771006abb9a1accece9d2",
+      "bounds": [
+        15,
+        43,
+        241,
+        304
+      ],
+      "outerTransparentPixels": 15,
+      "bytes": 87565,
+      "decodedBytes": 360448,
+      "sha256": "8e39325a55da10620859e9f6921bac857e266fb8efc5dd49c910ef0acd374dee"
+    },
+    {
+      "file": "wall-dusk-shadow.png",
+      "role": "wall",
+      "layer": "shadow",
+      "mood": "dusk",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112,
+      "projectionSamples": {
+        "(0, 0, 0)": [
+          256.0,
+          299.99993896484375
+        ],
+        "(1, 0, 0)": [
+          480.0,
+          299.99993896484375
+        ],
+        "(0, -1, 0)": [
+          256.0,
+          489.96270179748535
+        ],
+        "(0, 0, 1)": [
+          256.0,
+          181.29803466796875
+        ]
+      },
+      "meshSha256": "f5036e15e46dd467989aefed31593f97332e1c14725771006abb9a1accece9d2",
+      "bounds": [
+        39,
+        78,
+        230,
+        237
+      ],
+      "outerTransparentPixels": 19,
+      "bytes": 19449,
+      "decodedBytes": 262144,
+      "sha256": "43bdbb8ea2663acee866bcf92b0aaa974d891b211d332a2e1f700662196288cc"
+    }
+  ],
+  "sourceBlendSha256": "ad7f846755666884703dd37ea08b54edc730b728704f8306d7012a57f64934c4",
+  "license": "Original procedural geometry derived from repository PR 38 under repository contribution terms. Uploaded concepts are reference only; no new rights claim.",
+  "provenance": "Material-only derivative of owner-approved Batch 01; no uploaded pixels used as textures",
+  "processing": "Approved 2:1 shadow downsample and 32/255 catcher noise remap; two-pixel RGB-only dilation; no alpha trimming."
+}

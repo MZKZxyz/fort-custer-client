@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "blender": "4.3.2",
+  "samePlatformRepeatExportByteIdentical": true,
+  "sha256": {
+    "wall-master.glb": "4502031313c4fbd914480cb17cb6a9808a3dbe8ea56d44f54a530a1778d56db7",
+    "wall-master-basecolor.png": "16297ed7bab2012b24ee52b7e383826220ac40a65bde5c2530c6bb0f88a21a65",
+    "wall-master-normal.png": "eccb8c1e3e914dbf7b36f3ad9a21f170df1b622b6a5cc167c70d8aa481f4325e"
+  },
+  "limit": "Does not promise byte identity across Blender versions, platforms or PNG encoder changes."
+}

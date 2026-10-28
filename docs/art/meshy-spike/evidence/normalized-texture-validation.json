@@ -1,0 +1,30 @@
+[
+  {
+    "id": "source-1",
+    "normalizedSha256": "1b58b79ca91a2b3ac250b938d3e5e6b2d4e2e9873e4736cdca20c1706bcbf2c1",
+    "triangleCount": 1544406,
+    "vertexCount": 827169,
+    "textureSlotsAndEmbeddedBytesIdentical": true,
+    "textureHashesBySlot": {
+      "baseColor": "bd56324421e4105b61402aaeed797322766a9bb9bf6474705e6638c6d3f73b15",
+      "metallicRoughness": "9f42bcdc96b989e102957cb1f6f11555a4177430f9fda3ef73d1d146c5e4aac7",
+      "normal": "09950fb6aac63188551ac0a6c72c83e31a398754685b14bb1047244103285d0a"
+    },
+    "pbrFactorsAndAlphaPreserved": true,
+    "externalResources": []
+  },
+  {
+    "id": "source-2",
+    "normalizedSha256": "f8bed3e551cf752f4bacff1c95227eb04a4b75491e4a32dfef1e17070bf4ebf1",
+    "triangleCount": 1658196,
+    "vertexCount": 888494,
+    "textureSlotsAndEmbeddedBytesIdentical": true,
+    "textureHashesBySlot": {
+      "baseColor": "8192a1f45d13ca1e8a581973d30c01b3d5733bd9bc7ecdc8534a465a2822a435",
+      "metallicRoughness": "ceb89d2e293dca3912c145ee9e11669f3cf0c1a46be252e0422a3d5b2a6aaa02",
+      "normal": "95341e7442646706f54655e4769cdfed5ad7d60e1b32c77eda8b8324f1edbf1c"
+    },
+    "pbrFactorsAndAlphaPreserved": true,
+    "externalResources": []
+  }
+]

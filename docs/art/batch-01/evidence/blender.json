@@ -1,0 +1,54 @@
+{
+  "status": "PASS",
+  "camera": {
+    "elevation": 58,
+    "yaw": 0,
+    "direction": [
+      0.0,
+      0.5299192667007446,
+      -0.8480480909347534
+    ],
+    "anchor": [
+      128.0,
+      207.99987506866455
+    ],
+    "orthoScale": 1.5714285373687744,
+    "location": [
+      0.0,
+      -13.126832008361816,
+      21.276905059814453
+    ]
+  },
+  "geometryBounds": [
+    [
+      -0.5,
+      0.5
+    ],
+    [
+      -0.5,
+      0.5
+    ],
+    [
+      0.0,
+      0.5949999690055847
+    ]
+  ],
+  "fixedSamples": 32,
+  "openingRay": {
+    "hit": "Recessed floor plank.002",
+    "point": [
+      0.0,
+      -2.384185791015625e-07,
+      0.09400030225515366
+    ]
+  },
+  "frontSlatRay": {
+    "hit": "Horizontal pallet slat.008",
+    "point": [
+      0.25,
+      -0.4889366328716278,
+      0.5471127033233643
+    ]
+  },
+  "blendSha256": "452d1f3bcce4c065ec08dcc8fcc67c9413d1f2cb16ebf1cabc65ed4e2b4a06ef"
+}

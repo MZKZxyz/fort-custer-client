@@ -1,0 +1,30 @@
+:root { color-scheme: light; font-family: system-ui, sans-serif; color: #30291e; background: #eeeadd; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+header,main { max-width: 1360px; margin: auto; padding: 12px 16px; }
+header { padding-bottom: 0; }
+header p { margin: 5px 0; font-size: 12px; letter-spacing: .04em; }
+h1 { margin: 4px 0; font: 600 28px/1.1 Georgia,serif; }
+h2 { margin: 8px 0; font-size: 15px; }
+.controls { display: flex; gap: 8px 14px; flex-wrap: wrap; align-items: center; }
+label { display: flex; align-items: center; gap: 5px; font-size: 13px; }
+select,button { min-height: 44px; font: inherit; padding: 5px; color: inherit; background: #fffbed; border: 1px solid #84745a; border-radius: 3px; }
+input { width: 20px; height: 20px; }
+:focus-visible { outline: 3px solid #13728b; outline-offset: 2px; }
+.hint,.status,details { font-size: 12px; line-height: 1.5; }
+.hint { margin: 10px 0; }
+.comparison { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.comparison section { min-width: 0; }
+.viewport { position: relative; width: 100%; height: min(62svh,560px); overflow: auto; background: #776649; border: 0; outline: 1px solid #84745a; scrollbar-width: thin; touch-action: pan-x pan-y pinch-zoom; }
+.world { position: relative; isolation: isolate; overflow: hidden; background: #9e865e; }
+[data-mood=dusk] .world { background: #55565c; }
+.sprite { position: absolute; display: block; max-width: none; pointer-events: none; }
+.pool { position: absolute; pointer-events: none; border-radius: 50%; background: radial-gradient(ellipse,rgba(255,177,63,.50),rgba(236,140,39,.17) 40%,transparent 70%); mix-blend-mode: screen; }
+.prairie { position: absolute; pointer-events: none; width: 14px; height: 9px; background: repeating-linear-gradient(78deg,transparent 0 3px,#6c7842 4px 5px,transparent 6px 8px); }
+[data-background=checker] .world { background-color: #ddd; background-image: conic-gradient(#aaa 25%,transparent 0 50%,#aaa 0 75%,transparent 0); background-size: 20px 20px; }
+[data-background=white] .world { background: white; }
+[data-background=black] .world { background: black; }
+.gray .world { filter: grayscale(1); }
+details { margin-top: 12px; }
+a { color: #245d6e; }
+@media(max-width:700px) { .comparison { grid-template-columns: 1fr; gap: 10px; } .viewport { height: 340px; } }

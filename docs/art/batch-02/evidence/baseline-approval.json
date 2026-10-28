@@ -1,0 +1,11 @@
+{
+  "startingCommit": "5732fa78de6398582a7d230fc960fc5dc4fb9856",
+  "remoteMainMatchedBeforeAuthoring": true,
+  "approvedPrHead": "ab71302a1c634de574be9d47d75400605be2db04",
+  "issue": "https://github.com/MZKZxyz/fort-custer-client/issues/55",
+  "independentQA": "https://github.com/MZKZxyz/fort-custer-client/pull/52#issuecomment-6436122177",
+  "ownerApproval": "https://github.com/MZKZxyz/fort-custer-client/pull/52#issuecomment-6462083347",
+  "approvedMasterSourceSha256": "452d1f3bcce4c065ec08dcc8fcc67c9413d1f2cb16ebf1cabc65ed4e2b4a06ef",
+  "approvedPortableSha256": "4502031313c4fbd914480cb17cb6a9808a3dbe8ea56d44f54a530a1778d56db7",
+  "newTreatmentGate": "Independent Art QA and owner appearance approval required before merge/integration"
+}

@@ -1,0 +1,1380 @@
+{
+  "id": "source-2",
+  "sourceSha256": "e17b1b639d8793a8b23d046d61ba039c99ec833adf7d7a07acbfd9d67fe2704c",
+  "blender": "4.3.2",
+  "importBounds": [
+    [
+      -0.438510000705719,
+      0.43834400177001953
+    ],
+    [
+      -0.29958298802375793,
+      0.2968449890613556
+    ],
+    [
+      -0.9519580006599426,
+      0.9510210156440735
+    ]
+  ],
+  "normalizedBounds": [
+    [
+      -0.264948308467865,
+      0.2649482786655426
+    ],
+    [
+      -0.18021537363529205,
+      0.18021538853645325
+    ],
+    [
+      0.0,
+      1.149999976158142
+    ]
+  ],
+  "sourceToBlenderNormalization": [
+    [
+      0.6043156385421753,
+      0.0,
+      0.0,
+      5.015787610318512e-05
+    ],
+    [
+      0.0,
+      0.6043156385421753,
+      0.0,
+      0.0008273078128695488
+    ],
+    [
+      0.0,
+      0.0,
+      0.6043156385421753,
+      0.5752831101417542
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "heightCells": 1.15,
+  "groundPivot": [
+    0,
+    0,
+    0
+  ],
+  "axes": "+X right, -Y south/front, +Z up; glTF +Y up/+Z front",
+  "triangles": 1658196,
+  "vertices": 888494,
+  "uvLayers": [
+    "UVMap"
+  ],
+  "uvLoopCount": 4974588,
+  "uvBounds": [
+    [
+      4.999999873689376e-06,
+      0.9994670152664185
+    ],
+    [
+      2.002716064453125e-05,
+      0.9999989867210388
+    ]
+  ],
+  "materials": [
+    "Material_0"
+  ],
+  "images": [
+    {
+      "name": "Image_0",
+      "size": [
+        4096,
+        4096
+      ],
+      "colorspace": "sRGB",
+      "packed": true
+    },
+    {
+      "name": "Image_1",
+      "size": [
+        2048,
+        2048
+      ],
+      "colorspace": "Non-Color",
+      "packed": true
+    },
+    {
+      "name": "Image_2",
+      "size": [
+        4096,
+        4096
+      ],
+      "colorspace": "Non-Color",
+      "packed": true
+    }
+  ],
+  "armatures": 0,
+  "actions": 0,
+  "topologyModified": false,
+  "normalization": "Uniform scale and translation only; imported PBR graph retained; no texture rebake or decimation.",
+  "privateArtifacts": [
+    {
+      "file": "normalized.blend",
+      "bytes": 174840429,
+      "sha256": "91a9daa652f92d0a2cb2ce698503ebd4c9e58220c2dbc2019cc2d6ecfc545413"
+    },
+    {
+      "file": "normalized.glb",
+      "bytes": 72187308,
+      "sha256": "f8bed3e551cf752f4bacff1c95227eb04a4b75491e4a32dfef1e17070bf4ebf1"
+    }
+  ],
+  "sprites": [
+    {
+      "file": "assets/source-2-0.95-south-daylight-body.png",
+      "id": "source-2",
+      "heightCells": 0.95,
+      "facing": "south",
+      "mood": "daylight",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ]
+    },
+    {
+      "file": "assets/source-2-0.95-south-daylight-shadow.png",
+      "id": "source-2",
+      "heightCells": 0.95,
+      "facing": "south",
+      "mood": "daylight",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ]
+    },
+    {
+      "file": "assets/source-2-0.95-east-daylight-body.png",
+      "id": "source-2",
+      "heightCells": 0.95,
+      "facing": "east",
+      "mood": "daylight",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ]
+    },
+    {
+      "file": "assets/source-2-0.95-east-daylight-shadow.png",
+      "id": "source-2",
+      "heightCells": 0.95,
+      "facing": "east",
+      "mood": "daylight",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ]
+    },
+    {
+      "file": "assets/source-2-0.95-north-daylight-body.png",
+      "id": "source-2",
+      "heightCells": 0.95,
+      "facing": "north",
+      "mood": "daylight",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ]
+    },
+    {
+      "file": "assets/source-2-0.95-north-daylight-shadow.png",
+      "id": "source-2",
+      "heightCells": 0.95,
+      "facing": "north",
+      "mood": "daylight",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ]
+    },
+    {
+      "file": "assets/source-2-0.95-west-daylight-body.png",
+      "id": "source-2",
+      "heightCells": 0.95,
+      "facing": "west",
+      "mood": "daylight",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ]
+    },
+    {
+      "file": "assets/source-2-0.95-west-daylight-shadow.png",
+      "id": "source-2",
+      "heightCells": 0.95,
+      "facing": "west",
+      "mood": "daylight",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ]
+    },
+    {
+      "file": "assets/source-2-0.95-south-dusk-body.png",
+      "id": "source-2",
+      "heightCells": 0.95,
+      "facing": "south",
+      "mood": "dusk",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ]
+    },
+    {
+      "file": "assets/source-2-0.95-south-dusk-shadow.png",
+      "id": "source-2",
+      "heightCells": 0.95,
+      "facing": "south",
+      "mood": "dusk",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ]
+    },
+    {
+      "file": "assets/source-2-0.95-east-dusk-body.png",
+      "id": "source-2",
+      "heightCells": 0.95,
+      "facing": "east",
+      "mood": "dusk",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ]
+    },
+    {
+      "file": "assets/source-2-0.95-east-dusk-shadow.png",
+      "id": "source-2",
+      "heightCells": 0.95,
+      "facing": "east",
+      "mood": "dusk",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ]
+    },
+    {
+      "file": "assets/source-2-0.95-north-dusk-body.png",
+      "id": "source-2",
+      "heightCells": 0.95,
+      "facing": "north",
+      "mood": "dusk",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ]
+    },
+    {
+      "file": "assets/source-2-0.95-north-dusk-shadow.png",
+      "id": "source-2",
+      "heightCells": 0.95,
+      "facing": "north",
+      "mood": "dusk",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ]
+    },
+    {
+      "file": "assets/source-2-0.95-west-dusk-body.png",
+      "id": "source-2",
+      "heightCells": 0.95,
+      "facing": "west",
+      "mood": "dusk",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ]
+    },
+    {
+      "file": "assets/source-2-0.95-west-dusk-shadow.png",
+      "id": "source-2",
+      "heightCells": 0.95,
+      "facing": "west",
+      "mood": "dusk",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ]
+    },
+    {
+      "file": "assets/source-2-1.15-south-daylight-body.png",
+      "id": "source-2",
+      "heightCells": 1.15,
+      "facing": "south",
+      "mood": "daylight",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ]
+    },
+    {
+      "file": "assets/source-2-1.15-south-daylight-shadow.png",
+      "id": "source-2",
+      "heightCells": 1.15,
+      "facing": "south",
+      "mood": "daylight",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ]
+    },
+    {
+      "file": "assets/source-2-1.15-east-daylight-body.png",
+      "id": "source-2",
+      "heightCells": 1.15,
+      "facing": "east",
+      "mood": "daylight",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ]
+    },
+    {
+      "file": "assets/source-2-1.15-east-daylight-shadow.png",
+      "id": "source-2",
+      "heightCells": 1.15,
+      "facing": "east",
+      "mood": "daylight",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ]
+    },
+    {
+      "file": "assets/source-2-1.15-north-daylight-body.png",
+      "id": "source-2",
+      "heightCells": 1.15,
+      "facing": "north",
+      "mood": "daylight",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ]
+    },
+    {
+      "file": "assets/source-2-1.15-north-daylight-shadow.png",
+      "id": "source-2",
+      "heightCells": 1.15,
+      "facing": "north",
+      "mood": "daylight",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ]
+    },
+    {
+      "file": "assets/source-2-1.15-west-daylight-body.png",
+      "id": "source-2",
+      "heightCells": 1.15,
+      "facing": "west",
+      "mood": "daylight",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ]
+    },
+    {
+      "file": "assets/source-2-1.15-west-daylight-shadow.png",
+      "id": "source-2",
+      "heightCells": 1.15,
+      "facing": "west",
+      "mood": "daylight",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ]
+    },
+    {
+      "file": "assets/source-2-1.15-south-dusk-body.png",
+      "id": "source-2",
+      "heightCells": 1.15,
+      "facing": "south",
+      "mood": "dusk",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ]
+    },
+    {
+      "file": "assets/source-2-1.15-south-dusk-shadow.png",
+      "id": "source-2",
+      "heightCells": 1.15,
+      "facing": "south",
+      "mood": "dusk",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ]
+    },
+    {
+      "file": "assets/source-2-1.15-east-dusk-body.png",
+      "id": "source-2",
+      "heightCells": 1.15,
+      "facing": "east",
+      "mood": "dusk",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ]
+    },
+    {
+      "file": "assets/source-2-1.15-east-dusk-shadow.png",
+      "id": "source-2",
+      "heightCells": 1.15,
+      "facing": "east",
+      "mood": "dusk",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ]
+    },
+    {
+      "file": "assets/source-2-1.15-north-dusk-body.png",
+      "id": "source-2",
+      "heightCells": 1.15,
+      "facing": "north",
+      "mood": "dusk",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ]
+    },
+    {
+      "file": "assets/source-2-1.15-north-dusk-shadow.png",
+      "id": "source-2",
+      "heightCells": 1.15,
+      "facing": "north",
+      "mood": "dusk",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ]
+    },
+    {
+      "file": "assets/source-2-1.15-west-dusk-body.png",
+      "id": "source-2",
+      "heightCells": 1.15,
+      "facing": "west",
+      "mood": "dusk",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ]
+    },
+    {
+      "file": "assets/source-2-1.15-west-dusk-shadow.png",
+      "id": "source-2",
+      "heightCells": 1.15,
+      "facing": "west",
+      "mood": "dusk",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ]
+    },
+    {
+      "file": "assets/source-2-1.34-south-daylight-body.png",
+      "id": "source-2",
+      "heightCells": 1.34,
+      "facing": "south",
+      "mood": "daylight",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ]
+    },
+    {
+      "file": "assets/source-2-1.34-south-daylight-shadow.png",
+      "id": "source-2",
+      "heightCells": 1.34,
+      "facing": "south",
+      "mood": "daylight",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ]
+    },
+    {
+      "file": "assets/source-2-1.34-east-daylight-body.png",
+      "id": "source-2",
+      "heightCells": 1.34,
+      "facing": "east",
+      "mood": "daylight",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ]
+    },
+    {
+      "file": "assets/source-2-1.34-east-daylight-shadow.png",
+      "id": "source-2",
+      "heightCells": 1.34,
+      "facing": "east",
+      "mood": "daylight",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ]
+    },
+    {
+      "file": "assets/source-2-1.34-north-daylight-body.png",
+      "id": "source-2",
+      "heightCells": 1.34,
+      "facing": "north",
+      "mood": "daylight",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ]
+    },
+    {
+      "file": "assets/source-2-1.34-north-daylight-shadow.png",
+      "id": "source-2",
+      "heightCells": 1.34,
+      "facing": "north",
+      "mood": "daylight",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ]
+    },
+    {
+      "file": "assets/source-2-1.34-west-daylight-body.png",
+      "id": "source-2",
+      "heightCells": 1.34,
+      "facing": "west",
+      "mood": "daylight",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ]
+    },
+    {
+      "file": "assets/source-2-1.34-west-daylight-shadow.png",
+      "id": "source-2",
+      "heightCells": 1.34,
+      "facing": "west",
+      "mood": "daylight",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ]
+    },
+    {
+      "file": "assets/source-2-1.34-south-dusk-body.png",
+      "id": "source-2",
+      "heightCells": 1.34,
+      "facing": "south",
+      "mood": "dusk",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ]
+    },
+    {
+      "file": "assets/source-2-1.34-south-dusk-shadow.png",
+      "id": "source-2",
+      "heightCells": 1.34,
+      "facing": "south",
+      "mood": "dusk",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ]
+    },
+    {
+      "file": "assets/source-2-1.34-east-dusk-body.png",
+      "id": "source-2",
+      "heightCells": 1.34,
+      "facing": "east",
+      "mood": "dusk",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ]
+    },
+    {
+      "file": "assets/source-2-1.34-east-dusk-shadow.png",
+      "id": "source-2",
+      "heightCells": 1.34,
+      "facing": "east",
+      "mood": "dusk",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ]
+    },
+    {
+      "file": "assets/source-2-1.34-north-dusk-body.png",
+      "id": "source-2",
+      "heightCells": 1.34,
+      "facing": "north",
+      "mood": "dusk",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ]
+    },
+    {
+      "file": "assets/source-2-1.34-north-dusk-shadow.png",
+      "id": "source-2",
+      "heightCells": 1.34,
+      "facing": "north",
+      "mood": "dusk",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ]
+    },
+    {
+      "file": "assets/source-2-1.34-west-dusk-body.png",
+      "id": "source-2",
+      "heightCells": 1.34,
+      "facing": "west",
+      "mood": "dusk",
+      "layer": "body",
+      "projectionSamples": [
+        [
+          128.0,
+          207.99987506866455
+        ],
+        [
+          352.0,
+          207.99987506866455
+        ],
+        [
+          128.0,
+          397.96265745162964
+        ],
+        [
+          128.0,
+          89.29795837402344
+        ]
+      ]
+    },
+    {
+      "file": "assets/source-2-1.34-west-dusk-shadow.png",
+      "id": "source-2",
+      "heightCells": 1.34,
+      "facing": "west",
+      "mood": "dusk",
+      "layer": "shadow",
+      "projectionSamples": [
+        [
+          256.0,
+          299.99993896484375
+        ],
+        [
+          480.0,
+          299.99993896484375
+        ],
+        [
+          256.0,
+          489.96270179748535
+        ],
+        [
+          256.0,
+          181.29803466796875
+        ]
+      ]
+    }
+  ]
+}

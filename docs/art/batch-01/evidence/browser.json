@@ -1,0 +1,1819 @@
+{
+  "environment": {
+    "node": "v24.19.0",
+    "cpu": "INTEL(R) XEON(R) PLATINUM 8573C",
+    "physicalPhone": false,
+    "chromium": "154.0.8037.57"
+  },
+  "screens": [
+    {
+      "viewport": [
+        320,
+        568
+      ],
+      "dpr": 1,
+      "tile": 36,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 36,
+          "anchorError": 0.014774401423949257,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            684,
+            469
+          ],
+          "images": 406,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            288,
+            340
+          ],
+          "roleCount": 93,
+          "rolePositionSha256": "1cd0bd461e1c8362f6d2ccf8878f9ae445084aa695e0721be34a86e9dd881717"
+        },
+        {
+          "mood": "dusk",
+          "tile": 36,
+          "anchorError": 0.014774401423949257,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            684,
+            469
+          ],
+          "images": 406,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            288,
+            340
+          ],
+          "roleCount": 93,
+          "rolePositionSha256": "1cd0bd461e1c8362f6d2ccf8878f9ae445084aa695e0721be34a86e9dd881717"
+        }
+      ]
+    },
+    {
+      "viewport": [
+        320,
+        568
+      ],
+      "dpr": 1,
+      "tile": 48,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 48,
+          "anchorError": 0.014783946107513657,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            912,
+            625
+          ],
+          "images": 406,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            288,
+            340
+          ],
+          "roleCount": 93,
+          "rolePositionSha256": "1cd0bd461e1c8362f6d2ccf8878f9ae445084aa695e0721be34a86e9dd881717"
+        },
+        {
+          "mood": "dusk",
+          "tile": 48,
+          "anchorError": 0.014783946107513657,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            912,
+            625
+          ],
+          "images": 406,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            288,
+            340
+          ],
+          "roleCount": 93,
+          "rolePositionSha256": "1cd0bd461e1c8362f6d2ccf8878f9ae445084aa695e0721be34a86e9dd881717"
+        }
+      ]
+    },
+    {
+      "viewport": [
+        320,
+        568
+      ],
+      "dpr": 2,
+      "tile": 36,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 36,
+          "anchorError": 0.014774401423949257,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            684,
+            469
+          ],
+          "images": 406,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            288,
+            340
+          ],
+          "roleCount": 93,
+          "rolePositionSha256": "1cd0bd461e1c8362f6d2ccf8878f9ae445084aa695e0721be34a86e9dd881717"
+        },
+        {
+          "mood": "dusk",
+          "tile": 36,
+          "anchorError": 0.014774401423949257,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            684,
+            469
+          ],
+          "images": 406,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            288,
+            340
+          ],
+          "roleCount": 93,
+          "rolePositionSha256": "1cd0bd461e1c8362f6d2ccf8878f9ae445084aa695e0721be34a86e9dd881717"
+        }
+      ]
+    },
+    {
+      "viewport": [
+        320,
+        568
+      ],
+      "dpr": 2,
+      "tile": 48,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 48,
+          "anchorError": 0.014783946107513657,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            912,
+            625
+          ],
+          "images": 406,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            288,
+            340
+          ],
+          "roleCount": 93,
+          "rolePositionSha256": "1cd0bd461e1c8362f6d2ccf8878f9ae445084aa695e0721be34a86e9dd881717"
+        },
+        {
+          "mood": "dusk",
+          "tile": 48,
+          "anchorError": 0.014783946107513657,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            912,
+            625
+          ],
+          "images": 406,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            288,
+            340
+          ],
+          "roleCount": 93,
+          "rolePositionSha256": "1cd0bd461e1c8362f6d2ccf8878f9ae445084aa695e0721be34a86e9dd881717"
+        }
+      ]
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "dpr": 1,
+      "tile": 36,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 36,
+          "anchorError": 0.014774401423949257,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            684,
+            469
+          ],
+          "images": 406,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            358,
+            340
+          ],
+          "roleCount": 93,
+          "rolePositionSha256": "1cd0bd461e1c8362f6d2ccf8878f9ae445084aa695e0721be34a86e9dd881717"
+        },
+        {
+          "mood": "dusk",
+          "tile": 36,
+          "anchorError": 0.014774401423949257,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            684,
+            469
+          ],
+          "images": 406,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            358,
+            340
+          ],
+          "roleCount": 93,
+          "rolePositionSha256": "1cd0bd461e1c8362f6d2ccf8878f9ae445084aa695e0721be34a86e9dd881717"
+        }
+      ]
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "dpr": 1,
+      "tile": 48,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 48,
+          "anchorError": 0.014783946107513657,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            912,
+            625
+          ],
+          "images": 406,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            358,
+            340
+          ],
+          "roleCount": 93,
+          "rolePositionSha256": "1cd0bd461e1c8362f6d2ccf8878f9ae445084aa695e0721be34a86e9dd881717"
+        },
+        {
+          "mood": "dusk",
+          "tile": 48,
+          "anchorError": 0.014783946107513657,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            912,
+            625
+          ],
+          "images": 406,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            358,
+            340
+          ],
+          "roleCount": 93,
+          "rolePositionSha256": "1cd0bd461e1c8362f6d2ccf8878f9ae445084aa695e0721be34a86e9dd881717"
+        }
+      ]
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "dpr": 2,
+      "tile": 36,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 36,
+          "anchorError": 0.014774401423949257,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            684,
+            469
+          ],
+          "images": 406,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            358,
+            340
+          ],
+          "roleCount": 93,
+          "rolePositionSha256": "1cd0bd461e1c8362f6d2ccf8878f9ae445084aa695e0721be34a86e9dd881717"
+        },
+        {
+          "mood": "dusk",
+          "tile": 36,
+          "anchorError": 0.014774401423949257,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            684,
+            469
+          ],
+          "images": 406,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            358,
+            340
+          ],
+          "roleCount": 93,
+          "rolePositionSha256": "1cd0bd461e1c8362f6d2ccf8878f9ae445084aa695e0721be34a86e9dd881717"
+        }
+      ]
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "dpr": 2,
+      "tile": 48,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 48,
+          "anchorError": 0.014783946107513657,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            912,
+            625
+          ],
+          "images": 406,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            358,
+            340
+          ],
+          "roleCount": 93,
+          "rolePositionSha256": "1cd0bd461e1c8362f6d2ccf8878f9ae445084aa695e0721be34a86e9dd881717"
+        },
+        {
+          "mood": "dusk",
+          "tile": 48,
+          "anchorError": 0.014783946107513657,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            912,
+            625
+          ],
+          "images": 406,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            358,
+            340
+          ],
+          "roleCount": 93,
+          "rolePositionSha256": "1cd0bd461e1c8362f6d2ccf8878f9ae445084aa695e0721be34a86e9dd881717"
+        }
+      ]
+    },
+    {
+      "viewport": [
+        844,
+        390
+      ],
+      "dpr": 1,
+      "tile": 36,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 36,
+          "anchorError": 0.014774401423949257,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            684,
+            469
+          ],
+          "images": 406,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            398,
+            242
+          ],
+          "roleCount": 93,
+          "rolePositionSha256": "1cd0bd461e1c8362f6d2ccf8878f9ae445084aa695e0721be34a86e9dd881717"
+        },
+        {
+          "mood": "dusk",
+          "tile": 36,
+          "anchorError": 0.014774401423949257,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            684,
+            469
+          ],
+          "images": 406,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            398,
+            242
+          ],
+          "roleCount": 93,
+          "rolePositionSha256": "1cd0bd461e1c8362f6d2ccf8878f9ae445084aa695e0721be34a86e9dd881717"
+        }
+      ]
+    },
+    {
+      "viewport": [
+        844,
+        390
+      ],
+      "dpr": 1,
+      "tile": 48,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 48,
+          "anchorError": 0.014783946107513657,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            912,
+            625
+          ],
+          "images": 406,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            398,
+            242
+          ],
+          "roleCount": 93,
+          "rolePositionSha256": "1cd0bd461e1c8362f6d2ccf8878f9ae445084aa695e0721be34a86e9dd881717"
+        },
+        {
+          "mood": "dusk",
+          "tile": 48,
+          "anchorError": 0.014783946107513657,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            912,
+            625
+          ],
+          "images": 406,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            398,
+            242
+          ],
+          "roleCount": 93,
+          "rolePositionSha256": "1cd0bd461e1c8362f6d2ccf8878f9ae445084aa695e0721be34a86e9dd881717"
+        }
+      ]
+    },
+    {
+      "viewport": [
+        844,
+        390
+      ],
+      "dpr": 2,
+      "tile": 36,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 36,
+          "anchorError": 0.014774401423949257,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            684,
+            469
+          ],
+          "images": 406,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            398,
+            242
+          ],
+          "roleCount": 93,
+          "rolePositionSha256": "1cd0bd461e1c8362f6d2ccf8878f9ae445084aa695e0721be34a86e9dd881717"
+        },
+        {
+          "mood": "dusk",
+          "tile": 36,
+          "anchorError": 0.014774401423949257,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            684,
+            469
+          ],
+          "images": 406,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            398,
+            242
+          ],
+          "roleCount": 93,
+          "rolePositionSha256": "1cd0bd461e1c8362f6d2ccf8878f9ae445084aa695e0721be34a86e9dd881717"
+        }
+      ]
+    },
+    {
+      "viewport": [
+        844,
+        390
+      ],
+      "dpr": 2,
+      "tile": 48,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 48,
+          "anchorError": 0.014783946107513657,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            912,
+            625
+          ],
+          "images": 406,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            398,
+            242
+          ],
+          "roleCount": 93,
+          "rolePositionSha256": "1cd0bd461e1c8362f6d2ccf8878f9ae445084aa695e0721be34a86e9dd881717"
+        },
+        {
+          "mood": "dusk",
+          "tile": 48,
+          "anchorError": 0.014783946107513657,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            912,
+            625
+          ],
+          "images": 406,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            398,
+            242
+          ],
+          "roleCount": 93,
+          "rolePositionSha256": "1cd0bd461e1c8362f6d2ccf8878f9ae445084aa695e0721be34a86e9dd881717"
+        }
+      ]
+    },
+    {
+      "viewport": [
+        1280,
+        800
+      ],
+      "dpr": 1,
+      "tile": 36,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 36,
+          "anchorError": 0.014774401423949257,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            684,
+            469
+          ],
+          "images": 406,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            616,
+            496
+          ],
+          "roleCount": 93,
+          "rolePositionSha256": "1cd0bd461e1c8362f6d2ccf8878f9ae445084aa695e0721be34a86e9dd881717"
+        },
+        {
+          "mood": "dusk",
+          "tile": 36,
+          "anchorError": 0.014774401423949257,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            684,
+            469
+          ],
+          "images": 406,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            616,
+            496
+          ],
+          "roleCount": 93,
+          "rolePositionSha256": "1cd0bd461e1c8362f6d2ccf8878f9ae445084aa695e0721be34a86e9dd881717"
+        }
+      ]
+    },
+    {
+      "viewport": [
+        1280,
+        800
+      ],
+      "dpr": 1,
+      "tile": 48,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 48,
+          "anchorError": 0.014783946107513657,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            912,
+            625
+          ],
+          "images": 406,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            616,
+            496
+          ],
+          "roleCount": 93,
+          "rolePositionSha256": "1cd0bd461e1c8362f6d2ccf8878f9ae445084aa695e0721be34a86e9dd881717"
+        },
+        {
+          "mood": "dusk",
+          "tile": 48,
+          "anchorError": 0.014783946107513657,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            912,
+            625
+          ],
+          "images": 406,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            616,
+            496
+          ],
+          "roleCount": 93,
+          "rolePositionSha256": "1cd0bd461e1c8362f6d2ccf8878f9ae445084aa695e0721be34a86e9dd881717"
+        }
+      ]
+    },
+    {
+      "viewport": [
+        1280,
+        800
+      ],
+      "dpr": 2,
+      "tile": 36,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 36,
+          "anchorError": 0.014774401423949257,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            684,
+            469
+          ],
+          "images": 406,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            616,
+            496
+          ],
+          "roleCount": 93,
+          "rolePositionSha256": "1cd0bd461e1c8362f6d2ccf8878f9ae445084aa695e0721be34a86e9dd881717"
+        },
+        {
+          "mood": "dusk",
+          "tile": 36,
+          "anchorError": 0.014774401423949257,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            684,
+            469
+          ],
+          "images": 406,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            616,
+            496
+          ],
+          "roleCount": 93,
+          "rolePositionSha256": "1cd0bd461e1c8362f6d2ccf8878f9ae445084aa695e0721be34a86e9dd881717"
+        }
+      ]
+    },
+    {
+      "viewport": [
+        1280,
+        800
+      ],
+      "dpr": 2,
+      "tile": 48,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 48,
+          "anchorError": 0.014783946107513657,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            912,
+            625
+          ],
+          "images": 406,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            616,
+            496
+          ],
+          "roleCount": 93,
+          "rolePositionSha256": "1cd0bd461e1c8362f6d2ccf8878f9ae445084aa695e0721be34a86e9dd881717"
+        },
+        {
+          "mood": "dusk",
+          "tile": 48,
+          "anchorError": 0.014783946107513657,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            912,
+            625
+          ],
+          "images": 406,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            616,
+            496
+          ],
+          "roleCount": 93,
+          "rolePositionSha256": "1cd0bd461e1c8362f6d2ccf8878f9ae445084aa695e0721be34a86e9dd881717"
+        }
+      ]
+    }
+  ],
+  "assemblies": [
+    {
+      "fixture": "single",
+      "tile": 36,
+      "rows": 5,
+      "columns": 7,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 36,
+          "anchorError": 0.014774401423949257,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            324,
+            225
+          ],
+          "images": 41,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            616,
+            558
+          ],
+          "roleCount": 3,
+          "rolePositionSha256": "384f9f0d284913cfd089d16761b8504224e769bb945c609d540961d6a174ef4a"
+        },
+        {
+          "mood": "dusk",
+          "tile": 36,
+          "anchorError": 0.014774401423949257,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            324,
+            225
+          ],
+          "images": 41,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            616,
+            558
+          ],
+          "roleCount": 3,
+          "rolePositionSha256": "384f9f0d284913cfd089d16761b8504224e769bb945c609d540961d6a174ef4a"
+        }
+      ]
+    },
+    {
+      "fixture": "single",
+      "tile": 48,
+      "rows": 5,
+      "columns": 7,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 48,
+          "anchorError": 0.01449086856527515,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            432,
+            300
+          ],
+          "images": 41,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            324,
+            225
+          ],
+          "roleCount": 3,
+          "rolePositionSha256": "384f9f0d284913cfd089d16761b8504224e769bb945c609d540961d6a174ef4a"
+        },
+        {
+          "mood": "dusk",
+          "tile": 48,
+          "anchorError": 0.01449086856527515,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            432,
+            300
+          ],
+          "images": 41,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            324,
+            225
+          ],
+          "roleCount": 3,
+          "rolePositionSha256": "384f9f0d284913cfd089d16761b8504224e769bb945c609d540961d6a174ef4a"
+        }
+      ]
+    },
+    {
+      "fixture": "run",
+      "tile": 36,
+      "rows": 7,
+      "columns": 9,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 36,
+          "anchorError": 0.014774401423949257,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            396,
+            286
+          ],
+          "images": 90,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            432,
+            300
+          ],
+          "roleCount": 14,
+          "rolePositionSha256": "f59b54b4e9981fa3a5ac4a78aa7e1950c023718e8ea4fbfbc872428e002ef6b5"
+        },
+        {
+          "mood": "dusk",
+          "tile": 36,
+          "anchorError": 0.014774401423949257,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            396,
+            286
+          ],
+          "images": 90,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            432,
+            300
+          ],
+          "roleCount": 14,
+          "rolePositionSha256": "f59b54b4e9981fa3a5ac4a78aa7e1950c023718e8ea4fbfbc872428e002ef6b5"
+        }
+      ]
+    },
+    {
+      "fixture": "run",
+      "tile": 48,
+      "rows": 7,
+      "columns": 9,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 48,
+          "anchorError": 0.01449086856527515,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            528,
+            381
+          ],
+          "images": 90,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            396,
+            286
+          ],
+          "roleCount": 14,
+          "rolePositionSha256": "f59b54b4e9981fa3a5ac4a78aa7e1950c023718e8ea4fbfbc872428e002ef6b5"
+        },
+        {
+          "mood": "dusk",
+          "tile": 48,
+          "anchorError": 0.01449086856527515,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            528,
+            381
+          ],
+          "images": 90,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            396,
+            286
+          ],
+          "roleCount": 14,
+          "rolePositionSha256": "f59b54b4e9981fa3a5ac4a78aa7e1950c023718e8ea4fbfbc872428e002ef6b5"
+        }
+      ]
+    },
+    {
+      "fixture": "corner",
+      "tile": 36,
+      "rows": 7,
+      "columns": 7,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 36,
+          "anchorError": 0.014774401423949257,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            324,
+            286
+          ],
+          "images": 61,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            528,
+            381
+          ],
+          "roleCount": 6,
+          "rolePositionSha256": "c8576741ecc0fd47656ab12b61b16a16e4979383e4a5d7103aabbb52d65cf1da"
+        },
+        {
+          "mood": "dusk",
+          "tile": 36,
+          "anchorError": 0.014774401423949257,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            324,
+            286
+          ],
+          "images": 61,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            528,
+            381
+          ],
+          "roleCount": 6,
+          "rolePositionSha256": "c8576741ecc0fd47656ab12b61b16a16e4979383e4a5d7103aabbb52d65cf1da"
+        }
+      ]
+    },
+    {
+      "fixture": "corner",
+      "tile": 48,
+      "rows": 7,
+      "columns": 7,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 48,
+          "anchorError": 0.01449086856527515,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            432,
+            381
+          ],
+          "images": 61,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            324,
+            286
+          ],
+          "roleCount": 6,
+          "rolePositionSha256": "c8576741ecc0fd47656ab12b61b16a16e4979383e4a5d7103aabbb52d65cf1da"
+        },
+        {
+          "mood": "dusk",
+          "tile": 48,
+          "anchorError": 0.01449086856527515,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            432,
+            381
+          ],
+          "images": 61,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            324,
+            286
+          ],
+          "roleCount": 6,
+          "rolePositionSha256": "c8576741ecc0fd47656ab12b61b16a16e4979383e4a5d7103aabbb52d65cf1da"
+        }
+      ]
+    },
+    {
+      "fixture": "T",
+      "tile": 36,
+      "rows": 7,
+      "columns": 7,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 36,
+          "anchorError": 0.014774401423949257,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            324,
+            286
+          ],
+          "images": 67,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            432,
+            381
+          ],
+          "roleCount": 9,
+          "rolePositionSha256": "27c10a95581e4ec79638f901c11b797d049c39b9401f8db61d8fd352ca8fd3b8"
+        },
+        {
+          "mood": "dusk",
+          "tile": 36,
+          "anchorError": 0.014774401423949257,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            324,
+            286
+          ],
+          "images": 67,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            432,
+            381
+          ],
+          "roleCount": 9,
+          "rolePositionSha256": "27c10a95581e4ec79638f901c11b797d049c39b9401f8db61d8fd352ca8fd3b8"
+        }
+      ]
+    },
+    {
+      "fixture": "T",
+      "tile": 48,
+      "rows": 7,
+      "columns": 7,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 48,
+          "anchorError": 0.01449086856527515,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            432,
+            381
+          ],
+          "images": 67,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            324,
+            286
+          ],
+          "roleCount": 9,
+          "rolePositionSha256": "27c10a95581e4ec79638f901c11b797d049c39b9401f8db61d8fd352ca8fd3b8"
+        },
+        {
+          "mood": "dusk",
+          "tile": 48,
+          "anchorError": 0.01449086856527515,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            432,
+            381
+          ],
+          "images": 67,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            324,
+            286
+          ],
+          "roleCount": 9,
+          "rolePositionSha256": "27c10a95581e4ec79638f901c11b797d049c39b9401f8db61d8fd352ca8fd3b8"
+        }
+      ]
+    },
+    {
+      "fixture": "cross",
+      "tile": 36,
+      "rows": 7,
+      "columns": 7,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 36,
+          "anchorError": 0.014774401423949257,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            324,
+            286
+          ],
+          "images": 69,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            432,
+            381
+          ],
+          "roleCount": 10,
+          "rolePositionSha256": "94eeacadfd8e0f5725b27b2b083dcf26d6528ba9373fb40f81fbfd4ab95ca9c3"
+        },
+        {
+          "mood": "dusk",
+          "tile": 36,
+          "anchorError": 0.014774401423949257,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            324,
+            286
+          ],
+          "images": 69,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            432,
+            381
+          ],
+          "roleCount": 10,
+          "rolePositionSha256": "94eeacadfd8e0f5725b27b2b083dcf26d6528ba9373fb40f81fbfd4ab95ca9c3"
+        }
+      ]
+    },
+    {
+      "fixture": "cross",
+      "tile": 48,
+      "rows": 7,
+      "columns": 7,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 48,
+          "anchorError": 0.01449086856527515,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            432,
+            381
+          ],
+          "images": 69,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            324,
+            286
+          ],
+          "roleCount": 10,
+          "rolePositionSha256": "94eeacadfd8e0f5725b27b2b083dcf26d6528ba9373fb40f81fbfd4ab95ca9c3"
+        },
+        {
+          "mood": "dusk",
+          "tile": 48,
+          "anchorError": 0.01449086856527515,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            432,
+            381
+          ],
+          "images": 69,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            324,
+            286
+          ],
+          "roleCount": 10,
+          "rolePositionSha256": "94eeacadfd8e0f5725b27b2b083dcf26d6528ba9373fb40f81fbfd4ab95ca9c3"
+        }
+      ]
+    },
+    {
+      "fixture": "block",
+      "tile": 36,
+      "rows": 6,
+      "columns": 7,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 36,
+          "anchorError": 0.014774401423949257,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            324,
+            255
+          ],
+          "images": 52,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            432,
+            381
+          ],
+          "roleCount": 5,
+          "rolePositionSha256": "fd3825b98f9d6d4479d9a1dcad8b689360ae69b9ac20e4499b0e4789f3f0b771"
+        },
+        {
+          "mood": "dusk",
+          "tile": 36,
+          "anchorError": 0.014774401423949257,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            324,
+            255
+          ],
+          "images": 52,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            432,
+            381
+          ],
+          "roleCount": 5,
+          "rolePositionSha256": "fd3825b98f9d6d4479d9a1dcad8b689360ae69b9ac20e4499b0e4789f3f0b771"
+        }
+      ]
+    },
+    {
+      "fixture": "block",
+      "tile": 48,
+      "rows": 6,
+      "columns": 7,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 48,
+          "anchorError": 0.01449086856527515,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            432,
+            340
+          ],
+          "images": 52,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            324,
+            255
+          ],
+          "roleCount": 5,
+          "rolePositionSha256": "fd3825b98f9d6d4479d9a1dcad8b689360ae69b9ac20e4499b0e4789f3f0b771"
+        },
+        {
+          "mood": "dusk",
+          "tile": 48,
+          "anchorError": 0.01449086856527515,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            432,
+            340
+          ],
+          "images": 52,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            324,
+            255
+          ],
+          "roleCount": 5,
+          "rolePositionSha256": "fd3825b98f9d6d4479d9a1dcad8b689360ae69b9ac20e4499b0e4789f3f0b771"
+        }
+      ]
+    },
+    {
+      "fixture": "edges",
+      "tile": 36,
+      "rows": 7,
+      "columns": 9,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 36,
+          "anchorError": 0.014774401423949257,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            396,
+            286
+          ],
+          "images": 86,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            432,
+            340
+          ],
+          "roleCount": 12,
+          "rolePositionSha256": "111b54f6c90719489ed5cfcd85e367926bc106b79e9b287bf4f16e9d6f2878c1"
+        },
+        {
+          "mood": "dusk",
+          "tile": 36,
+          "anchorError": 0.014774401423949257,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            396,
+            286
+          ],
+          "images": 86,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            432,
+            340
+          ],
+          "roleCount": 12,
+          "rolePositionSha256": "111b54f6c90719489ed5cfcd85e367926bc106b79e9b287bf4f16e9d6f2878c1"
+        }
+      ]
+    },
+    {
+      "fixture": "edges",
+      "tile": 48,
+      "rows": 7,
+      "columns": 9,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 48,
+          "anchorError": 0.01449086856527515,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            528,
+            381
+          ],
+          "images": 86,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            396,
+            286
+          ],
+          "roleCount": 12,
+          "rolePositionSha256": "111b54f6c90719489ed5cfcd85e367926bc106b79e9b287bf4f16e9d6f2878c1"
+        },
+        {
+          "mood": "dusk",
+          "tile": 48,
+          "anchorError": 0.01449086856527515,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            528,
+            381
+          ],
+          "images": 86,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            396,
+            286
+          ],
+          "roleCount": 12,
+          "rolePositionSha256": "111b54f6c90719489ed5cfcd85e367926bc106b79e9b287bf4f16e9d6f2878c1"
+        }
+      ]
+    },
+    {
+      "fixture": "overlap",
+      "tile": 36,
+      "rows": 7,
+      "columns": 7,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 36,
+          "anchorError": 0.014774401423949257,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            324,
+            286
+          ],
+          "images": 66,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            528,
+            381
+          ],
+          "roleCount": 9,
+          "rolePositionSha256": "e305ffe5f79899e7ea83e9138c630f6f40a2da48bd177d3a904b461705bcd738"
+        },
+        {
+          "mood": "dusk",
+          "tile": 36,
+          "anchorError": 0.014774401423949257,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            324,
+            286
+          ],
+          "images": 66,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            528,
+            381
+          ],
+          "roleCount": 9,
+          "rolePositionSha256": "e305ffe5f79899e7ea83e9138c630f6f40a2da48bd177d3a904b461705bcd738"
+        }
+      ]
+    },
+    {
+      "fixture": "overlap",
+      "tile": 48,
+      "rows": 7,
+      "columns": 7,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 48,
+          "anchorError": 0.01449086856527515,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            432,
+            381
+          ],
+          "images": 66,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            324,
+            286
+          ],
+          "roleCount": 9,
+          "rolePositionSha256": "e305ffe5f79899e7ea83e9138c630f6f40a2da48bd177d3a904b461705bcd738"
+        },
+        {
+          "mood": "dusk",
+          "tile": 48,
+          "anchorError": 0.01449086856527515,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            432,
+            381
+          ],
+          "images": 66,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            324,
+            286
+          ],
+          "roleCount": 9,
+          "rolePositionSha256": "e305ffe5f79899e7ea83e9138c630f6f40a2da48bd177d3a904b461705bcd738"
+        }
+      ]
+    },
+    {
+      "fixture": "maze",
+      "tile": 36,
+      "rows": 13,
+      "columns": 17,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 36,
+          "anchorError": 0.014774401423949257,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            684,
+            469
+          ],
+          "images": 406,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            432,
+            381
+          ],
+          "roleCount": 93,
+          "rolePositionSha256": "1cd0bd461e1c8362f6d2ccf8878f9ae445084aa695e0721be34a86e9dd881717"
+        },
+        {
+          "mood": "dusk",
+          "tile": 36,
+          "anchorError": 0.014774401423949257,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            684,
+            469
+          ],
+          "images": 406,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            432,
+            381
+          ],
+          "roleCount": 93,
+          "rolePositionSha256": "1cd0bd461e1c8362f6d2ccf8878f9ae445084aa695e0721be34a86e9dd881717"
+        }
+      ]
+    },
+    {
+      "fixture": "maze",
+      "tile": 48,
+      "rows": 13,
+      "columns": 17,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 48,
+          "anchorError": 0.014783946107513657,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            912,
+            625
+          ],
+          "images": 406,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            684,
+            469
+          ],
+          "roleCount": 93,
+          "rolePositionSha256": "1cd0bd461e1c8362f6d2ccf8878f9ae445084aa695e0721be34a86e9dd881717"
+        },
+        {
+          "mood": "dusk",
+          "tile": 48,
+          "anchorError": 0.014783946107513657,
+          "sorted": true,
+          "allShadowsBeforeBodies": true,
+          "dimensions": [
+            912,
+            625
+          ],
+          "images": 406,
+          "scroll": [
+            0,
+            0
+          ],
+          "viewport": [
+            684,
+            469
+          ],
+          "roleCount": 93,
+          "rolePositionSha256": "1cd0bd461e1c8362f6d2ccf8878f9ae445084aa695e0721be34a86e9dd881717"
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Author evidence; owner and independent QA signoff pending.",
+    "Headless Chromium is not physical phone or GPU memory/performance validation."
+  ],
+  "errors": [],
+  "badRequests": [],
+  "status": "PASS"
+}

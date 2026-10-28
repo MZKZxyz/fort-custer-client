@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "command": "CI=true npm test -- --watch=false --runInBand",
+      "suites": 13,
+      "tests": 159,
+      "passed": 159
+    },
+    {
+      "command": "node docs/visual-integration/source/geometry.test.mjs",
+      "tests": 3,
+      "passed": 3
+    }
+  ],
+  "productionBuildCreated": false,
+  "cameraFlagEnabled": false,
+  "deployed": false,
+  "ciPolled": false
+}

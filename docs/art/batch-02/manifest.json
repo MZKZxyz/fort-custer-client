@@ -1,0 +1,2939 @@
+{
+  "schema": "fort-custer-weathering-v1",
+  "issue": 55,
+  "baseline": "5732fa78de6398582a7d230fc960fc5dc4fb9856",
+  "approval": "v01 approved; v02-v04 proposed / independent QA and owner visual approval pending",
+  "blender": "4.3.2",
+  "seed": 30,
+  "variants": [
+    {
+      "geometry": {
+        "bounds": [
+          [
+            -0.5,
+            0.5
+          ],
+          [
+            -0.5,
+            0.5
+          ],
+          [
+            0.0,
+            0.5949999690055847
+          ]
+        ],
+        "footprint": [
+          [
+            -0.5,
+            -0.5
+          ],
+          [
+            0.5,
+            -0.5
+          ],
+          [
+            0.5,
+            0.5
+          ],
+          [
+            -0.5,
+            0.5
+          ]
+        ],
+        "groundAnchor": [
+          0,
+          0,
+          0
+        ],
+        "height": 0.595,
+        "meshSha256": "f5036e15e46dd467989aefed31593f97332e1c14725771006abb9a1accece9d2",
+        "objects": 48
+      },
+      "projection": {
+        "elevation": 58,
+        "yaw": 0,
+        "radius": 25,
+        "bodyOrthoScale": 1.5714285714285714,
+        "cellWidth": 224,
+        "groundPitch": 189.9627735390394,
+        "heightRise": 118.7019151882379
+      },
+      "color": {
+        "transform": "AgX",
+        "look": "Medium High Contrast",
+        "output": "sRGB / straight RGBA8",
+        "exposure": 0,
+        "gamma": 1
+      },
+      "lighting": {
+        "daylight": {
+          "key": {
+            "position": [
+              -6,
+              -3,
+              12
+            ],
+            "energy": 1800.0,
+            "color": [
+              1.0,
+              0.8399999737739563,
+              0.6299999952316284
+            ],
+            "size": 7
+          },
+          "fill": {
+            "position": [
+              4,
+              6,
+              10
+            ],
+            "energy": 650.0,
+            "color": [
+              0.6600000262260437,
+              0.7900000214576721,
+              1.0
+            ],
+            "size": 9
+          },
+          "world": [
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        "dusk": {
+          "key": {
+            "position": [
+              -6,
+              -3,
+              12
+            ],
+            "energy": 1050.0,
+            "color": [
+              0.47999998927116394,
+              0.6200000047683716,
+              1.0
+            ],
+            "size": 7
+          },
+          "fill": {
+            "position": [
+              4,
+              6,
+              10
+            ],
+            "energy": 550.0,
+            "color": [
+              0.44999998807907104,
+              0.550000011920929,
+              0.8500000238418579
+            ],
+            "size": 9
+          },
+          "world": [
+            0.11999999731779099,
+            0.15000000596046448,
+            0.2199999988079071
+          ]
+        }
+      },
+      "id": "v01",
+      "name": "Approved honey",
+      "approval": "owner-approved Batch 01 / retained unchanged",
+      "sourceBlend": {
+        "file": "../batch-01/source/wall-master.blend",
+        "sha256": "452d1f3bcce4c065ec08dcc8fcc67c9413d1f2cb16ebf1cabc65ed4e2b4a06ef"
+      },
+      "model": {
+        "file": "../batch-01/assets/wall-master.glb",
+        "format": "glTF 2.0 GLB",
+        "sha256": "4502031313c4fbd914480cb17cb6a9808a3dbe8ea56d44f54a530a1778d56db7",
+        "bytes": 2120256,
+        "blender": "4.3.2",
+        "exportOptions": {
+          "export_format": "GLB",
+          "use_selection": true,
+          "export_yup": true,
+          "export_normals": true,
+          "export_tangents": true,
+          "export_texcoords": true,
+          "export_materials": "EXPORT",
+          "export_cameras": false,
+          "export_lights": false,
+          "export_animations": false,
+          "export_extras": true,
+          "export_apply": false
+        },
+        "tangentFinishing": "Float32 unit/orthogonal frames restored after Blender four-decimal tangent export; handedness unchanged",
+        "sourceBlendSha256": "452d1f3bcce4c065ec08dcc8fcc67c9413d1f2cb16ebf1cabc65ed4e2b4a06ef",
+        "sourceComponents": 48,
+        "triangles": 11824,
+        "verticesBeforeGltfSplits": 6008,
+        "textures": [
+          {
+            "file": "../batch-01/assets/wall-master-basecolor.png",
+            "role": "baseColor",
+            "size": [
+              1024,
+              1024
+            ],
+            "colorSpace": "sRGB",
+            "embedded": true,
+            "sha256": "16297ed7bab2012b24ee52b7e383826220ac40a65bde5c2530c6bb0f88a21a65"
+          },
+          {
+            "file": "../batch-01/assets/wall-master-normal.png",
+            "role": "normal",
+            "size": [
+              1024,
+              1024
+            ],
+            "colorSpace": "Non-Color",
+            "embedded": true,
+            "sha256": "eccb8c1e3e914dbf7b36f3ad9a21f170df1b622b6a5cc167c70d8aa481f4325e"
+          }
+        ],
+        "materials": [
+          {
+            "name": "Recess soil",
+            "roughness": 0.8500000238418579,
+            "metallic": 0.0
+          },
+          {
+            "name": "Fresh end grain",
+            "roughness": 0.8500000238418579,
+            "metallic": 0.0
+          },
+          {
+            "name": "Inset weathered iron / reference 01\u201304",
+            "roughness": 0.6499999761581421,
+            "metallic": 0.6499999761581421
+          },
+          {
+            "name": "Pallet / honey 2",
+            "roughness": 0.8500000238418579,
+            "metallic": 0.0
+          },
+          {
+            "name": "Pallet / honey 0",
+            "roughness": 0.8500000238418579,
+            "metallic": 0.0
+          },
+          {
+            "name": "Pallet / honey 1.001",
+            "roughness": 0.8500000238418579,
+            "metallic": 0.0
+          },
+          {
+            "name": "Pallet / honey 2.001",
+            "roughness": 0.8500000238418579,
+            "metallic": 0.0
+          },
+          {
+            "name": "Pallet / honey 3",
+            "roughness": 0.8500000238418579,
+            "metallic": 0.0
+          },
+          {
+            "name": "Pallet / honey 3.001",
+            "roughness": 0.8500000238418579,
+            "metallic": 0.0
+          },
+          {
+            "name": "Pallet / honey 1.002",
+            "roughness": 0.8500000238418579,
+            "metallic": 0.0
+          },
+          {
+            "name": "Pallet / honey 0.001",
+            "roughness": 0.8500000238418579,
+            "metallic": 0.0
+          },
+          {
+            "name": "Pallet / honey 1.003",
+            "roughness": 0.8500000238418579,
+            "metallic": 0.0
+          },
+          {
+            "name": "Pallet / honey 1",
+            "roughness": 0.8500000238418579,
+            "metallic": 0.0
+          }
+        ],
+        "coordinates": {
+          "cellUnits": 1,
+          "source": "Right handed Blender +X right, -Y forward/increasing row, +Z up",
+          "glTF": "Right handed +X right, +Z forward/increasing row, +Y up",
+          "conversion": "(X,Y,Z) Blender \u2192 (X,Z,-Y) glTF",
+          "rootPivot": [
+            0,
+            0,
+            0
+          ],
+          "rootScale": [
+            1,
+            1,
+            1
+          ],
+          "sourceBounds": [
+            [
+              -0.5,
+              0.5
+            ],
+            [
+              -0.5,
+              0.5
+            ],
+            [
+              0,
+              0.595
+            ]
+          ],
+          "glTFBounds": [
+            [
+              -0.5,
+              0.5
+            ],
+            [
+              0,
+              0.595
+            ],
+            [
+              -0.5,
+              0.5
+            ]
+          ]
+        },
+        "materialTreatment": {
+          "bake": "1024\u00b2 shared UV atlas; actual Principled Base Color via temporary EMIT surface (no lighting/AO), tangent-space NORMAL; 16 fixed samples, seed 30, 4px margin",
+          "retained": "Original roughness/metallic scalar per material; evaluated bevel geometry and split/weighted normals",
+          "losses": [
+            "Procedural grain becomes finite-resolution 8-bit textures; very fine detail/filtering can differ at close range.",
+            "Blender shader graphs and editable modifiers are retained only in the original .blend.",
+            "Core glTF metallic/roughness shading omits Blender-specific default specular-IOR treatment; render engines may differ."
+          ],
+          "unbaked": "No directional lighting, cast shadows, AO, studio background, camera or AgX grade in PBR maps"
+        },
+        "license": "Original procedural geometry under repository contribution terms; reference concepts are not used as model textures.",
+        "rebuild": "blender -b -t 2 --python-exit-code 1 --python docs/art/batch-01/source/export-glb.py",
+        "geometryPayloadSha256": "70665297cba7b51a4df4d834e757952d0fbcf5132d4c9389be0de2dd7bc85974"
+      },
+      "assets": [
+        {
+          "file": "../batch-01/assets/wall-daylight-body.png",
+          "role": "wall",
+          "layer": "body",
+          "mood": "daylight",
+          "size": [
+            256,
+            352
+          ],
+          "anchor": [
+            128,
+            208
+          ],
+          "cellWidth": 224,
+          "projectionSamples": {
+            "(0, 0, 0)": [
+              128.0,
+              207.99987506866455
+            ],
+            "(1, 0, 0)": [
+              352.0,
+              207.99987506866455
+            ],
+            "(0, -1, 0)": [
+              128.0,
+              397.96265745162964
+            ],
+            "(0, 0, 1)": [
+              128.0,
+              89.29795837402344
+            ]
+          },
+          "meshSha256": "f5036e15e46dd467989aefed31593f97332e1c14725771006abb9a1accece9d2",
+          "bounds": [
+            15,
+            43,
+            241,
+            304
+          ],
+          "outerTransparentPixels": 15,
+          "bytes": 116336,
+          "decodedBytes": 360448,
+          "sha256": "ca03f87fd44094a70b3b37997cdd181e6d1bc7edd5f92a83fa38bfbe71694afd"
+        },
+        {
+          "file": "../batch-01/assets/wall-daylight-shadow.png",
+          "role": "wall",
+          "layer": "shadow",
+          "mood": "daylight",
+          "size": [
+            256,
+            256
+          ],
+          "anchor": [
+            128,
+            150
+          ],
+          "cellWidth": 112,
+          "projectionSamples": {
+            "(0, 0, 0)": [
+              256.0,
+              299.99993896484375
+            ],
+            "(1, 0, 0)": [
+              480.0,
+              299.99993896484375
+            ],
+            "(0, -1, 0)": [
+              256.0,
+              489.96270179748535
+            ],
+            "(0, 0, 1)": [
+              256.0,
+              181.29803466796875
+            ]
+          },
+          "meshSha256": "f5036e15e46dd467989aefed31593f97332e1c14725771006abb9a1accece9d2",
+          "bounds": [
+            47,
+            78,
+            231,
+            233
+          ],
+          "outerTransparentPixels": 23,
+          "bytes": 18620,
+          "decodedBytes": 262144,
+          "sha256": "007076dbba91dd03603bdf700ac0ddef33204ed6e8df9a11ccc013464fe431db"
+        },
+        {
+          "file": "../batch-01/assets/wall-dusk-body.png",
+          "role": "wall",
+          "layer": "body",
+          "mood": "dusk",
+          "size": [
+            256,
+            352
+          ],
+          "anchor": [
+            128,
+            208
+          ],
+          "cellWidth": 224,
+          "projectionSamples": {
+            "(0, 0, 0)": [
+              128.0,
+              207.99987506866455
+            ],
+            "(1, 0, 0)": [
+              352.0,
+              207.99987506866455
+            ],
+            "(0, -1, 0)": [
+              128.0,
+              397.96265745162964
+            ],
+            "(0, 0, 1)": [
+              128.0,
+              89.29795837402344
+            ]
+          },
+          "meshSha256": "f5036e15e46dd467989aefed31593f97332e1c14725771006abb9a1accece9d2",
+          "bounds": [
+            15,
+            43,
+            241,
+            304
+          ],
+          "outerTransparentPixels": 15,
+          "bytes": 102142,
+          "decodedBytes": 360448,
+          "sha256": "545e00aacb08bc0d009e87ea6c3697b5a17611277a45826a32611031c6cc63a5"
+        },
+        {
+          "file": "../batch-01/assets/wall-dusk-shadow.png",
+          "role": "wall",
+          "layer": "shadow",
+          "mood": "dusk",
+          "size": [
+            256,
+            256
+          ],
+          "anchor": [
+            128,
+            150
+          ],
+          "cellWidth": 112,
+          "projectionSamples": {
+            "(0, 0, 0)": [
+              256.0,
+              299.99993896484375
+            ],
+            "(1, 0, 0)": [
+              480.0,
+              299.99993896484375
+            ],
+            "(0, -1, 0)": [
+              256.0,
+              489.96270179748535
+            ],
+            "(0, 0, 1)": [
+              256.0,
+              181.29803466796875
+            ]
+          },
+          "meshSha256": "f5036e15e46dd467989aefed31593f97332e1c14725771006abb9a1accece9d2",
+          "bounds": [
+            42,
+            78,
+            230,
+            235
+          ],
+          "outerTransparentPixels": 21,
+          "bytes": 19238,
+          "decodedBytes": 262144,
+          "sha256": "8dc1a767bca098af3665f798ebd1edefedf2afa9ff9782b770f60fd3f56d3e36"
+        }
+      ]
+    },
+    {
+      "id": "v02",
+      "name": "Naturally aged / repair tone",
+      "approval": "proposed / owner visual approval pending",
+      "geometry": {
+        "bounds": [
+          [
+            -0.5,
+            0.5
+          ],
+          [
+            -0.5,
+            0.5
+          ],
+          [
+            0.0,
+            0.5949999690055847
+          ]
+        ],
+        "footprint": [
+          [
+            -0.5,
+            -0.5
+          ],
+          [
+            0.5,
+            -0.5
+          ],
+          [
+            0.5,
+            0.5
+          ],
+          [
+            -0.5,
+            0.5
+          ]
+        ],
+        "groundAnchor": [
+          0,
+          0,
+          0
+        ],
+        "height": 0.595,
+        "meshSha256": "f5036e15e46dd467989aefed31593f97332e1c14725771006abb9a1accece9d2",
+        "objects": 48
+      },
+      "projection": {
+        "elevation": 58,
+        "yaw": 0,
+        "radius": 25,
+        "bodyOrthoScale": 1.5714285714285714,
+        "cellWidth": 224,
+        "groundPitch": 189.9627735390394,
+        "heightRise": 118.7019151882379
+      },
+      "color": {
+        "transform": "AgX",
+        "look": "Medium High Contrast",
+        "output": "sRGB / straight RGBA8",
+        "exposure": 0,
+        "gamma": 1
+      },
+      "lighting": {
+        "daylight": {
+          "key": {
+            "position": [
+              -6,
+              -3,
+              12
+            ],
+            "energy": 1800.0,
+            "color": [
+              1.0,
+              0.8399999737739563,
+              0.6299999952316284
+            ],
+            "size": 7
+          },
+          "fill": {
+            "position": [
+              4,
+              6,
+              10
+            ],
+            "energy": 650.0,
+            "color": [
+              0.6600000262260437,
+              0.7900000214576721,
+              1.0
+            ],
+            "size": 9
+          },
+          "world": [
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        "dusk": {
+          "key": {
+            "position": [
+              -6,
+              -3,
+              12
+            ],
+            "energy": 1050.0,
+            "color": [
+              0.47999998927116394,
+              0.6200000047683716,
+              1.0
+            ],
+            "size": 7
+          },
+          "fill": {
+            "position": [
+              4,
+              6,
+              10
+            ],
+            "energy": 550.0,
+            "color": [
+              0.44999998807907104,
+              0.550000011920929,
+              0.8500000238418579
+            ],
+            "size": 9
+          },
+          "world": [
+            0.11999999731779099,
+            0.15000000596046448,
+            0.2199999988079071
+          ]
+        }
+      },
+      "materials": [
+        {
+          "sourceMaterial": "Fresh end grain",
+          "material": "v02 / Fresh end grain",
+          "repairTone": false,
+          "usedBy": [
+            "Corner upright",
+            "Corner upright.001",
+            "Corner upright.002",
+            "Corner upright.003",
+            "End-grain corner cap",
+            "End-grain corner cap.001",
+            "End-grain corner cap.002",
+            "End-grain corner cap.003"
+          ],
+          "beforeBaseLinearRGBA": [
+            0.7099999785423279,
+            0.5,
+            0.2800000011920929,
+            1.0
+          ],
+          "afterBaseLinearRGBA": [
+            0.5892999768257141,
+            0.4350000023841858,
+            0.2492000013589859,
+            1.0
+          ],
+          "roughness": 0.8999999761581421,
+          "metallic": 0.0
+        },
+        {
+          "sourceMaterial": "Inset weathered iron / reference 01\u201304",
+          "material": "v02 / Inset weathered iron / reference 01\u201304",
+          "repairTone": false,
+          "usedBy": [
+            "Inset cap bolt",
+            "Front/back bolt",
+            "Side bolt",
+            "Front/back bolt.001",
+            "Side bolt.001",
+            "Inset cap bolt.001",
+            "Front/back bolt.002",
+            "Side bolt.002",
+            "Front/back bolt.003",
+            "Side bolt.003",
+            "Inset cap bolt.002",
+            "Front/back bolt.004",
+            "Side bolt.004",
+            "Front/back bolt.005",
+            "Side bolt.005",
+            "Inset cap bolt.003",
+            "Front/back bolt.006",
+            "Side bolt.006",
+            "Front/back bolt.007",
+            "Side bolt.007"
+          ],
+          "beforeBaseLinearRGBA": [
+            0.18000000715255737,
+            0.17000000178813934,
+            0.14000000059604645,
+            1.0
+          ],
+          "afterBaseLinearRGBA": [
+            0.1550000011920929,
+            0.14499999582767487,
+            0.11999999731779099,
+            1.0
+          ],
+          "roughness": 0.7400000095367432,
+          "metallic": 0.5
+        },
+        {
+          "sourceMaterial": "Pallet / honey 0",
+          "material": "v02 / Pallet / honey 0",
+          "repairTone": false,
+          "usedBy": [
+            "Horizontal pallet slat.001",
+            "Horizontal pallet slat.004",
+            "Horizontal pallet slat.008",
+            "Recessed floor plank",
+            "Recessed floor plank.004",
+            "Inner frame batten",
+            "Inner frame batten.001"
+          ],
+          "beforeBaseLinearRGBA": [
+            0.4300000071525574,
+            0.25,
+            0.10499999672174454,
+            1.0
+          ],
+          "afterBaseLinearRGBA": [
+            0.35690000653266907,
+            0.2175000011920929,
+            0.09344999492168427,
+            1.0
+          ],
+          "roughness": 0.8999999761581421,
+          "metallic": 0.0
+        },
+        {
+          "sourceMaterial": "Pallet / honey 0.001",
+          "material": "v02 / Pallet / honey 0.001",
+          "repairTone": false,
+          "usedBy": [
+            "Horizontal pallet slat.010"
+          ],
+          "beforeBaseLinearRGBA": [
+            0.4300000071525574,
+            0.25,
+            0.10499999672174454,
+            1.0
+          ],
+          "afterBaseLinearRGBA": [
+            0.35690000653266907,
+            0.2175000011920929,
+            0.09344999492168427,
+            1.0
+          ],
+          "roughness": 0.8999999761581421,
+          "metallic": 0.0
+        },
+        {
+          "sourceMaterial": "Pallet / honey 1",
+          "material": "v02 / Pallet / honey 1",
+          "repairTone": false,
+          "usedBy": [
+            "Recessed floor plank.001"
+          ],
+          "beforeBaseLinearRGBA": [
+            0.550000011920929,
+            0.3400000035762787,
+            0.1599999964237213,
+            1.0
+          ],
+          "afterBaseLinearRGBA": [
+            0.45650002360343933,
+            0.29580000042915344,
+            0.14239999651908875,
+            1.0
+          ],
+          "roughness": 0.8999999761581421,
+          "metallic": 0.0
+        },
+        {
+          "sourceMaterial": "Pallet / honey 1.001",
+          "material": "v02 / Pallet / honey 1.001",
+          "repairTone": false,
+          "usedBy": [
+            "Horizontal pallet slat.002"
+          ],
+          "beforeBaseLinearRGBA": [
+            0.550000011920929,
+            0.3400000035762787,
+            0.1599999964237213,
+            1.0
+          ],
+          "afterBaseLinearRGBA": [
+            0.45650002360343933,
+            0.29580000042915344,
+            0.14239999651908875,
+            1.0
+          ],
+          "roughness": 0.8999999761581421,
+          "metallic": 0.0
+        },
+        {
+          "sourceMaterial": "Pallet / honey 1.002",
+          "material": "v02 / Pallet / honey 1.002",
+          "repairTone": false,
+          "usedBy": [
+            "Horizontal pallet slat.007"
+          ],
+          "beforeBaseLinearRGBA": [
+            0.550000011920929,
+            0.3400000035762787,
+            0.1599999964237213,
+            1.0
+          ],
+          "afterBaseLinearRGBA": [
+            0.45650002360343933,
+            0.29580000042915344,
+            0.14239999651908875,
+            1.0
+          ],
+          "roughness": 0.8999999761581421,
+          "metallic": 0.0
+        },
+        {
+          "sourceMaterial": "Pallet / honey 1.003",
+          "material": "v02 / Pallet / honey 1.003",
+          "repairTone": true,
+          "usedBy": [
+            "Horizontal pallet slat.011"
+          ],
+          "beforeBaseLinearRGBA": [
+            0.550000011920929,
+            0.3400000035762787,
+            0.1599999964237213,
+            1.0
+          ],
+          "afterBaseLinearRGBA": [
+            0.5830000042915344,
+            0.33320000767707825,
+            0.14559999108314514,
+            1.0
+          ],
+          "roughness": 0.8999999761581421,
+          "metallic": 0.0
+        },
+        {
+          "sourceMaterial": "Pallet / honey 2",
+          "material": "v02 / Pallet / honey 2",
+          "repairTone": false,
+          "usedBy": [
+            "Horizontal pallet slat",
+            "Recessed floor plank.002"
+          ],
+          "beforeBaseLinearRGBA": [
+            0.6399999856948853,
+            0.41999998688697815,
+            0.2199999988079071,
+            1.0
+          ],
+          "afterBaseLinearRGBA": [
+            0.5311999917030334,
+            0.3653999865055084,
+            0.19580000638961792,
+            1.0
+          ],
+          "roughness": 0.8999999761581421,
+          "metallic": 0.0
+        },
+        {
+          "sourceMaterial": "Pallet / honey 2.001",
+          "material": "v02 / Pallet / honey 2.001",
+          "repairTone": false,
+          "usedBy": [
+            "Horizontal pallet slat.003"
+          ],
+          "beforeBaseLinearRGBA": [
+            0.6399999856948853,
+            0.41999998688697815,
+            0.2199999988079071,
+            1.0
+          ],
+          "afterBaseLinearRGBA": [
+            0.5311999917030334,
+            0.3653999865055084,
+            0.19580000638961792,
+            1.0
+          ],
+          "roughness": 0.8999999761581421,
+          "metallic": 0.0
+        },
+        {
+          "sourceMaterial": "Pallet / honey 3",
+          "material": "v02 / Pallet / honey 3",
+          "repairTone": false,
+          "usedBy": [
+            "Horizontal pallet slat.005",
+            "Horizontal pallet slat.009",
+            "Recessed floor plank.003"
+          ],
+          "beforeBaseLinearRGBA": [
+            0.47999998927116394,
+            0.30000001192092896,
+            0.14000000059604645,
+            1.0
+          ],
+          "afterBaseLinearRGBA": [
+            0.3983999788761139,
+            0.26100000739097595,
+            0.12460000067949295,
+            1.0
+          ],
+          "roughness": 0.8999999761581421,
+          "metallic": 0.0
+        },
+        {
+          "sourceMaterial": "Pallet / honey 3.001",
+          "material": "v02 / Pallet / honey 3.001",
+          "repairTone": false,
+          "usedBy": [
+            "Horizontal pallet slat.006"
+          ],
+          "beforeBaseLinearRGBA": [
+            0.47999998927116394,
+            0.30000001192092896,
+            0.14000000059604645,
+            1.0
+          ],
+          "afterBaseLinearRGBA": [
+            0.3983999788761139,
+            0.26100000739097595,
+            0.12460000067949295,
+            1.0
+          ],
+          "roughness": 0.8999999761581421,
+          "metallic": 0.0
+        }
+      ],
+      "sourceBlend": {
+        "file": "variants/v02/source/wall-master.blend",
+        "bytes": 2063448,
+        "sha256": "83c77e4315ced91db5f84ae155dfa25017e50fc0daf738ff5e470ab4fd0178f2"
+      },
+      "model": {
+        "file": "variants/v02/assets/wall-master.glb",
+        "format": "glTF 2.0 GLB",
+        "sha256": "f3a7913680e8462ca66455bcb1e3fcb7b067168cdbb482f99474688cb55f01f0",
+        "bytes": 2112336,
+        "blender": "4.3.2",
+        "exportOptions": {
+          "export_format": "GLB",
+          "use_selection": true,
+          "export_yup": true,
+          "export_normals": true,
+          "export_tangents": true,
+          "export_texcoords": true,
+          "export_materials": "EXPORT",
+          "export_cameras": false,
+          "export_lights": false,
+          "export_animations": false,
+          "export_extras": true,
+          "export_apply": false
+        },
+        "tangentFinishing": "Float32 unit/orthogonal frames restored after Blender four-decimal tangent export; handedness unchanged",
+        "sourceBlendSha256": "83c77e4315ced91db5f84ae155dfa25017e50fc0daf738ff5e470ab4fd0178f2",
+        "sourceComponents": 48,
+        "triangles": 11824,
+        "verticesBeforeGltfSplits": 6008,
+        "textures": [
+          {
+            "file": "variants/v02/assets/wall-master-basecolor.png",
+            "role": "baseColor",
+            "size": [
+              1024,
+              1024
+            ],
+            "colorSpace": "sRGB",
+            "embedded": true,
+            "sha256": "8d56ee90b50fc63d5419cdf61cb4edaccbb30427a635c6984ff09c564af0b110"
+          },
+          {
+            "file": "variants/v02/assets/wall-master-normal.png",
+            "role": "normal",
+            "size": [
+              1024,
+              1024
+            ],
+            "colorSpace": "Non-Color",
+            "embedded": true,
+            "sha256": "eccb8c1e3e914dbf7b36f3ad9a21f170df1b622b6a5cc167c70d8aa481f4325e"
+          }
+        ],
+        "materials": [
+          {
+            "name": "Recess soil",
+            "roughness": 0.8500000238418579,
+            "metallic": 0.0
+          },
+          {
+            "name": "v02 / Fresh end grain",
+            "roughness": 0.8999999761581421,
+            "metallic": 0.0
+          },
+          {
+            "name": "v02 / Inset weathered iron / reference 01\u201304",
+            "roughness": 0.7400000095367432,
+            "metallic": 0.5
+          },
+          {
+            "name": "v02 / Pallet / honey 2",
+            "roughness": 0.8999999761581421,
+            "metallic": 0.0
+          },
+          {
+            "name": "v02 / Pallet / honey 0",
+            "roughness": 0.8999999761581421,
+            "metallic": 0.0
+          },
+          {
+            "name": "v02 / Pallet / honey 1.001",
+            "roughness": 0.8999999761581421,
+            "metallic": 0.0
+          },
+          {
+            "name": "v02 / Pallet / honey 2.001",
+            "roughness": 0.8999999761581421,
+            "metallic": 0.0
+          },
+          {
+            "name": "v02 / Pallet / honey 3",
+            "roughness": 0.8999999761581421,
+            "metallic": 0.0
+          },
+          {
+            "name": "v02 / Pallet / honey 3.001",
+            "roughness": 0.8999999761581421,
+            "metallic": 0.0
+          },
+          {
+            "name": "v02 / Pallet / honey 1.002",
+            "roughness": 0.8999999761581421,
+            "metallic": 0.0
+          },
+          {
+            "name": "v02 / Pallet / honey 0.001",
+            "roughness": 0.8999999761581421,
+            "metallic": 0.0
+          },
+          {
+            "name": "v02 / Pallet / honey 1.003",
+            "roughness": 0.8999999761581421,
+            "metallic": 0.0
+          },
+          {
+            "name": "v02 / Pallet / honey 1",
+            "roughness": 0.8999999761581421,
+            "metallic": 0.0
+          }
+        ],
+        "coordinates": {
+          "cellUnits": 1,
+          "source": "Right handed Blender +X right, -Y forward/increasing row, +Z up",
+          "glTF": "Right handed +X right, +Z forward/increasing row, +Y up",
+          "conversion": "(X,Y,Z) Blender \u2192 (X,Z,-Y) glTF",
+          "rootPivot": [
+            0,
+            0,
+            0
+          ],
+          "rootScale": [
+            1,
+            1,
+            1
+          ],
+          "sourceBounds": [
+            [
+              -0.5,
+              0.5
+            ],
+            [
+              -0.5,
+              0.5
+            ],
+            [
+              0,
+              0.595
+            ]
+          ],
+          "glTFBounds": [
+            [
+              -0.5,
+              0.5
+            ],
+            [
+              0,
+              0.595
+            ],
+            [
+              -0.5,
+              0.5
+            ]
+          ]
+        },
+        "materialTreatment": {
+          "bake": "1024\u00b2 shared UV atlas; actual Principled Base Color via temporary EMIT surface (no lighting/AO), tangent-space NORMAL; 16 fixed samples, seed 30, 4px margin",
+          "retained": "Original roughness/metallic scalar per material; evaluated bevel geometry and split/weighted normals",
+          "losses": [
+            "Procedural grain becomes finite-resolution 8-bit textures; very fine detail/filtering can differ at close range.",
+            "Blender shader graphs and editable modifiers are retained only in the original .blend.",
+            "Core glTF metallic/roughness shading omits Blender-specific default specular-IOR treatment; render engines may differ."
+          ],
+          "unbaked": "No directional lighting, cast shadows, AO, studio background, camera or AgX grade in PBR maps"
+        },
+        "license": "Original procedural geometry under repository contribution terms; reference concepts are not used as model textures.",
+        "rebuild": "blender -b -t 2 --python-exit-code 1 --python docs/art/batch-02/source/portable.py -- v02",
+        "variantId": "v02",
+        "geometryPayloadSha256": "70665297cba7b51a4df4d834e757952d0fbcf5132d4c9389be0de2dd7bc85974"
+      },
+      "assets": [
+        {
+          "file": "variants/v02/assets/wall-daylight-body.png",
+          "role": "wall",
+          "layer": "body",
+          "mood": "daylight",
+          "size": [
+            256,
+            352
+          ],
+          "anchor": [
+            128,
+            208
+          ],
+          "cellWidth": 224,
+          "projectionSamples": {
+            "(0, 0, 0)": [
+              128.0,
+              207.99987506866455
+            ],
+            "(1, 0, 0)": [
+              352.0,
+              207.99987506866455
+            ],
+            "(0, -1, 0)": [
+              128.0,
+              397.96265745162964
+            ],
+            "(0, 0, 1)": [
+              128.0,
+              89.29795837402344
+            ]
+          },
+          "meshSha256": "f5036e15e46dd467989aefed31593f97332e1c14725771006abb9a1accece9d2",
+          "bounds": [
+            15,
+            43,
+            241,
+            304
+          ],
+          "outerTransparentPixels": 15,
+          "bytes": 113368,
+          "decodedBytes": 360448,
+          "sha256": "9bf65a34576449757cb6ad210d77d57222554a8fddd91500d25a21720a1a8ef2"
+        },
+        {
+          "file": "variants/v02/assets/wall-daylight-shadow.png",
+          "role": "wall",
+          "layer": "shadow",
+          "mood": "daylight",
+          "size": [
+            256,
+            256
+          ],
+          "anchor": [
+            128,
+            150
+          ],
+          "cellWidth": 112,
+          "projectionSamples": {
+            "(0, 0, 0)": [
+              256.0,
+              299.99993896484375
+            ],
+            "(1, 0, 0)": [
+              480.0,
+              299.99993896484375
+            ],
+            "(0, -1, 0)": [
+              256.0,
+              489.96270179748535
+            ],
+            "(0, 0, 1)": [
+              256.0,
+              181.29803466796875
+            ]
+          },
+          "meshSha256": "f5036e15e46dd467989aefed31593f97332e1c14725771006abb9a1accece9d2",
+          "bounds": [
+            47,
+            78,
+            230,
+            233
+          ],
+          "outerTransparentPixels": 23,
+          "bytes": 18696,
+          "decodedBytes": 262144,
+          "sha256": "d5c32e9bfff4d64bb3aba7b2dd19e51f021101b4f92418d59fdcb3bc0c9380d5"
+        },
+        {
+          "file": "variants/v02/assets/wall-dusk-body.png",
+          "role": "wall",
+          "layer": "body",
+          "mood": "dusk",
+          "size": [
+            256,
+            352
+          ],
+          "anchor": [
+            128,
+            208
+          ],
+          "cellWidth": 224,
+          "projectionSamples": {
+            "(0, 0, 0)": [
+              128.0,
+              207.99987506866455
+            ],
+            "(1, 0, 0)": [
+              352.0,
+              207.99987506866455
+            ],
+            "(0, -1, 0)": [
+              128.0,
+              397.96265745162964
+            ],
+            "(0, 0, 1)": [
+              128.0,
+              89.29795837402344
+            ]
+          },
+          "meshSha256": "f5036e15e46dd467989aefed31593f97332e1c14725771006abb9a1accece9d2",
+          "bounds": [
+            15,
+            43,
+            241,
+            304
+          ],
+          "outerTransparentPixels": 15,
+          "bytes": 98105,
+          "decodedBytes": 360448,
+          "sha256": "a8cf5bafb9960b61617e337be5fa8a360aeecfd350e19e1faace5be62aba179c"
+        },
+        {
+          "file": "variants/v02/assets/wall-dusk-shadow.png",
+          "role": "wall",
+          "layer": "shadow",
+          "mood": "dusk",
+          "size": [
+            256,
+            256
+          ],
+          "anchor": [
+            128,
+            150
+          ],
+          "cellWidth": 112,
+          "projectionSamples": {
+            "(0, 0, 0)": [
+              256.0,
+              299.99993896484375
+            ],
+            "(1, 0, 0)": [
+              480.0,
+              299.99993896484375
+            ],
+            "(0, -1, 0)": [
+              256.0,
+              489.96270179748535
+            ],
+            "(0, 0, 1)": [
+              256.0,
+              181.29803466796875
+            ]
+          },
+          "meshSha256": "f5036e15e46dd467989aefed31593f97332e1c14725771006abb9a1accece9d2",
+          "bounds": [
+            40,
+            78,
+            230,
+            236
+          ],
+          "outerTransparentPixels": 20,
+          "bytes": 19390,
+          "decodedBytes": 262144,
+          "sha256": "e0db7a29b11a8d24869831861c3d1df9774aedd7807dc85a2fa6311f8504517e"
+        }
+      ]
+    },
+    {
+      "id": "v03",
+      "name": "Dark weathered / iron patina",
+      "approval": "proposed / owner visual approval pending",
+      "geometry": {
+        "bounds": [
+          [
+            -0.5,
+            0.5
+          ],
+          [
+            -0.5,
+            0.5
+          ],
+          [
+            0.0,
+            0.5949999690055847
+          ]
+        ],
+        "footprint": [
+          [
+            -0.5,
+            -0.5
+          ],
+          [
+            0.5,
+            -0.5
+          ],
+          [
+            0.5,
+            0.5
+          ],
+          [
+            -0.5,
+            0.5
+          ]
+        ],
+        "groundAnchor": [
+          0,
+          0,
+          0
+        ],
+        "height": 0.595,
+        "meshSha256": "f5036e15e46dd467989aefed31593f97332e1c14725771006abb9a1accece9d2",
+        "objects": 48
+      },
+      "projection": {
+        "elevation": 58,
+        "yaw": 0,
+        "radius": 25,
+        "bodyOrthoScale": 1.5714285714285714,
+        "cellWidth": 224,
+        "groundPitch": 189.9627735390394,
+        "heightRise": 118.7019151882379
+      },
+      "color": {
+        "transform": "AgX",
+        "look": "Medium High Contrast",
+        "output": "sRGB / straight RGBA8",
+        "exposure": 0,
+        "gamma": 1
+      },
+      "lighting": {
+        "daylight": {
+          "key": {
+            "position": [
+              -6,
+              -3,
+              12
+            ],
+            "energy": 1800.0,
+            "color": [
+              1.0,
+              0.8399999737739563,
+              0.6299999952316284
+            ],
+            "size": 7
+          },
+          "fill": {
+            "position": [
+              4,
+              6,
+              10
+            ],
+            "energy": 650.0,
+            "color": [
+              0.6600000262260437,
+              0.7900000214576721,
+              1.0
+            ],
+            "size": 9
+          },
+          "world": [
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        "dusk": {
+          "key": {
+            "position": [
+              -6,
+              -3,
+              12
+            ],
+            "energy": 1050.0,
+            "color": [
+              0.47999998927116394,
+              0.6200000047683716,
+              1.0
+            ],
+            "size": 7
+          },
+          "fill": {
+            "position": [
+              4,
+              6,
+              10
+            ],
+            "energy": 550.0,
+            "color": [
+              0.44999998807907104,
+              0.550000011920929,
+              0.8500000238418579
+            ],
+            "size": 9
+          },
+          "world": [
+            0.11999999731779099,
+            0.15000000596046448,
+            0.2199999988079071
+          ]
+        }
+      },
+      "materials": [
+        {
+          "sourceMaterial": "Fresh end grain",
+          "material": "v03 / Fresh end grain",
+          "repairTone": false,
+          "usedBy": [
+            "Corner upright",
+            "Corner upright.001",
+            "Corner upright.002",
+            "Corner upright.003",
+            "End-grain corner cap",
+            "End-grain corner cap.001",
+            "End-grain corner cap.002",
+            "End-grain corner cap.003"
+          ],
+          "beforeBaseLinearRGBA": [
+            0.7099999785423279,
+            0.5,
+            0.2800000011920929,
+            1.0
+          ],
+          "afterBaseLinearRGBA": [
+            0.46149998903274536,
+            0.3449999988079071,
+            0.20720000565052032,
+            1.0
+          ],
+          "roughness": 0.9599999785423279,
+          "metallic": 0.0
+        },
+        {
+          "sourceMaterial": "Inset weathered iron / reference 01\u201304",
+          "material": "v03 / Inset weathered iron / reference 01\u201304",
+          "repairTone": false,
+          "usedBy": [
+            "Inset cap bolt",
+            "Front/back bolt",
+            "Side bolt",
+            "Front/back bolt.001",
+            "Side bolt.001",
+            "Inset cap bolt.001",
+            "Front/back bolt.002",
+            "Side bolt.002",
+            "Front/back bolt.003",
+            "Side bolt.003",
+            "Inset cap bolt.002",
+            "Front/back bolt.004",
+            "Side bolt.004",
+            "Front/back bolt.005",
+            "Side bolt.005",
+            "Inset cap bolt.003",
+            "Front/back bolt.006",
+            "Side bolt.006",
+            "Front/back bolt.007",
+            "Side bolt.007"
+          ],
+          "beforeBaseLinearRGBA": [
+            0.18000000715255737,
+            0.17000000178813934,
+            0.14000000059604645,
+            1.0
+          ],
+          "afterBaseLinearRGBA": [
+            0.10499999672174454,
+            0.11999999731779099,
+            0.10499999672174454,
+            1.0
+          ],
+          "roughness": 0.8600000143051147,
+          "metallic": 0.3199999928474426
+        },
+        {
+          "sourceMaterial": "Pallet / honey 0",
+          "material": "v03 / Pallet / honey 0",
+          "repairTone": false,
+          "usedBy": [
+            "Horizontal pallet slat.001",
+            "Horizontal pallet slat.004",
+            "Horizontal pallet slat.008",
+            "Recessed floor plank",
+            "Recessed floor plank.004",
+            "Inner frame batten",
+            "Inner frame batten.001"
+          ],
+          "beforeBaseLinearRGBA": [
+            0.4300000071525574,
+            0.25,
+            0.10499999672174454,
+            1.0
+          ],
+          "afterBaseLinearRGBA": [
+            0.21070000529289246,
+            0.14000000059604645,
+            0.06825000047683716,
+            1.0
+          ],
+          "roughness": 0.9599999785423279,
+          "metallic": 0.0
+        },
+        {
+          "sourceMaterial": "Pallet / honey 0.001",
+          "material": "v03 / Pallet / honey 0.001",
+          "repairTone": false,
+          "usedBy": [
+            "Horizontal pallet slat.010"
+          ],
+          "beforeBaseLinearRGBA": [
+            0.4300000071525574,
+            0.25,
+            0.10499999672174454,
+            1.0
+          ],
+          "afterBaseLinearRGBA": [
+            0.21070000529289246,
+            0.14000000059604645,
+            0.06825000047683716,
+            1.0
+          ],
+          "roughness": 0.9599999785423279,
+          "metallic": 0.0
+        },
+        {
+          "sourceMaterial": "Pallet / honey 1",
+          "material": "v03 / Pallet / honey 1",
+          "repairTone": false,
+          "usedBy": [
+            "Recessed floor plank.001"
+          ],
+          "beforeBaseLinearRGBA": [
+            0.550000011920929,
+            0.3400000035762787,
+            0.1599999964237213,
+            1.0
+          ],
+          "afterBaseLinearRGBA": [
+            0.2695000171661377,
+            0.19040000438690186,
+            0.10399999469518661,
+            1.0
+          ],
+          "roughness": 0.9599999785423279,
+          "metallic": 0.0
+        },
+        {
+          "sourceMaterial": "Pallet / honey 1.001",
+          "material": "v03 / Pallet / honey 1.001",
+          "repairTone": false,
+          "usedBy": [
+            "Horizontal pallet slat.002"
+          ],
+          "beforeBaseLinearRGBA": [
+            0.550000011920929,
+            0.3400000035762787,
+            0.1599999964237213,
+            1.0
+          ],
+          "afterBaseLinearRGBA": [
+            0.2695000171661377,
+            0.19040000438690186,
+            0.10399999469518661,
+            1.0
+          ],
+          "roughness": 0.9599999785423279,
+          "metallic": 0.0
+        },
+        {
+          "sourceMaterial": "Pallet / honey 1.002",
+          "material": "v03 / Pallet / honey 1.002",
+          "repairTone": false,
+          "usedBy": [
+            "Horizontal pallet slat.007"
+          ],
+          "beforeBaseLinearRGBA": [
+            0.550000011920929,
+            0.3400000035762787,
+            0.1599999964237213,
+            1.0
+          ],
+          "afterBaseLinearRGBA": [
+            0.2695000171661377,
+            0.19040000438690186,
+            0.10399999469518661,
+            1.0
+          ],
+          "roughness": 0.9599999785423279,
+          "metallic": 0.0
+        },
+        {
+          "sourceMaterial": "Pallet / honey 1.003",
+          "material": "v03 / Pallet / honey 1.003",
+          "repairTone": false,
+          "usedBy": [
+            "Horizontal pallet slat.011"
+          ],
+          "beforeBaseLinearRGBA": [
+            0.550000011920929,
+            0.3400000035762787,
+            0.1599999964237213,
+            1.0
+          ],
+          "afterBaseLinearRGBA": [
+            0.2695000171661377,
+            0.19040000438690186,
+            0.10399999469518661,
+            1.0
+          ],
+          "roughness": 0.9599999785423279,
+          "metallic": 0.0
+        },
+        {
+          "sourceMaterial": "Pallet / honey 2",
+          "material": "v03 / Pallet / honey 2",
+          "repairTone": false,
+          "usedBy": [
+            "Horizontal pallet slat",
+            "Recessed floor plank.002"
+          ],
+          "beforeBaseLinearRGBA": [
+            0.6399999856948853,
+            0.41999998688697815,
+            0.2199999988079071,
+            1.0
+          ],
+          "afterBaseLinearRGBA": [
+            0.31360000371932983,
+            0.23519998788833618,
+            0.14300000667572021,
+            1.0
+          ],
+          "roughness": 0.9599999785423279,
+          "metallic": 0.0
+        },
+        {
+          "sourceMaterial": "Pallet / honey 2.001",
+          "material": "v03 / Pallet / honey 2.001",
+          "repairTone": false,
+          "usedBy": [
+            "Horizontal pallet slat.003"
+          ],
+          "beforeBaseLinearRGBA": [
+            0.6399999856948853,
+            0.41999998688697815,
+            0.2199999988079071,
+            1.0
+          ],
+          "afterBaseLinearRGBA": [
+            0.31360000371932983,
+            0.23519998788833618,
+            0.14300000667572021,
+            1.0
+          ],
+          "roughness": 0.9599999785423279,
+          "metallic": 0.0
+        },
+        {
+          "sourceMaterial": "Pallet / honey 3",
+          "material": "v03 / Pallet / honey 3",
+          "repairTone": false,
+          "usedBy": [
+            "Horizontal pallet slat.005",
+            "Horizontal pallet slat.009",
+            "Recessed floor plank.003"
+          ],
+          "beforeBaseLinearRGBA": [
+            0.47999998927116394,
+            0.30000001192092896,
+            0.14000000059604645,
+            1.0
+          ],
+          "afterBaseLinearRGBA": [
+            0.23519998788833618,
+            0.1680000126361847,
+            0.09099999815225601,
+            1.0
+          ],
+          "roughness": 0.9599999785423279,
+          "metallic": 0.0
+        },
+        {
+          "sourceMaterial": "Pallet / honey 3.001",
+          "material": "v03 / Pallet / honey 3.001",
+          "repairTone": false,
+          "usedBy": [
+            "Horizontal pallet slat.006"
+          ],
+          "beforeBaseLinearRGBA": [
+            0.47999998927116394,
+            0.30000001192092896,
+            0.14000000059604645,
+            1.0
+          ],
+          "afterBaseLinearRGBA": [
+            0.23519998788833618,
+            0.1680000126361847,
+            0.09099999815225601,
+            1.0
+          ],
+          "roughness": 0.9599999785423279,
+          "metallic": 0.0
+        }
+      ],
+      "sourceBlend": {
+        "file": "variants/v03/source/wall-master.blend",
+        "bytes": 2063448,
+        "sha256": "ad7f846755666884703dd37ea08b54edc730b728704f8306d7012a57f64934c4"
+      },
+      "model": {
+        "file": "variants/v03/assets/wall-master.glb",
+        "format": "glTF 2.0 GLB",
+        "sha256": "6abf3ecc6eb5cb9a9d2e7cd9ad7c61a6481addd7ad657dd625d0440972cd5577",
+        "bytes": 2121728,
+        "blender": "4.3.2",
+        "exportOptions": {
+          "export_format": "GLB",
+          "use_selection": true,
+          "export_yup": true,
+          "export_normals": true,
+          "export_tangents": true,
+          "export_texcoords": true,
+          "export_materials": "EXPORT",
+          "export_cameras": false,
+          "export_lights": false,
+          "export_animations": false,
+          "export_extras": true,
+          "export_apply": false
+        },
+        "tangentFinishing": "Float32 unit/orthogonal frames restored after Blender four-decimal tangent export; handedness unchanged",
+        "sourceBlendSha256": "ad7f846755666884703dd37ea08b54edc730b728704f8306d7012a57f64934c4",
+        "sourceComponents": 48,
+        "triangles": 11824,
+        "verticesBeforeGltfSplits": 6008,
+        "textures": [
+          {
+            "file": "variants/v03/assets/wall-master-basecolor.png",
+            "role": "baseColor",
+            "size": [
+              1024,
+              1024
+            ],
+            "colorSpace": "sRGB",
+            "embedded": true,
+            "sha256": "8e76a4e0091411c5ea325ee600d55c6865d96ebc4b94403b2ecfce5a31eaf4e5"
+          },
+          {
+            "file": "variants/v03/assets/wall-master-normal.png",
+            "role": "normal",
+            "size": [
+              1024,
+              1024
+            ],
+            "colorSpace": "Non-Color",
+            "embedded": true,
+            "sha256": "8a9766811f1591adb20e1606c4edbc8770d47c47b5f0d9c234c24fec1fb8d139"
+          }
+        ],
+        "materials": [
+          {
+            "name": "Recess soil",
+            "roughness": 0.8500000238418579,
+            "metallic": 0.0
+          },
+          {
+            "name": "v03 / Fresh end grain",
+            "roughness": 0.9599999785423279,
+            "metallic": 0.0
+          },
+          {
+            "name": "v03 / Inset weathered iron / reference 01\u201304",
+            "roughness": 0.8600000143051147,
+            "metallic": 0.3199999928474426
+          },
+          {
+            "name": "v03 / Pallet / honey 2",
+            "roughness": 0.9599999785423279,
+            "metallic": 0.0
+          },
+          {
+            "name": "v03 / Pallet / honey 0",
+            "roughness": 0.9599999785423279,
+            "metallic": 0.0
+          },
+          {
+            "name": "v03 / Pallet / honey 1.001",
+            "roughness": 0.9599999785423279,
+            "metallic": 0.0
+          },
+          {
+            "name": "v03 / Pallet / honey 2.001",
+            "roughness": 0.9599999785423279,
+            "metallic": 0.0
+          },
+          {
+            "name": "v03 / Pallet / honey 3",
+            "roughness": 0.9599999785423279,
+            "metallic": 0.0
+          },
+          {
+            "name": "v03 / Pallet / honey 3.001",
+            "roughness": 0.9599999785423279,
+            "metallic": 0.0
+          },
+          {
+            "name": "v03 / Pallet / honey 1.002",
+            "roughness": 0.9599999785423279,
+            "metallic": 0.0
+          },
+          {
+            "name": "v03 / Pallet / honey 0.001",
+            "roughness": 0.9599999785423279,
+            "metallic": 0.0
+          },
+          {
+            "name": "v03 / Pallet / honey 1.003",
+            "roughness": 0.9599999785423279,
+            "metallic": 0.0
+          },
+          {
+            "name": "v03 / Pallet / honey 1",
+            "roughness": 0.9599999785423279,
+            "metallic": 0.0
+          }
+        ],
+        "coordinates": {
+          "cellUnits": 1,
+          "source": "Right handed Blender +X right, -Y forward/increasing row, +Z up",
+          "glTF": "Right handed +X right, +Z forward/increasing row, +Y up",
+          "conversion": "(X,Y,Z) Blender \u2192 (X,Z,-Y) glTF",
+          "rootPivot": [
+            0,
+            0,
+            0
+          ],
+          "rootScale": [
+            1,
+            1,
+            1
+          ],
+          "sourceBounds": [
+            [
+              -0.5,
+              0.5
+            ],
+            [
+              -0.5,
+              0.5
+            ],
+            [
+              0,
+              0.595
+            ]
+          ],
+          "glTFBounds": [
+            [
+              -0.5,
+              0.5
+            ],
+            [
+              0,
+              0.595
+            ],
+            [
+              -0.5,
+              0.5
+            ]
+          ]
+        },
+        "materialTreatment": {
+          "bake": "1024\u00b2 shared UV atlas; actual Principled Base Color via temporary EMIT surface (no lighting/AO), tangent-space NORMAL; 16 fixed samples, seed 30, 4px margin",
+          "retained": "Original roughness/metallic scalar per material; evaluated bevel geometry and split/weighted normals",
+          "losses": [
+            "Procedural grain becomes finite-resolution 8-bit textures; very fine detail/filtering can differ at close range.",
+            "Blender shader graphs and editable modifiers are retained only in the original .blend.",
+            "Core glTF metallic/roughness shading omits Blender-specific default specular-IOR treatment; render engines may differ."
+          ],
+          "unbaked": "No directional lighting, cast shadows, AO, studio background, camera or AgX grade in PBR maps"
+        },
+        "license": "Original procedural geometry under repository contribution terms; reference concepts are not used as model textures.",
+        "rebuild": "blender -b -t 2 --python-exit-code 1 --python docs/art/batch-02/source/portable.py -- v03",
+        "variantId": "v03",
+        "geometryPayloadSha256": "70665297cba7b51a4df4d834e757952d0fbcf5132d4c9389be0de2dd7bc85974"
+      },
+      "assets": [
+        {
+          "file": "variants/v03/assets/wall-daylight-body.png",
+          "role": "wall",
+          "layer": "body",
+          "mood": "daylight",
+          "size": [
+            256,
+            352
+          ],
+          "anchor": [
+            128,
+            208
+          ],
+          "cellWidth": 224,
+          "projectionSamples": {
+            "(0, 0, 0)": [
+              128.0,
+              207.99987506866455
+            ],
+            "(1, 0, 0)": [
+              352.0,
+              207.99987506866455
+            ],
+            "(0, -1, 0)": [
+              128.0,
+              397.96265745162964
+            ],
+            "(0, 0, 1)": [
+              128.0,
+              89.29795837402344
+            ]
+          },
+          "meshSha256": "f5036e15e46dd467989aefed31593f97332e1c14725771006abb9a1accece9d2",
+          "bounds": [
+            15,
+            43,
+            241,
+            304
+          ],
+          "outerTransparentPixels": 15,
+          "bytes": 104038,
+          "decodedBytes": 360448,
+          "sha256": "fc1d3b81e7df9ab4316a31e7f785c5134242c313a6d3d05c39bc8e59c97ba23d"
+        },
+        {
+          "file": "variants/v03/assets/wall-daylight-shadow.png",
+          "role": "wall",
+          "layer": "shadow",
+          "mood": "daylight",
+          "size": [
+            256,
+            256
+          ],
+          "anchor": [
+            128,
+            150
+          ],
+          "cellWidth": 112,
+          "projectionSamples": {
+            "(0, 0, 0)": [
+              256.0,
+              299.99993896484375
+            ],
+            "(1, 0, 0)": [
+              480.0,
+              299.99993896484375
+            ],
+            "(0, -1, 0)": [
+              256.0,
+              489.96270179748535
+            ],
+            "(0, 0, 1)": [
+              256.0,
+              181.29803466796875
+            ]
+          },
+          "meshSha256": "f5036e15e46dd467989aefed31593f97332e1c14725771006abb9a1accece9d2",
+          "bounds": [
+            44,
+            78,
+            231,
+            234
+          ],
+          "outerTransparentPixels": 22,
+          "bytes": 18824,
+          "decodedBytes": 262144,
+          "sha256": "c4350945b4d1997bb9839b28da725404565c283d1c6110f6cc960fea072a4cc7"
+        },
+        {
+          "file": "variants/v03/assets/wall-dusk-body.png",
+          "role": "wall",
+          "layer": "body",
+          "mood": "dusk",
+          "size": [
+            256,
+            352
+          ],
+          "anchor": [
+            128,
+            208
+          ],
+          "cellWidth": 224,
+          "projectionSamples": {
+            "(0, 0, 0)": [
+              128.0,
+              207.99987506866455
+            ],
+            "(1, 0, 0)": [
+              352.0,
+              207.99987506866455
+            ],
+            "(0, -1, 0)": [
+              128.0,
+              397.96265745162964
+            ],
+            "(0, 0, 1)": [
+              128.0,
+              89.29795837402344
+            ]
+          },
+          "meshSha256": "f5036e15e46dd467989aefed31593f97332e1c14725771006abb9a1accece9d2",
+          "bounds": [
+            15,
+            43,
+            241,
+            304
+          ],
+          "outerTransparentPixels": 15,
+          "bytes": 87565,
+          "decodedBytes": 360448,
+          "sha256": "8e39325a55da10620859e9f6921bac857e266fb8efc5dd49c910ef0acd374dee"
+        },
+        {
+          "file": "variants/v03/assets/wall-dusk-shadow.png",
+          "role": "wall",
+          "layer": "shadow",
+          "mood": "dusk",
+          "size": [
+            256,
+            256
+          ],
+          "anchor": [
+            128,
+            150
+          ],
+          "cellWidth": 112,
+          "projectionSamples": {
+            "(0, 0, 0)": [
+              256.0,
+              299.99993896484375
+            ],
+            "(1, 0, 0)": [
+              480.0,
+              299.99993896484375
+            ],
+            "(0, -1, 0)": [
+              256.0,
+              489.96270179748535
+            ],
+            "(0, 0, 1)": [
+              256.0,
+              181.29803466796875
+            ]
+          },
+          "meshSha256": "f5036e15e46dd467989aefed31593f97332e1c14725771006abb9a1accece9d2",
+          "bounds": [
+            39,
+            78,
+            230,
+            237
+          ],
+          "outerTransparentPixels": 19,
+          "bytes": 19449,
+          "decodedBytes": 262144,
+          "sha256": "43bdbb8ea2663acee866bcf92b0aaa974d891b211d332a2e1f700662196288cc"
+        }
+      ]
+    },
+    {
+      "id": "v04",
+      "name": "Sun-bleached / worn timber",
+      "approval": "proposed / owner visual approval pending",
+      "geometry": {
+        "bounds": [
+          [
+            -0.5,
+            0.5
+          ],
+          [
+            -0.5,
+            0.5
+          ],
+          [
+            0.0,
+            0.5949999690055847
+          ]
+        ],
+        "footprint": [
+          [
+            -0.5,
+            -0.5
+          ],
+          [
+            0.5,
+            -0.5
+          ],
+          [
+            0.5,
+            0.5
+          ],
+          [
+            -0.5,
+            0.5
+          ]
+        ],
+        "groundAnchor": [
+          0,
+          0,
+          0
+        ],
+        "height": 0.595,
+        "meshSha256": "f5036e15e46dd467989aefed31593f97332e1c14725771006abb9a1accece9d2",
+        "objects": 48
+      },
+      "projection": {
+        "elevation": 58,
+        "yaw": 0,
+        "radius": 25,
+        "bodyOrthoScale": 1.5714285714285714,
+        "cellWidth": 224,
+        "groundPitch": 189.9627735390394,
+        "heightRise": 118.7019151882379
+      },
+      "color": {
+        "transform": "AgX",
+        "look": "Medium High Contrast",
+        "output": "sRGB / straight RGBA8",
+        "exposure": 0,
+        "gamma": 1
+      },
+      "lighting": {
+        "daylight": {
+          "key": {
+            "position": [
+              -6,
+              -3,
+              12
+            ],
+            "energy": 1800.0,
+            "color": [
+              1.0,
+              0.8399999737739563,
+              0.6299999952316284
+            ],
+            "size": 7
+          },
+          "fill": {
+            "position": [
+              4,
+              6,
+              10
+            ],
+            "energy": 650.0,
+            "color": [
+              0.6600000262260437,
+              0.7900000214576721,
+              1.0
+            ],
+            "size": 9
+          },
+          "world": [
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        "dusk": {
+          "key": {
+            "position": [
+              -6,
+              -3,
+              12
+            ],
+            "energy": 1050.0,
+            "color": [
+              0.47999998927116394,
+              0.6200000047683716,
+              1.0
+            ],
+            "size": 7
+          },
+          "fill": {
+            "position": [
+              4,
+              6,
+              10
+            ],
+            "energy": 550.0,
+            "color": [
+              0.44999998807907104,
+              0.550000011920929,
+              0.8500000238418579
+            ],
+            "size": 9
+          },
+          "world": [
+            0.11999999731779099,
+            0.15000000596046448,
+            0.2199999988079071
+          ]
+        }
+      },
+      "materials": [
+        {
+          "sourceMaterial": "Fresh end grain",
+          "material": "v04 / Fresh end grain",
+          "repairTone": false,
+          "usedBy": [
+            "Corner upright",
+            "Corner upright.001",
+            "Corner upright.002",
+            "Corner upright.003",
+            "End-grain corner cap",
+            "End-grain corner cap.001",
+            "End-grain corner cap.002",
+            "End-grain corner cap.003"
+          ],
+          "beforeBaseLinearRGBA": [
+            0.7099999785423279,
+            0.5,
+            0.2800000011920929,
+            1.0
+          ],
+          "afterBaseLinearRGBA": [
+            0.7131999731063843,
+            0.5479999780654907,
+            0.35359999537467957,
+            1.0
+          ],
+          "roughness": 0.9399999976158142,
+          "metallic": 0.0
+        },
+        {
+          "sourceMaterial": "Inset weathered iron / reference 01\u201304",
+          "material": "v04 / Inset weathered iron / reference 01\u201304",
+          "repairTone": false,
+          "usedBy": [
+            "Inset cap bolt",
+            "Front/back bolt",
+            "Side bolt",
+            "Front/back bolt.001",
+            "Side bolt.001",
+            "Inset cap bolt.001",
+            "Front/back bolt.002",
+            "Side bolt.002",
+            "Front/back bolt.003",
+            "Side bolt.003",
+            "Inset cap bolt.002",
+            "Front/back bolt.004",
+            "Side bolt.004",
+            "Front/back bolt.005",
+            "Side bolt.005",
+            "Inset cap bolt.003",
+            "Front/back bolt.006",
+            "Side bolt.006",
+            "Front/back bolt.007",
+            "Side bolt.007"
+          ],
+          "beforeBaseLinearRGBA": [
+            0.18000000715255737,
+            0.17000000178813934,
+            0.14000000059604645,
+            1.0
+          ],
+          "afterBaseLinearRGBA": [
+            0.20000000298023224,
+            0.1899999976158142,
+            0.1599999964237213,
+            1.0
+          ],
+          "roughness": 0.7799999713897705,
+          "metallic": 0.44999998807907104
+        },
+        {
+          "sourceMaterial": "Pallet / honey 0",
+          "material": "v04 / Pallet / honey 0",
+          "repairTone": false,
+          "usedBy": [
+            "Horizontal pallet slat.001",
+            "Horizontal pallet slat.004",
+            "Horizontal pallet slat.008",
+            "Recessed floor plank",
+            "Recessed floor plank.004",
+            "Inner frame batten",
+            "Inner frame batten.001"
+          ],
+          "beforeBaseLinearRGBA": [
+            0.4300000071525574,
+            0.25,
+            0.10499999672174454,
+            1.0
+          ],
+          "afterBaseLinearRGBA": [
+            0.4780000150203705,
+            0.33000001311302185,
+            0.18979999423027039,
+            1.0
+          ],
+          "roughness": 0.9399999976158142,
+          "metallic": 0.0
+        },
+        {
+          "sourceMaterial": "Pallet / honey 0.001",
+          "material": "v04 / Pallet / honey 0.001",
+          "repairTone": false,
+          "usedBy": [
+            "Horizontal pallet slat.010"
+          ],
+          "beforeBaseLinearRGBA": [
+            0.4300000071525574,
+            0.25,
+            0.10499999672174454,
+            1.0
+          ],
+          "afterBaseLinearRGBA": [
+            0.4780000150203705,
+            0.33000001311302185,
+            0.18979999423027039,
+            1.0
+          ],
+          "roughness": 0.9399999976158142,
+          "metallic": 0.0
+        },
+        {
+          "sourceMaterial": "Pallet / honey 1",
+          "material": "v04 / Pallet / honey 1",
+          "repairTone": false,
+          "usedBy": [
+            "Recessed floor plank.001"
+          ],
+          "beforeBaseLinearRGBA": [
+            0.550000011920929,
+            0.3400000035762787,
+            0.1599999964237213,
+            1.0
+          ],
+          "afterBaseLinearRGBA": [
+            0.5595999956130981,
+            0.3912000060081482,
+            0.2272000014781952,
+            1.0
+          ],
+          "roughness": 0.9399999976158142,
+          "metallic": 0.0
+        },
+        {
+          "sourceMaterial": "Pallet / honey 1.001",
+          "material": "v04 / Pallet / honey 1.001",
+          "repairTone": false,
+          "usedBy": [
+            "Horizontal pallet slat.002"
+          ],
+          "beforeBaseLinearRGBA": [
+            0.550000011920929,
+            0.3400000035762787,
+            0.1599999964237213,
+            1.0
+          ],
+          "afterBaseLinearRGBA": [
+            0.5595999956130981,
+            0.3912000060081482,
+            0.2272000014781952,
+            1.0
+          ],
+          "roughness": 0.9399999976158142,
+          "metallic": 0.0
+        },
+        {
+          "sourceMaterial": "Pallet / honey 1.002",
+          "material": "v04 / Pallet / honey 1.002",
+          "repairTone": false,
+          "usedBy": [
+            "Horizontal pallet slat.007"
+          ],
+          "beforeBaseLinearRGBA": [
+            0.550000011920929,
+            0.3400000035762787,
+            0.1599999964237213,
+            1.0
+          ],
+          "afterBaseLinearRGBA": [
+            0.5595999956130981,
+            0.3912000060081482,
+            0.2272000014781952,
+            1.0
+          ],
+          "roughness": 0.9399999976158142,
+          "metallic": 0.0
+        },
+        {
+          "sourceMaterial": "Pallet / honey 1.003",
+          "material": "v04 / Pallet / honey 1.003",
+          "repairTone": false,
+          "usedBy": [
+            "Horizontal pallet slat.011"
+          ],
+          "beforeBaseLinearRGBA": [
+            0.550000011920929,
+            0.3400000035762787,
+            0.1599999964237213,
+            1.0
+          ],
+          "afterBaseLinearRGBA": [
+            0.5595999956130981,
+            0.3912000060081482,
+            0.2272000014781952,
+            1.0
+          ],
+          "roughness": 0.9399999976158142,
+          "metallic": 0.0
+        },
+        {
+          "sourceMaterial": "Pallet / honey 2",
+          "material": "v04 / Pallet / honey 2",
+          "repairTone": false,
+          "usedBy": [
+            "Horizontal pallet slat",
+            "Recessed floor plank.002"
+          ],
+          "beforeBaseLinearRGBA": [
+            0.6399999856948853,
+            0.41999998688697815,
+            0.2199999988079071,
+            1.0
+          ],
+          "afterBaseLinearRGBA": [
+            0.6208000183105469,
+            0.4456000030040741,
+            0.2680000066757202,
+            1.0
+          ],
+          "roughness": 0.9399999976158142,
+          "metallic": 0.0
+        },
+        {
+          "sourceMaterial": "Pallet / honey 2.001",
+          "material": "v04 / Pallet / honey 2.001",
+          "repairTone": false,
+          "usedBy": [
+            "Horizontal pallet slat.003"
+          ],
+          "beforeBaseLinearRGBA": [
+            0.6399999856948853,
+            0.41999998688697815,
+            0.2199999988079071,
+            1.0
+          ],
+          "afterBaseLinearRGBA": [
+            0.6208000183105469,
+            0.4456000030040741,
+            0.2680000066757202,
+            1.0
+          ],
+          "roughness": 0.9399999976158142,
+          "metallic": 0.0
+        },
+        {
+          "sourceMaterial": "Pallet / honey 3",
+          "material": "v04 / Pallet / honey 3",
+          "repairTone": false,
+          "usedBy": [
+            "Horizontal pallet slat.005",
+            "Horizontal pallet slat.009",
+            "Recessed floor plank.003"
+          ],
+          "beforeBaseLinearRGBA": [
+            0.47999998927116394,
+            0.30000001192092896,
+            0.14000000059604645,
+            1.0
+          ],
+          "afterBaseLinearRGBA": [
+            0.5119999647140503,
+            0.36400002241134644,
+            0.21359999477863312,
+            1.0
+          ],
+          "roughness": 0.9399999976158142,
+          "metallic": 0.0
+        },
+        {
+          "sourceMaterial": "Pallet / honey 3.001",
+          "material": "v04 / Pallet / honey 3.001",
+          "repairTone": false,
+          "usedBy": [
+            "Horizontal pallet slat.006"
+          ],
+          "beforeBaseLinearRGBA": [
+            0.47999998927116394,
+            0.30000001192092896,
+            0.14000000059604645,
+            1.0
+          ],
+          "afterBaseLinearRGBA": [
+            0.5119999647140503,
+            0.36400002241134644,
+            0.21359999477863312,
+            1.0
+          ],
+          "roughness": 0.9399999976158142,
+          "metallic": 0.0
+        }
+      ],
+      "sourceBlend": {
+        "file": "variants/v04/source/wall-master.blend",
+        "bytes": 2063448,
+        "sha256": "a6a227e002ac4db1adf077f53b694aa3abafd9ac115b99660115c0980d4c2743"
+      },
+      "model": {
+        "file": "variants/v04/assets/wall-master.glb",
+        "format": "glTF 2.0 GLB",
+        "sha256": "7d970f8fdf9567352ae75e06f00477ec28445722c52d7297bc018141375cb495",
+        "bytes": 2032300,
+        "blender": "4.3.2",
+        "exportOptions": {
+          "export_format": "GLB",
+          "use_selection": true,
+          "export_yup": true,
+          "export_normals": true,
+          "export_tangents": true,
+          "export_texcoords": true,
+          "export_materials": "EXPORT",
+          "export_cameras": false,
+          "export_lights": false,
+          "export_animations": false,
+          "export_extras": true,
+          "export_apply": false
+        },
+        "tangentFinishing": "Float32 unit/orthogonal frames restored after Blender four-decimal tangent export; handedness unchanged",
+        "sourceBlendSha256": "a6a227e002ac4db1adf077f53b694aa3abafd9ac115b99660115c0980d4c2743",
+        "sourceComponents": 48,
+        "triangles": 11824,
+        "verticesBeforeGltfSplits": 6008,
+        "textures": [
+          {
+            "file": "variants/v04/assets/wall-master-basecolor.png",
+            "role": "baseColor",
+            "size": [
+              1024,
+              1024
+            ],
+            "colorSpace": "sRGB",
+            "embedded": true,
+            "sha256": "a93d99993a59505004dce6eb852a5292915d53739f3cd20ea15bf16c5f7f767f"
+          },
+          {
+            "file": "variants/v04/assets/wall-master-normal.png",
+            "role": "normal",
+            "size": [
+              1024,
+              1024
+            ],
+            "colorSpace": "Non-Color",
+            "embedded": true,
+            "sha256": "2111717f4c78e516666c2f7c26a3d7e174b81e0eae1b960e6db202fad7142164"
+          }
+        ],
+        "materials": [
+          {
+            "name": "Recess soil",
+            "roughness": 0.8500000238418579,
+            "metallic": 0.0
+          },
+          {
+            "name": "v04 / Fresh end grain",
+            "roughness": 0.9399999976158142,
+            "metallic": 0.0
+          },
+          {
+            "name": "v04 / Inset weathered iron / reference 01\u201304",
+            "roughness": 0.7799999713897705,
+            "metallic": 0.44999998807907104
+          },
+          {
+            "name": "v04 / Pallet / honey 2",
+            "roughness": 0.9399999976158142,
+            "metallic": 0.0
+          },
+          {
+            "name": "v04 / Pallet / honey 0",
+            "roughness": 0.9399999976158142,
+            "metallic": 0.0
+          },
+          {
+            "name": "v04 / Pallet / honey 1.001",
+            "roughness": 0.9399999976158142,
+            "metallic": 0.0
+          },
+          {
+            "name": "v04 / Pallet / honey 2.001",
+            "roughness": 0.9399999976158142,
+            "metallic": 0.0
+          },
+          {
+            "name": "v04 / Pallet / honey 3",
+            "roughness": 0.9399999976158142,
+            "metallic": 0.0
+          },
+          {
+            "name": "v04 / Pallet / honey 3.001",
+            "roughness": 0.9399999976158142,
+            "metallic": 0.0
+          },
+          {
+            "name": "v04 / Pallet / honey 1.002",
+            "roughness": 0.9399999976158142,
+            "metallic": 0.0
+          },
+          {
+            "name": "v04 / Pallet / honey 0.001",
+            "roughness": 0.9399999976158142,
+            "metallic": 0.0
+          },
+          {
+            "name": "v04 / Pallet / honey 1.003",
+            "roughness": 0.9399999976158142,
+            "metallic": 0.0
+          },
+          {
+            "name": "v04 / Pallet / honey 1",
+            "roughness": 0.9399999976158142,
+            "metallic": 0.0
+          }
+        ],
+        "coordinates": {
+          "cellUnits": 1,
+          "source": "Right handed Blender +X right, -Y forward/increasing row, +Z up",
+          "glTF": "Right handed +X right, +Z forward/increasing row, +Y up",
+          "conversion": "(X,Y,Z) Blender \u2192 (X,Z,-Y) glTF",
+          "rootPivot": [
+            0,
+            0,
+            0
+          ],
+          "rootScale": [
+            1,
+            1,
+            1
+          ],
+          "sourceBounds": [
+            [
+              -0.5,
+              0.5
+            ],
+            [
+              -0.5,
+              0.5
+            ],
+            [
+              0,
+              0.595
+            ]
+          ],
+          "glTFBounds": [
+            [
+              -0.5,
+              0.5
+            ],
+            [
+              0,
+              0.595
+            ],
+            [
+              -0.5,
+              0.5
+            ]
+          ]
+        },
+        "materialTreatment": {
+          "bake": "1024\u00b2 shared UV atlas; actual Principled Base Color via temporary EMIT surface (no lighting/AO), tangent-space NORMAL; 16 fixed samples, seed 30, 4px margin",
+          "retained": "Original roughness/metallic scalar per material; evaluated bevel geometry and split/weighted normals",
+          "losses": [
+            "Procedural grain becomes finite-resolution 8-bit textures; very fine detail/filtering can differ at close range.",
+            "Blender shader graphs and editable modifiers are retained only in the original .blend.",
+            "Core glTF metallic/roughness shading omits Blender-specific default specular-IOR treatment; render engines may differ."
+          ],
+          "unbaked": "No directional lighting, cast shadows, AO, studio background, camera or AgX grade in PBR maps"
+        },
+        "license": "Original procedural geometry under repository contribution terms; reference concepts are not used as model textures.",
+        "rebuild": "blender -b -t 2 --python-exit-code 1 --python docs/art/batch-02/source/portable.py -- v04",
+        "variantId": "v04",
+        "geometryPayloadSha256": "70665297cba7b51a4df4d834e757952d0fbcf5132d4c9389be0de2dd7bc85974"
+      },
+      "assets": [
+        {
+          "file": "variants/v04/assets/wall-daylight-body.png",
+          "role": "wall",
+          "layer": "body",
+          "mood": "daylight",
+          "size": [
+            256,
+            352
+          ],
+          "anchor": [
+            128,
+            208
+          ],
+          "cellWidth": 224,
+          "projectionSamples": {
+            "(0, 0, 0)": [
+              128.0,
+              207.99987506866455
+            ],
+            "(1, 0, 0)": [
+              352.0,
+              207.99987506866455
+            ],
+            "(0, -1, 0)": [
+              128.0,
+              397.96265745162964
+            ],
+            "(0, 0, 1)": [
+              128.0,
+              89.29795837402344
+            ]
+          },
+          "meshSha256": "f5036e15e46dd467989aefed31593f97332e1c14725771006abb9a1accece9d2",
+          "bounds": [
+            15,
+            43,
+            241,
+            304
+          ],
+          "outerTransparentPixels": 15,
+          "bytes": 114875,
+          "decodedBytes": 360448,
+          "sha256": "05a4007be05053a2ca3595b1aebec3e578bd6264e3139047df60987c42782c3e"
+        },
+        {
+          "file": "variants/v04/assets/wall-daylight-shadow.png",
+          "role": "wall",
+          "layer": "shadow",
+          "mood": "daylight",
+          "size": [
+            256,
+            256
+          ],
+          "anchor": [
+            128,
+            150
+          ],
+          "cellWidth": 112,
+          "projectionSamples": {
+            "(0, 0, 0)": [
+              256.0,
+              299.99993896484375
+            ],
+            "(1, 0, 0)": [
+              480.0,
+              299.99993896484375
+            ],
+            "(0, -1, 0)": [
+              256.0,
+              489.96270179748535
+            ],
+            "(0, 0, 1)": [
+              256.0,
+              181.29803466796875
+            ]
+          },
+          "meshSha256": "f5036e15e46dd467989aefed31593f97332e1c14725771006abb9a1accece9d2",
+          "bounds": [
+            47,
+            78,
+            231,
+            233
+          ],
+          "outerTransparentPixels": 23,
+          "bytes": 18458,
+          "decodedBytes": 262144,
+          "sha256": "228d3fad1d955f00920f57d40d11e456d916c3f6bd85fb0a38024463e2988422"
+        },
+        {
+          "file": "variants/v04/assets/wall-dusk-body.png",
+          "role": "wall",
+          "layer": "body",
+          "mood": "dusk",
+          "size": [
+            256,
+            352
+          ],
+          "anchor": [
+            128,
+            208
+          ],
+          "cellWidth": 224,
+          "projectionSamples": {
+            "(0, 0, 0)": [
+              128.0,
+              207.99987506866455
+            ],
+            "(1, 0, 0)": [
+              352.0,
+              207.99987506866455
+            ],
+            "(0, -1, 0)": [
+              128.0,
+              397.96265745162964
+            ],
+            "(0, 0, 1)": [
+              128.0,
+              89.29795837402344
+            ]
+          },
+          "meshSha256": "f5036e15e46dd467989aefed31593f97332e1c14725771006abb9a1accece9d2",
+          "bounds": [
+            15,
+            43,
+            241,
+            304
+          ],
+          "outerTransparentPixels": 15,
+          "bytes": 103007,
+          "decodedBytes": 360448,
+          "sha256": "c447f350b6481034494d7b66268698e5a502c3ece67f3e4dd2444255fb7ca2fb"
+        },
+        {
+          "file": "variants/v04/assets/wall-dusk-shadow.png",
+          "role": "wall",
+          "layer": "shadow",
+          "mood": "dusk",
+          "size": [
+            256,
+            256
+          ],
+          "anchor": [
+            128,
+            150
+          ],
+          "cellWidth": 112,
+          "projectionSamples": {
+            "(0, 0, 0)": [
+              256.0,
+              299.99993896484375
+            ],
+            "(1, 0, 0)": [
+              480.0,
+              299.99993896484375
+            ],
+            "(0, -1, 0)": [
+              256.0,
+              489.96270179748535
+            ],
+            "(0, 0, 1)": [
+              256.0,
+              181.29803466796875
+            ]
+          },
+          "meshSha256": "f5036e15e46dd467989aefed31593f97332e1c14725771006abb9a1accece9d2",
+          "bounds": [
+            43,
+            78,
+            230,
+            235
+          ],
+          "outerTransparentPixels": 21,
+          "bytes": 19136,
+          "decodedBytes": 262144,
+          "sha256": "4a02aa93f79114ba67cf4ce245010e6ed04814d5c7bd4ef72768e775d4005452"
+        }
+      ]
+    }
+  ],
+  "selector": "fc-wall-fnv1a32-v1; preview-only UTF-8 FNV-1a of JSON [mazeSeed,row,column], 0x7feb352d/0x846ca68b avalanche, modulo four",
+  "sharedGeometrySha256": "f5036e15e46dd467989aefed31593f97332e1c14725771006abb9a1accece9d2",
+  "sharedPortableGeometrySha256": "70665297cba7b51a4df4d834e757952d0fbcf5132d4c9389be0de2dd7bc85974",
+  "portableGeometryHashMethod": "Ordered POSITION/NORMAL/TANGENT/TEXCOORD/index accessor metadata and packed bytes; excludes materials/images",
+  "upstreamHashes": {
+    "docs/art/batch-01/assets/ground-daylight-body.png": "018e696cb42fd74d9a8401f0bb66ee1b756a524dd29e427d2b3ea53ef0640d27",
+    "docs/art/batch-01/assets/ground-dusk-body.png": "f97990cf687ac8f9fbe56e7e3ab9138849c3990bd4c6a468dd396dded782d560",
+    "docs/art/batch-01/assets/manifest.json": "b3660ef76d66ba27fb084331dc3e91bebe5825b74021dd5be1b86fe1ab809d76",
+    "docs/art/batch-01/assets/wall-daylight-body.png": "ca03f87fd44094a70b3b37997cdd181e6d1bc7edd5f92a83fa38bfbe71694afd",
+    "docs/art/batch-01/assets/wall-daylight-shadow.png": "007076dbba91dd03603bdf700ac0ddef33204ed6e8df9a11ccc013464fe431db",
+    "docs/art/batch-01/assets/wall-dusk-body.png": "545e00aacb08bc0d009e87ea6c3697b5a17611277a45826a32611031c6cc63a5",
+    "docs/art/batch-01/assets/wall-dusk-shadow.png": "8dc1a767bca098af3665f798ebd1edefedf2afa9ff9782b770f60fd3f56d3e36",
+    "docs/art/batch-01/assets/wall-master-basecolor.png": "16297ed7bab2012b24ee52b7e383826220ac40a65bde5c2530c6bb0f88a21a65",
+    "docs/art/batch-01/assets/wall-master-normal.png": "eccb8c1e3e914dbf7b36f3ad9a21f170df1b622b6a5cc167c70d8aa481f4325e",
+    "docs/art/batch-01/assets/wall-master.glb": "4502031313c4fbd914480cb17cb6a9808a3dbe8ea56d44f54a530a1778d56db7",
+    "docs/art/batch-01/source/audit-glb.py": "52f67a29173efc118dc2b3ac380ea162ddb7cf2984cee87d94a7142abc628d1f",
+    "docs/art/batch-01/source/export-glb.py": "3f6e935c63ea8d5f4863f9893095468c43c19fd130a57e54c0df990bd2037143",
+    "docs/art/batch-01/source/fixtures.mjs": "d0b3794395e6841fc08da12a91667b2c21027bf86eb7d945f75a6dc46ae18191",
+    "docs/art/batch-01/source/wall-master.blend": "452d1f3bcce4c065ec08dcc8fcc67c9413d1f2cb16ebf1cabc65ed4e2b4a06ef"
+  },
+  "sourceHashes": {
+    "source/approved-inputs.json": "63c1d38be221ddf85e7928e52aa951e13ae7b8f677dfc8638be1849a62c07a4a",
+    "source/audit-source.py": "c79519be76ae41f18f6c212de23f7777b8304ad9f362c35d11b9169f4f4ba876",
+    "source/capture.cjs": "dd480c0e14f6d7265a1b8891233836f055d7324089e07ac8a97d5db82ae24fb5",
+    "source/common.py": "47d27511daf4af241136ad4b15d62ef35fb517a9616c5bcc36a881d3ed67ba61",
+    "source/finish.py": "f5880795c31292430bbaffae25a0ec4b2fab4c41db2a6b0b46c5e8e66e5a25a2",
+    "source/fixtures.mjs": "75f4183baf8a64632e5eb255b3579d2ff2c2024c8901310e50cb098aeb68e6ee",
+    "source/package-evidence.py": "f6d9d465440ce887cc10cb401628ab2a39e4741f72cf17663a181cc48bdd970f",
+    "source/portable.py": "0ef252fb2d3bcc911e70b0441ff09cf7e85ffaece87274378adc03186fe397b9",
+    "source/render.py": "112375c3dc61b3ee5b98385a398b15c05732acfd1d1709b7a853bc96b26a789e",
+    "source/repeat-portable.py": "49fc3c3ca45a46d0fdb719cdc7c9ed484899629ea3e4f76fa2f085b21954c70f",
+    "source/selection.mjs": "d245d3f2eddfc6b56b11a703d5f16d0bcdffea8a9aafb0f425bd18e859a7449a",
+    "source/selection.test.mjs": "e10c65827595a02b0b4b72db19f8bcd94edff892024f377be29a7852ecf7cdc0",
+    "source/validate.py": "2767ca944432dfaab0ad916ba179c59a3a5d5a1f90ab75d31a424277c34ea153",
+    "source/viewer.mjs": "2f302932211b41b34170511c98f17612fc4ba260e53833e9b0182fb3a52a696f"
+  },
+  "license": "Original procedural geometry derived from repository PR 38 under repository contribution terms. Uploaded concepts are reference only; no new rights claim.",
+  "provenance": "Material-only derivatives of owner-approved Batch 01; no concept pixels used as textures",
+  "limits": [
+    "No production runtime imports, flags, gameplay or data changes.",
+    "GLBs preserve the 11,824-triangle/13-material archival geometry, not a phone-certified LOD.",
+    "1024\u00b2 PBR maps approximate procedural grain; finite atlas/filtering/shader losses remain.",
+    "Ground seams, vertical lantern relighting, physical-device/GPU/accessibility and ranked camera fairness remain deferred."
+  ],
+  "totals": {
+    "treatments": 4,
+    "newTreatments": 3,
+    "newSpriteImages": 12,
+    "activeMoodWallRgbaBytes": 2490368,
+    "allMoodWallRgbaBytes": 4980736,
+    "spritePngBytesByMood": {
+      "daylight": 523215,
+      "dusk": 468032
+    },
+    "glbBytes": 8386620
+  }
+}
