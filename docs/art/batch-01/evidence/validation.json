@@ -1,0 +1,192 @@
+{
+  "status": "PASS",
+  "assets": [
+    {
+      "file": "wall-daylight-body.png",
+      "mode": "RGBA",
+      "bounds": [
+        15,
+        43,
+        241,
+        304
+      ],
+      "zeroAlphaBorder": 15,
+      "sha256": "ca03f87fd44094a70b3b37997cdd181e6d1bc7edd5f92a83fa38bfbe71694afd",
+      "dilatedTransparentEdgePixels": 972
+    },
+    {
+      "file": "wall-daylight-shadow.png",
+      "mode": "RGBA",
+      "bounds": [
+        47,
+        78,
+        231,
+        233
+      ],
+      "zeroAlphaBorder": 23,
+      "sha256": "007076dbba91dd03603bdf700ac0ddef33204ed6e8df9a11ccc013464fe431db",
+      "dilatedTransparentEdgePixels": 888
+    },
+    {
+      "file": "ground-daylight-body.png",
+      "mode": "RGBA",
+      "bounds": [
+        15,
+        112,
+        241,
+        304
+      ],
+      "zeroAlphaBorder": 15,
+      "sha256": "018e696cb42fd74d9a8401f0bb66ee1b756a524dd29e427d2b3ea53ef0640d27",
+      "dilatedTransparentEdgePixels": 832
+    },
+    {
+      "file": "wall-dusk-body.png",
+      "mode": "RGBA",
+      "bounds": [
+        15,
+        43,
+        241,
+        304
+      ],
+      "zeroAlphaBorder": 15,
+      "sha256": "545e00aacb08bc0d009e87ea6c3697b5a17611277a45826a32611031c6cc63a5",
+      "dilatedTransparentEdgePixels": 972
+    },
+    {
+      "file": "wall-dusk-shadow.png",
+      "mode": "RGBA",
+      "bounds": [
+        42,
+        78,
+        230,
+        235
+      ],
+      "zeroAlphaBorder": 21,
+      "sha256": "8dc1a767bca098af3665f798ebd1edefedf2afa9ff9782b770f60fd3f56d3e36",
+      "dilatedTransparentEdgePixels": 874
+    },
+    {
+      "file": "ground-dusk-body.png",
+      "mode": "RGBA",
+      "bounds": [
+        15,
+        112,
+        241,
+        304
+      ],
+      "zeroAlphaBorder": 15,
+      "sha256": "f97990cf687ac8f9fbe56e7e3ab9138849c3990bd4c6a468dd396dded782d560",
+      "dilatedTransparentEdgePixels": 832
+    }
+  ],
+  "sameMoodSilhouettes": {
+    "wall": {
+      "sameNonzeroMask": true,
+      "maxAlphaDelta": 0
+    },
+    "ground": {
+      "sameNonzeroMask": true,
+      "maxAlphaDelta": 0
+    }
+  },
+  "portableModel": {
+    "file": "wall-master.glb",
+    "sha256": "4502031313c4fbd914480cb17cb6a9808a3dbe8ea56d44f54a530a1778d56db7",
+    "cleanReimport": "evidence/glb-reimport.json",
+    "status": "PASS"
+  },
+  "shadowDirection": {
+    "daylight": {
+      "weightedAlphaCentroid": [
+        136.91688958758388,
+        147.014400209024
+      ],
+      "groundAnchor": [
+        128,
+        150
+      ],
+      "direction": "screen upper-right; fixed world +X/+Y key cast direction"
+    },
+    "dusk": {
+      "weightedAlphaCentroid": [
+        134.71686281239715,
+        148.5209164121962
+      ],
+      "groundAnchor": [
+        128,
+        150
+      ],
+      "direction": "screen upper-right; fixed world +X/+Y key cast direction"
+    }
+  },
+  "meshSha256": "f5036e15e46dd467989aefed31593f97332e1c14725771006abb9a1accece9d2",
+  "sourceHashes": {
+    "docs/art/batch-01/source/audit-blend.py": "76551b271e89aa069dc52719a2be55bdf24faba01fb5521f420db764d698330a",
+    "docs/art/batch-01/source/audit-glb.py": "52f67a29173efc118dc2b3ac380ea162ddb7cf2984cee87d94a7142abc628d1f",
+    "docs/art/batch-01/source/capture-glb.cjs": "99f47ddff3f4688592d9600be879d653b385781e1e85f00486a1e006110217ab",
+    "docs/art/batch-01/source/capture.cjs": "94e81ae5e0c3011aeaed39652f44442460e5bf6d703c11f6f47da0fcbe9d9da8",
+    "docs/art/batch-01/source/check-glb-renders.py": "b85017a99216946832df25485835c0e8584a994ff34e0515ba214c85be5aa95b",
+    "docs/art/batch-01/source/check-glb-repeat.py": "43d48499b95b9a961ea8369248eb3274ebba65bd5fbeab7d1573ca091a7f8c97",
+    "docs/art/batch-01/source/export-glb.py": "3f6e935c63ea8d5f4863f9893095468c43c19fd130a57e54c0df990bd2037143",
+    "docs/art/batch-01/source/finish.py": "d3d5b497fc465bed9445d1d3a07209bbebc5fed30639330d51bd46b42003e4a8",
+    "docs/art/batch-01/source/fixtures.mjs": "d0b3794395e6841fc08da12a91667b2c21027bf86eb7d945f75a6dc46ae18191",
+    "docs/art/batch-01/source/package-evidence.py": "b4132cd08db23135d044c85386eb94e5b6dd04ac44dd79e828cffb454f73a601",
+    "docs/art/batch-01/source/render.py": "8bd724af4dbd6343b2c986d937f2b5e3a314333209b9a8d52642b3a15f8a5111",
+    "docs/art/batch-01/source/validate.py": "52ef7165f29a8c02a20d395587e54bb976f8c8280fb88bd59a65a8f7a1b7cc1f",
+    "docs/art/batch-01/source/viewer.mjs": "cfdfc96a16ee431401578cb7f20a6e2978ba95cacafbbea5ff53d0d6fd804863",
+    "docs/art/batch-01/source/wall-master.blend": "452d1f3bcce4c065ec08dcc8fcc67c9413d1f2cb16ebf1cabc65ed4e2b4a06ef"
+  },
+  "referenceChecks": [
+    {
+      "file": "wall_concept_01.png",
+      "actualSha256": "083f18ee4517b2c8c876a89ddf3352805eb2b81afd626139a195504462eaf2f0",
+      "suppliedManifestSha256": "b697c5448fd976051c698c679f8e5cc52fb7eb77146020bdc65488feaa560195",
+      "matchesSuppliedManifest": false
+    },
+    {
+      "file": "wall_concept_02.png",
+      "actualSha256": "faff977daaa2554642f0af4e67fd657103c58fe24664675aeea1391127f8f65a",
+      "suppliedManifestSha256": "f257d9e7167d6ab121f670f9ab89db9436f4fbfaace219ce817e1a691c80aa68",
+      "matchesSuppliedManifest": false
+    },
+    {
+      "file": "wall_concept_03.png",
+      "actualSha256": "86aa61099c8357fa237c584d05a3f924324952c14fc0f78d820ccb87f7462796",
+      "suppliedManifestSha256": "299b47b98b6fd7fa84b760de0ffa2870e897fa65d3c1dbea98c07b50e26f7644",
+      "matchesSuppliedManifest": false
+    },
+    {
+      "file": "wall_concept_04.png",
+      "actualSha256": "18d9a3caf37bcffa0b907dc182024c3cbb3070979c12382d979945a2e9a632c5",
+      "suppliedManifestSha256": "0a61ebf8b507758818198c25ce3ebeacb12e3da681e6face05e153a6656a24cc",
+      "matchesSuppliedManifest": false
+    },
+    {
+      "file": "lighting_daylight_vs_lantern_evening.png",
+      "actualSha256": "c59fda7c6a761b4f50348c115b44cc2c95889350d14ead14eddbe82717f15f4d",
+      "suppliedManifestSha256": "4355e6add7db57cafe138ebaa58cd9f2e90a81b85bf99e6609422ceb27bcb75e",
+      "matchesSuppliedManifest": false
+    }
+  ],
+  "referenceZipEntriesVerified": 5,
+  "warnings": [
+    "All five supplied reference-manifest hashes differ from the actual uploaded ZIP entries; original metadata preserved, actual ZIP hashes recorded."
+  ],
+  "productionIsolation": {
+    "baseline": "ea952aa6b1eafed45143607753210abf23f60867",
+    "protectedGitObjects": {
+      "src": "e050397bb8972339a6a8f696dd9cff0fba548837",
+      "public": "c87de8b55daef1b0ec8467a226c7d2c9b6976840",
+      "package.json": "99dbb6831fffc27556fd73aeeefbd4e12a9567d1",
+      "package-lock.json": "5e67eea951633afc7dd86fa54a1a961c96c37b31",
+      ".github": "122c9861fc996449f0d549ca574f065f888f6fc8"
+    }
+  },
+  "gate": "Owner wall-master approval and independent QA pending; EG-08, EG-09, EG-11 remain open",
+  "limits": [
+    "Headless captures are not physical-phone perception or performance signoff.",
+    "No Safari/Firefox/device/assistive-technology certification.",
+    "Tipi and explorer/fire/extinguisher are reused preview assets, not new deliverables."
+  ]
+}

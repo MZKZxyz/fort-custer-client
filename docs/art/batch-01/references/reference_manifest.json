@@ -1,0 +1,217 @@
+{
+  "schema": "fort-custer-asset-kickoff-v1",
+  "status": "reference-not-production-ready",
+  "camera": {
+    "projection": "ORTHOGRAPHIC",
+    "elevation_deg": 58,
+    "yaw_deg": 0,
+    "ground_projection": "x=p+(col+.5)*t; y=p+(row+.5)*t*sin58-z*t*cos58",
+    "sin58": 0.8480480962,
+    "cos58": 0.5299192642
+  },
+  "pilot_sprite_contract": {
+    "body_px": [
+      256,
+      352
+    ],
+    "body_anchor_px": [
+      128,
+      208
+    ],
+    "body_cell_authoring_px": 224,
+    "shadow_px": [
+      256,
+      256
+    ],
+    "shadow_anchor_px": [
+      128,
+      150
+    ],
+    "shadow_cell_authoring_px": 112,
+    "logical_tile_display_px": [
+      36,
+      48
+    ],
+    "rgba": "straight-alpha,sRGB,transparent-edge RGB dilation"
+  },
+  "reference_assets": [
+    {
+      "file": "wall_concept_01.png",
+      "type": "reference-only",
+      "source": "ChatGPT Image Oct 26, 2026, 10_26_13 PM-1.png",
+      "sha256": "b697c5448fd976051c698c679f8e5cc52fb7eb77146020bdc65488feaa560195",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_bbox_gt_32": [
+        140,
+        90,
+        1149,
+        1191
+      ],
+      "alpha_bbox_nonzero": [
+        0,
+        47,
+        1240,
+        1198
+      ],
+      "transparent_pixel_fraction": 0.5268,
+      "alpha_gt_10_edge_counts": {
+        "top": 0,
+        "bottom": 0,
+        "left": 0,
+        "right": 0
+      }
+    },
+    {
+      "file": "wall_concept_02.png",
+      "type": "reference-only",
+      "source": "ChatGPT Image Oct 26, 2026, 10_26_14 PM-2.png",
+      "sha256": "f257d9e7167d6ab121f670f9ab89db9436f4fbfaace219ce817e1a691c80aa68",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_bbox_gt_32": [
+        138,
+        84,
+        1151,
+        1195
+      ],
+      "alpha_bbox_nonzero": [
+        0,
+        25,
+        1222,
+        1230
+      ],
+      "transparent_pixel_fraction": 0.5239,
+      "alpha_gt_10_edge_counts": {
+        "top": 0,
+        "bottom": 0,
+        "left": 0,
+        "right": 0
+      }
+    },
+    {
+      "file": "wall_concept_03.png",
+      "type": "reference-only",
+      "source": "ChatGPT Image Oct 26, 2026, 10_26_15 PM-3.png",
+      "sha256": "299b47b98b6fd7fa84b760de0ffa2870e897fa65d3c1dbea98c07b50e26f7644",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_bbox_gt_32": [
+        139,
+        87,
+        1150,
+        1193
+      ],
+      "alpha_bbox_nonzero": [
+        0,
+        17,
+        1159,
+        1254
+      ],
+      "transparent_pixel_fraction": 0.5258,
+      "alpha_gt_10_edge_counts": {
+        "top": 0,
+        "bottom": 0,
+        "left": 0,
+        "right": 0
+      }
+    },
+    {
+      "file": "wall_concept_04.png",
+      "type": "reference-only",
+      "source": "ChatGPT Image Oct 26, 2026, 10_26_15 PM-4.png",
+      "sha256": "0a61ebf8b507758818198c25ce3ebeacb12e3da681e6face05e153a6656a24cc",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_bbox_gt_32": [
+        138,
+        86,
+        1152,
+        1192
+      ],
+      "alpha_bbox_nonzero": [
+        0,
+        15,
+        1210,
+        1254
+      ],
+      "transparent_pixel_fraction": 0.5253,
+      "alpha_gt_10_edge_counts": {
+        "top": 0,
+        "bottom": 0,
+        "left": 0,
+        "right": 0
+      }
+    },
+    {
+      "file": "lighting_daylight_vs_lantern_evening.png",
+      "type": "mood-reference-only",
+      "source": "Daylight and Lantern Evening Maze(1).png",
+      "sha256": "4355e6add7db57cafe138ebaa58cd9f2e90a81b85bf99e6609422ceb27bcb75e",
+      "dimensions": [
+        1448,
+        1086
+      ],
+      "mode": "RGBA"
+    }
+  ],
+  "base_assets": [
+    "ENV-01",
+    "ENV-02",
+    "ENV-03",
+    "CHR-01",
+    "CHR-02",
+    "CHR-03",
+    "CHR-04",
+    "CHR-07",
+    "OBJ-01",
+    "OBJ-03",
+    "OBJ-06",
+    "ENV-04",
+    "ENV-05",
+    "LGT-01",
+    "LGT-02",
+    "LGT-03",
+    "LGT-04"
+  ],
+  "required_first_walls": [
+    "wall_master_day_body.png",
+    "wall_master_day_shadow.png",
+    "wall_master_dusk_body.png",
+    "wall_master_dusk_shadow.png"
+  ],
+  "provenance": "Uploaded user image references; no inferred editable source geometry",
+  "qa_policy": {
+    "min_zero_alpha_border_px": 15,
+    "require_uniform_footprint": true,
+    "require_anchor_alignment": true,
+    "check_assemblies": [
+      "single",
+      "corridor",
+      "corner",
+      "T",
+      "cross",
+      "2x2",
+      "13x17"
+    ],
+    "check_viewports": [
+      "320x568",
+      "390x844",
+      "844x390",
+      "1280x800"
+    ],
+    "release": "Owner + independent QA review before renderer change"
+  }
+}

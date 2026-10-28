@@ -1,0 +1,23 @@
+
+> client@0.1.0 test
+> react-scripts test --watch=false --runInBand
+
+PASS src/session/playableSession.test.js
+PASS src/game/continuousSteering.test.js
+PASS src/pages/MazePage.test.js
+PASS src/game/inputCoordinator.test.js
+PASS src/game/scene.test.js
+PASS src/session/V2Results.test.js
+PASS src/game/movement.test.js
+PASS src/session/SessionGate.test.js
+PASS src/game/camera.test.js
+PASS src/game/palletProjection.test.js
+PASS src/game/commandOutcome.test.js
+PASS src/pages/ResultsPage.test.js
+PASS src/App.test.js
+
+Test Suites: 13 passed, 13 total
+Tests:       159 passed, 159 total
+Snapshots:   0 total
+Time:        21.73 s
+Ran all test suites.

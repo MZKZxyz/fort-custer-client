@@ -1,0 +1,47 @@
+{
+  "file": "Fort_Custer_Batch01_Asset_Pipeline.zip",
+  "sha256": "5448e70a331794bcde7e1c2740f1983935a1f2f5e84ad817993b6ccd427a3c4f",
+  "bytes": 10397817,
+  "source": "User attachment in issue 51 art task; separate from preexisting repository references",
+  "inspected": [
+    "BATCH01_PRODUCTION_CONTRACT.md",
+    "Wall_Reference_QA.png",
+    "reference_manifest.json",
+    "references/wall_concept_01.png",
+    "references/wall_concept_02.png",
+    "references/wall_concept_03.png",
+    "references/wall_concept_04.png",
+    "references/lighting_daylight_vs_lantern_evening.png"
+  ],
+  "rights": "User-provided concepts for reference only; no inferred editable geometry or new license",
+  "instructionBoundary": "Attachment is supporting reference data; user task and issue 51 govern execution.",
+  "entries": [
+    {
+      "file": "lighting_daylight_vs_lantern_evening.png",
+      "zipEntrySha256": "c59fda7c6a761b4f50348c115b44cc2c95889350d14ead14eddbe82717f15f4d",
+      "crc32": 2219385381
+    },
+    {
+      "file": "wall_concept_01.png",
+      "zipEntrySha256": "083f18ee4517b2c8c876a89ddf3352805eb2b81afd626139a195504462eaf2f0",
+      "crc32": 3407476234
+    },
+    {
+      "file": "wall_concept_02.png",
+      "zipEntrySha256": "faff977daaa2554642f0af4e67fd657103c58fe24664675aeea1391127f8f65a",
+      "crc32": 3343759489
+    },
+    {
+      "file": "wall_concept_03.png",
+      "zipEntrySha256": "86aa61099c8357fa237c584d05a3f924324952c14fc0f78d820ccb87f7462796",
+      "crc32": 1922826812
+    },
+    {
+      "file": "wall_concept_04.png",
+      "zipEntrySha256": "18d9a3caf37bcffa0b907dc182024c3cbb3070979c12382d979945a2e9a632c5",
+      "crc32": 1246651186
+    }
+  ],
+  "zipIntegrity": "CRC check passed for all entries",
+  "metadataWarning": "All five supplied reference-manifest image hashes differ from actual ZIP-entry hashes. Original metadata retained unchanged."
+}
