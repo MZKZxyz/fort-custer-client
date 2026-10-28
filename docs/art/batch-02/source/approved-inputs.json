@@ -1,0 +1,19 @@
+{
+  "baseline": "5732fa78de6398582a7d230fc960fc5dc4fb9856",
+  "files": {
+    "docs/art/batch-01/assets/ground-daylight-body.png": "018e696cb42fd74d9a8401f0bb66ee1b756a524dd29e427d2b3ea53ef0640d27",
+    "docs/art/batch-01/assets/ground-dusk-body.png": "f97990cf687ac8f9fbe56e7e3ab9138849c3990bd4c6a468dd396dded782d560",
+    "docs/art/batch-01/assets/manifest.json": "b3660ef76d66ba27fb084331dc3e91bebe5825b74021dd5be1b86fe1ab809d76",
+    "docs/art/batch-01/assets/wall-daylight-body.png": "ca03f87fd44094a70b3b37997cdd181e6d1bc7edd5f92a83fa38bfbe71694afd",
+    "docs/art/batch-01/assets/wall-daylight-shadow.png": "007076dbba91dd03603bdf700ac0ddef33204ed6e8df9a11ccc013464fe431db",
+    "docs/art/batch-01/assets/wall-dusk-body.png": "545e00aacb08bc0d009e87ea6c3697b5a17611277a45826a32611031c6cc63a5",
+    "docs/art/batch-01/assets/wall-dusk-shadow.png": "8dc1a767bca098af3665f798ebd1edefedf2afa9ff9782b770f60fd3f56d3e36",
+    "docs/art/batch-01/assets/wall-master-basecolor.png": "16297ed7bab2012b24ee52b7e383826220ac40a65bde5c2530c6bb0f88a21a65",
+    "docs/art/batch-01/assets/wall-master-normal.png": "eccb8c1e3e914dbf7b36f3ad9a21f170df1b622b6a5cc167c70d8aa481f4325e",
+    "docs/art/batch-01/assets/wall-master.glb": "4502031313c4fbd914480cb17cb6a9808a3dbe8ea56d44f54a530a1778d56db7",
+    "docs/art/batch-01/source/audit-glb.py": "52f67a29173efc118dc2b3ac380ea162ddb7cf2984cee87d94a7142abc628d1f",
+    "docs/art/batch-01/source/export-glb.py": "3f6e935c63ea8d5f4863f9893095468c43c19fd130a57e54c0df990bd2037143",
+    "docs/art/batch-01/source/fixtures.mjs": "d0b3794395e6841fc08da12a91667b2c21027bf86eb7d945f75a6dc46ae18191",
+    "docs/art/batch-01/source/wall-master.blend": "452d1f3bcce4c065ec08dcc8fcc67c9413d1f2cb16ebf1cabc65ed4e2b4a06ef"
+  }
+}

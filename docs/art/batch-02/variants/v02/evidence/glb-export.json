@@ -1,0 +1,174 @@
+{
+  "file": "wall-master.glb",
+  "format": "glTF 2.0 GLB",
+  "sha256": "f3a7913680e8462ca66455bcb1e3fcb7b067168cdbb482f99474688cb55f01f0",
+  "bytes": 2112336,
+  "blender": "4.3.2",
+  "exportOptions": {
+    "export_format": "GLB",
+    "use_selection": true,
+    "export_yup": true,
+    "export_normals": true,
+    "export_tangents": true,
+    "export_texcoords": true,
+    "export_materials": "EXPORT",
+    "export_cameras": false,
+    "export_lights": false,
+    "export_animations": false,
+    "export_extras": true,
+    "export_apply": false
+  },
+  "tangentFinishing": "Float32 unit/orthogonal frames restored after Blender four-decimal tangent export; handedness unchanged",
+  "sourceBlendSha256": "83c77e4315ced91db5f84ae155dfa25017e50fc0daf738ff5e470ab4fd0178f2",
+  "sourceComponents": 48,
+  "triangles": 11824,
+  "verticesBeforeGltfSplits": 6008,
+  "textures": [
+    {
+      "file": "wall-master-basecolor.png",
+      "role": "baseColor",
+      "size": [
+        1024,
+        1024
+      ],
+      "colorSpace": "sRGB",
+      "embedded": true,
+      "sha256": "8d56ee90b50fc63d5419cdf61cb4edaccbb30427a635c6984ff09c564af0b110"
+    },
+    {
+      "file": "wall-master-normal.png",
+      "role": "normal",
+      "size": [
+        1024,
+        1024
+      ],
+      "colorSpace": "Non-Color",
+      "embedded": true,
+      "sha256": "eccb8c1e3e914dbf7b36f3ad9a21f170df1b622b6a5cc167c70d8aa481f4325e"
+    }
+  ],
+  "materials": [
+    {
+      "name": "Recess soil",
+      "roughness": 0.8500000238418579,
+      "metallic": 0.0
+    },
+    {
+      "name": "v02 / Fresh end grain",
+      "roughness": 0.8999999761581421,
+      "metallic": 0.0
+    },
+    {
+      "name": "v02 / Inset weathered iron / reference 01\u201304",
+      "roughness": 0.7400000095367432,
+      "metallic": 0.5
+    },
+    {
+      "name": "v02 / Pallet / honey 2",
+      "roughness": 0.8999999761581421,
+      "metallic": 0.0
+    },
+    {
+      "name": "v02 / Pallet / honey 0",
+      "roughness": 0.8999999761581421,
+      "metallic": 0.0
+    },
+    {
+      "name": "v02 / Pallet / honey 1.001",
+      "roughness": 0.8999999761581421,
+      "metallic": 0.0
+    },
+    {
+      "name": "v02 / Pallet / honey 2.001",
+      "roughness": 0.8999999761581421,
+      "metallic": 0.0
+    },
+    {
+      "name": "v02 / Pallet / honey 3",
+      "roughness": 0.8999999761581421,
+      "metallic": 0.0
+    },
+    {
+      "name": "v02 / Pallet / honey 3.001",
+      "roughness": 0.8999999761581421,
+      "metallic": 0.0
+    },
+    {
+      "name": "v02 / Pallet / honey 1.002",
+      "roughness": 0.8999999761581421,
+      "metallic": 0.0
+    },
+    {
+      "name": "v02 / Pallet / honey 0.001",
+      "roughness": 0.8999999761581421,
+      "metallic": 0.0
+    },
+    {
+      "name": "v02 / Pallet / honey 1.003",
+      "roughness": 0.8999999761581421,
+      "metallic": 0.0
+    },
+    {
+      "name": "v02 / Pallet / honey 1",
+      "roughness": 0.8999999761581421,
+      "metallic": 0.0
+    }
+  ],
+  "coordinates": {
+    "cellUnits": 1,
+    "source": "Right handed Blender +X right, -Y forward/increasing row, +Z up",
+    "glTF": "Right handed +X right, +Z forward/increasing row, +Y up",
+    "conversion": "(X,Y,Z) Blender \u2192 (X,Z,-Y) glTF",
+    "rootPivot": [
+      0,
+      0,
+      0
+    ],
+    "rootScale": [
+      1,
+      1,
+      1
+    ],
+    "sourceBounds": [
+      [
+        -0.5,
+        0.5
+      ],
+      [
+        -0.5,
+        0.5
+      ],
+      [
+        0,
+        0.595
+      ]
+    ],
+    "glTFBounds": [
+      [
+        -0.5,
+        0.5
+      ],
+      [
+        0,
+        0.595
+      ],
+      [
+        -0.5,
+        0.5
+      ]
+    ]
+  },
+  "materialTreatment": {
+    "bake": "1024\u00b2 shared UV atlas; actual Principled Base Color via temporary EMIT surface (no lighting/AO), tangent-space NORMAL; 16 fixed samples, seed 30, 4px margin",
+    "retained": "Original roughness/metallic scalar per material; evaluated bevel geometry and split/weighted normals",
+    "losses": [
+      "Procedural grain becomes finite-resolution 8-bit textures; very fine detail/filtering can differ at close range.",
+      "Blender shader graphs and editable modifiers are retained only in the original .blend.",
+      "Core glTF metallic/roughness shading omits Blender-specific default specular-IOR treatment; render engines may differ."
+    ],
+    "unbaked": "No directional lighting, cast shadows, AO, studio background, camera or AgX grade in PBR maps"
+  },
+  "license": "Original procedural geometry under repository contribution terms; reference concepts are not used as model textures.",
+  "rebuild": "blender -b -t 2 --python-exit-code 1 --python docs/art/batch-02/source/portable.py -- v02",
+  "variantId": "v02"
+}

@@ -1,0 +1,11 @@
+✔ fixed UTF-8/32-bit selector vectors match the independently calculated contract (2.684909ms)
+✔ choices survive traversal order and seed round trips without mutating topology (12.587416ms)
+✔ preview corpus preserves one-cell wall tokens, narrow corridors and required assemblies (0.505274ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 27.368876

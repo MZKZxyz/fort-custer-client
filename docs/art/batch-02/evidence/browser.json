@@ -1,0 +1,2458 @@
+{
+  "status": "PASS",
+  "physicalDevice": false,
+  "screens": [
+    {
+      "viewport": [
+        320,
+        568
+      ],
+      "dpr": 1,
+      "tile": 36,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 36,
+          "error": 0.014774401423949257,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 24,
+            "v02": 42,
+            "v03": 31,
+            "v04": 26
+          },
+          "worldSize": [
+            684,
+            469
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 127,
+          "layoutSha256": "9082b4f2005c09a9f6b8281430221aa977389b88d4659b861d4aa1b679d59feb"
+        },
+        {
+          "mood": "dusk",
+          "tile": 36,
+          "error": 0.014774401423949257,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 24,
+            "v02": 42,
+            "v03": 31,
+            "v04": 26
+          },
+          "worldSize": [
+            684,
+            469
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 127,
+          "layoutSha256": "9082b4f2005c09a9f6b8281430221aa977389b88d4659b861d4aa1b679d59feb"
+        }
+      ]
+    },
+    {
+      "viewport": [
+        320,
+        568
+      ],
+      "dpr": 1,
+      "tile": 48,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 48,
+          "error": 0.014783946107513657,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 24,
+            "v02": 42,
+            "v03": 31,
+            "v04": 26
+          },
+          "worldSize": [
+            912,
+            625
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 127,
+          "layoutSha256": "9082b4f2005c09a9f6b8281430221aa977389b88d4659b861d4aa1b679d59feb"
+        },
+        {
+          "mood": "dusk",
+          "tile": 48,
+          "error": 0.014783946107513657,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 24,
+            "v02": 42,
+            "v03": 31,
+            "v04": 26
+          },
+          "worldSize": [
+            912,
+            625
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 127,
+          "layoutSha256": "9082b4f2005c09a9f6b8281430221aa977389b88d4659b861d4aa1b679d59feb"
+        }
+      ]
+    },
+    {
+      "viewport": [
+        320,
+        568
+      ],
+      "dpr": 2,
+      "tile": 36,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 36,
+          "error": 0.014774401423949257,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 24,
+            "v02": 42,
+            "v03": 31,
+            "v04": 26
+          },
+          "worldSize": [
+            684,
+            469
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 127,
+          "layoutSha256": "9082b4f2005c09a9f6b8281430221aa977389b88d4659b861d4aa1b679d59feb"
+        },
+        {
+          "mood": "dusk",
+          "tile": 36,
+          "error": 0.014774401423949257,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 24,
+            "v02": 42,
+            "v03": 31,
+            "v04": 26
+          },
+          "worldSize": [
+            684,
+            469
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 127,
+          "layoutSha256": "9082b4f2005c09a9f6b8281430221aa977389b88d4659b861d4aa1b679d59feb"
+        }
+      ]
+    },
+    {
+      "viewport": [
+        320,
+        568
+      ],
+      "dpr": 2,
+      "tile": 48,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 48,
+          "error": 0.014783946107513657,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 24,
+            "v02": 42,
+            "v03": 31,
+            "v04": 26
+          },
+          "worldSize": [
+            912,
+            625
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 127,
+          "layoutSha256": "9082b4f2005c09a9f6b8281430221aa977389b88d4659b861d4aa1b679d59feb"
+        },
+        {
+          "mood": "dusk",
+          "tile": 48,
+          "error": 0.014783946107513657,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 24,
+            "v02": 42,
+            "v03": 31,
+            "v04": 26
+          },
+          "worldSize": [
+            912,
+            625
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 127,
+          "layoutSha256": "9082b4f2005c09a9f6b8281430221aa977389b88d4659b861d4aa1b679d59feb"
+        }
+      ]
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "dpr": 1,
+      "tile": 36,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 36,
+          "error": 0.014774401423949257,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 24,
+            "v02": 42,
+            "v03": 31,
+            "v04": 26
+          },
+          "worldSize": [
+            684,
+            469
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 127,
+          "layoutSha256": "9082b4f2005c09a9f6b8281430221aa977389b88d4659b861d4aa1b679d59feb"
+        },
+        {
+          "mood": "dusk",
+          "tile": 36,
+          "error": 0.014774401423949257,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 24,
+            "v02": 42,
+            "v03": 31,
+            "v04": 26
+          },
+          "worldSize": [
+            684,
+            469
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 127,
+          "layoutSha256": "9082b4f2005c09a9f6b8281430221aa977389b88d4659b861d4aa1b679d59feb"
+        }
+      ]
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "dpr": 1,
+      "tile": 48,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 48,
+          "error": 0.014783946107513657,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 24,
+            "v02": 42,
+            "v03": 31,
+            "v04": 26
+          },
+          "worldSize": [
+            912,
+            625
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 127,
+          "layoutSha256": "9082b4f2005c09a9f6b8281430221aa977389b88d4659b861d4aa1b679d59feb"
+        },
+        {
+          "mood": "dusk",
+          "tile": 48,
+          "error": 0.014783946107513657,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 24,
+            "v02": 42,
+            "v03": 31,
+            "v04": 26
+          },
+          "worldSize": [
+            912,
+            625
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 127,
+          "layoutSha256": "9082b4f2005c09a9f6b8281430221aa977389b88d4659b861d4aa1b679d59feb"
+        }
+      ]
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "dpr": 2,
+      "tile": 36,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 36,
+          "error": 0.014774401423949257,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 24,
+            "v02": 42,
+            "v03": 31,
+            "v04": 26
+          },
+          "worldSize": [
+            684,
+            469
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 127,
+          "layoutSha256": "9082b4f2005c09a9f6b8281430221aa977389b88d4659b861d4aa1b679d59feb"
+        },
+        {
+          "mood": "dusk",
+          "tile": 36,
+          "error": 0.014774401423949257,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 24,
+            "v02": 42,
+            "v03": 31,
+            "v04": 26
+          },
+          "worldSize": [
+            684,
+            469
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 127,
+          "layoutSha256": "9082b4f2005c09a9f6b8281430221aa977389b88d4659b861d4aa1b679d59feb"
+        }
+      ]
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "dpr": 2,
+      "tile": 48,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 48,
+          "error": 0.014783946107513657,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 24,
+            "v02": 42,
+            "v03": 31,
+            "v04": 26
+          },
+          "worldSize": [
+            912,
+            625
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 127,
+          "layoutSha256": "9082b4f2005c09a9f6b8281430221aa977389b88d4659b861d4aa1b679d59feb"
+        },
+        {
+          "mood": "dusk",
+          "tile": 48,
+          "error": 0.014783946107513657,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 24,
+            "v02": 42,
+            "v03": 31,
+            "v04": 26
+          },
+          "worldSize": [
+            912,
+            625
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 127,
+          "layoutSha256": "9082b4f2005c09a9f6b8281430221aa977389b88d4659b861d4aa1b679d59feb"
+        }
+      ]
+    },
+    {
+      "viewport": [
+        844,
+        390
+      ],
+      "dpr": 1,
+      "tile": 36,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 36,
+          "error": 0.014774401423949257,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 24,
+            "v02": 42,
+            "v03": 31,
+            "v04": 26
+          },
+          "worldSize": [
+            684,
+            469
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 127,
+          "layoutSha256": "9082b4f2005c09a9f6b8281430221aa977389b88d4659b861d4aa1b679d59feb"
+        },
+        {
+          "mood": "dusk",
+          "tile": 36,
+          "error": 0.014774401423949257,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 24,
+            "v02": 42,
+            "v03": 31,
+            "v04": 26
+          },
+          "worldSize": [
+            684,
+            469
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 127,
+          "layoutSha256": "9082b4f2005c09a9f6b8281430221aa977389b88d4659b861d4aa1b679d59feb"
+        }
+      ]
+    },
+    {
+      "viewport": [
+        844,
+        390
+      ],
+      "dpr": 1,
+      "tile": 48,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 48,
+          "error": 0.014783946107513657,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 24,
+            "v02": 42,
+            "v03": 31,
+            "v04": 26
+          },
+          "worldSize": [
+            912,
+            625
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 127,
+          "layoutSha256": "9082b4f2005c09a9f6b8281430221aa977389b88d4659b861d4aa1b679d59feb"
+        },
+        {
+          "mood": "dusk",
+          "tile": 48,
+          "error": 0.014783946107513657,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 24,
+            "v02": 42,
+            "v03": 31,
+            "v04": 26
+          },
+          "worldSize": [
+            912,
+            625
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 127,
+          "layoutSha256": "9082b4f2005c09a9f6b8281430221aa977389b88d4659b861d4aa1b679d59feb"
+        }
+      ]
+    },
+    {
+      "viewport": [
+        844,
+        390
+      ],
+      "dpr": 2,
+      "tile": 36,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 36,
+          "error": 0.014774401423949257,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 24,
+            "v02": 42,
+            "v03": 31,
+            "v04": 26
+          },
+          "worldSize": [
+            684,
+            469
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 127,
+          "layoutSha256": "9082b4f2005c09a9f6b8281430221aa977389b88d4659b861d4aa1b679d59feb"
+        },
+        {
+          "mood": "dusk",
+          "tile": 36,
+          "error": 0.014774401423949257,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 24,
+            "v02": 42,
+            "v03": 31,
+            "v04": 26
+          },
+          "worldSize": [
+            684,
+            469
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 127,
+          "layoutSha256": "9082b4f2005c09a9f6b8281430221aa977389b88d4659b861d4aa1b679d59feb"
+        }
+      ]
+    },
+    {
+      "viewport": [
+        844,
+        390
+      ],
+      "dpr": 2,
+      "tile": 48,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 48,
+          "error": 0.014783946107513657,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 24,
+            "v02": 42,
+            "v03": 31,
+            "v04": 26
+          },
+          "worldSize": [
+            912,
+            625
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 127,
+          "layoutSha256": "9082b4f2005c09a9f6b8281430221aa977389b88d4659b861d4aa1b679d59feb"
+        },
+        {
+          "mood": "dusk",
+          "tile": 48,
+          "error": 0.014783946107513657,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 24,
+            "v02": 42,
+            "v03": 31,
+            "v04": 26
+          },
+          "worldSize": [
+            912,
+            625
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 127,
+          "layoutSha256": "9082b4f2005c09a9f6b8281430221aa977389b88d4659b861d4aa1b679d59feb"
+        }
+      ]
+    },
+    {
+      "viewport": [
+        1280,
+        800
+      ],
+      "dpr": 1,
+      "tile": 36,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 36,
+          "error": 0.014774401423949257,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 24,
+            "v02": 42,
+            "v03": 31,
+            "v04": 26
+          },
+          "worldSize": [
+            684,
+            469
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 127,
+          "layoutSha256": "9082b4f2005c09a9f6b8281430221aa977389b88d4659b861d4aa1b679d59feb"
+        },
+        {
+          "mood": "dusk",
+          "tile": 36,
+          "error": 0.014774401423949257,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 24,
+            "v02": 42,
+            "v03": 31,
+            "v04": 26
+          },
+          "worldSize": [
+            684,
+            469
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 127,
+          "layoutSha256": "9082b4f2005c09a9f6b8281430221aa977389b88d4659b861d4aa1b679d59feb"
+        }
+      ]
+    },
+    {
+      "viewport": [
+        1280,
+        800
+      ],
+      "dpr": 1,
+      "tile": 48,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 48,
+          "error": 0.014783946107513657,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 24,
+            "v02": 42,
+            "v03": 31,
+            "v04": 26
+          },
+          "worldSize": [
+            912,
+            625
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 127,
+          "layoutSha256": "9082b4f2005c09a9f6b8281430221aa977389b88d4659b861d4aa1b679d59feb"
+        },
+        {
+          "mood": "dusk",
+          "tile": 48,
+          "error": 0.014783946107513657,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 24,
+            "v02": 42,
+            "v03": 31,
+            "v04": 26
+          },
+          "worldSize": [
+            912,
+            625
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 127,
+          "layoutSha256": "9082b4f2005c09a9f6b8281430221aa977389b88d4659b861d4aa1b679d59feb"
+        }
+      ]
+    },
+    {
+      "viewport": [
+        1280,
+        800
+      ],
+      "dpr": 2,
+      "tile": 36,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 36,
+          "error": 0.014774401423949257,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 24,
+            "v02": 42,
+            "v03": 31,
+            "v04": 26
+          },
+          "worldSize": [
+            684,
+            469
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 127,
+          "layoutSha256": "9082b4f2005c09a9f6b8281430221aa977389b88d4659b861d4aa1b679d59feb"
+        },
+        {
+          "mood": "dusk",
+          "tile": 36,
+          "error": 0.014774401423949257,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 24,
+            "v02": 42,
+            "v03": 31,
+            "v04": 26
+          },
+          "worldSize": [
+            684,
+            469
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 127,
+          "layoutSha256": "9082b4f2005c09a9f6b8281430221aa977389b88d4659b861d4aa1b679d59feb"
+        }
+      ]
+    },
+    {
+      "viewport": [
+        1280,
+        800
+      ],
+      "dpr": 2,
+      "tile": 48,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 48,
+          "error": 0.014783946107513657,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 24,
+            "v02": 42,
+            "v03": 31,
+            "v04": 26
+          },
+          "worldSize": [
+            912,
+            625
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 127,
+          "layoutSha256": "9082b4f2005c09a9f6b8281430221aa977389b88d4659b861d4aa1b679d59feb"
+        },
+        {
+          "mood": "dusk",
+          "tile": 48,
+          "error": 0.014783946107513657,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 24,
+            "v02": 42,
+            "v03": 31,
+            "v04": 26
+          },
+          "worldSize": [
+            912,
+            625
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 127,
+          "layoutSha256": "9082b4f2005c09a9f6b8281430221aa977389b88d4659b861d4aa1b679d59feb"
+        }
+      ]
+    }
+  ],
+  "assemblies": [
+    {
+      "fixture": "single",
+      "tile": 36,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 36,
+          "error": 0.014774401423949257,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 0,
+            "v02": 1,
+            "v03": 0,
+            "v04": 0
+          },
+          "worldSize": [
+            324,
+            225
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 3,
+          "layoutSha256": "a2a5079b232a8fb00cc81ff7b19cdac8d33a807e983a3393f67e3b5146ad6ab6"
+        },
+        {
+          "mood": "dusk",
+          "tile": 36,
+          "error": 0.014774401423949257,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 0,
+            "v02": 1,
+            "v03": 0,
+            "v04": 0
+          },
+          "worldSize": [
+            324,
+            225
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 3,
+          "layoutSha256": "a2a5079b232a8fb00cc81ff7b19cdac8d33a807e983a3393f67e3b5146ad6ab6"
+        }
+      ]
+    },
+    {
+      "fixture": "single",
+      "tile": 48,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 48,
+          "error": 0.01449086856527515,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 0,
+            "v02": 1,
+            "v03": 0,
+            "v04": 0
+          },
+          "worldSize": [
+            432,
+            300
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 3,
+          "layoutSha256": "a2a5079b232a8fb00cc81ff7b19cdac8d33a807e983a3393f67e3b5146ad6ab6"
+        },
+        {
+          "mood": "dusk",
+          "tile": 48,
+          "error": 0.01449086856527515,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 0,
+            "v02": 1,
+            "v03": 0,
+            "v04": 0
+          },
+          "worldSize": [
+            432,
+            300
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 3,
+          "layoutSha256": "a2a5079b232a8fb00cc81ff7b19cdac8d33a807e983a3393f67e3b5146ad6ab6"
+        }
+      ]
+    },
+    {
+      "fixture": "run",
+      "tile": 36,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 36,
+          "error": 0.014774401423949257,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 2,
+            "v02": 2,
+            "v03": 3,
+            "v04": 3
+          },
+          "worldSize": [
+            396,
+            286
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 14,
+          "layoutSha256": "6f3ce3c4aeddb1a5fa64487aeb8a41cb87d42939ed08e3f37878b634539a26cf"
+        },
+        {
+          "mood": "dusk",
+          "tile": 36,
+          "error": 0.014774401423949257,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 2,
+            "v02": 2,
+            "v03": 3,
+            "v04": 3
+          },
+          "worldSize": [
+            396,
+            286
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 14,
+          "layoutSha256": "6f3ce3c4aeddb1a5fa64487aeb8a41cb87d42939ed08e3f37878b634539a26cf"
+        }
+      ]
+    },
+    {
+      "fixture": "run",
+      "tile": 48,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 48,
+          "error": 0.01449086856527515,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 2,
+            "v02": 2,
+            "v03": 3,
+            "v04": 3
+          },
+          "worldSize": [
+            528,
+            381
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 14,
+          "layoutSha256": "6f3ce3c4aeddb1a5fa64487aeb8a41cb87d42939ed08e3f37878b634539a26cf"
+        },
+        {
+          "mood": "dusk",
+          "tile": 48,
+          "error": 0.01449086856527515,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 2,
+            "v02": 2,
+            "v03": 3,
+            "v04": 3
+          },
+          "worldSize": [
+            528,
+            381
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 14,
+          "layoutSha256": "6f3ce3c4aeddb1a5fa64487aeb8a41cb87d42939ed08e3f37878b634539a26cf"
+        }
+      ]
+    },
+    {
+      "fixture": "corner",
+      "tile": 36,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 36,
+          "error": 0.014774401423949257,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 3,
+            "v02": 1,
+            "v03": 0,
+            "v04": 1
+          },
+          "worldSize": [
+            324,
+            286
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 6,
+          "layoutSha256": "80ff985393fd5b369e80af2b47ca243f821e6066f0ac6297045328f46a4c0dde"
+        },
+        {
+          "mood": "dusk",
+          "tile": 36,
+          "error": 0.014774401423949257,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 3,
+            "v02": 1,
+            "v03": 0,
+            "v04": 1
+          },
+          "worldSize": [
+            324,
+            286
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 6,
+          "layoutSha256": "80ff985393fd5b369e80af2b47ca243f821e6066f0ac6297045328f46a4c0dde"
+        }
+      ]
+    },
+    {
+      "fixture": "corner",
+      "tile": 48,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 48,
+          "error": 0.01449086856527515,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 3,
+            "v02": 1,
+            "v03": 0,
+            "v04": 1
+          },
+          "worldSize": [
+            432,
+            381
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 6,
+          "layoutSha256": "80ff985393fd5b369e80af2b47ca243f821e6066f0ac6297045328f46a4c0dde"
+        },
+        {
+          "mood": "dusk",
+          "tile": 48,
+          "error": 0.01449086856527515,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 3,
+            "v02": 1,
+            "v03": 0,
+            "v04": 1
+          },
+          "worldSize": [
+            432,
+            381
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 6,
+          "layoutSha256": "80ff985393fd5b369e80af2b47ca243f821e6066f0ac6297045328f46a4c0dde"
+        }
+      ]
+    },
+    {
+      "fixture": "T",
+      "tile": 36,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 36,
+          "error": 0.014774401423949257,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 2,
+            "v02": 4,
+            "v03": 2,
+            "v04": 0
+          },
+          "worldSize": [
+            324,
+            286
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 9,
+          "layoutSha256": "0ca11b8cd38a496dc0af10b45f4e2463230f31bfb2cc5b033fe1e749ca49e752"
+        },
+        {
+          "mood": "dusk",
+          "tile": 36,
+          "error": 0.014774401423949257,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 2,
+            "v02": 4,
+            "v03": 2,
+            "v04": 0
+          },
+          "worldSize": [
+            324,
+            286
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 9,
+          "layoutSha256": "0ca11b8cd38a496dc0af10b45f4e2463230f31bfb2cc5b033fe1e749ca49e752"
+        }
+      ]
+    },
+    {
+      "fixture": "T",
+      "tile": 48,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 48,
+          "error": 0.01449086856527515,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 2,
+            "v02": 4,
+            "v03": 2,
+            "v04": 0
+          },
+          "worldSize": [
+            432,
+            381
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 9,
+          "layoutSha256": "0ca11b8cd38a496dc0af10b45f4e2463230f31bfb2cc5b033fe1e749ca49e752"
+        },
+        {
+          "mood": "dusk",
+          "tile": 48,
+          "error": 0.01449086856527515,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 2,
+            "v02": 4,
+            "v03": 2,
+            "v04": 0
+          },
+          "worldSize": [
+            432,
+            381
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 9,
+          "layoutSha256": "0ca11b8cd38a496dc0af10b45f4e2463230f31bfb2cc5b033fe1e749ca49e752"
+        }
+      ]
+    },
+    {
+      "fixture": "cross",
+      "tile": 36,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 36,
+          "error": 0.014774401423949257,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 2,
+            "v02": 4,
+            "v03": 0,
+            "v04": 3
+          },
+          "worldSize": [
+            324,
+            286
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 10,
+          "layoutSha256": "f98c367496fd8c97e9d01f60210cbc9d4b06e5c06cdf406031dacca9fca4b039"
+        },
+        {
+          "mood": "dusk",
+          "tile": 36,
+          "error": 0.014774401423949257,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 2,
+            "v02": 4,
+            "v03": 0,
+            "v04": 3
+          },
+          "worldSize": [
+            324,
+            286
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 10,
+          "layoutSha256": "f98c367496fd8c97e9d01f60210cbc9d4b06e5c06cdf406031dacca9fca4b039"
+        }
+      ]
+    },
+    {
+      "fixture": "cross",
+      "tile": 48,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 48,
+          "error": 0.01449086856527515,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 2,
+            "v02": 4,
+            "v03": 0,
+            "v04": 3
+          },
+          "worldSize": [
+            432,
+            381
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 10,
+          "layoutSha256": "f98c367496fd8c97e9d01f60210cbc9d4b06e5c06cdf406031dacca9fca4b039"
+        },
+        {
+          "mood": "dusk",
+          "tile": 48,
+          "error": 0.01449086856527515,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 2,
+            "v02": 4,
+            "v03": 0,
+            "v04": 3
+          },
+          "worldSize": [
+            432,
+            381
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 10,
+          "layoutSha256": "f98c367496fd8c97e9d01f60210cbc9d4b06e5c06cdf406031dacca9fca4b039"
+        }
+      ]
+    },
+    {
+      "fixture": "block",
+      "tile": 36,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 36,
+          "error": 0.014774401423949257,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 1,
+            "v02": 2,
+            "v03": 0,
+            "v04": 1
+          },
+          "worldSize": [
+            324,
+            255
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 5,
+          "layoutSha256": "2994e7826f69d410b77a2b90f210bc88219a88ece27c63f0b1e36d4526a58213"
+        },
+        {
+          "mood": "dusk",
+          "tile": 36,
+          "error": 0.014774401423949257,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 1,
+            "v02": 2,
+            "v03": 0,
+            "v04": 1
+          },
+          "worldSize": [
+            324,
+            255
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 5,
+          "layoutSha256": "2994e7826f69d410b77a2b90f210bc88219a88ece27c63f0b1e36d4526a58213"
+        }
+      ]
+    },
+    {
+      "fixture": "block",
+      "tile": 48,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 48,
+          "error": 0.01449086856527515,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 1,
+            "v02": 2,
+            "v03": 0,
+            "v04": 1
+          },
+          "worldSize": [
+            432,
+            340
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 5,
+          "layoutSha256": "2994e7826f69d410b77a2b90f210bc88219a88ece27c63f0b1e36d4526a58213"
+        },
+        {
+          "mood": "dusk",
+          "tile": 48,
+          "error": 0.01449086856527515,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 1,
+            "v02": 2,
+            "v03": 0,
+            "v04": 1
+          },
+          "worldSize": [
+            432,
+            340
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 5,
+          "layoutSha256": "2994e7826f69d410b77a2b90f210bc88219a88ece27c63f0b1e36d4526a58213"
+        }
+      ]
+    },
+    {
+      "fixture": "edges",
+      "tile": 36,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 36,
+          "error": 0.014774401423949257,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 0,
+            "v02": 3,
+            "v03": 2,
+            "v04": 3
+          },
+          "worldSize": [
+            396,
+            286
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 12,
+          "layoutSha256": "d41bcd8fde36b94b368f6ae19a5239fcef742703b2121b1894df848e625ccfb8"
+        },
+        {
+          "mood": "dusk",
+          "tile": 36,
+          "error": 0.014774401423949257,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 0,
+            "v02": 3,
+            "v03": 2,
+            "v04": 3
+          },
+          "worldSize": [
+            396,
+            286
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 12,
+          "layoutSha256": "d41bcd8fde36b94b368f6ae19a5239fcef742703b2121b1894df848e625ccfb8"
+        }
+      ]
+    },
+    {
+      "fixture": "edges",
+      "tile": 48,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 48,
+          "error": 0.01449086856527515,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 0,
+            "v02": 3,
+            "v03": 2,
+            "v04": 3
+          },
+          "worldSize": [
+            528,
+            381
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 12,
+          "layoutSha256": "d41bcd8fde36b94b368f6ae19a5239fcef742703b2121b1894df848e625ccfb8"
+        },
+        {
+          "mood": "dusk",
+          "tile": 48,
+          "error": 0.01449086856527515,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 0,
+            "v02": 3,
+            "v03": 2,
+            "v04": 3
+          },
+          "worldSize": [
+            528,
+            381
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 12,
+          "layoutSha256": "d41bcd8fde36b94b368f6ae19a5239fcef742703b2121b1894df848e625ccfb8"
+        }
+      ]
+    },
+    {
+      "fixture": "overlap",
+      "tile": 36,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 36,
+          "error": 0.014774401423949257,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 2,
+            "v02": 2,
+            "v03": 0,
+            "v04": 0
+          },
+          "worldSize": [
+            324,
+            286
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 9,
+          "layoutSha256": "f07935deaaa288af6e6fbd15823a01f92ac8487d04b30147fccf3277fbde5766"
+        },
+        {
+          "mood": "dusk",
+          "tile": 36,
+          "error": 0.014774401423949257,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 2,
+            "v02": 2,
+            "v03": 0,
+            "v04": 0
+          },
+          "worldSize": [
+            324,
+            286
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 9,
+          "layoutSha256": "f07935deaaa288af6e6fbd15823a01f92ac8487d04b30147fccf3277fbde5766"
+        }
+      ]
+    },
+    {
+      "fixture": "overlap",
+      "tile": 48,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 48,
+          "error": 0.01449086856527515,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 2,
+            "v02": 2,
+            "v03": 0,
+            "v04": 0
+          },
+          "worldSize": [
+            432,
+            381
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 9,
+          "layoutSha256": "f07935deaaa288af6e6fbd15823a01f92ac8487d04b30147fccf3277fbde5766"
+        },
+        {
+          "mood": "dusk",
+          "tile": 48,
+          "error": 0.01449086856527515,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 2,
+            "v02": 2,
+            "v03": 0,
+            "v04": 0
+          },
+          "worldSize": [
+            432,
+            381
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 9,
+          "layoutSha256": "f07935deaaa288af6e6fbd15823a01f92ac8487d04b30147fccf3277fbde5766"
+        }
+      ]
+    },
+    {
+      "fixture": "maze",
+      "tile": 36,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 36,
+          "error": 0.014774401423949257,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 24,
+            "v02": 42,
+            "v03": 31,
+            "v04": 26
+          },
+          "worldSize": [
+            684,
+            469
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 127,
+          "layoutSha256": "9082b4f2005c09a9f6b8281430221aa977389b88d4659b861d4aa1b679d59feb"
+        },
+        {
+          "mood": "dusk",
+          "tile": 36,
+          "error": 0.014774401423949257,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 24,
+            "v02": 42,
+            "v03": 31,
+            "v04": 26
+          },
+          "worldSize": [
+            684,
+            469
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 127,
+          "layoutSha256": "9082b4f2005c09a9f6b8281430221aa977389b88d4659b861d4aa1b679d59feb"
+        }
+      ]
+    },
+    {
+      "fixture": "maze",
+      "tile": 48,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 48,
+          "error": 0.014783946107513657,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 24,
+            "v02": 42,
+            "v03": 31,
+            "v04": 26
+          },
+          "worldSize": [
+            912,
+            625
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 127,
+          "layoutSha256": "9082b4f2005c09a9f6b8281430221aa977389b88d4659b861d4aa1b679d59feb"
+        },
+        {
+          "mood": "dusk",
+          "tile": 48,
+          "error": 0.014783946107513657,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 24,
+            "v02": 42,
+            "v03": 31,
+            "v04": 26
+          },
+          "worldSize": [
+            912,
+            625
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 127,
+          "layoutSha256": "9082b4f2005c09a9f6b8281430221aa977389b88d4659b861d4aa1b679d59feb"
+        }
+      ]
+    },
+    {
+      "fixture": "stress",
+      "tile": 36,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 36,
+          "error": 0.014774401423949257,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 18,
+            "v02": 31,
+            "v03": 19,
+            "v04": 20
+          },
+          "worldSize": [
+            684,
+            469
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 93,
+          "layoutSha256": "0a6db6631b4bc95ed7a4526bb0a7691e69049615497a498c9aa0e4bec9e39b72"
+        },
+        {
+          "mood": "dusk",
+          "tile": 36,
+          "error": 0.014774401423949257,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 18,
+            "v02": 31,
+            "v03": 19,
+            "v04": 20
+          },
+          "worldSize": [
+            684,
+            469
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 93,
+          "layoutSha256": "0a6db6631b4bc95ed7a4526bb0a7691e69049615497a498c9aa0e4bec9e39b72"
+        }
+      ]
+    },
+    {
+      "fixture": "stress",
+      "tile": 48,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 48,
+          "error": 0.014783946107513657,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 18,
+            "v02": 31,
+            "v03": 19,
+            "v04": 20
+          },
+          "worldSize": [
+            912,
+            625
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 93,
+          "layoutSha256": "0a6db6631b4bc95ed7a4526bb0a7691e69049615497a498c9aa0e4bec9e39b72"
+        },
+        {
+          "mood": "dusk",
+          "tile": 48,
+          "error": 0.014783946107513657,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 18,
+            "v02": 31,
+            "v03": 19,
+            "v04": 20
+          },
+          "worldSize": [
+            912,
+            625
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 93,
+          "layoutSha256": "0a6db6631b4bc95ed7a4526bb0a7691e69049615497a498c9aa0e4bec9e39b72"
+        }
+      ]
+    }
+  ],
+  "uniform": [
+    {
+      "variantId": "v01",
+      "tile": 36,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 36,
+          "error": 0.014774401423949257,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 123,
+            "v02": 0,
+            "v03": 0,
+            "v04": 0
+          },
+          "worldSize": [
+            684,
+            469
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 127,
+          "layoutSha256": "914bbfe9ea1a459f8db0c4f500c29b8090f26d9e96677d019df6a62c59f39260"
+        },
+        {
+          "mood": "dusk",
+          "tile": 36,
+          "error": 0.014774401423949257,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 123,
+            "v02": 0,
+            "v03": 0,
+            "v04": 0
+          },
+          "worldSize": [
+            684,
+            469
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 127,
+          "layoutSha256": "914bbfe9ea1a459f8db0c4f500c29b8090f26d9e96677d019df6a62c59f39260"
+        }
+      ]
+    },
+    {
+      "variantId": "v02",
+      "tile": 36,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 36,
+          "error": 0.014774401423949257,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 0,
+            "v02": 123,
+            "v03": 0,
+            "v04": 0
+          },
+          "worldSize": [
+            684,
+            469
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 127,
+          "layoutSha256": "7aa746973954894ade8ac092e788d1c6845bd3e4803d8a21d5b51db7893d2c7b"
+        },
+        {
+          "mood": "dusk",
+          "tile": 36,
+          "error": 0.014774401423949257,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 0,
+            "v02": 123,
+            "v03": 0,
+            "v04": 0
+          },
+          "worldSize": [
+            684,
+            469
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 127,
+          "layoutSha256": "7aa746973954894ade8ac092e788d1c6845bd3e4803d8a21d5b51db7893d2c7b"
+        }
+      ]
+    },
+    {
+      "variantId": "v03",
+      "tile": 36,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 36,
+          "error": 0.014774401423949257,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 0,
+            "v02": 0,
+            "v03": 123,
+            "v04": 0
+          },
+          "worldSize": [
+            684,
+            469
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 127,
+          "layoutSha256": "314a71ee7161b2091deb15aed6eff4bcc6aa377981cf039179dda1b31c1599f0"
+        },
+        {
+          "mood": "dusk",
+          "tile": 36,
+          "error": 0.014774401423949257,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 0,
+            "v02": 0,
+            "v03": 123,
+            "v04": 0
+          },
+          "worldSize": [
+            684,
+            469
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 127,
+          "layoutSha256": "314a71ee7161b2091deb15aed6eff4bcc6aa377981cf039179dda1b31c1599f0"
+        }
+      ]
+    },
+    {
+      "variantId": "v04",
+      "tile": 36,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 36,
+          "error": 0.014774401423949257,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 0,
+            "v02": 0,
+            "v03": 0,
+            "v04": 123
+          },
+          "worldSize": [
+            684,
+            469
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 127,
+          "layoutSha256": "1b238ab18f8af5512c77b886a049589e74819ae7d942f532263b821939ed40e0"
+        },
+        {
+          "mood": "dusk",
+          "tile": 36,
+          "error": 0.014774401423949257,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 0,
+            "v02": 0,
+            "v03": 0,
+            "v04": 123
+          },
+          "worldSize": [
+            684,
+            469
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 127,
+          "layoutSha256": "1b238ab18f8af5512c77b886a049589e74819ae7d942f532263b821939ed40e0"
+        }
+      ]
+    },
+    {
+      "variantId": "v01",
+      "tile": 48,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 48,
+          "error": 0.014783946107513657,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 123,
+            "v02": 0,
+            "v03": 0,
+            "v04": 0
+          },
+          "worldSize": [
+            912,
+            625
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 127,
+          "layoutSha256": "914bbfe9ea1a459f8db0c4f500c29b8090f26d9e96677d019df6a62c59f39260"
+        },
+        {
+          "mood": "dusk",
+          "tile": 48,
+          "error": 0.014783946107513657,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 123,
+            "v02": 0,
+            "v03": 0,
+            "v04": 0
+          },
+          "worldSize": [
+            912,
+            625
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 127,
+          "layoutSha256": "914bbfe9ea1a459f8db0c4f500c29b8090f26d9e96677d019df6a62c59f39260"
+        }
+      ]
+    },
+    {
+      "variantId": "v02",
+      "tile": 48,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 48,
+          "error": 0.014783946107513657,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 0,
+            "v02": 123,
+            "v03": 0,
+            "v04": 0
+          },
+          "worldSize": [
+            912,
+            625
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 127,
+          "layoutSha256": "7aa746973954894ade8ac092e788d1c6845bd3e4803d8a21d5b51db7893d2c7b"
+        },
+        {
+          "mood": "dusk",
+          "tile": 48,
+          "error": 0.014783946107513657,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 0,
+            "v02": 123,
+            "v03": 0,
+            "v04": 0
+          },
+          "worldSize": [
+            912,
+            625
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 127,
+          "layoutSha256": "7aa746973954894ade8ac092e788d1c6845bd3e4803d8a21d5b51db7893d2c7b"
+        }
+      ]
+    },
+    {
+      "variantId": "v03",
+      "tile": 48,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 48,
+          "error": 0.014783946107513657,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 0,
+            "v02": 0,
+            "v03": 123,
+            "v04": 0
+          },
+          "worldSize": [
+            912,
+            625
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 127,
+          "layoutSha256": "314a71ee7161b2091deb15aed6eff4bcc6aa377981cf039179dda1b31c1599f0"
+        },
+        {
+          "mood": "dusk",
+          "tile": 48,
+          "error": 0.014783946107513657,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 0,
+            "v02": 0,
+            "v03": 123,
+            "v04": 0
+          },
+          "worldSize": [
+            912,
+            625
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 127,
+          "layoutSha256": "314a71ee7161b2091deb15aed6eff4bcc6aa377981cf039179dda1b31c1599f0"
+        }
+      ]
+    },
+    {
+      "variantId": "v04",
+      "tile": 48,
+      "measured": [
+        {
+          "mood": "daylight",
+          "tile": 48,
+          "error": 0.014783946107513657,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 0,
+            "v02": 0,
+            "v03": 0,
+            "v04": 123
+          },
+          "worldSize": [
+            912,
+            625
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 127,
+          "layoutSha256": "1b238ab18f8af5512c77b886a049589e74819ae7d942f532263b821939ed40e0"
+        },
+        {
+          "mood": "dusk",
+          "tile": 48,
+          "error": 0.014783946107513657,
+          "sorted": true,
+          "shadowsBeforeBodies": true,
+          "matchedShadowVariants": true,
+          "variants": {
+            "v01": 0,
+            "v02": 0,
+            "v03": 0,
+            "v04": 123
+          },
+          "worldSize": [
+            912,
+            625
+          ],
+          "scroll": [
+            0,
+            0
+          ],
+          "roleCount": 127,
+          "layoutSha256": "1b238ab18f8af5512c77b886a049589e74819ae7d942f532263b821939ed40e0"
+        }
+      ]
+    }
+  ],
+  "seedChecks": [
+    {
+      "changedAppearanceOnly": true,
+      "originalSeedRestoresExactLayout": true
+    }
+  ],
+  "errors": [],
+  "chromium": "154.0.8037.57"
+}

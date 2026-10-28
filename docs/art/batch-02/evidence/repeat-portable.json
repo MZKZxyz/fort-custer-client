@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "blender": "4.3.2",
+  "variants": [
+    {
+      "variantId": "v02",
+      "byteIdentical": true,
+      "sha256": {
+        "wall-master.glb": "f3a7913680e8462ca66455bcb1e3fcb7b067168cdbb482f99474688cb55f01f0",
+        "wall-master-basecolor.png": "8d56ee90b50fc63d5419cdf61cb4edaccbb30427a635c6984ff09c564af0b110",
+        "wall-master-normal.png": "eccb8c1e3e914dbf7b36f3ad9a21f170df1b622b6a5cc167c70d8aa481f4325e"
+      }
+    },
+    {
+      "variantId": "v03",
+      "byteIdentical": true,
+      "sha256": {
+        "wall-master.glb": "6abf3ecc6eb5cb9a9d2e7cd9ad7c61a6481addd7ad657dd625d0440972cd5577",
+        "wall-master-basecolor.png": "8e76a4e0091411c5ea325ee600d55c6865d96ebc4b94403b2ecfce5a31eaf4e5",
+        "wall-master-normal.png": "8a9766811f1591adb20e1606c4edbc8770d47c47b5f0d9c234c24fec1fb8d139"
+      }
+    },
+    {
+      "variantId": "v04",
+      "byteIdentical": true,
+      "sha256": {
+        "wall-master.glb": "7d970f8fdf9567352ae75e06f00477ec28445722c52d7297bc018141375cb495",
+        "wall-master-basecolor.png": "a93d99993a59505004dce6eb852a5292915d53739f3cd20ea15bf16c5f7f767f",
+        "wall-master-normal.png": "2111717f4c78e516666c2f7c26a3d7e174b81e0eae1b960e6db202fad7142164"
+      }
+    }
+  ],
+  "limit": "Same environment repeatability only; no cross-platform PNG/Blender byte-identity guarantee."
+}
