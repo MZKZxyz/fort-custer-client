@@ -1,0 +1,13 @@
+@import url('../batch-01/review.css');
+header h1 { font-size:25px; }
+.controls { gap:7px; }
+.controls>label { font-size:12px; }
+#seed { width:180px; min-height:44px; padding:5px; font:inherit; }
+details { margin:7px 0; }
+summary { min-height:28px; cursor:pointer; }
+.swatches { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; padding:10px; background:#dad4c5; }
+.swatch { min-width:0; margin:0; font-size:11px; text-align:center; }
+.swatch img { display:block; margin:auto; background:repeating-conic-gradient(#bbb 0 25%,#ddd 0 50%) 0/12px 12px; }
+.swatch figcaption { margin:4px 0; }
+nav { font-size:12px; }
+@media(max-width:700px) { .viewport { height:320px; } header,main { padding:10px 16px; } .comparison { gap:8px; } h2 { margin:6px 0; } }

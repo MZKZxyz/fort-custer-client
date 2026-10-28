@@ -1,0 +1,138 @@
+{
+  "status": "PASS",
+  "glbSha256": "f3a7913680e8462ca66455bcb1e3fcb7b067168cdbb482f99474688cb55f01f0",
+  "sourceBlendSha256": "83c77e4315ced91db5f84ae155dfa25017e50fc0daf738ff5e470ab4fd0178f2",
+  "importStateBeforeLookdev": {
+    "objects": [
+      {
+        "name": "Fort Custer / pallet wall master",
+        "type": "EMPTY"
+      },
+      {
+        "name": "Pallet wall / one cell",
+        "type": "MESH"
+      }
+    ],
+    "images": [
+      {
+        "name": "wall-master-basecolor",
+        "packed": true,
+        "size": [
+          1024,
+          1024
+        ]
+      },
+      {
+        "name": "wall-master-normal",
+        "packed": true,
+        "size": [
+          1024,
+          1024
+        ]
+      }
+    ],
+    "sourceBlendLoadedDuringImport": false,
+    "onlyFileInImportDirectory": "wall-master.glb",
+    "lights": 0,
+    "cameras": 0
+  },
+  "nativeGlTFBounds": [
+    [
+      -0.5,
+      0.5
+    ],
+    [
+      0.0,
+      0.5949999690055847
+    ],
+    [
+      -0.5,
+      0.5
+    ]
+  ],
+  "reimportBounds": [
+    [
+      -0.5,
+      0.5
+    ],
+    [
+      -0.5,
+      0.5
+    ],
+    [
+      0.0,
+      0.5949999690055847
+    ]
+  ],
+  "rootPivot": [
+    0,
+    0,
+    0
+  ],
+  "rootScale": [
+    1,
+    1,
+    1
+  ],
+  "triangles": 11824,
+  "surfaceArea": 10.119092184224051,
+  "surfaceAreaDelta": 2.8184242140127935e-07,
+  "signedVolume": 0.27218165335264866,
+  "signedVolumeDelta": 2.825398601746798e-07,
+  "maxPositionError": 5.960464477539063e-08,
+  "reverseMaxPositionError": 5.960464477539063e-08,
+  "minimumSourceNormalDot": 0.9999972410032569,
+  "embeddedTextures": [
+    {
+      "name": "wall-master-normal",
+      "size": [
+        1024,
+        1024
+      ],
+      "sha256": "eccb8c1e3e914dbf7b36f3ad9a21f170df1b622b6a5cc167c70d8aa481f4325e",
+      "bytes": 791827
+    },
+    {
+      "name": "wall-master-basecolor",
+      "size": [
+        1024,
+        1024
+      ],
+      "sha256": "8d56ee90b50fc63d5419cdf61cb4edaccbb30427a635c6984ff09c564af0b110",
+      "bytes": 589102
+    }
+  ],
+  "materials": 13,
+  "uvLoops": 35472,
+  "maxTangentUnitLengthError": 1.1920928955078125e-07,
+  "maxTangentNormalDot": 1.1920928955078125e-07,
+  "upwardFloorRay": {
+    "point": [
+      0.0,
+      0.0,
+      0.09399998188018799
+    ],
+    "normal": [
+      0.0,
+      0.0,
+      1.0
+    ]
+  },
+  "renderCamera": "58 degree elevation / yaw 0 / 224px cell / 256x352 / anchor (128,208)",
+  "qaWorldShader": {
+    "useNodes": true,
+    "backgroundColor": [
+      0.05087608844041824,
+      0.05087608844041824,
+      0.05087608844041824,
+      1.0
+    ],
+    "backgroundStrength": 1.0
+  },
+  "limitations": [
+    "Procedural grain becomes finite-resolution 8-bit textures; very fine detail/filtering can differ at close range.",
+    "Blender shader graphs and editable modifiers are retained only in the original .blend.",
+    "Core glTF metallic/roughness shading omits Blender-specific default specular-IOR treatment; render engines may differ."
+  ],
+  "review": "Author validation only; independent QA and owner approval pending"
+}

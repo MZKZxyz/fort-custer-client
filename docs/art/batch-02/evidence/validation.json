@@ -1,0 +1,272 @@
+{
+  "status": "PASS",
+  "baseline": "5732fa78de6398582a7d230fc960fc5dc4fb9856",
+  "assets": [
+    {
+      "file": "../batch-01/assets/wall-daylight-body.png",
+      "sha256": "ca03f87fd44094a70b3b37997cdd181e6d1bc7edd5f92a83fa38bfbe71694afd",
+      "border": 15,
+      "alphaIdenticalToApproved": true,
+      "meanRgbDifferenceFromHoney": 0.0,
+      "visibleMeanRgb8": [
+        130.3637174487137,
+        94.50140785952885,
+        56.12719704786723
+      ]
+    },
+    {
+      "file": "../batch-01/assets/wall-daylight-shadow.png",
+      "sha256": "007076dbba91dd03603bdf700ac0ddef33204ed6e8df9a11ccc013464fe431db",
+      "border": 23,
+      "shadowCentroid": [
+        136.91688958758388,
+        147.014400209024
+      ]
+    },
+    {
+      "file": "../batch-01/assets/wall-dusk-body.png",
+      "sha256": "545e00aacb08bc0d009e87ea6c3697b5a17611277a45826a32611031c6cc63a5",
+      "border": 15,
+      "alphaIdenticalToApproved": true,
+      "meanRgbDifferenceFromHoney": 0.0,
+      "visibleMeanRgb8": [
+        76.86258941219678,
+        63.28533202749261,
+        51.56763846866857
+      ]
+    },
+    {
+      "file": "../batch-01/assets/wall-dusk-shadow.png",
+      "sha256": "8dc1a767bca098af3665f798ebd1edefedf2afa9ff9782b770f60fd3f56d3e36",
+      "border": 21,
+      "shadowCentroid": [
+        134.71686281239715,
+        148.5209164121962
+      ]
+    },
+    {
+      "file": "variants/v02/assets/wall-daylight-body.png",
+      "sha256": "9bf65a34576449757cb6ad210d77d57222554a8fddd91500d25a21720a1a8ef2",
+      "border": 15,
+      "alphaIdenticalToApproved": true,
+      "meanRgbDifferenceFromHoney": 7.320939505762605,
+      "visibleMeanRgb8": [
+        120.20042323230557,
+        88.03247695832385,
+        51.53984854579478
+      ]
+    },
+    {
+      "file": "variants/v02/assets/wall-daylight-shadow.png",
+      "sha256": "d5c32e9bfff4d64bb3aba7b2dd19e51f021101b4f92418d59fdcb3bc0c9380d5",
+      "border": 23,
+      "shadowCentroid": [
+        136.89328987902024,
+        147.06312543719812
+      ]
+    },
+    {
+      "file": "variants/v02/assets/wall-dusk-body.png",
+      "sha256": "a8cf5bafb9960b61617e337be5fa8a360aeecfd350e19e1faace5be62aba179c",
+      "border": 15,
+      "alphaIdenticalToApproved": true,
+      "meanRgbDifferenceFromHoney": 5.974681847065065,
+      "visibleMeanRgb8": [
+        68.57187079172424,
+        57.882526801797866,
+        47.7206841672642
+      ]
+    },
+    {
+      "file": "variants/v02/assets/wall-dusk-shadow.png",
+      "sha256": "e0db7a29b11a8d24869831861c3d1df9774aedd7807dc85a2fa6311f8504517e",
+      "border": 20,
+      "shadowCentroid": [
+        134.69585365352376,
+        148.56581128574322
+      ]
+    },
+    {
+      "file": "variants/v03/assets/wall-daylight-body.png",
+      "sha256": "fc1d3b81e7df9ab4316a31e7f785c5134242c313a6d3d05c39bc8e59c97ba23d",
+      "border": 15,
+      "alphaIdenticalToApproved": true,
+      "meanRgbDifferenceFromHoney": 26.362778875694456,
+      "visibleMeanRgb8": [
+        91.7934031724934,
+        69.01962258871264,
+        41.55945364556918
+      ]
+    },
+    {
+      "file": "variants/v03/assets/wall-daylight-shadow.png",
+      "sha256": "c4350945b4d1997bb9839b28da725404565c283d1c6110f6cc960fea072a4cc7",
+      "border": 22,
+      "shadowCentroid": [
+        136.8662567509311,
+        147.1579935447813
+      ]
+    },
+    {
+      "file": "variants/v03/assets/wall-dusk-body.png",
+      "sha256": "8e39325a55da10620859e9f6921bac857e266fb8efc5dd49c910ef0acd374dee",
+      "border": 15,
+      "alphaIdenticalToApproved": true,
+      "meanRgbDifferenceFromHoney": 20.552493048147046,
+      "visibleMeanRgb8": [
+        47.68591615803005,
+        43.241906993826404,
+        39.13242624040294
+      ]
+    },
+    {
+      "file": "variants/v03/assets/wall-dusk-shadow.png",
+      "sha256": "43bdbb8ea2663acee866bcf92b0aaa974d891b211d332a2e1f700662196288cc",
+      "border": 19,
+      "shadowCentroid": [
+        134.69279313163588,
+        148.65134091697738
+      ]
+    },
+    {
+      "file": "variants/v04/assets/wall-daylight-body.png",
+      "sha256": "05a4007be05053a2ca3595b1aebec3e578bd6264e3139047df60987c42782c3e",
+      "border": 15,
+      "alphaIdenticalToApproved": true,
+      "meanRgbDifferenceFromHoney": 12.779720993138506,
+      "visibleMeanRgb8": [
+        135.98772276535092,
+        107.13177914968782,
+        76.01376379440005
+      ]
+    },
+    {
+      "file": "variants/v04/assets/wall-daylight-shadow.png",
+      "sha256": "228d3fad1d955f00920f57d40d11e456d916c3f6bd85fb0a38024463e2988422",
+      "border": 23,
+      "shadowCentroid": [
+        136.92135615810884,
+        147.01479519274193
+      ]
+    },
+    {
+      "file": "variants/v04/assets/wall-dusk-body.png",
+      "sha256": "c447f350b6481034494d7b66268698e5a502c3ece67f3e4dd2444255fb7ca2fb",
+      "border": 15,
+      "alphaIdenticalToApproved": true,
+      "meanRgbDifferenceFromHoney": 11.311402204772149,
+      "visibleMeanRgb8": [
+        82.22415572150615,
+        74.22648175029293,
+        69.10745203658686
+      ]
+    },
+    {
+      "file": "variants/v04/assets/wall-dusk-shadow.png",
+      "sha256": "4a02aa93f79114ba67cf4ce245010e6ed04814d5c7bd4ef72768e775d4005452",
+      "border": 21,
+      "shadowCentroid": [
+        134.7386534512755,
+        148.5133915589174
+      ]
+    }
+  ],
+  "sharedPortableGeometrySha256": "70665297cba7b51a4df4d834e757952d0fbcf5132d4c9389be0de2dd7bc85974",
+  "portableModels": [
+    {
+      "variantId": "v02",
+      "glbSha256": "f3a7913680e8462ca66455bcb1e3fcb7b067168cdbb482f99474688cb55f01f0",
+      "maxPositionError": 5.960464477539063e-08,
+      "minimumNormalDot": 0.9999972410032569,
+      "sourceImportRenders": [
+        {
+          "mood": "daylight",
+          "differentSilhouettePixels": 0,
+          "meanRgb8Difference": 1.8817830126765915,
+          "p95Rgb8Difference": 6.0,
+          "maxRgb8Difference": 102.0
+        },
+        {
+          "mood": "dusk",
+          "differentSilhouettePixels": 0,
+          "meanRgb8Difference": 1.3623766594130313,
+          "p95Rgb8Difference": 5.0,
+          "maxRgb8Difference": 51.0
+        }
+      ]
+    },
+    {
+      "variantId": "v03",
+      "glbSha256": "6abf3ecc6eb5cb9a9d2e7cd9ad7c61a6481addd7ad657dd625d0440972cd5577",
+      "maxPositionError": 5.960464477539063e-08,
+      "minimumNormalDot": 0.9999972410032569,
+      "sourceImportRenders": [
+        {
+          "mood": "daylight",
+          "differentSilhouettePixels": 0,
+          "meanRgb8Difference": 1.505733826119996,
+          "p95Rgb8Difference": 5.0,
+          "maxRgb8Difference": 93.0
+        },
+        {
+          "mood": "dusk",
+          "differentSilhouettePixels": 0,
+          "meanRgb8Difference": 1.0396704777037062,
+          "p95Rgb8Difference": 4.0,
+          "maxRgb8Difference": 48.0
+        }
+      ]
+    },
+    {
+      "variantId": "v04",
+      "glbSha256": "7d970f8fdf9567352ae75e06f00477ec28445722c52d7297bc018141375cb495",
+      "maxPositionError": 5.960464477539063e-08,
+      "minimumNormalDot": 0.9999972410032569,
+      "sourceImportRenders": [
+        {
+          "mood": "daylight",
+          "differentSilhouettePixels": 0,
+          "meanRgb8Difference": 1.9072570895651273,
+          "p95Rgb8Difference": 7.0,
+          "maxRgb8Difference": 112.0
+        },
+        {
+          "mood": "dusk",
+          "differentSilhouettePixels": 0,
+          "meanRgb8Difference": 1.4074873637064926,
+          "p95Rgb8Difference": 5.0,
+          "maxRgb8Difference": 64.0
+        }
+      ]
+    }
+  ],
+  "savedSources": "source-audit.json",
+  "v01AndProductionPathsUnchanged": [
+    "docs/art/batch-01",
+    "src",
+    "public",
+    "package.json",
+    "package-lock.json",
+    ".github"
+  ],
+  "approvedInputHashes": {
+    "docs/art/batch-01/assets/ground-daylight-body.png": "018e696cb42fd74d9a8401f0bb66ee1b756a524dd29e427d2b3ea53ef0640d27",
+    "docs/art/batch-01/assets/ground-dusk-body.png": "f97990cf687ac8f9fbe56e7e3ab9138849c3990bd4c6a468dd396dded782d560",
+    "docs/art/batch-01/assets/manifest.json": "b3660ef76d66ba27fb084331dc3e91bebe5825b74021dd5be1b86fe1ab809d76",
+    "docs/art/batch-01/assets/wall-daylight-body.png": "ca03f87fd44094a70b3b37997cdd181e6d1bc7edd5f92a83fa38bfbe71694afd",
+    "docs/art/batch-01/assets/wall-daylight-shadow.png": "007076dbba91dd03603bdf700ac0ddef33204ed6e8df9a11ccc013464fe431db",
+    "docs/art/batch-01/assets/wall-dusk-body.png": "545e00aacb08bc0d009e87ea6c3697b5a17611277a45826a32611031c6cc63a5",
+    "docs/art/batch-01/assets/wall-dusk-shadow.png": "8dc1a767bca098af3665f798ebd1edefedf2afa9ff9782b770f60fd3f56d3e36",
+    "docs/art/batch-01/assets/wall-master-basecolor.png": "16297ed7bab2012b24ee52b7e383826220ac40a65bde5c2530c6bb0f88a21a65",
+    "docs/art/batch-01/assets/wall-master-normal.png": "eccb8c1e3e914dbf7b36f3ad9a21f170df1b622b6a5cc167c70d8aa481f4325e",
+    "docs/art/batch-01/assets/wall-master.glb": "4502031313c4fbd914480cb17cb6a9808a3dbe8ea56d44f54a530a1778d56db7",
+    "docs/art/batch-01/source/audit-glb.py": "52f67a29173efc118dc2b3ac380ea162ddb7cf2984cee87d94a7142abc628d1f",
+    "docs/art/batch-01/source/export-glb.py": "3f6e935c63ea8d5f4863f9893095468c43c19fd130a57e54c0df990bd2037143",
+    "docs/art/batch-01/source/fixtures.mjs": "d0b3794395e6841fc08da12a91667b2c21027bf86eb7d945f75a6dc46ae18191",
+    "docs/art/batch-01/source/wall-master.blend": "452d1f3bcce4c065ec08dcc8fcc67c9413d1f2cb16ebf1cabc65ed4e2b4a06ef"
+  },
+  "limits": [
+    "Author QA only; new finishes need independent Art QA and owner visual approval.",
+    "No device/GPU, Safari/Firefox, assistive-technology or runtime-LOD certification."
+  ]
+}
