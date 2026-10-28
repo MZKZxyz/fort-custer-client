@@ -1,7 +1,7 @@
 const { defineConfig } = require('@playwright/test');
 module.exports = defineConfig({
   testDir: '../../e2e',
-  testMatch: /(?:archive|responsive|completion-recovery|minimal-hud|unified-input|continuous-steering|production-integration|camera|dpad|maze-surface)\.spec\.js/,
+  testMatch: /(?:archive|results-owner|responsive|completion-recovery|minimal-hud|unified-input|continuous-steering|production-integration|camera|dpad|maze-surface)\.spec\.js/,
   workers: 2,
   use: { baseURL: 'http://127.0.0.1:3101', browserName: 'chromium', isMobile: true, hasTouch: true,
     trace: { mode: 'retain-on-failure', sources: false },

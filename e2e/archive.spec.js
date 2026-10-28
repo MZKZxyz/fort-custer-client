@@ -135,6 +135,13 @@ test('lost save recovers original UUID with old backend after profile switch and
   await page.evaluate(profileA=>{localStorage.setItem('activeSubProfile',JSON.stringify({_id:profileA}));window.dispatchEvent(new Event('activeSubProfileChanged'));},profileA);
   await expect(page.getByRole('button',{name:'Retry saving',exact:true})).toBeVisible();await page.reload();
   await page.getByRole('button',{name:'Retry saving',exact:true}).click();await expect(page.getByText(/You finished in/)).toContainText('00:08.123');
+  const originalContext=await page.evaluate(()=>sessionStorage.getItem('mazeResultContext'));
+  expect(JSON.parse(originalContext).receipt.attemptId).toBe(attemptId);
+  const hidden=await page.evaluate(profileB=>{localStorage.setItem('activeSubProfile',JSON.stringify({_id:profileB}));window.dispatchEvent(new Event('activeSubProfileChanged'));return document.body.innerText;},profileB);
+  expect(hidden).not.toMatch(/You finished in|March 1, 2028|Maze Complete!/);
+  await page.evaluate(profileA=>{localStorage.setItem('activeSubProfile',JSON.stringify({_id:profileA}));window.dispatchEvent(new Event('activeSubProfileChanged'));},profileA);
+  await expect(page.getByText(/You finished in/)).toContainText('00:08.123');
+  expect(await page.evaluate(()=>sessionStorage.getItem('mazeResultContext'))).toBe(originalContext);
   expect(state.starts).toHaveLength(1);expect(state.completes).toEqual(Array(2).fill({subProfileId:profileA,date:'2028-03-01',attemptId}));
 });
 for(const timezoneId of ['America/Los_Angeles','Pacific/Kiritimati','Pacific/Pago_Pago']){

@@ -7,42 +7,49 @@ import useCatalog from '../archive/useCatalog';
 import ArchiveNotice from '../archive/ArchiveNotice';
 import { catalogFresh } from '../archive/catalog';
 import { dateLabel, isDate } from '../archive/dates';
-import { accountId, parsed, readIdentity, stored } from '../archive/identity';
+import { readIdentity, stored } from '../archive/identity';
+import useResultReceipt from '../archive/useResultReceipt';
 
 function ResultsPage() {
-  const [time, setTime] = useState(null);
-  const [reward, setReward] = useState(null);
+  const { context, identity, raw } = useResultReceipt();
+  if (!context) return <UnavailableResults />;
+  return <OwnedResults key={JSON.stringify([context.identityHash, context.profileId, context.date, context.receipt])}
+    context={context} ownerKey={identity.key} raw={raw} />;
+}
+
+function UnavailableResults() {
+  const navigate = useNavigate();
+  return <div className="page-with-nav" style={{ padding: '2rem 1rem' }}>
+    <h2>Saved result unavailable for this player</h2>
+    <p role="status">Restore the original account and player to view this saved result. Missing or unverified owner context cannot disclose cached results.</p>
+    <button className="result-archive-action" onClick={() => navigate('/profiles')}>Choose player</button>
+    <button className="result-archive-action" onClick={() => navigate('/login')}>Sign in</button>
+    <button className="result-archive-action" onClick={() => navigate('/mazes')}>Browse archive</button>
+    <NavBar />
+  </div>;
+}
+
+function OwnedResults({ context, ownerKey, raw }) {
+  const { time, reward, newRecord } = context.receipt;
+  const lastPlayedDate = context.date;
   const [revealed, setRevealed] = useState(false);
   const [opening, setOpening] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
-  const [newRecord, setNewRecord] = useState(false);
   const navigate = useNavigate();
   const heading = useRef(null);
-
-  const [context] = useState(() => parsed('mazeResultContext', sessionStorage));
-  const [lastPlayedDate] = useState(() => context?.date || stored('selectedMazeDate'));
-  const catalog = useCatalog(isDate(lastPlayedDate) ? lastPlayedDate.slice(0, 7) : null);
-  const sameOwner = !context || (context.profileId === catalog.identity.profile?._id
-    && (!context.accountId || context.accountId === accountId(catalog.identity.token)));
-  const replayAvailable = sameOwner && catalog.usable && catalog.data.items.some(item => item.date === lastPlayedDate);
+  const timers = useRef([]);
+  const catalog = useCatalog(lastPlayedDate.slice(0, 7));
+  const stillOwned = () => readIdentity().key === ownerKey && stored('mazeResultContext', sessionStorage) === raw;
+  const replayAvailable = catalog.usable && catalog.data.items.some(item => item.date === lastPlayedDate);
   const go = date => {
+    if (!stillOwned()) return;
     if (!catalogFresh(catalog) || readIdentity().key !== catalog.identity.key) { catalog.refresh(); return; }
     try { localStorage.setItem('selectedMazeDate', date); navigate('/maze'); } catch { /* archive remains reachable */ }
   };
-  // Saved result presentation remains independent of catalog availability.
   useEffect(() => {
     heading.current?.focus();
-    const lastTime = localStorage.getItem('lastMazeTime');
-    if (lastTime) setTime(Number(lastTime));
-
-    const rewardData = parsed('lastReward');
-    if (rewardData) setReward(rewardData);
-
-    if (localStorage.getItem('lastNewRecord') === 'true') {
-      setNewRecord(true);
-      localStorage.removeItem('lastNewRecord');
-    }
-
+    const activeTimers = timers.current;
+    return () => activeTimers.forEach(clearTimeout);
   }, []);
 
   // Helpers
@@ -55,6 +62,8 @@ function ResultsPage() {
   const showActions = reward ? showDetails : true;
   const actionsDisabled = reward && !showDetails;
 
+  // Child-only catalog/timer updates must also check the live identity before rendering.
+  if (!stillOwned()) return <UnavailableResults />;
   return (
     <div className="page-with-nav" style={{
       backgroundColor: '#fff66c',
@@ -103,16 +112,18 @@ function ResultsPage() {
             ) : (
               <button type="button" className="reward-crate-button" aria-label="Open reward crate" disabled={opening}
                 onClick={() => {
-                  if (opening) return;
+                  if (opening || !stillOwned()) return;
                   setOpening(true);
                   setShowDetails(false);
-                  setTimeout(() => {
+                  timers.current.push(setTimeout(() => {
+                    if (!stillOwned()) { setOpening(false); setRevealed(false); setShowDetails(false); return; }
                     setRevealed(true);
                     setOpening(false);
-                    setTimeout(() => {
+                    timers.current.push(setTimeout(() => {
+                      if (!stillOwned()) { setOpening(false); setRevealed(false); setShowDetails(false); return; }
                       setShowDetails(true);
-                    }, 600);
-                  }, 600);
+                    }, 600));
+                  }, 600));
                 }}
               >
                 <img src="/images/crate.png" alt="" className={`crate${opening ? ' opening' : ''}`} />
@@ -188,7 +199,6 @@ function ResultsPage() {
           <button className="result-archive-action" disabled={!catalog.usable || !catalog.data?.todayMaze.available}
             onClick={() => go(catalog.data.today)}>Today's maze</button>
           <ArchiveNotice catalog={catalog} />
-          {!sameOwner && <p>Restore the original profile to replay this result.</p>}
 
         </>
       )}

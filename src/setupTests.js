@@ -8,6 +8,8 @@ import '@testing-library/jest-dom';
 const { TextEncoder, TextDecoder } = require('util');
 global.TextEncoder = TextEncoder;
 global.TextDecoder = TextDecoder;
+// Result-owner binding uses the browser Web Crypto API after a saved receipt.
+Object.defineProperty(window, 'crypto', { configurable: true, value: require('crypto').webcrypto });
 
 // jsdom has no native dialog API; browser tests verify actual focus/inertness.
 HTMLDialogElement.prototype.showModal = function () { this.setAttribute('open', ''); };

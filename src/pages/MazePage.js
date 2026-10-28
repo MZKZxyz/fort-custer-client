@@ -15,6 +15,7 @@ import '../css/MazePage.css'; // Add CSS below to this file
 import LegacyEntry from '../archive/LegacyEntry';
 import { accountId, parsed, readIdentity, stored } from '../archive/identity';
 import { isDate } from '../archive/dates';
+import { createResultReceipt } from '../archive/resultReceipt';
 const PUBLIC = process.env.PUBLIC_URL;
 // Explicit preview/release opt-in; ordinary production builds stay on legacy.
 const CAMERA_ENABLED = process.env.REACT_APP_MAZE_CAMERA === 'true';
@@ -271,10 +272,11 @@ export const MazePage = ({ v2 = null }) => {
       const { time, reward } = res.data;
       // A late owned receipt stays recoverable; it must not replace another account's result UI.
       if (readIdentity().key !== originalIdentity.current.key) return;
+      const resultContext = await createResultReceipt(originalIdentity.current, {
+        date: selectedDate, time, reward, attemptId: attemptIdRef.current,
+      });
+      if (readIdentity().key !== originalIdentity.current.key) return;
       localStorage.setItem('lastMazeTime', time);
-      sessionStorage.setItem('mazeResultContext', JSON.stringify({ date: selectedDate, profileId: profile._id,
-        accountId: accountId(originalIdentity.current.token) }));
-      window.dispatchEvent(new Event('mazeResultSaved'));
       if (reward) {
         localStorage.setItem('lastReward', JSON.stringify(reward));
       } else {
@@ -302,6 +304,9 @@ export const MazePage = ({ v2 = null }) => {
       } else {
         localStorage.removeItem('lastNewRecord');
       }
+      resultContext.receipt.newRecord = isNewRecord;
+      sessionStorage.setItem('mazeResultContext', JSON.stringify(resultContext));
+      window.dispatchEvent(new Event('mazeResultSaved'));
 
       localStorage.removeItem('mazeStartTime');
       setMovementStatus('Result saved. Opening results…');

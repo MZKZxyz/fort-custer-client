@@ -70,6 +70,7 @@ test.each([['keyboard', key], ['D-pad', pad]])('%s follows the same pickup, fire
   localStorage.setItem('lastReward', '{"id":"stale"}');
   localStorage.setItem('bestTimes', '{"2025-05-26":"10.000"}');
   await act(async () => complete.resolve({ data: { time: '9.000', reward: null } }));
+  await waitFor(() => expect(JSON.parse(sessionStorage.getItem('mazeResultContext')).receipt.time).toBe('9.000'));
   expect(localStorage.getItem('lastReward')).toBeNull();
   expect(JSON.parse(localStorage.getItem('bestTimes'))['2025-05-26']).toBe('9.000');
   act(() => frame(now + 3001));
@@ -248,4 +249,21 @@ test('maze loading failure remains actionable without a browser alert', async ()
   expect(await screen.findByRole('alert')).toHaveTextContent('Could not load maze');
   fireEvent.click(screen.getByRole('button',{name:'Back to mazes'}));
   expect(mockNavigate).toHaveBeenCalledWith('/mazes');
+});
+
+test('owner-binding failure after a saved response preserves the original UUID for receipt retry', async () => {
+  const attemptId = '01234567-89ab-4cde-8fab-0123456789ab';
+  API.post.mockResolvedValueOnce({ data: { ...fixture.data, attemptId, maze: { grid: [['S', 'E']] } } })
+    .mockResolvedValue({ data: { time: '8.123', reward: null, attemptId } });
+  const digest = jest.spyOn(window.crypto.subtle, 'digest').mockRejectedValueOnce(new Error('temporarily unavailable'));
+  localStorage.setItem('lastNewRecord', 'true');
+  render(<MazePage />); await ready(); key('Right');
+  expect(await screen.findByRole('alert')).toHaveTextContent('Could not save your result');
+  expect(JSON.parse(sessionStorage.getItem('mazeCompletion:synthetic-profile:2025-05-26')).attemptId).toBe(attemptId);
+  expect(localStorage.getItem('lastNewRecord')).toBe('true');
+  digest.mockRestore();
+  fireEvent.click(screen.getByRole('button', { name: 'Retry saving' }));
+  await waitFor(() => expect(JSON.parse(sessionStorage.getItem('mazeResultContext')).receipt.attemptId).toBe(attemptId));
+  expect(API.post.mock.calls.filter(([url]) => url === '/maze/start')).toHaveLength(1);
+  expect(API.post.mock.calls[1]).toEqual(API.post.mock.calls[2]);
 });

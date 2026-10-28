@@ -3,16 +3,19 @@ import ResultsPage from '../pages/ResultsPage';
 import LeaderboardPage from '../pages/LeaderboardPage';
 import API from '../utils/api';
 import { catalogFixture } from './__fixtures__/catalog';
+import { createResultReceipt } from './resultReceipt';
+import { readIdentity } from './identity';
 const mockNavigate = jest.fn();
 jest.mock('react-router-dom', () => ({ useNavigate: () => mockNavigate }));
 jest.mock('../components/NavBar', () => () => null);
 jest.mock('../utils/api', () => ({ get: jest.fn() }));
-beforeEach(() => {
+beforeEach(async () => {
   localStorage.clear(); sessionStorage.clear(); mockNavigate.mockReset(); API.get.mockReset();
   localStorage.setItem('token', 'synthetic-token');
   localStorage.setItem('activeSubProfile', JSON.stringify({ _id: 'profile-a' }));
   localStorage.setItem('selectedMazeDate', '2028-02-29');
   localStorage.setItem('lastMazeTime', '8.123');
+  sessionStorage.setItem('mazeResultContext', JSON.stringify(await createResultReceipt(readIdentity(), { date: '2028-02-29', time: '8.123', reward: null })));
   window.history.replaceState({}, '', '/');
   API.get.mockImplementation(url => Promise.resolve({ data: url.startsWith('/maze/archive') ? catalogFixture() : [] }));
 });
@@ -28,13 +31,14 @@ test('results preserve receipt/date and navigate to exact replay, Today and arch
   fireEvent.click(screen.getByRole('button', { name: 'Browse archive' }));
   expect(mockNavigate).toHaveBeenLastCalledWith('/mazes');
 });
-test('corrupt missing result date never becomes device today, receipt remains readable during outage', async () => {
+test('missing owner context never uses a corrupt device date or unbound receipt during outage', async () => {
   localStorage.setItem('selectedMazeDate', 'garbage');
+  sessionStorage.removeItem('mazeResultContext');
   API.get.mockRejectedValue({ response: { status: 404 } });
   render(<ResultsPage />);
-  expect(screen.getByText(/You finished in/)).toHaveTextContent('00:08.123');
-  await screen.findByRole('alert');
-  expect(screen.getByRole('button', { name: 'Replay Maze' })).toBeDisabled();
+  expect(screen.queryByText(/You finished in/)).not.toBeInTheDocument();
+  expect(screen.getByText('Saved result unavailable for this player')).toBeInTheDocument();
+  expect(screen.queryByRole('button', { name: 'Replay Maze' })).not.toBeInTheDocument();
   expect(localStorage.getItem('selectedMazeDate')).toBe('garbage');
 });
 test.each([200, 404, 503])('daily selected-date scores distinguish %s', async status => {

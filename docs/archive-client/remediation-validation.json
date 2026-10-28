@@ -1,0 +1,296 @@
+{
+  "failedHead": "81798c7c8123def0c98804f9d1d30cb635f94add",
+  "serverReference": "1f668d23477aa62557bd531e501ce5f6771bdd0c",
+  "scope": "Owner-bound result presentation and receipt preservation on existing PR #54; independent re-QA required.",
+  "environment": {
+    "node": "24.19.0",
+    "playwright": "1.62.1",
+    "chromium": "154.0.8037.57",
+    "disposableMongoDB": "8.0.16"
+  },
+  "checks": {
+    "unit": {
+      "passed": 229,
+      "failed": 0,
+      "skipped": 0,
+      "suites": 17
+    },
+    "optimizedFlagOffBuild": "passed",
+    "compiledCorrectedRuntimeSourcesMatched": 4,
+    "browser": {
+      "passed": 131,
+      "skipped": 28,
+      "failed": 0,
+      "flaky": 0
+    },
+    "defaultV2OffBrowser": {
+      "passed": 2,
+      "skipped": 14,
+      "failed": 0
+    },
+    "cachedV2ResultsBrowser": {
+      "passed": 5,
+      "skipped": 0,
+      "failed": 0
+    },
+    "realMergedServerIntegration": {
+      "passed": 1,
+      "skipped": 0,
+      "failed": 0,
+      "attemptCountAfterOwnerRestoration": 1,
+      "savedReceiptAndAttemptIdUnchanged": true
+    }
+  },
+  "browserSkips": [
+    {
+      "file": "camera.spec.js",
+      "test": "camera geometry, visibility, resize and motion 13\u00d717",
+      "reason": [
+        "Camera requires REACT_APP_MAZE_CAMERA=true"
+      ]
+    },
+    {
+      "file": "camera.spec.js",
+      "test": "camera geometry, visibility, resize and motion 21\u00d721",
+      "reason": [
+        "Camera requires REACT_APP_MAZE_CAMERA=true"
+      ]
+    },
+    {
+      "file": "continuous-steering.spec.js",
+      "test": "interactive original/fixed/trailing comparison cancels old input and shows the anchor difference",
+      "reason": [
+        "Comparison is preview-only"
+      ]
+    },
+    {
+      "file": "continuous-steering.spec.js",
+      "test": "interactive original/fixed/trailing comparison cancels old input and shows the anchor difference",
+      "reason": [
+        "Comparison is preview-only"
+      ]
+    },
+    {
+      "file": "continuous-steering.spec.js",
+      "test": "interactive original/fixed/trailing comparison cancels old input and shows the anchor difference",
+      "reason": [
+        "Comparison is preview-only"
+      ]
+    },
+    {
+      "file": "continuous-steering.spec.js",
+      "test": "interactive original/fixed/trailing comparison cancels old input and shows the anchor difference",
+      "reason": [
+        "Comparison is preview-only"
+      ]
+    },
+    {
+      "file": "continuous-steering.spec.js",
+      "test": "native touch anticipates and cancels under controlled deadlines while page offsets stay fixed",
+      "reason": [
+        "Desktop mouse coverage; native CDP touch uses mobile layouts."
+      ]
+    },
+    {
+      "file": "maze-surface.spec.js",
+      "test": "fallback cancels a captured drag and transfers gestures to the classic surface",
+      "reason": [
+        "Requires the integrated-to-classic runtime switch."
+      ]
+    },
+    {
+      "file": "maze-surface.spec.js",
+      "test": "fallback cancels a captured drag and transfers gestures to the classic surface",
+      "reason": [
+        "Requires the integrated-to-classic runtime switch."
+      ]
+    },
+    {
+      "file": "maze-surface.spec.js",
+      "test": "fallback cancels a captured drag and transfers gestures to the classic surface",
+      "reason": [
+        "Requires the integrated-to-classic runtime switch."
+      ]
+    },
+    {
+      "file": "maze-surface.spec.js",
+      "test": "touch starts on walls, sprites, center, edges and corners",
+      "reason": [
+        "Desktop uses native mouse."
+      ]
+    },
+    {
+      "file": "maze-surface.spec.js",
+      "test": "fallback cancels a captured drag and transfers gestures to the classic surface",
+      "reason": [
+        "Requires the integrated-to-classic runtime switch."
+      ]
+    },
+    {
+      "file": "maze-surface.spec.js",
+      "test": "downward top-edge drags do not scroll; multitouch and cancel stop ownership",
+      "reason": [
+        "Native touch emulation uses mobile layouts."
+      ]
+    },
+    {
+      "file": "production-integration.spec.js",
+      "test": "classic fallback keeps focus when optional directions are hidden",
+      "reason": [
+        "Requires the local integrated opt-in build"
+      ]
+    },
+    {
+      "file": "production-integration.spec.js",
+      "test": "playable 13 rows at 320\u00d7568",
+      "reason": [
+        "Production sprite integration requires exact true opt-in."
+      ]
+    },
+    {
+      "file": "production-integration.spec.js",
+      "test": "playable 21 rows at 320\u00d7568",
+      "reason": [
+        "Production sprite integration requires exact true opt-in."
+      ]
+    },
+    {
+      "file": "production-integration.spec.js",
+      "test": "playable 13 rows at 390\u00d7844",
+      "reason": [
+        "Production sprite integration requires exact true opt-in."
+      ]
+    },
+    {
+      "file": "production-integration.spec.js",
+      "test": "playable 21 rows at 390\u00d7844",
+      "reason": [
+        "Production sprite integration requires exact true opt-in."
+      ]
+    },
+    {
+      "file": "production-integration.spec.js",
+      "test": "playable 13 rows at 844\u00d7390",
+      "reason": [
+        "Production sprite integration requires exact true opt-in."
+      ]
+    },
+    {
+      "file": "production-integration.spec.js",
+      "test": "playable 21 rows at 844\u00d7390",
+      "reason": [
+        "Production sprite integration requires exact true opt-in."
+      ]
+    },
+    {
+      "file": "production-integration.spec.js",
+      "test": "playable 13 rows at 1280\u00d7800",
+      "reason": [
+        "Production sprite integration requires exact true opt-in."
+      ]
+    },
+    {
+      "file": "production-integration.spec.js",
+      "test": "playable 21 rows at 1280\u00d7800",
+      "reason": [
+        "Production sprite integration requires exact true opt-in."
+      ]
+    },
+    {
+      "file": "production-integration.spec.js",
+      "test": "quit dialog contains focus, Escape restores it, fallback continues same attempt",
+      "reason": [
+        "Production sprite integration requires exact true opt-in."
+      ]
+    },
+    {
+      "file": "production-integration.spec.js",
+      "test": "responsive camera follows outer edges, resizing, enlarged text and reduced motion",
+      "reason": [
+        "Production sprite integration requires exact true opt-in."
+      ]
+    },
+    {
+      "file": "production-integration.spec.js",
+      "test": "missing sprite offers same-attempt fallback",
+      "reason": [
+        "Production sprite integration requires exact true opt-in."
+      ]
+    },
+    {
+      "file": "production-integration.spec.js",
+      "test": "failed renderer chunk offers classic view without another start",
+      "reason": [
+        "Production sprite integration requires exact true opt-in."
+      ]
+    },
+    {
+      "file": "production-integration.spec.js",
+      "test": "runtime daylight kit matches the merged pilot byte-for-byte",
+      "reason": [
+        "Production sprite integration requires exact true opt-in."
+      ]
+    },
+    {
+      "file": "unified-input.spec.js",
+      "test": "native touch drag redirects at a wall and cancellation stops it",
+      "reason": [
+        "Desktop coverage uses native mouse and keyboard."
+      ]
+    }
+  ],
+  "sourceFiles": [
+    {
+      "file": "src/pages/MazePage.js",
+      "sha256": "5b979e4b03b46d6b90ed15a53658abcf40502a21291af1d351946b3e1f11a552"
+    },
+    {
+      "file": "src/pages/ResultsPage.js",
+      "sha256": "5f3e101e76ca0e76aeeaab8968d8822c1bd3893d7a77894cf90f90253ea442c9"
+    },
+    {
+      "file": "src/archive/resultReceipt.js",
+      "sha256": "ffd5ce640f71b58feaac2c9615b7ba8814824e15b5ded9824c9179c6e899db43"
+    },
+    {
+      "file": "src/archive/useResultReceipt.js",
+      "sha256": "958e33a87faa67f516785cd8b2aa4ab0018c51ee1a16678848bb94d222ffdd1e"
+    }
+  ],
+  "screenshots": [
+    {
+      "file": "remediation-evidence/other-player-neutral-page.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "974119b9673386d8c60b71ed7cd08f1d2dce26aca3edf7e959c1e31090949975"
+    },
+    {
+      "file": "remediation-evidence/other-player-neutral-viewport.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "974119b9673386d8c60b71ed7cd08f1d2dce26aca3edf7e959c1e31090949975"
+    },
+    {
+      "file": "remediation-evidence/owner-restored-page.png",
+      "width": 1322,
+      "height": 1021,
+      "sha256": "dc5d81b2fb45a5323f3beb903e4a3c6f979f0b8e0d569ea8705eb29bdd21eaed"
+    },
+    {
+      "file": "remediation-evidence/owner-restored-viewport.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "0e5551c27773aa2b31ac6dd04b1f1d0ece853532f6bc7eac4a507fe03359b4b3"
+    }
+  ],
+  "compatibility": [
+    "Missing/malformed/version-1 unbound caches are retained but never displayed as an owned receipt.",
+    "Original UUID retry against a missing-catalog backend writes a bound saved snapshot.",
+    "No v2, gameplay, scoring, publication policy or art source was changed."
+  ],
+  "limitations": [
+    "Author verification is not independent re-QA.",
+    "No production API/data/infrastructure accessed.",
+    "Physical mobile and actual screen-reader speech remain unverified."
+  ]
+}

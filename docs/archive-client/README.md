@@ -9,6 +9,14 @@ Vercel; the deployed Railway API remains the older server without the catalog.
 No production setting, data, publisher, schedule, scoring or v2 activation changes
 are included. Independent QA and coordinated release approval remain required.
 
+## QA correction on the existing PR
+
+The original head failed independent QA for cross-profile result disclosure.
+See [the result ownership correction](results-ownership-remediation.md) and
+[its current validation](remediation-validation.json). The original validation.json
+and 26 archive captures below describe the pre-correction archive delivery;
+they are retained as historical evidence, not current result-privacy acceptance.
+
 ## Player behavior
 
 Today's UTC date leads the archive. Today can be played/replayed only when the

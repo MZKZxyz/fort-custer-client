@@ -14,6 +14,17 @@ test('real merged archive/start/complete/daily routes and disposable MongoDB',as
   await page.waitForTimeout(3100);
   for(let i=0;i<4;i++)await page.keyboard.press('ArrowRight');
   await expect(page.getByText(/You finished in/)).toBeVisible();
+  const savedContext=await page.evaluate(()=>sessionStorage.getItem('mazeResultContext'));
+  const attemptId=JSON.parse(savedContext).receipt.attemptId;
+  expect(attemptId).toMatch(/^[a-f0-9-]{36}$/);
+  await page.route('**/api/maze/archive*',route=>route.fulfill({status:404,contentType:'text/html',body:'Cannot GET /api/maze/archive'}));
+  const hidden=await page.evaluate(()=>{localStorage.setItem('activeSubProfile',JSON.stringify({_id:'00000000000000000000000b',name:'Player B'}));window.dispatchEvent(new Event('activeSubProfileChanged'));return document.body.innerText;});
+  expect(hidden).not.toMatch(/You finished in|February 29, 2028|Maze Complete!/);
+  await page.evaluate(profileId=>{localStorage.setItem('activeSubProfile',JSON.stringify({_id:profileId,name:'Player'}));window.dispatchEvent(new Event('activeSubProfileChanged'));},fixture.profileId);
+  await expect(page.getByText(/You finished in/)).toBeVisible();
+  expect(await page.evaluate(()=>sessionStorage.getItem('mazeResultContext'))).toBe(savedContext);
+  expect((await (await request.get('/__counts')).json()).attemptCount).toBe(1);
+  await page.unroute('**/api/maze/archive*');
   await page.getByRole('button',{name:'Browse archive'}).click();
   await expect(page.getByRole('button',{name:/February 29, 2028.*Published, Completed/})).toBeVisible();
   await page.getByRole('button',{name:"View this date's leaderboard"}).click();
