@@ -67,7 +67,7 @@ for(const [width,height] of [[320,568],[375,667],[390,844],[844,390],[1280,800]]
     await leap.focus();await page.keyboard.press('Enter');
     await expect(leap).toHaveAttribute('aria-pressed','true');expect(state.starts).toHaveLength(0);
     await page.getByRole('button',{name:"View this date's leaderboard"}).click();
-    await expect(page.getByText('No legacy saved results yet.')).toBeVisible();
+    await expect(page.getByText('No fresh archive saved times yet.')).toBeVisible();
     await expect(page.getByRole('heading',{name:'February 29, 2028 (UTC)'})).toBeVisible();
     await page.getByRole('button',{name:'Choose a date in the archive'}).click();
     const play=page.getByRole('button',{name:'Play February 29, 2028',exact:true});await expect(play).toBeEnabled();

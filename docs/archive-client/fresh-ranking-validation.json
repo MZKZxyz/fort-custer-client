@@ -1,0 +1,427 @@
+{
+  "task": "Sprint 1.7I, existing draft PR #54; author evidence, independent QA pending",
+  "startingHead": "2c6dc171e6c7786ef5469009f593f9fa48a952e5",
+  "artMain": "72e5f90786288f02371da18139e1e834d8d13f64",
+  "artMerge": "21d40a7c64a2f47e36266d70aebda442d3cb10c8",
+  "serverReference": "daf455a61aed7d83eb3f0bfc115044db1e46d992",
+  "runtime": {
+    "node": "24.19.0",
+    "playwright": "1.62.1",
+    "chromium": "154.0.8037.57",
+    "mongo": "8.0.16"
+  },
+  "checks": {
+    "jest": {
+      "passed": 262,
+      "suites": 19,
+      "failed": 0,
+      "skipped": 0
+    },
+    "optimizedBuild": {
+      "passed": true,
+      "experimentalFlags": "all five v2/presentation build variables unset",
+      "api": "/api",
+      "mainJsGzip": "115.44 kB",
+      "mainCssGzip": "4.08 kB"
+    },
+    "chromium": {
+      "startTime": "2026-10-28T14:42:06.616Z",
+      "duration": 300991.54299999995,
+      "expected": 147,
+      "skipped": 28,
+      "unexpected": 0,
+      "flaky": 0,
+      "discovered": 175
+    },
+    "defaultV2Off": {
+      "passed": 2,
+      "skipped": 14,
+      "failed": 0
+    },
+    "cachedV2Results": {
+      "passed": 5,
+      "skipped": 0,
+      "failed": 0
+    },
+    "realDisposableIntegration": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "composition": "Exact default app/index from pinned merged server; synthetic approved fresh artifact in disposable copy only",
+      "checks": [
+        "empty launch and late real manifest publication",
+        "stored generated maze playthrough",
+        "lost completion ACK and reload retry with one UUID/start",
+        "synchronous A to B concealment and A receipt restoration during HTML404",
+        "daily, UTC weekly and fresh-only all-time rendering",
+        "old and future new-start denial",
+        "old weekly empty and all-time excludes old saved progress",
+        "historical UUID recovery during HTML404 leaves user document byte-identical",
+        "zero application DDL; five fixture grids retained; one old and one fresh attempt"
+      ]
+    }
+  },
+  "sourceHashes": [
+    {
+      "file": "src/pages/LeaderboardPage.js",
+      "sha256": "28f6316093be61e494bd577c9ec7cc6d32d575c7b0d0f2477669f8fb13f1d93b"
+    },
+    {
+      "file": "src/css/LeaderboardPage.css",
+      "sha256": "5d3c51af05639def411e727d562b4c2dd5b36d48e0eecc3d6acd9a2289ff566d"
+    },
+    {
+      "file": "src/archive/rankings.js",
+      "sha256": "b2ba9ce77c0145b50070fa6ee7daee9a01524d943262cd58d5544ca8f2404bc1"
+    },
+    {
+      "file": "src/pages/ResultsPage.js",
+      "sha256": "5f3e101e76ca0e76aeeaab8968d8822c1bd3893d7a77894cf90f90253ea442c9"
+    },
+    {
+      "file": "src/pages/MazePage.js",
+      "sha256": "5b979e4b03b46d6b90ed15a53658abcf40502a21291af1d351946b3e1f11a552"
+    },
+    {
+      "file": "src/archive/resultReceipt.js",
+      "sha256": "ffd5ce640f71b58feaac2c9615b7ba8814824e15b5ded9824c9179c6e899db43"
+    },
+    {
+      "file": "src/archive/useResultReceipt.js",
+      "sha256": "958e33a87faa67f516785cd8b2aa4ab0018c51ee1a16678848bb94d222ffdd1e"
+    }
+  ],
+  "sourceMapVerification": "Six ranking/privacy/gameplay runtime JS files match optimized sources exactly",
+  "unchangedPrivacyAndGameplay": "ResultsPage, MazePage, resultReceipt and useResultReceipt byte-identical to accepted starting head",
+  "artTrees": {
+    "docs/art/batch-01": "64e3bcd748dd42a0a11adc9360337a49f0a2ea5e",
+    "docs/art/batch-02": "b1d5ba8f824a4acf7ad07d65564483a31a5bc233",
+    "docs/art/meshy-spike": "f68b9f4eb5fd537116d375c146231959a50a8b77"
+  },
+  "buildHashes": [
+    {
+      "file": "build/asset-manifest.json",
+      "sha256": "0b01183f03b65394f761dae9236120b80d6234b4e70438365d1db8997e881991"
+    },
+    {
+      "file": "build/static/js/main.b9d7284e.js",
+      "sha256": "af9bfb0a93c2b5699cfaa93addb107c127b53136dd78d94c1f385a6c7857bdcf"
+    },
+    {
+      "file": "build/static/css/main.f64db823.css",
+      "sha256": "8ef2c8d9aada28df6c9a4e20af59660aa3b1a77ef2879be02da879184e47eeca"
+    }
+  ],
+  "images": [
+    {
+      "file": "docs/archive-client/fresh-ranking-evidence/320-all-time-list.png",
+      "sha256": "b7362c5041f119d7efcc6608338cfd2ccde93501d8c5ca386e3a05d420234551",
+      "width": 320,
+      "height": 568
+    },
+    {
+      "file": "docs/archive-client/fresh-ranking-evidence/320-all-time-text200.png",
+      "sha256": "3a3948df1a475c740f9e9d828e51ea2b6b038382cdbd1969dfb2283d0d359711",
+      "width": 320,
+      "height": 1533
+    },
+    {
+      "file": "docs/archive-client/fresh-ranking-evidence/320-weekly-empty.png",
+      "sha256": "6f9c3954840beb622fb8bfa0b46eb845dc159d464932322ba08e2c2b9067d326",
+      "width": 320,
+      "height": 588
+    },
+    {
+      "file": "docs/archive-client/fresh-ranking-evidence/old-backend-all-time-neutral.png",
+      "sha256": "e84233853b6eb08035068fa4a8b1bbc39693f451b9dc4b1cee3bdcef4d5a28d2",
+      "width": 1280,
+      "height": 720
+    }
+  ],
+  "focusedRankingTests": [
+    {
+      "file": "fresh-rankings.spec.js",
+      "title": "fresh-rankings.spec.js › old catalog blocks every board even when older endpoints would return scores",
+      "status": "passed"
+    },
+    {
+      "file": "fresh-rankings.spec.js",
+      "title": "fresh-rankings.spec.js › offline catalog blocks every board even when older endpoints would return scores",
+      "status": "passed"
+    },
+    {
+      "file": "fresh-rankings.spec.js",
+      "title": "fresh-rankings.spec.js › invalid catalog blocks every board even when older endpoints would return scores",
+      "status": "passed"
+    },
+    {
+      "file": "fresh-rankings.spec.js",
+      "title": "fresh-rankings.spec.js › legacy catalog blocks every board even when older endpoints would return scores",
+      "status": "passed"
+    },
+    {
+      "file": "fresh-rankings.spec.js",
+      "title": "fresh-rankings.spec.js › fresh weekly UTC keyboard and all-time at 320x568",
+      "status": "passed"
+    },
+    {
+      "file": "fresh-rankings.spec.js",
+      "title": "fresh-rankings.spec.js › fresh weekly UTC keyboard and all-time at 375x667",
+      "status": "passed"
+    },
+    {
+      "file": "fresh-rankings.spec.js",
+      "title": "fresh-rankings.spec.js › fresh weekly UTC keyboard and all-time at 390x844",
+      "status": "passed"
+    },
+    {
+      "file": "fresh-rankings.spec.js",
+      "title": "fresh-rankings.spec.js › fresh weekly UTC keyboard and all-time at 844x390",
+      "status": "passed"
+    },
+    {
+      "file": "fresh-rankings.spec.js",
+      "title": "fresh-rankings.spec.js › fresh weekly UTC keyboard and all-time at 1280x800",
+      "status": "passed"
+    },
+    {
+      "file": "fresh-rankings.spec.js",
+      "title": "fresh-rankings.spec.js › direct entry date garbage cannot select old/future weekly rankings",
+      "status": "passed"
+    },
+    {
+      "file": "fresh-rankings.spec.js",
+      "title": "fresh-rankings.spec.js › direct entry date 2025-05-26 cannot select old/future weekly rankings",
+      "status": "passed"
+    },
+    {
+      "file": "fresh-rankings.spec.js",
+      "title": "fresh-rankings.spec.js › direct entry date 2099-01-01 cannot select old/future weekly rankings",
+      "status": "passed"
+    },
+    {
+      "file": "fresh-rankings.spec.js",
+      "title": "fresh-rankings.spec.js › empty launch and missing today distinguish unpublished daily from valid empty aggregates",
+      "status": "passed"
+    },
+    {
+      "file": "fresh-rankings.spec.js",
+      "title": "fresh-rankings.spec.js › daily 404, aggregate 503, retry and catalog loss do not resurrect cached scores",
+      "status": "passed"
+    },
+    {
+      "file": "fresh-rankings.spec.js",
+      "title": "fresh-rankings.spec.js › delayed aggregate response cannot cross catalog revalidation failure",
+      "status": "passed"
+    },
+    {
+      "file": "fresh-rankings.spec.js",
+      "title": "fresh-rankings.spec.js › UTC Saturday to Sunday rollover changes the current week using catalog clock",
+      "status": "passed"
+    }
+  ],
+  "skippedTests": [
+    {
+      "file": "camera.spec.js",
+      "title": "camera.spec.js › camera geometry, visibility, resize and motion 13×17",
+      "reasons": [
+        "Camera requires REACT_APP_MAZE_CAMERA=true"
+      ]
+    },
+    {
+      "file": "camera.spec.js",
+      "title": "camera.spec.js › camera geometry, visibility, resize and motion 21×21",
+      "reasons": [
+        "Camera requires REACT_APP_MAZE_CAMERA=true"
+      ]
+    },
+    {
+      "file": "continuous-steering.spec.js",
+      "title": "continuous-steering.spec.js › steering 320×568 › interactive original/fixed/trailing comparison cancels old input and shows the anchor difference",
+      "reasons": [
+        "Comparison is preview-only"
+      ]
+    },
+    {
+      "file": "continuous-steering.spec.js",
+      "title": "continuous-steering.spec.js › steering 390×844 › interactive original/fixed/trailing comparison cancels old input and shows the anchor difference",
+      "reasons": [
+        "Comparison is preview-only"
+      ]
+    },
+    {
+      "file": "continuous-steering.spec.js",
+      "title": "continuous-steering.spec.js › steering 844×390 › interactive original/fixed/trailing comparison cancels old input and shows the anchor difference",
+      "reasons": [
+        "Comparison is preview-only"
+      ]
+    },
+    {
+      "file": "continuous-steering.spec.js",
+      "title": "continuous-steering.spec.js › steering 1280×800 › interactive original/fixed/trailing comparison cancels old input and shows the anchor difference",
+      "reasons": [
+        "Comparison is preview-only"
+      ]
+    },
+    {
+      "file": "continuous-steering.spec.js",
+      "title": "continuous-steering.spec.js › steering 1280×800 › native touch anticipates and cancels under controlled deadlines while page offsets stay fixed",
+      "reasons": [
+        "Desktop mouse coverage; native CDP touch uses mobile layouts."
+      ]
+    },
+    {
+      "file": "maze-surface.spec.js",
+      "title": "maze-surface.spec.js › surface 320×568 › fallback cancels a captured drag and transfers gestures to the classic surface",
+      "reasons": [
+        "Requires the integrated-to-classic runtime switch."
+      ]
+    },
+    {
+      "file": "maze-surface.spec.js",
+      "title": "maze-surface.spec.js › surface 390×844 › fallback cancels a captured drag and transfers gestures to the classic surface",
+      "reasons": [
+        "Requires the integrated-to-classic runtime switch."
+      ]
+    },
+    {
+      "file": "maze-surface.spec.js",
+      "title": "maze-surface.spec.js › surface 844×390 › fallback cancels a captured drag and transfers gestures to the classic surface",
+      "reasons": [
+        "Requires the integrated-to-classic runtime switch."
+      ]
+    },
+    {
+      "file": "maze-surface.spec.js",
+      "title": "maze-surface.spec.js › surface 1280×800 › touch starts on walls, sprites, center, edges and corners",
+      "reasons": [
+        "Desktop uses native mouse."
+      ]
+    },
+    {
+      "file": "maze-surface.spec.js",
+      "title": "maze-surface.spec.js › surface 1280×800 › fallback cancels a captured drag and transfers gestures to the classic surface",
+      "reasons": [
+        "Requires the integrated-to-classic runtime switch."
+      ]
+    },
+    {
+      "file": "maze-surface.spec.js",
+      "title": "maze-surface.spec.js › surface 1280×800 › downward top-edge drags do not scroll; multitouch and cancel stop ownership",
+      "reasons": [
+        "Native touch emulation uses mobile layouts."
+      ]
+    },
+    {
+      "file": "production-integration.spec.js",
+      "title": "production-integration.spec.js › classic fallback keeps focus when optional directions are hidden",
+      "reasons": [
+        "Requires the local integrated opt-in build"
+      ]
+    },
+    {
+      "file": "production-integration.spec.js",
+      "title": "production-integration.spec.js › flagged integration › playable 13 rows at 320×568",
+      "reasons": [
+        "Production sprite integration requires exact true opt-in."
+      ]
+    },
+    {
+      "file": "production-integration.spec.js",
+      "title": "production-integration.spec.js › flagged integration › playable 21 rows at 320×568",
+      "reasons": [
+        "Production sprite integration requires exact true opt-in."
+      ]
+    },
+    {
+      "file": "production-integration.spec.js",
+      "title": "production-integration.spec.js › flagged integration › playable 13 rows at 390×844",
+      "reasons": [
+        "Production sprite integration requires exact true opt-in."
+      ]
+    },
+    {
+      "file": "production-integration.spec.js",
+      "title": "production-integration.spec.js › flagged integration › playable 21 rows at 390×844",
+      "reasons": [
+        "Production sprite integration requires exact true opt-in."
+      ]
+    },
+    {
+      "file": "production-integration.spec.js",
+      "title": "production-integration.spec.js › flagged integration › playable 13 rows at 844×390",
+      "reasons": [
+        "Production sprite integration requires exact true opt-in."
+      ]
+    },
+    {
+      "file": "production-integration.spec.js",
+      "title": "production-integration.spec.js › flagged integration › playable 21 rows at 844×390",
+      "reasons": [
+        "Production sprite integration requires exact true opt-in."
+      ]
+    },
+    {
+      "file": "production-integration.spec.js",
+      "title": "production-integration.spec.js › flagged integration › playable 13 rows at 1280×800",
+      "reasons": [
+        "Production sprite integration requires exact true opt-in."
+      ]
+    },
+    {
+      "file": "production-integration.spec.js",
+      "title": "production-integration.spec.js › flagged integration › playable 21 rows at 1280×800",
+      "reasons": [
+        "Production sprite integration requires exact true opt-in."
+      ]
+    },
+    {
+      "file": "production-integration.spec.js",
+      "title": "production-integration.spec.js › flagged integration › quit dialog contains focus, Escape restores it, fallback continues same attempt",
+      "reasons": [
+        "Production sprite integration requires exact true opt-in."
+      ]
+    },
+    {
+      "file": "production-integration.spec.js",
+      "title": "production-integration.spec.js › flagged integration › responsive camera follows outer edges, resizing, enlarged text and reduced motion",
+      "reasons": [
+        "Production sprite integration requires exact true opt-in."
+      ]
+    },
+    {
+      "file": "production-integration.spec.js",
+      "title": "production-integration.spec.js › flagged integration › missing sprite offers same-attempt fallback",
+      "reasons": [
+        "Production sprite integration requires exact true opt-in."
+      ]
+    },
+    {
+      "file": "production-integration.spec.js",
+      "title": "production-integration.spec.js › flagged integration › failed renderer chunk offers classic view without another start",
+      "reasons": [
+        "Production sprite integration requires exact true opt-in."
+      ]
+    },
+    {
+      "file": "production-integration.spec.js",
+      "title": "production-integration.spec.js › flagged integration › runtime daylight kit matches the merged pilot byte-for-byte",
+      "reasons": [
+        "Production sprite integration requires exact true opt-in."
+      ]
+    },
+    {
+      "file": "unified-input.spec.js",
+      "title": "unified-input.spec.js › 1280×800 › native touch drag redirects at a wall and cancellation stops it",
+      "reasons": [
+        "Desktop coverage uses native mouse and keyboard."
+      ]
+    }
+  ],
+  "limitations": [
+    "Chromium emulation only, no physical device or native screen reader certification",
+    "400% browser zoom not tested",
+    "No production or remote CI checks",
+    "Catalog DTO cannot attest deployed fresh-release configuration; actual merged server and coordinated release remain required"
+  ]
+}

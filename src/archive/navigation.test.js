@@ -46,17 +46,8 @@ test.each([200, 404, 503])('daily selected-date scores distinguish %s', async st
   API.get.mockImplementation(url => url.startsWith('/maze/archive') ? Promise.resolve({ data: catalogFixture() })
     : status === 200 ? Promise.resolve({ data: [] }) : Promise.reject({ response: { status } }));
   render(<LeaderboardPage />);
-  const text = status === 200 ? 'No legacy saved results yet.' : status === 404
+  const text = status === 200 ? 'No fresh archive saved times yet.' : status === 404
     ? 'No published maze is available for this date.' : 'Leaderboard could not be loaded. Please retry.';
   expect(await screen.findByText(text)).toBeInTheDocument();
   expect(API.get.mock.calls.find(([url]) => url.startsWith('/leaderboard'))[0]).toBe('/leaderboard/daily?date=2028-02-29');
-});
-test('weekly and alltime remain separate legacy endpoints even when the catalog is absent', async () => {
-  API.get.mockImplementation(url => url.startsWith('/maze/archive') ? Promise.reject({response:{status:404}}) : Promise.resolve({data:[]}));
-  render(<LeaderboardPage />);
-  fireEvent.click(screen.getByRole('button', { name: 'Weekly' }));
-  expect(await screen.findByText('Legacy weekly — Summer 2025')).toBeInTheDocument();
-  await waitFor(() => expect(API.get.mock.calls.some(([url]) => url === '/leaderboard/weekly?start=2025-09-01')).toBe(true));
-  fireEvent.click(screen.getByRole('button', { name: 'Alltime' }));
-  await waitFor(() => expect(API.get.mock.calls.some(([url]) => url === '/leaderboard/alltime')).toBe(true));
 });

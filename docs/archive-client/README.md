@@ -1,8 +1,11 @@
-# Sprint 1.7D — Today and the published maze archive
+# Sprint 1.7D / 1.7I — Today, archive and fresh saved-time boards
 
 Implements client issue #53 from client `ea952aa6b1eafed45143607753210abf23f60867`.
 Contract: [accepted issue #50 specification](https://github.com/MZKZxyz/fort-custer-client/issues/50#issuecomment-6434131449)
-and merged server PR #18, reference `1f668d23477aa62557bd531e501ce5f6771bdd0c`.
+and merged server PR #18. Sprint 1.7I aligns rankings with merged server PR #23,
+reference `daf455a61aed7d83eb3f0bfc115044db1e46d992`.
+See [the fresh-ranking correction and combined-tree verification](fresh-rankings.md)
+for current behavior, evidence and independent QA gates.
 
 **Draft source only. Do not merge or deploy.** Client main auto-deploys through
 Vercel; the deployed Railway API remains the older server without the catalog.
@@ -47,8 +50,11 @@ played date; Browse archive and catalog-confirmed Today replace date-plus-one
 navigation. Reward presentation/selection is unchanged; opening the existing
 crate now has a native button, focus and reduced-motion support. Daily scores
 use the selected published date and distinguish empty scores, unavailable maze
-and network failure. They are explicitly legacy saved results; weekly retains
-its legacy summer scope and alltime its existing aggregation.
+and network failure. All three boards require a valid fresh catalog. Weekly
+uses Sunday–Saturday UTC navigation from the server day and publication bounds;
+all-time includes only the fresh archive. Mobile boards use an ordered list.
+These remain saved times, not official verified competitive rankings. There is
+no old-backend or summer-2025 ranking fallback.
 
 The compact Field HUD, movement, fire/Kit semantics, timer/scoring, art assets,
 renderer/camera flags, v2 transport and runtime activation gates are preserved.
@@ -76,9 +82,11 @@ server's final publication/ownership guard.
 Old HTML 404s, 503s, timeouts and malformed DTOs show Archive temporarily
 unavailable / Retry. They never become a synthetic empty calendar or enable
 Today from the device clock. An empty successful catalog is a different state.
-No client changes invent a legacy inventory. The merged server's default legacy
-inventory is empty and intentionally hides markerless history until positive
-exact-date/grid-hash evidence and shared runtime wiring are reviewed.
+The approved release direction is fresh-only: old test-era grids, attempts and
+rewards remain untouched, while new browsing/starts/rankings exclude them. The
+server's fresh release artifact remains pending. A genuine launch identity/date,
+first-maze publication and coordinated cutover require separate approval. Local
+receipt and pending original-UUID recovery remain independent of catalog access.
 
 ## Local reproduction
 
@@ -110,14 +118,14 @@ regressions, document scrolling, targets, fixed navigation clearance, focus,
 
 ### Real merged-server integration
 
-Use a separate checkout pinned to the server reference above, its locked
-Node dependencies, and a local mongod binary. The harness refuses ambient Mongo
-selectors, creates its own named loopback database and temporary directory,
-checks the server SHA, and tears down its database process. It never imports
-server startup or a production configuration. Four tiny fixture grids have
-explicit synthetic legacy date/hash evidence, including a stored future day.
-The current UTC clock advances monotonically from a synthetic 2028 epoch;
-completion delegates to the unchanged server service with that same clock.
+Use a separate checkout pinned to merged fresh server `daf455a61aed7d83eb3f0bfc115044db1e46d992`,
+its locked Node dependencies and a local mongod binary. The harness refuses
+ambient Mongo selectors and verifies the SHA. It reuses the server's disposable
+replica-set fixture and actual default app/index composition. An approved
+**synthetic** fresh release artifact exists only in a temporary source copy;
+checked-in configuration stays pending. Generated publication manifests are
+bound to that synthetic release. A retained old receipt/grid fixture verifies
+exclusion from public ranks and unchanged original-UUID recovery.
 
 ```sh
 env -u MONGO_URI -u MONGODB_URI -u MONGO_URL -u DATABASE_URL \
@@ -127,14 +135,19 @@ env -u MONGO_URI -u MONGODB_URI -u MONGO_URL -u DATABASE_URL \
 ```
 
 This separately verifies browser → actual merged archive/start/complete/daily
-routes → actual disposable MongoDB → saved completion and leaderboard rendering.
+routes → actual disposable MongoDB → saved completion and all three leaderboard
+views, with late publication, lost ACK/reload recovery, owner restoration, old
+date denial and byte-identical historical UUID receipt recovery. See the current
+[fresh-ranking evidence](fresh-rankings.md) for exact results; the older counts
+and original artifacts below are historical.
 Browsing creates zero attempts. A denied future start adds no attempt, including
 when its grid is stored. The fixture catalog is not a production inventory.
 
 ## Review evidence and release conditions
 
-See [validation.json](validation.json) for final counts and the screenshot
-manifest. Screenshots contain synthetic Player fixtures only; viewport and full
+See [fresh-ranking-validation.json](fresh-ranking-validation.json) for current
+combined-tree counts. The original [validation.json](validation.json) and gallery
+below are retained historical archive evidence. Screenshots contain synthetic Player fixtures only; viewport and full
 page images are both retained, including 320px enlarged text.
 
 Earlier runs found a test-environment URLSearchParams compatibility issue, a
@@ -148,14 +161,14 @@ semantics/keyboard/touch emulation and 200% text do not establish those claims.
 The default classic suite intentionally skips opt-in presentation/preview cases
 and unsupported desktop touch cases; it does not enable them to make counts pass.
 
-Before any merge/release, approve and verify the server deployment and positive
-legacy publication policy, schema/index behavior, old-client compatibility,
+Before any merge/release, approve and verify the fresh release artifact, actual
+server deployment and genuine first publication, schema/index behavior, old-client compatibility,
 client preview against that actual API, rollback and owner GO. Source-merged
 server code alone is not production readiness. No live publisher/backfill,
 legacy history/reward reconstruction or v2 enablement is authorized.
 
-Rollback is a client code/build rollback to the starting SHA under separate
-release review. It does not delete publications, attempts or receipts. Preserve
+Rollback requires a separately reviewed fresh-compatible client/server pair;
+the original summer-only client is not a safe default after fresh cutover. It does not delete publications, attempts or receipts. Preserve
 the original backend completion compatibility and server future-date guard;
 never repair archive access by running a seeder or unlocking dates in the client.
 
