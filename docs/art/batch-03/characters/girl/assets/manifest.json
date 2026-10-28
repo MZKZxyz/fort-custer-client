@@ -1,0 +1,892 @@
+{
+  "characterId": "CHR-GIRL-01",
+  "hair": "blonde braid",
+  "eyes": "blue",
+  "irisLinearRGB": [
+    0.03500000014901161,
+    0.23999999463558197,
+    0.47999998927116394
+  ],
+  "stance": "neutral relaxed A stance",
+  "geometrySha256": "003e9ada7b7c1a304ad6767dec02473efa615de41ec7e95bfc1de306d59ed2d1",
+  "worldBounds": [
+    [
+      -0.2800000011920929,
+      0.2800000011920929
+    ],
+    [
+      -0.15299999713897705,
+      0.26716503500938416
+    ],
+    [
+      0.0,
+      1.3423504829406738
+    ]
+  ],
+  "components": 135,
+  "provisionalHeightCells": 1.3423504829406738,
+  "wallHeightRatio": 2.2560512318330654,
+  "facingProjectedBounds": {
+    "south": [
+      [
+        65.27999877929688,
+        190.72000122070312
+      ],
+      [
+        26.905046463012695,
+        236.25052738189697
+      ]
+    ],
+    "east": [
+      [
+        68.15503692626953,
+        162.27200317382812
+      ],
+      [
+        21.648696899414062,
+        235.680645942688
+      ]
+    ],
+    "north": [
+      [
+        65.27999877929688,
+        190.72000122070312
+      ],
+      [
+        37.45492362976074,
+        222.9531364440918
+      ]
+    ],
+    "west": [
+      [
+        93.72799682617188,
+        187.844970703125
+      ],
+      [
+        21.648696899414062,
+        235.680645942688
+      ]
+    ]
+  },
+  "source": {
+    "file": "characters/girl/source/character-master.blend",
+    "sha256": "96046e6ff080751a4759a5776adbba799ef802a6b5b98cbb92d96c1451d9acbf",
+    "bytes": 3649740
+  },
+  "projection": {
+    "elevation": 58,
+    "yaw": 0,
+    "radius": 25,
+    "bodyOrthoScale": 1.5714285714285714,
+    "cellWidth": 224,
+    "groundPitch": 189.9627735390394,
+    "heightRise": 118.7019151882379
+  },
+  "color": {
+    "transform": "AgX",
+    "look": "Medium High Contrast",
+    "output": "sRGB / straight RGBA8",
+    "exposure": 0,
+    "gamma": 1
+  },
+  "lighting": {
+    "daylight": {
+      "key": {
+        "position": [
+          -6,
+          -3,
+          12
+        ],
+        "energy": 1800.0,
+        "color": [
+          1.0,
+          0.8399999737739563,
+          0.6299999952316284
+        ],
+        "size": 7
+      },
+      "fill": {
+        "position": [
+          4,
+          6,
+          10
+        ],
+        "energy": 650.0,
+        "color": [
+          0.6600000262260437,
+          0.7900000214576721,
+          1.0
+        ],
+        "size": 9
+      },
+      "world": [
+        0.25,
+        0.25,
+        0.25
+      ]
+    },
+    "dusk": {
+      "key": {
+        "position": [
+          -6,
+          -3,
+          12
+        ],
+        "energy": 1050.0,
+        "color": [
+          0.47999998927116394,
+          0.6200000047683716,
+          1.0
+        ],
+        "size": 7
+      },
+      "fill": {
+        "position": [
+          4,
+          6,
+          10
+        ],
+        "energy": 550.0,
+        "color": [
+          0.44999998807907104,
+          0.550000011920929,
+          0.8500000238418579
+        ],
+        "size": 9
+      },
+      "world": [
+        0.11999999731779099,
+        0.15000000596046448,
+        0.2199999988079071
+      ]
+    }
+  },
+  "blender": "4.3.2",
+  "approval": "proposed / independent Art QA and owner approval pending",
+  "headPoseDegreesX": -10,
+  "sourceUVs": "Packed Component UV charts; portable exporter repacks its shared PBR atlas",
+  "componentPivots": "Local bounds centers under a feet-root; not a skeletal rig",
+  "canonicalTriangulation": "FIXED quad / CLIP ngon modifier on every component",
+  "assets": [
+    {
+      "file": "girl-south-daylight-body.png",
+      "characterId": "CHR-GIRL-01",
+      "facing": "south",
+      "mood": "daylight",
+      "layer": "body",
+      "size": [
+        256,
+        352
+      ],
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224,
+      "projectionSamples": {
+        "origin": [
+          128.0,
+          207.99987506866455
+        ],
+        "right": [
+          352.0,
+          207.99987506866455
+        ],
+        "row": [
+          128.0,
+          397.96265745162964
+        ],
+        "height": [
+          128.0,
+          89.29795837402344
+        ]
+      },
+      "meshSha256": "003e9ada7b7c1a304ad6767dec02473efa615de41ec7e95bfc1de306d59ed2d1",
+      "bounds": [
+        64,
+        26,
+        192,
+        237
+      ],
+      "outerTransparentPixels": 26,
+      "sha256": "bc8838311443ed1fca7db077adcda95fb10d817d47f4d4220e8c2cb8028929bd",
+      "bytes": 64102,
+      "decodedBytes": 360448
+    },
+    {
+      "file": "girl-south-daylight-shadow.png",
+      "characterId": "CHR-GIRL-01",
+      "facing": "south",
+      "mood": "daylight",
+      "layer": "shadow",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112,
+      "projectionSamples": {
+        "origin": [
+          256.0,
+          299.99993896484375
+        ],
+        "right": [
+          480.0,
+          299.99993896484375
+        ],
+        "row": [
+          256.0,
+          489.96270179748535
+        ],
+        "height": [
+          256.0,
+          181.29803466796875
+        ]
+      },
+      "meshSha256": "003e9ada7b7c1a304ad6767dec02473efa615de41ec7e95bfc1de306d59ed2d1",
+      "bounds": [
+        67,
+        84,
+        240,
+        223
+      ],
+      "outerTransparentPixels": 16,
+      "sha256": "2946232389c03da7fc5255c7b269ba6dfcf10a9668c20d40f3fcf26eaabf43d4",
+      "bytes": 10129,
+      "decodedBytes": 262144
+    },
+    {
+      "file": "girl-east-daylight-body.png",
+      "characterId": "CHR-GIRL-01",
+      "facing": "east",
+      "mood": "daylight",
+      "layer": "body",
+      "size": [
+        256,
+        352
+      ],
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224,
+      "projectionSamples": {
+        "origin": [
+          128.0,
+          207.99987506866455
+        ],
+        "right": [
+          352.0,
+          207.99987506866455
+        ],
+        "row": [
+          128.0,
+          397.96265745162964
+        ],
+        "height": [
+          128.0,
+          89.29795837402344
+        ]
+      },
+      "meshSha256": "003e9ada7b7c1a304ad6767dec02473efa615de41ec7e95bfc1de306d59ed2d1",
+      "bounds": [
+        67,
+        20,
+        164,
+        237
+      ],
+      "outerTransparentPixels": 20,
+      "sha256": "62da59bfe44fd9a6fe2c8d9dc927918f9a1eeba6da8a8e7b0096080da14275b6",
+      "bytes": 54425,
+      "decodedBytes": 360448
+    },
+    {
+      "file": "girl-east-daylight-shadow.png",
+      "characterId": "CHR-GIRL-01",
+      "facing": "east",
+      "mood": "daylight",
+      "layer": "shadow",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112,
+      "projectionSamples": {
+        "origin": [
+          256.0,
+          299.99993896484375
+        ],
+        "right": [
+          480.0,
+          299.99993896484375
+        ],
+        "row": [
+          256.0,
+          489.96270179748535
+        ],
+        "height": [
+          256.0,
+          181.29803466796875
+        ]
+      },
+      "meshSha256": "003e9ada7b7c1a304ad6767dec02473efa615de41ec7e95bfc1de306d59ed2d1",
+      "bounds": [
+        68,
+        85,
+        238,
+        218
+      ],
+      "outerTransparentPixels": 18,
+      "sha256": "2ca8811c963b6fa3d1dadeff3f391d1a228c1fbe2d5f602e6c1a749209a557d2",
+      "bytes": 10395,
+      "decodedBytes": 262144
+    },
+    {
+      "file": "girl-north-daylight-body.png",
+      "characterId": "CHR-GIRL-01",
+      "facing": "north",
+      "mood": "daylight",
+      "layer": "body",
+      "size": [
+        256,
+        352
+      ],
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224,
+      "projectionSamples": {
+        "origin": [
+          128.0,
+          207.99987506866455
+        ],
+        "right": [
+          352.0,
+          207.99987506866455
+        ],
+        "row": [
+          128.0,
+          397.96265745162964
+        ],
+        "height": [
+          128.0,
+          89.29795837402344
+        ]
+      },
+      "meshSha256": "003e9ada7b7c1a304ad6767dec02473efa615de41ec7e95bfc1de306d59ed2d1",
+      "bounds": [
+        64,
+        37,
+        192,
+        224
+      ],
+      "outerTransparentPixels": 37,
+      "sha256": "7e4b711c7d2dd7e065caa784e07552e9cadd483adcdad04c9fc5ebe5b8af7869",
+      "bytes": 56170,
+      "decodedBytes": 360448
+    },
+    {
+      "file": "girl-north-daylight-shadow.png",
+      "characterId": "CHR-GIRL-01",
+      "facing": "north",
+      "mood": "daylight",
+      "layer": "shadow",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112,
+      "projectionSamples": {
+        "origin": [
+          256.0,
+          299.99993896484375
+        ],
+        "right": [
+          480.0,
+          299.99993896484375
+        ],
+        "row": [
+          256.0,
+          489.96270179748535
+        ],
+        "height": [
+          256.0,
+          181.29803466796875
+        ]
+      },
+      "meshSha256": "003e9ada7b7c1a304ad6767dec02473efa615de41ec7e95bfc1de306d59ed2d1",
+      "bounds": [
+        61,
+        91,
+        245,
+        224
+      ],
+      "outerTransparentPixels": 11,
+      "sha256": "9b6650c58d7abe9e40daada441ce9fa187a51c8e78a42b2391d5beba9b8b53a6",
+      "bytes": 10598,
+      "decodedBytes": 262144
+    },
+    {
+      "file": "girl-west-daylight-body.png",
+      "characterId": "CHR-GIRL-01",
+      "facing": "west",
+      "mood": "daylight",
+      "layer": "body",
+      "size": [
+        256,
+        352
+      ],
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224,
+      "projectionSamples": {
+        "origin": [
+          128.0,
+          207.99987506866455
+        ],
+        "right": [
+          352.0,
+          207.99987506866455
+        ],
+        "row": [
+          128.0,
+          397.96265745162964
+        ],
+        "height": [
+          128.0,
+          89.29795837402344
+        ]
+      },
+      "meshSha256": "003e9ada7b7c1a304ad6767dec02473efa615de41ec7e95bfc1de306d59ed2d1",
+      "bounds": [
+        93,
+        21,
+        189,
+        237
+      ],
+      "outerTransparentPixels": 21,
+      "sha256": "93ef12d9a2329bb998e10e04a3a9d87c169ead8fac87cd56f06ef491d5761d5e",
+      "bytes": 54723,
+      "decodedBytes": 360448
+    },
+    {
+      "file": "girl-west-daylight-shadow.png",
+      "characterId": "CHR-GIRL-01",
+      "facing": "west",
+      "mood": "daylight",
+      "layer": "shadow",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112,
+      "projectionSamples": {
+        "origin": [
+          256.0,
+          299.99993896484375
+        ],
+        "right": [
+          480.0,
+          299.99993896484375
+        ],
+        "row": [
+          256.0,
+          489.96270179748535
+        ],
+        "height": [
+          256.0,
+          181.29803466796875
+        ]
+      },
+      "meshSha256": "003e9ada7b7c1a304ad6767dec02473efa615de41ec7e95bfc1de306d59ed2d1",
+      "bounds": [
+        73,
+        86,
+        244,
+        216
+      ],
+      "outerTransparentPixels": 12,
+      "sha256": "018a28fb732c91a69c8681d70e5cf84378ec8abedd7a61de67b8891213f7458e",
+      "bytes": 10422,
+      "decodedBytes": 262144
+    },
+    {
+      "file": "girl-south-dusk-body.png",
+      "characterId": "CHR-GIRL-01",
+      "facing": "south",
+      "mood": "dusk",
+      "layer": "body",
+      "size": [
+        256,
+        352
+      ],
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224,
+      "projectionSamples": {
+        "origin": [
+          128.0,
+          207.99987506866455
+        ],
+        "right": [
+          352.0,
+          207.99987506866455
+        ],
+        "row": [
+          128.0,
+          397.96265745162964
+        ],
+        "height": [
+          128.0,
+          89.29795837402344
+        ]
+      },
+      "meshSha256": "003e9ada7b7c1a304ad6767dec02473efa615de41ec7e95bfc1de306d59ed2d1",
+      "bounds": [
+        64,
+        26,
+        192,
+        237
+      ],
+      "outerTransparentPixels": 26,
+      "sha256": "fe150b29b55646b47b85f31e8bbba2eec955a916ce4ae07c4ce1f383b2c64cc1",
+      "bytes": 58381,
+      "decodedBytes": 360448
+    },
+    {
+      "file": "girl-south-dusk-shadow.png",
+      "characterId": "CHR-GIRL-01",
+      "facing": "south",
+      "mood": "dusk",
+      "layer": "shadow",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112,
+      "projectionSamples": {
+        "origin": [
+          256.0,
+          299.99993896484375
+        ],
+        "right": [
+          480.0,
+          299.99993896484375
+        ],
+        "row": [
+          256.0,
+          489.96270179748535
+        ],
+        "height": [
+          256.0,
+          181.29803466796875
+        ]
+      },
+      "meshSha256": "003e9ada7b7c1a304ad6767dec02473efa615de41ec7e95bfc1de306d59ed2d1",
+      "bounds": [
+        60,
+        85,
+        235,
+        225
+      ],
+      "outerTransparentPixels": 21,
+      "sha256": "9c2201da2fe7ab84f06cc1f2a168907dccbcbb3e6a7974dde06a63b25357071c",
+      "bytes": 10187,
+      "decodedBytes": 262144
+    },
+    {
+      "file": "girl-east-dusk-body.png",
+      "characterId": "CHR-GIRL-01",
+      "facing": "east",
+      "mood": "dusk",
+      "layer": "body",
+      "size": [
+        256,
+        352
+      ],
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224,
+      "projectionSamples": {
+        "origin": [
+          128.0,
+          207.99987506866455
+        ],
+        "right": [
+          352.0,
+          207.99987506866455
+        ],
+        "row": [
+          128.0,
+          397.96265745162964
+        ],
+        "height": [
+          128.0,
+          89.29795837402344
+        ]
+      },
+      "meshSha256": "003e9ada7b7c1a304ad6767dec02473efa615de41ec7e95bfc1de306d59ed2d1",
+      "bounds": [
+        67,
+        20,
+        164,
+        237
+      ],
+      "outerTransparentPixels": 20,
+      "sha256": "dc99b882e3489c648d80e54f6579e5446cdff0a1bd3a34d209488efc476c74c0",
+      "bytes": 49501,
+      "decodedBytes": 360448
+    },
+    {
+      "file": "girl-east-dusk-shadow.png",
+      "characterId": "CHR-GIRL-01",
+      "facing": "east",
+      "mood": "dusk",
+      "layer": "shadow",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112,
+      "projectionSamples": {
+        "origin": [
+          256.0,
+          299.99993896484375
+        ],
+        "right": [
+          480.0,
+          299.99993896484375
+        ],
+        "row": [
+          256.0,
+          489.96270179748535
+        ],
+        "height": [
+          256.0,
+          181.29803466796875
+        ]
+      },
+      "meshSha256": "003e9ada7b7c1a304ad6767dec02473efa615de41ec7e95bfc1de306d59ed2d1",
+      "bounds": [
+        58,
+        86,
+        235,
+        222
+      ],
+      "outerTransparentPixels": 21,
+      "sha256": "8404db8106c4a938c637005f390e427a6c529cd2c0e222819ed8545de88e3c90",
+      "bytes": 10371,
+      "decodedBytes": 262144
+    },
+    {
+      "file": "girl-north-dusk-body.png",
+      "characterId": "CHR-GIRL-01",
+      "facing": "north",
+      "mood": "dusk",
+      "layer": "body",
+      "size": [
+        256,
+        352
+      ],
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224,
+      "projectionSamples": {
+        "origin": [
+          128.0,
+          207.99987506866455
+        ],
+        "right": [
+          352.0,
+          207.99987506866455
+        ],
+        "row": [
+          128.0,
+          397.96265745162964
+        ],
+        "height": [
+          128.0,
+          89.29795837402344
+        ]
+      },
+      "meshSha256": "003e9ada7b7c1a304ad6767dec02473efa615de41ec7e95bfc1de306d59ed2d1",
+      "bounds": [
+        64,
+        37,
+        192,
+        224
+      ],
+      "outerTransparentPixels": 37,
+      "sha256": "9abaf3a92b38a74978485c60f68c693ce9f7474af101ce3822030ae6645f5fba",
+      "bytes": 50531,
+      "decodedBytes": 360448
+    },
+    {
+      "file": "girl-north-dusk-shadow.png",
+      "characterId": "CHR-GIRL-01",
+      "facing": "north",
+      "mood": "dusk",
+      "layer": "shadow",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112,
+      "projectionSamples": {
+        "origin": [
+          256.0,
+          299.99993896484375
+        ],
+        "right": [
+          480.0,
+          299.99993896484375
+        ],
+        "row": [
+          256.0,
+          489.96270179748535
+        ],
+        "height": [
+          256.0,
+          181.29803466796875
+        ]
+      },
+      "meshSha256": "003e9ada7b7c1a304ad6767dec02473efa615de41ec7e95bfc1de306d59ed2d1",
+      "bounds": [
+        56,
+        92,
+        238,
+        226
+      ],
+      "outerTransparentPixels": 18,
+      "sha256": "f6219f575a33b32894b75327893ad7ddcc2e2cfe33402b62e1990f3053c26d7d",
+      "bytes": 10612,
+      "decodedBytes": 262144
+    },
+    {
+      "file": "girl-west-dusk-body.png",
+      "characterId": "CHR-GIRL-01",
+      "facing": "west",
+      "mood": "dusk",
+      "layer": "body",
+      "size": [
+        256,
+        352
+      ],
+      "anchor": [
+        128,
+        208
+      ],
+      "cellWidth": 224,
+      "projectionSamples": {
+        "origin": [
+          128.0,
+          207.99987506866455
+        ],
+        "right": [
+          352.0,
+          207.99987506866455
+        ],
+        "row": [
+          128.0,
+          397.96265745162964
+        ],
+        "height": [
+          128.0,
+          89.29795837402344
+        ]
+      },
+      "meshSha256": "003e9ada7b7c1a304ad6767dec02473efa615de41ec7e95bfc1de306d59ed2d1",
+      "bounds": [
+        93,
+        21,
+        189,
+        237
+      ],
+      "outerTransparentPixels": 21,
+      "sha256": "b1113de1a5816486fda62c39d6b38789f92b48cbeb943ee0d7eb22e5dff1a37a",
+      "bytes": 49703,
+      "decodedBytes": 360448
+    },
+    {
+      "file": "girl-west-dusk-shadow.png",
+      "characterId": "CHR-GIRL-01",
+      "facing": "west",
+      "mood": "dusk",
+      "layer": "shadow",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        150
+      ],
+      "cellWidth": 112,
+      "projectionSamples": {
+        "origin": [
+          256.0,
+          299.99993896484375
+        ],
+        "right": [
+          480.0,
+          299.99993896484375
+        ],
+        "row": [
+          256.0,
+          489.96270179748535
+        ],
+        "height": [
+          256.0,
+          181.29803466796875
+        ]
+      },
+      "meshSha256": "003e9ada7b7c1a304ad6767dec02473efa615de41ec7e95bfc1de306d59ed2d1",
+      "bounds": [
+        65,
+        87,
+        242,
+        224
+      ],
+      "outerTransparentPixels": 14,
+      "sha256": "bc5ff386bfffed8edc6fb5f14b0bd01dff8b64091bca662b16adc7536e4d2de6",
+      "bytes": 10460,
+      "decodedBytes": 262144
+    }
+  ]
+}

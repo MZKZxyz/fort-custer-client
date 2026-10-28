@@ -1,0 +1,170 @@
+{
+  "characterId": "CHR-BOY-01",
+  "hair": "rust-red swept hair",
+  "eyes": "green",
+  "irisLinearRGB": [
+    0.0949999988079071,
+    0.30000001192092896,
+    0.054999999701976776
+  ],
+  "stance": "neutral relaxed A stance",
+  "geometrySha256": "7f0b2a0a811aa48b182924ee0b9e9804d0f7e805e67822c89a4d8c16a4678ce3",
+  "worldBounds": [
+    [
+      -0.2800000011920929,
+      0.2800000011920929
+    ],
+    [
+      -0.15299999713897705,
+      0.26716503500938416
+    ],
+    [
+      0.0,
+      1.3423504829406738
+    ]
+  ],
+  "components": 136,
+  "provisionalHeightCells": 1.3423504829406738,
+  "wallHeightRatio": 2.2560512318330654,
+  "facingProjectedBounds": {
+    "south": [
+      [
+        65.27999877929688,
+        190.72000122070312
+      ],
+      [
+        26.905046463012695,
+        236.25052738189697
+      ]
+    ],
+    "east": [
+      [
+        68.15503692626953,
+        162.27200317382812
+      ],
+      [
+        21.648696899414062,
+        235.680645942688
+      ]
+    ],
+    "north": [
+      [
+        65.27999877929688,
+        190.72000122070312
+      ],
+      [
+        37.45492362976074,
+        222.9531364440918
+      ]
+    ],
+    "west": [
+      [
+        93.72799682617188,
+        187.844970703125
+      ],
+      [
+        21.648696899414062,
+        235.680645942688
+      ]
+    ]
+  },
+  "source": {
+    "file": "characters/boy/source/character-master.blend",
+    "sha256": "1c248b0b6355d56c0d35afc57496f896326718b038bc561ad74e054fa32a8e11",
+    "bytes": 3556464
+  },
+  "projection": {
+    "elevation": 58,
+    "yaw": 0,
+    "radius": 25,
+    "bodyOrthoScale": 1.5714285714285714,
+    "cellWidth": 224,
+    "groundPitch": 189.9627735390394,
+    "heightRise": 118.7019151882379
+  },
+  "color": {
+    "transform": "AgX",
+    "look": "Medium High Contrast",
+    "output": "sRGB / straight RGBA8",
+    "exposure": 0,
+    "gamma": 1
+  },
+  "lighting": {
+    "daylight": {
+      "key": {
+        "position": [
+          -6,
+          -3,
+          12
+        ],
+        "energy": 1800.0,
+        "color": [
+          1.0,
+          0.8399999737739563,
+          0.6299999952316284
+        ],
+        "size": 7
+      },
+      "fill": {
+        "position": [
+          4,
+          6,
+          10
+        ],
+        "energy": 650.0,
+        "color": [
+          0.6600000262260437,
+          0.7900000214576721,
+          1.0
+        ],
+        "size": 9
+      },
+      "world": [
+        0.25,
+        0.25,
+        0.25
+      ]
+    },
+    "dusk": {
+      "key": {
+        "position": [
+          -6,
+          -3,
+          12
+        ],
+        "energy": 1050.0,
+        "color": [
+          0.47999998927116394,
+          0.6200000047683716,
+          1.0
+        ],
+        "size": 7
+      },
+      "fill": {
+        "position": [
+          4,
+          6,
+          10
+        ],
+        "energy": 550.0,
+        "color": [
+          0.44999998807907104,
+          0.550000011920929,
+          0.8500000238418579
+        ],
+        "size": 9
+      },
+      "world": [
+        0.11999999731779099,
+        0.15000000596046448,
+        0.2199999988079071
+      ]
+    }
+  },
+  "blender": "4.3.2",
+  "approval": "proposed / independent Art QA and owner approval pending",
+  "headPoseDegreesX": -10,
+  "sourceUVs": "Packed Component UV charts; portable exporter repacks its shared PBR atlas",
+  "componentPivots": "Local bounds centers under a feet-root; not a skeletal rig",
+  "canonicalTriangulation": "FIXED quad / CLIP ngon modifier on every component"
+}

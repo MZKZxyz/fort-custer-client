@@ -1,0 +1,2403 @@
+{
+  "schema": "fort-custer-teen-explorers-v1",
+  "issue": 57,
+  "baseline": "afece64170a46d01c0c4123f4ffd9084d4f671db",
+  "approval": "Proposed masters / independent Art QA and owner proportion/appearance approval pending",
+  "blender": "4.3.2",
+  "characters": [
+    {
+      "characterId": "CHR-BOY-01",
+      "hair": "rust-red swept hair",
+      "eyes": "green",
+      "irisLinearRGB": [
+        0.0949999988079071,
+        0.30000001192092896,
+        0.054999999701976776
+      ],
+      "stance": "neutral relaxed A stance",
+      "geometrySha256": "7f0b2a0a811aa48b182924ee0b9e9804d0f7e805e67822c89a4d8c16a4678ce3",
+      "worldBounds": [
+        [
+          -0.2800000011920929,
+          0.2800000011920929
+        ],
+        [
+          -0.15299999713897705,
+          0.26716503500938416
+        ],
+        [
+          0.0,
+          1.3423504829406738
+        ]
+      ],
+      "components": 136,
+      "provisionalHeightCells": 1.3423504829406738,
+      "wallHeightRatio": 2.2560512318330654,
+      "facingProjectedBounds": {
+        "south": [
+          [
+            65.27999877929688,
+            190.72000122070312
+          ],
+          [
+            26.905046463012695,
+            236.25052738189697
+          ]
+        ],
+        "east": [
+          [
+            68.15503692626953,
+            162.27200317382812
+          ],
+          [
+            21.648696899414062,
+            235.680645942688
+          ]
+        ],
+        "north": [
+          [
+            65.27999877929688,
+            190.72000122070312
+          ],
+          [
+            37.45492362976074,
+            222.9531364440918
+          ]
+        ],
+        "west": [
+          [
+            93.72799682617188,
+            187.844970703125
+          ],
+          [
+            21.648696899414062,
+            235.680645942688
+          ]
+        ]
+      },
+      "source": {
+        "file": "characters/boy/source/character-master.blend",
+        "sha256": "1c248b0b6355d56c0d35afc57496f896326718b038bc561ad74e054fa32a8e11",
+        "bytes": 3556464
+      },
+      "projection": {
+        "elevation": 58,
+        "yaw": 0,
+        "radius": 25,
+        "bodyOrthoScale": 1.5714285714285714,
+        "cellWidth": 224,
+        "groundPitch": 189.9627735390394,
+        "heightRise": 118.7019151882379
+      },
+      "color": {
+        "transform": "AgX",
+        "look": "Medium High Contrast",
+        "output": "sRGB / straight RGBA8",
+        "exposure": 0,
+        "gamma": 1
+      },
+      "lighting": {
+        "daylight": {
+          "key": {
+            "position": [
+              -6,
+              -3,
+              12
+            ],
+            "energy": 1800.0,
+            "color": [
+              1.0,
+              0.8399999737739563,
+              0.6299999952316284
+            ],
+            "size": 7
+          },
+          "fill": {
+            "position": [
+              4,
+              6,
+              10
+            ],
+            "energy": 650.0,
+            "color": [
+              0.6600000262260437,
+              0.7900000214576721,
+              1.0
+            ],
+            "size": 9
+          },
+          "world": [
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        "dusk": {
+          "key": {
+            "position": [
+              -6,
+              -3,
+              12
+            ],
+            "energy": 1050.0,
+            "color": [
+              0.47999998927116394,
+              0.6200000047683716,
+              1.0
+            ],
+            "size": 7
+          },
+          "fill": {
+            "position": [
+              4,
+              6,
+              10
+            ],
+            "energy": 550.0,
+            "color": [
+              0.44999998807907104,
+              0.550000011920929,
+              0.8500000238418579
+            ],
+            "size": 9
+          },
+          "world": [
+            0.11999999731779099,
+            0.15000000596046448,
+            0.2199999988079071
+          ]
+        }
+      },
+      "blender": "4.3.2",
+      "approval": "proposed / independent Art QA and owner approval pending",
+      "headPoseDegreesX": -10,
+      "sourceUVs": "Packed Component UV charts; portable exporter repacks its shared PBR atlas",
+      "componentPivots": "Local bounds centers under a feet-root; not a skeletal rig",
+      "canonicalTriangulation": "FIXED quad / CLIP ngon modifier on every component",
+      "model": {
+        "file": "characters/boy/assets/character-master.glb",
+        "format": "glTF 2.0 GLB",
+        "sha256": "a563135560631ba001d719dc66ad90f26ccdc87c2fa82e54e41cb28935478dd4",
+        "bytes": 2057588,
+        "blender": "4.3.2",
+        "exportOptions": {
+          "export_format": "GLB",
+          "use_selection": true,
+          "export_yup": true,
+          "export_normals": true,
+          "export_tangents": true,
+          "export_texcoords": true,
+          "export_materials": "EXPORT",
+          "export_cameras": false,
+          "export_lights": false,
+          "export_animations": false,
+          "export_extras": true,
+          "export_apply": false
+        },
+        "tangentFinishing": "Float32 unit/orthogonal frames restored after Blender four-decimal tangent export; handedness unchanged",
+        "sourceBlendSha256": "1c248b0b6355d56c0d35afc57496f896326718b038bc561ad74e054fa32a8e11",
+        "sourceComponents": 136,
+        "triangles": 19902,
+        "verticesBeforeGltfSplits": 10223,
+        "textures": [
+          {
+            "file": "characters/boy/assets/character-master-basecolor.png",
+            "role": "baseColor",
+            "size": [
+              1024,
+              1024
+            ],
+            "colorSpace": "sRGB",
+            "embedded": true,
+            "sha256": "76e6880baf4ff21681728e1d7209e6919d0ad1436ee45f12129d26d07d122d80"
+          },
+          {
+            "file": "characters/boy/assets/character-master-normal.png",
+            "role": "normal",
+            "size": [
+              1024,
+              1024
+            ],
+            "colorSpace": "Non-Color",
+            "embedded": true,
+            "sha256": "5ca39124b40332ab5a763cbd57b77be47c8b9076084bd3482ae98810d9c04f9d"
+          }
+        ],
+        "materials": [
+          {
+            "name": "Worn brown leather",
+            "roughness": 0.7599999904632568,
+            "metallic": 0.0
+          },
+          {
+            "name": "Dark leather hat band",
+            "roughness": 0.8399999737739563,
+            "metallic": 0.0
+          },
+          {
+            "name": "Brown felt field hat",
+            "roughness": 0.9200000166893005,
+            "metallic": 0.0
+          },
+          {
+            "name": "Dull brass hardware",
+            "roughness": 0.5199999809265137,
+            "metallic": 0.6000000238418579
+          },
+          {
+            "name": "Canvas bedroll",
+            "roughness": 0.9399999976158142,
+            "metallic": 0.0
+          },
+          {
+            "name": "Tan cargo cloth",
+            "roughness": 0.9200000166893005,
+            "metallic": 0.0
+          },
+          {
+            "name": "Natural closed smile",
+            "roughness": 0.75,
+            "metallic": 0.0
+          },
+          {
+            "name": "Green iris",
+            "roughness": 0.30000001192092896,
+            "metallic": 0.0
+          },
+          {
+            "name": "Leather seam / boot lace",
+            "roughness": 0.8500000238418579,
+            "metallic": 0.0
+          },
+          {
+            "name": "Warm skin / freckles",
+            "roughness": 0.699999988079071,
+            "metallic": 0.0
+          },
+          {
+            "name": "Rust red swept hair",
+            "roughness": 0.7400000095367432,
+            "metallic": 0.0
+          },
+          {
+            "name": "Eye catchlight",
+            "roughness": 0.25,
+            "metallic": 0.0
+          },
+          {
+            "name": "Compact reddish neckerchief",
+            "roughness": 0.8600000143051147,
+            "metallic": 0.0
+          },
+          {
+            "name": "Rolled fabric cuff",
+            "roughness": 0.8999999761581421,
+            "metallic": 0.0
+          },
+          {
+            "name": "Boot sole / neutral umber",
+            "roughness": 0.9200000166893005,
+            "metallic": 0.0
+          },
+          {
+            "name": "Cargo pocket seams",
+            "roughness": 0.8999999761581421,
+            "metallic": 0.0
+          },
+          {
+            "name": "Visible pupil",
+            "roughness": 0.25,
+            "metallic": 0.0
+          },
+          {
+            "name": "Bedroll spiral seam",
+            "roughness": 0.9200000166893005,
+            "metallic": 0.0
+          },
+          {
+            "name": "Blue field shirt",
+            "roughness": 0.8700000047683716,
+            "metallic": 0.0
+          },
+          {
+            "name": "Visible warm sclera",
+            "roughness": 0.3499999940395355,
+            "metallic": 0.0
+          },
+          {
+            "name": "Subtle freckles",
+            "roughness": 0.75,
+            "metallic": 0.0
+          },
+          {
+            "name": "Hair ridge highlight",
+            "roughness": 0.7799999713897705,
+            "metallic": 0.0
+          }
+        ],
+        "coordinates": {
+          "cellUnits": 1,
+          "source": "Right handed Blender +X right, -Y forward/increasing row, +Z up",
+          "glTF": "Right handed +X right, +Z forward/increasing row, +Y up",
+          "conversion": "(X,Y,Z) Blender \u2192 (X,Z,-Y) glTF",
+          "rootPivot": [
+            0,
+            0,
+            0
+          ],
+          "rootScale": [
+            1,
+            1,
+            1
+          ],
+          "sourceBounds": [
+            [
+              -0.2800000011920929,
+              0.2800000011920929
+            ],
+            [
+              -0.15299999713897705,
+              0.26716503500938416
+            ],
+            [
+              0.0,
+              1.3423504829406738
+            ]
+          ],
+          "glTFBounds": [
+            [
+              -0.2800000011920929,
+              0.2800000011920929
+            ],
+            [
+              0.0,
+              1.3423504829406738
+            ],
+            [
+              -0.26716503500938416,
+              0.15299999713897705
+            ]
+          ],
+          "logicalOccupancy": "One logical player cell; height/accessory visual extents are not collision geometry"
+        },
+        "materialTreatment": {
+          "bake": "1024\u00b2 shared UV atlas; actual Principled Base Color via temporary EMIT surface (no lighting/AO), tangent-space NORMAL; 16 fixed samples, seed 30, 4px margin",
+          "retained": "Original roughness/metallic scalar per material; evaluated bevel geometry and split/weighted normals",
+          "losses": [
+            "Procedural grain becomes finite-resolution 8-bit textures; very fine detail/filtering can differ at close range.",
+            "Blender shader graphs and editable modifiers are retained only in the original .blend.",
+            "Core glTF metallic/roughness shading omits Blender-specific default specular-IOR treatment; render engines may differ."
+          ],
+          "unbaked": "No directional lighting, cast shadows, AO, studio background, camera or AgX grade in PBR maps"
+        },
+        "license": "Original geometry/source under repository contribution terms; reference concepts do not establish a separate asset license",
+        "rebuild": "blender -b -t 2 --python-exit-code 1 --python docs/art/batch-03/source/portable.py -- boy",
+        "characterId": "CHR-BOY-01",
+        "provenance": "Original procedural character sculpture informed by five owner-provided 2D concepts; no concept pixels used as textures"
+      },
+      "assets": [
+        {
+          "file": "characters/boy/assets/boy-south-daylight-body.png",
+          "characterId": "CHR-BOY-01",
+          "facing": "south",
+          "mood": "daylight",
+          "layer": "body",
+          "size": [
+            256,
+            352
+          ],
+          "anchor": [
+            128,
+            208
+          ],
+          "cellWidth": 224,
+          "projectionSamples": {
+            "origin": [
+              128.0,
+              207.99987506866455
+            ],
+            "right": [
+              352.0,
+              207.99987506866455
+            ],
+            "row": [
+              128.0,
+              397.96265745162964
+            ],
+            "height": [
+              128.0,
+              89.29795837402344
+            ]
+          },
+          "meshSha256": "7f0b2a0a811aa48b182924ee0b9e9804d0f7e805e67822c89a4d8c16a4678ce3",
+          "bounds": [
+            64,
+            26,
+            192,
+            237
+          ],
+          "outerTransparentPixels": 26,
+          "sha256": "ee1e8aa659c9f38edb32310256d256b4923f753d3708b259afe86f0aa6f7fd0e",
+          "bytes": 63596,
+          "decodedBytes": 360448
+        },
+        {
+          "file": "characters/boy/assets/boy-south-daylight-shadow.png",
+          "characterId": "CHR-BOY-01",
+          "facing": "south",
+          "mood": "daylight",
+          "layer": "shadow",
+          "size": [
+            256,
+            256
+          ],
+          "anchor": [
+            128,
+            150
+          ],
+          "cellWidth": 112,
+          "projectionSamples": {
+            "origin": [
+              256.0,
+              299.99993896484375
+            ],
+            "right": [
+              480.0,
+              299.99993896484375
+            ],
+            "row": [
+              256.0,
+              489.96270179748535
+            ],
+            "height": [
+              256.0,
+              181.29803466796875
+            ]
+          },
+          "meshSha256": "7f0b2a0a811aa48b182924ee0b9e9804d0f7e805e67822c89a4d8c16a4678ce3",
+          "bounds": [
+            67,
+            84,
+            240,
+            223
+          ],
+          "outerTransparentPixels": 16,
+          "sha256": "03f97378325144c3ebbca19325483f74a682d66010cb83c50bcd545c5de96d3d",
+          "bytes": 10102,
+          "decodedBytes": 262144
+        },
+        {
+          "file": "characters/boy/assets/boy-east-daylight-body.png",
+          "characterId": "CHR-BOY-01",
+          "facing": "east",
+          "mood": "daylight",
+          "layer": "body",
+          "size": [
+            256,
+            352
+          ],
+          "anchor": [
+            128,
+            208
+          ],
+          "cellWidth": 224,
+          "projectionSamples": {
+            "origin": [
+              128.0,
+              207.99987506866455
+            ],
+            "right": [
+              352.0,
+              207.99987506866455
+            ],
+            "row": [
+              128.0,
+              397.96265745162964
+            ],
+            "height": [
+              128.0,
+              89.29795837402344
+            ]
+          },
+          "meshSha256": "7f0b2a0a811aa48b182924ee0b9e9804d0f7e805e67822c89a4d8c16a4678ce3",
+          "bounds": [
+            67,
+            20,
+            164,
+            237
+          ],
+          "outerTransparentPixels": 20,
+          "sha256": "e17a68b51509bb58502c7bbb491491e595e2dd9f5d9ac5077b2f0d13fe640074",
+          "bytes": 54314,
+          "decodedBytes": 360448
+        },
+        {
+          "file": "characters/boy/assets/boy-east-daylight-shadow.png",
+          "characterId": "CHR-BOY-01",
+          "facing": "east",
+          "mood": "daylight",
+          "layer": "shadow",
+          "size": [
+            256,
+            256
+          ],
+          "anchor": [
+            128,
+            150
+          ],
+          "cellWidth": 112,
+          "projectionSamples": {
+            "origin": [
+              256.0,
+              299.99993896484375
+            ],
+            "right": [
+              480.0,
+              299.99993896484375
+            ],
+            "row": [
+              256.0,
+              489.96270179748535
+            ],
+            "height": [
+              256.0,
+              181.29803466796875
+            ]
+          },
+          "meshSha256": "7f0b2a0a811aa48b182924ee0b9e9804d0f7e805e67822c89a4d8c16a4678ce3",
+          "bounds": [
+            66,
+            85,
+            238,
+            218
+          ],
+          "outerTransparentPixels": 18,
+          "sha256": "509aed9cce5de4aa276e76408ee50afd0999d2b841b4a2cf66e62b2acbf63a41",
+          "bytes": 10616,
+          "decodedBytes": 262144
+        },
+        {
+          "file": "characters/boy/assets/boy-north-daylight-body.png",
+          "characterId": "CHR-BOY-01",
+          "facing": "north",
+          "mood": "daylight",
+          "layer": "body",
+          "size": [
+            256,
+            352
+          ],
+          "anchor": [
+            128,
+            208
+          ],
+          "cellWidth": 224,
+          "projectionSamples": {
+            "origin": [
+              128.0,
+              207.99987506866455
+            ],
+            "right": [
+              352.0,
+              207.99987506866455
+            ],
+            "row": [
+              128.0,
+              397.96265745162964
+            ],
+            "height": [
+              128.0,
+              89.29795837402344
+            ]
+          },
+          "meshSha256": "7f0b2a0a811aa48b182924ee0b9e9804d0f7e805e67822c89a4d8c16a4678ce3",
+          "bounds": [
+            64,
+            37,
+            192,
+            224
+          ],
+          "outerTransparentPixels": 37,
+          "sha256": "f0242ced025e671e4bd278ae1b97331d82b82cb50e815accbc5633671a080190",
+          "bytes": 56111,
+          "decodedBytes": 360448
+        },
+        {
+          "file": "characters/boy/assets/boy-north-daylight-shadow.png",
+          "characterId": "CHR-BOY-01",
+          "facing": "north",
+          "mood": "daylight",
+          "layer": "shadow",
+          "size": [
+            256,
+            256
+          ],
+          "anchor": [
+            128,
+            150
+          ],
+          "cellWidth": 112,
+          "projectionSamples": {
+            "origin": [
+              256.0,
+              299.99993896484375
+            ],
+            "right": [
+              480.0,
+              299.99993896484375
+            ],
+            "row": [
+              256.0,
+              489.96270179748535
+            ],
+            "height": [
+              256.0,
+              181.29803466796875
+            ]
+          },
+          "meshSha256": "7f0b2a0a811aa48b182924ee0b9e9804d0f7e805e67822c89a4d8c16a4678ce3",
+          "bounds": [
+            64,
+            92,
+            245,
+            224
+          ],
+          "outerTransparentPixels": 11,
+          "sha256": "4430d4e6b7158001903201740e0edcb190ba4bd0a1b6a87b757c1aaf9b3bca6b",
+          "bytes": 10473,
+          "decodedBytes": 262144
+        },
+        {
+          "file": "characters/boy/assets/boy-west-daylight-body.png",
+          "characterId": "CHR-BOY-01",
+          "facing": "west",
+          "mood": "daylight",
+          "layer": "body",
+          "size": [
+            256,
+            352
+          ],
+          "anchor": [
+            128,
+            208
+          ],
+          "cellWidth": 224,
+          "projectionSamples": {
+            "origin": [
+              128.0,
+              207.99987506866455
+            ],
+            "right": [
+              352.0,
+              207.99987506866455
+            ],
+            "row": [
+              128.0,
+              397.96265745162964
+            ],
+            "height": [
+              128.0,
+              89.29795837402344
+            ]
+          },
+          "meshSha256": "7f0b2a0a811aa48b182924ee0b9e9804d0f7e805e67822c89a4d8c16a4678ce3",
+          "bounds": [
+            93,
+            21,
+            189,
+            237
+          ],
+          "outerTransparentPixels": 21,
+          "sha256": "dd6cdcc71e8db7d523fab3717a3ade15f64849ac50ac6379055374712e0a82aa",
+          "bytes": 54043,
+          "decodedBytes": 360448
+        },
+        {
+          "file": "characters/boy/assets/boy-west-daylight-shadow.png",
+          "characterId": "CHR-BOY-01",
+          "facing": "west",
+          "mood": "daylight",
+          "layer": "shadow",
+          "size": [
+            256,
+            256
+          ],
+          "anchor": [
+            128,
+            150
+          ],
+          "cellWidth": 112,
+          "projectionSamples": {
+            "origin": [
+              256.0,
+              299.99993896484375
+            ],
+            "right": [
+              480.0,
+              299.99993896484375
+            ],
+            "row": [
+              256.0,
+              489.96270179748535
+            ],
+            "height": [
+              256.0,
+              181.29803466796875
+            ]
+          },
+          "meshSha256": "7f0b2a0a811aa48b182924ee0b9e9804d0f7e805e67822c89a4d8c16a4678ce3",
+          "bounds": [
+            71,
+            85,
+            244,
+            216
+          ],
+          "outerTransparentPixels": 12,
+          "sha256": "06ce5229a8d4676fb7dba4ba5e1254a8803be9fd345a834deba29a5ff847d5f0",
+          "bytes": 10525,
+          "decodedBytes": 262144
+        },
+        {
+          "file": "characters/boy/assets/boy-south-dusk-body.png",
+          "characterId": "CHR-BOY-01",
+          "facing": "south",
+          "mood": "dusk",
+          "layer": "body",
+          "size": [
+            256,
+            352
+          ],
+          "anchor": [
+            128,
+            208
+          ],
+          "cellWidth": 224,
+          "projectionSamples": {
+            "origin": [
+              128.0,
+              207.99987506866455
+            ],
+            "right": [
+              352.0,
+              207.99987506866455
+            ],
+            "row": [
+              128.0,
+              397.96265745162964
+            ],
+            "height": [
+              128.0,
+              89.29795837402344
+            ]
+          },
+          "meshSha256": "7f0b2a0a811aa48b182924ee0b9e9804d0f7e805e67822c89a4d8c16a4678ce3",
+          "bounds": [
+            64,
+            26,
+            192,
+            237
+          ],
+          "outerTransparentPixels": 26,
+          "sha256": "bb54711f4db08ce9fe48182103047faf028f2f3e5c9541080b43dc932d283eb9",
+          "bytes": 57807,
+          "decodedBytes": 360448
+        },
+        {
+          "file": "characters/boy/assets/boy-south-dusk-shadow.png",
+          "characterId": "CHR-BOY-01",
+          "facing": "south",
+          "mood": "dusk",
+          "layer": "shadow",
+          "size": [
+            256,
+            256
+          ],
+          "anchor": [
+            128,
+            150
+          ],
+          "cellWidth": 112,
+          "projectionSamples": {
+            "origin": [
+              256.0,
+              299.99993896484375
+            ],
+            "right": [
+              480.0,
+              299.99993896484375
+            ],
+            "row": [
+              256.0,
+              489.96270179748535
+            ],
+            "height": [
+              256.0,
+              181.29803466796875
+            ]
+          },
+          "meshSha256": "7f0b2a0a811aa48b182924ee0b9e9804d0f7e805e67822c89a4d8c16a4678ce3",
+          "bounds": [
+            60,
+            85,
+            235,
+            224
+          ],
+          "outerTransparentPixels": 21,
+          "sha256": "0938d7516b4b27df3a9be89077331c0cec427db854d527dc4bd1b7531d7d9f6b",
+          "bytes": 10067,
+          "decodedBytes": 262144
+        },
+        {
+          "file": "characters/boy/assets/boy-east-dusk-body.png",
+          "characterId": "CHR-BOY-01",
+          "facing": "east",
+          "mood": "dusk",
+          "layer": "body",
+          "size": [
+            256,
+            352
+          ],
+          "anchor": [
+            128,
+            208
+          ],
+          "cellWidth": 224,
+          "projectionSamples": {
+            "origin": [
+              128.0,
+              207.99987506866455
+            ],
+            "right": [
+              352.0,
+              207.99987506866455
+            ],
+            "row": [
+              128.0,
+              397.96265745162964
+            ],
+            "height": [
+              128.0,
+              89.29795837402344
+            ]
+          },
+          "meshSha256": "7f0b2a0a811aa48b182924ee0b9e9804d0f7e805e67822c89a4d8c16a4678ce3",
+          "bounds": [
+            67,
+            20,
+            164,
+            237
+          ],
+          "outerTransparentPixels": 20,
+          "sha256": "1dda6b3c5891556fa01486822b0cdd7518ff24a60ed802549441d26ae297480d",
+          "bytes": 49291,
+          "decodedBytes": 360448
+        },
+        {
+          "file": "characters/boy/assets/boy-east-dusk-shadow.png",
+          "characterId": "CHR-BOY-01",
+          "facing": "east",
+          "mood": "dusk",
+          "layer": "shadow",
+          "size": [
+            256,
+            256
+          ],
+          "anchor": [
+            128,
+            150
+          ],
+          "cellWidth": 112,
+          "projectionSamples": {
+            "origin": [
+              256.0,
+              299.99993896484375
+            ],
+            "right": [
+              480.0,
+              299.99993896484375
+            ],
+            "row": [
+              256.0,
+              489.96270179748535
+            ],
+            "height": [
+              256.0,
+              181.29803466796875
+            ]
+          },
+          "meshSha256": "7f0b2a0a811aa48b182924ee0b9e9804d0f7e805e67822c89a4d8c16a4678ce3",
+          "bounds": [
+            52,
+            86,
+            235,
+            224
+          ],
+          "outerTransparentPixels": 21,
+          "sha256": "a70ed1b95c01d9345d3ef0f4d7825a1f4ed4ef23fda79139081b52dc7b144f4d",
+          "bytes": 10537,
+          "decodedBytes": 262144
+        },
+        {
+          "file": "characters/boy/assets/boy-north-dusk-body.png",
+          "characterId": "CHR-BOY-01",
+          "facing": "north",
+          "mood": "dusk",
+          "layer": "body",
+          "size": [
+            256,
+            352
+          ],
+          "anchor": [
+            128,
+            208
+          ],
+          "cellWidth": 224,
+          "projectionSamples": {
+            "origin": [
+              128.0,
+              207.99987506866455
+            ],
+            "right": [
+              352.0,
+              207.99987506866455
+            ],
+            "row": [
+              128.0,
+              397.96265745162964
+            ],
+            "height": [
+              128.0,
+              89.29795837402344
+            ]
+          },
+          "meshSha256": "7f0b2a0a811aa48b182924ee0b9e9804d0f7e805e67822c89a4d8c16a4678ce3",
+          "bounds": [
+            64,
+            37,
+            192,
+            224
+          ],
+          "outerTransparentPixels": 37,
+          "sha256": "1e2fe5b92816342aa7951c9bf2e8e84146fa8b7a70684cfe07f503766c2a40c6",
+          "bytes": 50418,
+          "decodedBytes": 360448
+        },
+        {
+          "file": "characters/boy/assets/boy-north-dusk-shadow.png",
+          "characterId": "CHR-BOY-01",
+          "facing": "north",
+          "mood": "dusk",
+          "layer": "shadow",
+          "size": [
+            256,
+            256
+          ],
+          "anchor": [
+            128,
+            150
+          ],
+          "cellWidth": 112,
+          "projectionSamples": {
+            "origin": [
+              256.0,
+              299.99993896484375
+            ],
+            "right": [
+              480.0,
+              299.99993896484375
+            ],
+            "row": [
+              256.0,
+              489.96270179748535
+            ],
+            "height": [
+              256.0,
+              181.29803466796875
+            ]
+          },
+          "meshSha256": "7f0b2a0a811aa48b182924ee0b9e9804d0f7e805e67822c89a4d8c16a4678ce3",
+          "bounds": [
+            58,
+            92,
+            238,
+            224
+          ],
+          "outerTransparentPixels": 18,
+          "sha256": "90e9d3ad6d375511fe311487e8c14ff34ba28454c6dffd7ca83bfef6eb8aa1a9",
+          "bytes": 10537,
+          "decodedBytes": 262144
+        },
+        {
+          "file": "characters/boy/assets/boy-west-dusk-body.png",
+          "characterId": "CHR-BOY-01",
+          "facing": "west",
+          "mood": "dusk",
+          "layer": "body",
+          "size": [
+            256,
+            352
+          ],
+          "anchor": [
+            128,
+            208
+          ],
+          "cellWidth": 224,
+          "projectionSamples": {
+            "origin": [
+              128.0,
+              207.99987506866455
+            ],
+            "right": [
+              352.0,
+              207.99987506866455
+            ],
+            "row": [
+              128.0,
+              397.96265745162964
+            ],
+            "height": [
+              128.0,
+              89.29795837402344
+            ]
+          },
+          "meshSha256": "7f0b2a0a811aa48b182924ee0b9e9804d0f7e805e67822c89a4d8c16a4678ce3",
+          "bounds": [
+            93,
+            21,
+            189,
+            237
+          ],
+          "outerTransparentPixels": 21,
+          "sha256": "4679d11defa2681562691fa0a0df3a7de0eac91e4bbb32e539edaeea7f8dc86e",
+          "bytes": 49180,
+          "decodedBytes": 360448
+        },
+        {
+          "file": "characters/boy/assets/boy-west-dusk-shadow.png",
+          "characterId": "CHR-BOY-01",
+          "facing": "west",
+          "mood": "dusk",
+          "layer": "shadow",
+          "size": [
+            256,
+            256
+          ],
+          "anchor": [
+            128,
+            150
+          ],
+          "cellWidth": 112,
+          "projectionSamples": {
+            "origin": [
+              256.0,
+              299.99993896484375
+            ],
+            "right": [
+              480.0,
+              299.99993896484375
+            ],
+            "row": [
+              256.0,
+              489.96270179748535
+            ],
+            "height": [
+              256.0,
+              181.29803466796875
+            ]
+          },
+          "meshSha256": "7f0b2a0a811aa48b182924ee0b9e9804d0f7e805e67822c89a4d8c16a4678ce3",
+          "bounds": [
+            65,
+            87,
+            242,
+            224
+          ],
+          "outerTransparentPixels": 14,
+          "sha256": "209cb9108a53907649e02fe04352af8a5fa0709c861e5a49ed5003cbf0a29174",
+          "bytes": 10524,
+          "decodedBytes": 262144
+        }
+      ]
+    },
+    {
+      "characterId": "CHR-GIRL-01",
+      "hair": "blonde braid",
+      "eyes": "blue",
+      "irisLinearRGB": [
+        0.03500000014901161,
+        0.23999999463558197,
+        0.47999998927116394
+      ],
+      "stance": "neutral relaxed A stance",
+      "geometrySha256": "003e9ada7b7c1a304ad6767dec02473efa615de41ec7e95bfc1de306d59ed2d1",
+      "worldBounds": [
+        [
+          -0.2800000011920929,
+          0.2800000011920929
+        ],
+        [
+          -0.15299999713897705,
+          0.26716503500938416
+        ],
+        [
+          0.0,
+          1.3423504829406738
+        ]
+      ],
+      "components": 135,
+      "provisionalHeightCells": 1.3423504829406738,
+      "wallHeightRatio": 2.2560512318330654,
+      "facingProjectedBounds": {
+        "south": [
+          [
+            65.27999877929688,
+            190.72000122070312
+          ],
+          [
+            26.905046463012695,
+            236.25052738189697
+          ]
+        ],
+        "east": [
+          [
+            68.15503692626953,
+            162.27200317382812
+          ],
+          [
+            21.648696899414062,
+            235.680645942688
+          ]
+        ],
+        "north": [
+          [
+            65.27999877929688,
+            190.72000122070312
+          ],
+          [
+            37.45492362976074,
+            222.9531364440918
+          ]
+        ],
+        "west": [
+          [
+            93.72799682617188,
+            187.844970703125
+          ],
+          [
+            21.648696899414062,
+            235.680645942688
+          ]
+        ]
+      },
+      "source": {
+        "file": "characters/girl/source/character-master.blend",
+        "sha256": "96046e6ff080751a4759a5776adbba799ef802a6b5b98cbb92d96c1451d9acbf",
+        "bytes": 3649740
+      },
+      "projection": {
+        "elevation": 58,
+        "yaw": 0,
+        "radius": 25,
+        "bodyOrthoScale": 1.5714285714285714,
+        "cellWidth": 224,
+        "groundPitch": 189.9627735390394,
+        "heightRise": 118.7019151882379
+      },
+      "color": {
+        "transform": "AgX",
+        "look": "Medium High Contrast",
+        "output": "sRGB / straight RGBA8",
+        "exposure": 0,
+        "gamma": 1
+      },
+      "lighting": {
+        "daylight": {
+          "key": {
+            "position": [
+              -6,
+              -3,
+              12
+            ],
+            "energy": 1800.0,
+            "color": [
+              1.0,
+              0.8399999737739563,
+              0.6299999952316284
+            ],
+            "size": 7
+          },
+          "fill": {
+            "position": [
+              4,
+              6,
+              10
+            ],
+            "energy": 650.0,
+            "color": [
+              0.6600000262260437,
+              0.7900000214576721,
+              1.0
+            ],
+            "size": 9
+          },
+          "world": [
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        "dusk": {
+          "key": {
+            "position": [
+              -6,
+              -3,
+              12
+            ],
+            "energy": 1050.0,
+            "color": [
+              0.47999998927116394,
+              0.6200000047683716,
+              1.0
+            ],
+            "size": 7
+          },
+          "fill": {
+            "position": [
+              4,
+              6,
+              10
+            ],
+            "energy": 550.0,
+            "color": [
+              0.44999998807907104,
+              0.550000011920929,
+              0.8500000238418579
+            ],
+            "size": 9
+          },
+          "world": [
+            0.11999999731779099,
+            0.15000000596046448,
+            0.2199999988079071
+          ]
+        }
+      },
+      "blender": "4.3.2",
+      "approval": "proposed / independent Art QA and owner approval pending",
+      "headPoseDegreesX": -10,
+      "sourceUVs": "Packed Component UV charts; portable exporter repacks its shared PBR atlas",
+      "componentPivots": "Local bounds centers under a feet-root; not a skeletal rig",
+      "canonicalTriangulation": "FIXED quad / CLIP ngon modifier on every component",
+      "model": {
+        "file": "characters/girl/assets/character-master.glb",
+        "format": "glTF 2.0 GLB",
+        "sha256": "3123b0125e900d284161014d0d5404f69fa9c32a0cbd0312afff4bba423cc4e1",
+        "bytes": 2092456,
+        "blender": "4.3.2",
+        "exportOptions": {
+          "export_format": "GLB",
+          "use_selection": true,
+          "export_yup": true,
+          "export_normals": true,
+          "export_tangents": true,
+          "export_texcoords": true,
+          "export_materials": "EXPORT",
+          "export_cameras": false,
+          "export_lights": false,
+          "export_animations": false,
+          "export_extras": true,
+          "export_apply": false
+        },
+        "tangentFinishing": "Float32 unit/orthogonal frames restored after Blender four-decimal tangent export; handedness unchanged",
+        "sourceBlendSha256": "96046e6ff080751a4759a5776adbba799ef802a6b5b98cbb92d96c1451d9acbf",
+        "sourceComponents": 135,
+        "triangles": 21874,
+        "verticesBeforeGltfSplits": 11207,
+        "textures": [
+          {
+            "file": "characters/girl/assets/character-master-basecolor.png",
+            "role": "baseColor",
+            "size": [
+              1024,
+              1024
+            ],
+            "colorSpace": "sRGB",
+            "embedded": true,
+            "sha256": "32824f29f01972641a2c8a3b7e8f81e14d2f389bc3bf20cc73ff56082ab3ab5c"
+          },
+          {
+            "file": "characters/girl/assets/character-master-normal.png",
+            "role": "normal",
+            "size": [
+              1024,
+              1024
+            ],
+            "colorSpace": "Non-Color",
+            "embedded": true,
+            "sha256": "5c50b63d25f840fd4789e425a4c76255d15571943fa12f48c3d923d2f9884db0"
+          }
+        ],
+        "materials": [
+          {
+            "name": "Worn brown leather",
+            "roughness": 0.7599999904632568,
+            "metallic": 0.0
+          },
+          {
+            "name": "Dark leather hat band",
+            "roughness": 0.8399999737739563,
+            "metallic": 0.0
+          },
+          {
+            "name": "Brown felt field hat",
+            "roughness": 0.9200000166893005,
+            "metallic": 0.0
+          },
+          {
+            "name": "Dull brass hardware",
+            "roughness": 0.5199999809265137,
+            "metallic": 0.6000000238418579
+          },
+          {
+            "name": "Blonde braided hair",
+            "roughness": 0.7400000095367432,
+            "metallic": 0.0
+          },
+          {
+            "name": "Canvas bedroll",
+            "roughness": 0.9399999976158142,
+            "metallic": 0.0
+          },
+          {
+            "name": "Olive cargo cloth",
+            "roughness": 0.9200000166893005,
+            "metallic": 0.0
+          },
+          {
+            "name": "Natural closed smile",
+            "roughness": 0.75,
+            "metallic": 0.0
+          },
+          {
+            "name": "Blue iris",
+            "roughness": 0.30000001192092896,
+            "metallic": 0.0
+          },
+          {
+            "name": "Leather seam / boot lace",
+            "roughness": 0.8500000238418579,
+            "metallic": 0.0
+          },
+          {
+            "name": "Warm skin / freckles",
+            "roughness": 0.699999988079071,
+            "metallic": 0.0
+          },
+          {
+            "name": "Eye catchlight",
+            "roughness": 0.25,
+            "metallic": 0.0
+          },
+          {
+            "name": "Blue gray scarf",
+            "roughness": 0.8600000143051147,
+            "metallic": 0.0
+          },
+          {
+            "name": "Rolled fabric cuff",
+            "roughness": 0.8999999761581421,
+            "metallic": 0.0
+          },
+          {
+            "name": "Boot sole / neutral umber",
+            "roughness": 0.9200000166893005,
+            "metallic": 0.0
+          },
+          {
+            "name": "Hair ridge highlight",
+            "roughness": 0.7799999713897705,
+            "metallic": 0.0
+          },
+          {
+            "name": "Cargo pocket seams",
+            "roughness": 0.8999999761581421,
+            "metallic": 0.0
+          },
+          {
+            "name": "Visible pupil",
+            "roughness": 0.25,
+            "metallic": 0.0
+          },
+          {
+            "name": "Bedroll spiral seam",
+            "roughness": 0.9200000166893005,
+            "metallic": 0.0
+          },
+          {
+            "name": "Cream field shirt",
+            "roughness": 0.8700000047683716,
+            "metallic": 0.0
+          },
+          {
+            "name": "Visible warm sclera",
+            "roughness": 0.3499999940395355,
+            "metallic": 0.0
+          },
+          {
+            "name": "Subtle freckles",
+            "roughness": 0.75,
+            "metallic": 0.0
+          }
+        ],
+        "coordinates": {
+          "cellUnits": 1,
+          "source": "Right handed Blender +X right, -Y forward/increasing row, +Z up",
+          "glTF": "Right handed +X right, +Z forward/increasing row, +Y up",
+          "conversion": "(X,Y,Z) Blender \u2192 (X,Z,-Y) glTF",
+          "rootPivot": [
+            0,
+            0,
+            0
+          ],
+          "rootScale": [
+            1,
+            1,
+            1
+          ],
+          "sourceBounds": [
+            [
+              -0.2800000011920929,
+              0.2800000011920929
+            ],
+            [
+              -0.15299999713897705,
+              0.26716503500938416
+            ],
+            [
+              0.0,
+              1.3423504829406738
+            ]
+          ],
+          "glTFBounds": [
+            [
+              -0.2800000011920929,
+              0.2800000011920929
+            ],
+            [
+              0.0,
+              1.3423504829406738
+            ],
+            [
+              -0.26716503500938416,
+              0.15299999713897705
+            ]
+          ],
+          "logicalOccupancy": "One logical player cell; height/accessory visual extents are not collision geometry"
+        },
+        "materialTreatment": {
+          "bake": "1024\u00b2 shared UV atlas; actual Principled Base Color via temporary EMIT surface (no lighting/AO), tangent-space NORMAL; 16 fixed samples, seed 30, 4px margin",
+          "retained": "Original roughness/metallic scalar per material; evaluated bevel geometry and split/weighted normals",
+          "losses": [
+            "Procedural grain becomes finite-resolution 8-bit textures; very fine detail/filtering can differ at close range.",
+            "Blender shader graphs and editable modifiers are retained only in the original .blend.",
+            "Core glTF metallic/roughness shading omits Blender-specific default specular-IOR treatment; render engines may differ."
+          ],
+          "unbaked": "No directional lighting, cast shadows, AO, studio background, camera or AgX grade in PBR maps"
+        },
+        "license": "Original geometry/source under repository contribution terms; reference concepts do not establish a separate asset license",
+        "rebuild": "blender -b -t 2 --python-exit-code 1 --python docs/art/batch-03/source/portable.py -- girl",
+        "characterId": "CHR-GIRL-01",
+        "provenance": "Original procedural character sculpture informed by five owner-provided 2D concepts; no concept pixels used as textures"
+      },
+      "assets": [
+        {
+          "file": "characters/girl/assets/girl-south-daylight-body.png",
+          "characterId": "CHR-GIRL-01",
+          "facing": "south",
+          "mood": "daylight",
+          "layer": "body",
+          "size": [
+            256,
+            352
+          ],
+          "anchor": [
+            128,
+            208
+          ],
+          "cellWidth": 224,
+          "projectionSamples": {
+            "origin": [
+              128.0,
+              207.99987506866455
+            ],
+            "right": [
+              352.0,
+              207.99987506866455
+            ],
+            "row": [
+              128.0,
+              397.96265745162964
+            ],
+            "height": [
+              128.0,
+              89.29795837402344
+            ]
+          },
+          "meshSha256": "003e9ada7b7c1a304ad6767dec02473efa615de41ec7e95bfc1de306d59ed2d1",
+          "bounds": [
+            64,
+            26,
+            192,
+            237
+          ],
+          "outerTransparentPixels": 26,
+          "sha256": "bc8838311443ed1fca7db077adcda95fb10d817d47f4d4220e8c2cb8028929bd",
+          "bytes": 64102,
+          "decodedBytes": 360448
+        },
+        {
+          "file": "characters/girl/assets/girl-south-daylight-shadow.png",
+          "characterId": "CHR-GIRL-01",
+          "facing": "south",
+          "mood": "daylight",
+          "layer": "shadow",
+          "size": [
+            256,
+            256
+          ],
+          "anchor": [
+            128,
+            150
+          ],
+          "cellWidth": 112,
+          "projectionSamples": {
+            "origin": [
+              256.0,
+              299.99993896484375
+            ],
+            "right": [
+              480.0,
+              299.99993896484375
+            ],
+            "row": [
+              256.0,
+              489.96270179748535
+            ],
+            "height": [
+              256.0,
+              181.29803466796875
+            ]
+          },
+          "meshSha256": "003e9ada7b7c1a304ad6767dec02473efa615de41ec7e95bfc1de306d59ed2d1",
+          "bounds": [
+            67,
+            84,
+            240,
+            223
+          ],
+          "outerTransparentPixels": 16,
+          "sha256": "2946232389c03da7fc5255c7b269ba6dfcf10a9668c20d40f3fcf26eaabf43d4",
+          "bytes": 10129,
+          "decodedBytes": 262144
+        },
+        {
+          "file": "characters/girl/assets/girl-east-daylight-body.png",
+          "characterId": "CHR-GIRL-01",
+          "facing": "east",
+          "mood": "daylight",
+          "layer": "body",
+          "size": [
+            256,
+            352
+          ],
+          "anchor": [
+            128,
+            208
+          ],
+          "cellWidth": 224,
+          "projectionSamples": {
+            "origin": [
+              128.0,
+              207.99987506866455
+            ],
+            "right": [
+              352.0,
+              207.99987506866455
+            ],
+            "row": [
+              128.0,
+              397.96265745162964
+            ],
+            "height": [
+              128.0,
+              89.29795837402344
+            ]
+          },
+          "meshSha256": "003e9ada7b7c1a304ad6767dec02473efa615de41ec7e95bfc1de306d59ed2d1",
+          "bounds": [
+            67,
+            20,
+            164,
+            237
+          ],
+          "outerTransparentPixels": 20,
+          "sha256": "62da59bfe44fd9a6fe2c8d9dc927918f9a1eeba6da8a8e7b0096080da14275b6",
+          "bytes": 54425,
+          "decodedBytes": 360448
+        },
+        {
+          "file": "characters/girl/assets/girl-east-daylight-shadow.png",
+          "characterId": "CHR-GIRL-01",
+          "facing": "east",
+          "mood": "daylight",
+          "layer": "shadow",
+          "size": [
+            256,
+            256
+          ],
+          "anchor": [
+            128,
+            150
+          ],
+          "cellWidth": 112,
+          "projectionSamples": {
+            "origin": [
+              256.0,
+              299.99993896484375
+            ],
+            "right": [
+              480.0,
+              299.99993896484375
+            ],
+            "row": [
+              256.0,
+              489.96270179748535
+            ],
+            "height": [
+              256.0,
+              181.29803466796875
+            ]
+          },
+          "meshSha256": "003e9ada7b7c1a304ad6767dec02473efa615de41ec7e95bfc1de306d59ed2d1",
+          "bounds": [
+            68,
+            85,
+            238,
+            218
+          ],
+          "outerTransparentPixels": 18,
+          "sha256": "2ca8811c963b6fa3d1dadeff3f391d1a228c1fbe2d5f602e6c1a749209a557d2",
+          "bytes": 10395,
+          "decodedBytes": 262144
+        },
+        {
+          "file": "characters/girl/assets/girl-north-daylight-body.png",
+          "characterId": "CHR-GIRL-01",
+          "facing": "north",
+          "mood": "daylight",
+          "layer": "body",
+          "size": [
+            256,
+            352
+          ],
+          "anchor": [
+            128,
+            208
+          ],
+          "cellWidth": 224,
+          "projectionSamples": {
+            "origin": [
+              128.0,
+              207.99987506866455
+            ],
+            "right": [
+              352.0,
+              207.99987506866455
+            ],
+            "row": [
+              128.0,
+              397.96265745162964
+            ],
+            "height": [
+              128.0,
+              89.29795837402344
+            ]
+          },
+          "meshSha256": "003e9ada7b7c1a304ad6767dec02473efa615de41ec7e95bfc1de306d59ed2d1",
+          "bounds": [
+            64,
+            37,
+            192,
+            224
+          ],
+          "outerTransparentPixels": 37,
+          "sha256": "7e4b711c7d2dd7e065caa784e07552e9cadd483adcdad04c9fc5ebe5b8af7869",
+          "bytes": 56170,
+          "decodedBytes": 360448
+        },
+        {
+          "file": "characters/girl/assets/girl-north-daylight-shadow.png",
+          "characterId": "CHR-GIRL-01",
+          "facing": "north",
+          "mood": "daylight",
+          "layer": "shadow",
+          "size": [
+            256,
+            256
+          ],
+          "anchor": [
+            128,
+            150
+          ],
+          "cellWidth": 112,
+          "projectionSamples": {
+            "origin": [
+              256.0,
+              299.99993896484375
+            ],
+            "right": [
+              480.0,
+              299.99993896484375
+            ],
+            "row": [
+              256.0,
+              489.96270179748535
+            ],
+            "height": [
+              256.0,
+              181.29803466796875
+            ]
+          },
+          "meshSha256": "003e9ada7b7c1a304ad6767dec02473efa615de41ec7e95bfc1de306d59ed2d1",
+          "bounds": [
+            61,
+            91,
+            245,
+            224
+          ],
+          "outerTransparentPixels": 11,
+          "sha256": "9b6650c58d7abe9e40daada441ce9fa187a51c8e78a42b2391d5beba9b8b53a6",
+          "bytes": 10598,
+          "decodedBytes": 262144
+        },
+        {
+          "file": "characters/girl/assets/girl-west-daylight-body.png",
+          "characterId": "CHR-GIRL-01",
+          "facing": "west",
+          "mood": "daylight",
+          "layer": "body",
+          "size": [
+            256,
+            352
+          ],
+          "anchor": [
+            128,
+            208
+          ],
+          "cellWidth": 224,
+          "projectionSamples": {
+            "origin": [
+              128.0,
+              207.99987506866455
+            ],
+            "right": [
+              352.0,
+              207.99987506866455
+            ],
+            "row": [
+              128.0,
+              397.96265745162964
+            ],
+            "height": [
+              128.0,
+              89.29795837402344
+            ]
+          },
+          "meshSha256": "003e9ada7b7c1a304ad6767dec02473efa615de41ec7e95bfc1de306d59ed2d1",
+          "bounds": [
+            93,
+            21,
+            189,
+            237
+          ],
+          "outerTransparentPixels": 21,
+          "sha256": "93ef12d9a2329bb998e10e04a3a9d87c169ead8fac87cd56f06ef491d5761d5e",
+          "bytes": 54723,
+          "decodedBytes": 360448
+        },
+        {
+          "file": "characters/girl/assets/girl-west-daylight-shadow.png",
+          "characterId": "CHR-GIRL-01",
+          "facing": "west",
+          "mood": "daylight",
+          "layer": "shadow",
+          "size": [
+            256,
+            256
+          ],
+          "anchor": [
+            128,
+            150
+          ],
+          "cellWidth": 112,
+          "projectionSamples": {
+            "origin": [
+              256.0,
+              299.99993896484375
+            ],
+            "right": [
+              480.0,
+              299.99993896484375
+            ],
+            "row": [
+              256.0,
+              489.96270179748535
+            ],
+            "height": [
+              256.0,
+              181.29803466796875
+            ]
+          },
+          "meshSha256": "003e9ada7b7c1a304ad6767dec02473efa615de41ec7e95bfc1de306d59ed2d1",
+          "bounds": [
+            73,
+            86,
+            244,
+            216
+          ],
+          "outerTransparentPixels": 12,
+          "sha256": "018a28fb732c91a69c8681d70e5cf84378ec8abedd7a61de67b8891213f7458e",
+          "bytes": 10422,
+          "decodedBytes": 262144
+        },
+        {
+          "file": "characters/girl/assets/girl-south-dusk-body.png",
+          "characterId": "CHR-GIRL-01",
+          "facing": "south",
+          "mood": "dusk",
+          "layer": "body",
+          "size": [
+            256,
+            352
+          ],
+          "anchor": [
+            128,
+            208
+          ],
+          "cellWidth": 224,
+          "projectionSamples": {
+            "origin": [
+              128.0,
+              207.99987506866455
+            ],
+            "right": [
+              352.0,
+              207.99987506866455
+            ],
+            "row": [
+              128.0,
+              397.96265745162964
+            ],
+            "height": [
+              128.0,
+              89.29795837402344
+            ]
+          },
+          "meshSha256": "003e9ada7b7c1a304ad6767dec02473efa615de41ec7e95bfc1de306d59ed2d1",
+          "bounds": [
+            64,
+            26,
+            192,
+            237
+          ],
+          "outerTransparentPixels": 26,
+          "sha256": "fe150b29b55646b47b85f31e8bbba2eec955a916ce4ae07c4ce1f383b2c64cc1",
+          "bytes": 58381,
+          "decodedBytes": 360448
+        },
+        {
+          "file": "characters/girl/assets/girl-south-dusk-shadow.png",
+          "characterId": "CHR-GIRL-01",
+          "facing": "south",
+          "mood": "dusk",
+          "layer": "shadow",
+          "size": [
+            256,
+            256
+          ],
+          "anchor": [
+            128,
+            150
+          ],
+          "cellWidth": 112,
+          "projectionSamples": {
+            "origin": [
+              256.0,
+              299.99993896484375
+            ],
+            "right": [
+              480.0,
+              299.99993896484375
+            ],
+            "row": [
+              256.0,
+              489.96270179748535
+            ],
+            "height": [
+              256.0,
+              181.29803466796875
+            ]
+          },
+          "meshSha256": "003e9ada7b7c1a304ad6767dec02473efa615de41ec7e95bfc1de306d59ed2d1",
+          "bounds": [
+            60,
+            85,
+            235,
+            225
+          ],
+          "outerTransparentPixels": 21,
+          "sha256": "9c2201da2fe7ab84f06cc1f2a168907dccbcbb3e6a7974dde06a63b25357071c",
+          "bytes": 10187,
+          "decodedBytes": 262144
+        },
+        {
+          "file": "characters/girl/assets/girl-east-dusk-body.png",
+          "characterId": "CHR-GIRL-01",
+          "facing": "east",
+          "mood": "dusk",
+          "layer": "body",
+          "size": [
+            256,
+            352
+          ],
+          "anchor": [
+            128,
+            208
+          ],
+          "cellWidth": 224,
+          "projectionSamples": {
+            "origin": [
+              128.0,
+              207.99987506866455
+            ],
+            "right": [
+              352.0,
+              207.99987506866455
+            ],
+            "row": [
+              128.0,
+              397.96265745162964
+            ],
+            "height": [
+              128.0,
+              89.29795837402344
+            ]
+          },
+          "meshSha256": "003e9ada7b7c1a304ad6767dec02473efa615de41ec7e95bfc1de306d59ed2d1",
+          "bounds": [
+            67,
+            20,
+            164,
+            237
+          ],
+          "outerTransparentPixels": 20,
+          "sha256": "dc99b882e3489c648d80e54f6579e5446cdff0a1bd3a34d209488efc476c74c0",
+          "bytes": 49501,
+          "decodedBytes": 360448
+        },
+        {
+          "file": "characters/girl/assets/girl-east-dusk-shadow.png",
+          "characterId": "CHR-GIRL-01",
+          "facing": "east",
+          "mood": "dusk",
+          "layer": "shadow",
+          "size": [
+            256,
+            256
+          ],
+          "anchor": [
+            128,
+            150
+          ],
+          "cellWidth": 112,
+          "projectionSamples": {
+            "origin": [
+              256.0,
+              299.99993896484375
+            ],
+            "right": [
+              480.0,
+              299.99993896484375
+            ],
+            "row": [
+              256.0,
+              489.96270179748535
+            ],
+            "height": [
+              256.0,
+              181.29803466796875
+            ]
+          },
+          "meshSha256": "003e9ada7b7c1a304ad6767dec02473efa615de41ec7e95bfc1de306d59ed2d1",
+          "bounds": [
+            58,
+            86,
+            235,
+            222
+          ],
+          "outerTransparentPixels": 21,
+          "sha256": "8404db8106c4a938c637005f390e427a6c529cd2c0e222819ed8545de88e3c90",
+          "bytes": 10371,
+          "decodedBytes": 262144
+        },
+        {
+          "file": "characters/girl/assets/girl-north-dusk-body.png",
+          "characterId": "CHR-GIRL-01",
+          "facing": "north",
+          "mood": "dusk",
+          "layer": "body",
+          "size": [
+            256,
+            352
+          ],
+          "anchor": [
+            128,
+            208
+          ],
+          "cellWidth": 224,
+          "projectionSamples": {
+            "origin": [
+              128.0,
+              207.99987506866455
+            ],
+            "right": [
+              352.0,
+              207.99987506866455
+            ],
+            "row": [
+              128.0,
+              397.96265745162964
+            ],
+            "height": [
+              128.0,
+              89.29795837402344
+            ]
+          },
+          "meshSha256": "003e9ada7b7c1a304ad6767dec02473efa615de41ec7e95bfc1de306d59ed2d1",
+          "bounds": [
+            64,
+            37,
+            192,
+            224
+          ],
+          "outerTransparentPixels": 37,
+          "sha256": "9abaf3a92b38a74978485c60f68c693ce9f7474af101ce3822030ae6645f5fba",
+          "bytes": 50531,
+          "decodedBytes": 360448
+        },
+        {
+          "file": "characters/girl/assets/girl-north-dusk-shadow.png",
+          "characterId": "CHR-GIRL-01",
+          "facing": "north",
+          "mood": "dusk",
+          "layer": "shadow",
+          "size": [
+            256,
+            256
+          ],
+          "anchor": [
+            128,
+            150
+          ],
+          "cellWidth": 112,
+          "projectionSamples": {
+            "origin": [
+              256.0,
+              299.99993896484375
+            ],
+            "right": [
+              480.0,
+              299.99993896484375
+            ],
+            "row": [
+              256.0,
+              489.96270179748535
+            ],
+            "height": [
+              256.0,
+              181.29803466796875
+            ]
+          },
+          "meshSha256": "003e9ada7b7c1a304ad6767dec02473efa615de41ec7e95bfc1de306d59ed2d1",
+          "bounds": [
+            56,
+            92,
+            238,
+            226
+          ],
+          "outerTransparentPixels": 18,
+          "sha256": "f6219f575a33b32894b75327893ad7ddcc2e2cfe33402b62e1990f3053c26d7d",
+          "bytes": 10612,
+          "decodedBytes": 262144
+        },
+        {
+          "file": "characters/girl/assets/girl-west-dusk-body.png",
+          "characterId": "CHR-GIRL-01",
+          "facing": "west",
+          "mood": "dusk",
+          "layer": "body",
+          "size": [
+            256,
+            352
+          ],
+          "anchor": [
+            128,
+            208
+          ],
+          "cellWidth": 224,
+          "projectionSamples": {
+            "origin": [
+              128.0,
+              207.99987506866455
+            ],
+            "right": [
+              352.0,
+              207.99987506866455
+            ],
+            "row": [
+              128.0,
+              397.96265745162964
+            ],
+            "height": [
+              128.0,
+              89.29795837402344
+            ]
+          },
+          "meshSha256": "003e9ada7b7c1a304ad6767dec02473efa615de41ec7e95bfc1de306d59ed2d1",
+          "bounds": [
+            93,
+            21,
+            189,
+            237
+          ],
+          "outerTransparentPixels": 21,
+          "sha256": "b1113de1a5816486fda62c39d6b38789f92b48cbeb943ee0d7eb22e5dff1a37a",
+          "bytes": 49703,
+          "decodedBytes": 360448
+        },
+        {
+          "file": "characters/girl/assets/girl-west-dusk-shadow.png",
+          "characterId": "CHR-GIRL-01",
+          "facing": "west",
+          "mood": "dusk",
+          "layer": "shadow",
+          "size": [
+            256,
+            256
+          ],
+          "anchor": [
+            128,
+            150
+          ],
+          "cellWidth": 112,
+          "projectionSamples": {
+            "origin": [
+              256.0,
+              299.99993896484375
+            ],
+            "right": [
+              480.0,
+              299.99993896484375
+            ],
+            "row": [
+              256.0,
+              489.96270179748535
+            ],
+            "height": [
+              256.0,
+              181.29803466796875
+            ]
+          },
+          "meshSha256": "003e9ada7b7c1a304ad6767dec02473efa615de41ec7e95bfc1de306d59ed2d1",
+          "bounds": [
+            65,
+            87,
+            242,
+            224
+          ],
+          "outerTransparentPixels": 14,
+          "sha256": "bc5ff386bfffed8edc6fb5f14b0bd01dff8b64091bca662b16adc7536e4d2de6",
+          "bytes": 10460,
+          "decodedBytes": 262144
+        }
+      ]
+    }
+  ],
+  "projection": {
+    "elevation": 58,
+    "yaw": 0,
+    "radius": 25,
+    "bodyOrthoScale": 1.5714285714285714,
+    "cellWidth": 224,
+    "groundPitch": 189.9627735390394,
+    "heightRise": 118.7019151882379
+  },
+  "color": {
+    "transform": "AgX",
+    "look": "Medium High Contrast",
+    "output": "sRGB / straight RGBA8",
+    "exposure": 0,
+    "gamma": 1
+  },
+  "lighting": {
+    "daylight": {
+      "key": {
+        "position": [
+          -6,
+          -3,
+          12
+        ],
+        "energy": 1800.0,
+        "color": [
+          1.0,
+          0.8399999737739563,
+          0.6299999952316284
+        ],
+        "size": 7
+      },
+      "fill": {
+        "position": [
+          4,
+          6,
+          10
+        ],
+        "energy": 650.0,
+        "color": [
+          0.6600000262260437,
+          0.7900000214576721,
+          1.0
+        ],
+        "size": 9
+      },
+      "world": [
+        0.25,
+        0.25,
+        0.25
+      ]
+    },
+    "dusk": {
+      "key": {
+        "position": [
+          -6,
+          -3,
+          12
+        ],
+        "energy": 1050.0,
+        "color": [
+          0.47999998927116394,
+          0.6200000047683716,
+          1.0
+        ],
+        "size": 7
+      },
+      "fill": {
+        "position": [
+          4,
+          6,
+          10
+        ],
+        "energy": 550.0,
+        "color": [
+          0.44999998807907104,
+          0.550000011920929,
+          0.8500000238418579
+        ],
+        "size": 9
+      },
+      "world": [
+        0.11999999731779099,
+        0.15000000596046448,
+        0.2199999988079071
+      ]
+    }
+  },
+  "facings": {
+    "south": 0,
+    "east": 90,
+    "north": 180,
+    "west": -90
+  },
+  "sourceHashes": {
+    "source/approved-inputs.json": "8971fe25867aa1abf5dcc83ec70f691a83ae5e946b3e07c3fc6f9f684af1db10",
+    "source/audit-glb.py": "b8b81f2b6d3f346aca0561f055904f6e3d2867536585c8126cd700bc389a8ecb",
+    "source/audit-source.py": "402a32342ec5a37a6516f598006756e5681ad938ab19138ae2cd06f1bf1b3f82",
+    "source/build.py": "63f4066cbdc4ca568ce54dd7763354fb684bf4fec86e416279337c5fd2988650",
+    "source/capture.cjs": "f52b5bb7d656f524b37280ade0e5f2b038817238621471fd95aa0b2c4e46bd2e",
+    "source/common.py": "595bfcee67f5b632705702b3887ac08646d3792e77e1793ee8f71b0a0934d33a",
+    "source/finish.py": "400d0e547ea8963d7ef2be68a0c935d80192ecdc50dfa1c47940dca456671c99",
+    "source/fixtures.mjs": "87272dc90f83d3a46a604914d72b80b0caa99dc1201ff7dd50acbbbabf511958",
+    "source/fixtures.test.mjs": "13b0e1c19a1581ba84bc2094c1dc605cc86335a189424ad2bac31eb9832a4be3",
+    "source/model.py": "51d01c9498f325e41a07576e3941fcf629db984739ac3bca89e7e7443c80200e",
+    "source/package-evidence.py": "701de27ab4380cf14ddb27fb5613d3aa2c7237b014a92ae9aefd1cf19a2cb097",
+    "source/portable.py": "a916ab9b1bced57f1f37db3740b11b73cf1828f505c523fc4b09b28697fa8be2",
+    "source/render.py": "0cc32095a72ddd2cedfefaf8cf0fca8b41f5b43728efc7eb8fc698415b3ecbb1",
+    "source/repeat-portable.py": "3f728d6ae8537e79a6373b384cc83aec0005371bac2f94fd70f3cf1f48c3def4",
+    "source/validate.py": "9c0997b2fa9586546347c68ea30a882759f616a9c5a93c5ba579a0b6c3968b78",
+    "source/viewer.mjs": "a4a7224f26aa8385ee1ef130befae8a3221ea6a4d9eeb05f88fffc56c55bdad4"
+  },
+  "approvedInputHashes": {
+    "docs/art/batch-01/source/wall-master.blend": "452d1f3bcce4c065ec08dcc8fcc67c9413d1f2cb16ebf1cabc65ed4e2b4a06ef",
+    "docs/art/batch-01/source/export-glb.py": "3f6e935c63ea8d5f4863f9893095468c43c19fd130a57e54c0df990bd2037143",
+    "docs/art/batch-01/assets/manifest.json": "b3660ef76d66ba27fb084331dc3e91bebe5825b74021dd5be1b86fe1ab809d76",
+    "docs/art/batch-02/manifest.json": "a3b0ae1d8755366bc0ce2842b11e5cf951716200de8aba9e9cc74392a6e1c2cc",
+    "src/game/palletProjection.js": "90c08dd440d766a0c638f7faf21b8b25be0abcdfea6b6f776bb853301297757b",
+    "src/components/PalletMaze.js": "e1d7de771371f9c2e8a8b34fbda72e4179b99efb1ef4a21180b390bcb003a598"
+  },
+  "references": "evidence/references.json",
+  "license": "Original procedural geometry/source under repository contribution terms; supplied concept images are reference-only, no separate rights claim",
+  "processing": "Approved 2:1 shadow downsample, 32/255 catcher alpha-noise remap, two-pixel RGB dilation without alpha changes; no cropping/masking/stretching",
+  "limits": [
+    "Unrigged neutral posed masters; retopology, rigging, deformation and LODs require a later authorized pass.",
+    "Iris hues and freckles are explicit 3D/source/portrait details; individual eye colors are not reliably identifiable at 36px.",
+    "1024\u00b2 8-bit PBR maps approximate procedural detail and render-engine shading; raw PNG colors are not exact GLB shader parity.",
+    "Terrain seams, vertical lantern relighting, physical-device/GPU, assistive technology and ranked camera fairness remain deferred."
+  ],
+  "totals": {
+    "bodyImages": 16,
+    "shadowImages": 16,
+    "allSpriteDecodedBytes": 9961472,
+    "allSpritePngBytes": 1038851,
+    "glbBytes": 4150044
+  },
+  "marginExceptions": [
+    {
+      "file": "characters/boy/assets/boy-north-daylight-shadow.png",
+      "measuredZeroAlphaBorder": 11,
+      "reason": "Full soft shadow tail retained at approved canvas/anchor/cell scale; no clipping or artificial alpha trimming"
+    },
+    {
+      "file": "characters/boy/assets/boy-west-daylight-shadow.png",
+      "measuredZeroAlphaBorder": 12,
+      "reason": "Full soft shadow tail retained at approved canvas/anchor/cell scale; no clipping or artificial alpha trimming"
+    },
+    {
+      "file": "characters/boy/assets/boy-west-dusk-shadow.png",
+      "measuredZeroAlphaBorder": 14,
+      "reason": "Full soft shadow tail retained at approved canvas/anchor/cell scale; no clipping or artificial alpha trimming"
+    },
+    {
+      "file": "characters/girl/assets/girl-north-daylight-shadow.png",
+      "measuredZeroAlphaBorder": 11,
+      "reason": "Full soft shadow tail retained at approved canvas/anchor/cell scale; no clipping or artificial alpha trimming"
+    },
+    {
+      "file": "characters/girl/assets/girl-west-daylight-shadow.png",
+      "measuredZeroAlphaBorder": 12,
+      "reason": "Full soft shadow tail retained at approved canvas/anchor/cell scale; no clipping or artificial alpha trimming"
+    },
+    {
+      "file": "characters/girl/assets/girl-west-dusk-shadow.png",
+      "measuredZeroAlphaBorder": 14,
+      "reason": "Full soft shadow tail retained at approved canvas/anchor/cell scale; no clipping or artificial alpha trimming"
+    }
+  ]
+}

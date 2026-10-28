@@ -1,0 +1,78 @@
+{
+  "status": "PASS",
+  "characterId": "CHR-BOY-01",
+  "glbSha256": "a563135560631ba001d719dc66ad90f26ccdc87c2fa82e54e41cb28935478dd4",
+  "cleanImport": {
+    "sourceBlendLoaded": false,
+    "filesInDirectory": [
+      "character.glb"
+    ],
+    "objects": [
+      "EMPTY",
+      "MESH"
+    ],
+    "embeddedPackedImages": 2,
+    "lights": 0,
+    "cameras": 0
+  },
+  "worldBounds": [
+    [
+      -0.2800000011920929,
+      0.2800000011920929
+    ],
+    [
+      -0.15299999713897705,
+      0.26716503500938416
+    ],
+    [
+      0.0,
+      1.3423504829406738
+    ]
+  ],
+  "triangles": 19902,
+  "materialGroups": 22,
+  "rootPivot": [
+    0,
+    0,
+    0
+  ],
+  "rootScale": [
+    1,
+    1,
+    1
+  ],
+  "maxPositionError": 1.2287812012345967e-07,
+  "reversePositionError": 1.2287812012345967e-07,
+  "minimumSourceNormalDot": 0.9999996423721313,
+  "surfaceAreaDelta": 3.090495370727808e-08,
+  "signedVolumeDelta": 3.915817323174586e-09,
+  "embeddedTextures": [
+    {
+      "sha256": "5ca39124b40332ab5a763cbd57b77be47c8b9076084bd3482ae98810d9c04f9d",
+      "size": [
+        1024,
+        1024
+      ],
+      "bytes": 450080
+    },
+    {
+      "sha256": "76e6880baf4ff21681728e1d7209e6919d0ad1436ee45f12129d26d07d122d80",
+      "size": [
+        1024,
+        1024
+      ],
+      "bytes": 511627
+    }
+  ],
+  "qaWorld": {
+    "color": [
+      0.05087608844041824,
+      0.05087608844041824,
+      0.05087608844041824,
+      1.0
+    ],
+    "strength": 1.0
+  },
+  "sourceReferences": "Source geometry used for comparison only; factory reset before isolated import",
+  "limits": "Author checks only; PBR atlas/shader/filtering losses and future retopology/LOD/rigging remain."
+}

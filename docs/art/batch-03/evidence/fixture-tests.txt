@@ -1,0 +1,11 @@
+✔ read-only art layouts remain rectangular and keep actor centers on legal ground (2.639617ms)
+✔ corridor tests one-cell walls, near equipment/fire and one painted goal (1.202051ms)
+✔ full corpus includes fixed dense maze, corner and rear/front probes without a game generator (6.313562ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 27.167333

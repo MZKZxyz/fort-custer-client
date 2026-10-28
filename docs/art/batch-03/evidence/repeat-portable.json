@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "blender": "4.3.2",
+  "byteIdentical": true,
+  "files": {
+    "characters/boy/assets/character-master.glb": "a563135560631ba001d719dc66ad90f26ccdc87c2fa82e54e41cb28935478dd4",
+    "characters/boy/assets/character-master-basecolor.png": "76e6880baf4ff21681728e1d7209e6919d0ad1436ee45f12129d26d07d122d80",
+    "characters/boy/assets/character-master-normal.png": "5ca39124b40332ab5a763cbd57b77be47c8b9076084bd3482ae98810d9c04f9d",
+    "characters/girl/assets/character-master.glb": "3123b0125e900d284161014d0d5404f69fa9c32a0cbd0312afff4bba423cc4e1",
+    "characters/girl/assets/character-master-basecolor.png": "32824f29f01972641a2c8a3b7e8f81e14d2f389bc3bf20cc73ff56082ab3ab5c",
+    "characters/girl/assets/character-master-normal.png": "5c50b63d25f840fd4789e425a4c76255d15571943fa12f48c3d923d2f9884db0"
+  },
+  "limit": "Supported environment repeatability; not cross-platform byte identity."
+}

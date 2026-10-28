@@ -1,0 +1,1200 @@
+{
+  "schema": "fort-custer-batch03-evidence-v1",
+  "files": [
+    {
+      "file": "evidence/1280x800-cell36-boy-daylight.png",
+      "sha256": "d8682e04a4e566e8758f95611581bc9ccba4f7dc2d04e07bbff2bb6cc23810fd",
+      "bytes": 104320,
+      "size": [
+        616,
+        348
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/1280x800-cell36-boy-dusk.png",
+      "sha256": "705db21d231c3da44534584642372f2290417deadf1755125a33d95573b29ec6",
+      "bytes": 104115,
+      "size": [
+        616,
+        348
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/1280x800-cell36-girl-daylight.png",
+      "sha256": "cb09ea847eff832fb55d9b42bfa650de3dbe0cc4a84b06b605ceaa084cd9200e",
+      "bytes": 104618,
+      "size": [
+        616,
+        348
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/1280x800-cell36-girl-dusk.png",
+      "sha256": "e0af77bc64f1053630ae6f31a0ac66bf29de0f31ea0eb60b6b89588d35c3ba12",
+      "bytes": 104456,
+      "size": [
+        616,
+        348
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/1280x800-cell36-review.png",
+      "sha256": "7ad4d59695b2f924cbc3d8e716f17a00ec07722b95dbd95331b8484e228f225d",
+      "bytes": 206726,
+      "size": [
+        1280,
+        800
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/1280x800-cell48-boy-daylight.png",
+      "sha256": "3e550adb4142fd3e5a1ffef0b328b623b23d6a0b6ab97b4c5688ba6707b0d298",
+      "bytes": 151399,
+      "size": [
+        616,
+        361
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/1280x800-cell48-boy-dusk.png",
+      "sha256": "69606548374339c30799b0d3440cff98830495437f3595e72c098318355f80c5",
+      "bytes": 149900,
+      "size": [
+        616,
+        361
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/1280x800-cell48-girl-daylight.png",
+      "sha256": "ab12575a959f27c8ee76566e64ab327605bf69d487cbb56beedfebe607ad5091",
+      "bytes": 151317,
+      "size": [
+        616,
+        361
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/1280x800-cell48-girl-dusk.png",
+      "sha256": "51b9d92e9e3f3e2cdd1b2d999cd39805453c2ac556742d27a03f976c21db71fc",
+      "bytes": 149872,
+      "size": [
+        616,
+        361
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/1280x800-cell48-review.png",
+      "sha256": "d5e54ad62e23937c4a1f47b43e45507ca5da68e9d90021d0a15c4977c480848c",
+      "bytes": 260675,
+      "size": [
+        1280,
+        800
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/320x568-cell36-boy-daylight.png",
+      "sha256": "159eb24a32c54cfa0c6dd7a24c1fe42c6b4f14a8f1e7a604632642015f837177",
+      "bytes": 79629,
+      "size": [
+        288,
+        321
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/320x568-cell36-boy-dusk.png",
+      "sha256": "f7246e822968dddc5a984153816fd72df9a2a9832d6808262d2d1c0d6f09eeef",
+      "bytes": 75687,
+      "size": [
+        288,
+        321
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/320x568-cell36-girl-daylight.png",
+      "sha256": "80ac7c1e5423c3114d339b51d8389b3d9fc241ff865aca459326f7191a545185",
+      "bytes": 79695,
+      "size": [
+        288,
+        321
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/320x568-cell36-girl-dusk.png",
+      "sha256": "1ac57f0b3a6584b764507face18aaf3e97b9a6b1a4515b6aa3aa3d29155a7c23",
+      "bytes": 75653,
+      "size": [
+        288,
+        321
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/320x568-cell36-review.png",
+      "sha256": "c2e9d25c6dc70e42f88b85136503d1ad309af0eb38bbf97128d1e9bafff317c8",
+      "bytes": 93054,
+      "size": [
+        320,
+        568
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/320x568-cell48-boy-daylight.png",
+      "sha256": "e980f1837e1e2a5e186d61c498626659a5e0985eb9b3d4ca3832dbaf69a9c4f1",
+      "bytes": 85450,
+      "size": [
+        288,
+        321
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/320x568-cell48-boy-dusk.png",
+      "sha256": "050001b145e3b09a5502a1083c5c927e86ee61bb5b401884dbbc06cc239ecd8e",
+      "bytes": 80600,
+      "size": [
+        288,
+        321
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/320x568-cell48-girl-daylight.png",
+      "sha256": "47ef4e441a36f50e24923e2141a55b97f1154812959ffc52e26d67139f83b1b3",
+      "bytes": 85403,
+      "size": [
+        288,
+        321
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/320x568-cell48-girl-dusk.png",
+      "sha256": "bf8cb0d108ebec3f36756dd2068b8b41f6fc1ef9d9eb40cd697bf4ceca97d365",
+      "bytes": 80574,
+      "size": [
+        288,
+        321
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/320x568-cell48-review.png",
+      "sha256": "d4148acb021d8743a84de1bcbb5dfa4f52866eb27fee1abb52d32344759bc125",
+      "bytes": 97460,
+      "size": [
+        320,
+        568
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/390x844-cell36-boy-daylight.png",
+      "sha256": "c17b5b44f586e776a6cfe645803b3e74e682eb222af8933d6282879164261ee5",
+      "bytes": 98692,
+      "size": [
+        358,
+        321
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/390x844-cell36-boy-dusk.png",
+      "sha256": "659c817f16ed83b73770091ccdcb51195d79979542bbe34f70fe2d88475b36fe",
+      "bytes": 95035,
+      "size": [
+        358,
+        321
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/390x844-cell36-girl-daylight.png",
+      "sha256": "ff0a84962e21d4626b7bbc634f7e220403c2c092de29db3300702337e72672f4",
+      "bytes": 98648,
+      "size": [
+        358,
+        321
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/390x844-cell36-girl-dusk.png",
+      "sha256": "a8240c64c19952966f5df5885b9378f1f575d42409d2f7d153ed51ef21ffda33",
+      "bytes": 94996,
+      "size": [
+        358,
+        321
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/390x844-cell36-review.png",
+      "sha256": "669b0eb1b0e202a2f05245efd47e49a7398d544922741e36887d23557def5696",
+      "bytes": 178516,
+      "size": [
+        390,
+        844
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/390x844-cell48-boy-daylight.png",
+      "sha256": "8d767882799eb08f7d511d2ffca8e9b988167351dee1b4d347852274d08de955",
+      "bytes": 103805,
+      "size": [
+        358,
+        321
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/390x844-cell48-boy-dusk.png",
+      "sha256": "a42e033f2d6214816102e535d405bd27b3838631b4951a731c124492eebd2e6e",
+      "bytes": 99529,
+      "size": [
+        358,
+        321
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/390x844-cell48-girl-daylight.png",
+      "sha256": "298067c16571adbdf914e823f9af5959f3579036f69afe8e70594369de262a20",
+      "bytes": 103770,
+      "size": [
+        358,
+        321
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/390x844-cell48-girl-dusk.png",
+      "sha256": "4be86ee40abcf24896cd51565bf3c8be69d77d7585f4e778278fccee79e92c12",
+      "bytes": 99506,
+      "size": [
+        358,
+        321
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/390x844-cell48-review.png",
+      "sha256": "762fd0418774e85380255d2aa8f64288a9c538d0734ec8b55113582841bef1fa",
+      "bytes": 188347,
+      "size": [
+        390,
+        844
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/390x844-dpr2-cell36-boy-daylight.png",
+      "sha256": "6a0736e0687625de722bd248e691bdf51c67b73b3bdd2ffeb5ee12fbb81e9d45",
+      "bytes": 373713,
+      "size": [
+        716,
+        642
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/390x844-dpr2-cell36-boy-dusk.png",
+      "sha256": "77ddede6a2ec6837671ec560f54e5d653298ec5881a028c4cd70b525067682db",
+      "bytes": 356108,
+      "size": [
+        716,
+        642
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/390x844-dpr2-cell36-girl-daylight.png",
+      "sha256": "3966c5c514b7878587234eb8213ca4368ded199fe437f544a38cbada523bfd89",
+      "bytes": 373655,
+      "size": [
+        716,
+        642
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/390x844-dpr2-cell36-girl-dusk.png",
+      "sha256": "cef61f8b2acf3432eb7c94eda6f1526f8f97a03aa656ffed6a8519b39748c0ba",
+      "bytes": 356047,
+      "size": [
+        716,
+        642
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/390x844-dpr2-cell48-boy-daylight.png",
+      "sha256": "286dec412f1927a5ffca4d637d318f1b34b18f11f45961fd6aca67433c5892bf",
+      "bytes": 395161,
+      "size": [
+        716,
+        642
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/390x844-dpr2-cell48-boy-dusk.png",
+      "sha256": "1ee07d0f76ccac872f93aa5edace8131d43f585dff44df1f262a2b09d8306621",
+      "bytes": 377705,
+      "size": [
+        716,
+        642
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/390x844-dpr2-cell48-girl-daylight.png",
+      "sha256": "39d74f5324a771f962bb13aebed3ebbb97fe61a842c4bfa244fd0ecc4bbd798b",
+      "bytes": 394983,
+      "size": [
+        716,
+        642
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/390x844-dpr2-cell48-girl-dusk.png",
+      "sha256": "57c40f038497b7802f94342721a9ad6c6fa5a9355e8449493608979128a3a910",
+      "bytes": 377646,
+      "size": [
+        716,
+        642
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/844x390-cell36-boy-daylight.png",
+      "sha256": "26d7e33e453a545c5578338c2537c7016663b9aa1831a1d6d34333006e9926d0",
+      "bytes": 101056,
+      "size": [
+        398,
+        348
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/844x390-cell36-boy-dusk.png",
+      "sha256": "b4ba6cd415cf4b00e680fd5e5fff3fc24ba4f2a55a8d6d5ce248fffde17ad006",
+      "bytes": 100412,
+      "size": [
+        398,
+        348
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/844x390-cell36-girl-daylight.png",
+      "sha256": "3181e1fd2a2f1769f4cdbd5e7ab70b19571fa7c696e9e02661822a1254a71144",
+      "bytes": 101029,
+      "size": [
+        398,
+        348
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/844x390-cell36-girl-dusk.png",
+      "sha256": "365effcd185df48b7e81609d0a36dea7633307d20ea84cd41470504608e78c27",
+      "bytes": 100696,
+      "size": [
+        398,
+        348
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/844x390-cell36-review.png",
+      "sha256": "50fcf7337620f76277d68eb95bd2c74afbf0ae8563f6b1112cde5c24086e6682",
+      "bytes": 78195,
+      "size": [
+        844,
+        390
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/844x390-cell48-boy-daylight.png",
+      "sha256": "4365a1cb34c7d439f2be617b878ed5f58a5f122ac6b4cfec2e10ffab008387e2",
+      "bytes": 125862,
+      "size": [
+        398,
+        361
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/844x390-cell48-boy-dusk.png",
+      "sha256": "ba237fd4071d408700d12cdac288a5c2f2c2684855214ce75b7bb00b403ddbe4",
+      "bytes": 119035,
+      "size": [
+        398,
+        361
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/844x390-cell48-girl-daylight.png",
+      "sha256": "a8625551a18dea2490a889654dbb72e4ad5918cdd9cb546a1bd6aadeb8ca2949",
+      "bytes": 125811,
+      "size": [
+        398,
+        361
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/844x390-cell48-girl-dusk.png",
+      "sha256": "131d8f898d07773b61b42e11ed98304b16557b40a56f656a72032abf0f59945e",
+      "bytes": 119007,
+      "size": [
+        398,
+        361
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/844x390-cell48-review.png",
+      "sha256": "d3065ec8f7f0bafb87851a17c12054ce2b391d8d9f271eca1200f15167f766c7",
+      "bytes": 79921,
+      "size": [
+        844,
+        390
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/alpha-east-black.png",
+      "sha256": "60863f124f56a234a8759650c998b72de54a7a68ed633d680e69e04ad460a765",
+      "bytes": 30072,
+      "size": [
+        880,
+        689
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/alpha-east-checker.png",
+      "sha256": "1aa1441029617a08626e98ecb3d9ace316bf4f443a710fa1ac10bbd7af4a597d",
+      "bytes": 46253,
+      "size": [
+        880,
+        689
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/alpha-east-white.png",
+      "sha256": "1afb45c25ca64b95a0a01b121f517a9c8f0333de56740ee8f84378b50c802243",
+      "bytes": 45660,
+      "size": [
+        880,
+        689
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/alpha-north-black.png",
+      "sha256": "d1487110505a9718d1fdcc01c41ff35f7e12dd8e4882ba4587bc49866aa1006c",
+      "bytes": 31765,
+      "size": [
+        880,
+        689
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/alpha-north-checker.png",
+      "sha256": "38f693f14c4aa9b9e1f6693a8e89480565a7bc11bf6601a4667b368729b6947e",
+      "bytes": 48353,
+      "size": [
+        880,
+        689
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/alpha-north-white.png",
+      "sha256": "5e4d7ca72449ea11ae6f348550c2eb2f164a30ce806150a2ec0d1ca7200f066e",
+      "bytes": 47785,
+      "size": [
+        880,
+        689
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/alpha-south-black.png",
+      "sha256": "79af731967a45aef16ffb167367be7fa7383cf160baa36d9a8c8cf44b13edc3d",
+      "bytes": 35535,
+      "size": [
+        880,
+        689
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/alpha-south-checker.png",
+      "sha256": "63f41e3bf8c36833b48d93744e2805289249da729bcb921678bb0f252d65c947",
+      "bytes": 50973,
+      "size": [
+        880,
+        689
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/alpha-south-white.png",
+      "sha256": "7b27883fb5e8a5699a224a0e2ee7f3fdd6468bf25e608a794d11274db4ab8249",
+      "bytes": 50464,
+      "size": [
+        880,
+        689
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/alpha-west-black.png",
+      "sha256": "48795b13fa57fa6a5a8a6955fd5f7c53e0f9d3bd219e2e53a8fea435a6340c1c",
+      "bytes": 30341,
+      "size": [
+        880,
+        689
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/alpha-west-checker.png",
+      "sha256": "6dc8e06315800d8890761de5496b3c8dae25cae10e5bf566be06ca9eccc90da6",
+      "bytes": 47537,
+      "size": [
+        880,
+        689
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/alpha-west-white.png",
+      "sha256": "ae5b3d38f86664217e9683101ce37b2c7588bfa33e88eec1fdfa0c2239451aac",
+      "bytes": 46683,
+      "size": [
+        880,
+        689
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/arrival-south-cell36-pair.png",
+      "sha256": "16f70947b67ff73554f892ceb7fb01aa6bb909a21227d76c94958f42a7360a2d",
+      "bytes": 226357,
+      "size": [
+        808,
+        783
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/arrival-south-cell48-pair.png",
+      "sha256": "122e6064dc763822efedc03d71de5b74a41261ffcfa02b480710e8a81a03a43f",
+      "bytes": 368839,
+      "size": [
+        1072,
+        1013
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/authoring-58-facings.png",
+      "sha256": "3c52cbfaf35a0a29a6ef805494e40b2021912aeded84d4f970e0e2f6ec51e966",
+      "bytes": 500318,
+      "size": [
+        1120,
+        1561
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/beforeBehind-north-cell36-pair.png",
+      "sha256": "6e1e2fbcae7342b998efb4a3a912a980551bbde622733deb5139651016c219cc",
+      "bytes": 69228,
+      "size": [
+        664,
+        539
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/beforeBehind-north-cell48-pair.png",
+      "sha256": "d114ecde18d85cffc7a997e825fb45e231fb2b1ea45fcd2c8c0db7c6193d0b09",
+      "bytes": 116586,
+      "size": [
+        880,
+        689
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/beforeBehind-south-cell36-pair.png",
+      "sha256": "5868811984986f9c936665b026591570d6cbbf9cd57d3d866d2a611e18e47968",
+      "bytes": 70631,
+      "size": [
+        664,
+        539
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/beforeBehind-south-cell48-pair.png",
+      "sha256": "896b233ebcbbefbc3cc970a388972bff66547e72846eb0984bb52d8e0d935d6f",
+      "bytes": 118834,
+      "size": [
+        880,
+        689
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/browser.json",
+      "sha256": "6a29c46fccee8f41fae7a81b3a616adfb61cc80d1f07c0aeb5afea6297e8acb4",
+      "bytes": 338108
+    },
+    {
+      "file": "evidence/client-tests.txt",
+      "sha256": "dac8dac5439132ee5b64ca62acf3c089f8509c1a2925ac0f1fbd8c1c56953c35",
+      "bytes": 670
+    },
+    {
+      "file": "evidence/corner-south-cell36-pair.png",
+      "sha256": "27f38454fafcf944b497657a39cb0fc318c3fac77cca9f8dd82d4771e59dff65",
+      "bytes": 85462,
+      "size": [
+        664,
+        661
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/corner-south-cell48-pair.png",
+      "sha256": "30eed4e337852a9176df93f329a6804cbaeaa86dac1a3bd870c84f75d5d9bf37",
+      "bytes": 141711,
+      "size": [
+        880,
+        851
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/corner-west-cell36-pair.png",
+      "sha256": "578b56dbf1a460f6c8e3fd48001f59e3b82e3c68fa8a0ad02426b91aad405e64",
+      "bytes": 84620,
+      "size": [
+        664,
+        661
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/corner-west-cell48-pair.png",
+      "sha256": "2b7e1b416c10d53a1db7d49e6c78a68fcc50c4bd652444a6bdf9079dc936ece2",
+      "bytes": 140519,
+      "size": [
+        880,
+        851
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/corridor-east-cell36-pair.png",
+      "sha256": "539c89c14febe70efccac065af080b9409e85bb6aab4d70fdf5f431247f62504",
+      "bytes": 228065,
+      "size": [
+        808,
+        783
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/corridor-east-cell48-pair.png",
+      "sha256": "978a699556a2ddf698ca01fe84db464e98ef5ddb0eaa5e4754c316dbe4d79760",
+      "bytes": 370762,
+      "size": [
+        1072,
+        1013
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/corridor-north-cell36-pair.png",
+      "sha256": "63058c1abb9a416eab0d16be0b2dec0529f5bc6e0a1316d5413b6885c297c631",
+      "bytes": 228588,
+      "size": [
+        808,
+        783
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/corridor-north-cell48-pair.png",
+      "sha256": "ec1a0fe5a00147a374fdf04ac9c1ed87fc523cc7e50a087b2c1c61e92c644d50",
+      "bytes": 371613,
+      "size": [
+        1072,
+        1013
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/corridor-south-cell36-pair.png",
+      "sha256": "7c221bea2ed2181df0d68375b8569ec30cf528ae2dab83c959d9ab7d92f4aff3",
+      "bytes": 229148,
+      "size": [
+        808,
+        783
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/corridor-south-cell48-pair.png",
+      "sha256": "68e5fe519264a76d15ce8004d221cf3b4c59795e33428c7e8e0ddfd1646aa47f",
+      "bytes": 372792,
+      "size": [
+        1072,
+        1013
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/corridor-west-cell36-pair.png",
+      "sha256": "52caec84d0a96fadab68b0da1d2651029c3d01925a1bf2cf1e3a1fd80ee3aa2e",
+      "bytes": 228188,
+      "size": [
+        808,
+        783
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/corridor-west-cell48-pair.png",
+      "sha256": "ea42a4823e4ab6d34cfeaecd76fe6e9b12f46c92e91e82bfca85f5a164bdf29b",
+      "bytes": 371052,
+      "size": [
+        1072,
+        1013
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/fixture-tests.txt",
+      "sha256": "0e48a916abe62490b7a4046087429c04cc9e973e36b0cc5574c415b5d405c3e4",
+      "bytes": 410
+    },
+    {
+      "file": "evidence/maze-south-cell36-pair.png",
+      "sha256": "0e13646a9651f923001d7b84b009f78cb1d0e301c101e6a962e64b2bebb5f67b",
+      "bytes": 404850,
+      "size": [
+        1384,
+        1027
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/maze-south-cell48-pair.png",
+      "sha256": "e294af6addca71be48109102bea4de95303d61353225194727639a66b90821ab",
+      "bytes": 633257,
+      "size": [
+        1840,
+        1339
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/native-facings-cell36.png",
+      "sha256": "eb40c05fee6e230d04881f580fdb428effae7b893b47a9dbd16ca471374529d7",
+      "bytes": 39769,
+      "size": [
+        504,
+        379
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/native-facings-cell48.png",
+      "sha256": "35644edad3e8bcf193f96d289430a04787b7bb179f9b6a245e069e1b0d4c931c",
+      "bytes": 54133,
+      "size": [
+        672,
+        454
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/neutral-turnarounds.png",
+      "sha256": "4e0ee47292f4ce8d9faf2864a4705cf9898e5f9805c0e8b0a82ccaf5f86da066",
+      "bytes": 291886,
+      "size": [
+        1248,
+        801
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/overlap-east-cell36-pair.png",
+      "sha256": "68a674d0bc213d72fecd4d9bb39a25e03236744f9e0b1338449a37ef63b6751f",
+      "bytes": 104858,
+      "size": [
+        664,
+        661
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/overlap-east-cell48-pair.png",
+      "sha256": "e198e7a069846dae3b71e781223c1991263059fc696b021411866c3949371322",
+      "bytes": 173704,
+      "size": [
+        880,
+        851
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/overlap-grayscale.png",
+      "sha256": "af9229742e47fe8e372cfac9a365208cb8b62aa4682c239d0805d43be0b7a4ef",
+      "bytes": 91051,
+      "size": [
+        880,
+        851
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/overlap-reduced-effects.png",
+      "sha256": "619ed9134fb23126b807fe6b98e193e0d92414ab3c74467b8356107e8fc70201",
+      "bytes": 71521,
+      "size": [
+        880,
+        851
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/overlap-south-cell36-pair.png",
+      "sha256": "3326feaca68165985978e9635407e52bbd118eb847fd55efa56d4cba171719fc",
+      "bytes": 107481,
+      "size": [
+        664,
+        661
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/overlap-south-cell48-pair.png",
+      "sha256": "3b735202247cb9bdd6905e938058671c9201e0d9ec5a0777de9a3d573ab00f76",
+      "bytes": 177594,
+      "size": [
+        880,
+        851
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/projection-tests.txt",
+      "sha256": "af641bea317af5d379d199ab49e9427966a4de9d35d7eae01940e82d864f5ce7",
+      "bytes": 425
+    },
+    {
+      "file": "evidence/references.json",
+      "sha256": "cee30ab1553d6bafde2a06772a42edf2602cf39beaf606d822bf684990b3b564",
+      "bytes": 2297
+    },
+    {
+      "file": "evidence/repeat-portable.json",
+      "sha256": "39d10aa77a2d1f2a1c860cf73346999f0ec4c6f78c5f725854955243bb382c54",
+      "bytes": 917
+    },
+    {
+      "file": "evidence/review.md",
+      "sha256": "3253dfd37268bbe37b4950441d76156f973e083817ada0fdf2d78ea02dee7eea",
+      "bytes": 10023
+    },
+    {
+      "file": "evidence/source-audit.json",
+      "sha256": "11237bf72f5ad59f86b14445db0f933dccb361e177db760febf591409d7fd1b5",
+      "bytes": 4302
+    },
+    {
+      "file": "evidence/source-face-details.png",
+      "sha256": "07c1c1f1753ecbaf3851924e8f57e9b56e25108641fa1e05048deb9251f1b9e8",
+      "bytes": 385248,
+      "size": [
+        1248,
+        507
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "evidence/validation.json",
+      "sha256": "157d53518a1225bfc85c144997a5d0172aee0a35551d4083df3850492e485f52",
+      "bytes": 14000
+    },
+    {
+      "file": "characters/boy/evidence/face-detail.png",
+      "sha256": "06a9cb10321e2703a681d881e035da21146d672b362d9b8723b5c72cf9f83094",
+      "bytes": 585237,
+      "size": [
+        640,
+        640
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "file": "characters/boy/evidence/glb-export.json",
+      "sha256": "1a498378b13f07c2a150f53d8abef90d5d0ecf870b12bca9f37319529f61fddd",
+      "bytes": 5991
+    },
+    {
+      "file": "characters/boy/evidence/glb-reimport.json",
+      "sha256": "c993550847b758c1626c19f87cf323e1c9b493b817ed0628b9bbe26a0260c0e2",
+      "bytes": 1672
+    },
+    {
+      "file": "characters/boy/evidence/reimport-check-daylight.png",
+      "sha256": "fc4704d5e011cee2727e0e7364a50d57c857b2604b5af703754f1e70ed7bf170",
+      "bytes": 84858,
+      "size": [
+        256,
+        352
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "file": "characters/boy/evidence/reimport-check-dusk.png",
+      "sha256": "fa6f79c2815f1852afefe771dcc109c12baac8f22d3e0101f6aa335e7d9fbbf3",
+      "bytes": 79452,
+      "size": [
+        256,
+        352
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "file": "characters/boy/evidence/reimport-check-face.png",
+      "sha256": "2aa4ba19a24e35751a76bcc89367c596c3eacffcc830523569da0ae82069a4c7",
+      "bytes": 582533,
+      "size": [
+        640,
+        640
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "file": "characters/boy/evidence/source-check-daylight.png",
+      "sha256": "69f49fd462f764a8cc5708657fcc89d2c42edd84776767e4ab8870f9c80b6b70",
+      "bytes": 85055,
+      "size": [
+        256,
+        352
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "file": "characters/boy/evidence/source-check-dusk.png",
+      "sha256": "1fe4d64dd2801f0320a3dc59641ec60df8790462a9c83a2febb12f4f1856e9b5",
+      "bytes": 79481,
+      "size": [
+        256,
+        352
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "file": "characters/boy/evidence/source-check-face.png",
+      "sha256": "81ca06a58bacfedeea4f6e2f5483fe073e1e74f5c4be42b4d14495214a34b4f0",
+      "bytes": 585201,
+      "size": [
+        640,
+        640
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "file": "characters/boy/evidence/turnaround-east.png",
+      "sha256": "900bd9a4c8e75517c00fdbb2cc75a94898bf48e2c695d0601c6e5ee0a5f7936b",
+      "bytes": 364723,
+      "size": [
+        512,
+        768
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "file": "characters/boy/evidence/turnaround-north.png",
+      "sha256": "51c2293140ffbbab3241c7397656ec012cfe2dd4ec3e6341510ec8fb1b11cd02",
+      "bytes": 413732,
+      "size": [
+        512,
+        768
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "file": "characters/boy/evidence/turnaround-south.png",
+      "sha256": "759a36701a09a55d47e9894f4df7e553586d1a585ece8fd885beb65aa2e3ad46",
+      "bytes": 423833,
+      "size": [
+        512,
+        768
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "file": "characters/boy/evidence/turnaround-west.png",
+      "sha256": "17b2bdc763d7c1d4d565afbecbbbbd25a9237b364f5c2881b6dc7d685998d8ba",
+      "bytes": 363217,
+      "size": [
+        512,
+        768
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "file": "characters/girl/evidence/face-detail.png",
+      "sha256": "72c955bfed12f10a8b2ef390d52da1dab3ec838de3c25eb655fc9366d0e9de55",
+      "bytes": 580067,
+      "size": [
+        640,
+        640
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "file": "characters/girl/evidence/glb-export.json",
+      "sha256": "de48c6faf729ac44b9b5b473254139641a6ed3da1f052268dcdc7e2a0a931f1b",
+      "bytes": 5983
+    },
+    {
+      "file": "characters/girl/evidence/glb-reimport.json",
+      "sha256": "cc31a2c49e4d0a3d441ae80caf06f3a17452b9d74e884a771ced0b9267181d20",
+      "bytes": 1673
+    },
+    {
+      "file": "characters/girl/evidence/reimport-check-daylight.png",
+      "sha256": "793b679b3e47735747b77e94c5b772f58919a110d3e2738ddd90d2ec53521162",
+      "bytes": 84777,
+      "size": [
+        256,
+        352
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "file": "characters/girl/evidence/reimport-check-dusk.png",
+      "sha256": "875c4f4f4bc36690fc8932ba9064ca9244ad51e4372c90b6a08ae6fefdf405dd",
+      "bytes": 79320,
+      "size": [
+        256,
+        352
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "file": "characters/girl/evidence/reimport-check-face.png",
+      "sha256": "d360fa1e73e6dde606f004714fd3dddf0a645370da999792fd980c0dd0cb5eec",
+      "bytes": 580595,
+      "size": [
+        640,
+        640
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "file": "characters/girl/evidence/source-check-daylight.png",
+      "sha256": "ffff1ea5360cdc0d9048fbf0192c2188262e7c7473240841f4222123cd6024a1",
+      "bytes": 84883,
+      "size": [
+        256,
+        352
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "file": "characters/girl/evidence/source-check-dusk.png",
+      "sha256": "f6a14de882cc532e7ffc0420e97341149ecb4ddddccd106fd0bd7c11cbbdb96b",
+      "bytes": 79337,
+      "size": [
+        256,
+        352
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "file": "characters/girl/evidence/source-check-face.png",
+      "sha256": "76ef5596493075ccab43c4a761bb89b4b4c3e5050335e49a9637417a931eef10",
+      "bytes": 580031,
+      "size": [
+        640,
+        640
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "file": "characters/girl/evidence/turnaround-east.png",
+      "sha256": "35fde9bc049180c79310a8bd6abe2d236e4f07d9e66680bfa58a5c400d4d675f",
+      "bytes": 363008,
+      "size": [
+        512,
+        768
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "file": "characters/girl/evidence/turnaround-north.png",
+      "sha256": "86c7b04193783e1a276e2201f690b87fc22778cd51088b5f47003798815aeee3",
+      "bytes": 409182,
+      "size": [
+        512,
+        768
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "file": "characters/girl/evidence/turnaround-south.png",
+      "sha256": "6a895383898bd35f680c388219bc6ec3b8865f8304366f2a6dee5cfb36d462db",
+      "bytes": 418848,
+      "size": [
+        512,
+        768
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "file": "characters/girl/evidence/turnaround-west.png",
+      "sha256": "4787c11720b03a813be3bfd881e48f739b3478a6c26419412e1b56e07b5c59d4",
+      "bytes": 363579,
+      "size": [
+        512,
+        768
+      ],
+      "mode": "RGBA"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fort Custer · Teen explorer pair</title><link rel="stylesheet" href="review.css">
+<header><p>FORT CUSTER / ART BATCH 03 / ISSUE 57</p><h1>Teen explorer masters</h1><p>Two proposed 3D characters · independent Art QA + owner review</p></header>
+<main><section class="controls" aria-label="Art comparison controls">
+<label>Scene<select id="fixture"><option value="corridor">Corridor</option><option value="beforeBehind">Front / rear wall</option><option value="corner">Corner</option><option value="overlap">Props / overlaps</option><option value="arrival">Goal overlap</option><option value="maze">Dense maze</option></select></label>
+<label>Facing<select id="facing"><option value="south">Front / south</option><option value="east">Right / east</option><option value="north">Back / north</option><option value="west">Left / west</option></select></label>
+<label>Cell<select id="tile"><option>36</option><option>48</option></select></label>
+</section><details id="options"><summary>Walls, alpha backgrounds and effects</summary><div class="controls">
+<label>Wall finish<select id="wall"><option value="mixed">Mixed v01–v04</option><option>v01</option><option>v02</option><option>v03</option><option>v04</option></select></label>
+<label>Background<select id="background"><option value="terrain">Packed earth</option><option value="checker">Checkerboard</option><option value="white">White</option><option value="black">Black</option></select></label>
+<label><input id="shadows" type="checkbox" checked> Shadows</label><label><input id="pools" type="checkbox" checked> Scene light pools</label><label><input id="gray" type="checkbox"> Grayscale</label><button id="center">Center both studies</button>
+</div></details>
+<div class="comparison">
+<section><h2>Boy · daylight</h2><div class="viewport" data-character="boy" data-mood="daylight" tabindex="0" role="region" aria-label="Boy daylight art scene"><div class="world"></div></div></section>
+<section><h2>Girl · daylight</h2><div class="viewport" data-character="girl" data-mood="daylight" tabindex="0" role="region" aria-label="Girl daylight art scene"><div class="world"></div></div></section>
+<section><h2>Boy · evening</h2><div class="viewport" data-character="boy" data-mood="dusk" tabindex="0" role="region" aria-label="Boy evening art scene"><div class="world"></div></div></section>
+<section><h2>Girl · evening</h2><div class="viewport" data-character="girl" data-mood="dusk" tabindex="0" role="region" aria-label="Girl evening art scene"><div class="world"></div></div></section>
+</div><p class="status" aria-live="polite"></p>
+<p class="hint">Both characters are always shown. Facing changes rotate the actual source model in the exports; the gameplay camera stays at 58°. These are read-only art fixtures, not character selection or gameplay.</p>
+<h2>Four directions at the selected native cell scale</h2><div class="sprite-gallery"></div>
+<h2>Neutral full-body turnarounds</h2><div class="turnarounds"></div>
+<h2>Source face / hair / gear details</h2><div class="portraits"><figure><img src="characters/boy/evidence/face-detail.png" alt="Boy source face, red hair and green eyes"><figcaption>CHR-BOY-01 · source detail</figcaption></figure><figure><img src="characters/girl/evidence/face-detail.png" alt="Girl source face, blonde braid and blue eyes"><figcaption>CHR-GIRL-01 · source detail</figcaption></figure></div>
+<p class="hint">Portraits and neutral turnarounds use a separate labeled lookdev camera and face fill. Eye hue/freckles are source-detail identifiers, not a promise of recognition at 36px.</p>
+<nav><a href="README.md">Reproduce / limits</a> · <a href="manifest.json">Source and model hashes</a> · <a href="evidence/validation.json">Technical validation</a> · <a href="references/package-manifest.json">Reference provenance</a></nav>
+</main><script type="module" src="source/viewer.mjs"></script></html>

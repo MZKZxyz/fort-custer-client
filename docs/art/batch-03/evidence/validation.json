@@ -1,0 +1,521 @@
+{
+  "status": "PASS",
+  "assets": [
+    {
+      "file": "characters/boy/assets/boy-south-daylight-body.png",
+      "sha256": "ee1e8aa659c9f38edb32310256d256b4923f753d3708b259afe86f0aa6f7fd0e",
+      "bounds": [
+        64,
+        26,
+        192,
+        237
+      ],
+      "zeroAlphaBorder": 26
+    },
+    {
+      "file": "characters/boy/assets/boy-south-daylight-shadow.png",
+      "sha256": "03f97378325144c3ebbca19325483f74a682d66010cb83c50bcd545c5de96d3d",
+      "bounds": [
+        67,
+        84,
+        240,
+        223
+      ],
+      "zeroAlphaBorder": 16,
+      "shadowCentroid": [
+        155.02190251655526,
+        137.90441362361614
+      ]
+    },
+    {
+      "file": "characters/boy/assets/boy-east-daylight-body.png",
+      "sha256": "e17a68b51509bb58502c7bbb491491e595e2dd9f5d9ac5077b2f0d13fe640074",
+      "bounds": [
+        67,
+        20,
+        164,
+        237
+      ],
+      "zeroAlphaBorder": 20
+    },
+    {
+      "file": "characters/boy/assets/boy-east-daylight-shadow.png",
+      "sha256": "509aed9cce5de4aa276e76408ee50afd0999d2b841b4a2cf66e62b2acbf63a41",
+      "bounds": [
+        66,
+        85,
+        238,
+        218
+      ],
+      "zeroAlphaBorder": 18,
+      "shadowCentroid": [
+        157.81013210806893,
+        138.62726916232904
+      ]
+    },
+    {
+      "file": "characters/boy/assets/boy-north-daylight-body.png",
+      "sha256": "f0242ced025e671e4bd278ae1b97331d82b82cb50e815accbc5633671a080190",
+      "bounds": [
+        64,
+        37,
+        192,
+        224
+      ],
+      "zeroAlphaBorder": 37
+    },
+    {
+      "file": "characters/boy/assets/boy-north-daylight-shadow.png",
+      "sha256": "4430d4e6b7158001903201740e0edcb190ba4bd0a1b6a87b757c1aaf9b3bca6b",
+      "bounds": [
+        64,
+        92,
+        245,
+        224
+      ],
+      "zeroAlphaBorder": 11,
+      "shadowCentroid": [
+        155.65444089279592,
+        140.3057110640347
+      ]
+    },
+    {
+      "file": "characters/boy/assets/boy-west-daylight-body.png",
+      "sha256": "dd6cdcc71e8db7d523fab3717a3ade15f64849ac50ac6379055374712e0a82aa",
+      "bounds": [
+        93,
+        21,
+        189,
+        237
+      ],
+      "zeroAlphaBorder": 21
+    },
+    {
+      "file": "characters/boy/assets/boy-west-daylight-shadow.png",
+      "sha256": "06ce5229a8d4676fb7dba4ba5e1254a8803be9fd345a834deba29a5ff847d5f0",
+      "bounds": [
+        71,
+        85,
+        244,
+        216
+      ],
+      "zeroAlphaBorder": 12,
+      "shadowCentroid": [
+        157.7470302894052,
+        137.2893550423256
+      ]
+    },
+    {
+      "file": "characters/boy/assets/boy-south-dusk-body.png",
+      "sha256": "bb54711f4db08ce9fe48182103047faf028f2f3e5c9541080b43dc932d283eb9",
+      "bounds": [
+        64,
+        26,
+        192,
+        237
+      ],
+      "zeroAlphaBorder": 26
+    },
+    {
+      "file": "characters/boy/assets/boy-south-dusk-shadow.png",
+      "sha256": "0938d7516b4b27df3a9be89077331c0cec427db854d527dc4bd1b7531d7d9f6b",
+      "bounds": [
+        60,
+        85,
+        235,
+        224
+      ],
+      "zeroAlphaBorder": 21,
+      "shadowCentroid": [
+        150.02730623695894,
+        141.4267179128319
+      ]
+    },
+    {
+      "file": "characters/boy/assets/boy-east-dusk-body.png",
+      "sha256": "1dda6b3c5891556fa01486822b0cdd7518ff24a60ed802549441d26ae297480d",
+      "bounds": [
+        67,
+        20,
+        164,
+        237
+      ],
+      "zeroAlphaBorder": 20
+    },
+    {
+      "file": "characters/boy/assets/boy-east-dusk-shadow.png",
+      "sha256": "a70ed1b95c01d9345d3ef0f4d7825a1f4ed4ef23fda79139081b52dc7b144f4d",
+      "bounds": [
+        52,
+        86,
+        235,
+        224
+      ],
+      "zeroAlphaBorder": 21,
+      "shadowCentroid": [
+        152.8198967726841,
+        141.6839465186497
+      ]
+    },
+    {
+      "file": "characters/boy/assets/boy-north-dusk-body.png",
+      "sha256": "1e2fe5b92816342aa7951c9bf2e8e84146fa8b7a70684cfe07f503766c2a40c6",
+      "bounds": [
+        64,
+        37,
+        192,
+        224
+      ],
+      "zeroAlphaBorder": 37
+    },
+    {
+      "file": "characters/boy/assets/boy-north-dusk-shadow.png",
+      "sha256": "90e9d3ad6d375511fe311487e8c14ff34ba28454c6dffd7ca83bfef6eb8aa1a9",
+      "bounds": [
+        58,
+        92,
+        238,
+        224
+      ],
+      "zeroAlphaBorder": 18,
+      "shadowCentroid": [
+        149.96084428116205,
+        143.4786097913875
+      ]
+    },
+    {
+      "file": "characters/boy/assets/boy-west-dusk-body.png",
+      "sha256": "4679d11defa2681562691fa0a0df3a7de0eac91e4bbb32e539edaeea7f8dc86e",
+      "bounds": [
+        93,
+        21,
+        189,
+        237
+      ],
+      "zeroAlphaBorder": 21
+    },
+    {
+      "file": "characters/boy/assets/boy-west-dusk-shadow.png",
+      "sha256": "209cb9108a53907649e02fe04352af8a5fa0709c861e5a49ed5003cbf0a29174",
+      "bounds": [
+        65,
+        87,
+        242,
+        224
+      ],
+      "zeroAlphaBorder": 14,
+      "shadowCentroid": [
+        153.14859993820733,
+        139.82256920207348
+      ]
+    },
+    {
+      "file": "characters/girl/assets/girl-south-daylight-body.png",
+      "sha256": "bc8838311443ed1fca7db077adcda95fb10d817d47f4d4220e8c2cb8028929bd",
+      "bounds": [
+        64,
+        26,
+        192,
+        237
+      ],
+      "zeroAlphaBorder": 26
+    },
+    {
+      "file": "characters/girl/assets/girl-south-daylight-shadow.png",
+      "sha256": "2946232389c03da7fc5255c7b269ba6dfcf10a9668c20d40f3fcf26eaabf43d4",
+      "bounds": [
+        67,
+        84,
+        240,
+        223
+      ],
+      "zeroAlphaBorder": 16,
+      "shadowCentroid": [
+        155.42595072179526,
+        137.9219366808399
+      ]
+    },
+    {
+      "file": "characters/girl/assets/girl-east-daylight-body.png",
+      "sha256": "62da59bfe44fd9a6fe2c8d9dc927918f9a1eeba6da8a8e7b0096080da14275b6",
+      "bounds": [
+        67,
+        20,
+        164,
+        237
+      ],
+      "zeroAlphaBorder": 20
+    },
+    {
+      "file": "characters/girl/assets/girl-east-daylight-shadow.png",
+      "sha256": "2ca8811c963b6fa3d1dadeff3f391d1a228c1fbe2d5f602e6c1a749209a557d2",
+      "bounds": [
+        68,
+        85,
+        238,
+        218
+      ],
+      "zeroAlphaBorder": 18,
+      "shadowCentroid": [
+        157.69766101058454,
+        138.08334297402325
+      ]
+    },
+    {
+      "file": "characters/girl/assets/girl-north-daylight-body.png",
+      "sha256": "7e4b711c7d2dd7e065caa784e07552e9cadd483adcdad04c9fc5ebe5b8af7869",
+      "bounds": [
+        64,
+        37,
+        192,
+        224
+      ],
+      "zeroAlphaBorder": 37
+    },
+    {
+      "file": "characters/girl/assets/girl-north-daylight-shadow.png",
+      "sha256": "9b6650c58d7abe9e40daada441ce9fa187a51c8e78a42b2391d5beba9b8b53a6",
+      "bounds": [
+        61,
+        91,
+        245,
+        224
+      ],
+      "zeroAlphaBorder": 11,
+      "shadowCentroid": [
+        155.1550460377535,
+        140.46811444866697
+      ]
+    },
+    {
+      "file": "characters/girl/assets/girl-west-daylight-body.png",
+      "sha256": "93ef12d9a2329bb998e10e04a3a9d87c169ead8fac87cd56f06ef491d5761d5e",
+      "bounds": [
+        93,
+        21,
+        189,
+        237
+      ],
+      "zeroAlphaBorder": 21
+    },
+    {
+      "file": "characters/girl/assets/girl-west-daylight-shadow.png",
+      "sha256": "018a28fb732c91a69c8681d70e5cf84378ec8abedd7a61de67b8891213f7458e",
+      "bounds": [
+        73,
+        86,
+        244,
+        216
+      ],
+      "zeroAlphaBorder": 12,
+      "shadowCentroid": [
+        157.64806527286342,
+        138.2144489674239
+      ]
+    },
+    {
+      "file": "characters/girl/assets/girl-south-dusk-body.png",
+      "sha256": "fe150b29b55646b47b85f31e8bbba2eec955a916ce4ae07c4ce1f383b2c64cc1",
+      "bounds": [
+        64,
+        26,
+        192,
+        237
+      ],
+      "zeroAlphaBorder": 26
+    },
+    {
+      "file": "characters/girl/assets/girl-south-dusk-shadow.png",
+      "sha256": "9c2201da2fe7ab84f06cc1f2a168907dccbcbb3e6a7974dde06a63b25357071c",
+      "bounds": [
+        60,
+        85,
+        235,
+        225
+      ],
+      "zeroAlphaBorder": 21,
+      "shadowCentroid": [
+        150.44776771528439,
+        141.42529643938255
+      ]
+    },
+    {
+      "file": "characters/girl/assets/girl-east-dusk-body.png",
+      "sha256": "dc99b882e3489c648d80e54f6579e5446cdff0a1bd3a34d209488efc476c74c0",
+      "bounds": [
+        67,
+        20,
+        164,
+        237
+      ],
+      "zeroAlphaBorder": 20
+    },
+    {
+      "file": "characters/girl/assets/girl-east-dusk-shadow.png",
+      "sha256": "8404db8106c4a938c637005f390e427a6c529cd2c0e222819ed8545de88e3c90",
+      "bounds": [
+        58,
+        86,
+        235,
+        222
+      ],
+      "zeroAlphaBorder": 21,
+      "shadowCentroid": [
+        152.8121299752661,
+        141.04337963864455
+      ]
+    },
+    {
+      "file": "characters/girl/assets/girl-north-dusk-body.png",
+      "sha256": "9abaf3a92b38a74978485c60f68c693ce9f7474af101ce3822030ae6645f5fba",
+      "bounds": [
+        64,
+        37,
+        192,
+        224
+      ],
+      "zeroAlphaBorder": 37
+    },
+    {
+      "file": "characters/girl/assets/girl-north-dusk-shadow.png",
+      "sha256": "f6219f575a33b32894b75327893ad7ddcc2e2cfe33402b62e1990f3053c26d7d",
+      "bounds": [
+        56,
+        92,
+        238,
+        226
+      ],
+      "zeroAlphaBorder": 18,
+      "shadowCentroid": [
+        149.3928486743398,
+        143.69486627986277
+      ]
+    },
+    {
+      "file": "characters/girl/assets/girl-west-dusk-body.png",
+      "sha256": "b1113de1a5816486fda62c39d6b38789f92b48cbeb943ee0d7eb22e5dff1a37a",
+      "bounds": [
+        93,
+        21,
+        189,
+        237
+      ],
+      "zeroAlphaBorder": 21
+    },
+    {
+      "file": "characters/girl/assets/girl-west-dusk-shadow.png",
+      "sha256": "bc5ff386bfffed8edc6fb5f14b0bd01dff8b64091bca662b16adc7536e4d2de6",
+      "bounds": [
+        65,
+        87,
+        242,
+        224
+      ],
+      "zeroAlphaBorder": 14,
+      "shadowCentroid": [
+        152.9945485866018,
+        140.7146982853858
+      ]
+    }
+  ],
+  "portableModels": [
+    {
+      "characterId": "CHR-BOY-01",
+      "modelSha256": "a563135560631ba001d719dc66ad90f26ccdc87c2fa82e54e41cb28935478dd4",
+      "maxPositionError": 1.2287812012345967e-07,
+      "minimumNormalDot": 0.9999996423721313,
+      "triangles": 19902,
+      "materialGroups": 22,
+      "sourceImportRenders": [
+        {
+          "mood": "daylight",
+          "differentSilhouettePixels": 0,
+          "meanRgb8Difference": 0.7752347081206141,
+          "p95Rgb8Difference": 3.0,
+          "maxRgb8Difference": 41.0
+        },
+        {
+          "mood": "dusk",
+          "differentSilhouettePixels": 0,
+          "meanRgb8Difference": 0.5166064360695233,
+          "p95Rgb8Difference": 2.0,
+          "maxRgb8Difference": 21.0
+        }
+      ]
+    },
+    {
+      "characterId": "CHR-GIRL-01",
+      "modelSha256": "3123b0125e900d284161014d0d5404f69fa9c32a0cbd0312afff4bba423cc4e1",
+      "maxPositionError": 1.2287812012345967e-07,
+      "minimumNormalDot": 0.9999978840351105,
+      "triangles": 21874,
+      "materialGroups": 22,
+      "sourceImportRenders": [
+        {
+          "mood": "daylight",
+          "differentSilhouettePixels": 0,
+          "meanRgb8Difference": 0.8615535549399815,
+          "p95Rgb8Difference": 3.0,
+          "maxRgb8Difference": 94.0
+        },
+        {
+          "mood": "dusk",
+          "differentSilhouettePixels": 0,
+          "meanRgb8Difference": 0.5804670667897814,
+          "p95Rgb8Difference": 2.0,
+          "maxRgb8Difference": 50.0
+        }
+      ]
+    }
+  ],
+  "marginExceptions": [
+    {
+      "file": "characters/boy/assets/boy-north-daylight-shadow.png",
+      "measuredZeroAlphaBorder": 11,
+      "reason": "Full soft shadow tail retained at approved canvas/anchor/cell scale; no clipping or artificial alpha trimming"
+    },
+    {
+      "file": "characters/boy/assets/boy-west-daylight-shadow.png",
+      "measuredZeroAlphaBorder": 12,
+      "reason": "Full soft shadow tail retained at approved canvas/anchor/cell scale; no clipping or artificial alpha trimming"
+    },
+    {
+      "file": "characters/boy/assets/boy-west-dusk-shadow.png",
+      "measuredZeroAlphaBorder": 14,
+      "reason": "Full soft shadow tail retained at approved canvas/anchor/cell scale; no clipping or artificial alpha trimming"
+    },
+    {
+      "file": "characters/girl/assets/girl-north-daylight-shadow.png",
+      "measuredZeroAlphaBorder": 11,
+      "reason": "Full soft shadow tail retained at approved canvas/anchor/cell scale; no clipping or artificial alpha trimming"
+    },
+    {
+      "file": "characters/girl/assets/girl-west-daylight-shadow.png",
+      "measuredZeroAlphaBorder": 12,
+      "reason": "Full soft shadow tail retained at approved canvas/anchor/cell scale; no clipping or artificial alpha trimming"
+    },
+    {
+      "file": "characters/girl/assets/girl-west-dusk-shadow.png",
+      "measuredZeroAlphaBorder": 14,
+      "reason": "Full soft shadow tail retained at approved canvas/anchor/cell scale; no clipping or artificial alpha trimming"
+    }
+  ],
+  "dayEveningAlphaIdenticalPerFacing": true,
+  "protectedUnchangedPaths": [
+    "docs/art/batch-01",
+    "docs/art/batch-02",
+    "src",
+    "public",
+    "package.json",
+    "package-lock.json",
+    ".github"
+  ],
+  "baseline": "afece64170a46d01c0c4123f4ffd9084d4f671db",
+  "gate": "Independent Art QA and owner proportion/appearance approval required; no animation or selection authorized",
+  "limits": [
+    "Unrigged neutral posed masters; retopology, rigging, deformation and LODs require a later authorized pass.",
+    "Iris hues and freckles are explicit 3D/source/portrait details; individual eye colors are not reliably identifiable at 36px.",
+    "1024\u00b2 8-bit PBR maps approximate procedural detail and render-engine shading; raw PNG colors are not exact GLB shader parity.",
+    "Terrain seams, vertical lantern relighting, physical-device/GPU, assistive technology and ranked camera fairness remain deferred."
+  ]
+}
