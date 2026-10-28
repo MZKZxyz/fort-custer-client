@@ -138,3 +138,8 @@ dist
 # Playwright browser artifacts
 /test-results/
 /playwright-report/
+
+# Private local sprite evaluation; never copied by CRA public bundling
+/.local/
+/build/
+/node_modules
