@@ -20,7 +20,12 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "test:e2e": "playwright test",
-    "test:e2e:native": "playwright test --config=playwright.native.config.cjs"
+    "test:e2e:native": "playwright test --config=playwright.native.config.cjs",
+    "prebuild": "node scripts/audit-shipping-art.cjs --source",
+    "postbuild": "node scripts/audit-shipping-art.cjs",
+    "art:stage": "node scripts/local-meshy.cjs",
+    "art:clean": "node scripts/local-meshy.cjs clean",
+    "test:art": "node --test --test-concurrency=1 scripts/local-meshy.test.cjs scripts/local-meshy-server.test.cjs scripts/audit-shipping-art.test.cjs"
   },
   "eslintConfig": {
     "extends": [

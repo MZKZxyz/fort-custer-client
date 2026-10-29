@@ -1,0 +1,159 @@
+{
+  "baseline": "72e5f90786288f02371da18139e1e834d8d13f64",
+  "status": "author verification complete; feature-specific checks pass; two classic responsive failures remain for independent QA",
+  "rights": "local evaluation only; screenshots retained locally; public release blocked pending clearance",
+  "unchanged": [
+    "MazePage.js",
+    "MazePage.test.js",
+    "projection",
+    "camera",
+    "gameplay",
+    "server"
+  ],
+  "pr54Overlap": [],
+  "matrix": {
+    "viewports": [
+      [
+        320,
+        568
+      ],
+      [
+        390,
+        844
+      ],
+      [
+        844,
+        390
+      ],
+      [
+        1280,
+        800
+      ]
+    ],
+    "cellSizes": [
+      36,
+      48
+    ],
+    "dpr": [
+      1,
+      2
+    ],
+    "facings": [
+      "north",
+      "east",
+      "south",
+      "west"
+    ],
+    "mood": "daylight",
+    "scaleIsolation": "test-only innerWidth substitution; existing regression tests use natural widths"
+  },
+  "tests": {
+    "jest": {
+      "passed": 163,
+      "suites": 15
+    },
+    "stagingMiddlewareAndByteAudit": {
+      "passed": 6
+    },
+    "geometry": {
+      "passed": 3
+    },
+    "assetSelection": {
+      "passed": 3
+    },
+    "boyScaleAndFallback": {
+      "passed": 17,
+      "skipped": 1
+    },
+    "girlScaleAndFallback": {
+      "passed": 17,
+      "skipped": 1
+    },
+    "boyNaturalAndTransfer": {
+      "passed": 5
+    },
+    "girlNatural": {
+      "passed": 4
+    },
+    "pilotScaleAndNatural": {
+      "passed": 20,
+      "skipped": 2
+    },
+    "meshPreferenceVisualGateOff": {
+      "passed": 1
+    },
+    "naturalIntegratedRegression": {
+      "passed": 86,
+      "skipped": 25
+    },
+    "defaultProductionRegression": {
+      "passed": 103,
+      "skipped": 42,
+      "failed": 2
+    },
+    "classicV2AndCachedResults": {
+      "passed": 18,
+      "skipped": 3
+    },
+    "integratedMeshyV2": {
+      "passed": 1
+    },
+    "productionPreferenceIgnored": {
+      "passed": 1
+    },
+    "nativeTimerIntegratedPilot": {
+      "passed": 2
+    },
+    "finalDefaultProductionExclusion": {
+      "passed": 2
+    }
+  },
+  "defaultFailures": [
+    {
+      "test": "responsive 320×568",
+      "detail": "Outside-maze touch swipe can open Controls or leave scrollY unchanged. Isolated baseline passed; current isolated probe timed out at D-pad tap blocked by Controls dialog. Requires independent QA follow-up."
+    },
+    {
+      "test": "responsive 1280×800",
+      "detail": "Archive Play bottom 723.75 exceeds nav top 717. Independently reproduces on exact baseline."
+    }
+  ],
+  "mainBundleBaselineComparison": "All main bundle source modules identical except webpack lazy chunk filename runtime; main CSS byte-identical.",
+  "runtime": {
+    "node": "26.12.1",
+    "playwright": "1.62.1",
+    "chrome": "156.0.8078.49"
+  },
+  "characterBudget": {
+    "pilot": {
+      "pngBytes": 306147,
+      "transferBytes": 308547,
+      "decodedRgbaBytes": 2490368
+    },
+    "boy": {
+      "pngBytes": 278700,
+      "transferBytes": 281100,
+      "decodedRgbaBytes": 2490368
+    },
+    "girl": {
+      "pngBytes": 242004,
+      "transferBytes": 244404,
+      "decodedRgbaBytes": 2490368
+    },
+    "measurement": "390×844 / 48px / DPR1 actual local four-facing resource entries; PNG decoding memory calculated from validated dimensions, not resident-memory measurement"
+  },
+  "shippingAudit": {
+    "forbiddenContentHashes": 98,
+    "stagingOutsidePublic": true,
+    "defaultAndIntegratedProductionBuildsPassed": true,
+    "includesSourceMaps": true,
+    "disguisedPngAndModelTests": true
+  },
+  "limits": [
+    "Author evidence is not independent QA",
+    "No physical iOS/Safari/PWA certification",
+    "No real server/disposable Mongo integration run in this sprint; v1/v2 browser suites use synthetic fixtures",
+    "Dusk deferred",
+    "Local screenshots not included in Git or PR pending clearance"
+  ]
+}

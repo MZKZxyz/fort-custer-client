@@ -18,6 +18,10 @@ import asset6shadow from '../assets/pallet-garden/explorer-down-daylight-shadow.
 import asset7body from '../assets/pallet-garden/explorer-left-daylight-body.png';
 import asset7shadow from '../assets/pallet-garden/explorer-left-daylight-shadow.png';
 
+// Webpack excludes the entire local resolver (including source maps) in production.
+const { localCharacter, characterAsset } = process.env.NODE_ENV === 'development'
+  ? require('../game/characterArt') : { localCharacter: null, characterAsset: () => null };
+
 // Bundled, hashed copies of the reviewed pilot exports. No runtime docs URLs.
 const kit = {
   'ground-body': asset0body,
@@ -44,6 +48,7 @@ function PalletMaze({ scene, facing, inputPhase, onFallback }) {
   const ref = useRef(null);
   const [size, setSize] = useState({ width: 284, height: 260, tile: 36 });
   const [assetError, setAssetError] = useState(false);
+  const [failedCharacterFrames, setFailedCharacterFrames] = useState({});
   useLayoutEffect(() => {
     const el = ref.current;
     const measure = () => setSize({ width: el.clientWidth, height: el.clientHeight,
@@ -74,10 +79,17 @@ function PalletMaze({ scene, facing, inputPhase, onFallback }) {
         src={`${process.env.PUBLIC_URL}/images/teepee_01.png`} onError={() => setAssetError(true)}
         style={{ left: p.x - tile * .5, top: p.y - tile * .94, width: tile, height: tile }} />;
     }
+    const direction = role.startsWith('explorer-') ? role.slice(9) : null;
+    const frame = process.env.NODE_ENV === 'development' ? characterAsset(localCharacter, direction, layer) : null;
+    const useLocal = frame && !failedCharacterFrames[direction];
     const scale = tile / (layer === 'shadow' ? 112 : 224);
     const anchor = layer === 'shadow' ? [128, 150] : [128, 208];
     return <img key={`${cell.id}-${role}-${layer}`} className="pallet-sprite" data-role={role}
-      src={asset(role, layer)} alt="" draggable="false" onError={() => setAssetError(true)}
+      src={useLocal ? frame : asset(role, layer)} data-character-art={useLocal ? localCharacter.character : 'pilot'}
+      alt="" draggable="false" onError={() => {
+        if (useLocal) setFailedCharacterFrames(previous => ({ ...previous, [direction]: true }));
+        else setAssetError(true);
+      }}
       style={{ left: p.x - anchor[0] * scale, top: p.y - anchor[1] * scale,
         width: 256 * scale, height: (layer === 'shadow' ? 256 : 352) * scale }} />;
   };
@@ -103,6 +115,7 @@ function PalletMaze({ scene, facing, inputPhase, onFallback }) {
       </div>
     </div>
     <p className="pallet-position maze-assistive-position" id="maze-position-help">Row {scene.player.row + 1}, column {scene.player.column + 1}. {neighbors}</p>
+    {Object.keys(failedCharacterFrames).length > 0 && <p role="status">Local explorer frame unavailable; using pilot artwork.</p>}
     {assetError && <p role="alert">Maze artwork could not load. Use the classic view to continue this attempt.</p>}
     <button className="pallet-fallback" onClick={onFallback}>Use classic view</button>
   </section>;
