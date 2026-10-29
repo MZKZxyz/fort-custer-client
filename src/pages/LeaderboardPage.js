@@ -1,245 +1,115 @@
-// src/pages/LeaderboardPage.js
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import API from '../utils/api';
 import NavBar from '../components/NavBar';
-
-const TIME_FRAMES = ['daily', 'weekly', 'alltime'];
-const MEMORIAL_DAY = new Date(Date.UTC(2025, 4, 26));
-const LABOR_DAY    = new Date(Date.UTC(2025, 8, 1));
-
-const getClampedToday = () => {
-  const today = new Date();
-  const utc = new Date(Date.UTC(
-    today.getUTCFullYear(),
-    today.getUTCMonth(),
-    today.getUTCDate()
-  ));
-  if (utc < MEMORIAL_DAY) return MEMORIAL_DAY;
-  if (utc > LABOR_DAY)  return LABOR_DAY;
-  return utc;
-};
-
-const getClampedStartOfWeek = (date) => {
-  const start = new Date(Date.UTC(
-    date.getUTCFullYear(),
-    date.getUTCMonth(),
-    date.getUTCDate()
-  ));
-  start.setUTCDate(start.getUTCDate() - start.getUTCDay());
-  if (start < MEMORIAL_DAY) return MEMORIAL_DAY;
-  if (start > LABOR_DAY)  return new Date(Date.UTC(2025,7,31));
-  return start;
-};
-
-const formatDate = (date) => date.toISOString().slice(0, 10);
-
-const addDays = (date, n) => {
-  const d = new Date(date);
-  d.setUTCDate(d.getUTCDate() + n);
-  return d;
-};
-
-const formatDateLabel = (tf, refDate) => {
-  const opts = { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' };
-  if (tf === 'daily') return refDate.toLocaleDateString('en-US', opts);
-  if (tf === 'weekly') {
-    const start = getClampedStartOfWeek(refDate);
-    const end   = addDays(start, 6);
-    return `${start.toLocaleDateString('en-US', opts)} – ${end.toLocaleDateString('en-US', opts)}`;
-  }
-  return 'All Time';
-};
-
-const getTimeLabel = (tf) => tf === 'daily' ? 'Best Time' : 'Total Time';
+import useCatalog from '../archive/useCatalog';
+import ArchiveNotice from '../archive/ArchiveNotice';
+import { dateLabel, isDate } from '../archive/dates';
+import { stored } from '../archive/identity';
+import { freshRankingCatalog, shiftWeek, utcWeek, weekLabel } from '../archive/rankings';
+import '../css/LeaderboardPage.css';
 
 export default function LeaderboardPage() {
+  const navigate = useNavigate();
   const [timeframe, setTimeframe] = useState('daily');
-  const [refDate, setRefDate]     = useState(getClampedToday());
-  const [scores, setScores]       = useState([]);
-  const [loading, setLoading]     = useState(true);
-  const activeProfile             = JSON.parse(localStorage.getItem('activeSubProfile'));
-
-  const fetchScores = useCallback(async () => {
-    setLoading(true);
-    try {
-      let qp = '';
-      if (timeframe === 'daily') {
-        qp = `?date=${formatDate(refDate)}`;
-      } else if (timeframe === 'weekly') {
-        qp = `?start=${formatDate(refDate)}`;
-      }
-
-      const res = await API.get(`/leaderboard/${timeframe}${qp}`);
-      let data = res.data || [];
-
-      // Sort: for weekly & alltime, by completed mazes desc, then aggregate time asc
-      if (timeframe === 'weekly' || timeframe === 'alltime') {
-        data.sort((a, b) => {
-          if (b.completedMazes !== a.completedMazes) {
-            return b.completedMazes - a.completedMazes;
-          }
-          return parseFloat(a.time) - parseFloat(b.time);
-        });
-      } else {
-        // Daily: best time ascending
-        data.sort((a, b) => parseFloat(a.time) - parseFloat(b.time));
-      }
-
-      setScores(data);
-    } catch {
-      setScores([]);
-    }
-    setLoading(false);
-  }, [timeframe, refDate]);
-
+  const [requested] = useState(() => {
+    const date = new URLSearchParams(window.location.search).get('date') || stored('selectedMazeDate');
+    return isDate(date) ? date : null;
+  });
+  const catalog = useCatalog(requested?.slice(0, 7) || null);
+  const [selectedWeek, setSelectedWeek] = useState(null);
+  const [revision, setRevision] = useState(0);
+  const [result, setResult] = useState({ loading: true });
+  const capable = freshRankingCatalog(catalog);
+  // Device time and a stored daily selection never choose the current week.
+  const latestWeek = utcWeek(catalog.data?.today);
+  const firstWeek = utcWeek(catalog.data?.firstPublishedDate);
+  const week = selectedWeek && firstWeek && latestWeek
+    && selectedWeek >= firstWeek.start && selectedWeek <= latestWeek.start
+    ? utcWeek(selectedWeek) : latestWeek;
+  const date = requested || (catalog.data?.todayMaze.available ? catalog.data.today : null);
+  const confirmed = capable && (catalog.data.items.some(item => item.date === date)
+    || (catalog.data.todayMaze.available && date === catalog.data.today));
+  const allowed = capable && (timeframe === 'daily' ? confirmed : timeframe !== 'weekly' || Boolean(week));
+  // Revalidation and identity changes invalidate pending/cached score responses.
+  const weekStart = week?.start;
+  const scope = JSON.stringify([timeframe, date, weekStart, catalog.identity.key, catalog.startedAt, allowed]);
   useEffect(() => {
-    fetchScores();
-  }, [fetchScores]);
-
-  const shiftDate = (d) => {
-    const nxt = new Date(refDate);
-    if (timeframe === 'daily')  nxt.setUTCDate(nxt.getUTCDate() + d);
-    if (timeframe === 'weekly') nxt.setUTCDate(nxt.getUTCDate() + d * 7);
-    if (nxt >= MEMORIAL_DAY && nxt <= LABOR_DAY) setRefDate(nxt);
+    if (!allowed) return;
+    const controller = new AbortController();
+    let active = true;
+    setResult({ scope, loading: true });
+    const query = timeframe === 'daily' ? `?date=${date}` : timeframe === 'weekly' ? `?start=${weekStart}` : '';
+    API.get(`/leaderboard/${timeframe}${query}`, { signal: controller.signal, timeout: 10000,
+      headers: { Authorization: catalog.identity.token ? `Bearer ${catalog.identity.token}` : null } })
+      .then(response => {
+        if (!Array.isArray(response.data) || response.data.some(entry => !entry || typeof entry.name !== 'string'
+          || !/^\d{1,12}(?:\.\d{1,9})?$/.test(String(entry.time)) || Number(entry.time) <= 0
+          || typeof entry.subProfileId !== 'string' || !entry.subProfileId
+          || !Number.isInteger(entry.completedMazes) || entry.completedMazes < 1)) throw new Error('INVALID_SCORES');
+        const scores = [...response.data].sort((a, b) => timeframe === 'daily'
+          ? Number(a.time) - Number(b.time) : b.completedMazes - a.completedMazes || Number(a.time) - Number(b.time));
+        if (active) setResult({ scope, scores, loading: false });
+      }).catch(error => {
+        if (active) setResult({ scope, loading: false, error: timeframe === 'daily' && error.response?.status === 404
+          ? 'No published maze is available for this date.' : 'Leaderboard could not be loaded. Please retry.' });
+      });
+    return () => { active = false; controller.abort(); };
+  }, [scope, timeframe, date, weekStart, allowed, catalog.identity.token, revision]);
+  const current = result.scope === scope ? result : { loading: true };
+  const moveWeek = delta => {
+    const next = shiftWeek(weekStart, delta);
+    if (capable && next && firstWeek && latestWeek && next >= firstWeek.start && next <= latestWeek.start) setSelectedWeek(next);
   };
-
-  const showControls = timeframe !== 'alltime';
-
-  const medalFor = (idx) => ['🥇','🥈','🥉'][idx] || '';
-
-  return (
-    <div className="page-with-nav" style={{
-      backgroundColor: '#ee4444',
-      minHeight: '100vh',
-      padding: '1rem',
-      boxSizing: 'border-box',
-    }}>
-      <h2 style={{textAlign: 'center', marginTop: 0 }}>
-        <img
-          src="/icons/metalStar.png"
-          alt="Sheriff Badge"
-          style={{
-            width: '32px',
-            height: '32px',
-            verticalAlign: 'middle',
-            marginRight: '0.5rem',
-          }}
-        />
-        Leaderboard
-      </h2>
-
-      {/* timeframe pills */}
-      <div style={{
-        display: 'flex',
-        justifyContent: 'center',
-        gap: '0.5rem',
-        marginBottom: '1rem',
-      }}>
-        {TIME_FRAMES.map(frame => (
-          <button
-            key={frame}
-            onClick={() => { setTimeframe(frame); setRefDate(getClampedToday()); }}
-            style={{
-              padding: '0.5rem 1rem',
-              borderRadius: '16px',
-              border: timeframe === frame ? '2px solid #000' : '2px solid transparent',
-              background: timeframe === frame ? '#fff' : 'rgba(255,255,255,0.7)',
-              fontWeight: 'bold',
-              cursor: 'pointer',
-              fontFamily: 'Arial, sans-serif'
-            }}>
-            {frame.charAt(0).toUpperCase() + frame.slice(1)}
-          </button>
-        ))}
-      </div>
-
-      {/* date controls */}
-      {showControls && (
-        <div style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          gap: '1rem',
-          marginBottom: '1rem',
-          color: '#fff',
-          fontWeight: 'bold',
-        }}>
-          <button
-            onClick={() => shiftDate(-1)}
-            disabled={refDate <= MEMORIAL_DAY}
-            style={{
-              background: '#fff', border: '2px solid #000', borderRadius: '4px',
-              padding: '0 0.5rem', cursor: 'pointer', fontWeight: 'bold'
-            }}>
-            ◀
-          </button>
-          <span>{formatDateLabel(timeframe, refDate)}</span>
-          <button
-            onClick={() => shiftDate(1)}
-            disabled={refDate >= LABOR_DAY}
-            style={{
-              background: '#fff', border: '2px solid #000', borderRadius: '4px',
-              padding: '0 0.5rem', cursor: 'pointer', fontWeight: 'bold'
-            }}>
-            ▶
-          </button>
-        </div>
-      )}
-
-      {/* leaderboard card */}
-      <div style={{
-        maxWidth: '600px',
-        margin: '0 auto',
-        background: '#fff',
-        border: '4px solid #000',
-        borderRadius: '8px',
-        boxShadow: '4px 4px 0 #000',
-        overflowX: 'auto',
-      }}>
-        <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-          <thead>
-            <tr style={{ background: '#000', color: '#fff' }}>
-              <th style={{ padding: '0.75rem', textAlign: 'left' }}>Rank</th>
-              <th style={{ padding: '0.75rem', textAlign: 'left' }}>Player</th>
-              {timeframe !== 'daily' && <th style={{ padding: '0.75rem', textAlign: 'left' }}>Mazes</th>}
-              <th style={{ padding: '0.75rem', textAlign: 'left' }}>{getTimeLabel(timeframe)}</th>
-            </tr>
-          </thead>
-          <tbody>
-            {loading
-              ? Array.from({ length: 5 }).map((_, i) => (
-                  <tr key={i} style={{ background: i % 2 ? '#f9f9f9' : '#fff' }}>
-                    <td style={{ padding: '0.5rem 0.75rem' }}><div style={{ width: '2rem', height: '1rem', background: '#ddd', borderRadius: '4px'}}/></td>
-                    <td style={{ padding: '0.5rem 0.75rem' }}><div style={{ width: '6rem', height: '1rem', background: '#ddd', borderRadius: '4px'}}/></td>
-                    {timeframe !== 'daily' && <td style={{ padding: '0.5rem 0.75rem' }}><div style={{ width: '3rem', height: '1rem', background: '#ddd', borderRadius: 4 }} /></td>}
-                    <td style={{ padding: '0.5rem 0.75rem' }}><div style={{ width: '3rem', height: '1rem', background: '#ddd', borderRadius: '4px'}}/></td>
-                  </tr>
-                ))
-              : scores.length === 0 ? (
-                  <tr>
-                    <td colSpan={4} style={{ textAlign: 'center', padding: '2rem', fontStyle: 'italic' }}>
-                      No scores yet for this {timeframe === 'daily' ? 'day' : 'week'}.
-                    </td>
-                  </tr>
-                ) : (
-                  scores.map((e, i) => {
-                    const isActive = activeProfile?._id === e.subProfileId;
-                    const mazes = timeframe === 'daily' ? 1 : e.completedMazes;
-                    const bg = i === 0 ? '#ffebc8' : i === 1 ? '#eceff1' : i === 2 ? '#f4ecec' : (i % 2 ? '#f9f9f9' : '#fff');
-                    return (
-                      <tr key={e.subProfileId} style={{ backgroundColor: bg, fontWeight: isActive ? 'bold' : 'normal' }}>
-                        <td style={{ padding: '0.5rem 0.75rem' }}>{medalFor(i) || `#${i+1}`}</td>
-                        <td style={{ padding: '0.5rem 0.75rem' }}>{e.name}</td>
-                        {timeframe !== 'daily' && <td style={{ padding: '0.5rem 0.75rem' }}>{mazes}</td>}
-                        <td style={{ padding: '0.5rem 0.75rem' }}>{parseFloat(e.time).toFixed(3)}s</td>
-                      </tr>
-                    );
-                  })
-                )}
-          </tbody>
-        </table>
-      </div>
-      <NavBar />
+  const caption = timeframe === 'daily' ? `${dateLabel(date)} (UTC)`
+    : timeframe === 'weekly' ? weekLabel(week) : 'All-time fresh archive saved times';
+  return <main className="page-with-nav archive-leaderboard">
+    <h1>Leaderboard</h1>
+    <p>Fresh archive saved times — not official verified competitive rankings. Historical test results are excluded.</p>
+    <div className="leaderboard-views" role="group" aria-label="Leaderboard timeframe">
+      {['daily', 'weekly', 'alltime'].map(frame => <button key={frame} aria-pressed={timeframe === frame}
+        onClick={() => setTimeframe(frame)}>{frame === 'alltime' ? 'All-time' : frame === 'daily' ? 'Daily' : 'Weekly'}</button>)}
     </div>
-  );
+    <ArchiveNotice catalog={catalog} />
+    {catalog.status === 'ready' && !capable && <div role="alert"><p>Fresh rankings temporarily unavailable. Published dates could not be verified.</p>
+      <button onClick={catalog.refresh}>Retry</button></div>}
+    {timeframe === 'daily' && <>
+      <h2>{confirmed ? `${dateLabel(date)} (UTC)` : 'Choose a published date'}</h2>
+      <button onClick={() => navigate('/mazes')}>Choose a date in the archive</button>
+      {capable && !confirmed && <p role="status">No published maze is available for this selection.</p>}
+    </>}
+    {timeframe === 'weekly' && <>
+      <h2>Weekly fresh archive</h2>
+      {capable && (week ? <><p>{weekLabel(week)}</p><p>Sunday through Saturday, UTC. Only published mazes count.</p></>
+        : <p role="status">This UTC week is outside the supported date range.</p>)}
+      <div className="leaderboard-views" role="group" aria-label="UTC week navigation">
+        <button aria-label="Previous UTC week" disabled={!capable || !week || !firstWeek || week.start <= firstWeek.start} onClick={() => moveWeek(-1)}>◀</button>
+        <button disabled={!capable || !week || week.start === latestWeek?.start} onClick={() => setSelectedWeek(null)}>Current UTC week</button>
+        <button aria-label="Next UTC week" disabled={!capable || !week || week.start >= latestWeek?.start} onClick={() => moveWeek(1)}>▶</button>
+      </div>
+    </>}
+    {timeframe === 'alltime' && <h2>All-time fresh archive</h2>}
+    {allowed && <>
+      {current.loading ? <p role="status">Loading saved times…</p> : current.error ? <div role="alert"><p>{current.error}</p>
+        <button onClick={() => setRevision(value => value + 1)}>Retry leaderboard</button></div>
+        : current.scores.length === 0 ? <p role="status">No fresh archive saved times yet.</p>
+          : <section className="leaderboard-scores" aria-label="Saved times">
+            {/* eslint-disable-next-line jsx-a11y/no-redundant-roles -- Retain VoiceOver list semantics with list-style:none. */}
+            <ol className="leaderboard-list" role="list" aria-label={caption}>
+              {current.scores.map((entry, index) => <li key={entry.subProfileId} className={entry.subProfileId === catalog.identity.profile?._id ? 'active-player' : ''}>
+                <p><strong>{index + 1}. {entry.name}</strong></p>
+                {timeframe !== 'daily' && <p>{entry.completedMazes} published {entry.completedMazes === 1 ? 'maze' : 'mazes'}</p>}
+                <p>{timeframe === 'daily' ? 'Saved time' : 'Total saved time'}: {Number(entry.time).toFixed(3)}s</p>
+              </li>)}
+            </ol>
+            <div className="leaderboard-table"><table><caption>{caption}</caption>
+            <thead><tr><th scope="col">Rank</th><th scope="col">Player</th>{timeframe !== 'daily' && <th scope="col">Mazes</th>}
+              <th scope="col">{timeframe === 'daily' ? 'Saved time' : 'Total saved time'}</th></tr></thead>
+            <tbody>{current.scores.map((entry, index) => <tr key={entry.subProfileId} className={entry.subProfileId === catalog.identity.profile?._id ? 'active-player' : ''}>
+              <td>{index + 1}</td><td>{entry.name}</td>{timeframe !== 'daily' && <td>{entry.completedMazes}</td>}
+              <td>{Number(entry.time).toFixed(3)}s</td></tr>)}</tbody>
+          </table></div></section>}
+    </>}
+    <NavBar />
+  </main>;
 }

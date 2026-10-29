@@ -12,6 +12,10 @@ import { commandOutcome } from '../game/commandOutcome';
 import MazeDialog from '../components/MazeDialog';
 import MazeRenderBoundary from '../components/MazeRenderBoundary';
 import '../css/MazePage.css'; // Add CSS below to this file
+import LegacyEntry from '../archive/LegacyEntry';
+import { accountId, parsed, readIdentity, stored } from '../archive/identity';
+import { isDate } from '../archive/dates';
+import { createResultReceipt } from '../archive/resultReceipt';
 const PUBLIC = process.env.PUBLIC_URL;
 // Explicit preview/release opt-in; ordinary production builds stay on legacy.
 const CAMERA_ENABLED = process.env.REACT_APP_MAZE_CAMERA === 'true';
@@ -19,7 +23,7 @@ const CAMERA_ENABLED = process.env.REACT_APP_MAZE_CAMERA === 'true';
 const INTEGRATION_ENABLED = process.env.REACT_APP_MAZE_VISUAL_INTEGRATION === 'true';
 const PalletMaze = INTEGRATION_ENABLED ? lazy(() => import('../components/PalletMaze')) : null;
 
-const MazePage = ({ v2 = null }) => {
+export const MazePage = ({ v2 = null }) => {
   const [serverReady, setServerReady] = useState(!v2);
   const readyRequestRef = useRef(null);
   const inputRootRef = useRef(null);
@@ -62,11 +66,13 @@ const MazePage = ({ v2 = null }) => {
   }, [movementStatus]);
   const navigate = useNavigate();
   const profile = useMemo(() => {
-    return JSON.parse(localStorage.getItem('activeSubProfile'));
+    return parsed('activeSubProfile');
   }, []);
-  const selectedDate = useMemo(() => new Date(
-    localStorage.getItem('selectedMazeDate') || new Date().toISOString()
-  ).toISOString().slice(0, 10), []);
+  const [selectedDate] = useState(() => {
+    const value = v2?.snapshot?.session?.date || stored('selectedMazeDate');
+    return isDate(value) ? value : null;
+  });
+  const originalIdentity = useRef(readIdentity());
 
   const recoveryKey = `mazeCompletion:${profile?._id}:${selectedDate}`;
   const recovery = useMemo(() => {
@@ -175,6 +181,7 @@ const MazePage = ({ v2 = null }) => {
       navigate('/profiles');
       return;
     }
+    if (!isDate(selectedDate)) { navigate('/mazes'); return; }
     if (v2) {
       const { session, state } = v2.snapshot;
       gameRef.current = state;
@@ -190,7 +197,7 @@ const MazePage = ({ v2 = null }) => {
         if (!startRequestRef.current) {
           startRequestRef.current = API.post('/maze/start', {
             subProfileId: profile._id, date: selectedDate,
-          });
+          }, { headers: { Authorization: originalIdentity.current.token ? `Bearer ${originalIdentity.current.token}` : null } });
         }
         const res = await startRequestRef.current;
         if (!active) return;
@@ -251,13 +258,24 @@ const MazePage = ({ v2 = null }) => {
         return;
       }
       // Persist intent before sending: a refresh or timeout must reuse this attempt.
-      if (attemptIdRef.current) sessionStorage.setItem(recoveryKey, JSON.stringify({ attemptId: attemptIdRef.current }));
+      if (readIdentity().key !== originalIdentity.current.key) {
+        setCompletionError('Restore the original sign-in and profile before retrying this result.');
+        return;
+      }
+      if (attemptIdRef.current) sessionStorage.setItem(recoveryKey, JSON.stringify({ attemptId: attemptIdRef.current,
+        ...(accountId(originalIdentity.current.token) ? { accountId: accountId(originalIdentity.current.token) } : {}) }));
       const res = await API.post('/maze/complete', {
         subProfileId: profile._id,
         date: selectedDate,
         ...(attemptIdRef.current ? { attemptId: attemptIdRef.current } : {}),
-      }, { timeout: 15000 });
+      }, { timeout: 15000, headers: { Authorization: originalIdentity.current.token ? `Bearer ${originalIdentity.current.token}` : null } });
       const { time, reward } = res.data;
+      // A late owned receipt stays recoverable; it must not replace another account's result UI.
+      if (readIdentity().key !== originalIdentity.current.key) return;
+      const resultContext = await createResultReceipt(originalIdentity.current, {
+        date: selectedDate, time, reward, attemptId: attemptIdRef.current,
+      });
+      if (readIdentity().key !== originalIdentity.current.key) return;
       localStorage.setItem('lastMazeTime', time);
       if (reward) {
         localStorage.setItem('lastReward', JSON.stringify(reward));
@@ -286,6 +304,9 @@ const MazePage = ({ v2 = null }) => {
       } else {
         localStorage.removeItem('lastNewRecord');
       }
+      resultContext.receipt.newRecord = isNewRecord;
+      sessionStorage.setItem('mazeResultContext', JSON.stringify(resultContext));
+      window.dispatchEvent(new Event('mazeResultSaved'));
 
       localStorage.removeItem('mazeStartTime');
       setMovementStatus('Result saved. Opening results…');
@@ -421,9 +442,9 @@ const MazePage = ({ v2 = null }) => {
     );
   };
 
-  const formattedDate = new Date(selectedDate).toLocaleDateString('en-US', {
+  const formattedDate = isDate(selectedDate) ? new Date(`${selectedDate}T00:00:00Z`).toLocaleDateString('en-US', {
     month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC',
-  });
+  }) : 'No date selected';
 
   const view = createMazeViewModel(scene, {
     dateLabel: formattedDate, elapsedLabel: displayTime, showFireHint, showQuitModal,
@@ -596,9 +617,9 @@ export default function GameplayPage() {
   let legacyRecovery = false;
   try {
     const profile = JSON.parse(localStorage.getItem('activeSubProfile'));
-    const date = localStorage.getItem('selectedMazeDate') || new Date().toISOString().slice(0, 10);
+    const date = localStorage.getItem('selectedMazeDate');
     legacyRecovery = Boolean(sessionStorage.getItem(`mazeCompletion:${profile?._id}:${date}`));
   } catch { /* the existing legacy shell handles its own state */ }
   if (pendingV2() || (EXPERIMENTAL_V2 && !legacyRecovery)) return <SessionGate>{v2 => <MazePage key={v2?.generation || 'legacy'} v2={v2} />}</SessionGate>;
-  return <MazePage />;
+  return <LegacyEntry><MazePage /></LegacyEntry>;
 }

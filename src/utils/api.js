@@ -11,7 +11,8 @@ const API = axios.create({
 
 API.interceptors.request.use((config) => {
   const token = localStorage.getItem('token');
-  if (token) config.headers.Authorization = `Bearer ${token}`;
+  // Explicit headers pin archive/recovery operations to their initiating account.
+  if (token && !config.headers.has('Authorization')) config.headers.Authorization = `Bearer ${token}`;
   return config;
 });
 

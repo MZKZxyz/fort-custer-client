@@ -1,6 +1,7 @@
 // Exact merged server serializer/policy shapes. Synthetic in-memory HTTP fixture,
 // not evidence of server transactions, durability, rewards or authentication.
 const {createHash}=require('node:crypto');
+const {archiveFixture}=require('./archive-fixture.cjs');
 const id='01234567-89ab-4cde-8fab-0123456789ab',profile='000000000000000000000002',date='2025-05-26';
 const hash=value=>createHash('sha256').update(JSON.stringify(value)).digest('hex');
 const grid=['######','#SXFE#','#    #','######'].map(row=>[...row]);
@@ -18,6 +19,7 @@ async function fixture(context,options={}){
  state.releaseReady=()=>{};state.releaseComplete=()=>{};
  await context.route('https://fonts.googleapis.com/**',r=>r.abort());await context.route('https://fonts.gstatic.com/**',r=>r.abort());
  await context.route('**/api/**',async route=>{
+  if(new URL(route.request().url()).pathname==='/api/maze/archive') { state.archiveReads=(state.archiveReads||0)+1; return archiveFixture(route); }
   const req=route.request(),url=new URL(req.url()),path=url.pathname,body=req.postDataJSON();state.calls.push({path,body,method:req.method()});
   const ok=json=>route.fulfill({json});const error=(code,status=503)=>route.fulfill({status,json:{error:code,outcome:'unresolved',retrySameOperation:true}});
   if(path==='/api/v2/capabilities')return ok({protocol:'session-v2',capabilities:['route-transcript-v1'],admission:state.admission,timing:'continuous-server-receipt',publicRanking:false});

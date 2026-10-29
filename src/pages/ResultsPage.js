@@ -1,37 +1,55 @@
 import V2Results from '../session/V2Results';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import NavBar from '../components/NavBar';
 import '../css/ResultsPage.css';
+import useCatalog from '../archive/useCatalog';
+import ArchiveNotice from '../archive/ArchiveNotice';
+import { catalogFresh } from '../archive/catalog';
+import { dateLabel, isDate } from '../archive/dates';
+import { readIdentity, stored } from '../archive/identity';
+import useResultReceipt from '../archive/useResultReceipt';
 
 function ResultsPage() {
-  const [time, setTime] = useState(null);
-  const [reward, setReward] = useState(null);
+  const { context, identity, raw } = useResultReceipt();
+  if (!context) return <UnavailableResults />;
+  return <OwnedResults key={JSON.stringify([context.identityHash, context.profileId, context.date, context.receipt])}
+    context={context} ownerKey={identity.key} raw={raw} />;
+}
+
+function UnavailableResults() {
+  const navigate = useNavigate();
+  return <div className="page-with-nav" style={{ padding: '2rem 1rem' }}>
+    <h2>Saved result unavailable for this player</h2>
+    <p role="status">Restore the original account and player to view this saved result. Missing or unverified owner context cannot disclose cached results.</p>
+    <button className="result-archive-action" onClick={() => navigate('/profiles')}>Choose player</button>
+    <button className="result-archive-action" onClick={() => navigate('/login')}>Sign in</button>
+    <button className="result-archive-action" onClick={() => navigate('/mazes')}>Browse archive</button>
+    <NavBar />
+  </div>;
+}
+
+function OwnedResults({ context, ownerKey, raw }) {
+  const { time, reward, newRecord } = context.receipt;
+  const lastPlayedDate = context.date;
   const [revealed, setRevealed] = useState(false);
   const [opening, setOpening] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
-  const [newRecord, setNewRecord] = useState(false);
   const navigate = useNavigate();
-
-  // On mount, load lastTime/reward and ensure selectedMazeDate is set
+  const heading = useRef(null);
+  const timers = useRef([]);
+  const catalog = useCatalog(lastPlayedDate.slice(0, 7));
+  const stillOwned = () => readIdentity().key === ownerKey && stored('mazeResultContext', sessionStorage) === raw;
+  const replayAvailable = catalog.usable && catalog.data.items.some(item => item.date === lastPlayedDate);
+  const go = date => {
+    if (!stillOwned()) return;
+    if (!catalogFresh(catalog) || readIdentity().key !== catalog.identity.key) { catalog.refresh(); return; }
+    try { localStorage.setItem('selectedMazeDate', date); navigate('/maze'); } catch { /* archive remains reachable */ }
+  };
   useEffect(() => {
-    const lastTime = localStorage.getItem('lastMazeTime');
-    if (lastTime) setTime(Number(lastTime));
-
-    const rewardData = JSON.parse(localStorage.getItem('lastReward'));
-    if (rewardData) setReward(rewardData);
-
-    if (localStorage.getItem('lastNewRecord') === 'true') {
-      setNewRecord(true);
-      localStorage.removeItem('lastNewRecord');
-    }
-
-    // If this is first render and no selectedMazeDate exists,
-    // seed it to today so Replay still works
-    if (!localStorage.getItem('selectedMazeDate')) {
-      const todayStr = new Date().toISOString().split('T')[0];
-      localStorage.setItem('selectedMazeDate', todayStr);
-    }
+    heading.current?.focus();
+    const activeTimers = timers.current;
+    return () => activeTimers.forEach(clearTimeout);
   }, []);
 
   // Helpers
@@ -41,26 +59,11 @@ function ResultsPage() {
     return date.toISOString().substr(14, 9); // mm:ss.SSS
   };
 
-  // What date did we just play?
-  const lastPlayedDate = localStorage.getItem('selectedMazeDate');
-
-  // Today in UTC (YYYY-MM-DD)
-  const todayUTC = new Date().toISOString().split('T')[0];
-
-  // Compute next-day
-  const getNextDate = () => {
-    const d = new Date(lastPlayedDate);
-    d.setDate(d.getDate() + 1);
-    return d.toISOString().split('T')[0];
-  };
-  const nextDate = getNextDate();
-
-  // Only playable if nextDate <= todayUTC
-  const nextPlayable = nextDate <= todayUTC;
-
   const showActions = reward ? showDetails : true;
   const actionsDisabled = reward && !showDetails;
 
+  // Child-only catalog/timer updates must also check the live identity before rendering.
+  if (!stillOwned()) return <UnavailableResults />;
   return (
     <div className="page-with-nav" style={{
       backgroundColor: '#fff66c',
@@ -70,10 +73,11 @@ function ResultsPage() {
       color: '#000',
       textAlign: 'center',
     }}>
-      <h2 style={{ fontSize: '2rem', marginBottom: '1rem' }}>
+      <h2 ref={heading} tabIndex={-1} style={{ fontSize: '2rem', marginBottom: '1rem' }}>
         Maze Complete!
       </h2>
 
+      {isDate(lastPlayedDate) && <p>{dateLabel(lastPlayedDate)} (UTC)</p>}
       {time !== null && (
         <p style={{ fontSize: '1.25rem' }}>
           You finished in <strong>{formatTime(time)}</strong>
@@ -106,23 +110,24 @@ function ResultsPage() {
                 />
               </>
             ) : (
-              <img
-                src="/images/crate.png"
-                alt="crate"
+              <button type="button" className="reward-crate-button" aria-label="Open reward crate" disabled={opening}
                 onClick={() => {
-                  if (opening) return;
+                  if (opening || !stillOwned()) return;
                   setOpening(true);
                   setShowDetails(false);
-                  setTimeout(() => {
+                  timers.current.push(setTimeout(() => {
+                    if (!stillOwned()) { setOpening(false); setRevealed(false); setShowDetails(false); return; }
                     setRevealed(true);
                     setOpening(false);
-                    setTimeout(() => {
+                    timers.current.push(setTimeout(() => {
+                      if (!stillOwned()) { setOpening(false); setRevealed(false); setShowDetails(false); return; }
                       setShowDetails(true);
-                    }, 600);
-                  }, 600);
+                    }, 600));
+                  }, 600));
                 }}
-                className={`crate${opening ? ' opening' : ''}`}
-              />
+              >
+                <img src="/images/crate.png" alt="" className={`crate${opening ? ' opening' : ''}`} />
+              </button>
             )}
           </div>
           {showDetails && (
@@ -172,8 +177,8 @@ function ResultsPage() {
           {/* Replay always available */}
           <button
             className="fade-in"
-            onClick={() => navigate('/maze')}
-            disabled={actionsDisabled}
+            onClick={() => go(lastPlayedDate)}
+            disabled={actionsDisabled || !replayAvailable}
             style={{
               backgroundColor: actionsDisabled ? '#aaa' : '#00aef0',
               color: '#fff',
@@ -190,33 +195,11 @@ function ResultsPage() {
             Replay Maze
           </button>
 
-          {/* Next Maze (disabled if tomorrow is not yet unlocked) */}
-          <button
-            className="fade-in"
-            onClick={() => {
-              if (!nextPlayable || actionsDisabled) return;
-              localStorage.setItem('selectedMazeDate', nextDate);
-              navigate('/maze');
-            }}
-            disabled={!nextPlayable || actionsDisabled}
-            style={{
-              backgroundColor:
-                !nextPlayable || actionsDisabled ? '#aaa' : '#4CAF50',
-              color: '#fff',
-              fontSize: '1.2rem',
-              fontWeight: 'bold',
-              padding: '1rem',
-              width: '100%',
-              border: '2px solid #000',
-              marginTop: '1rem',
-              boxShadow:
-                !nextPlayable || actionsDisabled ? 'none' : '4px 4px 0 #000',
-              cursor:
-                !nextPlayable || actionsDisabled ? 'not-allowed' : 'pointer',
-            }}
-          >
-            {nextPlayable ? 'Next Maze' : 'Next Unavailable'}
-          </button>
+          <button className="result-archive-action" onClick={() => navigate('/mazes')}>Browse archive</button>
+          <button className="result-archive-action" disabled={!catalog.usable || !catalog.data?.todayMaze.available}
+            onClick={() => go(catalog.data.today)}>Today's maze</button>
+          <ArchiveNotice catalog={catalog} />
+
         </>
       )}
 

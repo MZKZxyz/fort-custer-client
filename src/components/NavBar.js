@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { useIdentity } from '../archive/identity';
 
 const navItems = [
   { label: 'Mazes',       icon: 'fort.png',       path: '/mazes'      },
@@ -11,17 +12,7 @@ const navItems = [
 export default function NavBar() {
   const navigate = useNavigate();
   const location = useLocation();
-  const [profile, setProfile] = useState(null);
-
-  useEffect(() => {
-    const sync = () => {
-      const stored = localStorage.getItem('activeSubProfile');
-      if (stored) setProfile(JSON.parse(stored));
-    };
-    sync();
-    window.addEventListener('activeSubProfileChanged', sync);
-    return () => window.removeEventListener('activeSubProfileChanged', sync);
-  }, []);
+  const { profile } = useIdentity();
 
   return (
     <nav style={{
@@ -57,6 +48,9 @@ export default function NavBar() {
               style={{
                 width: '3rem',
                 height: '3rem',
+                maxWidth: '70%',
+                maxHeight: '60px',
+                objectFit: 'contain',
                 borderRadius: isProfile ? '50%' : '0'
               }}
               onError={e => { e.currentTarget.onerror = null; }}
@@ -64,14 +58,20 @@ export default function NavBar() {
           : <span style={{ fontSize: '1.6rem', lineHeight: 1 }}>{rawIcon}</span>;
 
         // Only profile shows text label
-        const label = isProfile && (profile?.name || item.label);
+        const label = isProfile && (profile?.name || 'Profiles');
 
         return (
-          <div
+          <button type="button"
             key={item.path}
+            aria-label={isProfile ? 'Profiles' : item.label}
+            aria-current={isActive ? 'page' : undefined}
             onClick={() => navigate(item.path)}
             style={{
               flex: 1,
+              border: 0,
+              borderRadius: 0,
+              padding: 0,
+              minHeight: 44,
               minWidth: 0,
               display: 'flex',
               flexDirection: 'column',
@@ -79,7 +79,7 @@ export default function NavBar() {
               justifyContent: 'center',
               borderLeft: i > 0 ? '2px solid #007bbf' : 'none',
               background: isActive ? '#ffe066' : 'transparent',
-              color:      isActive ? '#000'    : '#fff',
+              color: '#000',
               fontWeight: isActive ? 'bold'    : 'normal',
               fontFamily: 'Arial Black, sans-serif',
               cursor:     'pointer',
@@ -99,7 +99,7 @@ export default function NavBar() {
                 {label}
               </span>
             )}
-          </div>
+          </button>
         );
       })}
     </nav>

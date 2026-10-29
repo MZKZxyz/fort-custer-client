@@ -1,3 +1,4 @@
+const { archiveFixture } = require('./archive-fixture.cjs');
 const { test, expect } = require('@playwright/test');
 const cameraEnabled = process.env.REACT_APP_MAZE_CAMERA === 'true';
 
@@ -24,6 +25,7 @@ for (const viewport of [
       grid[4][4] = 'S';
       grid[0][0] = 'E';
       await page.route('**/api/**', async route => {
+    if (archiveFixture(route)) return;
         expect(new URL(route.request().url()).pathname).toBe('/api/maze/start');
         await route.fulfill({ json: { maze: { grid, width: 9, height: 9 }, seed: 'synthetic' } });
       });
@@ -79,7 +81,7 @@ test.describe('feature-mode board and cell proportions', () => {
     });
     const grid = Array.from({ length: 21 }, () => Array(21).fill(' '));
     grid[10][10] = 'S';
-    await page.route('**/api/**', route => route.fulfill({ json: { maze: { grid }, seed: 'synthetic' } }));
+    await page.route('**/api/**', route => archiveFixture(route) || route.fulfill({ json: { maze: { grid }, seed: 'synthetic' } }));
     await page.route('https://fonts.googleapis.com/**', route => route.abort());
     await page.route('https://fonts.gstatic.com/**', route => route.abort());
     await page.goto('/maze');

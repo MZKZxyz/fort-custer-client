@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../css/TitlePage.css';
+import { parsed } from '../archive/identity';
 
 export default function TitlePage() {
   const navigate = useNavigate();
@@ -15,7 +16,8 @@ export default function TitlePage() {
     }
 
     // Logged in: perform post-login logic
-    const subs = JSON.parse(localStorage.getItem('subProfiles')) || [];
+    const cached = parsed('subProfiles');
+    const subs = Array.isArray(cached) ? cached.filter(profile => typeof profile?._id === 'string') : [];
     if (subs.length === 0) {
       // No sub-profiles: prompt to create one
       navigate('/profiles');

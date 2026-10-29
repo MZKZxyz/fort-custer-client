@@ -1,4 +1,6 @@
+const { archiveFixture } = require('./archive-fixture.cjs');
 const { test, expect } = require('@playwright/test');
+test.beforeEach(async ({ context }) => { await context.route('**/api/maze/archive*', archiveFixture); });
 const fs = require('node:fs');
 const path = require('node:path');
 const crypto = require('node:crypto');
@@ -23,6 +25,7 @@ async function setup(page, grid = gridFor()) {
   await page.route('https://fonts.googleapis.com/**', route => route.abort());
   await page.route('https://fonts.gstatic.com/**', route => route.abort());
   await page.route('**/api/**', async route => {
+    if (archiveFixture(route)) return;
     const url = new URL(route.request().url()).pathname;
     requests.push({ url, body: route.request().postDataJSON() });
     if (url === '/api/maze/start') return route.fulfill({ json: { maze: { grid }, attemptId, seed: 'synthetic' } });

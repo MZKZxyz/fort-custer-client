@@ -1,0 +1,501 @@
+{
+  "clientBaseline": "ea952aa6b1eafed45143607753210abf23f60867",
+  "serverReference": "1f668d23477aa62557bd531e501ce5f6771bdd0c",
+  "environment": {
+    "node": "24.19.0",
+    "playwright": "1.62.1",
+    "chromium": "154.0.8037.57",
+    "disposableMongoDB": "8.0.16"
+  },
+  "checks": {
+    "unit": {
+      "passed": 199,
+      "failed": 0,
+      "suites": 16
+    },
+    "optimizedBuild": "passed",
+    "compiledRuntimeSourceMapsMatched": 14,
+    "browser": {
+      "passed": 118,
+      "skipped": 28,
+      "failed": 0,
+      "flaky": 0
+    },
+    "v2OffBrowser": {
+      "passed": 2,
+      "skipped": 14,
+      "failed": 0
+    },
+    "realMergedServerIntegration": {
+      "passed": 1,
+      "failed": 0,
+      "storedFixtureMazes": 4,
+      "attemptsAfterBrowsing": 0,
+      "attemptsAfterOneCompletion": 1,
+      "attemptsAfterDeniedStoredFutureStart": 1
+    }
+  },
+  "flags": {
+    "v2": false,
+    "camera": false,
+    "visualIntegration": false,
+    "inputPreview": false
+  },
+  "apiBinding": "synthetic relative /api only; production configuration unchanged",
+  "browserSkips": [
+    {
+      "file": "camera.spec.js",
+      "test": "camera geometry, visibility, resize and motion 13\u00d717",
+      "reason": [
+        "Camera requires REACT_APP_MAZE_CAMERA=true"
+      ]
+    },
+    {
+      "file": "camera.spec.js",
+      "test": "camera geometry, visibility, resize and motion 21\u00d721",
+      "reason": [
+        "Camera requires REACT_APP_MAZE_CAMERA=true"
+      ]
+    },
+    {
+      "file": "continuous-steering.spec.js",
+      "test": "interactive original/fixed/trailing comparison cancels old input and shows the anchor difference",
+      "reason": [
+        "Comparison is preview-only"
+      ]
+    },
+    {
+      "file": "continuous-steering.spec.js",
+      "test": "interactive original/fixed/trailing comparison cancels old input and shows the anchor difference",
+      "reason": [
+        "Comparison is preview-only"
+      ]
+    },
+    {
+      "file": "continuous-steering.spec.js",
+      "test": "interactive original/fixed/trailing comparison cancels old input and shows the anchor difference",
+      "reason": [
+        "Comparison is preview-only"
+      ]
+    },
+    {
+      "file": "continuous-steering.spec.js",
+      "test": "interactive original/fixed/trailing comparison cancels old input and shows the anchor difference",
+      "reason": [
+        "Comparison is preview-only"
+      ]
+    },
+    {
+      "file": "continuous-steering.spec.js",
+      "test": "native touch anticipates and cancels under controlled deadlines while page offsets stay fixed",
+      "reason": [
+        "Desktop mouse coverage; native CDP touch uses mobile layouts."
+      ]
+    },
+    {
+      "file": "maze-surface.spec.js",
+      "test": "fallback cancels a captured drag and transfers gestures to the classic surface",
+      "reason": [
+        "Requires the integrated-to-classic runtime switch."
+      ]
+    },
+    {
+      "file": "maze-surface.spec.js",
+      "test": "fallback cancels a captured drag and transfers gestures to the classic surface",
+      "reason": [
+        "Requires the integrated-to-classic runtime switch."
+      ]
+    },
+    {
+      "file": "maze-surface.spec.js",
+      "test": "fallback cancels a captured drag and transfers gestures to the classic surface",
+      "reason": [
+        "Requires the integrated-to-classic runtime switch."
+      ]
+    },
+    {
+      "file": "maze-surface.spec.js",
+      "test": "touch starts on walls, sprites, center, edges and corners",
+      "reason": [
+        "Desktop uses native mouse."
+      ]
+    },
+    {
+      "file": "maze-surface.spec.js",
+      "test": "fallback cancels a captured drag and transfers gestures to the classic surface",
+      "reason": [
+        "Requires the integrated-to-classic runtime switch."
+      ]
+    },
+    {
+      "file": "maze-surface.spec.js",
+      "test": "downward top-edge drags do not scroll; multitouch and cancel stop ownership",
+      "reason": [
+        "Native touch emulation uses mobile layouts."
+      ]
+    },
+    {
+      "file": "production-integration.spec.js",
+      "test": "classic fallback keeps focus when optional directions are hidden",
+      "reason": [
+        "Requires the local integrated opt-in build"
+      ]
+    },
+    {
+      "file": "production-integration.spec.js",
+      "test": "playable 13 rows at 320\u00d7568",
+      "reason": [
+        "Production sprite integration requires exact true opt-in."
+      ]
+    },
+    {
+      "file": "production-integration.spec.js",
+      "test": "playable 21 rows at 320\u00d7568",
+      "reason": [
+        "Production sprite integration requires exact true opt-in."
+      ]
+    },
+    {
+      "file": "production-integration.spec.js",
+      "test": "playable 13 rows at 390\u00d7844",
+      "reason": [
+        "Production sprite integration requires exact true opt-in."
+      ]
+    },
+    {
+      "file": "production-integration.spec.js",
+      "test": "playable 21 rows at 390\u00d7844",
+      "reason": [
+        "Production sprite integration requires exact true opt-in."
+      ]
+    },
+    {
+      "file": "production-integration.spec.js",
+      "test": "playable 13 rows at 844\u00d7390",
+      "reason": [
+        "Production sprite integration requires exact true opt-in."
+      ]
+    },
+    {
+      "file": "production-integration.spec.js",
+      "test": "playable 21 rows at 844\u00d7390",
+      "reason": [
+        "Production sprite integration requires exact true opt-in."
+      ]
+    },
+    {
+      "file": "production-integration.spec.js",
+      "test": "playable 13 rows at 1280\u00d7800",
+      "reason": [
+        "Production sprite integration requires exact true opt-in."
+      ]
+    },
+    {
+      "file": "production-integration.spec.js",
+      "test": "playable 21 rows at 1280\u00d7800",
+      "reason": [
+        "Production sprite integration requires exact true opt-in."
+      ]
+    },
+    {
+      "file": "production-integration.spec.js",
+      "test": "quit dialog contains focus, Escape restores it, fallback continues same attempt",
+      "reason": [
+        "Production sprite integration requires exact true opt-in."
+      ]
+    },
+    {
+      "file": "production-integration.spec.js",
+      "test": "responsive camera follows outer edges, resizing, enlarged text and reduced motion",
+      "reason": [
+        "Production sprite integration requires exact true opt-in."
+      ]
+    },
+    {
+      "file": "production-integration.spec.js",
+      "test": "missing sprite offers same-attempt fallback",
+      "reason": [
+        "Production sprite integration requires exact true opt-in."
+      ]
+    },
+    {
+      "file": "production-integration.spec.js",
+      "test": "failed renderer chunk offers classic view without another start",
+      "reason": [
+        "Production sprite integration requires exact true opt-in."
+      ]
+    },
+    {
+      "file": "production-integration.spec.js",
+      "test": "runtime daylight kit matches the merged pilot byte-for-byte",
+      "reason": [
+        "Production sprite integration requires exact true opt-in."
+      ]
+    },
+    {
+      "file": "unified-input.spec.js",
+      "test": "native touch drag redirects at a wall and cancellation stops it",
+      "reason": [
+        "Desktop coverage uses native mouse and keyboard."
+      ]
+    }
+  ],
+  "sourceFiles": [
+    {
+      "file": "src/archive/ArchiveNotice.js",
+      "sha256": "455f77c9522a1708f7c302bad330623a519fada828ff0926b61f076287a93b8c"
+    },
+    {
+      "file": "src/archive/LegacyEntry.js",
+      "sha256": "3c037ecdb07821efed0972cdcd27a8f491c797c321490fb0d8717c7f335cbd7b"
+    },
+    {
+      "file": "src/archive/__fixtures__/catalog.js",
+      "sha256": "f18a1329fe83eb7b0b1aebcc5d22c97cc200f88c0bf6ef7014165bdf23ed835d"
+    },
+    {
+      "file": "src/archive/archive.test.js",
+      "sha256": "3b5d7784d3774bbb5b6ab86ae8fbc7c40d784b6027d4bd8f43bc88aa8811ff16"
+    },
+    {
+      "file": "src/archive/catalog.js",
+      "sha256": "144c6ecf0c3bd9174d34f3697363755eee57dc4f3fe336fb0fbe63de7b54fe31"
+    },
+    {
+      "file": "src/archive/catalog.test.js",
+      "sha256": "6a6e7a4d783400d199e1660d3d89eb0429aeedf6a16d9bfc4bdff0bcee2cbded"
+    },
+    {
+      "file": "src/archive/dates.js",
+      "sha256": "b0c72f816f302529a13ba3cd730c16d0476af8fce795ae95f941eb401df47811"
+    },
+    {
+      "file": "src/archive/identity.js",
+      "sha256": "fad0d70388c12ff9e3b181d97395f59407ab89d90a3287ce389dc4cf61d5f151"
+    },
+    {
+      "file": "src/archive/navigation.test.js",
+      "sha256": "1ec8fed380f04fdafb3277793fa5e547a8c8ef3410f0737bbc806c00928441a8"
+    },
+    {
+      "file": "src/archive/useCatalog.js",
+      "sha256": "9fcce293ead638dd49530428d5c5bafe71f8c8b600822d2dad524cbc656e0672"
+    },
+    {
+      "file": "src/components/NavBar.js",
+      "sha256": "181b825b2ae154cec5a90a056f907c15365e36003ca8054cc07d1c3173139de8"
+    },
+    {
+      "file": "src/css/LeaderboardPage.css",
+      "sha256": "8bbfab93ad76646176173db5c18565ec97b39eac53595ea807a8e76d611d9af8"
+    },
+    {
+      "file": "src/css/MazeCalendar.css",
+      "sha256": "23d87d5d9ddeb35eb9bf4da87ce397fc9af68bbc0e126e952d8e5ee4198514c7"
+    },
+    {
+      "file": "src/css/ResultsPage.css",
+      "sha256": "5b7a0a1166d3862d5d81cd685b667fcbda210fb0f8518c5a7bfc9cc03502b88f"
+    },
+    {
+      "file": "src/pages/LeaderboardPage.js",
+      "sha256": "513ebdeeed8e6b152658603fad58fd5578d39c34819ab9b74ef8f3bb7cd998c6"
+    },
+    {
+      "file": "src/pages/MazeCollectionPage.js",
+      "sha256": "cd4b02195be4290dfc8f6b67deebd4fe51dee00b2209298fd95aee31587f9d4e"
+    },
+    {
+      "file": "src/pages/MazePage.js",
+      "sha256": "7697d9b14b9b9f085920571b5161fa157cd58c85b02ba3a5f1efbc03136e5742"
+    },
+    {
+      "file": "src/pages/MazePage.test.js",
+      "sha256": "e2728fa57513c010bd402bc7f369e33a1dd74de4da26259696ae65d1c8de864c"
+    },
+    {
+      "file": "src/pages/ResultsPage.js",
+      "sha256": "127d66396c7c2f33419e880c6454fd7d82353f3fe6b99366d2069b723a308dde"
+    },
+    {
+      "file": "src/pages/ResultsPage.test.js",
+      "sha256": "80c03e705c58515c11c898498e300ae10066668b5286ab85122c978ebec190bb"
+    },
+    {
+      "file": "src/pages/SubProfilePage.js",
+      "sha256": "eebc4481cd5e2450161280dfc30d886aa899257c8eee1cf5877165070d9440eb"
+    },
+    {
+      "file": "src/pages/TitlePage.js",
+      "sha256": "fef692f56d346d6739d9fe867aeb5c5632ecc9ddda68e2f1845a290837e805fc"
+    },
+    {
+      "file": "src/utils/api.js",
+      "sha256": "adbb687a3e8b758f7834c318e22f8eff39831e644b4dfe64b9ac517e900ae22b"
+    }
+  ],
+  "screenshots": [
+    {
+      "file": "evidence/1280-calendar-page.png",
+      "width": 1280,
+      "height": 1414,
+      "sha256": "610d48ae2eab0c3da64002fb2d3fb5c91b8728c2582d5bb625bcff01f46862e8"
+    },
+    {
+      "file": "evidence/1280-calendar-viewport.png",
+      "width": 1280,
+      "height": 800,
+      "sha256": "c28b7ad722128f49a02071d30151e8099fc3c1975a27258f7e7b8a2cf34e8e5b"
+    },
+    {
+      "file": "evidence/1280-empty-month-page.png",
+      "width": 1280,
+      "height": 1448,
+      "sha256": "fec4b8b57df2e35726a5736845277a9d797743f5dc9138fb306177874bf565f0"
+    },
+    {
+      "file": "evidence/1280-empty-month-viewport.png",
+      "width": 1280,
+      "height": 800,
+      "sha256": "3b1dd2051f2e3420911598045c95ab0878d81422e4f8470f66bd5d9e9050f887"
+    },
+    {
+      "file": "evidence/1280-selected-page.png",
+      "width": 1280,
+      "height": 1162,
+      "sha256": "7e8a8968efb6f2ffa7e785183f404f185e4d6472a0e4c43559689bd038dd9ab0"
+    },
+    {
+      "file": "evidence/1280-selected-viewport.png",
+      "width": 1280,
+      "height": 800,
+      "sha256": "45afce412d303a5e84d5b6091a8d6a15626fc9f4a53c378cf17b9d205eb19085"
+    },
+    {
+      "file": "evidence/1280-today-page.png",
+      "width": 1280,
+      "height": 999,
+      "sha256": "e8f468e6fac5e862f098a84bf528639a2da74f3723be1b604353a9e1b41a07e9"
+    },
+    {
+      "file": "evidence/1280-today-viewport.png",
+      "width": 1280,
+      "height": 800,
+      "sha256": "449c442bb8b2008bedcca6d0408049be27520828df9375e89a0880bfb3ca1f6f"
+    },
+    {
+      "file": "evidence/320-selected-page.png",
+      "width": 320,
+      "height": 1277,
+      "sha256": "16116deba25c8323bb0789549fcdd9e8d34d14a813e116a593b985b3c1c6ef9e"
+    },
+    {
+      "file": "evidence/320-selected-viewport.png",
+      "width": 320,
+      "height": 568,
+      "sha256": "d3e3d7f171079672b29885facc6392e5c9efde52e1a5ed3436eed25a4083b663"
+    },
+    {
+      "file": "evidence/320-text200-page.png",
+      "width": 320,
+      "height": 2984,
+      "sha256": "35601ada4060ee14950ecba73b6ed622f36740b8ade55e60ae51d3e03549ec26"
+    },
+    {
+      "file": "evidence/320-text200-viewport.png",
+      "width": 320,
+      "height": 568,
+      "sha256": "840771e3d31231923e2e9ed835adbb2ebf0518a82c06b93b143b5be6ac53a1bd"
+    },
+    {
+      "file": "evidence/320-today-page.png",
+      "width": 320,
+      "height": 1080,
+      "sha256": "8ca71321947a4974ee959a9d99f61d833c0c59846eee6caa76ec85625c592156"
+    },
+    {
+      "file": "evidence/320-today-viewport.png",
+      "width": 320,
+      "height": 568,
+      "sha256": "d3e3d7f171079672b29885facc6392e5c9efde52e1a5ed3436eed25a4083b663"
+    },
+    {
+      "file": "evidence/375-selected-page.png",
+      "width": 375,
+      "height": 1277,
+      "sha256": "76c058158db929a620cf3f7ea97af90546faf6e848bc0b37481463c1ad9806e0"
+    },
+    {
+      "file": "evidence/375-selected-viewport.png",
+      "width": 375,
+      "height": 667,
+      "sha256": "b87a84057a60817fb7ac944343cdfe6a3a100a250556e83c23f108fc3beb2fe9"
+    },
+    {
+      "file": "evidence/375-today-page.png",
+      "width": 375,
+      "height": 1080,
+      "sha256": "14980467042d01dc6734d9ffcfa3545b0cb8d13f6fb9f0c0bd5a4df2f0841d4c"
+    },
+    {
+      "file": "evidence/375-today-viewport.png",
+      "width": 375,
+      "height": 667,
+      "sha256": "cf2edf48f6cdabba0f26e89cf5c084ce3300c22d56379b42469043426fb123e7"
+    },
+    {
+      "file": "evidence/390-selected-page.png",
+      "width": 390,
+      "height": 1277,
+      "sha256": "f89645e378765c0788f47aa903c6237651b84c727eb99d80fcf5770579f2f3f8"
+    },
+    {
+      "file": "evidence/390-selected-viewport.png",
+      "width": 390,
+      "height": 844,
+      "sha256": "22791c1e835d73bff1f67b7c116599fa3f25720a0fabe2fa79c26b08a7740d49"
+    },
+    {
+      "file": "evidence/390-today-page.png",
+      "width": 390,
+      "height": 1080,
+      "sha256": "153bbb27315bf6c41f3a91481201b7f95244325d548b0c0e6dde60d9a03de54a"
+    },
+    {
+      "file": "evidence/390-today-viewport.png",
+      "width": 390,
+      "height": 844,
+      "sha256": "1e4904c86da41987eebe1791de74475dc5612e8d499dced809fc87c11759aa84"
+    },
+    {
+      "file": "evidence/844-selected-page.png",
+      "width": 844,
+      "height": 1162,
+      "sha256": "4cbd8da859c8fe5a7c5c85023e5a0dfc7dcb3fc14874fa2af18c77492314f8b8"
+    },
+    {
+      "file": "evidence/844-selected-viewport.png",
+      "width": 844,
+      "height": 390,
+      "sha256": "6c47aa406af239db708d4863623b524d93fb7d449eafa330041eb39d87a31b92"
+    },
+    {
+      "file": "evidence/844-today-page.png",
+      "width": 844,
+      "height": 999,
+      "sha256": "6002721c8024694f37e869f6104904e8de6876a35a857e348dc07b9dc6081cfd"
+    },
+    {
+      "file": "evidence/844-today-viewport.png",
+      "width": 844,
+      "height": 390,
+      "sha256": "1c64cc2c6f20dda8b23ad9c66243028ebc6b011f5d0dfc6f3d176db6d25d856a"
+    }
+  ],
+  "limitations": [
+    "Author verification only; independent QA required.",
+    "No physical iOS/Android/PWA or actual screen-reader speech verification.",
+    "200% text and Chromium emulation are not a full WCAG or 400% browser-zoom audit.",
+    "No production API, database or deployment accessed."
+  ]
+}

@@ -1,283 +1,180 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import API from '../utils/api';
 import NavBar from '../components/NavBar';
-import '../css/MazeCalendar.css'; // Add CSS below to this file
+import useCatalog from '../archive/useCatalog';
+import ArchiveNotice from '../archive/ArchiveNotice';
+import { catalogFresh } from '../archive/catalog';
+import { dateLabel, isDate, isMonth, monthDates, monthLabel, shiftMonth } from '../archive/dates';
+import { parsed, pendingCompletion, pendingCompletions, readIdentity } from '../archive/identity';
+import '../css/MazeCalendar.css';
 
-const DEBUG_UNLOCK_ALL = true;
+const completion = (item, usable) => !usable || typeof item?.progress?.completed !== 'boolean'
+  ? 'Completion status unknown' : item.progress.completed ? 'Completed' : 'Not completed';
+const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
-const formatDate = (date) => date.toISOString().slice(0, 10);
+function MonthJump({ month, first, today, onJump }) {
+  const [year, setYear] = useState(Number(month.slice(0, 4)));
+  const [part, setPart] = useState(month.slice(5));
+  const [error, setError] = useState('');
+  useEffect(() => { setYear(Number(month.slice(0, 4))); setPart(month.slice(5)); }, [month]);
+  return <form className="archive-jump" onSubmit={event => {
+    event.preventDefault();
+    const target = `${String(year).padStart(4, '0')}-${part}`;
+    if (isMonth(target) && target >= (first?.slice(0, 7) || '0001-01') && target <= today.slice(0, 7)) {
+      setError(''); onJump(target);
+    } else setError('Choose a month between the first publication and today.');
+  }}>
+    <label>Month<select value={part} onChange={event => setPart(event.target.value)}>
+      {Array.from({ length: 12 }, (_, i) => String(i + 1).padStart(2, '0')).map(value =>
+        <option key={value} value={value}>{monthLabel(`2000-${value}`).split(' ')[0]}</option>)}
+    </select></label>
+    <label>Year<input type="number" required min={first ? Number(first.slice(0, 4)) : 1}
+      max={Number(today.slice(0, 4))} value={year} onChange={event => setYear(event.target.value)} /></label>
+    <button type="submit">Go to month</button>
+    {error && <p role="alert">{error}</p>}
+  </form>;
+}
+
+function LatestAction({ date, onPlay }) {
+  const catalog = useCatalog(date.slice(0, 7));
+  const item = catalog.data?.items.find(entry => entry.date === date);
+  return <div>
+    <p>Latest published: {dateLabel(date)} (UTC)</p>
+    <ArchiveNotice catalog={catalog} />
+    <button disabled={!catalog.usable || !item || !catalog.identity.profile || !catalog.identity.token}
+      onClick={() => onPlay(date, catalog)}>Play latest published maze</button>
+  </div>;
+}
+
+function RecoveryLinks({ identity, navigate }) {
+  const dates = pendingCompletions(identity);
+  if (!identity.token || !identity.profile || !dates.length) return null;
+  return <section className="archive-card" aria-label="Unconfirmed results"><h2>Unconfirmed results</h2>
+    <p>Recover the original saved result before starting a replacement run.</p>
+    {dates.sort().map(date => <button key={date} onClick={() => {
+      try { localStorage.setItem('selectedMazeDate', date); navigate('/maze'); } catch { /* storage must be restored */ }
+    }}>Recover result for {dateLabel(date)} (UTC)</button>)}
+  </section>;
+}
 
 export default function MazeCollectionPage() {
   const navigate = useNavigate();
-  const [completedMap, setCompletedMap] = useState({});
-  const [todayStr, setTodayStr] = useState(null);
-  const [streaks, setStreaks] = useState({ current: 0, best: 0 });
-  const now = new Date();
-  const [currentMonth, setCurrentMonth] = useState(
-    new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), 1))
-  );
-  const [selectedDate, setSelectedDate] = useState(null);
-
-  const profile = useMemo(() => {
-    return JSON.parse(localStorage.getItem('activeSubProfile'));
+  const [restore] = useState(() => parsed('mazeArchiveView', sessionStorage));
+  const [month, setMonth] = useState(() => isMonth(restore?.month) ? restore.month : null);
+  const [selected, setSelected] = useState(() => isDate(restore?.date) ? restore.date : null);
+  const [view, setView] = useState('list');
+  const [wide, setWide] = useState(false);
+  const [actionError, setActionError] = useState('');
+  const catalog = useCatalog(month);
+  const { data, identity, usable } = catalog;
+  useEffect(() => {
+    const query = window.matchMedia?.('(min-width: 36rem)');
+    if (!query) return;
+    const sync = () => setWide(query.matches);
+    sync(); query.addEventListener('change', sync);
+    return () => query.removeEventListener('change', sync);
   }, []);
-
   useEffect(() => {
-    if (!profile) {
-      navigate('/profiles');
-      return;
+    if (!data || !usable) return;
+    if (month && (month > data.today.slice(0, 7)
+      || (data.firstPublishedDate && month < data.firstPublishedDate.slice(0, 7)))) {
+      setMonth(null); setSelected(null);
     }
-
-    const fetchProgress = async () => {
-      try {
-        const res = await API.get(`/users/subprofile/${profile._id}`);
-        setCompletedMap(res.data.subProfile.progress || {});
-        setTodayStr(res.data.today);
-
-        const rawToday = new Date(res.data.today);
-        const monthStart = new Date(
-          Date.UTC(rawToday.getUTCFullYear(), rawToday.getUTCMonth(), 1)
-        );
-        const minMonth = new Date(Date.UTC(2025, 4, 1));
-        const maxMonth = new Date(Date.UTC(2025, 8, 1));
-        const clampedMonth =
-          monthStart < minMonth ? minMonth : monthStart > maxMonth ? maxMonth : monthStart;
-        setCurrentMonth(clampedMonth);
-      } catch (err) {
-        console.error('Failed to load progress:', err);
-      }
-    };
-
-    fetchProgress();
-  }, [profile, navigate]);
-
-  useEffect(() => {
-    if (!todayStr) return;
-    const days = Object.keys(completedMap)
-      .filter(d => completedMap[d]?.completed)
-      .sort();
-    if (days.length === 0) {
-      setStreaks({ current: 0, best: 0 });
-      return;
-    }
-
-    const parse = (d) => new Date(`${d}T00:00:00Z`);
-    let best = 1;
-    let run = 1;
-    for (let i = 1; i < days.length; i++) {
-      if (parse(days[i]) - parse(days[i - 1]) === 86400000) run++;
-      else {
-        if (run > best) best = run;
-        run = 1;
-      }
-    }
-    if (run > best) best = run;
-
-    const now = new Date();
-    const todayStrLocal = formatDate(now);
-    const yesterdayStr = formatDate(new Date(now.getTime() - 86400000));
-
-    let current = 0;
-    let dateToCheck = null;
-
-    if (completedMap[todayStrLocal]?.completed) {
-      current = 1;
-      dateToCheck = new Date(now.getTime() - 86400000);
-    } else if (completedMap[yesterdayStr]?.completed) {
-      current = 1;
-      dateToCheck = new Date(now.getTime() - 2 * 86400000);
-    }
-
-    while (current > 0) {
-      const dStr = formatDate(dateToCheck);
-      if (completedMap[dStr]?.completed) {
-        current++;
-        dateToCheck = new Date(dateToCheck.getTime() - 86400000);
-      } else {
-        break;
-      }
-    }
-
-    setStreaks({ current, best });
-  }, [completedMap, todayStr]);
-
-  useEffect(() => {
-    if (!todayStr || !currentMonth || selectedDate) return;
-  
-    const MEMORIAL_DAY = new Date(Date.UTC(2025, 4, 26)); // May 26
-    const LABOR_DAY = new Date(Date.UTC(2025, 8, 1));     // Sept 1
-  
-    const year = currentMonth.getUTCFullYear();
-    const month = currentMonth.getUTCMonth();
-    const daysInMonth = new Date(Date.UTC(year, month + 1, 0)).getUTCDate();
-  
-    // Clamp todayStr within valid range
-    const rawToday = new Date(todayStr);
-    const clampedToday =
-      rawToday < MEMORIAL_DAY ? MEMORIAL_DAY :
-      rawToday > LABOR_DAY ? LABOR_DAY :
-      rawToday;
-  
-    let closestDate = null;
-    let minDiff = Infinity;
-  
-    for (let d = 1; d <= daysInMonth; d++) {
-      const date = new Date(Date.UTC(year, month, d));
-      const dateStr = formatDate(date);
-  
-      const isFuture = todayStr ? dateStr > todayStr : false;
-      const isLocked = !DEBUG_UNLOCK_ALL && isFuture;
-  
-      if (isLocked) continue;
-  
-      const diff = Math.abs(clampedToday - date);
-      if (diff < minDiff) {
-        minDiff = diff;
-        closestDate = date;
-      }
-    }
-  
-    if (closestDate) setSelectedDate(closestDate);
-  }, [currentMonth, todayStr, selectedDate]);
-  
-  
-
-  const getDaysInMonth = (year, month) =>
-    new Date(Date.UTC(year, month + 1, 0)).getUTCDate();
-
-  const buildCalendarGrid = () => {
-    const year = currentMonth.getUTCFullYear();
-    const month = currentMonth.getUTCMonth();
-    const daysInMonth = getDaysInMonth(year, month);
-    const startDay = new Date(Date.UTC(year, month, 1)).getUTCDay();
-
-    const grid = [];
-    let dayCounter = 1 - startDay;
-
-    for (let row = 0; row < 6; row++) {
-      const week = [];
-      for (let col = 0; col < 7; col++) {
-        const date = new Date(Date.UTC(year, month, dayCounter));
-        week.push({
-          date,
-          dateStr: formatDate(date),
-          inMonth: dayCounter > 0 && dayCounter <= daysInMonth,
-        });
-        dayCounter++;
-      }
-      grid.push(week);
-    }
-
-    return grid;
+  }, [data, month, usable]);
+  const jump = target => { setMonth(target); setSelected(null); setActionError(''); };
+  const select = date => {
+    // Pin a deliberate selection's month; the default server month can change at midnight.
+    setMonth(data.month);
+    setSelected(date);
+    try { sessionStorage.setItem('mazeArchiveView', JSON.stringify({ month: data.month, date })); } catch { /* optional view */ }
   };
-
-  const handleSelectDate = (date) => {
-    const dateStr = formatDate(date);
-    const isFuture = todayStr ? dateStr > todayStr : false;
-    if (DEBUG_UNLOCK_ALL || !isFuture) {
-      setSelectedDate(date);
+  const launch = (date, source = catalog) => {
+    if (!catalogFresh(source) || readIdentity().key !== source.identity.key) {
+      source.refresh(); setActionError('Refresh published dates before playing.'); return;
     }
+    const item = source.data.items.find(entry => entry.date === date)
+      || (source.data.todayMaze.available && source.data.todayMaze.date === date ? source.data.todayMaze : null);
+    if (!item || !source.identity.profile || !source.identity.token) return;
+    if (pendingCompletions(source.identity).some(pending => pending !== date)) {
+      setActionError('Recover the original result before starting another maze.'); return;
+    }
+    try {
+      localStorage.setItem('selectedMazeDate', date);
+      sessionStorage.setItem('mazeArchiveView', JSON.stringify({ month: date.slice(0, 7), date }));
+      navigate('/maze');
+    } catch { setActionError('Date selection could not be saved. Restore browser storage and retry.'); }
   };
-
-  const handlePlay = () => {
-    const dateStr = formatDate(selectedDate);
-    localStorage.setItem('selectedMazeDate', dateStr);
-    navigate('/maze');
-  };
-
-  const changeMonth = (delta) => {
-    const newMonth = new Date(Date.UTC(currentMonth.getUTCFullYear(), currentMonth.getUTCMonth() + delta, 1));
-    const minMonth = new Date(Date.UTC(2025, 4, 1)); // May 2025
-    const maxMonth = new Date(Date.UTC(2025, 8, 1)); // Sept 2025
-  
-    if (newMonth < minMonth || newMonth > maxMonth) return;
-    setCurrentMonth(newMonth);
-    setSelectedDate(null); // Reset selection when switching months
-  };
-  
-  const grid = buildCalendarGrid();
-
-  const minMonth = new Date(Date.UTC(2025, 4, 1)); // May
-  const maxMonth = new Date(Date.UTC(2025, 8, 1)); // Sept
-  const isAtMinMonth = currentMonth.getUTCFullYear() === minMonth.getUTCFullYear() && currentMonth.getUTCMonth() === minMonth.getUTCMonth();
-  const isAtMaxMonth = currentMonth.getUTCFullYear() === maxMonth.getUTCFullYear() && currentMonth.getUTCMonth() === maxMonth.getUTCMonth();
-
-  return (
-    <div className="maze-calendar full-height">
-      <h2 className="calendar-title">Daily Maze Archive</h2>
-
-      <div className="streak-card">
-        <div>Current Streak: {streaks.current} day{streaks.current === 1 ? '' : 's'}</div>
-        <div>Best Streak: {streaks.best} day{streaks.best === 1 ? '' : 's'}</div>
-      </div>
-
-      <div className="month-selector">
-        <button onClick={() => changeMonth(-1)} disabled={isAtMinMonth} className="month-arrow">
-          ◀
-        </button>
-        <span className="month-label">
-          {currentMonth.toLocaleString('en-US', {
-            month: 'long',
-            year: 'numeric',
-            timeZone: 'UTC',
-          })}
-        </span>
-        <button onClick={() => changeMonth(1)} disabled={isAtMaxMonth} className="month-arrow">
-          ▶
-        </button>
-      </div>
-
-      <div className="calendar-grid">
-        {['S', 'M', 'T', 'W', 'T', 'F', 'S'].map((d, i) => (
-          <div key={i} className="calendar-cell header">{d}</div>
-        ))}
-        {grid.flat().map(({ date, dateStr, inMonth }) => {
-          const isDone = !!completedMap[dateStr]?.completed;
-          const isFuture = todayStr ? dateStr > todayStr : false;
-          const isSelected = selectedDate && formatDate(selectedDate) === dateStr;
-          const isLocked = !DEBUG_UNLOCK_ALL && isFuture;
-
-          const MEMORIAL_DAY = new Date(Date.UTC(2025, 4, 26)); // May 26
-          const LABOR_DAY = new Date(Date.UTC(2025, 8, 1));     // Sept 1
-          const isOutOfBounds = date < MEMORIAL_DAY || date > LABOR_DAY;
-
-          let className = 'calendar-cell';
-          if (!inMonth) className += ' inactive';
-          else if (isOutOfBounds) className += ' out-of-bounds';
-          else if (isLocked) className += ' locked';
-          else if (isSelected) className += ' selected';
-          else if (isDone) className += ' complete';
-
-          return (
-            <div
-              key={dateStr}
-              className={className}
-              onClick={() =>
-                inMonth && !isLocked && !isOutOfBounds && handleSelectDate(date)
-              }
-            >
-              <span className="date-number">{date.getUTCDate()}</span>
-              {isDone && inMonth && <span className="checkmark">✔</span>}
-            </div>
-          );
-        })}
-
-      </div>
-
-      <button className="play-button" onClick={handlePlay} disabled={!selectedDate}>
-        {selectedDate
-          ? `Play ${selectedDate.toLocaleDateString('en-US', {
-              month: 'long',
-              day: 'numeric',
-              year: 'numeric',
-              timeZone: 'UTC',
-            })}`
-          : 'Loading...'}
-      </button>
-
-
-      <NavBar />
-    </div>
-  );
+  const selectedItem = data?.items.find(item => item.date === selected);
+  const recoveryDate = selected || data?.today;
+  const recovering = recoveryDate && identity.profile && pendingCompletion(identity.profile._id, recoveryDate);
+  const label = item => `${dateLabel(item.date)} (UTC), Published, ${completion(item, usable)}${item.date === selected ? ', Selected' : ''}`;
+  const dateButton = item => <button type="button" aria-label={label(item)}
+    aria-current={item.date === data.today ? 'date' : undefined} aria-pressed={selected === item.date}
+    disabled={!usable} onClick={() => select(item.date)}>
+    {view === 'calendar' && wide ? Number(item.date.slice(8)) : dateLabel(item.date)}
+    <span className="date-status">{item.date === data.today && 'Today · '}{completion(item, usable)}</span>
+  </button>;
+  const calendarDays = data ? monthDates(data.month) : [];
+  const offset = calendarDays.length ? new Date(`${calendarDays[0]}T00:00:00Z`).getUTCDay() : 0;
+  const cells = Array.from({ length: Math.ceil((offset + calendarDays.length) / 7) * 7 }, (_, i) => calendarDays[i - offset] || null);
+  return <main className="maze-calendar full-height">
+    <h1 className="calendar-title">Daily Maze Archive</h1>
+    <p>{identity.profile ? `Playing as ${identity.profile.name || 'selected profile'}` : 'Select a profile to play.'}
+      {' '}<button onClick={() => navigate('/profiles')}>Change profile</button></p>
+    <RecoveryLinks identity={identity} navigate={navigate} />
+    <section className="archive-card" aria-labelledby="today-heading">
+      <h2 id="today-heading">Today's maze</h2>
+      {data && <>
+        <p>{dateLabel(data.today)} (UTC)</p>
+        <p>{data.todayMaze.available ? completion(data.todayMaze, usable) : "Today's maze is not published yet."}</p>
+        <button className="play-button" disabled={!usable || !data.todayMaze.available || !identity.profile || !identity.token}
+          onClick={() => launch(data.today)}>{data.todayMaze.progress?.completed ? "Replay today's maze" : "Play today's maze"}</button>
+        {!data.todayMaze.available && data.lastPublishedDate && <LatestAction date={data.lastPublishedDate} onPlay={launch} />}
+        <p className="archive-boundary">Dates follow UTC. {(() => {
+          try { return `The daily date changes at ${new Date(data.nextDayAt).toLocaleString(undefined, { hour: 'numeric', minute: '2-digit', timeZoneName: 'short', month: 'short', day: 'numeric' })} your time.`; }
+          catch { return 'The daily date changes at midnight UTC.'; }
+        })()} Publication may be delayed.</p>
+      </>}
+      <ArchiveNotice catalog={catalog} />
+      {data && catalog.status !== 'ready' && <p>Previously loaded dates are stale. Refresh before playing.</p>}
+    </section>
+    <section className="archive-card" aria-labelledby="browse-heading">
+      <h2 id="browse-heading">Browse archive</h2>
+      {data && <>
+        <div className="month-selector">
+          <button aria-label="Previous month" disabled={!data.firstPublishedDate || data.month <= data.firstPublishedDate.slice(0, 7)}
+            onClick={() => jump(shiftMonth(data.month, -1))}>◀</button>
+          <h3 aria-live="polite">{monthLabel(data.month)}</h3>
+          <button aria-label="Next month" disabled={data.month >= data.today.slice(0, 7)}
+            onClick={() => jump(shiftMonth(data.month, 1))}>▶</button>
+        </div>
+        <MonthJump month={data.month} first={data.firstPublishedDate} today={data.today} onJump={jump} />
+        <button onClick={() => { setMonth(null); setSelected(data.todayMaze.available ? data.today : null); catalog.refresh(); }}>Return to today</button>
+        {wide && <div className="archive-view" aria-label="Archive view">
+          <button aria-pressed={view === 'list'} onClick={() => setView('list')}>List</button>
+          <button aria-pressed={view === 'calendar'} onClick={() => setView('calendar')}>Calendar</button>
+        </div>}
+        <p>All dates are UTC. Completed means a saved result is recorded. Unavailable dates cannot be played.</p>
+        {data.items.length === 0 && <p>No published mazes this month.</p>}
+        {view === 'calendar' && wide ? <table className="archive-grid"><caption>{monthLabel(data.month)} — UTC publication dates</caption>
+          <thead><tr>{weekdays.map(day => <th key={day} scope="col" aria-label={day}><abbr title={day}>{day.slice(0, 2)}</abbr></th>)}</tr></thead>
+          <tbody>{Array.from({ length: cells.length / 7 }, (_, row) => <tr key={row}>
+            {cells.slice(row * 7, row * 7 + 7).map((date, col) => {
+              const item = data.items.find(entry => entry.date === date);
+              return <td key={date || col}>{item ? dateButton(item) : date && <span aria-label={`${dateLabel(date)} (UTC), ${date > data.today ? 'Not yet available' : 'Unavailable'}`}>
+                {Number(date.slice(8))}<span className="date-status">Unavailable</span></span>}</td>;
+            })}</tr>)}</tbody></table>
+          : <ul className="archive-list">{data.items.map(item => <li key={item.date}>{dateButton(item)}</li>)}</ul>}
+        <div className="archive-selection" aria-live="polite">
+          {selectedItem ? <><h3>{dateLabel(selected)} (UTC)</h3><p>Published · {completion(selectedItem, usable)}</p>
+            <button disabled={!usable || !identity.profile || !identity.token} onClick={() => launch(selected)}>
+              {recovering ? 'Recover saved result' : selectedItem.progress?.completed ? 'Replay' : 'Play'} {dateLabel(selected)}</button>
+            <button disabled={!usable} onClick={() => navigate(`/leaderboard?date=${selected}`)}>View this date's leaderboard</button></>
+            : <p>Select a published date to play or view its leaderboard.</p>}
+        </div>
+      </>}
+      {actionError && <p role="alert">{actionError}</p>}
+    </section>
+    <NavBar />
+  </main>;
 }

@@ -2,6 +2,7 @@ import React, { useEffect, useState  } from 'react';
 import { useNavigate } from 'react-router-dom';
 import API from '../utils/api';
 import NavBar from '../components/NavBar';
+import { parsed } from '../archive/identity';
 
 const AVATAR_CHOICES = ['🐶','🐱','🐵','🐸','🦊','🐯','🐼','🐧','🐨'];
 
@@ -25,8 +26,8 @@ export default function SubProfilePage() {
   const [showCreate, setShowCreate]     = useState(false);
 
   useEffect(() => {
-    const stored = localStorage.getItem('subProfiles');
-    if (stored) setSubProfiles(JSON.parse(stored));
+    const cached = parsed('subProfiles');
+    if (Array.isArray(cached)) setSubProfiles(cached.filter(profile => typeof profile?._id === 'string'));
   }, []);
 
   useEffect(() => {
@@ -72,7 +73,7 @@ export default function SubProfilePage() {
         name: editName, avatar: editAvatar
       });
       refreshProfiles(res.data);
-      const cur = JSON.parse(localStorage.getItem('activeSubProfile'));
+      const cur = parsed('activeSubProfile');
       const upd = res.data.find(p=>p._id===id);
       if(cur?._id===id && upd){
         localStorage.setItem('activeSubProfile', JSON.stringify(upd));
@@ -92,7 +93,7 @@ export default function SubProfilePage() {
     try {
       const res = await API.delete(`/users/subprofile/${pendingDeleteId}`);
       refreshProfiles(res.data);
-      const cur = JSON.parse(localStorage.getItem('activeSubProfile'));
+      const cur = parsed('activeSubProfile');
       if(cur?._id===pendingDeleteId){
         if(res.data.length) {
           localStorage.setItem('activeSubProfile', JSON.stringify(res.data[0]));
@@ -219,11 +220,12 @@ export default function SubProfilePage() {
             ...cardStyle,
             cursor: editingId === profile._id ? 'default' : 'pointer'
           }}
-          onClick={() => editingId !== profile._id && handleSelect(profile)}
         >
           {/* Avatar + name */}
-          <div
+          <button type="button" aria-label={`Select player ${profile.name}`}
+            disabled={editingId === profile._id} onClick={() => handleSelect(profile)}
             style={{
+              border: 0, background: 'transparent', color: '#000', font: 'inherit', minHeight: 44, textAlign: 'left', cursor: 'pointer',
               display: 'flex',
               alignItems: 'center',
               gap: '0.5rem',
@@ -232,12 +234,13 @@ export default function SubProfilePage() {
           >
             <span style={{ fontSize: '1.5rem' }}>{profile.avatar}</span>
             <span style={{ fontWeight: 'bold' }}>{profile.name}</span>
-          </div>
+          </button>
 
           {/* Edit/Delete menu */}
           <div style={{ position: 'relative' }}>
             <div className="profile-menu" style={{ position: 'relative' }}>
               <button
+                aria-label={`Manage player ${profile.name}`}
                 onClick={e => {
                   e.stopPropagation();
                   setOpenMenuId(profile._id);
@@ -395,9 +398,10 @@ export default function SubProfilePage() {
     ))}
 
       {/* Add Player button (left-aligned) */}
-      <div
+      <button type="button" aria-expanded={showCreate}
         style={{
           ...cardStyle,
+          font: 'inherit', color: '#000', textAlign: 'left', minHeight: 44,
           justifyContent:'flex-start',
           cursor:'pointer'
         }}
@@ -405,7 +409,7 @@ export default function SubProfilePage() {
       >
         <span style={{ fontSize:'1.5rem', marginRight:'0.75rem' }}>＋</span>
         <span style={{ fontWeight:'bold' }}>Add Player</span>
-      </div>
+      </button>
 
       {/* Creation panel (no global card styling) */}
       {showCreate && (

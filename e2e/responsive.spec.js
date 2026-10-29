@@ -1,3 +1,4 @@
+const { archiveFixture } = require('./archive-fixture.cjs');
 const { test, expect } = require('@playwright/test');
 const cameraEnabled = process.env.REACT_APP_MAZE_CAMERA === 'true';
 
@@ -16,6 +17,7 @@ for (const [width, height] of viewports) {
     grid[10][10] = 'S';
     grid[0][0] = 'E';
     await page.route('**/api/**', route => {
+    if (archiveFixture(route)) return;
       const path = new URL(route.request().url()).pathname;
       if (path === '/api/maze/start') return route.fulfill({ json: { maze: { grid }, seed: 'fixture' } });
       if (path === '/api/users/subprofile/fixture') return route.fulfill({ json: { subProfile: { progress: {} }, today: '2025-05-26' } });
@@ -38,14 +40,16 @@ for (const [width, height] of viewports) {
       await cdp.detach();
     };
     await page.goto('/mazes');
+    await page.getByRole('button', { name: /May 26, 2025.*Published/ }).click();
     const play = page.getByRole('button', { name: 'Play May 26, 2025' });
     await expect(play).toBeEnabled();
     await noOverflow();
-    if (width >= 1280) {
-      const initialPlay = await play.boundingBox();
-      const initialNav = await page.locator('nav').boundingBox();
-      expect(initialPlay.y + initialPlay.height).toBeLessThanOrEqual(initialNav.y);
-    }
+    // Today-first content can scroll on desktop too; verify the primary published CTA clears navigation.
+    const primary = page.getByRole('button', { name: 'Play latest published maze' });
+    await primary.scrollIntoViewIfNeeded();
+    const primaryBox = await primary.boundingBox();
+    const primaryNav = await page.locator('nav').boundingBox();
+    expect(primaryBox.y + primaryBox.height).toBeLessThanOrEqual(primaryNav.y);
     const calendarOverflows = await page.evaluate(() => document.documentElement.scrollHeight > innerHeight);
     await swipeUp();
     if (calendarOverflows) await expect.poll(() => page.evaluate(() => scrollY)).toBeGreaterThan(0);

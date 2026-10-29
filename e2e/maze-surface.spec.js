@@ -1,3 +1,4 @@
+const { archiveFixture } = require('./archive-fixture.cjs');
 const { test, expect } = require('@playwright/test');
 const fs = require('node:fs');
 const path = require('node:path');
@@ -21,6 +22,7 @@ async function setup(page, deterministic = true) {
   grid[5][5] = 'S'; grid[4][5] = '#'; grid[5][6] = 'X'; grid[5][7] = 'F'; grid[5][8] = 'E';
   let starts = 0;
   await page.route('**/api/**', route => {
+    if (archiveFixture(route)) return;
     expect(new URL(route.request().url()).pathname).toBe('/api/maze/start');
     starts++;
     return route.fulfill({ json: { maze: { grid }, attemptId: '01234567-89ab-4cde-8fab-0123456789ab', seed: 'synthetic' } });

@@ -1,3 +1,4 @@
+const { archiveFixture } = require('./archive-fixture.cjs');
 const { test, expect } = require('@playwright/test');
 const fs = require('node:fs');
 
@@ -20,7 +21,7 @@ for (const [rows, columns] of [[13,17],[21,21]]) {
     for (let c=2;c<6;c++) grid[2][c]='#';
     grid[3][5]='#';
     grid[0][0]='S'; grid[1][1]='F'; grid[1][2]='X'; grid[1][3]='E';
-    await page.route('**/api/**',r=>r.fulfill({json:{maze:{grid},seed:'camera',attemptId:'camera-attempt'}}));
+    await page.route('**/api/**',r=>archiveFixture(r) || r.fulfill({json:{maze:{grid},seed:'camera',attemptId:'camera-attempt'}}));
     await page.goto('/maze');
     await expect(page.locator('.maze-viewport')).toBeVisible();
     const measurements=[]; const shots=[];
